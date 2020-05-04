@@ -1,0 +1,680 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		633A53E224602D6A00565B6C /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A53E024602D6A00565B6C /* CustomAlert.swift */; };
+		633A53E42460358F00565B6C /* CustomAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633A53E32460358F00565B6C /* CustomAlert.xib */; };
+		633A53E624603F0200565B6C /* JDDeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A53E524603F0200565B6C /* JDDeviceHelper.swift */; };
+		633B711F245FC8A100CF490D /* WelcomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633B711D245FC8A100CF490D /* WelcomeVC.xib */; };
+		633B7120245FC8A100CF490D /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B711E245FC8A100CF490D /* WelcomeVC.swift */; };
+		633B7126245FDA5800CF490D /* ThemeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B7123245FDA5800CF490D /* ThemeTextField.swift */; };
+		633B7127245FDA5800CF490D /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B7124245FDA5800CF490D /* ThemeButton.swift */; };
+		633B7128245FDA5800CF490D /* ThemeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B7125245FDA5800CF490D /* ThemeLabel.swift */; };
+		633B712A245FE38300CF490D /* GRANDDUKE.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 633B711A245FBBB100CF490D /* GRANDDUKE.ttf */; };
+		633B712B245FE38300CF490D /* Ovo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 633B7119245FBBB100CF490D /* Ovo-Regular.ttf */; };
+		633B7130245FF18200CF490D /* TutorialVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633B712E245FF18200CF490D /* TutorialVC.xib */; };
+		633B7131245FF18200CF490D /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B712F245FF18200CF490D /* TutorialVC.swift */; };
+		63439837245BE6DF009BCA1F /* ACFloatingTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6343978E245BE6DF009BCA1F /* ACFloatingTextfield.swift */; };
+		63439838245BE6DF009BCA1F /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6343978F245BE6DF009BCA1F /* Loader.swift */; };
+		63439839245BE6DF009BCA1F /* DataType + Extesnion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63439793245BE6DF009BCA1F /* DataType + Extesnion.swift */; };
+		6343983A245BE6DF009BCA1F /* NSObject + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63439794245BE6DF009BCA1F /* NSObject + Extension.swift */; };
+		6343983C245BE6DF009BCA1F /* String + TypeCasting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63439797245BE6DF009BCA1F /* String + TypeCasting.swift */; };
+		6343983D245BE6DF009BCA1F /* String + Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63439798245BE6DF009BCA1F /* String + Validation.swift */; };
+		6343983E245BE6DF009BCA1F /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63439799245BE6DF009BCA1F /* String+Localization.swift */; };
+		63439840245BE6DF009BCA1F /* JDSubclasses + UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6343979C245BE6DF009BCA1F /* JDSubclasses + UIControl.swift */; };
+		63439842245BE6DF009BCA1F /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6343979F245BE6DF009BCA1F /* UIView + Extension.swift */; };
+		63439843245BE6DF009BCA1F /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634397A0245BE6DF009BCA1F /* UIViewController + Extension.swift */; };
+		63439844245BE6DF009BCA1F /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634397A1245BE6DF009BCA1F /* UITextField + Extension.swift */; };
+		63439848245BE6DF009BCA1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634397A7245BE6DF009BCA1F /* AppDelegate.swift */; };
+		6343984C245BE6DF009BCA1F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634397AD245BE6DF009BCA1F /* Constant.swift */; };
+		6343984D245BE6DF009BCA1F /* PreferenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634397AE245BE6DF009BCA1F /* PreferenceHelper.swift */; };
+		6343985A245BE6DF009BCA1F /* APP+NAVIGATION.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634397BD245BE6DF009BCA1F /* APP+NAVIGATION.swift */; };
+		6343985B245BE6DF009BCA1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 634397BE245BE6DF009BCA1F /* Localizable.strings */; };
+		6343985C245BE6DF009BCA1F /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634397BF245BE6DF009BCA1F /* AppTheme.swift */; };
+		6343985E245BE6DF009BCA1F /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634397C2245BE6DF009BCA1F /* Main.swift */; };
+		63439860245BE6DF009BCA1F /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634397C4245BE6DF009BCA1F /* FontHelper.swift */; };
+		63439861245BE6DF009BCA1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634397C6245BE6DF009BCA1F /* SceneDelegate.swift */; };
+		634398AC245BE92C009BCA1F /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634398AB245BE92C009BCA1F /* Common.swift */; };
+		634398B2245BEAB2009BCA1F /* TherapistImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 634398AE245BEAB1009BCA1F /* TherapistImages.xcassets */; };
+		634398B3245BEAB2009BCA1F /* CommonColor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 634398AF245BEAB1009BCA1F /* CommonColor.xcassets */; };
+		634398B4245BEAB2009BCA1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 634398B0245BEAB2009BCA1F /* Assets.xcassets */; };
+		634398B5245BEAB2009BCA1F /* ClientImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 634398B1245BEAB2009BCA1F /* ClientImages.xcassets */; };
+		634398C0245BECDC009BCA1F /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634398B9245BECDC009BCA1F /* LoginVC.xib */; };
+		634398C1245BECDC009BCA1F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634398BA245BECDC009BCA1F /* LoginVC.swift */; };
+		634398C2245BECDC009BCA1F /* LaunchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634398BD245BECDC009BCA1F /* LaunchVC.xib */; };
+		634398C3245BECDD009BCA1F /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634398BE245BECDC009BCA1F /* LaunchVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		633A53E024602D6A00565B6C /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		633A53E32460358F00565B6C /* CustomAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlert.xib; sourceTree = "<group>"; };
+		633A53E524603F0200565B6C /* JDDeviceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDDeviceHelper.swift; sourceTree = "<group>"; };
+		633B7119245FBBB100CF490D /* Ovo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ovo-Regular.ttf"; sourceTree = "<group>"; };
+		633B711A245FBBB100CF490D /* GRANDDUKE.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GRANDDUKE.ttf; sourceTree = "<group>"; };
+		633B711D245FC8A100CF490D /* WelcomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeVC.xib; sourceTree = "<group>"; };
+		633B711E245FC8A100CF490D /* WelcomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		633B7123245FDA5800CF490D /* ThemeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextField.swift; sourceTree = "<group>"; };
+		633B7124245FDA5800CF490D /* ThemeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeButton.swift; sourceTree = "<group>"; };
+		633B7125245FDA5800CF490D /* ThemeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeLabel.swift; sourceTree = "<group>"; };
+		633B712E245FF18200CF490D /* TutorialVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialVC.xib; sourceTree = "<group>"; };
+		633B712F245FF18200CF490D /* TutorialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
+		6343975D245BE460009BCA1F /* Terra Heal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Terra Heal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6343976E245BE467009BCA1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63439774245BE6DE009BCA1F /* Terra Heal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Terra Heal-Bridging-Header.h"; sourceTree = "<group>"; };
+		6343978E245BE6DF009BCA1F /* ACFloatingTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACFloatingTextfield.swift; sourceTree = "<group>"; };
+		6343978F245BE6DF009BCA1F /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		63439793245BE6DF009BCA1F /* DataType + Extesnion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataType + Extesnion.swift"; sourceTree = "<group>"; };
+		63439794245BE6DF009BCA1F /* NSObject + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject + Extension.swift"; sourceTree = "<group>"; };
+		63439797245BE6DF009BCA1F /* String + TypeCasting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String + TypeCasting.swift"; sourceTree = "<group>"; };
+		63439798245BE6DF009BCA1F /* String + Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String + Validation.swift"; sourceTree = "<group>"; };
+		63439799245BE6DF009BCA1F /* String+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		6343979C245BE6DF009BCA1F /* JDSubclasses + UIControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JDSubclasses + UIControl.swift"; sourceTree = "<group>"; };
+		6343979F245BE6DF009BCA1F /* UIView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		634397A0245BE6DF009BCA1F /* UIViewController + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		634397A1245BE6DF009BCA1F /* UITextField + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
+		634397A7245BE6DF009BCA1F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		634397AD245BE6DF009BCA1F /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		634397AE245BE6DF009BCA1F /* PreferenceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceHelper.swift; sourceTree = "<group>"; };
+		634397BD245BE6DF009BCA1F /* APP+NAVIGATION.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APP+NAVIGATION.swift"; sourceTree = "<group>"; };
+		634397BE245BE6DF009BCA1F /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		634397BF245BE6DF009BCA1F /* AppTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		634397C2245BE6DF009BCA1F /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		634397C4245BE6DF009BCA1F /* FontHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
+		634397C6245BE6DF009BCA1F /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		634398AB245BE92C009BCA1F /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		634398AE245BEAB1009BCA1F /* TherapistImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TherapistImages.xcassets; sourceTree = "<group>"; };
+		634398AF245BEAB1009BCA1F /* CommonColor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CommonColor.xcassets; sourceTree = "<group>"; };
+		634398B0245BEAB2009BCA1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		634398B1245BEAB2009BCA1F /* ClientImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ClientImages.xcassets; sourceTree = "<group>"; };
+		634398B9245BECDC009BCA1F /* LoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		634398BA245BECDC009BCA1F /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		634398BD245BECDC009BCA1F /* LaunchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchVC.xib; sourceTree = "<group>"; };
+		634398BE245BECDC009BCA1F /* LaunchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchVC.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6343975A245BE460009BCA1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		633B711B245FC8A100CF490D /* WelcomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				633B711C245FC8A100CF490D /* xib */,
+				633B711E245FC8A100CF490D /* WelcomeVC.swift */,
+			);
+			path = WelcomeVC;
+			sourceTree = "<group>";
+		};
+		633B711C245FC8A100CF490D /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				633B711D245FC8A100CF490D /* WelcomeVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		633B712C245FF18200CF490D /* TutorialVC */ = {
+			isa = PBXGroup;
+			children = (
+				633B712D245FF18200CF490D /* xib */,
+				633B712F245FF18200CF490D /* TutorialVC.swift */,
+			);
+			path = TutorialVC;
+			sourceTree = "<group>";
+		};
+		633B712D245FF18200CF490D /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				633B712E245FF18200CF490D /* TutorialVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63439754245BE460009BCA1F = {
+			isa = PBXGroup;
+			children = (
+				6343975F245BE460009BCA1F /* Terra Heal */,
+				6343975E245BE460009BCA1F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6343975E245BE460009BCA1F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6343975D245BE460009BCA1F /* Terra Heal.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6343975F245BE460009BCA1F /* Terra Heal */ = {
+			isa = PBXGroup;
+			children = (
+				634397AC245BE6DF009BCA1F /* AppBaseClass */,
+				634397A8245BE6DF009BCA1F /* Assets */,
+				634397C7245BE6DF009BCA1F /* Dialogs */,
+				63439775245BE6DE009BCA1F /* Others */,
+				634397A3245BE6DF009BCA1F /* Resources */,
+				634398A7245BE6E9009BCA1F /* support */,
+				634397D1245BE6DF009BCA1F /* Source */,
+			);
+			path = "Terra Heal";
+			sourceTree = "<group>";
+		};
+		63439775245BE6DE009BCA1F /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				63439781245BE6DF009BCA1F /* Frameworks */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		63439781245BE6DF009BCA1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6343978E245BE6DF009BCA1F /* ACFloatingTextfield.swift */,
+				6343978F245BE6DF009BCA1F /* Loader.swift */,
+				63439790245BE6DF009BCA1F /* JDFramework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		63439790245BE6DF009BCA1F /* JDFramework */ = {
+			isa = PBXGroup;
+			children = (
+				633A53E524603F0200565B6C /* JDDeviceHelper.swift */,
+				63439792245BE6DF009BCA1F /* Othert + Extension */,
+				63439796245BE6DF009BCA1F /* String + Extension */,
+				6343979A245BE6DF009BCA1F /* JDSubClasses */,
+				6343979E245BE6DF009BCA1F /* UControl + Extension */,
+			);
+			path = JDFramework;
+			sourceTree = "<group>";
+		};
+		63439792245BE6DF009BCA1F /* Othert + Extension */ = {
+			isa = PBXGroup;
+			children = (
+				63439793245BE6DF009BCA1F /* DataType + Extesnion.swift */,
+				63439794245BE6DF009BCA1F /* NSObject + Extension.swift */,
+			);
+			path = "Othert + Extension";
+			sourceTree = "<group>";
+		};
+		63439796245BE6DF009BCA1F /* String + Extension */ = {
+			isa = PBXGroup;
+			children = (
+				63439797245BE6DF009BCA1F /* String + TypeCasting.swift */,
+				63439798245BE6DF009BCA1F /* String + Validation.swift */,
+				63439799245BE6DF009BCA1F /* String+Localization.swift */,
+			);
+			path = "String + Extension";
+			sourceTree = "<group>";
+		};
+		6343979A245BE6DF009BCA1F /* JDSubClasses */ = {
+			isa = PBXGroup;
+			children = (
+				6343979C245BE6DF009BCA1F /* JDSubclasses + UIControl.swift */,
+			);
+			path = JDSubClasses;
+			sourceTree = "<group>";
+		};
+		6343979E245BE6DF009BCA1F /* UControl + Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6343979F245BE6DF009BCA1F /* UIView + Extension.swift */,
+				634397A0245BE6DF009BCA1F /* UIViewController + Extension.swift */,
+				634397A1245BE6DF009BCA1F /* UITextField + Extension.swift */,
+			);
+			path = "UControl + Extension";
+			sourceTree = "<group>";
+		};
+		634397A3245BE6DF009BCA1F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				634398AA245BE853009BCA1F /* Sound */,
+				634397A4245BE6DF009BCA1F /* Font */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		634397A4245BE6DF009BCA1F /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				633B711A245FBBB100CF490D /* GRANDDUKE.ttf */,
+				633B7119245FBBB100CF490D /* Ovo-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		634397A8245BE6DF009BCA1F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				634398B0245BEAB2009BCA1F /* Assets.xcassets */,
+				634398B1245BEAB2009BCA1F /* ClientImages.xcassets */,
+				634398AF245BEAB1009BCA1F /* CommonColor.xcassets */,
+				634398AE245BEAB1009BCA1F /* TherapistImages.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		634397AC245BE6DF009BCA1F /* AppBaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				634398AD245BE9D8009BCA1F /* BaseSubClasses */,
+				634397AD245BE6DF009BCA1F /* Constant.swift */,
+				634397AE245BE6DF009BCA1F /* PreferenceHelper.swift */,
+				634397BD245BE6DF009BCA1F /* APP+NAVIGATION.swift */,
+				634397BE245BE6DF009BCA1F /* Localizable.strings */,
+				634397BF245BE6DF009BCA1F /* AppTheme.swift */,
+				634398AB245BE92C009BCA1F /* Common.swift */,
+				634397C4245BE6DF009BCA1F /* FontHelper.swift */,
+			);
+			path = AppBaseClass;
+			sourceTree = "<group>";
+		};
+		634397C7245BE6DF009BCA1F /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				633A53E024602D6A00565B6C /* CustomAlert.swift */,
+				633A53E32460358F00565B6C /* CustomAlert.xib */,
+			);
+			path = Dialogs;
+			sourceTree = "<group>";
+		};
+		634397D1245BE6DF009BCA1F /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				634398B6245BECDC009BCA1F /* Client */,
+				634398BB245BECDC009BCA1F /* Common */,
+				634398BF245BECDC009BCA1F /* Therapist */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		634398A7245BE6E9009BCA1F /* support */ = {
+			isa = PBXGroup;
+			children = (
+				634397C6245BE6DF009BCA1F /* SceneDelegate.swift */,
+				6343976E245BE467009BCA1F /* Info.plist */,
+				634397A7245BE6DF009BCA1F /* AppDelegate.swift */,
+				63439774245BE6DE009BCA1F /* Terra Heal-Bridging-Header.h */,
+			);
+			name = support;
+			sourceTree = "<group>";
+		};
+		634398AA245BE853009BCA1F /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		634398AD245BE9D8009BCA1F /* BaseSubClasses */ = {
+			isa = PBXGroup;
+			children = (
+				634397C2245BE6DF009BCA1F /* Main.swift */,
+				633B7124245FDA5800CF490D /* ThemeButton.swift */,
+				633B7125245FDA5800CF490D /* ThemeLabel.swift */,
+				633B7123245FDA5800CF490D /* ThemeTextField.swift */,
+			);
+			path = BaseSubClasses;
+			sourceTree = "<group>";
+		};
+		634398B6245BECDC009BCA1F /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				633B712C245FF18200CF490D /* TutorialVC */,
+				634398B7245BECDC009BCA1F /* Login */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		634398B7245BECDC009BCA1F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				634398B8245BECDC009BCA1F /* xib */,
+				634398BA245BECDC009BCA1F /* LoginVC.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		634398B8245BECDC009BCA1F /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				634398B9245BECDC009BCA1F /* LoginVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		634398BB245BECDC009BCA1F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				633B711B245FC8A100CF490D /* WelcomeVC */,
+				634398BC245BECDC009BCA1F /* LaunchVC */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		634398BC245BECDC009BCA1F /* LaunchVC */ = {
+			isa = PBXGroup;
+			children = (
+				634398BD245BECDC009BCA1F /* LaunchVC.xib */,
+				634398BE245BECDC009BCA1F /* LaunchVC.swift */,
+			);
+			path = LaunchVC;
+			sourceTree = "<group>";
+		};
+		634398BF245BECDC009BCA1F /* Therapist */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Therapist;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6343975C245BE460009BCA1F /* Terra Heal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63439771245BE467009BCA1F /* Build configuration list for PBXNativeTarget "Terra Heal" */;
+			buildPhases = (
+				63439759245BE460009BCA1F /* Sources */,
+				6343975A245BE460009BCA1F /* Frameworks */,
+				6343975B245BE460009BCA1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Terra Heal";
+			productName = "Terra Heal";
+			productReference = 6343975D245BE460009BCA1F /* Terra Heal.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		63439755245BE460009BCA1F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = Evolution;
+				TargetAttributes = {
+					6343975C245BE460009BCA1F = {
+						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
+					};
+				};
+			};
+			buildConfigurationList = 63439758245BE460009BCA1F /* Build configuration list for PBXProject "Terra Heal" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 63439754245BE460009BCA1F;
+			productRefGroup = 6343975E245BE460009BCA1F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6343975C245BE460009BCA1F /* Terra Heal */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6343975B245BE460009BCA1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				633B712A245FE38300CF490D /* GRANDDUKE.ttf in Resources */,
+				633B712B245FE38300CF490D /* Ovo-Regular.ttf in Resources */,
+				634398C0245BECDC009BCA1F /* LoginVC.xib in Resources */,
+				633A53E42460358F00565B6C /* CustomAlert.xib in Resources */,
+				634398C2245BECDC009BCA1F /* LaunchVC.xib in Resources */,
+				633B7130245FF18200CF490D /* TutorialVC.xib in Resources */,
+				634398B3245BEAB2009BCA1F /* CommonColor.xcassets in Resources */,
+				633B711F245FC8A100CF490D /* WelcomeVC.xib in Resources */,
+				634398B4245BEAB2009BCA1F /* Assets.xcassets in Resources */,
+				6343985B245BE6DF009BCA1F /* Localizable.strings in Resources */,
+				634398B5245BEAB2009BCA1F /* ClientImages.xcassets in Resources */,
+				634398B2245BEAB2009BCA1F /* TherapistImages.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		63439759245BE460009BCA1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6343984D245BE6DF009BCA1F /* PreferenceHelper.swift in Sources */,
+				6343983A245BE6DF009BCA1F /* NSObject + Extension.swift in Sources */,
+				634398AC245BE92C009BCA1F /* Common.swift in Sources */,
+				633A53E624603F0200565B6C /* JDDeviceHelper.swift in Sources */,
+				633B7126245FDA5800CF490D /* ThemeTextField.swift in Sources */,
+				6343983C245BE6DF009BCA1F /* String + TypeCasting.swift in Sources */,
+				63439837245BE6DF009BCA1F /* ACFloatingTextfield.swift in Sources */,
+				633B7127245FDA5800CF490D /* ThemeButton.swift in Sources */,
+				63439843245BE6DF009BCA1F /* UIViewController + Extension.swift in Sources */,
+				6343985C245BE6DF009BCA1F /* AppTheme.swift in Sources */,
+				633A53E224602D6A00565B6C /* CustomAlert.swift in Sources */,
+				634398C3245BECDD009BCA1F /* LaunchVC.swift in Sources */,
+				6343983D245BE6DF009BCA1F /* String + Validation.swift in Sources */,
+				6343983E245BE6DF009BCA1F /* String+Localization.swift in Sources */,
+				6343985A245BE6DF009BCA1F /* APP+NAVIGATION.swift in Sources */,
+				63439860245BE6DF009BCA1F /* FontHelper.swift in Sources */,
+				633B7128245FDA5800CF490D /* ThemeLabel.swift in Sources */,
+				63439838245BE6DF009BCA1F /* Loader.swift in Sources */,
+				63439848245BE6DF009BCA1F /* AppDelegate.swift in Sources */,
+				6343984C245BE6DF009BCA1F /* Constant.swift in Sources */,
+				63439842245BE6DF009BCA1F /* UIView + Extension.swift in Sources */,
+				63439840245BE6DF009BCA1F /* JDSubclasses + UIControl.swift in Sources */,
+				63439844245BE6DF009BCA1F /* UITextField + Extension.swift in Sources */,
+				633B7131245FF18200CF490D /* TutorialVC.swift in Sources */,
+				63439861245BE6DF009BCA1F /* SceneDelegate.swift in Sources */,
+				633B7120245FC8A100CF490D /* WelcomeVC.swift in Sources */,
+				6343985E245BE6DF009BCA1F /* Main.swift in Sources */,
+				634398C1245BECDC009BCA1F /* LoginVC.swift in Sources */,
+				63439839245BE6DF009BCA1F /* DataType + Extesnion.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6343976F245BE467009BCA1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		63439770245BE467009BCA1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		63439772245BE467009BCA1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Terra Heal/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Jaydeep.Terra-Heal";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Terra Heal/Terra Heal-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		63439773245BE467009BCA1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Terra Heal/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Jaydeep.Terra-Heal";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Terra Heal/Terra Heal-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		63439758245BE460009BCA1F /* Build configuration list for PBXProject "Terra Heal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6343976F245BE467009BCA1F /* Debug */,
+				63439770245BE467009BCA1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63439771245BE467009BCA1F /* Build configuration list for PBXNativeTarget "Terra Heal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63439772245BE467009BCA1F /* Debug */,
+				63439773245BE467009BCA1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 63439755245BE460009BCA1F /* Project object */;
+}

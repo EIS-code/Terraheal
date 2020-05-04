@@ -1,0 +1,30 @@
+//
+//  Created by Jaydeep Vyas
+//  Copyright © 2019 Jaydeep. All rights reserved.
+//
+
+//MARK: - Screen Wise Strings
+"APP_NAME" = "Terra Heal";
+
+//MARK: Welcome Screen
+"WELCOME_LBL_MESSAGE" = "Please select weather you want to\nuse app as therapist or client";
+"WELCOME_LBL_I_AM" = "I am a";
+"WELCOME_BTN_CLIENT" =  "Client";
+"WELCOME_BTN_THERAPIST" =  "Therapist";
+"WELCOME_BTN_PROCEED" = "Proceed";
+
+//MARK: Tutorial SCREEN
+"TUTORIAL_LBL_TITLE" = "This is a title";
+"TUTORIAL_LBL_MESSAGE" = "This is a description, this is a sample text";
+"TUTORIAL_BTN_NEXT" = "Next";
+"TUTORIAL_BTN_SKIP" = "Skip";
+
+
+//MARK: LOGIN SCREEN
+"LOGIN_LBL_TITLE" = "Welcome Back";
+"LOGIN_LBL_MESSAGE" = "You need to identify\nto sign back in";
+"LOGIN_TXT_EMAIL" = "Email";
+"LOGIN_TXT_PASSWORD" = "Password";
+"LOGIN_BTN_SIGN_IN" = "Sign In";
+"LOGIN_BTN_FORGOT_PASSWORD" = "Forgot Password?";
+"LOGIN_BTN_SIGN_UP" = "Sign Up";
