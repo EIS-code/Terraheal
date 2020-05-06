@@ -10,6 +10,9 @@ extension UIColor {
     //Custom TextFieldColors
     static var themePrimary:UIColor = UIColor.init(named: "theme_primary") ?? UIColor.init(hex: "#9A4026")
     static var themePrimaryLight:UIColor = UIColor.init(named: "theme_primary_light") ?? UIColor.init(hex: "#000000")
+    static var themePrimaryBorder:UIColor = UIColor.init(named: "theme_primary_border") ?? UIColor.init(hex: "#000000")
+    static var themePrimaryLightBackground:UIColor = UIColor.init(named: "theme_primary_light_background") ?? UIColor.init(hex: "#000000")
+
 
 }
 

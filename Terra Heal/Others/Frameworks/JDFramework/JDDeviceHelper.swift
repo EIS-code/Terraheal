@@ -104,7 +104,7 @@ public class JDDeviceHelper {
     
     public init() {}
     
-    public func offseter(scaleFactor: CGFloat = 1.0, offset: CGFloat, direction: Direction, currentDeviceBound: CGFloat) -> CGFloat {
+    public func offseter(scaleFactor: CGFloat = 1.0, offset: CGFloat, direction: Direction = .horizontal, currentDeviceBound: CGFloat = 375) -> CGFloat {
         switch direction {
         case .horizontal:
             return (offset * UIScreen.main.bounds.width * scaleFactor) / currentDeviceBound

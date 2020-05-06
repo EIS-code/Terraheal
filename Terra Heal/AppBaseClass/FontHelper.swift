@@ -15,6 +15,7 @@ struct FontSize {
 
     static let nav_title_18: CGFloat = 18
     static let textField_14: CGFloat = 14
+    static let textField_20: CGFloat = 20
     static let placeHolder_14: CGFloat = 12
 
 

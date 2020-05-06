@@ -19,8 +19,7 @@
                 <outlet property="btnDone" destination="btk-IO-WjQ" id="1DB-Dz-aTq"/>
                 <outlet property="btnNext" destination="MPT-lV-vrF" id="mFr-3x-dT1"/>
                 <outlet property="btnSkip" destination="26g-HT-sfe" id="4T4-Km-sAC"/>
-                <outlet property="lblMessage" destination="YCh-OX-c0I" id="wR1-yV-hiD"/>
-                <outlet property="lblTutorialTitle" destination="X36-JG-6Kq" id="N0Z-IX-H5n"/>
+                <outlet property="cvForTutorial" destination="t8a-Aw-3N1" id="07d-BP-dw5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,18 +28,19 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X36-JG-6Kq" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="32" y="302" width="256" height="19"/>
-                    <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="16"/>
-                    <color key="textColor" name="theme_primary"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCh-OX-c0I" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="32" y="341" width="256" height="26"/>
-                    <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="22"/>
-                    <color key="textColor" name="theme_dark_text"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="t8a-Aw-3N1">
+                    <rect key="frame" x="0.0" y="207" width="320" height="150"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="x6s-DX-IcM"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4bG-Mk-KD6">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fjQ-k9-NAp" userLabel="Stack View - Next">
                     <rect key="frame" x="120" y="387" width="180" height="101"/>
                     <subviews>
@@ -50,6 +50,9 @@
                             <state key="normal" title="Proceed">
                                 <color key="titleColor" name="theme_primary"/>
                             </state>
+                            <connections>
+                                <action selector="btnNextTapped:" destination="-1" eventType="touchUpInside" id="6Sj-xX-HQH"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btk-IO-WjQ" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
                             <rect key="frame" x="79" y="0.0" width="101" height="101"/>
@@ -61,6 +64,9 @@
                             <state key="normal" image="asset-arrow-right">
                                 <color key="titleColor" name="theme_button_text"/>
                             </state>
+                            <connections>
+                                <action selector="btnNextTapped:" destination="-1" eventType="touchUpInside" id="fAr-nk-hdC"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>
@@ -76,16 +82,13 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="X36-JG-6Kq" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="2uH-8F-ASw"/>
-                <constraint firstItem="YCh-OX-c0I" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="7RZ-qg-pZE"/>
-                <constraint firstItem="fjQ-k9-NAp" firstAttribute="top" secondItem="YCh-OX-c0I" secondAttribute="bottom" constant="20" id="8cM-s6-I6V"/>
-                <constraint firstItem="X36-JG-6Kq" firstAttribute="bottom" secondItem="YCh-OX-c0I" secondAttribute="top" constant="-20" id="I2K-eq-GT9"/>
                 <constraint firstItem="26g-HT-sfe" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="K0e-w9-WW3"/>
-                <constraint firstItem="YCh-OX-c0I" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="UPB-m8-CMb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fjQ-k9-NAp" secondAttribute="trailing" constant="20" id="YL3-4o-zDF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="26g-HT-sfe" secondAttribute="bottom" constant="20" id="eD7-I6-srE"/>
+                <constraint firstItem="t8a-Aw-3N1" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="fmQ-hC-gT4"/>
+                <constraint firstItem="fjQ-k9-NAp" firstAttribute="top" secondItem="t8a-Aw-3N1" secondAttribute="bottom" constant="30" id="nc4-M4-wN7"/>
                 <constraint firstItem="26g-HT-sfe" firstAttribute="top" secondItem="fjQ-k9-NAp" secondAttribute="bottom" constant="30" id="otM-dV-oE0"/>
-                <constraint firstItem="X36-JG-6Kq" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="q4b-LU-UH3"/>
+                <constraint firstItem="t8a-Aw-3N1" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="yfs-ZN-g6w"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="131" y="154"/>
@@ -95,9 +98,6 @@
         <image name="asset-arrow-right" width="42.666667938232422" height="42.666667938232422"/>
         <namedColor name="theme_button_text">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="theme_dark_text">
-            <color red="0.16862745098039217" green="0.37647058823529411" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary">
             <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

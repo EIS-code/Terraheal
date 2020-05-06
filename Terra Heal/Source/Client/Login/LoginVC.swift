@@ -59,13 +59,13 @@ class LoginVC: MainVC {
     private func initialViewSetup() {
         self.vwBar?.backgroundColor = UIColor.clear
         self.lblLoginTitle?.text = "LOGIN_LBL_TITLE".localized()
-        self.lblLoginTitle?.font = FontHelper.font(name: FontName.GradDuke, size: FontSize.label_26)
+        self.lblLoginTitle?.setFont(name: FontName.GradDuke, size: FontSize.label_26)
         self.lblMessage?.text = "LOGIN_LBL_MESSAGE".localized()
         self.lblMessage?.setFont(name: FontName.Ovo, size: FontSize.label_18)
         self.txtEmail?.placeholder = "LOGIN_TXT_EMAIL".localized()
         self.txtPassword?.placeholder = "LOGIN_TXT_PASSWORD".localized()
-        self.btnForgotPassword?.setTitle("LOGIN_BTN_FORGOT_PASSWORD".localized(), for: .normal)
         self.btnForgotPassword?.setFont(name: FontName.GradDuke, size: FontSize.button_20)
+        self.btnForgotPassword?.setTitle("LOGIN_BTN_FORGOT_PASSWORD".localized(), for: .normal)
         self.btnSignUp?.setTitle("LOGIN_BTN_SIGN_UP".localized(), for: .normal)
         self.btnSignUp?.setFont(name: FontName.GradDuke, size: FontSize.button_18)
         self.btnLogin?.setTitle("LOGIN_BTN_SIGN_IN".localized(), for: .normal)
@@ -83,11 +83,13 @@ class LoginVC: MainVC {
             self.wsLogin()
         }
     }
+    @IBAction func btnSignUpTapped(_ sender: Any) {
+        Common.appDelegate.loadRegisterVC(navigaionVC: self.navigationController)
+    }
 
     @IBAction func btnForgotPasswordTapped(_ sender: UIButton) {
-        if checkValidation() {
-            self.wsLogin()
-        }
+        Common.appDelegate.loadTouchIdVC(navigaionVC: self.navigationController)
+
     }
 
 }
@@ -101,16 +103,28 @@ extension LoginVC {
 
     func checkValidation() -> Bool {
 
-        if !txtEmail.text!.isValidEmail()  {
+        if !txtEmail.text!.isValidEmail() {
             let alert: CustomAlert = CustomAlert.fromNib()
-            alert.initialize(message: "Please enter valid email address")
-            alert.show(animated: false)
+            alert.initialize(message: "VALIDATION_MSG_INVALID_EMAIL".localized())
+            alert.show(animated: true)
+            alert.onBtnCancelTapped = {
+                [weak alert, weak self] in
+                alert?.removeFromSuperview();
+                alert?.dismiss()
+                _ = self?.txtEmail.becomeFirstResponder()
+            }
             return false
-        } else if txtPassword.text!.isEmpty {
+        }
+        else if txtPassword.text!.isEmpty {
             let alert: CustomAlert = CustomAlert.fromNib()
-            alert.initialize(message: "Please enter valid email address")
-            alert.show(animated: false)
-
+            alert.initialize(message: "VALIDATION_MSG_INVALID_PASSWORD".localized())
+            alert.show(animated: true)
+            alert.onBtnCancelTapped = {
+                [weak alert, weak self] in
+                alert?.removeFromSuperview();
+                alert?.dismiss()
+                _ = self?.txtPassword.becomeFirstResponder()
+            }
             return false
         }
         return true

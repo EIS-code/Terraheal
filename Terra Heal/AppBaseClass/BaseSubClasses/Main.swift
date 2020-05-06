@@ -65,3 +65,12 @@ class MainVC: UIViewController {
 
 
 
+class CollectionCell: UICollectionViewCell {
+    override class func awakeFromNib() {
+        super.awakeFromNib()
+    }
+}
+
+class TableCell: UITableViewCell {
+
+}

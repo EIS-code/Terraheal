@@ -7,12 +7,16 @@ import Foundation
 import UIKit
 
 class ThemeButton: UIButton {
-    
+
+
     override func draw(_ rect: CGRect) {
     }
 
     func setUpRoundedButton() {
+
+        self.height(constant: JDDeviceHelper().offseter(offset: 60))
         self.setRound(withBorderColor: .clear, andCornerRadious: 0.0, borderWidth: 1.0)
+
     }
 
     func setFont(name:String,size:CGFloat){
@@ -38,5 +42,38 @@ class UnderlineTextButton: ThemeButton {
         ]
         let attributedString = NSAttributedString(string: self.currentTitle!, attributes: attributes)
         return attributedString
+    }
+}
+
+
+extension UIView {
+    func height(constant: CGFloat) {
+        print("Height: -\(constant)")
+        setConstraint(value: constant, attribute: .height)
+    }
+
+    func width(constant: CGFloat) {
+        setConstraint(value: constant, attribute: .width)
+    }
+
+    private func removeConstraint(attribute: NSLayoutConstraint.Attribute) {
+        constraints.forEach {
+            if $0.firstAttribute == attribute {
+                removeConstraint($0)
+            }
+        }
+    }
+
+    private func setConstraint(value: CGFloat, attribute: NSLayoutConstraint.Attribute) {
+        removeConstraint(attribute: attribute)
+        let constraint =
+            NSLayoutConstraint(item: self,
+                               attribute: attribute,
+                               relatedBy: NSLayoutConstraint.Relation.equal,
+                               toItem: nil,
+                               attribute: NSLayoutConstraint.Attribute.notAnAttribute,
+                               multiplier: 1,
+                               constant: value)
+        self.addConstraint(constraint)
     }
 }

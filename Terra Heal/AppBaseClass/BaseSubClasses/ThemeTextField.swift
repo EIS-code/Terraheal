@@ -5,9 +5,9 @@
 
 import Foundation
 import UIKit
-class ThemeTextField: UITextField {
+open class ThemeTextField: UITextField {
 
-    override func draw(_ rect: CGRect) {
+    override open func draw(_ rect: CGRect) {
     }
     
     func setFont(name:String,size:CGFloat){
@@ -15,3 +15,4 @@ class ThemeTextField: UITextField {
         self.font = FontHelper.font(name: name, size: finalSize)
     }
 }
+

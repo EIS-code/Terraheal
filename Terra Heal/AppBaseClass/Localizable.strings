@@ -13,9 +13,9 @@
 "WELCOME_BTN_THERAPIST" =  "Therapist";
 "WELCOME_BTN_PROCEED" = "Proceed";
 
-//MARK: Tutorial SCREEN
+//MARK: TUTORIAL SCREEN
 "TUTORIAL_LBL_TITLE" = "This is a title";
-"TUTORIAL_LBL_MESSAGE" = "This is a description, this is a sample text";
+"TUTORIAL_LBL_MESSAGE" = "This is a description,\nthis is a sample text";
 "TUTORIAL_BTN_NEXT" = "Next";
 "TUTORIAL_BTN_SKIP" = "Skip";
 
@@ -28,3 +28,45 @@
 "LOGIN_BTN_SIGN_IN" = "Sign In";
 "LOGIN_BTN_FORGOT_PASSWORD" = "Forgot Password?";
 "LOGIN_BTN_SIGN_UP" = "Sign Up";
+
+//MARK: REGISTER SCREEN
+"REGISTER_LBL_MESSAGE" = "Getting Massage\nMade Simple";
+"REGISTER_TXT_NAME" = "Name";
+"REGISTER_TXT_EMAIL" = "Email";
+"REGISTER_TXT_PASSWORD" = "Password";
+"REGISTER_TXT_CONFIRM_PASSWORD" = "Confirm Password";
+"REGISTER_BTN_SIGN_IN" = "Sign In";
+"REGISTER_LBL_ALREADY_A_MEMBER" = "Already a member?";
+"REGISTER_BTN_SIGN_UP" = "Sign Up";
+
+//MARK: TOUCH ID  SCREEN
+
+"TOUCH_ID_LBL_TITLE" = "Welcome Back";
+"TOUCH_ID_LBL_MESSAGE" = "You need to identify\nto sign back in";
+"TOUCH_ID_BTN_USE_PASSWORD" = "Use Password";
+
+//MARK: CONTACT VERIFICATION  SCREEN
+"CONTACT_VERIFICATION_LBL_TITLE" = "Contact Verification";
+"CONTACT_VERIFICATION_LBL_MESSAGE" = "We need to verify your contact\ndetails before proceeding";
+"CONTACT_VERIFICATION_BTN_VERIFY" = "Verify";
+"CONTACT_VERIFICATION_BTN_VERIFIED" = "Verified";
+"CONTACT_VERIFICATION_BTN_PROCEED" = "Proceed";
+"CONTACT_VERIFICATION_LBL_COUNTRY_CODE" = "Country Code";
+"CONTACT_VERIFICATION_TXT_MOBILE_NUMBER" = "Mobile Number";
+"CONTACT_VERIFICATION_TXT_EMAIL" = "Email";
+
+//Verification Data
+"VERIFICATION_LBL_TITLE" = "Enter OTP";
+"VERIFICATION_MOBILE_TITLE" = "Verify Your Mobile Number";
+"VERIFICATION_EMAIL_TITLE" = "Verify Your Email Id";
+"VERIFICATION_MSG_DETAIL" = "Please enter the 4 digit code that is\nsent to ";
+"VERIFICATION_BTN_VERIFY" = "Verify";
+"VERIFICATION_BTN_RESEND" = "Resend";
+
+
+//MARK: Validation Toast Messages
+"VALIDATION_MSG_INVALID_EMAIL" = "Please enter valid email address";
+"VALIDATION_MSG_INVALID_PASSWORD" = "Please enter valid password";
+"VALIDATION_MSG_INVALID_NAME" = "Please enter valid name";
+"VALIDATION_MSG_MISMATCH_CONFIRM_PASSWORD" = "Confirm password does not match with your entered password.\nConfirm and password must be same.";
+

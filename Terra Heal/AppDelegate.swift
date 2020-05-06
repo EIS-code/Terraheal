@@ -43,6 +43,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func getTopViewController() -> UIViewController? {
+        if var topController = UIApplication.shared.delegate?.window??.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            return topController
+        } else {
+            return UIApplication.shared.windows.last?.rootViewController ?? nil
+        }
+    }
 
 }
 

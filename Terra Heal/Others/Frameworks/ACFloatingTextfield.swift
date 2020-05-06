@@ -7,7 +7,7 @@
 import UIKit
 
 @IBDesignable
-@objc open class ACFloatingTextfield: UITextField {
+@objc open class ACFloatingTextfield: ThemeTextField {
     
     fileprivate var bottomLineView : UIView?
     fileprivate var labelPlaceholder : UILabel?
@@ -163,6 +163,7 @@ fileprivate extension ACFloatingTextfield {
     func initialize() -> Void {
         self.clipsToBounds = true
         self.textColor = UIColor.themePrimary
+        self.setFont(name:FontName.Ovo,size:FontSize.textField_20)
         addBottomLine()
         addFloatingLabel()
         addErrorPlaceholderLabel()
@@ -210,7 +211,7 @@ fileprivate extension ACFloatingTextfield {
         labelPlaceholder?.text = placeholderText
         labelPlaceholder?.textAlignment = self.textAlignment
         labelPlaceholder?.textColor = placeHolderColor
-        labelPlaceholder?.font = UIFont.init(name: (self.font?.fontName ?? "helvetica")!, size: 12)
+        labelPlaceholder?.font = UIFont.init(name: (self.font?.fontName ?? "helvetica")!, size: JDDeviceHelper().fontCalculator(size: 12))
         labelPlaceholder?.isHidden = true
         labelPlaceholder?.sizeToFit()
         labelPlaceholder?.translatesAutoresizingMaskIntoConstraints = false
@@ -221,7 +222,7 @@ fileprivate extension ACFloatingTextfield {
         let leadingConstraint = NSLayoutConstraint.init(item: labelPlaceholder!, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0)
         let trailingConstraint = NSLayoutConstraint.init(item: labelPlaceholder!, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
         let topConstraint = NSLayoutConstraint.init(item: labelPlaceholder!, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
-        placeholderLabelHeight = NSLayoutConstraint.init(item: labelPlaceholder!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 15)
+        placeholderLabelHeight = NSLayoutConstraint.init(item: labelPlaceholder!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: JDDeviceHelper().offseter(offset: 15, direction: .horizontal, currentDeviceBound: 375))
         self.addConstraints([leadingConstraint,trailingConstraint,topConstraint])
         labelPlaceholder?.addConstraint(placeholderLabelHeight!)
     }
@@ -235,7 +236,7 @@ fileprivate extension ACFloatingTextfield {
         labelErrorPlaceholder?.text = self.errorText
         labelErrorPlaceholder?.textAlignment = self.textAlignment
         labelErrorPlaceholder?.textColor = errorTextColor
-        labelErrorPlaceholder?.font = UIFont(name: (self.font?.fontName ?? "helvetica")!, size: 12)
+        labelErrorPlaceholder?.font = UIFont(name: (self.font?.fontName ?? "helvetica")!, size: JDDeviceHelper().fontCalculator(size: JDDeviceHelper().fontCalculator(size: 12)))
         labelErrorPlaceholder?.sizeToFit()
         labelErrorPlaceholder?.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(labelErrorPlaceholder!)
@@ -332,12 +333,12 @@ fileprivate extension ACFloatingTextfield {
             return
         }
         
-        if placeholderLabelHeight?.constant == 15 {
+        if placeholderLabelHeight?.constant == JDDeviceHelper().offseter(offset: 15, direction: .horizontal, currentDeviceBound: 375) {
             return
         }
         
-        placeholderLabelHeight?.constant = 15;
-        labelPlaceholder?.font = UIFont(name: (self.font?.fontName)!, size: 12)
+        placeholderLabelHeight?.constant = JDDeviceHelper().offseter(offset: 15, direction: .horizontal, currentDeviceBound: 375);
+        labelPlaceholder?.font = UIFont(name: (self.font?.fontName)!, size: JDDeviceHelper().fontCalculator(size: 12))
         
         UIView.animate(withDuration: 0.2, animations: {
             self.layoutIfNeeded()
@@ -398,8 +399,8 @@ extension UIView {
     func shake() {
         let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
-        animation.duration = 0.6
-        animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
+        animation.duration = 1.0
+        animation.values = [-30.0, 30.0, -30.0, 30.0, -20.0, 20.0, -10.0, 10.0,-5.0,5.0, 0.0 ]
         layer.add(animation, forKey: "shake")
     }
 }

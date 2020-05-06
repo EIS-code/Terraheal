@@ -42,7 +42,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="426"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hp5-yH-riX" userLabel="vwContent">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="297.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="418.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rG-EW-05Z" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                     <rect key="frame" x="20" y="56" width="280" height="19"/>
@@ -64,7 +64,7 @@ to sign back in</string>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ov9-Oy-oJD" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="dWG-SJ-vPx"/>
+                                                <constraint firstAttribute="width" secondItem="ov9-Oy-oJD" secondAttribute="height" multiplier="28:5" id="2LX-E6-6qA"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
@@ -72,7 +72,7 @@ to sign back in</string>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n6s-st-fuG" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="65" width="280" height="50"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="dyE-cw-M8q"/>
+                                                <constraint firstAttribute="width" secondItem="n6s-st-fuG" secondAttribute="height" multiplier="28:5" id="gj4-v6-yZc"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -80,12 +80,12 @@ to sign back in</string>
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="uni-dL-qev" userLabel="Stack View - Next">
-                                    <rect key="frame" x="20" y="297.5" width="180" height="101"/>
+                                    <rect key="frame" x="20" y="297.5" width="169" height="101"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCc-Ig-liE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="69" width="64" height="32"/>
+                                            <rect key="frame" x="0.0" y="69" width="53" height="32"/>
                                             <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
-                                            <state key="normal" title="Proceed">
+                                            <state key="normal" title="Sign In">
                                                 <color key="titleColor" name="theme_primary"/>
                                             </state>
                                             <connections>
@@ -93,7 +93,7 @@ to sign back in</string>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuh-BK-JbM" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="79" y="0.0" width="101" height="101"/>
+                                            <rect key="frame" x="68" y="0.0" width="101" height="101"/>
                                             <color key="backgroundColor" name="theme_primary_light"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Uuh-BK-JbM" secondAttribute="height" multiplier="1:1" id="9Nc-Cr-6Dw"/>
@@ -118,10 +118,10 @@ to sign back in</string>
                                 <constraint firstAttribute="trailing" secondItem="7jV-sf-aUO" secondAttribute="trailing" constant="20" id="CAH-3r-Qdy"/>
                                 <constraint firstAttribute="trailing" secondItem="J5Q-R5-iLe" secondAttribute="trailing" constant="20" id="K9I-5J-Uj2"/>
                                 <constraint firstItem="J5Q-R5-iLe" firstAttribute="top" secondItem="7jV-sf-aUO" secondAttribute="bottom" constant="30" id="O0O-4r-3O2"/>
-                                <constraint firstAttribute="bottom" secondItem="J5Q-R5-iLe" secondAttribute="bottom" constant="20" id="TBQ-ca-zgP"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Ucj-XE-hyn"/>
                                 <constraint firstItem="uni-dL-qev" firstAttribute="top" secondItem="J5Q-R5-iLe" secondAttribute="bottom" constant="20" id="YKY-Ak-HIf"/>
                                 <constraint firstItem="uni-dL-qev" firstAttribute="leading" secondItem="hp5-yH-riX" secondAttribute="leading" constant="20" id="a5U-GU-so7"/>
+                                <constraint firstAttribute="bottom" secondItem="uni-dL-qev" secondAttribute="bottom" constant="20" id="kG9-YL-gQQ"/>
                                 <constraint firstItem="7rG-EW-05Z" firstAttribute="leading" secondItem="hp5-yH-riX" secondAttribute="leading" constant="20" id="n2R-7r-t5n"/>
                                 <constraint firstItem="7jV-sf-aUO" firstAttribute="leading" secondItem="hp5-yH-riX" secondAttribute="leading" constant="20" id="u6g-xm-8BP"/>
                             </constraints>
@@ -142,6 +142,9 @@ to sign back in</string>
                     <state key="normal" title="Sign Up">
                         <color key="titleColor" name="theme_primary"/>
                     </state>
+                    <connections>
+                        <action selector="btnSignUpTapped:" destination="-1" eventType="touchUpInside" id="hLX-tr-igw"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtW-ja-aCe" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="20" y="498" width="127" height="30"/>

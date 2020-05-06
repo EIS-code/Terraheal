@@ -17,7 +17,6 @@ class WelcomeVC: MainVC {
     @IBOutlet weak var btnTherapist: ThemeButton!
     @IBOutlet weak var btnProceed: ThemeButton!
     @IBOutlet weak var btnDone: ThemeButton!
-    @IBOutlet weak var mainStkVw: UIStackView!
 
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -68,7 +67,7 @@ class WelcomeVC: MainVC {
 
     // MARK: Action Buttons
     @IBAction func btnDoneTapped(_ sender: Any) {
-        Common.appDelegate.loadTutoraiVC()
+        Common.appDelegate.loadTutoraiVC(navigaionVC: self.navigationController)
     }
 
     // MARK: Other Functions

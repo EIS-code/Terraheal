@@ -8,66 +8,90 @@
 
 import UIKit
 
-class CustomAlert: UIView {
-
+class CustomAlert: ThemeDialogView {
 
     @IBOutlet weak var dialogView: UIView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var lblMessage: ThemeLabel!
     @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var animationVw: UIView!
+    var onBtnCancelTapped : (() -> Void)? = nil
 
 
-
-
-    
     func initialize(message:String) {
-        dialogView.clipsToBounds = true
+        self.initialSetup()
         self.lblMessage.setFont(name: FontName.Ovo, size: FontSize.label_26)
-
-        self.backgroundView.backgroundColor = UIColor.black
-        self.backgroundView.alpha = 0.6
-       self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
         lblMessage.text = message
-        dialogView.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+    }
 
+    func initialSetup() {
+        dialogView.clipsToBounds = true
+        self.backgroundColor = .clear
+        self.backgroundView.backgroundColor = UIColor.black
+        self.backgroundView.alpha = 0.0
+        self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
+        dialogView.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
     }
 
     func show(animated:Bool){
-        self.backgroundColor = .clear
+
+        self.isAnimated = animated
         self.backgroundView.alpha = 0
         self.frame = UIScreen.main.bounds
-        if var topController = UIApplication.shared.delegate?.window??.rootViewController {
-            while let presentedViewController = topController.presentedViewController {
-                topController = presentedViewController
-            }
+        if let topController = Common.appDelegate.getTopViewController() {
             topController.view.addSubview(self)
         }
 
-        self.backgroundView.alpha = 0.66
-    }
-
-    func dismiss(animated:Bool){
         if animated {
-            UIView.animate(withDuration: 0.33, animations: {
-                self.backgroundView.alpha = 0
-            }, completion: { (completed) in
-
-            })
-            UIView.animate(withDuration: 0.33, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 10, options: UIView.AnimationOptions(rawValue: 0), animations: {
-
-            }, completion: { (completed) in
-                self.removeFromSuperview()
-            })
-        }else{
-            self.removeFromSuperview()
+            self.isUserInteractionEnabled = false
+            self.animationVw.alpha = 0.5
+            self.animationVw.transform = CGAffineTransform(translationX: self.frame.midX, y: 0)
+            UIView.animate(withDuration: 0.35, delay: 0, options: [.curveEaseOut], animations: {
+                self.animationVw.transform = CGAffineTransform.identity
+                self.backgroundView.alpha = 0.66
+                self.animationVw.alpha = 1.0
+            }) { (completion) in
+               // self.animationVw.shake()
+                self.isUserInteractionEnabled = true
+            }
+        }
+        else {
+            self.backgroundView.alpha = 0.66
         }
 
     }
-    @objc func didTappedOnBackgroundView(){
-        //dismiss(animated: true)
+
+    func dismiss(){
+        if self.isAnimated {
+            self.animationVw.transform = CGAffineTransform.identity
+            self.backgroundView.alpha = 0.66
+            self.animationVw.alpha = 1.0
+            UIView.animate(withDuration: 0.35, delay: 0.0, options: [.curveEaseOut], animations: {
+                self.animationVw.transform = CGAffineTransform(translationX: self.frame.midX, y: 0)
+                self.backgroundView.alpha = 0.0
+                self.animationVw.alpha = 0.5
+
+            }) { (completion) in
+                self.removeFromSuperview()
+            }
+        }else{
+            self.removeFromSuperview()
+        }
     }
+
+    @objc func didTappedOnBackgroundView(){
+        if isCancellable {
+            dismiss()
+        }
+    }
+
     @IBAction func btnCalcelTapped(_ sender: Any) {
-         dismiss(animated: true)
+        if self.onBtnCancelTapped != nil
+        {
+            self.onBtnCancelTapped!();
+            
+        }
+
     }
 
 }

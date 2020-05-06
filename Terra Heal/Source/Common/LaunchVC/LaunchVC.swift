@@ -30,7 +30,7 @@ class LaunchVC: MainVC {
        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
 
         if PreferenceHelper.shared.getSessionToken().isEmpty() {
-            Common.appDelegate.loadWelcomeVC()
+            Common.appDelegate.loadContactVerificationVC()
             } else {
                 Common.appDelegate.loadWelcomeVC()
             }

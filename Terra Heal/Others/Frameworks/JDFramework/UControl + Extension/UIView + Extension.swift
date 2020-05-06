@@ -75,6 +75,48 @@ public extension UIView {
         let type = self.self
         return UINib(nibName: type.name, bundle: nil)
     }
+
+    func gone(animated: Bool = true) {
+        if animated {
+            fadeOut()
+        } else {
+            self.isHidden = true
+        }
+    }
+
+    func visible(animated: Bool = true) {
+        if animated {
+            fadeIn()
+        } else {
+            self.isHidden = false
+        }
+    }
+
+    func fadeIn(duration: TimeInterval = 0.5,
+                delay: TimeInterval = 0.0,
+                completion: @escaping ((Bool) -> Void) = {(finished: Bool) -> Void in }) {
+        self.alpha = 0.0
+        self.isHidden = false
+        UIView.animate(withDuration: duration,
+                       delay: delay,
+                       options: UIView.AnimationOptions.curveEaseIn,
+                       animations: {
+                        self.alpha = 1.0
+
+        }, completion: completion)
+    }
+
+    func fadeOut(duration: TimeInterval = 0.5,
+                 delay: TimeInterval = 0.0,
+                 completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in }) {
+        UIView.animate(withDuration: duration,
+                       delay: delay,
+                       options: UIView.AnimationOptions.curveEaseIn,
+                       animations: {
+                        self.alpha = 0.0
+                        self.isHidden = true
+        }, completion: completion)
+    }
 }
 
 
@@ -146,3 +188,6 @@ extension UIScrollView {
     }
 
 }
+
+
+
