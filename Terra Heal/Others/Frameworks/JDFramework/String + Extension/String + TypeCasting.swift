@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import UIKit
 
 public extension String  {
     
@@ -47,19 +48,24 @@ public extension String  {
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         if let dateFromString = dateFormatter.date(from: self) {
-            print(dateFromString)   // "2015-08-19 09:00:00 +0000"
             dateFormatter.dateFormat = to
             return dateFormatter.string(from: dateFromString)  // 19-08-2015 06:00 AM -0300"
         }
         return ""
     }
 
+    func getUnderLineAttributedText() -> NSMutableAttributedString {
+        let attributedText = NSMutableAttributedString(string: self)
+        attributedText.addAttribute(NSMutableAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: attributedText.length))
+        return attributedText
+    }
+
+
 }
 
 
 public extension Int {
     func toString() -> String {
-        
         return   String(self )
     }
 }

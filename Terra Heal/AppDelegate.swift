@@ -3,6 +3,7 @@
 //  Copyright © 2019 Jaydeep. All rights reserved.
 //
 import UIKit
+import IQKeyboardManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window = UIWindow(frame:UIScreen.main.bounds)
         self.loadLaunchVC()
-
+        IQKeyboardManager.shared().isEnabled = true
         //self.setupFireBaseConfiguration()
         //self.loadWelcomeVC()
         return true

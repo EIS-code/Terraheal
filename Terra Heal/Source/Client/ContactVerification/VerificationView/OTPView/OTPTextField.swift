@@ -42,6 +42,7 @@ import UIKit
     
     override func awakeFromNib() {
         super.awakeFromNib()
+
     }
     
     override init(frame: CGRect) {
@@ -82,6 +83,9 @@ import UIKit
         if #available(iOS 12.0, *) {
             textContentType = .oneTimeCode
         }
+        textColor = UIColor.themePrimary
+        placeholder = "0"
+        
     }
     
     override func deleteBackward() {

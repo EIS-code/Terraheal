@@ -45,17 +45,17 @@ class TouchIdVC: MainVC {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        imgChecked.setRound()
+        imgChecked?.setRound()
     }
 
     private func initialViewSetup() {
         self.vwBar?.backgroundColor = UIColor.clear
         self.lblTouchIDTitle?.text = "TOUCH_ID_LBL_TITLE".localized()
-        self.lblTouchIDTitle?.setFont(name: FontName.GradDuke, size: FontSize.label_26)
+        self.lblTouchIDTitle?.setFont(name: FontName.SemiBold, size: FontSize.label_26)
         self.lblMessage?.text = "TOUCH_ID_LBL_MESSAGE".localized()
-        self.lblMessage?.setFont(name: FontName.Ovo, size: FontSize.label_18)
+        self.lblMessage?.setFont(name: FontName.Regular, size: FontSize.label_18)
         self.imgChecked?.isHidden = true
-        self.btnUsePassword?.setFont(name: FontName.GradDuke, size: FontSize.button_20)
+        self.btnUsePassword?.setFont(name: FontName.SemiBold, size: FontSize.button_20)
         self.btnUsePassword?.setTitle("TOUCH_ID_BTN_USE_PASSWORD".localized(), for: .normal)
     }
 
@@ -68,7 +68,7 @@ class TouchIdVC: MainVC {
     }
 
     @IBAction func btnUsePasswordTapped(_ sender: UIButton) {
-        Common.appDelegate.loadLoginVC()
+        Common.appDelegate.loadLoginVC(navigaionVC: self.navigationController)
     }
 
     @IBAction func btnFingerPrintTapped(_ sender: UIButton) {
@@ -163,7 +163,7 @@ extension TouchIdVC {
 
     func notifyUser(_ msg: String, err: String?) {
 
-        print(err)
+        
         let alert: CustomAlert = CustomAlert.fromNib()
         alert.initialize(message: msg.localized())
         alert.show(animated: true)

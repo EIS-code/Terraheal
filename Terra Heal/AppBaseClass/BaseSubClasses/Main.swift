@@ -57,20 +57,51 @@ class MainVC: UIViewController {
     func setTitle(title: String) {
         lblTitle?.text = title
     }
-  
+
+
+
  }
 
+//MARK: Location Observer
+extension MainVC {
+    func addLocationObserver() {
+        Common.nCd.removeObserver(self,
+                               name: Common.locationUpdateNtfNm,
+                               object: LC.default)
+        Common.nCd.removeObserver(self,
+                               name: Common.locationFailNtfNm,
+                               object: LC.default)
 
+        unowned let _self = self
+        Common.nCd.addObserver(_self,
+                            selector: #selector(_self.locationUpdate(_:)),
+                            name: Common.locationUpdateNtfNm,
+                            object: LC.default)
+        Common.nCd.addObserver(_self,
+                            selector: #selector(_self.locationFail(_:)),
+                            name: Common.locationFailNtfNm,
+                            object: LC.default)
+    }
+    @objc func locationUpdate(_ ntf: Notification = Common.defaultNtf) {
+        
+    }
+
+    @objc func locationFail(_ ntf: Notification = Common.defaultNtf) {
+
+    }
+}
 
 
 
 
 class CollectionCell: UICollectionViewCell {
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-    }
+
 }
 
 class TableCell: UITableViewCell {
 
 }
+
+
+
+

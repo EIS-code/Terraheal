@@ -44,6 +44,9 @@ class ContactVerificationVC: MainVC {
     @IBOutlet weak var btnProceed: ThemeButton!
     @IBOutlet weak var btnDone: ThemeButton!
 
+    var alertForEmailVerification: VerificationAlert!
+    var alertForMobileVerification: VerificationAlert!
+
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
@@ -69,51 +72,60 @@ class ContactVerificationVC: MainVC {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-
         btnVerifyEmailDone?.setUpRoundedButton()
         btnVerifyMobileDone?.setUpRoundedButton()
         btnDone?.setUpRoundedButton()
-        btnVerifiedEmail.setRound()
-        btnVerifiedMobile.setRound()
+        btnVerifiedEmail?.setRound()
+        btnVerifiedMobile?.setRound()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         stkProceed.isHidden = true
         vwEmailVerified.isHidden = true
         vwMobileVerified.isHidden = true
+        if appSingleton.user.isEmailVerified.toBool {
+            txtEmail.text = appSingleton.user.email
+            self.verifedEmail()
+            self.isEmailVerified = true
+        }
+        if appSingleton.user.isMobileVerified.toBool {
+            txtMobile.text = appSingleton.user.telNumber
+            self.verifedMobile()
+            self.isMobileVerified = true
+        }
+        self.updateProceedUI()
     }
 
     private func initialViewSetup() {
         self.vwBar?.backgroundColor = UIColor.clear
         self.lblHeader?.text = "CONTACT_VERIFICATION_LBL_TITLE".localized()
-        self.lblHeader?.setFont(name: FontName.GradDuke, size: FontSize.label_36)
+        self.lblHeader?.setFont(name: FontName.SemiBold, size: FontSize.label_26)
         self.lblMessage?.text = "CONTACT_VERIFICATION_LBL_MESSAGE".localized()
-        self.lblMessage?.setFont(name: FontName.Ovo, size: FontSize.label_18)
+        self.lblMessage?.setFont(name: FontName.Regular, size: FontSize.label_18)
 
         self.lblVerified?.text = "CONTACT_VERIFICATION_BTN_VERIFIED".localized()
-        self.lblVerified?.setFont(name: FontName.Ovo, size: FontSize.label_18)
+        self.lblVerified?.setFont(name: FontName.Regular, size: FontSize.label_18)
 
         self.lblEmailVerified?.text = "CONTACT_VERIFICATION_BTN_VERIFIED".localized()
-        self.lblEmailVerified?.setFont(name: FontName.Ovo, size: FontSize.label_18)
+        self.lblEmailVerified?.setFont(name: FontName.Regular, size: FontSize.label_18)
 
         self.lblCountryCode?.text = "CONTACT_VERIFICATION_LBL_COUNTRY_CODE".localized()
-        self.lblCountryCode?.setFont(name: FontName.Ovo, size: FontSize.label_18)
+        self.lblCountryCode?.setFont(name: FontName.Regular, size: FontSize.label_18)
 
         self.lblMobileNumber?.text = "CONTACT_VERIFICATION_TXT_MOBILE_NUMBER".localized()
-        self.lblMobileNumber?.setFont(name: FontName.Ovo, size: FontSize.label_18)
-
+        self.lblMobileNumber?.setFont(name: FontName.Regular, size: FontSize.label_18)
 
         self.txtMobile?.placeholder = "CONTACT_VERIFICATION_TXT_MOBILE_NUMBER".localized()
         self.txtCountryCode?.placeholder = "CONTACT_VERIFICATION_LBL_COUNTRY_CODE".localized()
         self.txtEmail?.placeholder = "CONTACT_VERIFICATION_TXT_EMAIL".localized()
         self.txtCountryCode.text = "IN(+91) "
-        self.btnVerifyEmail?.setFont(name: FontName.GradDuke, size: FontSize.button_20)
+        self.btnVerifyEmail?.setFont(name: FontName.SemiBold, size: FontSize.button_20)
         self.btnVerifyEmail?.setTitle("CONTACT_VERIFICATION_BTN_VERIFY".localized(), for: .normal)
 
-        self.btnVerifyMobile?.setFont(name: FontName.GradDuke, size: FontSize.button_20)
+        self.btnVerifyMobile?.setFont(name: FontName.SemiBold, size: FontSize.button_20)
         self.btnVerifyMobile?.setTitle("CONTACT_VERIFICATION_BTN_VERIFY".localized(), for: .normal)
 
-        self.btnProceed?.setFont(name: FontName.GradDuke, size: FontSize.button_20)
+        self.btnProceed?.setFont(name: FontName.SemiBold, size: FontSize.button_20)
         self.btnProceed?.setTitle("CONTACT_VERIFICATION_BTN_PROCEED".localized(), for: .normal)
     }
 
@@ -126,27 +138,58 @@ class ContactVerificationVC: MainVC {
 
 
     @IBAction func btnVerifyEmailTapped(_ sender: UIButton) {
-        if checkValidation() {
-            let alert: VerificationAlert = VerificationAlert.fromNib()
-            alert.initialize(message: "VERIFICATION_EMAIL_TITLE".localized(), data: txtEmail.text!)
-            alert.show(animated: true)
-            alert.onBtnDoneTapped = { [weak alert, weak self] (code:String) in
-                alert?.dismiss()
-                self?.verifedEmail()
-            }
+        self.btnVerifyEmail.isEnabled = false
+        self.btnVerifyEmailDone.isEnabled = false
+        if checkEmailValidation() {
+            self.wsVerifyEmail()
         }
     }
 
     @IBAction func btnVerifyMobileTapped(_ sender: UIButton) {
-        if checkValidation() {
+        if checkMobileValidation() {
+            self.wsVerifyPhone()
+        }
+    }
 
-            let alert: VerificationAlert = VerificationAlert.fromNib()
-            alert.initialize(message: "VERIFICATION_MOBILE_TITLE".localized(), data: txtMobile.text!)
-            alert.show(animated: true)
-            alert.onBtnDoneTapped = { [weak alert, weak self] (code:String) in
-                alert?.dismiss()
-                self?.verifedMobile()
-            }
+    @IBAction func btnNextTapped(_ sender: Any) {
+        Common.appDelegate.loadKycInfoVC()
+    }
+
+    //MARK: Other Function
+    func openEmailVerification() {
+        alertForEmailVerification = VerificationAlert.fromNib()
+        alertForEmailVerification.initialize(message: "VERIFICATION_EMAIL_TITLE".localized(), data: txtEmail.text!)
+        alertForEmailVerification.show(animated: true)
+        alertForEmailVerification.onBtnDoneTapped = { [weak alertForEmailVerification, weak self] (code:String) in
+            self?.wsVerifyEmailOtp(code: code)
+        }
+
+        alertForEmailVerification.onBtnResendTapped = { [weak self] in
+            self?.wsVerifyEmail(isResend: true)
+        }
+        alertForEmailVerification.onBtnCancelTapped = { [weak alertForEmailVerification,  weak self] in
+            alertForEmailVerification?.dismiss()
+            self?.btnVerifyEmail.isEnabled = true
+            self?.btnVerifyEmailDone.isEnabled = true
+        }
+    }
+
+    func openPhoneVerification() {
+
+        alertForMobileVerification = VerificationAlert.fromNib()
+        alertForMobileVerification.initialize(message: "VERIFICATION_MOBILE_TITLE".localized(), data: txtMobile.text!)
+        alertForMobileVerification.show(animated: true)
+        alertForMobileVerification.onBtnDoneTapped = { [weak alertForMobileVerification, weak self] (code:String) in
+            self?.wsVerifyPhoneOtp(code: code)
+        }
+
+        alertForMobileVerification.onBtnResendTapped = { [weak self] in
+            self?.wsVerifyPhone(isResend: true)
+        }
+        alertForMobileVerification.onBtnCancelTapped = { [weak alertForMobileVerification,  weak self] in
+            alertForMobileVerification?.dismiss()
+            self?.btnVerifyMobile.isEnabled = true
+            self?.btnVerifyMobileDone.isEnabled = true
         }
     }
 
@@ -157,6 +200,7 @@ class ContactVerificationVC: MainVC {
         self.isEmailVerified = true
         self.updateProceedUI()
     }
+
     func verifedMobile() {
         self.btnVerifyMobile.isHidden = true
         self.btnVerifyMobileDone.isHidden = true
@@ -171,31 +215,121 @@ class ContactVerificationVC: MainVC {
         }
     }
 
+
+
 }
 
 // MARK: - Web API Methods
 extension ContactVerificationVC {
 
-    private func wsLogin() {
-
+    private func wsVerifyEmail(isResend:Bool = false) {
+        Loader.showLoading()
+        var request: User.RequestEmailOTP = User.RequestEmailOTP()
+        request.email = txtEmail.text?.trim() ?? ""
+        AppWebApi.getEmailOtp(params: request) { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
+                if isResend {
+                    self.alertForEmailVerification.otpTextFieldView.clearTextField()
+                } else {
+                    self.openEmailVerification()
+                }
+            } else {
+                self.btnVerifyEmail.isEnabled = true
+                self.btnVerifyEmailDone.isEnabled = true
+            }
+        }
     }
 
-    func checkValidation() -> Bool {
+    private func wsVerifyEmailOtp(code:String) {
+        Loader.showLoading()
+        var request: User.RequestVerifyEmailOTP = User.RequestVerifyEmailOTP()
+        request.otp = code
+        AppWebApi.verifyEmailOtp(params: request) { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
+                self.alertForEmailVerification.dismiss()
+                self.verifedEmail()
+                self.btnVerifyEmail.isEnabled = true
+                self.btnVerifyEmailDone.isEnabled = true
+            } else {
 
-        /*if !txtEmail.text!.isValidEmail() {
+                self.btnVerifyEmail.isEnabled = true
+                self.btnVerifyEmailDone.isEnabled = true
+            }
+        }
+    }
+
+
+    private func wsVerifyPhone(isResend:Bool = false) {
+        Loader.showLoading()
+        var request: User.RequestPhoneOTP = User.RequestPhoneOTP()
+        request.mobile = txtMobile.text?.trim() ?? ""
+        AppWebApi.getPhoneOtp(params: request) { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
+                if isResend {
+                    self.alertForMobileVerification.otpTextFieldView.clearTextField()
+                } else {
+                    self.openPhoneVerification()
+                }
+            } else {
+                self.btnVerifyMobile.isEnabled = true
+                self.btnVerifyMobileDone.isEnabled = true
+
+            }
+        }
+    }
+
+    private func wsVerifyPhoneOtp(code:String) {
+        Loader.showLoading()
+        var request: User.RequestVerifyPhoneOTP = User.RequestVerifyPhoneOTP()
+        request.otp = code
+        AppWebApi.verifyPhoneOtp(params: request) { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
+                self.alertForMobileVerification.dismiss()
+                self.verifedMobile()
+                self.btnVerifyMobile.isEnabled = true
+                self.btnVerifyMobileDone.isEnabled = true
+            } else {
+
+                self.btnVerifyMobile.isEnabled = true
+                self.btnVerifyMobileDone.isEnabled = true
+            }
+        }
+    }
+
+    func checkEmailValidation() -> Bool {
+        if !txtEmail.text!.isValidEmail() {
             let alert: CustomAlert = CustomAlert.fromNib()
             alert.initialize(message: "VALIDATION_MSG_INVALID_EMAIL".localized())
             alert.show(animated: true)
             alert.onBtnCancelTapped = {
                 [weak alert, weak self] in
-                alert?.removeFromSuperview();
                 alert?.dismiss()
-                 _ = self?.txtEmail.becomeFirstResponder()
+                _ = self?.txtEmail.becomeFirstResponder()
+                self?.btnVerifyEmail.isEnabled = true
+                self?.btnVerifyEmailDone.isEnabled = true
             }
             return false
-        }*/
-
+        }
         return true
     }
-
+    func checkMobileValidation() -> Bool {
+        if txtMobile.text!.isEmpty() {
+            let alert: CustomAlert = CustomAlert.fromNib()
+            alert.initialize(message: "VALIDATION_MSG_INVALID_MOBILE".localized())
+            alert.show(animated: true)
+            alert.onBtnCancelTapped = {
+                [weak alert, weak self] in
+                alert?.dismiss()
+                _ = self?.txtMobile.becomeFirstResponder()
+                self?.btnVerifyMobile.isEnabled = false
+                self?.btnVerifyMobileDone.isEnabled = false
+            }
+            return false
+        }
+        return true
+    }
 }

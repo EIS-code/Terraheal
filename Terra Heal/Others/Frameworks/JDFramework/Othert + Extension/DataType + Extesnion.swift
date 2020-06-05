@@ -5,6 +5,29 @@
 
 import Foundation
 
+
+public extension Data {
+
+    func toDictionary() throws -> [String:Any] {
+        if  let jsonString = String(data: self, encoding: String.Encoding.utf8) {
+            guard let data = jsonString.data(using: .utf8) else { return [:] }
+            let anyResult: Any = try JSONSerialization.jsonObject(with: data, options: [])
+            return (anyResult as? [String: Any]) ?? [:]
+        }
+        return [:]
+    }
+
+
+}
+
+public extension String {
+    func convertToDictionary() throws -> [String: String] {
+        guard let data = self.data(using: .utf8) else { return [:] }
+        let anyResult: Any = try JSONSerialization.jsonObject(with: data, options: [])
+        return (anyResult as? [String: Any])?.convertValues as! [String : String]
+    }
+}
+
 public extension Dictionary {
 
     var jsonData: Data? {
@@ -150,4 +173,50 @@ public extension Array {
 
 
 
+}
+
+//MARK_ Date Extention
+public extension Date {
+
+    var millisecondsSince1970:Double {
+        return Double((self.timeIntervalSince1970 * 1000.0).rounded())
+    }
+
+    init(milliseconds:Double) {
+        self = Date(timeIntervalSince1970: TimeInterval(milliseconds) / 1000)
+    }
+
+    func startOfMonth() -> Date {
+        return Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self)))!
+    }
+
+    func endOfMonth() -> Date {
+        return Calendar.current.date(byAdding: DateComponents(month: 1, second: -1), to: self.startOfMonth())!
+    }
+
+    func nextMonth() -> Date {
+        var dateComponent = DateComponents()
+        dateComponent.month = 1
+        return Calendar.current.date(byAdding: dateComponent, to: self) ?? Date()
+    }
+    func previousMonth() ->  Date {
+        var dateComponent = DateComponents()
+        dateComponent.month = -1
+        return Calendar.current.date(byAdding: dateComponent, to: self) ?? Date()
+    }
+
+    static func millisecondsOfDay(day: Int) -> Double {
+        return Double(86400 * day)
+    }
+    func toString(format:String, timezone:TimeZone = TimeZone.current) -> String {
+        let dtFormatter: DateFormatter = DateFormatter()
+        dtFormatter.dateFormat = format
+        dtFormatter.timeZone = timezone
+        return dtFormatter.string(from: self)
+    }
+
+    static func milliSecToDate(milliseconds:Double, format:String,timezone:TimeZone = TimeZone.current) ->   String {
+        let date = Date(timeIntervalSince1970: TimeInterval(milliseconds) / 1000)
+        return date.toString(format: format)
+    }
 }

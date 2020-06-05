@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScanSelfieVC" customModule="Terra_Heal" customModuleProvider="target">
+            <connections>
+                <outlet property="btnScanNow" destination="phD-1A-sjB" id="WMx-LZ-vi1"/>
+                <outlet property="lblHeader" destination="xOG-OI-OfF" id="hde-C2-8N6"/>
+                <outlet property="previewView" destination="x2x-t5-uLr" id="C7c-85-xpc"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x2x-t5-uLr">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-face" translatesAutoresizingMaskIntoConstraints="NO" id="qbS-uh-3lP">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOG-OI-OfF" userLabel="lblTitle" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="32" y="457.5" width="256" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="theme_primary"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phD-1A-sjB" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="59" y="508" width="202" height="30"/>
+                    <color key="backgroundColor" name="theme_primary_light_background"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="phD-1A-sjB" secondAttribute="height" multiplier="128:19" id="2wi-nn-wKp"/>
+                    </constraints>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" name="theme_primary"/>
+                    </state>
+                    <connections>
+                        <action selector="btnScanTapped:" destination="-1" eventType="touchUpInside" id="GS7-Ux-bQM"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="x2x-t5-uLr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="083-w7-gdO"/>
+                <constraint firstItem="x2x-t5-uLr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="1Sc-Zj-1jW"/>
+                <constraint firstItem="qbS-uh-3lP" firstAttribute="bottom" secondItem="x2x-t5-uLr" secondAttribute="bottom" id="ARc-dm-pE0"/>
+                <constraint firstItem="phD-1A-sjB" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="CuN-uD-NgF"/>
+                <constraint firstItem="qbS-uh-3lP" firstAttribute="leading" secondItem="x2x-t5-uLr" secondAttribute="leading" id="LZw-62-dFo"/>
+                <constraint firstItem="qbS-uh-3lP" firstAttribute="top" secondItem="x2x-t5-uLr" secondAttribute="top" id="N93-vG-g6i"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="phD-1A-sjB" secondAttribute="bottom" constant="30" id="QZR-M5-j5n"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="x2x-t5-uLr" secondAttribute="bottom" id="SiR-TD-QfU"/>
+                <constraint firstItem="qbS-uh-3lP" firstAttribute="trailing" secondItem="x2x-t5-uLr" secondAttribute="trailing" id="aQQ-eD-8qZ"/>
+                <constraint firstItem="phD-1A-sjB" firstAttribute="top" secondItem="xOG-OI-OfF" secondAttribute="bottom" constant="30" id="jee-k5-UTM"/>
+                <constraint firstItem="xOG-OI-OfF" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="jlt-z9-ddL"/>
+                <constraint firstItem="xOG-OI-OfF" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="q8z-Di-y6i"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="x2x-t5-uLr" secondAttribute="trailing" id="vwO-Gf-4dD"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="131" y="154"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="asset-face" width="533.33331298828125" height="533.33331298828125"/>
+        <namedColor name="theme_primary">
+            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary_light_background">
+            <color red="0.94509803921568625" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

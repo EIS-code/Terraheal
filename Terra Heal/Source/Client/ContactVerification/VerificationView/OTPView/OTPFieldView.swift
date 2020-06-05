@@ -57,21 +57,21 @@ import UIKit
     /// Different display type for text fields.
     
     
-    public var displayType: DisplayType = .circular
+    public var displayType: DisplayType = .square
     public var fieldsCount: Int = 4
     public var otpInputType: KeyboardType = .numeric
-    public var fieldFont: UIFont = UIFont.systemFont(ofSize: 20)
+    public var fieldFont: UIFont = FontHelper.font(name: FontName.SemiBold, size: FontSize.label_36)
     public var secureEntry: Bool = false
     public var hideEnteredText: Bool = false
     public var requireCursor: Bool = true
-    public var cursorColor: UIColor = UIColor.blue
+    public var cursorColor: UIColor = UIColor.themePrimary
     public var fieldSize: CGFloat = 60
     public var separatorSpace: CGFloat = 16
     public var fieldBorderWidth: CGFloat = 1
     public var shouldAllowIntermediateEditing: Bool = true
-    public var defaultBackgroundColor: UIColor = UIColor.white
-    public var filledBackgroundColor: UIColor = UIColor.white
-    public var defaultBorderColor: UIColor = UIColor.gray
+    public var defaultBackgroundColor: UIColor = UIColor.clear
+    public var filledBackgroundColor: UIColor = UIColor.clear
+    public var defaultBorderColor: UIColor = UIColor.clear
     public var filledBorderColor: UIColor = UIColor.clear
     public var errorBorderColor: UIColor?
     
@@ -103,8 +103,18 @@ import UIKit
             oldOtpField?.removeFromSuperview()
             
             let otpField = getOTPField(forIndex: index)
+            oldOtpField?.placeholder = "0"
             addSubview(otpField)
             
+            secureEntryData.append("")
+        }
+    }
+    func clearTextField() {
+        secureEntryData.removeAll()
+        for index in stride(from: 0, to: fieldsCount, by: 1) {
+            let oldOtpField = viewWithTag(index + 1) as? OTPTextField
+            oldOtpField?.text = ""
+            oldOtpField?.placeholder = "0"
             secureEntryData.append("")
         }
     }
@@ -147,7 +157,7 @@ import UIKit
             otpField.tintColor = cursorColor
         }
         else {
-            otpField.tintColor = UIColor.clear
+            otpField.tintColor = cursorColor
         }
         
         // Set the default background color when text not set

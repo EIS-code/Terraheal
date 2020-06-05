@@ -17,27 +17,54 @@ class VerificationAlert: ThemeDialogView {
     @IBOutlet weak var btnDone: ThemeButton!
     @IBOutlet weak var dialogView: UIView!
 
-    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var btnMobile: ThemeButton!
+    @IBOutlet weak var btnEmail: ThemeButton!
+
+    @IBOutlet weak var vwTabMobile: UIView!
+    @IBOutlet weak var vwTabEmail: UIView!
+    @IBOutlet weak var vwSegment: UIView!
+
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet var otpTextFieldView: OTPFieldView!
-    @IBOutlet weak var animationVw: UIView!
     @IBOutlet weak var btnResend: UnderlineTextButton!
+
+    var currentTab = 0
 
     var verificationData: String = ""
 
-    var onBtnCancelTapped : (() -> Void)? = nil
-    var onBtnDoneTapped : ((_ code:String) -> Void)? = nil
+    var onBtnResendTapped: (() -> Void)? = nil
+    var onBtnDoneTapped: ((_ code:String) -> Void)? = nil
+    var onBtnCancelTapped: (() -> Void)? = nil
 
-    var code:String = ""
+    var strEnteredOtp:String = ""
+
+    //Animation Properties
+    var animationDirection: AnimationDirection = .undefined
+    var transitionAnimator: UIViewPropertyAnimator? = nil
+    var animationProgress: CGFloat = 0
+    var yPostion: CGFloat = 0.0
+
     func initialize(message:String, data:String) {
 
         self.lblTitle.text = "VERIFICATION_LBL_TITLE".localized()
         self.lblMessage.text = message
         self.lblMessageDetail.text = "VERIFICATION_MSG_DETAIL".localized() + " " + data
         self.verificationData = data
+
+
         self.btnVerify.setTitle("VERIFICATION_BTN_VERIFY".localized(), for: .normal)
+        self.btnVerify.setFont(name: FontName.SemiBold, size: FontSize.button_14)
+        self.btnVerify.setHighlighted(isHighlighted: true)
         self.btnResend.setTitle("VERIFICATION_BTN_RESEND".localized(), for: .normal)
+        self.btnVerify.setFont(name: FontName.SemiBold, size: FontSize.button_14)
+
+        self.btnEmail.setTitle("VERIFICATION_BTN_EMAIL".localized(), for: .normal)
+        self.btnEmail.setFont(name: FontName.SemiBold, size: FontSize.button_14)
+        self.btnMobile.setTitle("VERIFICATION_BTN_MOBILE".localized(), for: .normal)
+        self.btnMobile.setFont(name: FontName.SemiBold, size: FontSize.button_14)
+        self.btnMobileTapped(self.btnMobile)
         self.initialSetup()
+
 
     }
 
@@ -48,15 +75,48 @@ class VerificationAlert: ThemeDialogView {
         self.backgroundView.alpha = 0.0
         self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
         dialogView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
-        self.lblTitle.setFont(name: FontName.GradDuke, size: FontSize.button_22)
-        self.lblMessage.setFont(name: FontName.GradDuke, size: FontSize.button_22)
-        self.lblMessageDetail.setFont(name: FontName.Ovo, size: FontSize.label_14)
+        self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.button_22)
+        self.lblMessage.setFont(name: FontName.SemiBold, size: FontSize.button_22)
+        self.lblMessageDetail.setFont(name: FontName.Regular, size: FontSize.label_14)
         self.setupOtpView()
+        self.addPanGesture(view: self)
+        transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
+
+        vwTabMobile.setRound(withBorderColor: UIColor.clear, andCornerRadious: vwTabEmail.bounds.height/2, borderWidth: 1.0)
+        vwSegment.setRound(withBorderColor: UIColor.clear, andCornerRadious: vwSegment.bounds.height/2, borderWidth: 1.0)
+        vwTabEmail.setRound(withBorderColor: UIColor.clear, andCornerRadious: vwTabEmail.bounds.height/2, borderWidth: 1.0)
 
     }
     override func layoutSubviews() {
         super.layoutSubviews()
         self.btnDone?.setUpRoundedButton()
+    }
+
+
+    @IBAction func btnMobileTapped(_ sender: UIButton) {
+        self.currentTab = 0
+        self.updateButton(button: btnMobile)
+        self.wsVerifyPhone()
+    }
+
+    @IBAction func btnEmailTapped(_ sender: UIButton) {
+        self.currentTab = 1
+        self.updateButton(button: btnEmail)
+        self.wsVerifyEmail()
+    }
+
+    func updateButton(button: UIButton) {
+        if button == btnMobile {
+            vwTabMobile.isHidden = false
+            vwTabEmail.isHidden = true
+            btnMobile.setTitleColor(UIColor.themeLightTextColor, for: .normal)
+            btnEmail.setTitleColor(UIColor.themePrimary, for: .normal)
+        } else {
+            vwTabMobile.isHidden = true
+            vwTabEmail.isHidden = false
+            btnEmail.setTitleColor(UIColor.themeLightTextColor, for: .normal)
+            btnMobile.setTitleColor(UIColor.themePrimary, for: .normal)
+        }
     }
     func show(animated:Bool){
 
@@ -69,14 +129,14 @@ class VerificationAlert: ThemeDialogView {
 
         if animated {
             self.isUserInteractionEnabled = false
-            self.animationVw.alpha = 0.5
-            self.animationVw.transform = CGAffineTransform(translationX: 0, y: self.frame.maxY)
-            UIView.animate(withDuration: 0.35, delay: 0, options: [.curveEaseOut], animations: {
-                self.animationVw.transform = CGAffineTransform.identity
+            self.dialogView.alpha = 0.1
+            self.dialogView.transform = CGAffineTransform(translationX: 0.0, y: self.frame.maxY)
+            UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseInOut], animations: {
+                self.dialogView.transform = CGAffineTransform.identity
                 self.backgroundView.alpha = 0.66
-                self.animationVw.alpha = 1.0
+                self.dialogView.alpha = 1.0
             }) { (completion) in
-                // self.animationVw.shake()
+                //self.animationVw.shake()
                 self.isUserInteractionEnabled = true
             }
         }
@@ -88,20 +148,24 @@ class VerificationAlert: ThemeDialogView {
 
     func dismiss(){
         if self.isAnimated {
-            self.animationVw.transform = CGAffineTransform.identity
+            self.dialogView.transform = CGAffineTransform.identity
             self.backgroundView.alpha = 0.66
-            self.animationVw.alpha = 1.0
-            UIView.animate(withDuration: 0.35, delay: 0.0, options: [.curveEaseOut], animations: {
-                self.animationVw.transform = CGAffineTransform(translationX: 0, y: self.frame.maxY)
+            self.dialogView.alpha = 1.0
+            UIView.animate(withDuration: 0.25, delay: 0.0, options: [.curveEaseInOut], animations: {
+
+                self.dialogView.transform = CGAffineTransform(translationX: 0, y: self.frame.maxY)
                 self.backgroundView.alpha = 0.0
-                self.animationVw.alpha = 0.5
+                self.dialogView.alpha = 0.1
+
             }) { (completion) in
                 self.removeFromSuperview()
             }
         }else{
             self.removeFromSuperview()
         }
+
     }
+
 
     @objc func didTappedOnBackgroundView(){
         if isCancellable {
@@ -109,17 +173,28 @@ class VerificationAlert: ThemeDialogView {
         }
     }
 
-    @IBAction func btnCalcelTapped(_ sender: Any) {
-        if self.onBtnCancelTapped != nil {
-            self.onBtnCancelTapped!();
+    @IBAction func btnResendTapped(_ sender: Any) {
+        if self.onBtnResendTapped != nil {
+            self.onBtnResendTapped!();
+            if currentTab == 1 {
+                self.wsVerifyEmail(isResend: true)
+            } else {
+                self.wsVerifyPhone(isResend: true)
+            }
         }
     }
 
     @IBAction func btnDoneTapped(_ sender: Any) {
-
-        if self.onBtnDoneTapped != nil {
-            self.onBtnDoneTapped!(code);
+        if strEnteredOtp.isEmpty() {
+            Common.showAlert(message: "VALIDATION_MSG_PLEASE_ENTER_OTP".localized())
+        } else {
+            if currentTab == 1 {
+                self.wsVerifyEmailOtp(code: strEnteredOtp)
+            } else {
+                self.wsVerifyPhoneOtp(code: strEnteredOtp)
+            }
         }
+
     }
 
 }
@@ -128,9 +203,9 @@ extension VerificationAlert:  OTPFieldViewDelegate {
 
     func setupOtpView(){
         self.otpTextFieldView.fieldsCount = 4
-        self.otpTextFieldView.fieldBorderWidth = 1
-        self.otpTextFieldView.defaultBorderColor = UIColor.themePrimaryBorder
-        self.otpTextFieldView.filledBorderColor = UIColor.themePrimary
+        self.otpTextFieldView.fieldBorderWidth = 0
+        self.otpTextFieldView.defaultBorderColor = UIColor.clear
+        self.otpTextFieldView.filledBorderColor = UIColor.clear
         self.otpTextFieldView.cursorColor = UIColor.themePrimary
         self.otpTextFieldView.displayType = .square
         self.otpTextFieldView.fieldSize = 60
@@ -140,7 +215,6 @@ extension VerificationAlert:  OTPFieldViewDelegate {
         self.otpTextFieldView.initializeUI()
     }
     func hasEnteredAllOTP(hasEnteredAll hasEntered: Bool) -> Bool {
-        print("Has entered all OTP? \(hasEntered)")
         return false
     }
 
@@ -149,7 +223,193 @@ extension VerificationAlert:  OTPFieldViewDelegate {
     }
 
     func enteredOTP(otp otpString: String) {
-        self.code = otpString
-        print("OTPString: \(otpString)")
+        self.strEnteredOtp = otpString
     }
+    func updateVerificationView() {
+        Singleton.saveInDb()
+        if Singleton.shared.user.isContactVerified() {
+            if self.onBtnDoneTapped != nil {
+                self.onBtnDoneTapped!(strEnteredOtp);
+            }
+        }
+
+    }
+}
+
+
+//MARK:   - Interative Animation
+extension  VerificationAlert {
+
+    func addPanGesture(view: UIView) {
+        let recognizer = UIPanGestureRecognizer()
+        recognizer.addTarget(self, action: #selector(viewPanned(recognizer:))) // will be defined later!
+        view.addGestureRecognizer(recognizer)
+    }
+
+    func dismissWithInteractiveAnimation() {
+
+    }
+
+    private func directionFromVelocity(_ velocity: CGPoint) -> AnimationDirection {
+        guard velocity != .zero else { return .undefined }
+        let isVertical = abs(velocity.y) > abs(velocity.x)
+        var derivedDirection: AnimationDirection = .undefined
+        if isVertical {
+            derivedDirection = velocity.y < 0 ? .up: .down
+        }
+        else {
+            derivedDirection = velocity.x < 0 ? .left: .right
+        }
+        return derivedDirection
+    }
+
+
+    @objc func viewPanned(recognizer: UIPanGestureRecognizer) {
+        let velocity = recognizer.velocity(in: self)
+        let translate: CGPoint = recognizer.translation(in: self)
+        let direction:AnimationDirection =  directionFromVelocity(velocity)
+
+        switch recognizer.state {
+        case .began:
+
+            if transitionAnimator?.isRunning ?? true {
+                transitionAnimator?.stopAnimation(true)
+            }
+            animationProgress = transitionAnimator?.fractionComplete ??  0
+            self.addDissmissAnimation(direction: direction)
+            transitionAnimator?.pauseAnimation()
+            yPostion = translate.y
+        case .changed:
+            let totalYSwipe: CGFloat = translate.x - yPostion
+            let height: CGFloat = UIScreen.main.bounds.size.height
+            let percentage = CGFloat(abs(Float(totalYSwipe))) / height
+            animationProgress  = percentage
+            transitionAnimator?.fractionComplete = animationProgress
+
+        case .ended, .failed , .cancelled:
+            transitionAnimator?.stopAnimation(true)
+            self.addDissmissAnimation(direction: direction)
+            transitionAnimator?.startAnimation()
+
+        default:
+            break
+        }
+    }
+    func addDissmissAnimation(direction:AnimationDirection) {
+
+
+        switch  direction {
+        case .up:
+            transitionAnimator?.stopAnimation(true)
+            transitionAnimator?.addAnimations {
+                self.dialogView.transform = CGAffineTransform.identity
+                self.backgroundView.alpha = 0.66
+                self.dialogView.alpha = 1.0
+            }
+            transitionAnimator?.addCompletion({ (position) in
+                self.isUserInteractionEnabled = true
+            })
+
+        case .down:
+            transitionAnimator?.stopAnimation(true)
+            transitionAnimator?.addAnimations {
+                self.dialogView.transform = CGAffineTransform(translationX:0, y: self.frame.maxY)
+                self.backgroundView.alpha = 0.0
+                self.dialogView.alpha = 0.1
+            }
+            transitionAnimator?.addCompletion({ (position) in
+                self.removeFromSuperview()
+                if self.onBtnCancelTapped != nil {
+                    self.onBtnCancelTapped!();
+                }
+            })
+        case .left,.right:
+            print("No Animation")
+        default:
+            print("No Animation")
+
+        }
+
+
+
+    }
+
+
+}
+
+
+//MARK:   - WS Web API
+extension VerificationAlert {
+
+    private func wsVerifyEmail(isResend:Bool = false) {
+        if appSingleton.user.isEmailVerified.toBool {
+            self.btnMobileTapped(self.btnMobile)
+            return;
+        }
+        Loader.showLoading()
+        var request: User.RequestEmailOTP = User.RequestEmailOTP()
+        request.email = Singleton.shared.user.email
+        AppWebApi.getEmailOtp(params: request) { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
+                self.otpTextFieldView.clearTextField()
+            } else {
+
+            }
+        }
+    }
+
+    private func wsVerifyEmailOtp(code:String) {
+        Loader.showLoading()
+        var request: User.RequestVerifyEmailOTP = User.RequestVerifyEmailOTP()
+        request.otp = code
+        AppWebApi.verifyEmailOtp(params: request) { (response) in
+            Loader.hideLoading()
+            self.otpTextFieldView.clearTextField()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
+                Singleton.shared.user.isEmailVerified = Constant.True
+                self.updateVerificationView()
+            } else {
+
+            }
+        }
+    }
+
+
+    private func wsVerifyPhone(isResend:Bool = false) {
+        if appSingleton.user.isMobileVerified.toBool {
+            self.btnEmailTapped(self.btnEmail)
+            return;
+        }
+        Loader.showLoading()
+        var request: User.RequestPhoneOTP = User.RequestPhoneOTP()
+        request.mobile = Singleton.shared.user.telNumber
+        AppWebApi.getPhoneOtp(params: request) { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
+               self.otpTextFieldView.clearTextField()
+            } else {
+
+            }
+        }
+    }
+
+    private func wsVerifyPhoneOtp(code:String) {
+        Loader.showLoading()
+        var request: User.RequestVerifyPhoneOTP = User.RequestVerifyPhoneOTP()
+        request.otp = code
+        AppWebApi.verifyPhoneOtp(params: request) { (response) in
+            Loader.hideLoading()
+            self.otpTextFieldView.clearTextField()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
+                Singleton.shared.user.isMobileVerified = Constant.True
+                self.updateVerificationView()
+            } else {
+
+
+            }
+        }
+    }
+
+
 }

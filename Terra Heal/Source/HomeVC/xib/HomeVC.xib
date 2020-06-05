@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="Terra_Heal" customModuleProvider="target">
+            <connections>
+                <outlet property="btnExplore" destination="8VY-Ru-88k" id="CbQ-1R-zHg"/>
+                <outlet property="btnHome" destination="NU1-d2-8lI" id="lS1-ta-O8j"/>
+                <outlet property="btnMenu" destination="dk0-AN-Hja" id="WOd-ft-33V"/>
+                <outlet property="btnMyFav" destination="bj0-sB-0V4" id="3v0-A7-b8z"/>
+                <outlet property="btnProfile" destination="ABs-WT-4wl" id="LaB-7n-cf4"/>
+                <outlet property="lblMenu" destination="N3u-tX-aNr" id="bJM-ip-PJt"/>
+                <outlet property="lblUserName" destination="YhJ-oo-h2F" id="Nob-bg-njO"/>
+                <outlet property="tableView" destination="aVT-f3-Mwd" id="nhg-gV-smz"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="19.999999999999996" y="64" width="52.666666666666657" height="52.666666666666657"/>
+                    <color key="backgroundColor" name="theme_primary_light_background"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="dk0-AN-Hja" secondAttribute="height" multiplier="1:1" id="UQN-iw-RUR"/>
+                    </constraints>
+                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                    <state key="normal" image="asset-menu"/>
+                    <connections>
+                        <action selector="btnMenuTapped:" destination="-1" eventType="touchUpInside" id="33P-8Q-amw"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3u-tX-aNr" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="19.999999999999996" y="126.66666666666667" width="52.666666666666657" height="20.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="theme_primary"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABs-WT-4wl" userLabel="btnProfile" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="302.33333333333331" y="64" width="52.666666666666686" height="52.666666666666657"/>
+                    <color key="backgroundColor" name="theme_primary_light_background"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ABs-WT-4wl" secondAttribute="height" multiplier="1:1" id="rbh-eT-iAL"/>
+                    </constraints>
+                    <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                    <state key="normal" image="asset-user"/>
+                    <connections>
+                        <action selector="btnProfileTapped:" destination="-1" eventType="touchUpInside" id="BB9-uY-RSI"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YhJ-oo-h2F" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="269.33333333333331" y="126.66666666666667" width="85.666666666666686" height="20.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="theme_primary"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-f3-Mwd">
+                    <rect key="frame" x="20" y="167" width="335" height="531"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ma-qC-KU9" userLabel="footerView">
+                    <rect key="frame" x="0.0" y="698" width="375" height="60"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="U88-Fa-t5h">
+                            <rect key="frame" x="10" y="10" width="355" height="40"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NU1-d2-8lI" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="105" height="40"/>
+                                    <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="Home" image="asset-home"/>
+                                    <state key="selected" image="asset-home-selected"/>
+                                    <connections>
+                                        <action selector="btnHomeTapped:" destination="-1" eventType="touchUpInside" id="7EL-ak-A7I"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8VY-Ru-88k" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="125" y="0.0" width="105" height="40"/>
+                                    <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="Home" image="asset-home"/>
+                                    <state key="selected" image="asset-home-selected"/>
+                                    <connections>
+                                        <action selector="btnExploreTapped:" destination="-1" eventType="touchUpInside" id="618-8P-fL3"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bj0-sB-0V4" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="250" y="0.0" width="105" height="40"/>
+                                    <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="Home" image="asset-home"/>
+                                    <state key="selected" image="asset-home-selected"/>
+                                    <connections>
+                                        <action selector="btnMyFavTapped:" destination="-1" eventType="touchUpInside" id="cin-zW-JBX"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="U88-Fa-t5h" firstAttribute="top" secondItem="9ma-qC-KU9" secondAttribute="top" constant="10" id="bQ5-Jk-UVU"/>
+                        <constraint firstAttribute="width" secondItem="9ma-qC-KU9" secondAttribute="height" multiplier="375:60" id="kFN-bS-I1J"/>
+                        <constraint firstItem="U88-Fa-t5h" firstAttribute="leading" secondItem="9ma-qC-KU9" secondAttribute="leading" constant="10" id="lYh-P4-jRa"/>
+                        <constraint firstAttribute="bottom" secondItem="U88-Fa-t5h" secondAttribute="bottom" constant="10" id="rxi-OT-7CA"/>
+                        <constraint firstAttribute="trailing" secondItem="U88-Fa-t5h" secondAttribute="trailing" constant="10" id="wgX-kv-XjL"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ABs-WT-4wl" firstAttribute="bottom" secondItem="dk0-AN-Hja" secondAttribute="bottom" id="01X-zc-s15"/>
+                <constraint firstItem="aVT-f3-Mwd" firstAttribute="top" secondItem="N3u-tX-aNr" secondAttribute="bottom" constant="20" id="12k-3X-GBL"/>
+                <constraint firstItem="dk0-AN-Hja" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="20" id="1iZ-Cw-RkL"/>
+                <constraint firstItem="YhJ-oo-h2F" firstAttribute="top" secondItem="ABs-WT-4wl" secondAttribute="bottom" constant="10" id="1uJ-H7-Abo"/>
+                <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="9ma-qC-KU9" secondAttribute="bottom" constant="20" id="3gc-dr-oxx"/>
+                <constraint firstItem="N3u-tX-aNr" firstAttribute="leading" secondItem="dk0-AN-Hja" secondAttribute="leading" id="CNZ-JV-6We"/>
+                <constraint firstItem="N3u-tX-aNr" firstAttribute="centerX" secondItem="dk0-AN-Hja" secondAttribute="centerX" id="Dcz-PO-ml8"/>
+                <constraint firstItem="aVT-f3-Mwd" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="FOw-Mx-kMa"/>
+                <constraint firstItem="9ma-qC-KU9" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" id="Ios-hz-b0s"/>
+                <constraint firstItem="YhJ-oo-h2F" firstAttribute="trailing" secondItem="ABs-WT-4wl" secondAttribute="trailing" id="Ngl-uq-iID"/>
+                <constraint firstItem="dk0-AN-Hja" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="PCD-nQ-9GP"/>
+                <constraint firstItem="N3u-tX-aNr" firstAttribute="top" secondItem="dk0-AN-Hja" secondAttribute="bottom" constant="10" id="XFJ-hK-Smd"/>
+                <constraint firstItem="9ma-qC-KU9" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="Ysm-98-fJc"/>
+                <constraint firstItem="9ma-qC-KU9" firstAttribute="top" secondItem="aVT-f3-Mwd" secondAttribute="bottom" id="bmE-XN-qup"/>
+                <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="ABs-WT-4wl" secondAttribute="trailing" constant="20" id="gpq-kw-Vhw"/>
+                <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="aVT-f3-Mwd" secondAttribute="trailing" constant="20" id="jaq-Pv-ANN"/>
+                <constraint firstItem="YhJ-oo-h2F" firstAttribute="centerX" relation="lessThanOrEqual" secondItem="ABs-WT-4wl" secondAttribute="centerX" id="n3n-4Q-Me4"/>
+                <constraint firstItem="ABs-WT-4wl" firstAttribute="top" secondItem="dk0-AN-Hja" secondAttribute="top" id="oat-40-21O"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
+            <point key="canvasLocation" x="131" y="154"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="asset-home" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="asset-home-selected" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="asset-menu" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="asset-user" width="42.666667938232422" height="42.666667938232422"/>
+        <namedColor name="theme_primary">
+            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary_light_background">
+            <color red="0.94509803921568625" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

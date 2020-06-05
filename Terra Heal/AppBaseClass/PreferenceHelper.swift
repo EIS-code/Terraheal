@@ -10,6 +10,7 @@ class PreferenceHelper: NSObject {
    
     // MARK: User Preference Keys
     private let KEY_USER_ID = "user_id"
+    private let KEY_IS_TUTORIAL_SHOW = "is_tutorial_show"
     private let KEY_SESSION_TOKEN = "session_token"
     private let KEY_DEVICE_TOKEN = "device_token";
     
@@ -18,9 +19,7 @@ class PreferenceHelper: NSObject {
     private override init(){
     }
     
-    deinit {
-       //print("\(self) \(#function)")
-    }
+
 
     // MARK: Preference User Getter Setters
     func setDeviceToken(_ token:String) {
@@ -44,7 +43,15 @@ class PreferenceHelper: NSObject {
     func getSessionToken() -> String {
         return (ph.value(forKey: KEY_SESSION_TOKEN) as? String) ?? ""
     }
-    
+
+    // MARK: Preference User Getter Setters
+    func setIsTutorialShow(_ isShow:Bool) {
+        ph.set(isShow, forKey: KEY_IS_TUTORIAL_SHOW);
+        ph.synchronize();
+    }
+    func getIsTutorialShow() -> Bool {
+        return (ph.value(forKey: KEY_IS_TUTORIAL_SHOW) as? Bool) ?? true
+    }
     func clearAll() {
         let deviceToken: String = PreferenceHelper().getDeviceToken()
         ph.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)

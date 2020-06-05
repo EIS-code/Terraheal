@@ -16,7 +16,7 @@ import UIKit
     fileprivate var bottomLineViewHeight : NSLayoutConstraint?
     fileprivate var placeholderLabelHeight : NSLayoutConstraint?
     fileprivate var errorLabelHieght : NSLayoutConstraint?
-    
+    let rightButton  = UIButton(type: .custom)
     /// Disable Floating Label when true.
     @IBInspectable open var disableFloatingLabel : Bool = false
     
@@ -153,6 +153,18 @@ import UIKit
         showingError = true;
         self.showErrorPlaceHolder();
     }
+
+    public func setupPasswordTextFielad() {
+
+        self.rightButton.setImage(UIImage(named: "asset-password-show") , for: .normal)
+        self.rightButton.addTarget(self, action: #selector(toggleShowHide), for: .touchUpInside)
+        self.rightButton.frame = CGRect(x:0, y:0, width:30, height:30)
+
+        self.rightViewMode = .always
+        self.rightView = rightButton
+        self.isSecureTextEntry = true
+
+    }
     
     
 }
@@ -163,13 +175,14 @@ fileprivate extension ACFloatingTextfield {
     func initialize() -> Void {
         self.clipsToBounds = true
         self.textColor = UIColor.themePrimary
-        self.setFont(name:FontName.Ovo,size:FontSize.textField_20)
+        self.setFont(name:FontName.Regular,size:FontSize.textField_20)
         addBottomLine()
         addFloatingLabel()
         addErrorPlaceholderLabel()
         if self.text != nil && self.text != "" {
             self.floatTheLabel()
         }
+        addTarget(self, action: #selector(fix), for: .editingChanged)
     }
     
     //MARK:- ADD Bottom Line
@@ -287,7 +300,25 @@ fileprivate extension ACFloatingTextfield {
         }, completion: nil)
         
     }
-    
+
+
+
+    @objc
+    func toggleShowHide(button: UIButton) {
+        togglePasswordVisibility()
+    }
+
+    func togglePasswordVisibility() {
+        self.isSecureTextEntry.toggle()
+        if let textRange = self.textRange(from: self.beginningOfDocument, to: self.endOfDocument) {
+            self.replace(textRange, withText: self.text!)
+        }
+        if isSecureTextEntry {
+            rightButton.setImage(UIImage(named: "asset-password-show") , for: .normal)
+        } else {
+            rightButton.setImage(UIImage(named: "asset-password-hide") , for: .normal)
+        }
+    }
     //MARK:- Float & Resign
     func floatTheLabel() -> Void {
         DispatchQueue.main.async {
@@ -394,63 +425,8 @@ fileprivate extension ACFloatingTextfield {
     }
 }
 
-//MARK:- Shake
-extension UIView {
-    func shake() {
-        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
-        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
-        animation.duration = 1.0
-        animation.values = [-30.0, 30.0, -30.0, 30.0, -20.0, 20.0, -10.0, 10.0,-5.0,5.0, 0.0 ]
-        layer.add(animation, forKey: "shake")
-    }
-}
-
-extension UITextView {
-    
-    private class PlaceholderLabel: UILabel { }
-    
-    private var placeholderLabel: PlaceholderLabel {
-        if let label = subviews.compactMap( { $0 as? PlaceholderLabel }).first {
-            return label
-        } else {
-            let label = PlaceholderLabel(frame: .zero)
-            label.font = font
-            label.textColor = UIColor.themePrimary
-            addSubview(label)
-            return label
-        }
-    }
-    
-    @IBInspectable
-    var placeholder: String {
-        get {
-            return subviews.compactMap( { $0 as? PlaceholderLabel }).first?.text ?? ""
-        }
-        set {
-            let placeholderLabel = self.placeholderLabel
-            placeholderLabel.text = newValue
-            placeholderLabel.numberOfLines = 0
-            let width = frame.width - textContainer.lineFragmentPadding * 2
-            let size = placeholderLabel.sizeThatFits(CGSize(width: width, height: .greatestFiniteMagnitude))
-            placeholderLabel.frame.size.height = size.height
-            placeholderLabel.frame.size.width = width
-            placeholderLabel.frame.origin = CGPoint(x: textContainer.lineFragmentPadding, y: textContainerInset.top)
-            
-            textStorage.delegate = self
-        }
-    }
-    
-}
 
 
-extension UITextView: NSTextStorageDelegate{
-    
-    public func textStorage(_ textStorage: NSTextStorage, didProcessEditing editedMask: NSTextStorage.EditActions, range editedRange: NSRange, changeInLength delta: Int) {
-        if editedMask.contains(.editedCharacters) {
-            placeholderLabel.isHidden = !text.isEmpty
-        }
-    }
-}
 
 extension ACFloatingTextfield {
     
@@ -463,5 +439,28 @@ extension ACFloatingTextfield {
         else {
             self.setValue(placeHolderColor, forKeyPath: "_placeholderLabel.textColor")
         }
+    }
+}
+
+private var __maxLengths = [UITextField: Int]()
+extension ACFloatingTextfield {
+    @IBInspectable var maxLength: Int {
+        get {
+            guard let l = __maxLengths[self] else {
+                return 20 // (global default-limit. or just, Int.max)
+            }
+            return l
+        }
+        set {
+            __maxLengths[self] = newValue
+            addTarget(self, action: #selector(fix), for: .editingChanged)
+        }
+    }
+    @objc func fix(textField: UITextField) {
+        if let t = textField.text  {
+            textField.text = String(t.prefix(maxLength))
+        }
+
+
     }
 }
