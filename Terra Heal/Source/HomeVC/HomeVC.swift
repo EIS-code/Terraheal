@@ -19,6 +19,12 @@ class HomeVC: MainVC {
     @IBOutlet weak var btnHome: FloatingRoundButton!
     @IBOutlet weak var btnExplore: FloatingRoundButton!
     @IBOutlet weak var btnMyFav: FloatingRoundButton!
+
+    @IBOutlet weak var headerGradient: UIView!
+    @IBOutlet weak var footerGradient: UIView!
+    let topGradientLayer = CAGradientLayer()
+    let bottomGradientLayer = CAGradientLayer()
+
     var arrForHomeDetails: [HomeItemDetail] = [
 
         HomeItemDetail(title:appSingleton.user.name, buttonTitle: "HOME_ITEM_ACTION_1".localized(), image: ""),
@@ -54,12 +60,17 @@ class HomeVC: MainVC {
         super.viewDidLoad()
         self.initialViewSetup()
          self.addLocationObserver()
+        self.addBottomFade()
+        self.addTopFade()
+
 
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let lc = LocationCenter.init()
         lc.requestLocationOnce()
+
+
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -75,9 +86,10 @@ class HomeVC: MainVC {
         self.btnHome?.setShadow()
         self.btnExplore?.setShadow()
         self.btnMyFav?.setShadow()
+        topGradientLayer.frame = headerGradient.bounds
+        bottomGradientLayer.frame = footerGradient.bounds
+        self.tableView?.contentInset = UIEdgeInsets(top: headerGradient.frame.height, left: 0, bottom: footerGradient.frame.height, right: 0)
         //self.btnDone?.setUpRoundedButton()
-
-
     }
     private func initialViewSetup() {
         self.vwBar?.backgroundColor = UIColor.clear
@@ -148,7 +160,9 @@ class HomeVC: MainVC {
         if PreferenceHelper.shared.getUserId().isEmpty() {
             Common.appDelegate.loadWelcomeVC()
         } else {
-            Common.appDelegate.loadProfileVC(navigaionVC: self.navigationController)
+            //Common.appDelegate.loadProfileVC(navigaionVC: self.navigationController)
+            Common.appDelegate.loadEditProfileVC(navigaionVC: self.navigationController)
+
         }
 
     }
@@ -195,10 +209,40 @@ class HomeVC: MainVC {
 
     }
 
+    func addTopFade() {
+        let gradientColor = UIColor.white
+        topGradientLayer.frame = headerGradient.bounds
+        topGradientLayer.colors = [gradientColor.withAlphaComponent(1.0).cgColor,gradientColor.withAlphaComponent(0.8).cgColor, gradientColor.withAlphaComponent(0.5).cgColor,gradientColor.withAlphaComponent(0.0).cgColor]
+        topGradientLayer.name = "topGradient"
+
+        if let oldLayer:  CAGradientLayer = self.headerGradient.layer.sublayers?.last(where: { (currentLayer) -> Bool in
+            return currentLayer.name == "topGradient"
+        }) as?  CAGradientLayer {
+            oldLayer.removeFromSuperlayer()
+        }
+
+        self.headerGradient.layer.addSublayer(topGradientLayer)
+    }
+
+    func addBottomFade() {
+        let gradientColor = UIColor.white
+        bottomGradientLayer.frame = footerGradient.bounds
+        bottomGradientLayer.colors = [gradientColor.withAlphaComponent(0.0).cgColor,gradientColor.withAlphaComponent(0.5).cgColor, gradientColor.withAlphaComponent(0.8).cgColor,gradientColor.withAlphaComponent(1.0).cgColor]
+        bottomGradientLayer.name = "bottomGradient"
+
+        if let oldLayer:  CAGradientLayer = self.footerGradient.layer.sublayers?.last(where: { (currentLayer) -> Bool in
+            return currentLayer.name == "bottomGradient"
+        }) as?  CAGradientLayer {
+            oldLayer.removeFromSuperlayer()
+        }
+
+        self.footerGradient.layer.addSublayer(bottomGradientLayer)
+    }
+
 }
 
 
-extension HomeVC: UITableViewDelegate,UITableViewDataSource {
+extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         return arrForHomeDetails.count
@@ -220,6 +264,9 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource {
             return cell!
         }
 
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+           // self.tableView.fadeEdges(with: 1.5)
     }
 }
 

@@ -241,6 +241,22 @@ extension AppDelegate {
         }
     }
 
+    func loadEditProfileVC(navigaionVC:UINavigationController? = nil) {
+
+        if let nc = navigaionVC as? NC {
+            if let targetVC: EditProfileVC =  nc.findVCs(ofType: EditProfileVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+            } else {
+                let targetVC: EditProfileVC = EditProfileVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+            }
+        } else {
+            let targetVC: EditProfileVC = EditProfileVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
     func loadScanSelfieInstructionVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: ScanSelfieInstructionVC =  nc.findVCs(ofType: ScanSelfieInstructionVC.self).first {

@@ -50,15 +50,14 @@ class TutorialVC: MainVC {
         self.vwBar?.backgroundColor = UIColor.clear
         self.btnDone.setForwardButton()
         self.btnBack.setBackButton()
-        self.btnSkip?.setFont(name: FontName.Bold, size: FontSize.button_22)
-        self.btnSkip?.setTitle("TUTORIAL_BTN_BACK".localized(), for: .normal)
+
         self.btnNext?.setTitle("TUTORIAL_BTN_NEXT".localized(), for: .normal)
         self.btnNext?.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         for i in 0...3 {
             let tutorial: TutorialDetail = TutorialDetail(title: "TUTORIAL_LBL_TITLE".localized() + " " + i.toString(), description: "TUTORIAL_LBL_MESSAGE".localized() + " " + i.toString())
             arrForTutorials.append(tutorial)
         }
-        self.btnSkip.isHidden = true
+        self.btnBack.isHidden = true
         self.setupCollectionView()
     }
 
@@ -67,17 +66,17 @@ class TutorialVC: MainVC {
         self.navigationController?.popViewController(animated: true)
     }
 
-    @IBAction func btnSkipTapped(_ sender: Any) {
+    @IBAction func btnBackTapped(_ sender: Any) {
         currentIndex.row = currentIndex.row - 1
         snapToNearestCell(indexPath: currentIndex)
         if currentIndex.row == 0 {
-            btnSkip.isHidden = true
+            btnBack.isHidden = true
         }
 
     }
 
     @IBAction func btnNextTapped(_ sender: Any) {
-        self.btnSkip.isHidden = false
+        self.btnBack.isHidden = false
         currentIndex.row = currentIndex.row + 1
         if currentIndex.row == (arrForTutorials.count) {
             PreferenceHelper.shared.setIsTutorialShow(false)

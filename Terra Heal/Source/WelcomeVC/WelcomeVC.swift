@@ -10,7 +10,6 @@ import UIKit
 class WelcomeVC: MainVC {
 
 
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var scrVw: UIScrollView!
     @IBOutlet weak var lblHeader1: ThemeLabel!
     @IBOutlet weak var lblMsg1: ThemeLabel!
@@ -70,7 +69,7 @@ class WelcomeVC: MainVC {
         self.btnHome.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnHome.setHighlighted(isHighlighted: false)
 
-        self.btnBack.setBackButton()
+        
     }
 
 

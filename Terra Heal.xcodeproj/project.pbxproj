@@ -75,6 +75,9 @@
 		6350C85A248A2F33002E13F2 /* ProfileTblUserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350C858248A2F33002E13F2 /* ProfileTblUserInfoCell.swift */; };
 		635A0E3B2463B9A400080194 /* TutorialCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 635A0E392463B9A400080194 /* TutorialCell.xib */; };
 		635A0E3C2463B9A400080194 /* TutorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635A0E3A2463B9A400080194 /* TutorialCell.swift */; };
+		635DE3B6248E44900030DC69 /* EditProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 635DE3B4248E44900030DC69 /* EditProfileVC.xib */; };
+		635DE3B7248E44900030DC69 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635DE3B5248E44900030DC69 /* EditProfileVC.swift */; };
+		635DE3B9248E698D0030DC69 /* EditProfileTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635DE3B8248E698D0030DC69 /* EditProfileTextfield.swift */; };
 		6361ECEA2462924900CC317A /* ContactVerificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6361ECE82462924900CC317A /* ContactVerificationVC.xib */; };
 		6361ECEB2462924900CC317A /* ContactVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6361ECE92462924900CC317A /* ContactVerificationVC.swift */; };
 		6364005B24697BD7009A8F5E /* CompleteIdentityVerificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6364003B24697BD7009A8F5E /* CompleteIdentityVerificationVC.xib */; };
@@ -188,6 +191,9 @@
 		6350C858248A2F33002E13F2 /* ProfileTblUserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTblUserInfoCell.swift; sourceTree = "<group>"; };
 		635A0E392463B9A400080194 /* TutorialCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialCell.xib; sourceTree = "<group>"; };
 		635A0E3A2463B9A400080194 /* TutorialCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialCell.swift; sourceTree = "<group>"; };
+		635DE3B4248E44900030DC69 /* EditProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileVC.xib; sourceTree = "<group>"; };
+		635DE3B5248E44900030DC69 /* EditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		635DE3B8248E698D0030DC69 /* EditProfileTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileTextfield.swift; sourceTree = "<group>"; };
 		6361ECE82462924900CC317A /* ContactVerificationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactVerificationVC.xib; sourceTree = "<group>"; };
 		6361ECE92462924900CC317A /* ContactVerificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactVerificationVC.swift; sourceTree = "<group>"; };
 		6364003B24697BD7009A8F5E /* CompleteIdentityVerificationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompleteIdentityVerificationVC.xib; sourceTree = "<group>"; };
@@ -386,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				63838EF7247CE02C007F1154 /* LocationHelper.swift */,
+				635DE3B8248E698D0030DC69 /* EditProfileTextfield.swift */,
 				6343978E245BE6DF009BCA1F /* ACFloatingTextfield.swift */,
 				6343978F245BE6DF009BCA1F /* Loader.swift */,
 				63439790245BE6DF009BCA1F /* JDFramework */,
@@ -501,6 +508,7 @@
 		634397D1245BE6DF009BCA1F /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				635DE3B2248E44900030DC69 /* EditProfileVC */,
 				63AFB5DE24893A7C007566D4 /* ProfileVC */,
 				637A7C2E2487C75F005D3819 /* SideVC */,
 				63838EF1247CDD9B007F1154 /* HomeVC */,
@@ -659,6 +667,23 @@
 				635A0E3A2463B9A400080194 /* TutorialCell.swift */,
 			);
 			path = TutorialCell;
+			sourceTree = "<group>";
+		};
+		635DE3B2248E44900030DC69 /* EditProfileVC */ = {
+			isa = PBXGroup;
+			children = (
+				635DE3B3248E44900030DC69 /* xib */,
+				635DE3B5248E44900030DC69 /* EditProfileVC.swift */,
+			);
+			path = EditProfileVC;
+			sourceTree = "<group>";
+		};
+		635DE3B3248E44900030DC69 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				635DE3B4248E44900030DC69 /* EditProfileVC.xib */,
+			);
+			path = xib;
 			sourceTree = "<group>";
 		};
 		6361ECE62462924900CC317A /* ContactVerification */ = {
@@ -1034,6 +1059,7 @@
 				6348E20324723B2B00C15975 /* Nunito-Light.ttf in Resources */,
 				637A7C362487C75F005D3819 /* SideVC.xib in Resources */,
 				63AFB5E624893A7D007566D4 /* ProfileVC.xib in Resources */,
+				635DE3B6248E44900030DC69 /* EditProfileVC.xib in Resources */,
 				6348E20424723B2B00C15975 /* Nunito-Regular.ttf in Resources */,
 				6348E20524723B2B00C15975 /* Nunito-SemiBold.ttf in Resources */,
 				635A0E3B2463B9A400080194 /* TutorialCell.xib in Resources */,
@@ -1129,6 +1155,7 @@
 				633A53E624603F0200565B6C /* JDDeviceHelper.swift in Sources */,
 				63409C6C246C17E10097C517 /* CustomAlert.swift in Sources */,
 				6364006424697BD7009A8F5E /* ScanPassportInstructionVC.swift in Sources */,
+				635DE3B7248E44900030DC69 /* EditProfileVC.swift in Sources */,
 				6364005C24697BD7009A8F5E /* CompleteIdentityVerificationVC.swift in Sources */,
 				633B7126245FDA5800CF490D /* ThemeTextField.swift in Sources */,
 				6343983C245BE6DF009BCA1F /* String + TypeCasting.swift in Sources */,
@@ -1169,6 +1196,7 @@
 				63439842245BE6DF009BCA1F /* UIView + Extension.swift in Sources */,
 				63439840245BE6DF009BCA1F /* JDSubclasses + UIControl.swift in Sources */,
 				636873912462C5800076779B /* OTPTextField.swift in Sources */,
+				635DE3B9248E698D0030DC69 /* EditProfileTextfield.swift in Sources */,
 				63439844245BE6DF009BCA1F /* UITextField + Extension.swift in Sources */,
 				633B7131245FF18200CF490D /* TutorialVC.swift in Sources */,
 				63439861245BE6DF009BCA1F /* SceneDelegate.swift in Sources */,

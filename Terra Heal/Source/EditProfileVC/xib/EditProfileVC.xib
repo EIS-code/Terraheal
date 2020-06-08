@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditProfileVC" customModule="Terra_Heal" customModuleProvider="target">
+            <connections>
+                <outlet property="btnBack" destination="gQT-1O-XW1" id="Fhc-ZU-ghz"/>
+                <outlet property="hVwContent" destination="pWp-Cw-Yab" id="X2d-c4-KYf"/>
+                <outlet property="headerView" destination="1vj-Dw-czR" id="cSC-pd-oOA"/>
+                <outlet property="ivProfilePic" destination="ioG-BP-L40" id="Q8C-XZ-r2L"/>
+                <outlet property="lblTitle" destination="x2g-qm-ekv" id="v7m-TP-rZ8"/>
+                <outlet property="scrVw" destination="Msw-Lg-la4" id="u3Z-Ir-1Ep"/>
+                <outlet property="txtName" destination="eCN-UA-ew2" id="IWQ-Y3-mZM"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="vwBg" destination="Gr9-kt-5QC" id="zKy-pi-Pim"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQT-1O-XW1" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="20" y="64" width="0.0" height="0.0"/>
+                    <color key="backgroundColor" name="theme_primary_light"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="gQT-1O-XW1" secondAttribute="height" multiplier="1:1" id="zjI-D5-FFr"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleColor" name="theme_light_text_color"/>
+                    </state>
+                    <connections>
+                        <action selector="btnBackTapped:" destination="-1" eventType="touchUpInside" id="SM4-Hx-Fe5"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2g-qm-ekv" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="166.66666666666666" y="54.000000000000007" width="41.666666666666657" height="20.333333333333336"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="theme_primary"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1vj-Dw-czR" userLabel="headerView">
+                    <rect key="frame" x="0.0" y="84" width="375" height="150"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ioG-BP-L40">
+                            <rect key="frame" x="137.66666666666666" y="0.0" width="100" height="100"/>
+                            <color key="backgroundColor" name="theme_primary_border"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="Kpw-cE-JvV"/>
+                                <constraint firstAttribute="width" constant="100" id="XJr-iL-JeT"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqS-Co-4qV">
+                            <rect key="frame" x="207.66666666666666" y="70" width="30" height="30"/>
+                            <state key="normal" title="+"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="XqS-Co-4qV" firstAttribute="trailing" secondItem="ioG-BP-L40" secondAttribute="trailing" id="bOW-4L-OZJ"/>
+                        <constraint firstAttribute="height" constant="150" id="muy-ZR-Mj5"/>
+                        <constraint firstItem="XqS-Co-4qV" firstAttribute="bottom" secondItem="ioG-BP-L40" secondAttribute="bottom" id="oFH-X2-ugF"/>
+                        <constraint firstItem="ioG-BP-L40" firstAttribute="centerX" secondItem="1vj-Dw-czR" secondAttribute="centerX" id="pfY-pt-4b6"/>
+                        <constraint firstItem="ioG-BP-L40" firstAttribute="top" secondItem="1vj-Dw-czR" secondAttribute="top" id="sZ5-0D-PcR"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gr9-kt-5QC" userLabel="vwBg">
+                    <rect key="frame" x="0.0" y="91" width="375" height="765"/>
+                    <color key="backgroundColor" name="theme_primary"/>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msw-Lg-la4" userLabel="scrView">
+                    <rect key="frame" x="0.0" y="104" width="375" height="674"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xd4-ev-sCy" userLabel="contentView">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="707"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="88o-R4-PdX">
+                                    <rect key="frame" x="20" y="19.999999999999996" width="335" height="59.666666666666657"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WAI-v2-AqR" userLabel="vwForEditText">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="59.666666666666664"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eCN-UA-ew2" customClass="EditProfileTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="59.666666666666664"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="eCN-UA-ew2" secondAttribute="height" multiplier="28:5" id="ZQP-GW-Vq8"/>
+                                                    </constraints>
+                                                    <color key="textColor" name="theme_light_text_color"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                            <color key="value" name="theme_light_text_color"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="textForeColor">
+                                                            <color key="value" name="theme_light_text_color"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                            <color key="value" name="theme_light_text_color"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                            <color key="value" name="theme_light_text_color"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="selectedPlaceHolderColor">
+                                                            <color key="value" name="theme_light_text_color"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" name="theme_primary"/>
+                                            <constraints>
+                                                <constraint firstItem="eCN-UA-ew2" firstAttribute="width" secondItem="WAI-v2-AqR" secondAttribute="width" id="176-Xr-7RE"/>
+                                                <constraint firstItem="eCN-UA-ew2" firstAttribute="centerY" secondItem="WAI-v2-AqR" secondAttribute="centerY" id="Dit-dX-cp9"/>
+                                                <constraint firstItem="eCN-UA-ew2" firstAttribute="leading" secondItem="WAI-v2-AqR" secondAttribute="leading" id="LT5-Pu-V9b"/>
+                                                <constraint firstItem="eCN-UA-ew2" firstAttribute="top" secondItem="WAI-v2-AqR" secondAttribute="top" id="fgp-MX-Z2m"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="88o-R4-PdX" firstAttribute="leading" secondItem="Xd4-ev-sCy" secondAttribute="leading" constant="20" id="MfY-YX-M8S"/>
+                                <constraint firstAttribute="trailing" secondItem="88o-R4-PdX" secondAttribute="trailing" constant="20" id="PTH-no-3lJ"/>
+                                <constraint firstItem="88o-R4-PdX" firstAttribute="top" secondItem="Xd4-ev-sCy" secondAttribute="top" constant="20" id="Rlv-rR-lMe"/>
+                                <constraint firstAttribute="height" constant="707" id="pWp-Cw-Yab"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Xd4-ev-sCy" firstAttribute="width" secondItem="Msw-Lg-la4" secondAttribute="width" id="12Y-Qc-gZd"/>
+                        <constraint firstItem="Xd4-ev-sCy" firstAttribute="height" secondItem="Msw-Lg-la4" secondAttribute="height" priority="998" id="6U0-5c-jUj"/>
+                        <constraint firstItem="Xd4-ev-sCy" firstAttribute="centerX" secondItem="Msw-Lg-la4" secondAttribute="centerX" id="6bU-qc-paL"/>
+                        <constraint firstItem="Xd4-ev-sCy" firstAttribute="leading" secondItem="Msw-Lg-la4" secondAttribute="leading" id="Dd5-Ae-RqW"/>
+                        <constraint firstItem="Xd4-ev-sCy" firstAttribute="top" secondItem="Msw-Lg-la4" secondAttribute="top" id="HKP-xh-pBj"/>
+                        <constraint firstAttribute="trailing" secondItem="Xd4-ev-sCy" secondAttribute="trailing" id="ZD0-M7-qxt"/>
+                        <constraint firstAttribute="bottom" secondItem="Xd4-ev-sCy" secondAttribute="bottom" id="wER-4Q-tPg"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="d4a-C9-GI4"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="YtE-P3-Xvk"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Gr9-kt-5QC" firstAttribute="top" secondItem="88o-R4-PdX" secondAttribute="top" constant="-20" id="1vq-lc-P9f"/>
+                <constraint firstItem="Msw-Lg-la4" firstAttribute="top" secondItem="1vj-Dw-czR" secondAttribute="top" constant="20" id="61r-8k-P5V"/>
+                <constraint firstItem="Gr9-kt-5QC" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" constant="44" id="68p-Iu-wDx"/>
+                <constraint firstItem="x2g-qm-ekv" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="8a5-29-Gxw"/>
+                <constraint firstItem="1vj-Dw-czR" firstAttribute="top" secondItem="gQT-1O-XW1" secondAttribute="bottom" constant="20" id="H2T-LW-9ub"/>
+                <constraint firstItem="1vj-Dw-czR" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="PNw-gg-Iru"/>
+                <constraint firstItem="gQT-1O-XW1" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="RUK-mO-nc3"/>
+                <constraint firstItem="Msw-Lg-la4" firstAttribute="bottom" secondItem="VLJ-uh-dxO" secondAttribute="bottom" id="SYC-Bw-jXs"/>
+                <constraint firstItem="x2g-qm-ekv" firstAttribute="centerY" secondItem="gQT-1O-XW1" secondAttribute="centerY" id="TKq-OP-Kfl"/>
+                <constraint firstItem="Gr9-kt-5QC" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" id="avJ-AN-aTP"/>
+                <constraint firstItem="Msw-Lg-la4" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" id="cx4-tP-rTI"/>
+                <constraint firstItem="1vj-Dw-czR" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" id="gB8-Lh-7JA"/>
+                <constraint firstItem="Gr9-kt-5QC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1vj-Dw-czR" secondAttribute="top" id="jfL-kU-l8n"/>
+                <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="Gr9-kt-5QC" secondAttribute="trailing" id="roy-zg-A68"/>
+                <constraint firstItem="Msw-Lg-la4" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="tIO-G9-3Wh"/>
+                <constraint firstItem="gQT-1O-XW1" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="20" id="vXz-OR-pSy"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
+            <point key="canvasLocation" x="131" y="154"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="theme_light_text_color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary">
+            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary_border">
+            <color red="0.73725490196078436" green="0.8784313725490196" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary_light">
+            <color red="0.49803921568627452" green="0.7686274509803922" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

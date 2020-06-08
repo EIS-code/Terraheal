@@ -12,17 +12,14 @@ typealias SO = SOther
 class SOther: NSObject {
 
     static var vwBg: UIView = UIView()
-    static let maxAlphaVwBg: CGFloat = 0.55
+    static let maxAlphaVwBg: CGFloat = 1.0
     static let animateDuration: TimeInterval = 0.3
     static var timeInterval: TimeInterval = 0.0
     static var speed: Int = 0
     static let maxSpeed: Int = 1555
     static var startX: Int = 0
     static var X: Int = 0
-    static var selectionColor: UIColor = UIColor(red: 240.0/255.0,
-                                                 green: 240.0/255.0,
-                                                 blue: 240.0/255.0,
-                                                 alpha: 1.0)
+
 
     class func addVwBgToVw(_ vw: UIView) {
         SO.vwBg.frame = vw.bounds

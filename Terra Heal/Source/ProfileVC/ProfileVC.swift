@@ -19,7 +19,11 @@ class ProfileVC: MainVC {
     @IBOutlet weak var lblDescription: ThemeLabel!
     @IBOutlet weak var vwBg: UIView!
     @IBOutlet weak var tableView: UITableView!
+    var kTableHeaderHeight:CGFloat = 300.0
+    @IBOutlet weak var scrVw: UIScrollView!
+    @IBOutlet weak var headerView: UIView!
 
+    @IBOutlet weak var hVwContent: NSLayoutConstraint!
 
     var arrForMenu: [ProfileItemDetail] = [
         ProfileItemDetail(title: "PROFILE_MENU_ITEM_1".localized(), buttonTitle: "HOME_ITEM_ACTION_1".localized(), image: ""),
@@ -68,10 +72,15 @@ class ProfileVC: MainVC {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+
         self.vwBg?.setRound(withBorderColor: UIColor.clear, andCornerRadious: 20.0, borderWidth: 1.0)
         self.vwBg?.setShadow()
-        self.tableView?.reloadData({
-        })
+
+
+
+
+
+
     }
 
     private func initialViewSetup() {
@@ -132,17 +141,38 @@ class ProfileVC: MainVC {
 }
 
 
-extension ProfileVC: UITableViewDelegate,UITableViewDataSource {
+extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegate {
 
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-
+        self.scrVw.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.register(ProfileTblCell.nib()
             , forCellReuseIdentifier: ProfileTblCell.name)
         tableView.tableFooterView = UIView()
+
+        scrVw.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
+
+
+
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        updateHeaderView()
+    }
+    func updateHeaderView() {
+        if self.scrVw.contentOffset.y < 0 {
+            let y = abs(self.scrVw.contentOffset.y)
+            let transLation = y/kTableHeaderHeight
+            headerView.alpha = transLation
+            headerView.transform = CGAffineTransform.init(scaleX: transLation, y: transLation)
+
+        } else {
+            headerView.alpha = 0.0
+        }
+        print(self.scrVw.contentOffset.y)
+
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

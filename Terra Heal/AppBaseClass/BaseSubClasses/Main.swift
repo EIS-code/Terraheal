@@ -10,9 +10,9 @@ import UIKit
 class MainVC: UIViewController {
    
     @IBOutlet weak var vwBar: UIView?
-    @IBOutlet weak var lblTitle: UILabel?
-    @IBOutlet weak var btnLeft: UIButton?
-    @IBOutlet weak var btnRight: UIButton?
+    @IBOutlet weak var lblTitle: ThemeLabel?
+    @IBOutlet weak var btnLeft: ThemeButton?
+    @IBOutlet weak var btnRight: ThemeButton?
     
     // MARK: - LifeCycle
     

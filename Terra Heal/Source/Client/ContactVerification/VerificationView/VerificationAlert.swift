@@ -280,7 +280,7 @@ extension  VerificationAlert {
             transitionAnimator?.pauseAnimation()
             yPostion = translate.y
         case .changed:
-            let totalYSwipe: CGFloat = translate.x - yPostion
+            let totalYSwipe: CGFloat = translate.y - yPostion
             let height: CGFloat = UIScreen.main.bounds.size.height
             let percentage = CGFloat(abs(Float(totalYSwipe))) / height
             animationProgress  = percentage
@@ -288,7 +288,12 @@ extension  VerificationAlert {
 
         case .ended, .failed , .cancelled:
             transitionAnimator?.stopAnimation(true)
-            self.addDissmissAnimation(direction: direction)
+            if transitionAnimator!.fractionComplete
+                < 0.1 {
+                self.addDissmissAnimation(direction: AnimationDirection.up)
+            } else {
+                self.addDissmissAnimation(direction: AnimationDirection.down)
+            }
             transitionAnimator?.startAnimation()
 
         default:
