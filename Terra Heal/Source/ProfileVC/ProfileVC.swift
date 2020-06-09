@@ -26,16 +26,16 @@ class ProfileVC: MainVC {
     @IBOutlet weak var hVwContent: NSLayoutConstraint!
 
     var arrForMenu: [ProfileItemDetail] = [
-        ProfileItemDetail(title: "PROFILE_MENU_ITEM_1".localized(), buttonTitle: "HOME_ITEM_ACTION_1".localized(), image: ""),
-        ProfileItemDetail(title: "PROFILE_MENU_ITEM_2".localized(), buttonTitle: "HOME_ITEM_ACTION_2".localized(), image: ""),
-        ProfileItemDetail(title: "PROFILE_MENU_ITEM_3".localized(), buttonTitle: "HOME_ITEM_ACTION_2".localized(), image: ""),
-        ProfileItemDetail(title: "PROFILE_MENU_ITEM_4".localized(), buttonTitle: "HOME_ITEM_ACTION_2".localized(), image: ""),
-        ProfileItemDetail(title: "PROFILE_MENU_ITEM_5".localized(), buttonTitle: "HOME_ITEM_ACTION_2".localized(), image: ""),
-        ProfileItemDetail(title: "PROFILE_MENU_ITEM_6".localized(), buttonTitle: "HOME_ITEM_ACTION_2".localized(), image: ""),
-        ProfileItemDetail(title: "PROFILE_MENU_ITEM_7".localized(), buttonTitle: "HOME_ITEM_ACTION_2".localized(), image: ""),
-        ProfileItemDetail(title: "PROFILE_MENU_ITEM_8".localized(), buttonTitle: "HOME_ITEM_ACTION_2".localized(), image: ""),
-        ProfileItemDetail(title: "PROFILE_MENU_ITEM_9".localized(), buttonTitle: "HOME_ITEM_ACTION_2".localized(), image: ""),
-        ProfileItemDetail(title: "PROFILE_MENU_ITEM_10".localized(), buttonTitle: "HOME_ITEM_ACTION_2".localized(), image: ""),
+        ProfileItemDetail(title: "PROFILE_MENU_ITEM_1".localized(), image: ""),
+        ProfileItemDetail(title: "PROFILE_MENU_ITEM_2".localized(), image: ""),
+        ProfileItemDetail(title: "PROFILE_MENU_ITEM_3".localized(), image: ""),
+        ProfileItemDetail(title: "PROFILE_MENU_ITEM_4".localized(), image: ""),
+        ProfileItemDetail(title: "PROFILE_MENU_ITEM_5".localized(), image: ""),
+        ProfileItemDetail(title: "PROFILE_MENU_ITEM_6".localized(), image: ""),
+        ProfileItemDetail(title: "PROFILE_MENU_ITEM_7".localized(), image: ""),
+        ProfileItemDetail(title: "PROFILE_MENU_ITEM_8".localized(), image: ""),
+        ProfileItemDetail(title: "PROFILE_MENU_ITEM_9".localized(), image: ""),
+        ProfileItemDetail(title: "PROFILE_MENU_ITEM_10".localized(),image: ""),
 
     ]
     // MARK: Object lifecycle
@@ -73,14 +73,10 @@ class ProfileVC: MainVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
+        if self.isViewAvailable() {
         self.vwBg?.setRound(withBorderColor: UIColor.clear, andCornerRadious: 20.0, borderWidth: 1.0)
         self.vwBg?.setShadow()
-
-
-
-
-
-
+        }
     }
 
     private func initialViewSetup() {
@@ -191,6 +187,15 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.row == 3 {
+            Common.appDelegate.loadMassagePreferenceVC(navigaionVC: self.navigationController)
+        }
+        else if indexPath.row == 4 {
+            Common.appDelegate.loadMyTherapistVC(navigaionVC: self.navigationController)
+        }
     }
 }
 

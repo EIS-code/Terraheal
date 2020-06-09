@@ -27,6 +27,44 @@ struct Gender {
     static let Other  = "t"
 }
 
+enum Pressure: String {
+    case Soft  = "soft"
+    case Medium  = "medium"
+    case Strong  = "strong"
+    case ExStrong  = "extra strong"
+    case Other  = "other"
+    func name()-> String {
+        switch self {
+            // Use Internationalization, as appropriate.
+        case .Soft: return "MASSAGE_PRESSURE_TYPE_1".localized()
+        case .Medium: return "MASSAGE_PRESSURE_TYPE_2".localized()
+        case .Strong: return "MASSAGE_PRESSURE_TYPE_3".localized()
+        case .ExStrong: return "MASSAGE_PRESSURE_TYPE_4".localized()
+        default: return "Unknown"
+        }
+    }
+}
+
+enum PreferGender: String {
+    case MaleOnly  = "male"
+    case FemaleOnly  = "female"
+    case PreferMale  = "prefer male"
+    case PrefereFemale  = "prefere female"
+    case NoPreference  = "noPreference"
+
+    func name()-> String {
+        switch self {
+        // Use Internationalization, as appropriate.
+        case .MaleOnly: return "GENDER_MALE_ONLY".localized()
+        case .FemaleOnly: return "GENDER_FEMALE_ONLY".localized()
+        case .PreferMale: return "GENDER_PREFER_MALE".localized()
+        case .PrefereFemale: return "GENDER_PREFER_FEMALE".localized()
+        default: return "GENDER_NO_PREFERENCE".localized()
+        }
+    }
+
+}
+
 struct LoginBy {
     static let Social  = "1"
     static let Manual  = "0"

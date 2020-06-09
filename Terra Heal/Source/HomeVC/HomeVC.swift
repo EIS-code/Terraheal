@@ -80,16 +80,18 @@ class HomeVC: MainVC {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.tableView?.reloadData({
+        if self.isViewAvailable() {
+            self.tableView?.reloadData({
 
-        })
-        self.btnHome?.setShadow()
-        self.btnExplore?.setShadow()
-        self.btnMyFav?.setShadow()
-        topGradientLayer.frame = headerGradient.bounds
-        bottomGradientLayer.frame = footerGradient.bounds
-        self.tableView?.contentInset = UIEdgeInsets(top: headerGradient.frame.height, left: 0, bottom: footerGradient.frame.height, right: 0)
-        //self.btnDone?.setUpRoundedButton()
+            })
+            self.btnHome?.setShadow()
+            self.btnExplore?.setShadow()
+            self.btnMyFav?.setShadow()
+            topGradientLayer.frame = headerGradient.bounds
+            bottomGradientLayer.frame = footerGradient.bounds
+            self.tableView?.contentInset = UIEdgeInsets(top: headerGradient.frame.height, left: 0, bottom: footerGradient.frame.height, right: 0)
+        }
+
     }
     private func initialViewSetup() {
         self.vwBar?.backgroundColor = UIColor.clear
@@ -160,8 +162,8 @@ class HomeVC: MainVC {
         if PreferenceHelper.shared.getUserId().isEmpty() {
             Common.appDelegate.loadWelcomeVC()
         } else {
-            //Common.appDelegate.loadProfileVC(navigaionVC: self.navigationController)
-            Common.appDelegate.loadEditProfileVC(navigaionVC: self.navigationController)
+            Common.appDelegate.loadProfileVC(navigaionVC: self.navigationController)
+            //Common.appDelegate.loadEditProfileVC(navigaionVC: self.navigationController)
 
         }
 

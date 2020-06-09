@@ -53,7 +53,9 @@ class LoginVC: MainVC {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-         self.vwDashed?.createDashedLine(from: CGPoint(x: vwDashed.bounds.minX, y: vwDashed.bounds.midY), to: CGPoint(x: vwDashed.bounds.maxX, y: vwDashed.bounds.midY), color: UIColor.themePrimary, strokeLength: 10, gapLength: 10, width: 2.0)
+        if self.isViewAvailable() {
+            self.vwDashed?.createDashedLine(from: CGPoint(x: vwDashed.bounds.minX, y: vwDashed.bounds.midY), to: CGPoint(x: vwDashed.bounds.maxX, y: vwDashed.bounds.midY), color: UIColor.themePrimary, strokeLength: 10, gapLength: 10, width: 2.0)
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {

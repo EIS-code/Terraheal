@@ -10,6 +10,16 @@ import UIKit
 // MARK: - NAVIGATION
 extension AppDelegate {
 
+    func windowConfig(withRootVC rootVC: UIViewController?) {
+        DispatchQueue.main.async {
+            self.window?.clean()
+            self.window?.rootViewController?.clean()
+
+            self.window?.rootViewController = rootVC
+            self.window?.makeKeyAndVisible()
+        }
+    }
+
     func loadLaunchVC() {
         if let launchVc: LaunchVC = Bundle.main.loadNibNamed(LaunchVC.name, owner: nil, options: nil)?.first as? LaunchVC{
             self.windowConfig(withRootVC: launchVc)
@@ -26,7 +36,6 @@ extension AppDelegate {
     }
 
     func loadTutoraiVC(navigaionVC:UINavigationController? = nil) {
-
         if let nc = navigaionVC as? NC {
             if let targetVC: TutorialVC =  nc.findVCs(ofType: TutorialVC.self).first {
                 _ = nc.popToViewController(targetVC, animated: true)
@@ -39,9 +48,6 @@ extension AppDelegate {
             let nC: NC = NC(rootViewController: targetVC)
             self.windowConfig(withRootVC: nC)
         }
-
-
-
     }
 
     func loadRegisterVC(navigaionVC:UINavigationController? = nil) {
@@ -317,15 +323,36 @@ extension AppDelegate {
         }
     }
 
-    func windowConfig(withRootVC rootVC: UIViewController?) {
-        DispatchQueue.main.async {
-            self.window?.clean()
-            self.window?.rootViewController?.clean()
-            
-            self.window?.rootViewController = rootVC
-            self.window?.makeKeyAndVisible()
+    func loadMassagePreferenceVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: MassagePreferenceVC =  nc.findVCs(ofType: MassagePreferenceVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+            } else {
+                let targetVC: MassagePreferenceVC = MassagePreferenceVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+            }
+        } else {
+            let targetVC: MassagePreferenceVC = MassagePreferenceVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
         }
     }
+
+    func loadMyTherapistVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: MyTherapistVC =  nc.findVCs(ofType: MyTherapistVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+            } else {
+                let targetVC: MyTherapistVC = MyTherapistVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+            }
+        } else {
+            let targetVC: MyTherapistVC = MyTherapistVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
 
 }
 

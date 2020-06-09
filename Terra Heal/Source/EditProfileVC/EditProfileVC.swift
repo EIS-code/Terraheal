@@ -53,14 +53,10 @@ class EditProfileVC: MainVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
+        if self.isViewAvailable() {
         self.vwBg?.setRound(withBorderColor: UIColor.clear, andCornerRadious: 20.0, borderWidth: 1.0)
         self.vwBg?.setShadow()
-
-
-
-
-
-
+        }
     }
 
     private func initialViewSetup() {

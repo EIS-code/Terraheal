@@ -63,15 +63,17 @@ class RegisterVC: MainVC {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        btnGoogle?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
-        btnLogin?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
-        self.vwDashed?.createDashedLine(from: CGPoint(x: vwDashed.bounds.minX, y: vwDashed.bounds.midY), to: CGPoint(x: vwDashed.bounds.maxX, y: vwDashed.bounds.midY), color: UIColor.themePrimary, strokeLength: 10, gapLength: 10, width: 2.0)
+        if self.isViewAvailable() {
+            btnGoogle?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
+            btnLogin?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
+            self.vwDashed?.createDashedLine(from: CGPoint(x: vwDashed.bounds.minX, y: vwDashed.bounds.midY), to: CGPoint(x: vwDashed.bounds.maxX, y: vwDashed.bounds.midY), color: UIColor.themePrimary, strokeLength: 10, gapLength: 10, width: 2.0)
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //self.scrVw.scrollsToTop = true
-      //  _ = self.txtName?.becomeFirstResponder()
+        //  _ = self.txtName?.becomeFirstResponder()
     }
     private func initialViewSetup() {
         self.vwBar?.backgroundColor = UIColor.clear
@@ -99,7 +101,7 @@ class RegisterVC: MainVC {
 
         self.btnTermsCondition?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
 
-       self.btnTermsCondition?.setTitle("REGISTR_BTN_TERMS_AND_CONDITION".localized(), for: .normal)
+        self.btnTermsCondition?.setTitle("REGISTR_BTN_TERMS_AND_CONDITION".localized(), for: .normal)
 
 
         self.btnLogin?.setFont(name: FontName.SemiBold, size: FontSize.button_22)
@@ -189,9 +191,9 @@ extension RegisterVC {
             alert.initialize(message: "VALIDATION_MSG_INVALID_NAME".localized())
             alert.show(animated: true)
             alert.onBtnCancelTapped = {
-                    [weak alert, weak self] in
-                    alert?.dismiss()
-                    _ = self?.txtName.becomeFirstResponder()
+                [weak alert, weak self] in
+                alert?.dismiss()
+                _ = self?.txtName.becomeFirstResponder()
             }
             return false
         } else if !txtEmail.text!.isValidEmail() {
@@ -200,8 +202,8 @@ extension RegisterVC {
             alert.show(animated: true)
             alert.onBtnCancelTapped = {
                 [weak alert, weak self] in
-                    alert?.dismiss()
-                 _ = self?.txtEmail.becomeFirstResponder()
+                alert?.dismiss()
+                _ = self?.txtEmail.becomeFirstResponder()
             }
             return false
         }

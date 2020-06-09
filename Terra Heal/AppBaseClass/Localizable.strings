@@ -123,6 +123,36 @@
 "GENDER_DIALOG_TITLE" = "Gender";
 "GENDER_MALE" = "male";
 "GENDER_FEMALE" = "female";
+"GENDER_MALE_ONLY" = "male only";
+"GENDER_FEMALE_ONLY" = "female only";
+"GENDER_PREFER_MALE" = "prefer male";
+"GENDER_PREFER_FEMALE" = "prefer female";
+"GENDER_NO_PREFERENCE" = "no preferences";
+
+//MARK: Massage Preference Menu
+"MASSAGE_PREFERENCE_TITLE" = "my massage preferences";
+"MASSAGE_PREFERENCE_MENU_ITEM_1" = "pressure";
+"MASSAGE_PREFERENCE_MENU_ITEM_2" = "gender preference";
+"MASSAGE_PREFERENCE_MENU_ITEM_3" = "which areas needs treatment?";
+"MASSAGE_PREFERENCE_MENU_ITEM_4" = "Muscles, joints, tendons,\ndiscs, bones, nerve problems?";
+"MASSAGE_PREFERENCE_MENU_ITEM_5" = "past surgeries, fractures,\naccidents?";
+"MASSAGE_PREFERENCE_MENU_ITEM_6" = "skin, hair, nail problems\nand allergies?";
+"MASSAGE_PREFERENCE_MENU_ITEM_7" = "any health conditions\nor diseases?";
+
+
+//MARK: Pressure Preference Menu
+
+"MASSAGE_PRESSURE_TITTLE" = "pressure";
+"MASSAGE_PRESSURE_TYPE_1" = "soft pressure";
+"MASSAGE_PRESSURE_TYPE_2" = "medium pressure";
+"MASSAGE_PRESSURE_TYPE_3" = "strong pressure";
+"MASSAGE_PRESSURE_TYPE_4" = "extra strong pressure";
+
+
+//MARK: My Therapist
+"MYTHERAPIST_TITLE" = "my therapists";
+
+//MARK: Rateview dialog
 
 
 //MARK: -
@@ -133,6 +163,7 @@
 "BTN_SUBMIT" = "Submit";
 "BTN_PROCEED" = "Proceed";
 "BTN_BACK" = "Back";
+"BTN_SKIP" = "skip";
 "BTN_APPLY" =  "Apply";
 "LBL_MENU" =  "menu";
 

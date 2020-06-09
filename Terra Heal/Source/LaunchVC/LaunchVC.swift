@@ -21,7 +21,9 @@ class LaunchVC: MainVC {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.ivLogo?.setRound()
+        if self.isViewAvailable() {
+            self.ivLogo?.setRound()
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {

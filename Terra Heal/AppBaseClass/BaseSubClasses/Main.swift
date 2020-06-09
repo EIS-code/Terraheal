@@ -57,7 +57,9 @@ class MainVC: UIViewController {
     func setTitle(title: String) {
         lblTitle?.text = title
     }
-
+    func isViewAvailable() -> Bool {
+        return self.view.subviews.count >  0
+    }
 
 
  }

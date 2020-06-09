@@ -17,28 +17,40 @@ open class ThemeTextField: UITextField {
 }
 
 
-open class ThemeTextView: UITextView {
+class ThemeTextView: UITextView {
 
-    override open func draw(_ rect: CGRect) {
-    }
+    let padding = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+
 
     func setFont(name:String,size:CGFloat){
         let finalSize = JDDeviceHelper().fontCalculator(size: size)
         self.font = FontHelper.font(name: name, size: finalSize)
+        
     }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.setRound(withBorderColor: .themePrimary, andCornerRadious: 25.0, borderWidth: 1.0)
+        textContainerInset = padding
+    }
+
+
+
+
 }
 
 
 extension UITextView {
 
-    private class PlaceholderLabel: UILabel { }
+
+    private class PlaceholderLabel: ThemeLabel { }
 
     private var placeholderLabel: PlaceholderLabel {
         if let label = subviews.compactMap( { $0 as? PlaceholderLabel }).first {
             return label
         } else {
             let label = PlaceholderLabel(frame: .zero)
-            label.font = font
+            label.setFont(name: FontName.Regular, size: FontSize.label_22)
             label.textColor = UIColor.themePrimary
             addSubview(label)
             return label
@@ -54,11 +66,11 @@ extension UITextView {
             let placeholderLabel = self.placeholderLabel
             placeholderLabel.text = newValue
             placeholderLabel.numberOfLines = 0
-            let width = frame.width - textContainer.lineFragmentPadding * 2
+            let width = frame.width - 40
             let size = placeholderLabel.sizeThatFits(CGSize(width: width, height: .greatestFiniteMagnitude))
             placeholderLabel.frame.size.height = size.height
             placeholderLabel.frame.size.width = width
-            placeholderLabel.frame.origin = CGPoint(x: textContainer.lineFragmentPadding, y: textContainerInset.top)
+            placeholderLabel.frame.origin = CGPoint(x: 20, y: textContainerInset.top)
 
             textStorage.delegate = self
         }

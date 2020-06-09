@@ -72,7 +72,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gr9-kt-5QC" userLabel="vwBg">
-                    <rect key="frame" x="0.0" y="91" width="375" height="765"/>
+                    <rect key="frame" x="0.0" y="104" width="375" height="752"/>
                     <color key="backgroundColor" name="theme_primary"/>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msw-Lg-la4" userLabel="scrView">

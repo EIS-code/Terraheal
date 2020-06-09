@@ -46,9 +46,12 @@ class WelcomeVC: MainVC {
     }
 
     override func viewDidLayoutSubviews() {
+
         super.viewDidLayoutSubviews()
-        self.iv1?.setRound()
-        self.iv2?.setRound()
+        if self.isViewAvailable() {
+            self.iv1?.setRound()
+            self.iv2?.setRound()
+        }
     }
     private func initialViewSetup() {
         self.vwBar?.backgroundColor = UIColor.clear

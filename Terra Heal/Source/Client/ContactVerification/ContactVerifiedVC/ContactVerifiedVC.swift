@@ -40,7 +40,9 @@ class ContactVerifiedVC: MainVC {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        if self.isViewAvailable() {
         self.vwBg?.setRound()
+        }
     }
 
     private func initialViewSetup() {

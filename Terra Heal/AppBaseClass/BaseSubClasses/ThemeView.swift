@@ -15,14 +15,6 @@ class ThemeView: UIView {
 }
 
 
-//MARK: Underlined Button
-class ThemeDialogView: ThemeView {
-    var isCancellable:Bool = false
-    var isAnimated:Bool = false
-    deinit {
-        print("\(self) \(#function)")
-    }
-}
 
 
 extension UIView {

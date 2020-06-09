@@ -40,8 +40,10 @@ class CompleteIdentityVerificationVC: MainVC {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.btnHome?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-        self.vwBg?.setRound()
+        if self.isViewAvailable() {
+            self.btnHome?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+            self.vwBg?.setRound()
+        }
     }
 
     private func initialViewSetup() {
