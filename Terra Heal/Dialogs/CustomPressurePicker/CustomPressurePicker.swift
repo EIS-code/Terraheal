@@ -45,6 +45,13 @@ class CustomPressurePicker: ThemeBottomDialogView {
 
     func select(pressure:Pressure) {
         self.selectedPressure = pressure
+        for i in 0..<arrForPressures.count {
+            arrForPressures[i].isSelected = false
+            if arrForPressures[i].type == pressure {
+                arrForPressures[i].isSelected = true
+            }
+        }
+        self.tableView.reloadData()
     }
 
     func initialSetup() {
@@ -92,7 +99,7 @@ extension CustomPressurePicker : UITableViewDelegate,UITableViewDataSource {
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-
+        tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.register(PressureSelectionTblCell.nib()

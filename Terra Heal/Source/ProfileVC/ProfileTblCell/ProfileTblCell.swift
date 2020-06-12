@@ -7,10 +7,7 @@
 //
 
 import UIKit
-struct ProfileItemDetail {
-    var title: String = ""
-    var image: String = ""
-}
+
 class ProfileTblCell: TableCell {
 
     @IBOutlet weak var lblName: ThemeLabel!
@@ -22,6 +19,7 @@ class ProfileTblCell: TableCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_14)
         self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
         self.btnAction?.setTitle(FontSymbol.next_arrow, for: .normal)

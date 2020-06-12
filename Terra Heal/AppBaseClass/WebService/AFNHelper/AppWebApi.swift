@@ -24,6 +24,7 @@ class AppWebApi: NSObject {
         private  struct Routes {
             static let Client = "/api/user"
             static let Exception = "/api/error"
+            static let Location = "/api/location"
 
         }
 
@@ -64,7 +65,12 @@ class AppWebApi: NSObject {
         static var GetUserDetail: String {
             return  Domain + Routes.Client + "/get/" + PreferenceHelper.shared.getUserId()
         }
-
+        static var GetCountryList: String {
+            return  Domain + Routes.Location + "/get/country"
+        }
+        static var GetCityList: String {
+            return  Domain + Routes.Location + "/get/city"
+        }
 
     }
 }
@@ -158,6 +164,20 @@ extension AppWebApi {
     class func exception(params:[String:String], completionHandler: @escaping ((User.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.CheckExeption, methodName: AlamofireHelper.GET_METHOD, paramData:[:]) { (data, dictionary, error) in
             let response = User.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+
+    class func countryList(params:Countries.RequestCountrylist = Countries.RequestCountrylist(), completionHandler: @escaping ((Countries.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetCountryList, methodName: AlamofireHelper.GET_METHOD, paramData: [:]) { (data, dictionary, error) in
+            let response = Countries.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+
+    class func cityList(params:Cities.RequestCitylist, completionHandler: @escaping ((Cities.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetCityList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = Cities.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }

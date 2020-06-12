@@ -25,19 +25,27 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
-                    <rect key="frame" x="0.0" y="398" width="414" height="498"/>
+                    <rect key="frame" x="0.0" y="373" width="414" height="523"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe">
-                            <rect key="frame" x="20" y="56" width="374" height="412"/>
+                            <rect key="frame" x="20" y="56" width="374" height="437"/>
                             <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gV0-dD-2TC">
+                                    <rect key="frame" x="167" y="0.0" width="40" height="5"/>
+                                    <color key="backgroundColor" name="theme_primary"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="JqM-lM-mlT"/>
+                                        <constraint firstAttribute="height" constant="5" id="vmq-f4-P9n"/>
+                                    </constraints>
+                                </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-4J-xGz" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="166" y="0.0" width="42" height="20.5"/>
+                                    <rect key="frame" x="166" y="25" width="42" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" name="theme_primary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6c6-zY-Fwc" customClass="RatingView" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="67" y="40.5" width="240" height="40"/>
+                                    <rect key="frame" x="67" y="65.5" width="240" height="40"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="6c6-zY-Fwc" secondAttribute="height" multiplier="6:1" id="W6H-yD-HhQ"/>
@@ -61,7 +69,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qi1-qS-KMx" customClass="ThemeTextView" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="37.5" y="100.5" width="299" height="199.5"/>
+                                    <rect key="frame" x="37.5" y="125.5" width="299" height="199.5"/>
                                     <color key="backgroundColor" name="theme_primary_light_background"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="Qi1-qS-KMx" secondAttribute="height" multiplier="300:200" id="j4q-as-CiT"/>
@@ -74,7 +82,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </textView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="120.5" y="320" width="133" height="40"/>
+                                    <rect key="frame" x="120.5" y="345" width="133" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                     <state key="normal" title="Sign In">
@@ -85,7 +93,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="581-cI-fuY" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="160.5" y="380" width="53" height="32"/>
+                                    <rect key="frame" x="160.5" y="405" width="53" height="32"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <state key="normal" title="Sign In">
                                         <color key="titleColor" name="theme_primary"/>
@@ -128,6 +136,7 @@
                 <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
                 <outlet property="ratingView" destination="6c6-zY-Fwc" id="0JI-us-3cV"/>
                 <outlet property="txtDescription" destination="Qi1-qS-KMx" id="bhk-CN-T0M"/>
+                <outlet property="vwTopBar" destination="gV0-dD-2TC" id="jav-IB-OKx"/>
             </connections>
             <point key="canvasLocation" x="132" y="131"/>
         </view>

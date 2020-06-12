@@ -28,6 +28,8 @@ class ThemeTextView: UITextView {
         
     }
 
+
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.setRound(withBorderColor: .themePrimary, andCornerRadious: 25.0, borderWidth: 1.0)
@@ -55,6 +57,10 @@ extension UITextView {
             addSubview(label)
             return label
         }
+    }
+    func setPlaceholderFont(name:String,size:CGFloat) {
+
+        self.placeholderLabel.setFont(name: FontName.Regular, size: FontSize.label_22)
     }
 
     @IBInspectable
@@ -84,6 +90,28 @@ extension UITextView: NSTextStorageDelegate{
     public func textStorage(_ textStorage: NSTextStorage, didProcessEditing editedMask: NSTextStorage.EditActions, range editedRange: NSRange, changeInLength delta: Int) {
         if editedMask.contains(.editedCharacters) {
             placeholderLabel.isHidden = !text.isEmpty
+        }
+    }
+}
+
+//MARK: Prevent from infinity calls
+private var __maxLengths = [UITextField: Int]()
+extension ThemeTextField {
+    @IBInspectable var maxLength: Int {
+        get {
+            guard let l = __maxLengths[self] else {
+                return 20 // (global default-limit. or just, Int.max)
+            }
+            return l
+        }
+        set {
+            __maxLengths[self] = newValue
+            addTarget(self, action: #selector(fix), for: .editingChanged)
+        }
+    }
+    @objc func fix(textField: UITextField) {
+        if let t = textField.text  {
+            textField.text = String(t.prefix(maxLength))
         }
     }
 }

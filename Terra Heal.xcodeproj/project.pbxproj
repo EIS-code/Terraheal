@@ -38,7 +38,14 @@
 		633B7128245FDA5800CF490D /* ThemeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B7125245FDA5800CF490D /* ThemeLabel.swift */; };
 		633B7130245FF18200CF490D /* TutorialVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633B712E245FF18200CF490D /* TutorialVC.xib */; };
 		633B7131245FF18200CF490D /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B712F245FF18200CF490D /* TutorialVC.swift */; };
+		633C1AC224923D3B009EB6AE /* CountriesWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C1AC124923D3A009EB6AE /* CountriesWebService.swift */; };
+		633C1AC424923FCA009EB6AE /* CityWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C1AC324923FCA009EB6AE /* CityWebService.swift */; };
+		633C1ACB24924483009EB6AE /* CustomCountyPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633C1AC624924482009EB6AE /* CustomCountyPicker.xib */; };
+		633C1ACC24924483009EB6AE /* CustomCountyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C1AC724924483009EB6AE /* CustomCountyPicker.swift */; };
+		633C1ACD24924483009EB6AE /* CustomCountyPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C1AC924924483009EB6AE /* CustomCountyPickerCell.swift */; };
+		633C1ACE24924483009EB6AE /* CustomCountyPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633C1ACA24924483009EB6AE /* CustomCountyPickerCell.xib */; };
 		633D1A422488B7910085AC56 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633D1A412488B7910085AC56 /* PinterestLayout.swift */; };
+		633D6C4524914686008B3299 /* NotificationTblFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633D6C4424914686008B3299 /* NotificationTblFooter.xib */; };
 		633E97EA248687B00097093E /* ContactVerifiedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633E97E4248687B00097093E /* ContactVerifiedVC.xib */; };
 		633E97EB248687B00097093E /* ContactVerifiedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633E97E5248687B00097093E /* ContactVerifiedVC.swift */; };
 		633E97EC248687B00097093E /* VerifyContactVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633E97E8248687B00097093E /* VerifyContactVC.xib */; };
@@ -119,6 +126,27 @@
 		6364006824697BD7009A8F5E /* ScanSelfieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364005624697BD7009A8F5E /* ScanSelfieVC.swift */; };
 		6364006924697BD7009A8F5E /* ScanSelfieInstructionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6364005924697BD7009A8F5E /* ScanSelfieInstructionVC.xib */; };
 		6364006A24697BD7009A8F5E /* ScanSelfieInstructionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364005A24697BD7009A8F5E /* ScanSelfieInstructionVC.swift */; };
+		63672D2C2491072900A12D91 /* CustomLanguagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63672D272491072900A12D91 /* CustomLanguagePicker.swift */; };
+		63672D2D2491072900A12D91 /* CustomLanguagePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63672D292491072900A12D91 /* CustomLanguagePickerCell.xib */; };
+		63672D2E2491072900A12D91 /* CustomLanguagePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63672D2A2491072900A12D91 /* CustomLanguagePickerCell.swift */; };
+		63672D2F2491072900A12D91 /* CustomLanguagePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63672D2B2491072900A12D91 /* CustomLanguagePicker.xib */; };
+		63672D3724910DC000A12D91 /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63672D3224910DC000A12D91 /* SettingVC.xib */; };
+		63672D3824910DC000A12D91 /* SettingTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63672D3424910DC000A12D91 /* SettingTblCell.swift */; };
+		63672D3924910DC000A12D91 /* SettingTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63672D3524910DC000A12D91 /* SettingTblCell.xib */; };
+		63672D3A24910DC000A12D91 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63672D3624910DC000A12D91 /* SettingVC.swift */; };
+		63672D3E2491148B00A12D91 /* CustomCurrencyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63672D3C2491148B00A12D91 /* CustomCurrencyPicker.swift */; };
+		63672D3F2491148B00A12D91 /* CustomCurrencyPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63672D3D2491148B00A12D91 /* CustomCurrencyPicker.xib */; };
+		63672D432491190B00A12D91 /* CustomInformationDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63672D412491190B00A12D91 /* CustomInformationDialog.xib */; };
+		63672D442491190B00A12D91 /* CustomInformationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63672D422491190B00A12D91 /* CustomInformationDialog.swift */; };
+		63672D4824911D3200A12D91 /* CustomChangePasswordDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63672D4624911D3200A12D91 /* CustomChangePasswordDialog.swift */; };
+		63672D4924911D3200A12D91 /* CustomChangePasswordDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63672D4724911D3200A12D91 /* CustomChangePasswordDialog.xib */; };
+		63672D4D249120F400A12D91 /* SettingSwitchTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63672D4B249120F400A12D91 /* SettingSwitchTblCell.xib */; };
+		63672D4E249120F400A12D91 /* SettingSwitchTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63672D4C249120F400A12D91 /* SettingSwitchTblCell.swift */; };
+		63672D592491266E00A12D91 /* NotificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63672D512491266E00A12D91 /* NotificationVC.xib */; };
+		63672D5A2491266E00A12D91 /* NotificationTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63672D532491266E00A12D91 /* NotificationTblCell.swift */; };
+		63672D5B2491266E00A12D91 /* NotificationTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63672D542491266E00A12D91 /* NotificationTblCell.xib */; };
+		63672D5C2491266E00A12D91 /* NotificationTblFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63672D562491266E00A12D91 /* NotificationTblFooter.swift */; };
+		63672D5E2491266E00A12D91 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63672D582491266E00A12D91 /* NotificationVC.swift */; };
 		6368738B2462C08D0076779B /* VerificationAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636873892462C08D0076779B /* VerificationAlert.xib */; };
 		6368738C2462C08D0076779B /* VerificationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6368738A2462C08D0076779B /* VerificationAlert.swift */; };
 		636873902462C5800076779B /* OTPFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6368738E2462C5800076779B /* OTPFieldView.swift */; };
@@ -138,6 +166,14 @@
 		63AFB5E624893A7D007566D4 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63AFB5E124893A7C007566D4 /* ProfileVC.xib */; };
 		63AFB5E724893A7D007566D4 /* ProfileTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AFB5E324893A7C007566D4 /* ProfileTblCell.swift */; };
 		63AFB5E824893A7D007566D4 /* ProfileTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63AFB5E424893A7C007566D4 /* ProfileTblCell.xib */; };
+		63E94A7C24920887000F375E /* EditProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E94A7A24920887000F375E /* EditProfileCell.swift */; };
+		63E94A7D24920887000F375E /* EditProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E94A7B24920887000F375E /* EditProfileCell.xib */; };
+		63EA7D0F2493ADC40027F9D3 /* CustomTextFieldDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EA7D0D2493ADC30027F9D3 /* CustomTextFieldDialog.xib */; };
+		63EA7D102493ADC40027F9D3 /* CustomTextFieldDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA7D0E2493ADC30027F9D3 /* CustomTextFieldDialog.swift */; };
+		63EA7D172493B5880027F9D3 /* CustomCityPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EA7D122493B5880027F9D3 /* CustomCityPicker.xib */; };
+		63EA7D182493B5880027F9D3 /* CustomCityPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA7D142493B5880027F9D3 /* CustomCityPickerCell.swift */; };
+		63EA7D192493B5880027F9D3 /* CustomCityPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EA7D152493B5880027F9D3 /* CustomCityPickerCell.xib */; };
+		63EA7D1A2493B5880027F9D3 /* CustomCityPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA7D162493B5880027F9D3 /* CustomCityPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -173,7 +209,14 @@
 		633B7125245FDA5800CF490D /* ThemeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeLabel.swift; sourceTree = "<group>"; };
 		633B712E245FF18200CF490D /* TutorialVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialVC.xib; sourceTree = "<group>"; };
 		633B712F245FF18200CF490D /* TutorialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
+		633C1AC124923D3A009EB6AE /* CountriesWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesWebService.swift; sourceTree = "<group>"; };
+		633C1AC324923FCA009EB6AE /* CityWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityWebService.swift; sourceTree = "<group>"; };
+		633C1AC624924482009EB6AE /* CustomCountyPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCountyPicker.xib; sourceTree = "<group>"; };
+		633C1AC724924483009EB6AE /* CustomCountyPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCountyPicker.swift; sourceTree = "<group>"; };
+		633C1AC924924483009EB6AE /* CustomCountyPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCountyPickerCell.swift; sourceTree = "<group>"; };
+		633C1ACA24924483009EB6AE /* CustomCountyPickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCountyPickerCell.xib; sourceTree = "<group>"; };
 		633D1A412488B7910085AC56 /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
+		633D6C4424914686008B3299 /* NotificationTblFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTblFooter.xib; sourceTree = "<group>"; };
 		633E97E4248687B00097093E /* ContactVerifiedVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactVerifiedVC.xib; sourceTree = "<group>"; };
 		633E97E5248687B00097093E /* ContactVerifiedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactVerifiedVC.swift; sourceTree = "<group>"; };
 		633E97E8248687B00097093E /* VerifyContactVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerifyContactVC.xib; sourceTree = "<group>"; };
@@ -257,6 +300,27 @@
 		6364005624697BD7009A8F5E /* ScanSelfieVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanSelfieVC.swift; sourceTree = "<group>"; };
 		6364005924697BD7009A8F5E /* ScanSelfieInstructionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanSelfieInstructionVC.xib; sourceTree = "<group>"; };
 		6364005A24697BD7009A8F5E /* ScanSelfieInstructionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanSelfieInstructionVC.swift; sourceTree = "<group>"; };
+		63672D272491072900A12D91 /* CustomLanguagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLanguagePicker.swift; sourceTree = "<group>"; };
+		63672D292491072900A12D91 /* CustomLanguagePickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomLanguagePickerCell.xib; sourceTree = "<group>"; };
+		63672D2A2491072900A12D91 /* CustomLanguagePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLanguagePickerCell.swift; sourceTree = "<group>"; };
+		63672D2B2491072900A12D91 /* CustomLanguagePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomLanguagePicker.xib; sourceTree = "<group>"; };
+		63672D3224910DC000A12D91 /* SettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingVC.xib; sourceTree = "<group>"; };
+		63672D3424910DC000A12D91 /* SettingTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTblCell.swift; sourceTree = "<group>"; };
+		63672D3524910DC000A12D91 /* SettingTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTblCell.xib; sourceTree = "<group>"; };
+		63672D3624910DC000A12D91 /* SettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		63672D3C2491148B00A12D91 /* CustomCurrencyPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCurrencyPicker.swift; sourceTree = "<group>"; };
+		63672D3D2491148B00A12D91 /* CustomCurrencyPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCurrencyPicker.xib; sourceTree = "<group>"; };
+		63672D412491190B00A12D91 /* CustomInformationDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomInformationDialog.xib; sourceTree = "<group>"; };
+		63672D422491190B00A12D91 /* CustomInformationDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInformationDialog.swift; sourceTree = "<group>"; };
+		63672D4624911D3200A12D91 /* CustomChangePasswordDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomChangePasswordDialog.swift; sourceTree = "<group>"; };
+		63672D4724911D3200A12D91 /* CustomChangePasswordDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomChangePasswordDialog.xib; sourceTree = "<group>"; };
+		63672D4B249120F400A12D91 /* SettingSwitchTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingSwitchTblCell.xib; sourceTree = "<group>"; };
+		63672D4C249120F400A12D91 /* SettingSwitchTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingSwitchTblCell.swift; sourceTree = "<group>"; };
+		63672D512491266E00A12D91 /* NotificationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationVC.xib; sourceTree = "<group>"; };
+		63672D532491266E00A12D91 /* NotificationTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTblCell.swift; sourceTree = "<group>"; };
+		63672D542491266E00A12D91 /* NotificationTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationTblCell.xib; sourceTree = "<group>"; };
+		63672D562491266E00A12D91 /* NotificationTblFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTblFooter.swift; sourceTree = "<group>"; };
+		63672D582491266E00A12D91 /* NotificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
 		636873892462C08D0076779B /* VerificationAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerificationAlert.xib; sourceTree = "<group>"; };
 		6368738A2462C08D0076779B /* VerificationAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationAlert.swift; sourceTree = "<group>"; };
 		6368738E2462C5800076779B /* OTPFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPFieldView.swift; sourceTree = "<group>"; };
@@ -276,6 +340,14 @@
 		63AFB5E124893A7C007566D4 /* ProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		63AFB5E324893A7C007566D4 /* ProfileTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTblCell.swift; sourceTree = "<group>"; };
 		63AFB5E424893A7C007566D4 /* ProfileTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileTblCell.xib; sourceTree = "<group>"; };
+		63E94A7A24920887000F375E /* EditProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileCell.swift; sourceTree = "<group>"; };
+		63E94A7B24920887000F375E /* EditProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileCell.xib; sourceTree = "<group>"; };
+		63EA7D0D2493ADC30027F9D3 /* CustomTextFieldDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTextFieldDialog.xib; sourceTree = "<group>"; };
+		63EA7D0E2493ADC30027F9D3 /* CustomTextFieldDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFieldDialog.swift; sourceTree = "<group>"; };
+		63EA7D122493B5880027F9D3 /* CustomCityPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCityPicker.xib; sourceTree = "<group>"; };
+		63EA7D142493B5880027F9D3 /* CustomCityPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCityPickerCell.swift; sourceTree = "<group>"; };
+		63EA7D152493B5880027F9D3 /* CustomCityPickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCityPickerCell.xib; sourceTree = "<group>"; };
+		63EA7D162493B5880027F9D3 /* CustomCityPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCityPicker.swift; sourceTree = "<group>"; };
 		897AF53337FB6FB8116C0500 /* Pods_Terra_Heal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Terra_Heal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -443,6 +515,25 @@
 			path = xib;
 			sourceTree = "<group>";
 		};
+		633C1AC524924482009EB6AE /* CustomCountyPicker */ = {
+			isa = PBXGroup;
+			children = (
+				633C1AC624924482009EB6AE /* CustomCountyPicker.xib */,
+				633C1AC724924483009EB6AE /* CustomCountyPicker.swift */,
+				633C1AC824924483009EB6AE /* CustomCountyPickerCell */,
+			);
+			path = CustomCountyPicker;
+			sourceTree = "<group>";
+		};
+		633C1AC824924483009EB6AE /* CustomCountyPickerCell */ = {
+			isa = PBXGroup;
+			children = (
+				633C1AC924924483009EB6AE /* CustomCountyPickerCell.swift */,
+				633C1ACA24924483009EB6AE /* CustomCountyPickerCell.xib */,
+			);
+			path = CustomCountyPickerCell;
+			sourceTree = "<group>";
+		};
 		633E97E2248687B00097093E /* ContactVerifiedVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -537,6 +628,8 @@
 			children = (
 				63435B4724769C4900AF7100 /* AFNHelper */,
 				63435B4B24769C4900AF7100 /* ResponseModel.swift */,
+				633C1AC324923FCA009EB6AE /* CityWebService.swift */,
+				633C1AC124923D3A009EB6AE /* CountriesWebService.swift */,
 				63435B4C24769C4900AF7100 /* UserWebService.swift */,
 				63435B4D24769C4900AF7100 /* Singleton.swift */,
 			);
@@ -634,6 +727,13 @@
 		634397C7245BE6DF009BCA1F /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
+				63EA7D112493B5880027F9D3 /* CustomCityPicker */,
+				63EA7D0C2493ADC30027F9D3 /* CustomTextFieldDialog */,
+				633C1AC524924482009EB6AE /* CustomCountyPicker */,
+				63672D4524911D3200A12D91 /* CustomChangePasswordDialog */,
+				63672D402491190B00A12D91 /* CustomInformationDialog */,
+				63672D3B2491148B00A12D91 /* CustomCurrencyPicker */,
+				63672D262491072900A12D91 /* CustomLanguagePicker */,
 				632DB053248FA54200B65B46 /* CustomRateViewDialog */,
 				632DB043248F8FDD00B65B46 /* CustomTextViewDialog */,
 				6358A081248F8968004F2CA8 /* CustomPrefereGenderPicker */,
@@ -648,6 +748,8 @@
 		634397D1245BE6DF009BCA1F /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				63672D4F2491266E00A12D91 /* NotificationVC */,
+				63672D3024910DC000A12D91 /* SettingVC */,
 				632DB048248F9EDF00B65B46 /* MyTherapist */,
 				63432F79248F4B45006BA322 /* MassagePreference */,
 				635DE3B2248E44900030DC69 /* EditProfileVC */,
@@ -834,6 +936,7 @@
 		635DE3B2248E44900030DC69 /* EditProfileVC */ = {
 			isa = PBXGroup;
 			children = (
+				63E94A7924920887000F375E /* EditProfileCell */,
 				635DE3B3248E44900030DC69 /* xib */,
 				635DE3B5248E44900030DC69 /* EditProfileVC.swift */,
 			);
@@ -1035,6 +1138,126 @@
 			path = xib;
 			sourceTree = "<group>";
 		};
+		63672D262491072900A12D91 /* CustomLanguagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				63672D272491072900A12D91 /* CustomLanguagePicker.swift */,
+				63672D282491072900A12D91 /* CustomLanguagePickerCell */,
+				63672D2B2491072900A12D91 /* CustomLanguagePicker.xib */,
+			);
+			path = CustomLanguagePicker;
+			sourceTree = "<group>";
+		};
+		63672D282491072900A12D91 /* CustomLanguagePickerCell */ = {
+			isa = PBXGroup;
+			children = (
+				63672D292491072900A12D91 /* CustomLanguagePickerCell.xib */,
+				63672D2A2491072900A12D91 /* CustomLanguagePickerCell.swift */,
+			);
+			path = CustomLanguagePickerCell;
+			sourceTree = "<group>";
+		};
+		63672D3024910DC000A12D91 /* SettingVC */ = {
+			isa = PBXGroup;
+			children = (
+				63672D4A249120F400A12D91 /* SettingSwitchCell */,
+				63672D3124910DC000A12D91 /* xib */,
+				63672D3324910DC000A12D91 /* SettingCell */,
+				63672D3624910DC000A12D91 /* SettingVC.swift */,
+			);
+			path = SettingVC;
+			sourceTree = "<group>";
+		};
+		63672D3124910DC000A12D91 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63672D3224910DC000A12D91 /* SettingVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63672D3324910DC000A12D91 /* SettingCell */ = {
+			isa = PBXGroup;
+			children = (
+				63672D3424910DC000A12D91 /* SettingTblCell.swift */,
+				63672D3524910DC000A12D91 /* SettingTblCell.xib */,
+			);
+			path = SettingCell;
+			sourceTree = "<group>";
+		};
+		63672D3B2491148B00A12D91 /* CustomCurrencyPicker */ = {
+			isa = PBXGroup;
+			children = (
+				63672D3C2491148B00A12D91 /* CustomCurrencyPicker.swift */,
+				63672D3D2491148B00A12D91 /* CustomCurrencyPicker.xib */,
+			);
+			path = CustomCurrencyPicker;
+			sourceTree = "<group>";
+		};
+		63672D402491190B00A12D91 /* CustomInformationDialog */ = {
+			isa = PBXGroup;
+			children = (
+				63672D412491190B00A12D91 /* CustomInformationDialog.xib */,
+				63672D422491190B00A12D91 /* CustomInformationDialog.swift */,
+			);
+			path = CustomInformationDialog;
+			sourceTree = "<group>";
+		};
+		63672D4524911D3200A12D91 /* CustomChangePasswordDialog */ = {
+			isa = PBXGroup;
+			children = (
+				63672D4624911D3200A12D91 /* CustomChangePasswordDialog.swift */,
+				63672D4724911D3200A12D91 /* CustomChangePasswordDialog.xib */,
+			);
+			path = CustomChangePasswordDialog;
+			sourceTree = "<group>";
+		};
+		63672D4A249120F400A12D91 /* SettingSwitchCell */ = {
+			isa = PBXGroup;
+			children = (
+				63672D4B249120F400A12D91 /* SettingSwitchTblCell.xib */,
+				63672D4C249120F400A12D91 /* SettingSwitchTblCell.swift */,
+			);
+			path = SettingSwitchCell;
+			sourceTree = "<group>";
+		};
+		63672D4F2491266E00A12D91 /* NotificationVC */ = {
+			isa = PBXGroup;
+			children = (
+				63672D502491266E00A12D91 /* xib */,
+				63672D522491266E00A12D91 /* NotificationCell */,
+				63672D552491266E00A12D91 /* NotificationTblFooter */,
+				63672D582491266E00A12D91 /* NotificationVC.swift */,
+			);
+			path = NotificationVC;
+			sourceTree = "<group>";
+		};
+		63672D502491266E00A12D91 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63672D512491266E00A12D91 /* NotificationVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63672D522491266E00A12D91 /* NotificationCell */ = {
+			isa = PBXGroup;
+			children = (
+				63672D532491266E00A12D91 /* NotificationTblCell.swift */,
+				63672D542491266E00A12D91 /* NotificationTblCell.xib */,
+			);
+			path = NotificationCell;
+			sourceTree = "<group>";
+		};
+		63672D552491266E00A12D91 /* NotificationTblFooter */ = {
+			isa = PBXGroup;
+			children = (
+				63672D562491266E00A12D91 /* NotificationTblFooter.swift */,
+				633D6C4424914686008B3299 /* NotificationTblFooter.xib */,
+			);
+			path = NotificationTblFooter;
+			sourceTree = "<group>";
+		};
 		636873882462C08D0076779B /* VerificationView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1146,6 +1369,43 @@
 			path = ProfileTblCell;
 			sourceTree = "<group>";
 		};
+		63E94A7924920887000F375E /* EditProfileCell */ = {
+			isa = PBXGroup;
+			children = (
+				63E94A7A24920887000F375E /* EditProfileCell.swift */,
+				63E94A7B24920887000F375E /* EditProfileCell.xib */,
+			);
+			path = EditProfileCell;
+			sourceTree = "<group>";
+		};
+		63EA7D0C2493ADC30027F9D3 /* CustomTextFieldDialog */ = {
+			isa = PBXGroup;
+			children = (
+				63EA7D0D2493ADC30027F9D3 /* CustomTextFieldDialog.xib */,
+				63EA7D0E2493ADC30027F9D3 /* CustomTextFieldDialog.swift */,
+			);
+			path = CustomTextFieldDialog;
+			sourceTree = "<group>";
+		};
+		63EA7D112493B5880027F9D3 /* CustomCityPicker */ = {
+			isa = PBXGroup;
+			children = (
+				63EA7D122493B5880027F9D3 /* CustomCityPicker.xib */,
+				63EA7D132493B5880027F9D3 /* CustomCityPickerCell */,
+				63EA7D162493B5880027F9D3 /* CustomCityPicker.swift */,
+			);
+			path = CustomCityPicker;
+			sourceTree = "<group>";
+		};
+		63EA7D132493B5880027F9D3 /* CustomCityPickerCell */ = {
+			isa = PBXGroup;
+			children = (
+				63EA7D142493B5880027F9D3 /* CustomCityPickerCell.swift */,
+				63EA7D152493B5880027F9D3 /* CustomCityPickerCell.xib */,
+			);
+			path = CustomCityPickerCell;
+			sourceTree = "<group>";
+		};
 		946E73FC457DD220D3AC5E51 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1220,13 +1480,21 @@
 				6358A089248F8968004F2CA8 /* CustomPreferGenderPicker.xib in Resources */,
 				6348E20224723B2B00C15975 /* Nunito-Bold.ttf in Resources */,
 				6348E20324723B2B00C15975 /* Nunito-Light.ttf in Resources */,
+				63E94A7D24920887000F375E /* EditProfileCell.xib in Resources */,
 				637A7C362487C75F005D3819 /* SideVC.xib in Resources */,
 				63AFB5E624893A7D007566D4 /* ProfileVC.xib in Resources */,
+				63672D2F2491072900A12D91 /* CustomLanguagePicker.xib in Resources */,
+				63672D3F2491148B00A12D91 /* CustomCurrencyPicker.xib in Resources */,
 				635DE3B6248E44900030DC69 /* EditProfileVC.xib in Resources */,
 				6348E20424723B2B00C15975 /* Nunito-Regular.ttf in Resources */,
+				63672D2D2491072900A12D91 /* CustomLanguagePickerCell.xib in Resources */,
 				6348E20524723B2B00C15975 /* Nunito-SemiBold.ttf in Resources */,
+				63EA7D192493B5880027F9D3 /* CustomCityPickerCell.xib in Resources */,
 				635A0E3B2463B9A400080194 /* TutorialCell.xib in Resources */,
 				634BB77424612E7900494379 /* RegisterVC.xib in Resources */,
+				63672D4D249120F400A12D91 /* SettingSwitchTblCell.xib in Resources */,
+				63672D3724910DC000A12D91 /* SettingVC.xib in Resources */,
+				63672D432491190B00A12D91 /* CustomInformationDialog.xib in Resources */,
 				6361ECEA2462924900CC317A /* ContactVerificationVC.xib in Resources */,
 				63409C6B246C17E10097C517 /* CustomAlert.xib in Resources */,
 				6368738B2462C08D0076779B /* VerificationAlert.xib in Resources */,
@@ -1237,10 +1505,15 @@
 				63432F93248F6685006BA322 /* PressureSelectionTblCell.xib in Resources */,
 				632DB050248F9EE000B65B46 /* MyTherapistTblCell.xib in Resources */,
 				63432F88248F5D0B006BA322 /* CustomPressurePicker.xib in Resources */,
+				63EA7D172493B5880027F9D3 /* CustomCityPicker.xib in Resources */,
 				633E97EA248687B00097093E /* ContactVerifiedVC.xib in Resources */,
+				63672D4924911D3200A12D91 /* CustomChangePasswordDialog.xib in Resources */,
+				63EA7D0F2493ADC40027F9D3 /* CustomTextFieldDialog.xib in Resources */,
 				63838EF5247CDD9B007F1154 /* HomeVC.xib in Resources */,
 				6364005B24697BD7009A8F5E /* CompleteIdentityVerificationVC.xib in Resources */,
 				6364006724697BD7009A8F5E /* ScanSelfieVC.xib in Resources */,
+				63672D3924910DC000A12D91 /* SettingTblCell.xib in Resources */,
+				633C1ACB24924483009EB6AE /* CustomCountyPicker.xib in Resources */,
 				632DB047248F8FDD00B65B46 /* CustomTextViewDialog.xib in Resources */,
 				6364006924697BD7009A8F5E /* ScanSelfieInstructionVC.xib in Resources */,
 				637A7C4E2487E64D005D3819 /* MenuCellHorizontal.xib in Resources */,
@@ -1251,16 +1524,20 @@
 				633B7130245FF18200CF490D /* TutorialVC.xib in Resources */,
 				6350C859248A2F33002E13F2 /* ProfileTblUserInfoCell.xib in Resources */,
 				634398B3245BEAB2009BCA1F /* CommonColor.xcassets in Resources */,
+				633C1ACE24924483009EB6AE /* CustomCountyPickerCell.xib in Resources */,
 				63432F81248F4B45006BA322 /* MassagePreferenceTblCell.xib in Resources */,
 				6358A088248F8968004F2CA8 /* PreferGenderPickerCell.xib in Resources */,
 				6364005D24697BD7009A8F5E /* KycVC.xib in Resources */,
 				6364006124697BD7009A8F5E /* KycInfoVC.xib in Resources */,
+				63672D592491266E00A12D91 /* NotificationVC.xib in Resources */,
+				63672D5B2491266E00A12D91 /* NotificationTblCell.xib in Resources */,
 				637A7C4F2487E64D005D3819 /* MenuCellVerticle.xib in Resources */,
 				63439FEF2488F1BB000E2F4C /* CustomDatePicker.xib in Resources */,
 				633B711F245FC8A100CF490D /* WelcomeVC.xib in Resources */,
 				6364006324697BD7009A8F5E /* ScanPassportInstructionVC.xib in Resources */,
 				634398B4245BEAB2009BCA1F /* Assets.xcassets in Resources */,
 				632DB04F248F9EE000B65B46 /* MyTherapistVC.xib in Resources */,
+				633D6C4524914686008B3299 /* NotificationTblFooter.xib in Resources */,
 				6343985B245BE6DF009BCA1F /* Localizable.strings in Resources */,
 				634398B5245BEAB2009BCA1F /* ClientImages.xcassets in Resources */,
 				633E97EC248687B00097093E /* VerifyContactVC.xib in Resources */,
@@ -1318,18 +1595,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				633D1A422488B7910085AC56 /* PinterestLayout.swift in Sources */,
+				63672D5E2491266E00A12D91 /* NotificationVC.swift in Sources */,
 				6343984D245BE6DF009BCA1F /* PreferenceHelper.swift in Sources */,
 				634BB77524612E7900494379 /* RegisterVC.swift in Sources */,
 				635A0E3C2463B9A400080194 /* TutorialCell.swift in Sources */,
 				632DB046248F8FDD00B65B46 /* CustomTextViewDialog.swift in Sources */,
+				63672D5A2491266E00A12D91 /* NotificationTblCell.swift in Sources */,
 				63435B4F24769C4900AF7100 /* AppWebApi.swift in Sources */,
 				632DB093248FA5CC00B65B46 /* EditProfileTextfield.swift in Sources */,
+				633C1ACD24924483009EB6AE /* CustomCountyPickerCell.swift in Sources */,
+				63EA7D102493ADC40027F9D3 /* CustomTextFieldDialog.swift in Sources */,
 				632DB09D248FA5CC00B65B46 /* JDDeviceHelper.swift in Sources */,
 				634398AC245BE92C009BCA1F /* Common.swift in Sources */,
+				63672D4E249120F400A12D91 /* SettingSwitchTblCell.swift in Sources */,
+				63672D3E2491148B00A12D91 /* CustomCurrencyPicker.swift in Sources */,
 				63409C6C246C17E10097C517 /* CustomAlert.swift in Sources */,
 				6364006424697BD7009A8F5E /* ScanPassportInstructionVC.swift in Sources */,
 				635DE3B7248E44900030DC69 /* EditProfileVC.swift in Sources */,
 				6364005C24697BD7009A8F5E /* CompleteIdentityVerificationVC.swift in Sources */,
+				63672D5C2491266E00A12D91 /* NotificationTblFooter.swift in Sources */,
+				63672D3A24910DC000A12D91 /* SettingVC.swift in Sources */,
 				633B7126245FDA5800CF490D /* ThemeTextField.swift in Sources */,
 				633B7127245FDA5800CF490D /* ThemeButton.swift in Sources */,
 				63435B5024769C4900AF7100 /* Reachability.swift in Sources */,
@@ -1347,6 +1632,7 @@
 				633E97ED248687B00097093E /* VerifyContactVC.swift in Sources */,
 				63432F8A248F5D37006BA322 /* ThemeBottomDialog.swift in Sources */,
 				632DB094248FA5CC00B65B46 /* ACFloatingTextfield.swift in Sources */,
+				63672D4824911D3200A12D91 /* CustomChangePasswordDialog.swift in Sources */,
 				632DB0A0248FA5CC00B65B46 /* UITextField + Extension.swift in Sources */,
 				6343985A245BE6DF009BCA1F /* APP+NAVIGATION.swift in Sources */,
 				632DB056248FA54200B65B46 /* CustomRateViewDialog.swift in Sources */,
@@ -1369,26 +1655,36 @@
 				632DB096248FA5CC00B65B46 /* Loader.swift in Sources */,
 				637A7C352487C75F005D3819 /* SideVC.swift in Sources */,
 				63439FF02488F1BB000E2F4C /* CustomDatePicker.swift in Sources */,
+				633C1AC224923D3B009EB6AE /* CountriesWebService.swift in Sources */,
+				63EA7D182493B5880027F9D3 /* CustomCityPickerCell.swift in Sources */,
 				6364006824697BD7009A8F5E /* ScanSelfieVC.swift in Sources */,
 				6364006624697BD7009A8F5E /* ScanPassportVC.swift in Sources */,
+				63EA7D1A2493B5880027F9D3 /* CustomCityPicker.swift in Sources */,
+				63672D2E2491072900A12D91 /* CustomLanguagePickerCell.swift in Sources */,
 				63435B5224769C4900AF7100 /* UserWebService.swift in Sources */,
 				632DB09C248FA5CC00B65B46 /* JDSubclasses + UIControl.swift in Sources */,
 				63439848245BE6DF009BCA1F /* AppDelegate.swift in Sources */,
+				63E94A7C24920887000F375E /* EditProfileCell.swift in Sources */,
 				632DB098248FA5CC00B65B46 /* NSObject + Extension.swift in Sources */,
+				633C1ACC24924483009EB6AE /* CustomCountyPicker.swift in Sources */,
 				6364006A24697BD7009A8F5E /* ScanSelfieInstructionVC.swift in Sources */,
 				63432F83248F4B45006BA322 /* MassagePreferenceVC.swift in Sources */,
 				6343984C245BE6DF009BCA1F /* Constant.swift in Sources */,
 				632DB051248F9EE000B65B46 /* MyTherapistTblCell.swift in Sources */,
 				6358A08A248F8968004F2CA8 /* CustomPreferGenderPicker.swift in Sources */,
 				636873912462C5800076779B /* OTPTextField.swift in Sources */,
+				633C1AC424923FCA009EB6AE /* CityWebService.swift in Sources */,
 				633B7131245FF18200CF490D /* TutorialVC.swift in Sources */,
 				63439861245BE6DF009BCA1F /* SceneDelegate.swift in Sources */,
+				63672D2C2491072900A12D91 /* CustomLanguagePicker.swift in Sources */,
 				637A7C502487E64D005D3819 /* MenuCellVerticle.swift in Sources */,
 				633B7120245FC8A100CF490D /* WelcomeVC.swift in Sources */,
 				632DB09F248FA5CC00B65B46 /* UIViewController + Extension.swift in Sources */,
 				6343985E245BE6DF009BCA1F /* Main.swift in Sources */,
 				632DB097248FA5CC00B65B46 /* DataType + Extesnion.swift in Sources */,
+				63672D3824910DC000A12D91 /* SettingTblCell.swift in Sources */,
 				636873902462C5800076779B /* OTPFieldView.swift in Sources */,
+				63672D442491190B00A12D91 /* CustomInformationDialog.swift in Sources */,
 				6361ECEB2462924900CC317A /* ContactVerificationVC.swift in Sources */,
 				63AFB5E524893A7C007566D4 /* ProfileVC.swift in Sources */,
 				634398C1245BECDC009BCA1F /* LoginVC.swift in Sources */,

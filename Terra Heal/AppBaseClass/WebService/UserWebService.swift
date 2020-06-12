@@ -107,6 +107,7 @@ extension User {
 
         override init(fromDictionary dictionary: [String:Any]) {
             super.init(fromDictionary: dictionary)
+           
             data = dictionary["data"] as? [String:Any]
         }
 
@@ -259,3 +260,4 @@ extension User {
     }
 
 }
+

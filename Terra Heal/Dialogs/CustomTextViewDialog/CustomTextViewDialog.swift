@@ -33,8 +33,9 @@ class CustomTextViewDialog: ThemeBottomDialogView {
     func initialSetup() {
         dialogView.clipsToBounds = true
         self.backgroundColor = .clear
-        self.txtDescription.setFont(name: FontName.Regular, size: FontSize.label_22)
-        self.txtDescription.placeholder = "Lorem ipsum dolor sit amet,"
+        self.txtDescription.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.txtDescription.setPlaceholderFont(name: FontName.Regular, size: FontSize.label_14)
+        self.txtDescription.placeholder = "Lorem ipsum dolor"
         self.backgroundView.backgroundColor = UIColor.black
         self.backgroundView.alpha = 0.0
         self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))

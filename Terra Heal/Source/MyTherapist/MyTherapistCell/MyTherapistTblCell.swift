@@ -22,6 +22,7 @@ class MyTherapistTblCell: TableCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
         self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
@@ -31,7 +32,6 @@ class MyTherapistTblCell: TableCell {
 
     func setData(data: MyTherapistDetail ) {
         self.lblName.text = data.title
-        
     }
 
     override func layoutSubviews() {
@@ -39,6 +39,7 @@ class MyTherapistTblCell: TableCell {
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
         self.imgSelected?.setRound()
     }
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state

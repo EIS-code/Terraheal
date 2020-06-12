@@ -17,7 +17,21 @@ class EditProfileVC: MainVC {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var hVwContent: NSLayoutConstraint!
 
-    @IBOutlet weak var txtName: EditProfileTextfield!
+    @IBOutlet weak var collectionVwForProfile: UICollectionView!
+    @IBOutlet weak var hCv: NSLayoutConstraint!
+
+    var arrForProfile: [EditProfileTextFieldDetail] = [
+        EditProfileTextFieldDetail(vlaue: appSingleton.user.name, placeholder: "name", isMadatory: true, contentType: ""),
+        EditProfileTextFieldDetail(vlaue: appSingleton.user.name, placeholder: "surname", isMadatory: true, contentType: ""),
+        EditProfileTextFieldDetail(vlaue: appSingleton.user.gender, placeholder: "gender", isMadatory: true, contentType: ""),
+        EditProfileTextFieldDetail(vlaue: appSingleton.user.dob, placeholder: "Date Of Birth", isMadatory: true, contentType: ""),
+        EditProfileTextFieldDetail(vlaue: appSingleton.user.telNumber, placeholder: "Mobile", isMadatory: true, contentType: ""),
+        EditProfileTextFieldDetail(vlaue: appSingleton.user.telNumber, placeholder: "Emergency Contact", isMadatory: true, contentType: ""),
+        EditProfileTextFieldDetail(vlaue: "--", placeholder: "city", isMadatory: true, contentType: ""),
+        EditProfileTextFieldDetail(vlaue: "--", placeholder: "country", isMadatory: true, contentType: ""),
+        EditProfileTextFieldDetail(vlaue: "--", placeholder: "Nif", isMadatory: true, contentType: ""),
+        EditProfileTextFieldDetail(vlaue: "--", placeholder: "Id/ Password", isMadatory: true, contentType: "")
+    ]
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -39,6 +53,7 @@ class EditProfileVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
+        self.setupCollectionView(collectionView: collectionVwForProfile)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -54,18 +69,21 @@ class EditProfileVC: MainVC {
         super.viewDidLayoutSubviews()
 
         if self.isViewAvailable() {
-        self.vwBg?.setRound(withBorderColor: UIColor.clear, andCornerRadious: 20.0, borderWidth: 1.0)
-        self.vwBg?.setShadow()
+            self.vwBg?.setRound(withBorderColor: UIColor.clear, andCornerRadious: 20.0, borderWidth: 1.0)
+            self.vwBg?.setShadow()
+
+            //self.collectionVwForProfile?.reloadData()
+
         }
     }
 
     private func initialViewSetup() {
         self.vwBar?.backgroundColor = UIColor.clear
 
-        self.lblTitle?.text = "Edit Profile"//appSingleton.user.name
+        self.lblTitle?.text = "edit profile"//appSingleton.user.name
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.btnBack.setBackButton()
-        scrVw.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
+
         
     }
 
@@ -74,9 +92,82 @@ class EditProfileVC: MainVC {
     }
 
     // MARK: - Other Methods
-    func openDatePicker() {
+
+    func openCountryPicker(index:Int = 0) {
+        let countryPickerAlert: CustomCountyPicker = CustomCountyPicker.fromNib()
+        countryPickerAlert.initialize(title:arrForProfile[index].placeholder, buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized())
+        countryPickerAlert.show(animated: true)
+        countryPickerAlert.onBtnCancelTapped = {
+            [weak countryPickerAlert, weak self] in
+            countryPickerAlert?.dismiss()
+        }
+        countryPickerAlert.onBtnDoneTapped = {
+            [weak countryPickerAlert, weak self] (country) in
+            countryPickerAlert?.dismiss()
+            self?.arrForProfile[7].vlaue = country.name
+            self?.collectionVwForProfile.reloadData()
+        }
+    }
+
+    func openCityPicker(index:Int = 0) {
+        let cityPickerAlert: CustomCityPicker = CustomCityPicker.fromNib()
+        cityPickerAlert.initialize(title: arrForProfile[index].placeholder, buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized())
+        cityPickerAlert.show(animated: true)
+        cityPickerAlert.onBtnCancelTapped = {
+            [weak cityPickerAlert, weak self] in
+            cityPickerAlert?.dismiss()
+        }
+        cityPickerAlert.onBtnDoneTapped = {
+            [weak cityPickerAlert, weak self] (city) in
+            cityPickerAlert?.dismiss()
+            self?.arrForProfile[6].vlaue = city.name
+            self?.collectionVwForProfile.reloadData()
+        }
+    }
+    func openTextFieldPicker(index:Int = 0) {
+        let alert: CustomTextFieldDialog = CustomTextFieldDialog.fromNib()
+        alert.initialize(title: arrForProfile[index].placeholder, data: arrForProfile[index].vlaue, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            alert?.dismiss()
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (description) in
+            alert?.dismiss()
+            guard let self = self else {
+                return
+            }
+            self.arrForProfile[index].vlaue = description
+            self.collectionVwForProfile.reloadData()
+        }
+    }
+
+
+    func openTextViewPicker(index:Int = 0) {
+        let alert: CustomTextViewDialog = CustomTextViewDialog.fromNib()
+         alert.initialize(title: arrForProfile[index].placeholder, data: arrForProfile[index].vlaue, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            alert?.dismiss()
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (description) in
+            alert?.dismiss()
+            guard let self = self else {
+                return
+            }
+
+            self.arrForProfile[index].vlaue = description
+            self.collectionVwForProfile.reloadData()
+        }
+    }
+
+
+    func openDatePicker(index:Int = 0) {
         let datePickerAlert: CustomDatePicker = CustomDatePicker.fromNib()
-        datePickerAlert.initialize(title: "Date Of Birth", buttonTitle: "Proceed",cancelButtonTitle: "Back")
+        datePickerAlert.initialize(title: arrForProfile[index].placeholder, buttonTitle: "Proceed",cancelButtonTitle: "Back")
         datePickerAlert.show(animated: true)
         datePickerAlert.onBtnCancelTapped = {
             [weak datePickerAlert, weak self] in
@@ -85,14 +176,16 @@ class EditProfileVC: MainVC {
         datePickerAlert.onBtnDoneTapped = {
             [weak datePickerAlert, weak self] (date) in
             datePickerAlert?.dismiss()
-            print(Date.milliSecToDate(milliseconds: date, format: "dd-MM-yy"))
+            print()
+            self?.arrForProfile[index].vlaue = Date.milliSecToDate(milliseconds: date, format: "dd MMM yyyy")
+            self?.collectionVwForProfile.reloadData()
         }
     }
 
-    func openGenderPicker() {
+    func openGenderPicker(index:Int = 0) {
         let genderPickerAlert: CustomGenderPicker = CustomGenderPicker.fromNib()
         genderPickerAlert.selectedGender = Gender.Female
-        genderPickerAlert.initialize(title: "GENDER_DIALOG_TITLE".localized(), buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized())
+        genderPickerAlert.initialize(title: arrForProfile[index].placeholder, buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized())
         genderPickerAlert.show(animated: true)
         genderPickerAlert.onBtnCancelTapped = {
             [weak genderPickerAlert, weak self] in
@@ -101,7 +194,9 @@ class EditProfileVC: MainVC {
         genderPickerAlert.onBtnDoneTapped = {
             [weak genderPickerAlert, weak self] (gender) in
             genderPickerAlert?.dismiss()
-            print(gender)
+            self?.arrForProfile[index].vlaue = gender
+            self?.collectionVwForProfile.reloadData()
+
         }
     }
 
@@ -120,14 +215,78 @@ extension EditProfileVC:  UIScrollViewDelegate {
             let transLation = y/kTableHeaderHeight
             headerView.alpha = transLation
             headerView.transform = CGAffineTransform.init(scaleX: transLation, y: transLation)
-
+            self.collectionVwForProfile.isScrollEnabled = false
         } else {
             headerView.alpha = 0.0
+            self.collectionVwForProfile.isScrollEnabled = true
+
         }
-        print(self.scrVw.contentOffset.y)
+
 
     }
 
 
 }
 
+
+// MARK: - CollectionView Methods
+extension EditProfileVC:  UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    private func setupCollectionView(collectionView:  UICollectionView) {
+        collectionView.backgroundColor = UIColor.clear
+        collectionView.isUserInteractionEnabled = true
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.isPagingEnabled = false
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(EditProfileCell.nib()
+            , forCellWithReuseIdentifier: EditProfileCell.name)
+        scrVw.delegate = self
+        
+        scrVw.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
+    }
+
+    // MARK: UICollectionViewDataSource
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return arrForProfile.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EditProfileCell.name, for: indexPath) as! EditProfileCell
+        cell.setData(data: self.arrForProfile[indexPath.row])
+
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        switch indexPath.row {
+        case 0,1,4,5,8,9 :
+            self.openTextFieldPicker(index: indexPath.row)
+        case 2:
+            self.openGenderPicker(index: indexPath.row)
+        case 3:
+            self.openDatePicker(index: indexPath.row)
+        case 6:
+            self.openCityPicker(index: indexPath.row)
+        case 7:
+            self.openCountryPicker(index: indexPath.row)
+        default:
+            print("")
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = collectionView.bounds.width
+        if indexPath.row == 6 || indexPath.row == 7  {
+            return CGSize(width: (size / 2.0) - 10, height: size * 0.2)
+        }
+        return CGSize(width: size , height: size * 0.2)
+    }
+
+
+}

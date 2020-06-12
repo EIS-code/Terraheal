@@ -50,8 +50,6 @@ enum Menu: String {
     case Help = "5"
     case Campaigns = "6"
     case GiftVoucher = "7"
-
-
 }
 class SideVC: MainVC {
 

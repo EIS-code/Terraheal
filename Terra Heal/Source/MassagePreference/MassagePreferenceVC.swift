@@ -4,31 +4,60 @@
 //
 
 import UIKit
-import CoreLocation
 
 
+//MARK: Massage Preference Menu
+enum MassagePreferenceMenu: String {
+    case Pressure = "1"
+    case GenderPreference = "2"
+    case TreatMent = "3"
+    case Problems = "4"
+    case PastSurgery = "5"
+    case Allergies = "6"
+    case HealthCondition = "7"
+    func name() -> String {
+        switch self {
+        case .Pressure:
+            return "MASSAGE_PREFERENCE_MENU_ITEM_1".localized()
+
+        case .GenderPreference:
+            return  "MASSAGE_PREFERENCE_MENU_ITEM_2".localized()
+        case .TreatMent:
+            return  "MASSAGE_PREFERENCE_MENU_ITEM_3".localized()
+        case .Problems:
+            return  "MASSAGE_PREFERENCE_MENU_ITEM_4".localized()
+        case .PastSurgery:
+            return  "MASSAGE_PREFERENCE_MENU_ITEM_5".localized()
+        case .Allergies:
+            return  "MASSAGE_PREFERENCE_MENU_ITEM_6".localized()
+        case .HealthCondition:
+            return  "MASSAGE_PREFERENCE_MENU_ITEM_7".localized()
+        }
+    }
+
+}
+
+struct MassagePreferenceDetail {
+    var type: MassagePreferenceMenu = MassagePreferenceMenu.Pressure
+    var title: String = ""
+    var strDetail: String = ""
+    var isSelected: Bool = false
+}
 
 class MassagePreferenceVC: MainVC {
 
     @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var tableView: UITableView!
-
     @IBOutlet weak var btnSubmit: ThemeButton!
 
-    @IBOutlet weak var headerGradient: UIView!
-    @IBOutlet weak var footerGradient: UIView!
-
-    let topGradientLayer: CAGradientLayer? = CAGradientLayer()
-    let bottomGradientLayer: CAGradientLayer? = CAGradientLayer()
-
     var arrForMenu: [MassagePreferenceDetail] = [
-        MassagePreferenceDetail(title: "MASSAGE_PREFERENCE_MENU_ITEM_1".localized(), isSelected: false),
-        MassagePreferenceDetail(title: "MASSAGE_PREFERENCE_MENU_ITEM_2".localized(), isSelected: false),
-        MassagePreferenceDetail(title: "MASSAGE_PREFERENCE_MENU_ITEM_3".localized(), isSelected: false),
-        MassagePreferenceDetail(title: "MASSAGE_PREFERENCE_MENU_ITEM_4".localized(), isSelected: false),
-        MassagePreferenceDetail(title: "MASSAGE_PREFERENCE_MENU_ITEM_5".localized(), isSelected: false),
-        MassagePreferenceDetail(title: "MASSAGE_PREFERENCE_MENU_ITEM_6".localized(), isSelected: false),
-        MassagePreferenceDetail(title: "MASSAGE_PREFERENCE_MENU_ITEM_7".localized(), isSelected: false),
+        MassagePreferenceDetail(type: .Pressure, title: MassagePreferenceMenu.Pressure.name(), isSelected: false),
+        MassagePreferenceDetail(type: .GenderPreference, title: MassagePreferenceMenu.GenderPreference.name(), isSelected: false),
+        MassagePreferenceDetail(type: .TreatMent, title: MassagePreferenceMenu.TreatMent.name(), isSelected: false),
+        MassagePreferenceDetail(type: .Problems, title: MassagePreferenceMenu.Problems.name(), isSelected: false),
+        MassagePreferenceDetail(type: .PastSurgery, title: MassagePreferenceMenu.PastSurgery.name(), isSelected: false),
+        MassagePreferenceDetail(type: .Allergies, title: MassagePreferenceMenu.Allergies.name(), isSelected: false),
+        MassagePreferenceDetail(type: .HealthCondition, title: MassagePreferenceMenu.HealthCondition.name(), isSelected: false),
     ]
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -72,8 +101,6 @@ class MassagePreferenceVC: MainVC {
             self.tableView?.reloadData({
 
             })
-            topGradientLayer?.frame = headerGradient.bounds
-            bottomGradientLayer?.frame = footerGradient.bounds
             self.tableView?.contentInset = UIEdgeInsets(top: headerGradient.frame.height, left: 0, bottom: footerGradient.frame.height, right: 0)
             self.btnSubmit?.setHighlighted(isHighlighted: true)
         }
@@ -91,9 +118,11 @@ class MassagePreferenceVC: MainVC {
         self.btnBack.setBackButton()
     }
 
-    func openMassagerPressurePicker() {
+    func openMassagerPressurePicker(index:Int = 0) {
         let alert: CustomPressurePicker = CustomPressurePicker.fromNib()
-        alert.initialize(title: "MASSAGE_PREFERENCE_MENU_ITEM_1".localized(), buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+
+        alert.initialize(title: MassagePreferenceMenu.Pressure.name(), buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+        alert.select(pressure: appSingleton.myMassagePreference.pressure)
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
@@ -101,14 +130,21 @@ class MassagePreferenceVC: MainVC {
         }
         alert.onBtnDoneTapped = {
              [weak alert, weak self] (pressure) in
+            guard let self = self else {
+                return
+            }
             alert?.dismiss()
-            print(pressure.name())
+            appSingleton.myMassagePreference.pressure = pressure
+            self.arrForMenu[index].isSelected = true
+            self.arrForMenu[index].strDetail = pressure.name()
+            self.tableView.reloadData()
         }
     }
 
-    func openPreferGenderPicker() {
+    func openPreferGenderPicker(index:Int = 0) {
         let alert: CustomPreferGenderPicker = CustomPreferGenderPicker.fromNib()
-        alert.initialize(title: "MASSAGE_PREFERENCE_MENU_ITEM_2".localized(), buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+        alert.initialize(title: MassagePreferenceMenu.GenderPreference.name(), buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+        alert.select(gender: appSingleton.myMassagePreference.prefereGender)
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
@@ -116,23 +152,36 @@ class MassagePreferenceVC: MainVC {
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (gender) in
+            guard let self = self else {
+                return
+            }
+
             alert?.dismiss()
-            print(gender.name())
+            appSingleton.myMassagePreference.prefereGender = gender
+            self.arrForMenu[index].isSelected = true
+            self.arrForMenu[index].strDetail = gender.name()
+            self.tableView.reloadData()
         }
     }
 
-    func openTextViewPicker() {
+    func openTextViewPicker(index:Int = 0) {
         let alert: CustomTextViewDialog = CustomTextViewDialog.fromNib()
-        alert.initialize(title: "MASSAGE_PREFERENCE_MENU_ITEM_3".localized(), data: "", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+        alert.initialize(title: arrForMenu[index].type.name(), data: arrForMenu[index].strDetail, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
             alert?.dismiss()
         }
         alert.onBtnDoneTapped = {
-            [weak alert, weak self] (gender) in
+            [weak alert, weak self] (description) in
             alert?.dismiss()
-            print(gender)
+            guard let self = self else {
+                return
+            }
+
+            self.arrForMenu[index].isSelected = true
+            self.arrForMenu[index].strDetail = description
+            self.tableView.reloadData()
         }
     }
 
@@ -145,36 +194,6 @@ class MassagePreferenceVC: MainVC {
     }
 
 
-    func addTopFade() {
-        let gradientColor = UIColor.white
-        topGradientLayer!.frame = headerGradient.bounds
-        topGradientLayer!.colors = [gradientColor.withAlphaComponent(1.0).cgColor,gradientColor.withAlphaComponent(0.8).cgColor, gradientColor.withAlphaComponent(0.5).cgColor,gradientColor.withAlphaComponent(0.0).cgColor]
-        topGradientLayer!.name = "topGradient"
-
-        if let oldLayer:  CAGradientLayer = self.headerGradient.layer.sublayers?.last(where: { (currentLayer) -> Bool in
-            return currentLayer.name == "topGradient"
-        }) as?  CAGradientLayer {
-            oldLayer.removeFromSuperlayer()
-        }
-
-        self.headerGradient.layer.addSublayer(topGradientLayer!)
-    }
-
-    func addBottomFade() {
-        let gradientColor = UIColor.white
-        bottomGradientLayer!.frame = footerGradient.bounds
-        bottomGradientLayer!.colors = [gradientColor.withAlphaComponent(0.0).cgColor,gradientColor.withAlphaComponent(0.5).cgColor, gradientColor.withAlphaComponent(0.8).cgColor,gradientColor.withAlphaComponent(1.0).cgColor]
-        bottomGradientLayer!.name = "bottomGradient"
-
-        if let oldLayer:  CAGradientLayer = self.footerGradient.layer.sublayers?.last(where: { (currentLayer) -> Bool in
-            return currentLayer.name == "bottomGradient"
-        }) as?  CAGradientLayer {
-            oldLayer.removeFromSuperlayer()
-        }
-
-        self.footerGradient.layer.addSublayer(bottomGradientLayer!)
-    }
-
 }
 
 
@@ -183,7 +202,7 @@ extension MassagePreferenceVC: UITableViewDelegate,UITableViewDataSource, UIScro
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-
+        tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.register(MassagePreferenceTblCell.nib()
@@ -197,20 +216,32 @@ extension MassagePreferenceVC: UITableViewDelegate,UITableViewDataSource, UIScro
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-
-            let cell = tableView.dequeueReusableCell(withIdentifier: MassagePreferenceTblCell.name, for: indexPath) as?  MassagePreferenceTblCell
-            cell?.layoutIfNeeded()
-            cell?.setData(data: arrForMenu[indexPath.row])
-            cell?.layoutIfNeeded()
-            return cell!
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: MassagePreferenceTblCell.name, for: indexPath) as?  MassagePreferenceTblCell
+        cell?.layoutIfNeeded()
+        cell?.setData(data: arrForMenu[indexPath.row])
+        cell?.layoutIfNeeded()
+        return cell!
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        //self.openMassagerPressurePicker()
-        self.openTextViewPicker()
+        let massagePreference = self.arrForMenu[indexPath.row]
+        switch massagePreference.type {
+        case .Pressure:
+            self.openMassagerPressurePicker(index: indexPath.row)
+        case .GenderPreference:
+            self.openPreferGenderPicker(index: indexPath.row)
+        case .TreatMent:
+            self.openTextViewPicker(index: indexPath.row)
+        case .Problems:
+            self.openTextViewPicker(index: indexPath.row)
+        case .PastSurgery:
+            self.openTextViewPicker(index: indexPath.row)
+        case .Allergies:
+            self.openTextViewPicker(index: indexPath.row)
+        case .HealthCondition:
+            self.openTextViewPicker(index: indexPath.row)
+        }
     }
     
 }

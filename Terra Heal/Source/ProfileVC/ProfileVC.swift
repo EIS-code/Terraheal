@@ -8,6 +8,50 @@ import UIKit
 
 
 
+enum ProfileMenu: String {
+    case MyProfile = "1"
+    case MyBookings = "2"
+    case MyPlaces = "3"
+    case MyMassagePreference = "4"
+    case MyTherapist = "5"
+    case TherapistQuestionaries = "6"
+    case ManageAddress = "7"
+    case MangagePeople = "8"
+    case PaymentPreference = "9"
+    case Settings = "10"
+    func name() -> String {
+        switch self {
+        case .MyProfile:
+            return "PROFILE_MENU_ITEM_1".localized()
+        case .MyBookings:
+            return  "PROFILE_MENU_ITEM_2".localized()
+        case .MyPlaces:
+            return  "PROFILE_MENU_ITEM_3".localized()
+        case .MyMassagePreference:
+            return  "PROFILE_MENU_ITEM_4".localized()
+        case .MyTherapist:
+            return  "PROFILE_MENU_ITEM_5".localized()
+        case .TherapistQuestionaries:
+            return  "PROFILE_MENU_ITEM_6".localized()
+        case .ManageAddress:
+            return  "PROFILE_MENU_ITEM_7".localized()
+        case .MangagePeople:
+            return  "PROFILE_MENU_ITEM_8".localized()
+        case .PaymentPreference:
+            return  "PROFILE_MENU_ITEM_9".localized()
+        case .Settings:
+            return  "PROFILE_MENU_ITEM_10".localized()
+        }
+    }
+}
+
+struct ProfileItemDetail {
+    var type: ProfileMenu = ProfileMenu.MyProfile
+    var title: String = ""
+    var image: String = ""
+}
+
+
 class ProfileVC: MainVC {
 
     @IBOutlet weak var btnProfile: FloatingRoundButton!
@@ -26,17 +70,16 @@ class ProfileVC: MainVC {
     @IBOutlet weak var hVwContent: NSLayoutConstraint!
 
     var arrForMenu: [ProfileItemDetail] = [
-        ProfileItemDetail(title: "PROFILE_MENU_ITEM_1".localized(), image: ""),
-        ProfileItemDetail(title: "PROFILE_MENU_ITEM_2".localized(), image: ""),
-        ProfileItemDetail(title: "PROFILE_MENU_ITEM_3".localized(), image: ""),
-        ProfileItemDetail(title: "PROFILE_MENU_ITEM_4".localized(), image: ""),
-        ProfileItemDetail(title: "PROFILE_MENU_ITEM_5".localized(), image: ""),
-        ProfileItemDetail(title: "PROFILE_MENU_ITEM_6".localized(), image: ""),
-        ProfileItemDetail(title: "PROFILE_MENU_ITEM_7".localized(), image: ""),
-        ProfileItemDetail(title: "PROFILE_MENU_ITEM_8".localized(), image: ""),
-        ProfileItemDetail(title: "PROFILE_MENU_ITEM_9".localized(), image: ""),
-        ProfileItemDetail(title: "PROFILE_MENU_ITEM_10".localized(),image: ""),
-
+        ProfileItemDetail(type: ProfileMenu.MyProfile, title: ProfileMenu.MyProfile.name(),  image: ""),
+        ProfileItemDetail(type: ProfileMenu.MyBookings, title: ProfileMenu.MyBookings.name(),  image: ""),
+        ProfileItemDetail(type: ProfileMenu.MyPlaces, title: ProfileMenu.MyPlaces.name(),  image: ""),
+        ProfileItemDetail(type: ProfileMenu.MyMassagePreference, title: ProfileMenu.MyMassagePreference.name(),  image: ""),
+        ProfileItemDetail(type: ProfileMenu.MyTherapist, title: ProfileMenu.MyTherapist.name(),  image: ""),
+        ProfileItemDetail(type: ProfileMenu.TherapistQuestionaries, title: ProfileMenu.TherapistQuestionaries.name(),  image: ""),
+        ProfileItemDetail(type: ProfileMenu.ManageAddress, title: ProfileMenu.ManageAddress.name(),  image: ""),
+        ProfileItemDetail(type: ProfileMenu.MangagePeople, title: ProfileMenu.MangagePeople.name(),  image: ""),
+        ProfileItemDetail(type: ProfileMenu.PaymentPreference, title: ProfileMenu.PaymentPreference.name(),  image: ""),
+        ProfileItemDetail(type: ProfileMenu.Settings, title: ProfileMenu.Settings.name(),  image: ""),
     ]
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -101,39 +144,6 @@ class ProfileVC: MainVC {
     @IBAction func btnProfileTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-
-    // MARK: - Other Methods
-    func openDatePicker() {
-        let datePickerAlert: CustomDatePicker = CustomDatePicker.fromNib()
-        datePickerAlert.initialize(title: "Date Of Birth", buttonTitle: "Proceed",cancelButtonTitle: "Back")
-        datePickerAlert.show(animated: true)
-        datePickerAlert.onBtnCancelTapped = {
-            [weak datePickerAlert, weak self] in
-            datePickerAlert?.dismiss()
-        }
-        datePickerAlert.onBtnDoneTapped = {
-            [weak datePickerAlert, weak self] (date) in
-            datePickerAlert?.dismiss()
-            print(Date.milliSecToDate(milliseconds: date, format: "dd-MM-yy"))
-        }
-    }
-
-    func openGenderPicker() {
-        let genderPickerAlert: CustomGenderPicker = CustomGenderPicker.fromNib()
-        genderPickerAlert.selectedGender = Gender.Female
-        genderPickerAlert.initialize(title: "GENDER_DIALOG_TITLE".localized(), buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized())
-        genderPickerAlert.show(animated: true)
-        genderPickerAlert.onBtnCancelTapped = {
-            [weak genderPickerAlert, weak self] in
-            genderPickerAlert?.dismiss()
-        }
-        genderPickerAlert.onBtnDoneTapped = {
-            [weak genderPickerAlert, weak self] (gender) in
-            genderPickerAlert?.dismiss()
-            print(gender)
-        }
-    }
-
 }
 
 
@@ -143,6 +153,7 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
         tableView.delegate = self
         tableView.dataSource = self
         self.scrVw.delegate = self
+        tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.register(ProfileTblCell.nib()
@@ -163,22 +174,17 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
             let transLation = y/kTableHeaderHeight
             headerView.alpha = transLation
             headerView.transform = CGAffineTransform.init(scaleX: transLation, y: transLation)
-
+            
         } else {
             headerView.alpha = 0.0
         }
-        print(self.scrVw.contentOffset.y)
-
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return arrForMenu.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-
         let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTblCell.name, for: indexPath) as?  ProfileTblCell
         cell?.layoutIfNeeded()
         cell?.setData(data: arrForMenu[indexPath.row])
@@ -190,11 +196,28 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.row == 3 {
-            Common.appDelegate.loadMassagePreferenceVC(navigaionVC: self.navigationController)
-        }
-        else if indexPath.row == 4 {
-            Common.appDelegate.loadMyTherapistVC(navigaionVC: self.navigationController)
+        let selectedType = arrForMenu[indexPath.row].type
+        switch selectedType {
+        case .MyProfile:
+                Common.appDelegate.loadEditProfileVC(navigaionVC: self.navigationController)
+        case .MyBookings:
+                Common.showAlert(message: "Under Construction")
+        case .MyPlaces:
+                Common.showAlert(message: "Under Construction")
+        case .MyMassagePreference:
+                Common.appDelegate.loadMassagePreferenceVC(navigaionVC: self.navigationController)
+        case .MyTherapist:
+                 Common.appDelegate.loadMyTherapistVC(navigaionVC: self.navigationController)
+        case .TherapistQuestionaries:
+                Common.showAlert(message: "Under Construction")
+        case .ManageAddress:
+                Common.showAlert(message: "Under Construction")
+        case .MangagePeople:
+                Common.showAlert(message: "Under Construction")
+        case .PaymentPreference:
+                Common.showAlert(message: "Under Construction")
+        case .Settings:
+                Common.appDelegate.loadSettingVC(navigaionVC: self.navigationController)
         }
     }
 }

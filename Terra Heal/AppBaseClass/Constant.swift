@@ -22,9 +22,9 @@ class MessageCode: NSObject {
 
 }
 struct Gender {
-    static let Male  = "m"
-    static let Female  = "f"
-    static let Other  = "t"
+    static let Male  = "Male"
+    static let Female  = "Female"
+    static let Other  = "Other"
 }
 
 enum Pressure: String {
@@ -45,25 +45,7 @@ enum Pressure: String {
     }
 }
 
-enum PreferGender: String {
-    case MaleOnly  = "male"
-    case FemaleOnly  = "female"
-    case PreferMale  = "prefer male"
-    case PrefereFemale  = "prefere female"
-    case NoPreference  = "noPreference"
 
-    func name()-> String {
-        switch self {
-        // Use Internationalization, as appropriate.
-        case .MaleOnly: return "GENDER_MALE_ONLY".localized()
-        case .FemaleOnly: return "GENDER_FEMALE_ONLY".localized()
-        case .PreferMale: return "GENDER_PREFER_MALE".localized()
-        case .PrefereFemale: return "GENDER_PREFER_FEMALE".localized()
-        default: return "GENDER_NO_PREFERENCE".localized()
-        }
-    }
-
-}
 
 struct LoginBy {
     static let Social  = "1"

@@ -7,11 +7,7 @@
 //
 
 import UIKit
-struct MassagePreferenceDetail {
-    var title: String = ""
-    var strDetail: String = ""
-    var isSelected: Bool = false
-}
+
 class MassagePreferenceTblCell: TableCell {
 
     @IBOutlet weak var lblName: ThemeLabel!
@@ -23,6 +19,7 @@ class MassagePreferenceTblCell: TableCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.selectionStyle = .none
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
         self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.label_22)

@@ -177,40 +177,6 @@ extension UITableView {
     }
 }
 
-extension UITableView {
-
-    func fadeEdges(with modifier: CGFloat) {
-
-        let visibleCells = self.visibleCells
-
-        guard !visibleCells.isEmpty else { return }
-        guard let topCell = visibleCells.first else { return }
-        guard let bottomCell = visibleCells.last else { return }
-
-        visibleCells.forEach {
-            $0.contentView.alpha = 1
-        }
-
-        let cellHeight = topCell.frame.height - 1
-        let tableViewTopPosition = self.frame.origin.y
-        let tableViewBottomPosition = self.frame.maxY
-
-        guard let topCellIndexpath = self.indexPath(for: topCell) else { return }
-        let topCellPositionInTableView = self.rectForRow(at:topCellIndexpath)
-
-        guard let bottomCellIndexpath = self.indexPath(for: bottomCell) else { return }
-        let bottomCellPositionInTableView = self.rectForRow(at: bottomCellIndexpath)
-
-        let topCellPosition = self.convert(topCellPositionInTableView, to: self.superview).origin.y
-        let bottomCellPosition = self.convert(bottomCellPositionInTableView, to: self.superview).origin.y + cellHeight
-        let topCellOpacity = (1.0 - ((tableViewTopPosition - topCellPosition) / cellHeight) * modifier)
-        let bottomCellOpacity = (1.0 - ((bottomCellPosition - tableViewBottomPosition) / cellHeight) * modifier)
-
-        topCell.contentView.alpha = topCellOpacity
-        bottomCell.contentView.alpha = bottomCellOpacity
-    }
-
-}
 
 extension UIScrollView {
 
@@ -231,3 +197,38 @@ extension UIScrollView {
 
 
 
+extension UICollectionView {
+
+    func reloadData(_ completion: (() -> Void)?) {
+        DispatchQueue.main.async {
+            CATransaction.begin()
+            CATransaction.setCompletionBlock({
+                completion?()
+            })
+            self.reloadData()
+            CATransaction.commit()
+        }
+    }
+
+    func reloadData(heightToFit cntrnt: NSLayoutConstraint?,
+                    _ completion: (() -> Void)?) {
+        DispatchQueue.main.async {
+            self.contentOffset = CGPoint.zero
+            self.reloadData({
+                print("Collection Content Height : \(ceil(self.contentSize.height))")
+                cntrnt?.constant = ceil(self.contentSize.height)
+
+                self.superview?.layoutIfNeeded()
+                print("Collection Constraint Height : \(cntrnt?.constant)")
+                print("Collection Frame Height : \(ceil(self.frame.height))")
+
+                if self.isHEqualToCH {
+                    completion?()
+                }
+                else {
+                    self.reloadData(heightToFit: cntrnt, completion)
+                }
+            })
+        }
+    }
+}

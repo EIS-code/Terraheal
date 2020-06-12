@@ -155,6 +155,29 @@
 //MARK: Rateview dialog
 
 
+//MARK: Prefer Language
+"PREFERE_LANGUAGE_TITTLE" = "preferred language";
+"LANGUAGE_ENGLISH" =  "English";
+"LANGUAGE_PORTUGUES" =  "Portugues";
+//MARK: Setting Menu
+"SETTING_MENU_TITTLE" = "settings";
+"SETTING_PREFERRED_LANGUAGE" = "preferred language";
+"SETTING_CHANGE_PASSWORD" = "change password";
+"SETTING_CURRENCY" = "currency";
+"SETTING_DISTANCE_UNIT" = "units ( km,miles.. )";
+"SETTING_NOTIFICATION" = "notifications";
+"SETTING_TERMS_AND_CONDITION" = "terms & conditions";
+"SETTING_PRIVACY" = "manage privacy settings";
+"SETTING_LOGOUT" = "logout";
+
+//MARK: Change Password Dialog
+"CHANGE_PASSWORD_TXT_OLD_PASSWORD" = "old password";
+"CHANGE_PASSWORD_TXT_NEW_PASSWORD" = "new password";
+"CHANGE_PASSWORD_TXT_CONFIRM_PASSWORD" = "confirm password";
+
+//MARK: Notification
+"NOTIFICATION_TITLE" = "notifications";
+
 //MARK: -
 //MARK: Common Strings
 //MARK: -
@@ -163,9 +186,13 @@
 "BTN_SUBMIT" = "Submit";
 "BTN_PROCEED" = "Proceed";
 "BTN_BACK" = "Back";
+"BTN_CANCEL" = "Cancel";
 "BTN_SKIP" = "skip";
 "BTN_APPLY" =  "Apply";
 "LBL_MENU" =  "menu";
+
+"PRIVACY_CONTENT" =  "<p>manage privacy settings</p><p>last updated on may 26th, 2020</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod.</p>";
+"TERMS_AND_CONDITION_CONTENT" =  "<p>terms &amp; conditions</p><p>last updated on may 26th, 2020</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod.</p>";
 
 //MARK: -
 //MARK: VALIDATION TOAST MESSAGES

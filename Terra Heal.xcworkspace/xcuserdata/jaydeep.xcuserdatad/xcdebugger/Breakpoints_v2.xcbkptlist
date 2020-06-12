@@ -7,48 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5B3EEAE2-5810-4E32-B49D-91347FA75FC8"
+            uuid = "3024A166-FB42-44A7-AB5D-09B048D9AF0B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Terra Heal/Source/Common/UploadDocumentDialog/UploadDocumentDialog.swift"
+            filePath = "Terra Heal/Dialogs/CustomCountyPicker/CustomCountyPicker.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
-            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "searchData(for:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "57B2EA4E-5EAF-42AB-B6EA-AEEB12830DDF"
+            uuid = "501890D9-6BC3-49F8-8728-22618B84ABB4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Terra Heal/Others/Frameworks/ACFloatingTextfield.swift"
+            filePath = "Terra Heal/Dialogs/CustomCityPicker/CustomCityPicker.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "450"
-            endingLineNumber = "450"
-            landmarkName = "ACFloatingTextfield"
-            landmarkType = "21">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AED40EA5-2E57-4C69-A9FA-CAE81A139565"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Terra Heal/Source/Client/ContactVerification/VerificationView/VerificationAlert.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "230"
-            endingLineNumber = "230"
-            landmarkName = "updateVerificationView()"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "getCityList()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

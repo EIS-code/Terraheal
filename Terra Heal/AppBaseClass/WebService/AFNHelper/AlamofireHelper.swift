@@ -38,7 +38,7 @@ class AlamofireHelper: NSObject
     func getDataFrom(urlString : String,methodName : String,paramData : [String:Any] , block:@escaping APIManagerCompletion)
     {
         
-      self.dataBlock = block
+        self.dataBlock = block
 
         if Connectivity.isConnectedToInternet {
 
@@ -51,7 +51,9 @@ class AlamofireHelper: NSObject
         if (methodName == AlamofireHelper.POST_METHOD) {
 
 
+
                 let request = AF.request(urlString, method: .post, parameters:  paramData)
+
                 request.response { (response) in
                     switch(response.result) {
                     case .success(let value):
@@ -82,7 +84,14 @@ class AlamofireHelper: NSObject
 
             }
         else {
-            let request = AF.request(urlString, method: .get, parameters:  paramData)
+
+            var request: DataRequest!
+            if paramData.isEmpty {
+                request = AF.request(urlString, method: .get)
+            } else {
+                request = AF.request(urlString, method: .get, parameters:  paramData)
+            }
+
             request.response { (response) in
                 switch(response.result) {
                 case .success(let value):
@@ -158,6 +167,36 @@ class AlamofireHelper: NSObject
         
     }
 
+
+    func getalarmofireResponse(url:String, params: [String:Any] = [:], method:HTTPMethod = .get) {
+
+        let request = AF.request(url, method: method, parameters:  params)
+
+        request.response { (response) in
+                switch(response.result) {
+                case .success(let value):
+                    if value != nil {
+                        print("Success")
+                        print("Request URL :- \(url)\n")
+                        print("Request Parameters :- \(params)\n")
+                        let dictionary = try! value!.toDictionary()
+                        print("Request Response :- \(dictionary)")
+
+                    }
+                    break
+                case .failure(let error):
+                    Loader.hideLoading()
+                    print("Failed")
+                    print("Request URL :- \(url)\n")
+                    print("Request Parameters :- \(params)\n")
+                    print("Request Response :- \(response.data.dictionary)")
+                    Common.showAlert(message: error.localizedDescription)
+                }
+                print(response.data.dictionary)
+            }
+
+
+    }
 
  }
 

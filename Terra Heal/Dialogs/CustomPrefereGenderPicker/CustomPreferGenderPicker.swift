@@ -8,11 +8,33 @@
 
 import UIKit
 
+enum PreferGender: String {
+    case MaleOnly  = "male"
+    case FemaleOnly  = "female"
+    case PreferMale  = "prefer male"
+    case PrefereFemale  = "prefere female"
+    case NoPreference  = "noPreference"
+
+    func name()-> String {
+        switch self {
+        // Use Internationalization, as appropriate.
+        case .MaleOnly: return "GENDER_MALE_ONLY".localized()
+        case .FemaleOnly: return "GENDER_FEMALE_ONLY".localized()
+        case .PreferMale: return "GENDER_PREFER_MALE".localized()
+        case .PrefereFemale: return "GENDER_PREFER_FEMALE".localized()
+        default: return "GENDER_NO_PREFERENCE".localized()
+        }
+    }
+
+}
+
 struct GenderDetail {
     var type: PreferGender = PreferGender.MaleOnly
     var name: String = ""
     var isSelected: Bool = false
 }
+
+
 class CustomPreferGenderPicker: ThemeBottomDialogView {
 
     @IBOutlet weak var lblTitle: ThemeLabel!
@@ -23,7 +45,7 @@ class CustomPreferGenderPicker: ThemeBottomDialogView {
     var onBtnDoneTapped: ((_ gender:PreferGender) -> Void)? = nil
     var selectedGender: PreferGender = PreferGender.NoPreference
     var arrForGender: [GenderDetail] = [
-        GenderDetail.init(type: PreferGender.NoPreference, name: PreferGender.NoPreference.name(), isSelected: true),
+        GenderDetail.init(type: PreferGender.NoPreference, name: PreferGender.NoPreference.name(), isSelected: false),
         GenderDetail.init(type: PreferGender.PreferMale, name: PreferGender.PreferMale.name(), isSelected: false),
         GenderDetail.init(type: PreferGender.MaleOnly, name: PreferGender.MaleOnly.name(), isSelected: false),
         GenderDetail.init(type: PreferGender.PrefereFemale, name: PreferGender.PrefereFemale.name(), isSelected: false),
@@ -46,6 +68,13 @@ class CustomPreferGenderPicker: ThemeBottomDialogView {
 
     func select(gender:PreferGender) {
         self.selectedGender = gender
+        for i in 0..<arrForGender.count {
+            arrForGender[i].isSelected = false
+            if arrForGender[i].type == gender {
+                arrForGender[i].isSelected = true
+            }
+        }
+        self.tableView.reloadData()
     }
 
     func initialSetup() {
@@ -94,6 +123,7 @@ extension CustomPreferGenderPicker : UITableViewDelegate,UITableViewDataSource {
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.register(PreferGenderPickerCell.nib()

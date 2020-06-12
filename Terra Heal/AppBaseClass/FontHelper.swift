@@ -28,6 +28,7 @@ struct FontSize {
     static let label_18: CGFloat = 18
     static let label_26: CGFloat = 26
     static let label_36: CGFloat = 36
+    static let label_10: CGFloat = 10
 }
 
 class FontHelper: UIFont {

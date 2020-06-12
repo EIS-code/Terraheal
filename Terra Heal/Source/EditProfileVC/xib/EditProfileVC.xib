@@ -12,12 +12,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditProfileVC" customModule="Terra_Heal" customModuleProvider="target">
             <connections>
                 <outlet property="btnBack" destination="gQT-1O-XW1" id="Fhc-ZU-ghz"/>
+                <outlet property="collectionVwForProfile" destination="Mgx-L8-kbq" id="2mB-hc-LkO"/>
                 <outlet property="hVwContent" destination="pWp-Cw-Yab" id="X2d-c4-KYf"/>
                 <outlet property="headerView" destination="1vj-Dw-czR" id="cSC-pd-oOA"/>
                 <outlet property="ivProfilePic" destination="ioG-BP-L40" id="Q8C-XZ-r2L"/>
                 <outlet property="lblTitle" destination="x2g-qm-ekv" id="v7m-TP-rZ8"/>
                 <outlet property="scrVw" destination="Msw-Lg-la4" id="u3Z-Ir-1Ep"/>
-                <outlet property="txtName" destination="eCN-UA-ew2" id="IWQ-Y3-mZM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="vwBg" destination="Gr9-kt-5QC" id="zKy-pi-Pim"/>
             </connections>
@@ -72,7 +72,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gr9-kt-5QC" userLabel="vwBg">
-                    <rect key="frame" x="0.0" y="104" width="375" height="752"/>
+                    <rect key="frame" x="0.0" y="84" width="375" height="772"/>
                     <color key="backgroundColor" name="theme_primary"/>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msw-Lg-la4" userLabel="scrView">
@@ -81,59 +81,24 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xd4-ev-sCy" userLabel="contentView">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="707"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="88o-R4-PdX">
-                                    <rect key="frame" x="20" y="19.999999999999996" width="335" height="59.666666666666657"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WAI-v2-AqR" userLabel="vwForEditText">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="59.666666666666664"/>
-                                            <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eCN-UA-ew2" customClass="EditProfileTextfield" customModule="Terra_Heal" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="59.666666666666664"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="eCN-UA-ew2" secondAttribute="height" multiplier="28:5" id="ZQP-GW-Vq8"/>
-                                                    </constraints>
-                                                    <color key="textColor" name="theme_light_text_color"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                            <real key="value" value="0.0"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                                            <color key="value" name="theme_light_text_color"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="textForeColor">
-                                                            <color key="value" name="theme_light_text_color"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                                                            <color key="value" name="theme_light_text_color"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                            <color key="value" name="theme_light_text_color"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="selectedPlaceHolderColor">
-                                                            <color key="value" name="theme_light_text_color"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </textField>
-                                            </subviews>
-                                            <color key="backgroundColor" name="theme_primary"/>
-                                            <constraints>
-                                                <constraint firstItem="eCN-UA-ew2" firstAttribute="width" secondItem="WAI-v2-AqR" secondAttribute="width" id="176-Xr-7RE"/>
-                                                <constraint firstItem="eCN-UA-ew2" firstAttribute="centerY" secondItem="WAI-v2-AqR" secondAttribute="centerY" id="Dit-dX-cp9"/>
-                                                <constraint firstItem="eCN-UA-ew2" firstAttribute="leading" secondItem="WAI-v2-AqR" secondAttribute="leading" id="LT5-Pu-V9b"/>
-                                                <constraint firstItem="eCN-UA-ew2" firstAttribute="top" secondItem="WAI-v2-AqR" secondAttribute="top" id="fgp-MX-Z2m"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                </stackView>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Mgx-L8-kbq">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="707"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xo8-XQ-8a5">
+                                        <size key="itemSize" width="50" height="50"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="88o-R4-PdX" firstAttribute="leading" secondItem="Xd4-ev-sCy" secondAttribute="leading" constant="20" id="MfY-YX-M8S"/>
-                                <constraint firstAttribute="trailing" secondItem="88o-R4-PdX" secondAttribute="trailing" constant="20" id="PTH-no-3lJ"/>
-                                <constraint firstItem="88o-R4-PdX" firstAttribute="top" secondItem="Xd4-ev-sCy" secondAttribute="top" constant="20" id="Rlv-rR-lMe"/>
+                                <constraint firstAttribute="trailing" secondItem="Mgx-L8-kbq" secondAttribute="trailing" id="YPr-r0-p5P"/>
+                                <constraint firstAttribute="bottom" secondItem="Mgx-L8-kbq" secondAttribute="bottom" id="a68-GV-nwa"/>
                                 <constraint firstAttribute="height" constant="707" id="pWp-Cw-Yab"/>
+                                <constraint firstItem="Mgx-L8-kbq" firstAttribute="top" secondItem="Xd4-ev-sCy" secondAttribute="top" id="vgH-s0-Jq4"/>
+                                <constraint firstItem="Mgx-L8-kbq" firstAttribute="leading" secondItem="Xd4-ev-sCy" secondAttribute="leading" id="xst-XC-oGU"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -153,7 +118,6 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Gr9-kt-5QC" firstAttribute="top" secondItem="88o-R4-PdX" secondAttribute="top" constant="-20" id="1vq-lc-P9f"/>
                 <constraint firstItem="Msw-Lg-la4" firstAttribute="top" secondItem="1vj-Dw-czR" secondAttribute="top" constant="20" id="61r-8k-P5V"/>
                 <constraint firstItem="Gr9-kt-5QC" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" constant="44" id="68p-Iu-wDx"/>
                 <constraint firstItem="x2g-qm-ekv" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="8a5-29-Gxw"/>
@@ -163,6 +127,7 @@
                 <constraint firstItem="Msw-Lg-la4" firstAttribute="bottom" secondItem="VLJ-uh-dxO" secondAttribute="bottom" id="SYC-Bw-jXs"/>
                 <constraint firstItem="x2g-qm-ekv" firstAttribute="centerY" secondItem="gQT-1O-XW1" secondAttribute="centerY" id="TKq-OP-Kfl"/>
                 <constraint firstItem="Gr9-kt-5QC" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" id="avJ-AN-aTP"/>
+                <constraint firstItem="Gr9-kt-5QC" firstAttribute="top" secondItem="Mgx-L8-kbq" secondAttribute="top" constant="-20" id="cNI-3t-Hv4"/>
                 <constraint firstItem="Msw-Lg-la4" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" id="cx4-tP-rTI"/>
                 <constraint firstItem="1vj-Dw-czR" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" id="gB8-Lh-7JA"/>
                 <constraint firstItem="Gr9-kt-5QC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1vj-Dw-czR" secondAttribute="top" id="jfL-kU-l8n"/>
