@@ -17,13 +17,15 @@ class CustomCityPicker: ThemeBottomDialogView {
     @IBOutlet weak var btnDone: ThemeButton!
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchVw: UIView!
+
+    @IBOutlet weak var txtSearchBar: ThemeTextField!
 
     var onBtnDoneTapped: ((_ data: City) -> Void)? = nil
     var selectedData: City? = nil
 
-    var arrForFilteredData: [City] = City.getDemoArray()
-    var arrForForOriginalData: [City] = City.getDemoArray()
+    var arrForFilteredData: [City] = []//City.getDemoArray()
+    var arrForForOriginalData: [City] = []//City.getDemoArray()
     func initialize(title:String,buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
         self.lblTitle.text = title
@@ -36,8 +38,8 @@ class CustomCityPicker: ThemeBottomDialogView {
         }
         self.select(data: self.selectedData)
         self.setupTableView(tableView: self.tableView)
-        self.setupSearchbar(searchBar: self.searchBar)
-        //self.getCityList()
+        self.setupSearchbar(searchBar: self.txtSearchBar)
+        
     }
 
     func select(data:City?) {
@@ -64,6 +66,7 @@ class CustomCityPicker: ThemeBottomDialogView {
         vwTopBar?.setRound(withBorderColor: .clear, andCornerRadious: 2.5, borderWidth: 1.0)
         self.btnDone?.setHighlighted(isHighlighted: true)
         self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.searchVw.setRound(withBorderColor: .clear, andCornerRadious: self.searchVw.bounds.height/2.0, borderWidth: 1.0)
     }
 
     @IBAction func btnDoneTapped(_ sender: Any) {
@@ -76,7 +79,8 @@ class CustomCityPicker: ThemeBottomDialogView {
         }
 
     }
-   
+
+
 }
 
 extension CustomCityPicker : UITableViewDelegate,UITableViewDataSource {
@@ -132,11 +136,16 @@ extension CustomCityPicker : UITableViewDelegate,UITableViewDataSource {
     }
 }
 
-extension CustomCityPicker : UISearchBarDelegate {
+extension CustomCityPicker : UITextFieldDelegate {
 
-    private func setupSearchbar(searchBar: UISearchBar) {
-        searchBar.delegate = self
+    private func setupSearchbar(searchBar: UITextField) {
+        txtSearchBar.delegate = self
+        txtSearchBar.setFont(name: FontName.Regular, size: FontSize.label_10)
+        txtSearchBar.placeholder = "search country"
         
+    }
+    @IBAction func searching(_ sender: UITextField) {
+        searchData(for: sender.text ?? "")
     }
 
     func searchData(for text: String) {
@@ -156,16 +165,14 @@ extension CustomCityPicker : UISearchBarDelegate {
         self.reloadTableDateToFitHeight(tableView: tableView)
     }
 
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.searchData(for: searchText)
-    }
+
 }
 //MARK: Web Service Call
 extension CustomCityPicker {
 
-    private func getCityList() {
+    func getCityList(countryId:String) {
         var request = Cities.RequestCitylist()
-        request.country_id = "2"
+        request.country_id = countryId
         AppWebApi.cityList(params: request) { (response) in
             self.arrForForOriginalData.removeAll()
             self.arrForFilteredData.removeAll()

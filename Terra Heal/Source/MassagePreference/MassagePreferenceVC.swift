@@ -39,7 +39,6 @@ enum MassagePreferenceMenu: String {
 
 struct MassagePreferenceDetail {
     var type: MassagePreferenceMenu = MassagePreferenceMenu.Pressure
-    var title: String = ""
     var strDetail: String = ""
     var isSelected: Bool = false
 }
@@ -51,13 +50,13 @@ class MassagePreferenceVC: MainVC {
     @IBOutlet weak var btnSubmit: ThemeButton!
 
     var arrForMenu: [MassagePreferenceDetail] = [
-        MassagePreferenceDetail(type: .Pressure, title: MassagePreferenceMenu.Pressure.name(), isSelected: false),
-        MassagePreferenceDetail(type: .GenderPreference, title: MassagePreferenceMenu.GenderPreference.name(), isSelected: false),
-        MassagePreferenceDetail(type: .TreatMent, title: MassagePreferenceMenu.TreatMent.name(), isSelected: false),
-        MassagePreferenceDetail(type: .Problems, title: MassagePreferenceMenu.Problems.name(), isSelected: false),
-        MassagePreferenceDetail(type: .PastSurgery, title: MassagePreferenceMenu.PastSurgery.name(), isSelected: false),
-        MassagePreferenceDetail(type: .Allergies, title: MassagePreferenceMenu.Allergies.name(), isSelected: false),
-        MassagePreferenceDetail(type: .HealthCondition, title: MassagePreferenceMenu.HealthCondition.name(), isSelected: false),
+        MassagePreferenceDetail(type: .Pressure, isSelected: false),
+        MassagePreferenceDetail(type: .GenderPreference, isSelected: false),
+        MassagePreferenceDetail(type: .TreatMent, isSelected: false),
+        MassagePreferenceDetail(type: .Problems, isSelected: false),
+        MassagePreferenceDetail(type: .PastSurgery, isSelected: false),
+        MassagePreferenceDetail(type: .Allergies, isSelected: false),
+        MassagePreferenceDetail(type: .HealthCondition,isSelected: false),
     ]
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -79,7 +78,6 @@ class MassagePreferenceVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
-         self.addLocationObserver()
         self.addBottomFade()
         self.addTopFade()
 

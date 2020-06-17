@@ -127,7 +127,7 @@ extension TutorialVC:  UICollectionViewDelegate, UICollectionViewDataSource, UIC
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = collectionView.bounds.width
-        return CGSize(width: size - 10, height: collectionView.frame.height)
+        return CGSize(width: size - 10, height: collectionView.bounds.height)
     }
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

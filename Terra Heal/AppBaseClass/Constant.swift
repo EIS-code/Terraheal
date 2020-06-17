@@ -21,10 +21,21 @@ class MessageCode: NSObject {
     static let exception: String = "401"
 
 }
-struct Gender {
-    static let Male  = "Male"
-    static let Female  = "Female"
-    static let Other  = "Other"
+
+
+enum Gender: String {
+    case Male  = "m"
+    case Female  = "f"
+    case Other  = "Other"
+    func name()-> String {
+        switch self {
+        // Use Internationalization, as appropriate.
+        case .Male: return "GENDER_MALE".localized()
+        case .Female: return "GENDER_FEMALE".localized()
+        default: return "GENDER_NO_PREFERENCE".localized()
+        }
+    }
+
 }
 
 enum Pressure: String {

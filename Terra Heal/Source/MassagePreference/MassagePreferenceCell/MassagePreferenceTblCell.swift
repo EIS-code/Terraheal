@@ -15,8 +15,6 @@ class MassagePreferenceTblCell: TableCell {
     @IBOutlet weak var btnAction: ThemeButton!
     @IBOutlet weak var imgSelected: UIImageView!
 
-
-
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
@@ -28,7 +26,7 @@ class MassagePreferenceTblCell: TableCell {
     }
 
     func setData(data: MassagePreferenceDetail ) {
-        self.lblName.text = data.title
+        self.lblName.text = data.type.name()
         self.imgSelected.isHidden = !data.isSelected
     }
 

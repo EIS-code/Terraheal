@@ -46,7 +46,6 @@ class NotificationVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
-        self.addLocationObserver()
         self.addBottomFade()
         self.addTopFade()
     }

@@ -66,11 +66,15 @@ class AppWebApi: NSObject {
             return  Domain + Routes.Client + "/get/" + PreferenceHelper.shared.getUserId()
         }
         static var GetCountryList: String {
-            return  Domain + Routes.Location + "/get/country"
+            return Domain + Routes.Location + "/get/country"
         }
         static var GetCityList: String {
             return  Domain + Routes.Location + "/get/city"
         }
+        static var GetLocationList: String {
+            return  Domain + Routes.Location + "/get/province"
+        }
+
 
     }
 }
@@ -171,6 +175,13 @@ extension AppWebApi {
     class func countryList(params:Countries.RequestCountrylist = Countries.RequestCountrylist(), completionHandler: @escaping ((Countries.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetCountryList, methodName: AlamofireHelper.GET_METHOD, paramData: [:]) { (data, dictionary, error) in
             let response = Countries.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+
+    class func locationList(params:PriceAndLocation.RequestLocationlist = PriceAndLocation.RequestLocationlist(), completionHandler: @escaping ((PriceAndLocation.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetLocationList, methodName: AlamofireHelper.GET_METHOD, paramData: [:]) { (data, dictionary, error) in
+            let response = PriceAndLocation.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }

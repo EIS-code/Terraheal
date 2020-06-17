@@ -26,6 +26,7 @@ class HomeTblCell: TableCell {
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
         self.ivHome?.setRound()
+        self.ivHome?.backgroundColor = UIColor.themePrimary.withAlphaComponent(0.3)
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
         self.btnAction?.setHighlighted(isHighlighted: true)
     }

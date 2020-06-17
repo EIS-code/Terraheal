@@ -141,8 +141,6 @@ import UIKit
     }
 
     func getPaddingHeight() -> CGFloat {
-        print("Bounds height: \(self.bounds.height)")
-        print("Leading Constraint: \(self.placeholderLabelLeading?.constant)")
         return  self.bounds.height * 0.6
     }
 
@@ -295,16 +293,7 @@ extension EditProfileTextfield {
         }
     }
 
-    func changePlaceHolder(color: UIColor) {
-        if #available(iOS 13, *) {
-            guard let attributedPlaceholder = attributedPlaceholder else { return }
-            let attributes: [NSAttributedString.Key: UIColor] = [.foregroundColor: color]
-            self.attributedPlaceholder = NSAttributedString(string: attributedPlaceholder.string, attributes: attributes)
-        }
-        else {
-            self.setValue(placeHolderColor, forKeyPath: "_placeholderLabel.textColor")
-        }
-    }
+   
 }
 
 

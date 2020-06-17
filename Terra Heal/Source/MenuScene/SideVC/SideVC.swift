@@ -36,9 +36,8 @@ class SOther: NSObject {
 }
 
 struct MenuItem {
-    var name: String = ""
-    var image: String = ""
     var id: Menu = Menu.Campaigns
+    var image: String = ""
     var isVerticle: Bool = true
 }
 enum Menu: String {
@@ -46,10 +45,36 @@ enum Menu: String {
     case ReferAndEarn = "1"
     case PricingAndLocation = "2"
     case PromoCode = "3"
-    case Packs = "4"
-    case Help = "5"
-    case Campaigns = "6"
-    case GiftVoucher = "7"
+    case Notifications = "4"
+    case Packs = "5"
+    case Help = "6"
+    case Campaigns = "7"
+    case GiftVoucher = "8"
+    func name() -> String {
+        switch self {
+        case .HowItWork:
+            return "MENU_ITEM_1".localized()
+        case .ReferAndEarn:
+            return "MENU_ITEM_2".localized()
+        case .PricingAndLocation:
+            return "MENU_ITEM_3".localized()
+        case .PromoCode:
+            return "MENU_ITEM_4".localized()
+        case .Notifications:
+            return "MENU_ITEM_5".localized()
+        case .Packs:
+            return "MENU_ITEM_6".localized()
+        case .Help:
+            return "MENU_ITEM_7".localized()
+        case .Campaigns:
+            return "MENU_ITEM_8".localized()
+        case .GiftVoucher:
+            return "MENU_ITEM_9".localized()
+        default:
+            return ""
+        }
+    }
+
 }
 class SideVC: MainVC {
 
@@ -68,14 +93,16 @@ class SideVC: MainVC {
     }()
 
     var arrForMenu: [MenuItem] = [
-        MenuItem.init(name: "MENU_ITEM_1".localized(), image: "", id: Menu.HowItWork, isVerticle: true),
-        MenuItem.init(name: "MENU_ITEM_2".localized(), image: "", id: Menu.ReferAndEarn, isVerticle: true),
-        MenuItem.init(name: "MENU_ITEM_3".localized(), image: "", id: Menu.PricingAndLocation, isVerticle: true),
-        MenuItem.init(name: "MENU_ITEM_4".localized(), image: "", id: Menu.PromoCode, isVerticle: false),
-        MenuItem.init(name: "MENU_ITEM_5".localized(), image: "", id: Menu.Help, isVerticle: false),
-        MenuItem.init(name: "MENU_ITEM_6".localized(), image: "", id: Menu.Packs, isVerticle: false),
-        MenuItem.init(name: "MENU_ITEM_7".localized(), image: "", id: Menu.Campaigns, isVerticle: false),
-        MenuItem.init(name: "MENU_ITEM_8".localized(), image: "", id: Menu.GiftVoucher, isVerticle: true)
+        MenuItem.init(id: Menu.HowItWork, image: "", isVerticle: true),
+        MenuItem.init(id: Menu.ReferAndEarn, image: "", isVerticle: true),
+        MenuItem.init(id: Menu.PricingAndLocation, image: "", isVerticle: true),
+        MenuItem.init(id: Menu.PromoCode, image: "", isVerticle: true),
+        MenuItem.init(id: Menu.Notifications, image: "", isVerticle: false),
+        MenuItem.init(id: Menu.Help, image: "", isVerticle: false),
+        MenuItem.init(id: Menu.Packs, image: "", isVerticle: false),
+        MenuItem.init(id: Menu.GiftVoucher, image: "", isVerticle: true),
+        MenuItem.init(id: Menu.Campaigns, image: "", isVerticle: false),
+
     ]
 
     // MARK: LifeCycle
@@ -341,7 +368,8 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
         cvForMenu?.isPagingEnabled = true
         cvForMenu?.delegate = self
         cvForMenu?.dataSource = self
-
+        cvForMenu?.showsVerticalScrollIndicator = false
+        cvForMenu?.showsHorizontalScrollIndicator = false
         if let layout = cvForMenu?.collectionViewLayout as? PinterestLayout {
             layout.delegate = self
         }
@@ -364,6 +392,7 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
         let data = arrForMenu[indexPath.row]
         if data.isVerticle {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCellVerticle.name, for: indexPath) as! MenuCellVerticle
+
             cell.layoutIfNeeded()
             cell.setData(menuDetail: data)
             cell.layoutIfNeeded()
@@ -379,6 +408,20 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        self.hide()
+        switch self.arrForMenu[indexPath.row].id {
+        case Menu.Notifications:
+            Common.appDelegate.loadNotificationVC(navigaionVC: Common.appDelegate.window?.rootViewController as? NC)
+        case Menu.HowItWork:
+            Common.appDelegate.loadHowItWorkVC(navigaionVC: Common.appDelegate.window?.rootViewController  as? NC)
+        case Menu.PricingAndLocation:
+            Common.appDelegate.loadPriceLocationVC(navigaionVC: Common.appDelegate.window?.rootViewController  as? NC)
+        case Menu.PromoCode:
+            Common.appDelegate.loadPromocodeVC(navigaionVC: Common.appDelegate.window?.rootViewController  as? NC)
+
+        default:
+            print("")
+        }
     }
 
 }

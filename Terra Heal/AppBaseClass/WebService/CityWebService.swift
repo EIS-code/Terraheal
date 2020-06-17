@@ -23,9 +23,11 @@ enum Cities {
         override init(fromDictionary dictionary: [String:Any]) {
             super.init(fromDictionary: dictionary)
             cityList.removeAll()
-            if let dataArray = dictionary["data"] as? [[String:Any]] {
+            if let dataArray = dictionary["data"] as? [[[String:Any]]] {
                 for data in dataArray {
-                    cityList.append(City.init(fromDictionary: data))
+                    for city in data {
+                        cityList.append(City.init(fromDictionary: city))
+                    }
                 }
             }
         }

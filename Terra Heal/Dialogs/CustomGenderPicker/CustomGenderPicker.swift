@@ -30,9 +30,9 @@ class CustomGenderPicker: ThemeDialogView {
     @IBOutlet weak var ivFemaleSelected: UIImageView!
 
 
-    var onBtnDoneTapped: ((_ gender:String) -> Void)? = nil
+    var onBtnDoneTapped: ((_ gender:Gender) -> Void)? = nil
     var onBtnCancelTapped: (() -> Void)? = nil
-    var selectedGender:String = Gender.Male
+    var selectedGender:Gender = Gender.Male
 
 
 
@@ -62,7 +62,7 @@ class CustomGenderPicker: ThemeDialogView {
         self.select(gender: self.selectedGender)
     }
 
-    func select(gender:String) {
+    func select(gender:Gender) {
         self.selectedGender = gender
 
         btnMale.setRound(withBorderColor: (gender == Gender.Male) ? UIColor.themePrimary : UIColor.clear, andCornerRadious: 10.0, borderWidth: 1.5)

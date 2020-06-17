@@ -47,7 +47,6 @@ enum ProfileMenu: String {
 
 struct ProfileItemDetail {
     var type: ProfileMenu = ProfileMenu.MyProfile
-    var title: String = ""
     var image: String = ""
 }
 
@@ -70,16 +69,16 @@ class ProfileVC: MainVC {
     @IBOutlet weak var hVwContent: NSLayoutConstraint!
 
     var arrForMenu: [ProfileItemDetail] = [
-        ProfileItemDetail(type: ProfileMenu.MyProfile, title: ProfileMenu.MyProfile.name(),  image: ""),
-        ProfileItemDetail(type: ProfileMenu.MyBookings, title: ProfileMenu.MyBookings.name(),  image: ""),
-        ProfileItemDetail(type: ProfileMenu.MyPlaces, title: ProfileMenu.MyPlaces.name(),  image: ""),
-        ProfileItemDetail(type: ProfileMenu.MyMassagePreference, title: ProfileMenu.MyMassagePreference.name(),  image: ""),
-        ProfileItemDetail(type: ProfileMenu.MyTherapist, title: ProfileMenu.MyTherapist.name(),  image: ""),
-        ProfileItemDetail(type: ProfileMenu.TherapistQuestionaries, title: ProfileMenu.TherapistQuestionaries.name(),  image: ""),
-        ProfileItemDetail(type: ProfileMenu.ManageAddress, title: ProfileMenu.ManageAddress.name(),  image: ""),
-        ProfileItemDetail(type: ProfileMenu.MangagePeople, title: ProfileMenu.MangagePeople.name(),  image: ""),
-        ProfileItemDetail(type: ProfileMenu.PaymentPreference, title: ProfileMenu.PaymentPreference.name(),  image: ""),
-        ProfileItemDetail(type: ProfileMenu.Settings, title: ProfileMenu.Settings.name(),  image: ""),
+        ProfileItemDetail(type: ProfileMenu.MyProfile,  image: ""),
+        ProfileItemDetail(type: ProfileMenu.MyBookings, image: ""),
+        ProfileItemDetail(type: ProfileMenu.MyPlaces, image: ""),
+        ProfileItemDetail(type: ProfileMenu.MyMassagePreference, image: ""),
+        ProfileItemDetail(type: ProfileMenu.MyTherapist, image: ""),
+        ProfileItemDetail(type: ProfileMenu.TherapistQuestionaries, image: ""),
+        ProfileItemDetail(type: ProfileMenu.ManageAddress, image: ""),
+        ProfileItemDetail(type: ProfileMenu.MangagePeople, image: ""),
+        ProfileItemDetail(type: ProfileMenu.PaymentPreference, image: ""),
+        ProfileItemDetail(type: ProfileMenu.Settings,  image: ""),
     ]
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -106,6 +105,9 @@ class ProfileVC: MainVC {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.headerView.layoutIfNeeded()
+        self.kTableHeaderHeight = self.headerView.frame.height
+        scrVw.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -117,8 +119,10 @@ class ProfileVC: MainVC {
         super.viewDidLayoutSubviews()
 
         if self.isViewAvailable() {
-        self.vwBg?.setRound(withBorderColor: UIColor.clear, andCornerRadious: 20.0, borderWidth: 1.0)
-        self.vwBg?.setShadow()
+
+            //self.updateHeaderView()
+            self.vwBg?.setRound(withBorderColor: UIColor.clear, andCornerRadious: 20.0, borderWidth: 1.0)
+            self.vwBg?.setShadow()
         }
     }
 
@@ -135,7 +139,7 @@ class ProfileVC: MainVC {
         self.setupTableView(tableView: self.tableView)
     }
 
-   // MARK: - Action Methods
+    // MARK: - Action Methods
     @IBAction func btnMenuTapped(_ sender: Any) {
         //SideVC.shared.show()
         //self.openGenderPicker()
@@ -160,7 +164,7 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
             , forCellReuseIdentifier: ProfileTblCell.name)
         tableView.tableFooterView = UIView()
 
-        scrVw.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
+
 
 
 
@@ -169,6 +173,7 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
         updateHeaderView()
     }
     func updateHeaderView() {
+
         if self.scrVw.contentOffset.y < 0 {
             let y = abs(self.scrVw.contentOffset.y)
             let transLation = y/kTableHeaderHeight
@@ -199,25 +204,25 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
         let selectedType = arrForMenu[indexPath.row].type
         switch selectedType {
         case .MyProfile:
-                Common.appDelegate.loadEditProfileVC(navigaionVC: self.navigationController)
+            Common.appDelegate.loadEditProfileVC(navigaionVC: self.navigationController)
         case .MyBookings:
-                Common.showAlert(message: "Under Construction")
+            Common.showAlert(message: "Under Construction")
         case .MyPlaces:
-                Common.showAlert(message: "Under Construction")
+            Common.appDelegate.loadMyPlacesVC(navigaionVC: self.navigationController)
         case .MyMassagePreference:
-                Common.appDelegate.loadMassagePreferenceVC(navigaionVC: self.navigationController)
+            Common.appDelegate.loadMassagePreferenceVC(navigaionVC: self.navigationController)
         case .MyTherapist:
-                 Common.appDelegate.loadMyTherapistVC(navigaionVC: self.navigationController)
+            Common.appDelegate.loadMyTherapistVC(navigaionVC: self.navigationController)
         case .TherapistQuestionaries:
-                Common.showAlert(message: "Under Construction")
+            Common.appDelegate.loadTherapistQuestionaryVC(navigaionVC: self.navigationController)
         case .ManageAddress:
-                Common.showAlert(message: "Under Construction")
+            Common.appDelegate.loadManageAddressVC(navigaionVC: self.navigationController)
         case .MangagePeople:
-                Common.showAlert(message: "Under Construction")
+            Common.appDelegate.loadManagePeopleVC(navigaionVC: self.navigationController)
         case .PaymentPreference:
-                Common.showAlert(message: "Under Construction")
+            Common.showAlert(message: "Under Construction")
         case .Settings:
-                Common.appDelegate.loadSettingVC(navigaionVC: self.navigationController)
+            Common.appDelegate.loadSettingVC(navigaionVC: self.navigationController)
         }
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,20 +24,20 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mj4-Vg-zDh">
-                        <rect key="frame" x="20" y="64" width="189" height="189"/>
+                        <rect key="frame" x="28.5" y="64" width="172" height="172"/>
                         <color key="backgroundColor" name="theme_primary_border"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="mj4-Vg-zDh" secondAttribute="height" multiplier="1:1" id="9Qi-Lg-4pS"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wN0-af-H7V" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                        <rect key="frame" x="23" y="273" width="183" height="19"/>
+                        <rect key="frame" x="23" y="256" width="183" height="19"/>
                         <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="16"/>
                         <color key="textColor" name="theme_primary"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPH-zQ-6LJ" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                        <rect key="frame" x="23" y="312" width="183" height="26"/>
+                        <rect key="frame" x="23" y="295" width="183" height="26"/>
                         <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="22"/>
                         <color key="textColor" name="theme_primary"/>
                         <nil key="highlightedColor"/>
@@ -48,12 +48,12 @@
                 <constraint firstItem="wN0-af-H7V" firstAttribute="width" secondItem="ZTg-uK-7eu" secondAttribute="width" multiplier="0.8" id="56U-hK-Nt6"/>
                 <constraint firstItem="wN0-af-H7V" firstAttribute="bottom" secondItem="aPH-zQ-6LJ" secondAttribute="top" constant="-20" id="BIe-cr-AfZ"/>
                 <constraint firstItem="wN0-af-H7V" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="BqZ-nc-Vem"/>
-                <constraint firstItem="mj4-Vg-zDh" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="20" id="DKN-xN-W6O"/>
                 <constraint firstItem="aPH-zQ-6LJ" firstAttribute="width" secondItem="ZTg-uK-7eu" secondAttribute="width" multiplier="0.8" id="HZB-Wr-RuR"/>
                 <constraint firstItem="wN0-af-H7V" firstAttribute="top" secondItem="mj4-Vg-zDh" secondAttribute="bottom" constant="20" id="IoS-yr-0Lw"/>
-                <constraint firstItem="mj4-Vg-zDh" firstAttribute="trailing" secondItem="ZTg-uK-7eu" secondAttribute="trailing" constant="-20" id="T6I-gd-vEd"/>
                 <constraint firstItem="aPH-zQ-6LJ" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="ZVj-uO-YIT"/>
+                <constraint firstItem="mj4-Vg-zDh" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="eZE-n1-83B"/>
                 <constraint firstItem="mj4-Vg-zDh" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="20" id="uCc-at-tVy"/>
+                <constraint firstItem="mj4-Vg-zDh" firstAttribute="width" secondItem="ZTg-uK-7eu" secondAttribute="width" multiplier="0.75" id="wYf-Sa-3Z7"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="229" height="383"/>

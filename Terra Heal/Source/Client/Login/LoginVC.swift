@@ -22,10 +22,12 @@ class LoginVC: MainVC {
     @IBOutlet weak var txtPassword: ACFloatingTextfield!
     @IBOutlet weak var btnForgotPassword: ThemeButton!
     @IBOutlet weak var btnLogin: ThemeButton!
-    @IBOutlet weak var btnSignUp: ThemeButton!
+    @IBOutlet weak var btnSignUp: UnderlineTextButton!
     @IBOutlet weak var imgChecked: UIImageView!
     @IBOutlet weak var vwDashed: UIView!
     @IBOutlet weak var lblConnect: ThemeLabel!
+    @IBOutlet weak var lblDontHaveAccount: ThemeLabel!
+
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -54,6 +56,8 @@ class LoginVC: MainVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
+            self.btnLogin.layoutIfNeeded()
+            self.btnLogin.setHighlighted(isHighlighted: true)
             self.vwDashed?.createDashedLine(from: CGPoint(x: vwDashed.bounds.minX, y: vwDashed.bounds.midY), to: CGPoint(x: vwDashed.bounds.maxX, y: vwDashed.bounds.midY), color: UIColor.themePrimary, strokeLength: 10, gapLength: 10, width: 2.0)
         }
     }
@@ -75,16 +79,21 @@ class LoginVC: MainVC {
         self.txtPassword?.delegate = self
         self.btnForgotPassword?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnForgotPassword?.setTitle("LOGIN_BTN_FORGOT_PASSWORD".localized(), for: .normal)
-        self.btnSignUp?.setTitle("LOGIN_BTN_SIGN_UP".localized(), for: .normal)
         self.btnSignUp?.setFont(name: FontName.SemiBold, size: FontSize.button_22)
-        self.btnLogin?.setTitle("LOGIN_BTN_SIGN_IN".localized(), for: .normal)
+        self.btnSignUp?.setTitle("LOGIN_BTN_SIGN_UP".localized(), for: .normal)
         self.btnLogin?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
+        self.btnLogin?.setTitle("LOGIN_BTN_SIGN_IN".localized(), for: .normal)
         self.btnLogin.setHighlighted(isHighlighted: true)
         self.imgChecked?.isHidden = true
         self.txtPassword.setupPasswordTextFielad()
 
         self.lblConnect?.text = "LOGIN_LBL_CONNECT_VIA".localized()
         self.lblConnect?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
+
+        self.lblDontHaveAccount?.text = "LOGIN_LBL_DO_NOT_HAVE_ACCOUNT".localized()
+        self.lblDontHaveAccount?.setFont(name: FontName.Regular, size: FontSize.label_18)
+
+
     }
 
 

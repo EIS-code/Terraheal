@@ -69,9 +69,6 @@ import UIKit
     //MARK:- Set Text
     override open var text:String?  {
         didSet {
-            if showingError {
-                self.hideErrorPlaceHolder()
-            }
             floatTheLabel()
         }
     }
@@ -136,25 +133,7 @@ import UIKit
         return result
     }
     
-    //MARK:- Show Error Label
-    public func showError() {
-        showingError = true;
-        self.showErrorPlaceHolder();
-    }
-    public func hideError() {
-        showingError = false;
-        self.hideErrorPlaceHolder();
-        floatTheLabel()
-    }
-    
-    public func showErrorWithText(errorText : String) {
-        self.errorText = errorText;
-        self.labelErrorPlaceholder?.text = self.errorText
-        showingError = true;
-        self.showErrorPlaceHolder();
-    }
-
-    public func setupPasswordTextFielad() {
+   public func setupPasswordTextFielad() {
 
         self.rightButton.setImage(UIImage(named: "asset-password-show") , for: .normal)
         self.rightButton.addTarget(self, action: #selector(toggleShowHide), for: .touchUpInside)
@@ -178,7 +157,6 @@ fileprivate extension ACFloatingTextfield {
         self.setFont(name:FontName.Regular,size:FontSize.textField_20)
         addBottomLine()
         addFloatingLabel()
-        addErrorPlaceholderLabel()
         if self.text != nil && self.text != "" {
             self.floatTheLabel()
         }
@@ -205,9 +183,7 @@ fileprivate extension ACFloatingTextfield {
     }
     
     @objc func textfieldEditingChanged(){
-        if showingError {
-            hideError()
-        }
+
     }
     
     //MARK:- ADD Floating Label
@@ -241,70 +217,7 @@ fileprivate extension ACFloatingTextfield {
     }
     
     
-    func addErrorPlaceholderLabel() -> Void {
-        if self.labelErrorPlaceholder?.superview != nil{
-            return
-        }
-        labelErrorPlaceholder = UILabel()
-        labelErrorPlaceholder?.text = self.errorText
-        labelErrorPlaceholder?.textAlignment = self.textAlignment
-        labelErrorPlaceholder?.textColor = errorTextColor
-        labelErrorPlaceholder?.font = UIFont(name: (self.font?.fontName ?? "helvetica")!, size: JDDeviceHelper().fontCalculator(size: JDDeviceHelper().fontCalculator(size: 12)))
-        labelErrorPlaceholder?.sizeToFit()
-        labelErrorPlaceholder?.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(labelErrorPlaceholder!)
-        
-        let trailingConstraint = NSLayoutConstraint.init(item: labelErrorPlaceholder!, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
-        let topConstraint = NSLayoutConstraint.init(item: labelErrorPlaceholder!, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
-        errorLabelHieght = NSLayoutConstraint.init(item: labelErrorPlaceholder!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 0)
-        
-        self.addConstraints([trailingConstraint,topConstraint])
-        labelErrorPlaceholder?.addConstraint(errorLabelHieght!)
-        
-    }
-    
-    func showErrorPlaceHolder() {
-        
-        bottomLineViewHeight?.constant = 2;
-        
-        if self.errorText != nil && self.errorText != "" {
-            errorLabelHieght?.constant = 15;
-            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
-                self.bottomLineView?.backgroundColor = self.errorLineColor;
-                self.layoutIfNeeded()
-            }, completion: nil)
-        }else{
-            errorLabelHieght?.constant = 0;
-            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
-                self.bottomLineView?.backgroundColor = self.errorLineColor;
-                self.layoutIfNeeded()
-            }, completion: nil)
-        }
-        
-        if shakeLineWithError {
-            bottomLineView?.shake()
-        }
-        
-    }
-    
-    func hideErrorPlaceHolder(){
-        showingError = false;
-        
-        if errorText == nil || errorText == "" {
-            return
-        }
-        
-        errorLabelHieght?.constant = 0;
-        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
-            self.layoutIfNeeded()
-        }, completion: nil)
-        
-    }
-
-
-
-    @objc
-    func toggleShowHide(button: UIButton) {
+    @objc func toggleShowHide(button: UIButton) {
         togglePasswordVisibility()
     }
 
@@ -409,9 +322,7 @@ fileprivate extension ACFloatingTextfield {
     
     //MARK:- UITextField Begin Editing.
     func textFieldDidBeginEditing() -> Void {
-        if showingError {
-            self.hideErrorPlaceHolder()
-        }
+        
         if !self.disableFloatingLabel {
             self.placeholder = ""
         }
@@ -428,7 +339,7 @@ fileprivate extension ACFloatingTextfield {
 
 
 
-extension ACFloatingTextfield {
+extension UITextField {
     
     func changePlaceHolder(color: UIColor) {
         if #available(iOS 13, *) {
@@ -437,7 +348,7 @@ extension ACFloatingTextfield {
             self.attributedPlaceholder = NSAttributedString(string: attributedPlaceholder.string, attributes: attributes)
         }
         else {
-            self.setValue(placeHolderColor, forKeyPath: "_placeholderLabel.textColor")
+            self.setValue(UIColor.themeLightTextColor, forKeyPath: "_placeholderLabel.textColor")
         }
     }
 }

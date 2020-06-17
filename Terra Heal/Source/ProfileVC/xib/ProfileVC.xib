@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -43,7 +43,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABs-WT-4wl" userLabel="btnClose" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="293" y="70.666666666666671" width="62" height="62.000000000000014"/>
+                    <rect key="frame" x="313" y="80.666666666666671" width="42" height="42"/>
                     <color key="backgroundColor" name="theme_primary_light_background"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="ABs-WT-4wl" secondAttribute="height" multiplier="1:1" id="rbh-eT-iAL"/>
@@ -55,7 +55,7 @@
                     </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="rdH-Uz-r9U">
-                    <rect key="frame" x="115" y="64" width="158" height="75"/>
+                    <rect key="frame" x="115" y="64" width="178" height="75"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YhJ-oo-h2F" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="85.666666666666671" height="34.333333333333336"/>
@@ -84,8 +84,7 @@
                             <rect key="frame" x="75" y="0.0" width="225" height="225"/>
                             <color key="backgroundColor" name="theme_primary_border"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="225" id="Kpw-cE-JvV"/>
-                                <constraint firstAttribute="width" constant="225" id="XJr-iL-JeT"/>
+                                <constraint firstAttribute="width" secondItem="ioG-BP-L40" secondAttribute="height" multiplier="1:1" id="cu2-Do-IZj"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description goes here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvY-GW-ybO" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
@@ -97,10 +96,11 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
+                        <constraint firstAttribute="width" secondItem="1vj-Dw-czR" secondAttribute="height" multiplier="5:4" id="U07-XQ-Q6V"/>
                         <constraint firstItem="qvY-GW-ybO" firstAttribute="width" secondItem="1vj-Dw-czR" secondAttribute="width" multiplier="0.8" id="Wa4-FK-bEJ"/>
+                        <constraint firstItem="ioG-BP-L40" firstAttribute="width" secondItem="1vj-Dw-czR" secondAttribute="width" multiplier="0.6" id="ZZ7-l8-RMs"/>
                         <constraint firstItem="qvY-GW-ybO" firstAttribute="top" secondItem="ioG-BP-L40" secondAttribute="bottom" constant="20" id="gpm-76-i51"/>
                         <constraint firstItem="qvY-GW-ybO" firstAttribute="centerX" secondItem="1vj-Dw-czR" secondAttribute="centerX" id="jSD-7E-jCj"/>
-                        <constraint firstAttribute="height" constant="300" id="muy-ZR-Mj5"/>
                         <constraint firstItem="ioG-BP-L40" firstAttribute="centerX" secondItem="1vj-Dw-czR" secondAttribute="centerX" id="pfY-pt-4b6"/>
                         <constraint firstItem="ioG-BP-L40" firstAttribute="top" secondItem="1vj-Dw-czR" secondAttribute="top" id="sZ5-0D-PcR"/>
                     </constraints>

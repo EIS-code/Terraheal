@@ -38,6 +38,12 @@ enum SettingMenu: String {
 
 }
 
+struct SettingPreferenceDetail {
+
+    var type: SettingMenu = SettingMenu.Logout
+    var strDetail: String = ""
+    var isSelected: Bool = false
+}
 
 class SettingVC: MainVC {
 
@@ -45,14 +51,14 @@ class SettingVC: MainVC {
     @IBOutlet weak var tableView: UITableView!
 
     var arrForMenu: [SettingPreferenceDetail] = [
-        SettingPreferenceDetail(title: SettingMenu.PreferredLanguage.name(), strDetail: "", type: SettingMenu.PreferredLanguage, isSelected: false),
-        SettingPreferenceDetail(title: SettingMenu.ChangePassword.name(), strDetail: "", type: SettingMenu.ChangePassword, isSelected: false),
-        SettingPreferenceDetail(title: SettingMenu.Currency.name(), strDetail: "", type: SettingMenu.Currency, isSelected: false),
-        SettingPreferenceDetail(title: SettingMenu.DistanceUnit.name(), strDetail: "", type: SettingMenu.DistanceUnit, isSelected: false),
-        SettingPreferenceDetail(title: SettingMenu.Notification.name(), strDetail: "", type: SettingMenu.Notification, isSelected: false),
-        SettingPreferenceDetail(title: SettingMenu.TermsAndCondition.name(), strDetail: "", type: SettingMenu.TermsAndCondition, isSelected: false),
-        SettingPreferenceDetail(title: SettingMenu.Privacy.name(), strDetail: "", type: SettingMenu.Privacy, isSelected: false),
-        SettingPreferenceDetail(title: SettingMenu.Logout.name(), strDetail: "", type: SettingMenu.Logout, isSelected: false)
+        SettingPreferenceDetail(type: SettingMenu.PreferredLanguage, strDetail: "", isSelected: false),
+        SettingPreferenceDetail(type: SettingMenu.ChangePassword, strDetail: "", isSelected: false),
+        SettingPreferenceDetail(type: SettingMenu.Currency, strDetail: "", isSelected: false),
+        SettingPreferenceDetail(type: SettingMenu.DistanceUnit, strDetail: "", isSelected: false),
+        SettingPreferenceDetail(type: SettingMenu.Notification, strDetail: "", isSelected: false),
+        SettingPreferenceDetail(type: SettingMenu.TermsAndCondition, strDetail: "", isSelected: false),
+        SettingPreferenceDetail(type: SettingMenu.Privacy, strDetail: "", isSelected: false),
+        SettingPreferenceDetail(type: SettingMenu.Logout, strDetail: "",  isSelected: false)
 
     ]
     // MARK: Object lifecycle
@@ -75,7 +81,6 @@ class SettingVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
-         self.addLocationObserver()
         self.addBottomFade()
         self.addTopFade()
 

@@ -26,6 +26,7 @@
 "LOGIN_BTN_FORGOT_PASSWORD" = "forgot password?";
 "LOGIN_BTN_SIGN_UP" = "sign up";
 "LOGIN_LBL_CONNECT_VIA" = " or connect via ";
+"LOGIN_LBL_DO_NOT_HAVE_ACCOUNT" = "don't have an account?";
 //MARK: REGISTER SCREEN
 "REGISTER_LBL_MESSAGE" = "getting massage or\ntherapies made simple";
 "REGISTER_TXT_NAME" = "name";
@@ -48,8 +49,6 @@
 "CONTACT_VERIFICATION_LBL_TITLE" = "Contact Verification";
 "CONTACT_VERIFICATION_LBL_MESSAGE" = "We need to verify your contact\ndetails before proceeding";
 "CONTACT_VERIFICATION_BTN_VERIFY" = "Verify";
-
-
 //MARK: CONTACT VERIFIED  SCREEN
 "CONTACT_VERIFICATION_BTN_HOME" = "Home";
 "CONTACT_VERIFIED_LBL_TITLE" = "Verified";
@@ -59,18 +58,14 @@
 "CONTACT_VERIFICATION_LBL_COUNTRY_CODE" = "Country Code";
 "CONTACT_VERIFICATION_TXT_MOBILE_NUMBER" = "Mobile Number";
 "CONTACT_VERIFICATION_TXT_EMAIL" = "Email";
-
 "VERIFICATION_LBL_TITLE" = "Enter OTP";
 "VERIFICATION_BTN_EMAIL" = "email";
 "VERIFICATION_BTN_MOBILE" = "mobile";
-
 "VERIFICATION_MOBILE_TITLE" = "Verify Your Mobile Number";
 "VERIFICATION_EMAIL_TITLE" = "Verify Your Email Id";
 "VERIFICATION_MSG_DETAIL" = "Please enter the 4 digit code that is\nsent to ";
 "VERIFICATION_BTN_VERIFY" = "Verify";
 "VERIFICATION_BTN_RESEND" = "Resend";
-
-
 //MARK: HOME SHOP SCREEN
 "HOME_LBL_TITLE" = "Location";
 "HOME_LBL_MENU" = "menu";
@@ -80,34 +75,29 @@
 "HOME_BTN_FILTER" = "Filter";
 "HOME_SECTION_TOP_PICKS_FOR_YOU" = "top picks for you";
 "HOME_SECTION_ALL_MASSAGES_AVAILABLE" = "All Massages Available";
-
 "HOME_ITEM_1" = "in massage center";
 "HOME_ITEM_ACTION_1" = "Book Now";
 "HOME_ITEM_2" = "at home or hotel";
 "HOME_ITEM_ACTION_2" = "Book Now";
 "HOME_ITEM_3" = "events and corporate";
 "HOME_ITEM_ACTION_3" = "Book Now";
-
-
 "HOME_BTN_HOME" = "home";
 "HOME_BTN_EXPLORE" = "explore";
 "HOME_BTN_MY_FAV" = "my fav";
-
-
 "HOME_LBL_HI" = "Hi, ";
 "HOME_INFO_LBL_1" = "welcome to\nterra heal\nfamily";
 "HOME_INFO_LBL_2" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 "HOME_LBL_USER" = "User";
-
 //MARK: Menu SCREEN
 "MENU_ITEM_1" = "how it works";
 "MENU_ITEM_2" = "refer now\n& earn discount";
 "MENU_ITEM_3" = "pricing and\nlocations";
 "MENU_ITEM_4" = "promo code";
-"MENU_ITEM_5" = "help";
-"MENU_ITEM_6" = "packs";
-"MENU_ITEM_7" = "campaigns";
-"MENU_ITEM_8" = "gift voucher";
+"MENU_ITEM_5" = "notifications";
+"MENU_ITEM_6" = "help";
+"MENU_ITEM_7" = "packs";
+"MENU_ITEM_8" = "campaigns";
+"MENU_ITEM_9" = "gift voucher";
 //MARK: Profile Menu
 "PROFILE_MENU_ITEM_1" = "my profile";
 "PROFILE_MENU_ITEM_2" = "my bookings";
@@ -128,7 +118,6 @@
 "GENDER_PREFER_MALE" = "prefer male";
 "GENDER_PREFER_FEMALE" = "prefer female";
 "GENDER_NO_PREFERENCE" = "no preferences";
-
 //MARK: Massage Preference Menu
 "MASSAGE_PREFERENCE_TITLE" = "my massage preferences";
 "MASSAGE_PREFERENCE_MENU_ITEM_1" = "pressure";
@@ -138,23 +127,17 @@
 "MASSAGE_PREFERENCE_MENU_ITEM_5" = "past surgeries, fractures,\naccidents?";
 "MASSAGE_PREFERENCE_MENU_ITEM_6" = "skin, hair, nail problems\nand allergies?";
 "MASSAGE_PREFERENCE_MENU_ITEM_7" = "any health conditions\nor diseases?";
-
-
 //MARK: Pressure Preference Menu
-
 "MASSAGE_PRESSURE_TITTLE" = "pressure";
 "MASSAGE_PRESSURE_TYPE_1" = "soft pressure";
 "MASSAGE_PRESSURE_TYPE_2" = "medium pressure";
 "MASSAGE_PRESSURE_TYPE_3" = "strong pressure";
 "MASSAGE_PRESSURE_TYPE_4" = "extra strong pressure";
-
-
 //MARK: My Therapist
 "MYTHERAPIST_TITLE" = "my therapists";
-
 //MARK: Rateview dialog
-
-
+//MARK: Therapist Questionary
+"THERAPIST_QUESTIONARY_TITLE" = "therapies questionnaire";
 //MARK: Prefer Language
 "PREFERE_LANGUAGE_TITTLE" = "preferred language";
 "LANGUAGE_ENGLISH" =  "English";
@@ -169,14 +152,57 @@
 "SETTING_TERMS_AND_CONDITION" = "terms & conditions";
 "SETTING_PRIVACY" = "manage privacy settings";
 "SETTING_LOGOUT" = "logout";
-
 //MARK: Change Password Dialog
 "CHANGE_PASSWORD_TXT_OLD_PASSWORD" = "old password";
 "CHANGE_PASSWORD_TXT_NEW_PASSWORD" = "new password";
 "CHANGE_PASSWORD_TXT_CONFIRM_PASSWORD" = "confirm password";
-
 //MARK: Notification
 "NOTIFICATION_TITLE" = "notifications";
+"MY_PLACE_TITLE" = "my places";
+//MARK: My Address
+"MANAGE_ADDRESS_TITLE" = "manage address";
+"NO_ADDRESS_TITLE" = "you don't have any saved\naddresses";
+"NO_ADDRESS_MSG" = "add places that you call home";
+"MANAGE_ADDRESS_BTN_ADD_NEW_ADDRESS" = "Add New Address";
+"MANAGE_ADDRESS_DIALOG_ADD_NEW_ADDRESS_TITLE" = "Add New Address";
+"MANAGE_ADDRESS_DIALOG_EDIT_ADDRESS_TITLE" = "Edit Address";
+"MANAGE_ADDRESS_TXT_ADDRESS_LINE_1" = "address line 1";
+"MANAGE_ADDRESS_TXT_ADDRESS_LINE_2" = "address line 2 ( optional )";
+"MANAGE_ADDRESS_TXT_LANDMARK" = "landmark";
+"MANAGE_ADDRESS_TXT_ADDRESS_PINCODE" = "pincode";
+"MANAGE_ADDRESS_TXT_ADDRESS_STATE" = "state";
+"MANAGE_ADDRESS_TXT_ADDRESS_CITY" = "city";
+"MANAGE_ADDRESS_TXT_ADDRESS_NAME" = "home / work / office";
+//MARK: Manage People
+"MANAGE_PEOPLE_TITLE" = "manage people";
+"MANAGE_PEOPLE_BTN_ADD_NEW" = "add new";
+"MANAGE_PEOPLE_TXT_NAME" = "Name";
+"MANAGE_PEOPLE_TXT_AGE" = "Age";
+
+
+//MARK: Price  And Location
+"PRICE_AND_LOCATION_TITLE" = "pricing and locations";
+"PRICE_AND_LOCATION_TXT_SEARCH_LOCATION" = "search location";
+"NO_LOCATION_TITLE" =  "you don't have any location\naddresses";
+"NO_LOCATION_MSG" =  "--";
+
+//MARK: Promocode
+"PROMOCODE_TITLE" = "promo code";
+"PROMOCODE_VOUCHER_CODE" = "voucher code";
+"PROMOCODE_BTN_ADD_NEW" = "Add New";
+
+
+
+//MARK: How It Work Screen
+
+"HOW_IT_WORK_TITLE" = "how it works?";
+"HOW_IT_WORK_TITLE_1" = "in massage center";
+"HOW_IT_WORK_TITLE_2" = "at home or hotel";
+"HOW_IT_WORK_TITLE_3" = "events and corporate";
+"HOW_IT_WORK_SHORT_DESCRIPTION" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+"HOW_IT_WORK_LONG_DESCRIPTION" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget.";
+
+
 
 //MARK: -
 //MARK: Common Strings
@@ -184,16 +210,15 @@
 "BTN_CONNECT" = "Connect";
 "LBL_UPLOAD" = "Upload";
 "BTN_SUBMIT" = "Submit";
+"BTN_SAVE" = "Save";
 "BTN_PROCEED" = "Proceed";
 "BTN_BACK" = "Back";
 "BTN_CANCEL" = "Cancel";
 "BTN_SKIP" = "skip";
 "BTN_APPLY" =  "Apply";
 "LBL_MENU" =  "menu";
-
 "PRIVACY_CONTENT" =  "<p>manage privacy settings</p><p>last updated on may 26th, 2020</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod.</p>";
 "TERMS_AND_CONDITION_CONTENT" =  "<p>terms &amp; conditions</p><p>last updated on may 26th, 2020</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod.</p>";
-
 //MARK: -
 //MARK: VALIDATION TOAST MESSAGES
 //MARK: -
@@ -206,6 +231,7 @@
 "VALIDATION_MSG_PLEASE_UPLOAD_ALL_DOCUMENTS" = "Please Upload all documents";
 "VALIDATION_MSG_INVALID_DATA" = "Please enter valid data";
 "VALIDATION_MSG_SELECT_TERMS_AND_CONDITION" = "Please select terms and conditions";
+"VALIDATION_MSG_SELECT_COUNTRY_FIRST" = "Please select country first";
 
 /*
  //MARK: KYC WELCOME  SCREEN

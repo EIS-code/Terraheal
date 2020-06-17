@@ -22,8 +22,8 @@ class CustomCountyPicker: ThemeBottomDialogView {
     var onBtnDoneTapped: ((_ data: Country) -> Void)? = nil
     var selectedData: Country? = nil
 
-    var arrForFilteredData: [Country] = Country.getDemoArray()
-    var arrForForOriginalData: [Country] = Country.getDemoArray()
+    var arrForFilteredData: [Country] = []//Country.getDemoArray()
+    var arrForForOriginalData: [Country] = []//Country.getDemoArray()
     func initialize(title:String,buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
         self.lblTitle.text = title
@@ -37,7 +37,7 @@ class CustomCountyPicker: ThemeBottomDialogView {
         self.select(data: self.selectedData)
         self.setupTableView(tableView: self.tableView)
         self.setupSearchbar(searchBar: self.searchBar)
-        //self.getCountryList()
+        self.getCountryList()
     }
 
     func select(data:Country?) {
@@ -166,9 +166,12 @@ extension CustomCountyPicker {
     private func getCountryList() {
         AppWebApi.countryList(params: Countries.RequestCountrylist()) { (response) in
             self.arrForForOriginalData.removeAll()
+            self.arrForFilteredData.removeAll()
             if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
                 for data in response.countryList {
                     self.arrForForOriginalData.append(data)
+                    self.arrForFilteredData.append(data)
+
                 }
                 self.reloadTableDateToFitHeight(tableView: self.tableView)
             }

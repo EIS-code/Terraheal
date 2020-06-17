@@ -7,12 +7,7 @@
 //
 
 import UIKit
-struct SettingPreferenceDetail {
-    var title: String = ""
-    var strDetail: String = ""
-    var type: SettingMenu = SettingMenu.Logout
-    var isSelected: Bool = false
-}
+
 class SettingSwitchTblCell: TableCell {
 
     @IBOutlet weak var lblName: ThemeLabel!
@@ -47,7 +42,7 @@ class SettingSwitchTblCell: TableCell {
     }
 
     func setData(data: SettingPreferenceDetail ) {
-        self.lblName.text = data.title
+        self.lblName.text = data.type.name()
         self.imgSelected.isHidden = !data.isSelected
         if data.isSelected {
             self.updateButton(button: btnEnable)

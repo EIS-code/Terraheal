@@ -159,13 +159,8 @@ extension UITableView {
         DispatchQueue.main.async {
             self.contentOffset = CGPoint.zero
             self.reloadData({
-                print("Table Content Height : \(ceil(self.contentSize.height))")
                 cntrnt?.constant = ceil(self.contentSize.height)
-
                 self.superview?.layoutIfNeeded()
-                print("Table Constraint Height : \(cntrnt?.constant)")
-                print("Table Frame Height : \(ceil(self.frame.height))")
-
                 if self.isHEqualToCH {
                     completion?()
                 }
@@ -188,7 +183,6 @@ extension UIScrollView {
 
     var isHEqualToCH: Bool {
         get {
-            print("Difference Height : \(abs(ceil(self.frame.height)-ceil(self.contentSize.height))) ")
             return abs(ceil(self.frame.height)-ceil(self.contentSize.height)) <= 1.0
         }
     }

@@ -64,6 +64,8 @@ class ThemeButton: UIButton {
         } else {
             self.backgroundColor = UIColor.themeLightTextColor
             self.setTitleColor(UIColor.themePrimary, for: .normal)
+            self.layer.cornerRadius=0.0;
+
             //self.setRound(withBorderColor: UIColor.themePrimary, andCornerRadious: self.frame.height/2.0, borderWidth: 1.0)
         }
 
@@ -109,6 +111,36 @@ class FloatingRoundButton: ThemeButton {
 
 }
 
+//MARK: FloatingRound Button
+class FloatingView: UIView {
+
+    var radius: CGFloat = 10
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setUpFloatingView()
+    }
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.setUpFloatingView()
+    }
+
+    func setUpFloatingView() {
+        self.layer.cornerRadius = self.bounds.height/2.0
+        self.clipsToBounds = true
+        self.layer.masksToBounds = false
+        self.layer.shadowRadius = 5.0
+        self.layer.shadowOpacity = 0.8
+        self.layer.shadowOffset = CGSize(width: 1.0, height: 2.0)
+        self.layer.shadowColor = UIColor.gray.cgColor
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.layer.cornerRadius = self.bounds.height/2.0
+    }
+
+
+}
 
 //MARK: FloatingRoundRadius Button
 class FloatingRoundRadiusButton: ThemeButton {

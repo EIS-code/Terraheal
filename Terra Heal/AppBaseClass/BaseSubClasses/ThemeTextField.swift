@@ -7,10 +7,9 @@ import Foundation
 import UIKit
 open class ThemeTextField: UITextField {
 
-    override open func draw(_ rect: CGRect) {
-    }
-    
+
     func setFont(name:String,size:CGFloat){
+
         let finalSize = JDDeviceHelper().fontCalculator(size: size)
         self.font = FontHelper.font(name: name, size: finalSize)
     }
@@ -32,6 +31,7 @@ class ThemeTextView: UITextView {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+
         self.setRound(withBorderColor: .themePrimary, andCornerRadious: 25.0, borderWidth: 1.0)
         textContainerInset = padding
     }

@@ -26,7 +26,7 @@ class NotificationTblFooter: UIView {
     }
 
     func setData(data: SettingPreferenceDetail ) {
-        self.lblName.text = data.title
+        self.lblName.text = data.type.name()
 
 
     }

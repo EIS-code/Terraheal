@@ -64,6 +64,8 @@ class RegisterVC: MainVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
+            self.btnSignUp?.layoutIfNeeded()
+            self.btnSignUp?.setHighlighted(isHighlighted: true)
             btnGoogle?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
             btnLogin?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
             self.vwDashed?.createDashedLine(from: CGPoint(x: vwDashed.bounds.minX, y: vwDashed.bounds.midY), to: CGPoint(x: vwDashed.bounds.maxX, y: vwDashed.bounds.midY), color: UIColor.themePrimary, strokeLength: 10, gapLength: 10, width: 2.0)

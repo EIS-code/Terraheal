@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -55,7 +55,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hp5-yH-riX" userLabel="vwContent">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="912"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="922"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-leaf" translatesAutoresizingMaskIntoConstraints="NO" id="Gf0-PD-r8o">
                                     <rect key="frame" x="130" y="56" width="60" height="60"/>
@@ -171,10 +171,7 @@ to sign back in</string>
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCc-Ig-liE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="93.5" y="627" width="133" height="50"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="8yh-HW-Ex7"/>
-                                    </constraints>
+                                    <rect key="frame" x="93.5" y="627" width="133" height="60"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                     <state key="normal" title="Sign In">
@@ -185,21 +182,21 @@ to sign back in</string>
                                     </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uVN-0T-0Am" userLabel="vwConnectWith">
-                                    <rect key="frame" x="16" y="697" width="288" height="50"/>
+                                    <rect key="frame" x="16" y="707" width="288" height="50"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="EOf-au-irk"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect With" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUJ-Um-wtc" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="107.5" y="712" width="105" height="20.5"/>
+                                    <rect key="frame" x="107.5" y="722" width="105" height="20.5"/>
                                     <color key="backgroundColor" name="theme_background"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" name="theme_primary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="y0g-7U-NI6" userLabel="Stack View - Social Register">
-                                    <rect key="frame" x="108" y="777" width="104" height="53"/>
+                                    <rect key="frame" x="108" y="787" width="104" height="53"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktD-fk-8iz" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="42" height="53"/>
@@ -222,7 +219,7 @@ to sign back in</string>
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Y84-jM-cel" userLabel="Stack View - Already Have Memberi">
-                                    <rect key="frame" x="52" y="860" width="216.5" height="32"/>
+                                    <rect key="frame" x="52" y="870" width="216.5" height="32"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already a member?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEl-P4-Xko" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="6" width="148.5" height="20.5"/>

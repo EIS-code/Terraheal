@@ -7,7 +7,6 @@ import UIKit
 import CoreLocation
 import Alamofire
 
-
 class HomeVC: MainVC {
 
     @IBOutlet weak var btnProfile: FloatingRoundButton!
@@ -15,9 +14,7 @@ class HomeVC: MainVC {
     @IBOutlet weak var lblMenu: ThemeLabel!
     @IBOutlet weak var lblUserName: ThemeLabel!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var btnHome: FloatingRoundButton!
-    @IBOutlet weak var btnExplore: FloatingRoundButton!
-    @IBOutlet weak var btnMyFav: FloatingRoundButton!
+    @IBOutlet weak var vwFloatingBottom: JDSegmentedControl!
 
     var arrForHomeDetails: [HomeItemDetail] = [
         HomeItemDetail(title:appSingleton.user.name, buttonTitle: "HOME_ITEM_ACTION_1".localized(), image: ""),
@@ -46,7 +43,10 @@ class HomeVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
-        self.addLocationObserver()
+        vwFloatingBottom.allowChangeThumbWidth = false
+        vwFloatingBottom.itemTitles = ["Home","Explore","My Fav"]
+        vwFloatingBottom.changeBackgroundColor(UIColor.themeLightTextColor)
+       //self.addLocationObserver()
         self.addBottomFade()
         self.addTopFade()
     }
@@ -68,9 +68,8 @@ class HomeVC: MainVC {
             self.tableView?.reloadData({
 
             })
-            self.btnHome?.setShadow()
-            self.btnExplore?.setShadow()
-            self.btnMyFav?.setShadow()
+            vwFloatingBottom.setRound(withBorderColor: .themePrimary, andCornerRadious: self.vwFloatingBottom.bounds.height/2.0, borderWidth: 0.1)
+            vwFloatingBottom.setShadow()
             self.tableView?.contentInset = UIEdgeInsets(top: headerGradient.frame.height, left: 0, bottom: footerGradient.frame.height, right: 0)
         }
     }
@@ -86,15 +85,7 @@ class HomeVC: MainVC {
         }
         self.lblUserName.setFont(name: FontName.SemiBold, size: FontSize.label_14)
         self.setupTableView(tableView: self.tableView)
-        self.btnHome.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnExplore.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnMyFav.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnHome.setTitle("HOME_BTN_HOME".localized(), for: .normal)
-        self.btnExplore.setTitle("HOME_BTN_EXPLORE".localized(), for: .normal)
-        self.btnMyFav.setTitle("HOME_BTN_MY_FAV".localized(), for: .normal)
-        self.btnHome.setHomeSelected(isSelected: true)
-        self.btnExplore.setHomeSelected(isSelected: false)
-        self.btnMyFav.setHomeSelected(isSelected: false)
+
     }
 
      //MARK: Action Methods
@@ -112,32 +103,16 @@ class HomeVC: MainVC {
     }
 
     @IBAction func btnHomeTapped(_ sender: Any) {
-        self.btnHome.setHomeSelected(isSelected: true)
-        self.btnExplore.setHomeSelected(isSelected: false)
-        self.btnMyFav.setHomeSelected(isSelected: false)
-        self.btnHome?.setShadow()
-        self.btnExplore?.setShadow()
-        self.btnMyFav?.setShadow()
-        Common.appDelegate.loadWelcomeVC()
+
+        //Common.appDelegate.loadWelcomeVC()
     }
 
     @IBAction func btnExploreTapped(_ sender: Any) {
-        self.btnExplore.setHomeSelected(isSelected: true)
-        self.btnMyFav.setHomeSelected(isSelected: false)
-        self.btnHome.setHomeSelected(isSelected: false)
-        self.btnHome?.setShadow()
-        self.btnExplore?.setShadow()
-        self.btnMyFav?.setShadow()
         PreferenceHelper.shared.setIsTutorialShow(true)
     }
 
     @IBAction func btnMyFavTapped(_ sender: Any) {
-        self.btnMyFav.setHomeSelected(isSelected: true)
-        self.btnExplore.setHomeSelected(isSelected: false)
-        self.btnHome.setHomeSelected(isSelected: false)
-        self.btnHome?.setShadow()
-        self.btnExplore?.setShadow()
-        self.btnMyFav?.setShadow()
+
     }
 
     //MARK: Location Observer
@@ -153,11 +128,7 @@ class HomeVC: MainVC {
     }
 
     override func locationFail(_ ntf: Notification = Common.defaultNtf) {
-
     }
-
-
-
 }
 
 //MARK: Tableview DataSource and Delegate
@@ -196,7 +167,6 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource {
             cell?.layoutIfNeeded()
             return cell!
         }
-
     }
     
 }

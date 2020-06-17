@@ -15,10 +15,12 @@ class EditProfileVC: MainVC {
     var kTableHeaderHeight:CGFloat = 150.0
     @IBOutlet weak var scrVw: UIScrollView!
     @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var hVwContent: NSLayoutConstraint!
+    @IBOutlet weak var btnAddPicture: UIButton!
 
     @IBOutlet weak var collectionVwForProfile: UICollectionView!
-    @IBOutlet weak var hCv: NSLayoutConstraint!
+
+    var selectedCountry:Country? = nil
+    var selectedCity:City? = nil
 
     var arrForProfile: [EditProfileTextFieldDetail] = [
         EditProfileTextFieldDetail(vlaue: appSingleton.user.name, placeholder: "name", isMadatory: true, contentType: ""),
@@ -58,6 +60,10 @@ class EditProfileVC: MainVC {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.headerView.layoutIfNeeded()
+        self.kTableHeaderHeight = self.headerView.frame.height
+        scrVw.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
+
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -69,11 +75,12 @@ class EditProfileVC: MainVC {
         super.viewDidLayoutSubviews()
 
         if self.isViewAvailable() {
+
             self.vwBg?.setRound(withBorderColor: UIColor.clear, andCornerRadious: 20.0, borderWidth: 1.0)
             self.vwBg?.setShadow()
-
+            self.ivProfilePic?.setRound()
+            self.btnAddPicture?.setRound()
             //self.collectionVwForProfile?.reloadData()
-
         }
     }
 
@@ -91,26 +98,53 @@ class EditProfileVC: MainVC {
         self.navigationController?.popViewController(animated: true)
     }
 
+    @IBAction func btnAddPictureTapped(_ sender: Any) {
+        self.openPhotoPicker()
+    }
     // MARK: - Other Methods
+
+    func openPhotoPicker() {
+        let photoPickerAlert: CustomPhotoPicker = CustomPhotoPicker.fromNib()
+        photoPickerAlert.initialize(title:"Select Photo", buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized())
+        photoPickerAlert.show(animated: true)
+        photoPickerAlert.onBtnCancelTapped = { [weak photoPickerAlert, weak self] in
+            photoPickerAlert?.dismiss()
+        }
+        photoPickerAlert.onBtnDoneTapped = { [weak photoPickerAlert, weak self] in
+            photoPickerAlert?.dismiss()
+        }
+        photoPickerAlert.onBtnCameraTapped = { [weak photoPickerAlert, weak self] in
+            photoPickerAlert?.dismiss()
+        }
+        photoPickerAlert.onBtnGallaryTapped = { [weak photoPickerAlert, weak self] in
+            photoPickerAlert?.dismiss()
+        }
+
+    }
 
     func openCountryPicker(index:Int = 0) {
         let countryPickerAlert: CustomCountyPicker = CustomCountyPicker.fromNib()
         countryPickerAlert.initialize(title:arrForProfile[index].placeholder, buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized())
         countryPickerAlert.show(animated: true)
-        countryPickerAlert.onBtnCancelTapped = {
-            [weak countryPickerAlert, weak self] in
+        countryPickerAlert.onBtnCancelTapped = { [weak countryPickerAlert, weak self] in
             countryPickerAlert?.dismiss()
         }
-        countryPickerAlert.onBtnDoneTapped = {
-            [weak countryPickerAlert, weak self] (country) in
+        countryPickerAlert.onBtnDoneTapped = { [weak countryPickerAlert, weak self] (country) in
             countryPickerAlert?.dismiss()
+            self?.selectedCountry = country
             self?.arrForProfile[7].vlaue = country.name
             self?.collectionVwForProfile.reloadData()
         }
     }
 
-    func openCityPicker(index:Int = 0) {
+    func openCityPicker(index:Int = 0,countryId:String) {
+
+        if countryId.isEmpty() {
+            Common.showAlert(message: "VALIDATION_MSG_SELECT_COUNTRY_FIRST".localized())
+            return
+        }
         let cityPickerAlert: CustomCityPicker = CustomCityPicker.fromNib()
+        cityPickerAlert.getCityList(countryId: selectedCountry!.id)
         cityPickerAlert.initialize(title: arrForProfile[index].placeholder, buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized())
         cityPickerAlert.show(animated: true)
         cityPickerAlert.onBtnCancelTapped = {
@@ -120,6 +154,7 @@ class EditProfileVC: MainVC {
         cityPickerAlert.onBtnDoneTapped = {
             [weak cityPickerAlert, weak self] (city) in
             cityPickerAlert?.dismiss()
+            self?.selectedCity = city
             self?.arrForProfile[6].vlaue = city.name
             self?.collectionVwForProfile.reloadData()
         }
@@ -158,7 +193,6 @@ class EditProfileVC: MainVC {
             guard let self = self else {
                 return
             }
-
             self.arrForProfile[index].vlaue = description
             self.collectionVwForProfile.reloadData()
         }
@@ -194,7 +228,7 @@ class EditProfileVC: MainVC {
         genderPickerAlert.onBtnDoneTapped = {
             [weak genderPickerAlert, weak self] (gender) in
             genderPickerAlert?.dismiss()
-            self?.arrForProfile[index].vlaue = gender
+            self?.arrForProfile[index].vlaue = gender.name()
             self?.collectionVwForProfile.reloadData()
 
         }
@@ -210,6 +244,7 @@ extension EditProfileVC:  UIScrollViewDelegate {
         updateHeaderView()
     }
     func updateHeaderView() {
+
         if self.scrVw.contentOffset.y < 0 {
             let y = abs(self.scrVw.contentOffset.y)
             let transLation = y/kTableHeaderHeight
@@ -219,10 +254,7 @@ extension EditProfileVC:  UIScrollViewDelegate {
         } else {
             headerView.alpha = 0.0
             self.collectionVwForProfile.isScrollEnabled = true
-
         }
-
-
     }
 
 
@@ -243,7 +275,7 @@ extension EditProfileVC:  UICollectionViewDelegate, UICollectionViewDataSource, 
             , forCellWithReuseIdentifier: EditProfileCell.name)
         scrVw.delegate = self
         
-        scrVw.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
+
     }
 
     // MARK: UICollectionViewDataSource
@@ -272,7 +304,7 @@ extension EditProfileVC:  UICollectionViewDelegate, UICollectionViewDataSource, 
         case 3:
             self.openDatePicker(index: indexPath.row)
         case 6:
-            self.openCityPicker(index: indexPath.row)
+            self.openCityPicker(index: indexPath.row, countryId: (selectedCountry?.id) ??  "")
         case 7:
             self.openCountryPicker(index: indexPath.row)
         default:

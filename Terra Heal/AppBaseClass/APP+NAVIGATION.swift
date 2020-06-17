@@ -383,5 +383,111 @@ extension AppDelegate {
         }
     }
 
+    func loadMyPlacesVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: MyPlaceVC =  nc.findVCs(ofType: MyPlaceVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+            } else {
+                let targetVC: MyPlaceVC = MyPlaceVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+            }
+        } else {
+            let targetVC: MyPlaceVC = MyPlaceVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
+    func loadTherapistQuestionaryVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: TherapistQuestionariesVC =  nc.findVCs(ofType: TherapistQuestionariesVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+            } else {
+                let targetVC: TherapistQuestionariesVC = TherapistQuestionariesVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+            }
+        } else {
+            let targetVC: TherapistQuestionariesVC = TherapistQuestionariesVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
+    func loadManageAddressVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: MyAddressVC =  nc.findVCs(ofType: MyAddressVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+            } else {
+                let targetVC: MyAddressVC = MyAddressVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+            }
+        } else {
+            let targetVC: MyAddressVC = MyAddressVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
+
+    func loadManagePeopleVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: ManagePeopleVC =  nc.findVCs(ofType: ManagePeopleVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+            } else {
+                let targetVC: ManagePeopleVC = ManagePeopleVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+            }
+        } else {
+            let targetVC: ManagePeopleVC = ManagePeopleVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
+    func loadHowItWorkVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: HowItWorkVC =  nc.findVCs(ofType: HowItWorkVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+            } else {
+                let targetVC: HowItWorkVC = HowItWorkVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+            }
+        } else {
+            let targetVC: HowItWorkVC = HowItWorkVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
+    func loadPriceLocationVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: PriceLocationVC =  nc.findVCs(ofType: PriceLocationVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+            } else {
+                let targetVC: PriceLocationVC = PriceLocationVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+            }
+        } else {
+            let targetVC: PriceLocationVC = PriceLocationVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
+    func loadPromocodeVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: PromoCodeVC =  nc.findVCs(ofType: PromoCodeVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+            } else {
+                let targetVC: PromoCodeVC = PromoCodeVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+            }
+        } else {
+            let targetVC: PromoCodeVC = PromoCodeVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
 }
 

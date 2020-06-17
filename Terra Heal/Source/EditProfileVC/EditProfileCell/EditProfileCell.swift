@@ -18,7 +18,6 @@ class EditProfileCell: CollectionCell {
 
     @IBOutlet weak var vwEditText: UIView!
     @IBOutlet weak var tfForContent: EditProfileTextfield!
-    var labelPlaceholder: ThemeLabel = ThemeLabel()
     override class func awakeFromNib() {
         super.awakeFromNib()
 
@@ -33,9 +32,7 @@ class EditProfileCell: CollectionCell {
             super.layoutSubviews()
     }
 
-    func addFloatingLabel(){
-        print(tfForContent.leftView)
-    }
+
 }
 
 

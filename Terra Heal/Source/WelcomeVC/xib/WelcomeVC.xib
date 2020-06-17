@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,8 +35,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4On-yi-a0J">
-                    <rect key="frame" x="37.666666666666657" y="84" width="300" height="604"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4On-yi-a0J">
+                    <rect key="frame" x="37.666666666666657" y="84" width="300" height="594"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="j8H-uL-aH4">
                             <rect key="frame" x="20" y="20" width="260" height="708.66666666666663"/>
@@ -56,18 +56,20 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgc-vl-RSJ">
                                     <rect key="frame" x="0.0" y="84.333333333333343" width="260" height="260"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a3a-72-Dix">
-                                            <rect key="frame" x="20" y="20" width="220" height="220"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a3a-72-Dix" userLabel="iv1">
+                                            <rect key="frame" x="26" y="26" width="208" height="208"/>
                                             <color key="backgroundColor" name="theme_primary_border"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="a3a-72-Dix" secondAttribute="height" multiplier="1:1" id="WKV-Ee-DQR"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" name="theme_background"/>
                                     <constraints>
-                                        <constraint firstItem="a3a-72-Dix" firstAttribute="leading" secondItem="lgc-vl-RSJ" secondAttribute="leading" constant="20" id="Edz-ah-drC"/>
-                                        <constraint firstAttribute="bottom" secondItem="a3a-72-Dix" secondAttribute="bottom" constant="20" id="Gm9-CC-nLx"/>
+                                        <constraint firstItem="a3a-72-Dix" firstAttribute="centerY" secondItem="lgc-vl-RSJ" secondAttribute="centerY" id="5D6-r1-1fv"/>
                                         <constraint firstAttribute="width" secondItem="lgc-vl-RSJ" secondAttribute="height" multiplier="1:1" id="HCj-Bu-Yl8"/>
-                                        <constraint firstItem="a3a-72-Dix" firstAttribute="top" secondItem="lgc-vl-RSJ" secondAttribute="top" constant="20" id="YRl-Hf-dXC"/>
-                                        <constraint firstAttribute="trailing" secondItem="a3a-72-Dix" secondAttribute="trailing" constant="20" id="v0Q-67-aOV"/>
+                                        <constraint firstItem="a3a-72-Dix" firstAttribute="centerX" secondItem="lgc-vl-RSJ" secondAttribute="centerX" id="Yjd-8i-pew"/>
+                                        <constraint firstItem="a3a-72-Dix" firstAttribute="width" secondItem="lgc-vl-RSJ" secondAttribute="width" multiplier="0.8" id="ckY-9z-7r2"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PR4-qc-7Ua" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
@@ -85,18 +87,20 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rw3-jR-CqQ">
                                     <rect key="frame" x="0.0" y="448.66666666666663" width="260" height="260"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sgh-LY-lk7">
-                                            <rect key="frame" x="20" y="20" width="220" height="220"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sgh-LY-lk7" userLabel="iv2">
+                                            <rect key="frame" x="26" y="26" width="208" height="208"/>
                                             <color key="backgroundColor" name="theme_primary_border"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Sgh-LY-lk7" secondAttribute="height" multiplier="1:1" id="6cG-oR-JcC"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" name="theme_background"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="Sgh-LY-lk7" secondAttribute="trailing" constant="20" id="MUb-CY-sp1"/>
-                                        <constraint firstItem="Sgh-LY-lk7" firstAttribute="leading" secondItem="Rw3-jR-CqQ" secondAttribute="leading" constant="20" id="NEn-M9-Ss9"/>
+                                        <constraint firstItem="Sgh-LY-lk7" firstAttribute="centerX" secondItem="Rw3-jR-CqQ" secondAttribute="centerX" id="RNH-ro-lGr"/>
+                                        <constraint firstItem="Sgh-LY-lk7" firstAttribute="centerY" secondItem="Rw3-jR-CqQ" secondAttribute="centerY" id="fnI-Vk-4G2"/>
                                         <constraint firstAttribute="width" secondItem="Rw3-jR-CqQ" secondAttribute="height" multiplier="1:1" id="nUA-cy-Y53"/>
-                                        <constraint firstAttribute="bottom" secondItem="Sgh-LY-lk7" secondAttribute="bottom" constant="20" id="tiW-QK-fPM"/>
-                                        <constraint firstItem="Sgh-LY-lk7" firstAttribute="top" secondItem="Rw3-jR-CqQ" secondAttribute="top" constant="20" id="xEP-4f-gHi"/>
+                                        <constraint firstItem="Sgh-LY-lk7" firstAttribute="width" secondItem="Rw3-jR-CqQ" secondAttribute="width" multiplier="0.8" id="tfU-xG-NRH"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -116,11 +120,12 @@
                     <viewLayoutGuide key="frameLayoutGuide" id="XJp-8t-vkp"/>
                 </scrollView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="i27-80-VjO" userLabel="Stack View - Next">
-                    <rect key="frame" x="20" y="708" width="335" height="50"/>
+                    <rect key="frame" x="20" y="698" width="335" height="60"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uje-OS-aMX" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="157.66666666666666" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="157.66666666666666" height="60"/>
                             <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
+                            <inset key="contentEdgeInsets" minX="10" minY="20" maxX="10" maxY="20"/>
                             <state key="normal" title="Sign Up">
                                 <color key="titleColor" name="theme_primary"/>
                             </state>
@@ -129,8 +134,9 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPc-yM-mM9" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="177.66666666666663" y="0.0" width="157.33333333333337" height="50"/>
+                            <rect key="frame" x="177.66666666666663" y="0.0" width="157.33333333333337" height="60"/>
                             <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
+                            <inset key="contentEdgeInsets" minX="10" minY="20" maxX="10" maxY="20"/>
                             <state key="normal" title="Home">
                                 <color key="titleColor" name="theme_primary"/>
                             </state>
@@ -139,9 +145,6 @@
                             </connections>
                         </button>
                     </subviews>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="F8C-pQ-9uB"/>
-                    </constraints>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -28,7 +28,7 @@ class ProfileTblCell: TableCell {
     }
 
     func setData(data: ProfileItemDetail ) {
-        self.lblName.text = data.title
+        self.lblName.text = data.type.name()
     }
 
     override func layoutSubviews() {

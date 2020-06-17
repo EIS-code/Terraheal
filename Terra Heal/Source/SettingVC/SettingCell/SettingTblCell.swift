@@ -29,7 +29,7 @@ class SettingTblCell: TableCell {
     }
 
     func setData(data: SettingPreferenceDetail ) {
-        self.lblName.text = data.title
+        self.lblName.text = data.type.name()
         self.imgSelected.isHidden = !data.isSelected
         if data.isSelected {
             self.vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)

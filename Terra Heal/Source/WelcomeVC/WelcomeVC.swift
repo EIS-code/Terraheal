@@ -46,16 +46,18 @@ class WelcomeVC: MainVC {
     }
 
     override func viewDidLayoutSubviews() {
-
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
+            self.iv1.layoutIfNeeded()
             self.iv1?.setRound()
+            self.iv2.layoutIfNeeded()
             self.iv2?.setRound()
+            self.btnSignUp?.setHighlighted(isHighlighted: true)
+            self.btnHome?.setHighlighted(isHighlighted: false)
         }
     }
     private func initialViewSetup() {
         self.vwBar?.backgroundColor = UIColor.clear
-
         self.lblHeader1?.text = "WELCOME_LBL_HEADER_1".localized()
         self.lblHeader1?.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.lblMsg1?.text = "WELCOME_LBL_MESSAGE_1".localized()
@@ -66,13 +68,12 @@ class WelcomeVC: MainVC {
         self.lblMsg2?.setFont(name: FontName.Regular, size: FontSize.label_14)
         self.btnSignUp.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnSignUp.setTitle("WELCOME_BTN_SIGN_UP".localized(), for: .normal)
-        self.btnSignUp.setHighlighted(isHighlighted: true)
-
         self.btnHome.setTitle("WELCOME_BTN_HOME".localized(), for: .normal)
         self.btnHome.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnHome.setHighlighted(isHighlighted: false)
+        self.iv1?.setRound()
+        self.iv2?.setRound()
 
-        
+
     }
 
 

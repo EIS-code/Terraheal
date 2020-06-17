@@ -20,10 +20,13 @@ class CustomTextFieldDialog: ThemeBottomDialogView {
 
 
     func initialize(title:String, placeholder:String = "", data:String, buttonTitle:String,cancelButtonTitle:String) {
+
+        self.initialSetup()
         self.lblTitle.text = title
         self.txtData.placeholder = placeholder
         self.txtData.text = data
         self.btnDone.setTitle(buttonTitle, for: .normal)
+
         if cancelButtonTitle.isEmpty() {
             self.btnCancel.isHidden = true
         } else {
@@ -36,16 +39,14 @@ class CustomTextFieldDialog: ThemeBottomDialogView {
             self.btnDone.setTitle(buttonTitle, for: .normal)
             self.btnDone.isHidden = false
         }
-        self.initialSetup()
+        
     }
 
     func initialSetup() {
         dialogView.clipsToBounds = true
         self.backgroundColor = .clear
-
         self.txtData?.placeholder = "".localized()
         self.txtData?.delegate = self
-
         self.backgroundView.backgroundColor = UIColor.black
         self.backgroundView.alpha = 0.0
         self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))

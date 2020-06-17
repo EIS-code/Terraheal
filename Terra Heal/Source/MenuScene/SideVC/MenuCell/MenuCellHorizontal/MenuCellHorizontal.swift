@@ -8,7 +8,7 @@ import Foundation
 
 
 
-class MenuCellVerticle: CollectionCell {
+class MenuCellHorizontal: CollectionCell {
 
     @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var ivBg: UIImageView!
@@ -17,11 +17,12 @@ class MenuCellVerticle: CollectionCell {
     override class func awakeFromNib() {
         super.awakeFromNib()
 
+
     }
 
     func setData(menuDetail:MenuItem) {
         self.lblTitle?.setFont(name: FontName.Regular, size: FontSize.label_14)
-        self.lblTitle.text = menuDetail.name
+        self.lblTitle.text = menuDetail.id.name()
 
     }
     override func layoutSubviews() {
