@@ -53,8 +53,9 @@ class HomeVC: MainVC {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let lc = LocationCenter.init()
-        lc.requestLocationOnce()
+       /* let lc = LocationCenter.init()
+        lc.requestLocationOnce()*/
+        
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -75,7 +76,7 @@ class HomeVC: MainVC {
     }
 
     private func initialViewSetup() {
-        self.vwBar?.backgroundColor = UIColor.clear
+        
         self.lblMenu.text = "HOME_LBL_MENU".localized()
         self.lblMenu.setFont(name: FontName.SemiBold, size: FontSize.label_14)
         if appSingleton.user.name.isEmpty() {

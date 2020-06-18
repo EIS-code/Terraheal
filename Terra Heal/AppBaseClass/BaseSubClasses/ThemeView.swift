@@ -72,30 +72,29 @@ extension UIView {
         }
         layer.addSublayer(shapeLayer)
     }
-    func createDashedLine(color: UIColor, strokeLength: NSNumber, gapLength: NSNumber, width: CGFloat) {
-        let shapeLayer = CAShapeLayer()
 
-        shapeLayer.strokeColor = color.cgColor
-        shapeLayer.lineWidth = width
-        shapeLayer.lineDashPattern = [strokeLength, gapLength]
+}
+class DashedLineView: UIView {
 
-        let path = CGMutablePath()
-        let topLeft:  CGPoint = self.bounds.origin
-        let topRight:  CGPoint = CGPoint.init(x: self.bounds.maxX, y: self.bounds.minY)
-        let bottomRight:  CGPoint = CGPoint.init(x: self.bounds.maxX, y: self.bounds.maxY)
-        let bottomLeft:  CGPoint = CGPoint.init(x: self.bounds.minX, y: self.bounds.maxY)
-        path.addLines(between: [topLeft,topRight])
-        path.addLines(between: [topRight,bottomRight])
-        path.addLines(between: [bottomRight, bottomLeft])
-        path.addLines(between: [bottomLeft, topLeft])
-        shapeLayer.path = path
-        shapeLayer.name = "dashed"
-        if let oldLayer:  CAShapeLayer = layer.sublayers?.last(where: { (currentLayer) -> Bool in
-            return currentLayer.name == "dashed"
-        }) as?  CAShapeLayer {
-            oldLayer.removeFromSuperlayer()
-        }
-        layer.addSublayer(shapeLayer)
+    private let borderLayer = CAShapeLayer()
+    private let radius: CGFloat = 10
+
+    override func awakeFromNib() {
+
+        super.awakeFromNib()
+
+        borderLayer.strokeColor = UIColor.themePrimary.cgColor
+        borderLayer.lineDashPattern = [3,3]
+        borderLayer.backgroundColor = UIColor.clear.cgColor
+        borderLayer.fillColor = UIColor.clear.cgColor
+
+        layer.addSublayer(borderLayer)
+    }
+
+    override func draw(_ rect: CGRect) {
+
+        borderLayer.path = UIBezierPath(roundedRect: rect, cornerRadius: radius).cgPath
+        print("\(self)-\(rect)")
     }
 }
 

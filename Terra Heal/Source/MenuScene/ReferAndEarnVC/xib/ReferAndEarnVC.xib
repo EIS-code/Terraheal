@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReferAndEarnVC" customModule="Terra_Heal" customModuleProvider="target">
+            <connections>
+                <outlet property="btnFilter" destination="27Z-Kz-VlO" id="6r9-7n-wVA"/>
+                <outlet property="btnLeft" destination="Uad-Jv-517" id="v19-37-LOb"/>
+                <outlet property="btnReferNow" destination="UE9-aD-Vxk" id="Xp5-nZ-HBH"/>
+                <outlet property="cltFriends" destination="0LX-jI-WKt" id="9y3-NF-WkG"/>
+                <outlet property="hTblVw" destination="SWT-ed-E6n" id="Mdo-Qy-aB4"/>
+                <outlet property="ivEarningPoints" destination="bCj-dR-0PF" id="crW-cO-Sby"/>
+                <outlet property="ivInviteFriend" destination="hLJ-8P-KjM" id="edu-gO-aO2"/>
+                <outlet property="lblFriendRefered" destination="9ak-JV-xGQ" id="rNj-Bb-zmP"/>
+                <outlet property="lblHistory" destination="fKl-0s-VWs" id="8zz-4K-bzV"/>
+                <outlet property="lblInviteFriendMsg" destination="pFj-Wo-meN" id="WQi-l3-wwS"/>
+                <outlet property="lblLifeTimeBurning" destination="o6i-vV-ttP" id="PVc-x7-OGl"/>
+                <outlet property="lblLifeTimeBurningValue" destination="JB9-R8-QtS" id="iri-o0-fj7"/>
+                <outlet property="lblLifeTimeEarning" destination="uIO-hX-tmy" id="eXX-Yb-lsc"/>
+                <outlet property="lblLifeTimeEarningValue" destination="HID-JL-FdE" id="rQY-bu-yno"/>
+                <outlet property="lblNoHistory" destination="INR-7Z-hy0" id="NEi-vG-0U2"/>
+                <outlet property="lblReferAndEarn" destination="rmu-ck-7EW" id="S2H-Ts-rPY"/>
+                <outlet property="lblTitle" destination="GqG-Ga-6Yt" id="irl-IG-cTD"/>
+                <outlet property="lblTotalBalance" destination="Brd-h9-nVi" id="mqH-bh-V68"/>
+                <outlet property="lblTotalBalanceValue" destination="mSm-hL-hcW" id="B1c-Ao-4YS"/>
+                <outlet property="scrVw" destination="Msw-Lg-la4" id="u3Z-Ir-1Ep"/>
+                <outlet property="tableView" destination="aVT-f3-Mwd" id="nhg-gV-smz"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="vwEarningPoints" destination="U6w-Xw-zbe" id="Oa1-Ng-CWS"/>
+                <outlet property="vwEmptyHistoryView" destination="6kH-4g-V0g" id="IJz-GG-s6o"/>
+                <outlet property="vwInviteFriend" destination="ric-AS-nmi" id="6ne-ae-tj4"/>
+                <outlet property="vwReferredFrinds" destination="kzD-YQ-jT4" id="hoP-Aw-OVQ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msw-Lg-la4" userLabel="scrView">
+                    <rect key="frame" x="37.666666666666657" y="144" width="300" height="634"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xd4-ev-sCy" userLabel="contentView">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="1267.3333333333333"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U6w-Xw-zbe" userLabel="vwEarningPoints">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="151.33333333333334"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bCj-dR-0PF">
+                                            <rect key="frame" x="0.0" y="20" width="30" height="30"/>
+                                            <color key="backgroundColor" name="theme_primary"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="bCj-dR-0PF" secondAttribute="height" multiplier="1:1" id="FNj-ae-9cK"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" text="Total Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Brd-h9-nVi" userLabel="lblTotalBalance" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="50.000000000000007" y="20" width="102.33333333333334" height="20.333333333333329"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-no-referral-history" translatesAutoresizingMaskIntoConstraints="NO" id="mmw-BM-WBa" userLabel="imgTotalBalance">
+                                            <rect key="frame" x="50.000000000000007" y="45.333333333333343" width="19.999999999999993" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="3c9-8Y-VRy"/>
+                                                <constraint firstAttribute="height" constant="20" id="K9c-Rp-Rra"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSm-hL-hcW" userLabel="lblTotalBalanceValue" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="80" y="45.333333333333343" width="21" height="20.333333333333329"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIO-hX-tmy" userLabel="lblLifeTimeEarning" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="50.000000000000007" y="85.666666666666657" width="102.33333333333334" height="20.333333333333329"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-no-referral-history" translatesAutoresizingMaskIntoConstraints="NO" id="MmD-x6-qMU" userLabel="imgLifetimeEarning">
+                                            <rect key="frame" x="50.000000000000007" y="111" width="19.999999999999993" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="Cfc-5G-er1"/>
+                                                <constraint firstAttribute="height" constant="20" id="bAb-qh-omz"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HID-JL-FdE" userLabel="lblLifeTimeEarningValue" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="80" y="111" width="21" height="20.333333333333343"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6i-vV-ttP" userLabel="lblLifeTimeBurning" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="177.66666666666669" y="85.666666666666657" width="102.33333333333331" height="20.333333333333329"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-no-referral-history" translatesAutoresizingMaskIntoConstraints="NO" id="Wmj-w7-xKS" userLabel="imgLifetimeburning">
+                                            <rect key="frame" x="177.66666666666669" y="111" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="THF-4l-6l4"/>
+                                                <constraint firstAttribute="height" constant="20" id="kKS-YL-Fze"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JB9-R8-QtS" userLabel="lblLifeTimeBurningValue" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="207.66666666666669" y="111" width="21" height="20.333333333333343"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="bCj-dR-0PF" firstAttribute="leading" secondItem="U6w-Xw-zbe" secondAttribute="leading" id="0lu-OR-Yjw"/>
+                                        <constraint firstAttribute="bottom" secondItem="HID-JL-FdE" secondAttribute="bottom" constant="20" id="6FE-L9-BKe"/>
+                                        <constraint firstItem="Brd-h9-nVi" firstAttribute="leading" secondItem="bCj-dR-0PF" secondAttribute="trailing" constant="20" id="7zX-qr-M2V"/>
+                                        <constraint firstItem="Wmj-w7-xKS" firstAttribute="top" secondItem="o6i-vV-ttP" secondAttribute="bottom" constant="5" id="BNP-AZ-J1t"/>
+                                        <constraint firstItem="JB9-R8-QtS" firstAttribute="top" secondItem="Wmj-w7-xKS" secondAttribute="top" id="Jse-4Y-kSF"/>
+                                        <constraint firstItem="HID-JL-FdE" firstAttribute="leading" secondItem="MmD-x6-qMU" secondAttribute="trailing" constant="10" id="NUo-rJ-gvY"/>
+                                        <constraint firstItem="o6i-vV-ttP" firstAttribute="top" secondItem="uIO-hX-tmy" secondAttribute="top" id="PUH-G1-9cP"/>
+                                        <constraint firstItem="mmw-BM-WBa" firstAttribute="top" secondItem="Brd-h9-nVi" secondAttribute="bottom" constant="5" id="TeJ-jL-YqD"/>
+                                        <constraint firstItem="Wmj-w7-xKS" firstAttribute="leading" secondItem="o6i-vV-ttP" secondAttribute="leading" id="VWV-ap-0Zk"/>
+                                        <constraint firstItem="HID-JL-FdE" firstAttribute="top" secondItem="MmD-x6-qMU" secondAttribute="top" id="VeZ-xh-GpK"/>
+                                        <constraint firstItem="MmD-x6-qMU" firstAttribute="leading" secondItem="uIO-hX-tmy" secondAttribute="leading" id="Vf2-vV-wcV"/>
+                                        <constraint firstItem="JB9-R8-QtS" firstAttribute="leading" secondItem="Wmj-w7-xKS" secondAttribute="trailing" constant="10" id="ZvC-40-3BY"/>
+                                        <constraint firstItem="uIO-hX-tmy" firstAttribute="leading" secondItem="Brd-h9-nVi" secondAttribute="leading" id="eEZ-Ln-ihs"/>
+                                        <constraint firstItem="MmD-x6-qMU" firstAttribute="top" secondItem="uIO-hX-tmy" secondAttribute="bottom" constant="5" id="f4m-pd-ixm"/>
+                                        <constraint firstAttribute="trailing" secondItem="o6i-vV-ttP" secondAttribute="trailing" constant="20" id="hC6-rG-2OK"/>
+                                        <constraint firstItem="mSm-hL-hcW" firstAttribute="top" secondItem="mmw-BM-WBa" secondAttribute="top" id="kqr-GI-gGo"/>
+                                        <constraint firstItem="mSm-hL-hcW" firstAttribute="leading" secondItem="mmw-BM-WBa" secondAttribute="trailing" constant="10" id="lm3-xR-lig"/>
+                                        <constraint firstItem="bCj-dR-0PF" firstAttribute="top" secondItem="U6w-Xw-zbe" secondAttribute="top" constant="20" id="mGf-CA-SiT"/>
+                                        <constraint firstItem="bCj-dR-0PF" firstAttribute="width" secondItem="U6w-Xw-zbe" secondAttribute="width" multiplier="0.1" id="qZd-NY-eCO"/>
+                                        <constraint firstItem="uIO-hX-tmy" firstAttribute="top" secondItem="mSm-hL-hcW" secondAttribute="bottom" constant="20" id="yRz-U8-dte"/>
+                                        <constraint firstItem="mmw-BM-WBa" firstAttribute="leading" secondItem="Brd-h9-nVi" secondAttribute="leading" id="zRk-W3-Vvr"/>
+                                        <constraint firstItem="Brd-h9-nVi" firstAttribute="top" secondItem="U6w-Xw-zbe" secondAttribute="top" constant="20" id="zYH-rS-rf0"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ric-AS-nmi" userLabel="vwReferAndEarnTerraPoints">
+                                    <rect key="frame" x="0.0" y="151.33333333333331" width="300" height="190.66666666666669"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="752" text="refer and earn terra points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmu-ck-7EW" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="9.9999999999999982" width="260" height="20.333333333333329"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="theme_primary"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hLJ-8P-KjM">
+                                            <rect key="frame" x="190" y="50.333333333333371" width="90" height="90"/>
+                                            <color key="backgroundColor" name="theme_background"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="hLJ-8P-KjM" secondAttribute="height" multiplier="1:1" id="LZq-EJ-xJN"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFj-Wo-meN" userLabel="lblInviteFriendMsg" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="44.666666666666686" width="150" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="theme_primary"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UE9-aD-Vxk" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="64.666666666666686" width="109" height="38"/>
+                                            <color key="backgroundColor" name="theme_primary_light_background"/>
+                                            <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                            <state key="normal" title="Refer now">
+                                                <color key="titleColor" name="theme_primary"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="btnReferralTapped:" destination="-1" eventType="touchUpInside" id="mmS-KY-7gl"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" name="theme_primary_light_background"/>
+                                    <constraints>
+                                        <constraint firstItem="pFj-Wo-meN" firstAttribute="leading" secondItem="rmu-ck-7EW" secondAttribute="leading" id="2i4-b0-FPK"/>
+                                        <constraint firstItem="hLJ-8P-KjM" firstAttribute="centerY" secondItem="ric-AS-nmi" secondAttribute="centerY" id="4rk-lL-8hM"/>
+                                        <constraint firstItem="rmu-ck-7EW" firstAttribute="leading" secondItem="ric-AS-nmi" secondAttribute="leading" constant="20" id="GBV-Rp-UXO"/>
+                                        <constraint firstItem="hLJ-8P-KjM" firstAttribute="width" secondItem="ric-AS-nmi" secondAttribute="width" multiplier="0.3" id="J6E-fX-n1l"/>
+                                        <constraint firstItem="hLJ-8P-KjM" firstAttribute="trailing" secondItem="rmu-ck-7EW" secondAttribute="trailing" id="KKg-Fz-VW6"/>
+                                        <constraint firstItem="hLJ-8P-KjM" firstAttribute="top" secondItem="rmu-ck-7EW" secondAttribute="bottom" constant="20" id="PKW-wd-zu3"/>
+                                        <constraint firstItem="pFj-Wo-meN" firstAttribute="trailing" secondItem="hLJ-8P-KjM" secondAttribute="leading" priority="999" constant="-20" id="QzK-uE-xQ9"/>
+                                        <constraint firstItem="UE9-aD-Vxk" firstAttribute="top" secondItem="pFj-Wo-meN" secondAttribute="bottom" constant="20" id="VMo-xm-EKH"/>
+                                        <constraint firstItem="rmu-ck-7EW" firstAttribute="top" secondItem="ric-AS-nmi" secondAttribute="top" constant="10" id="ZW3-XB-Pfh"/>
+                                        <constraint firstItem="UE9-aD-Vxk" firstAttribute="leading" secondItem="rmu-ck-7EW" secondAttribute="leading" id="fWC-51-EdG"/>
+                                        <constraint firstItem="pFj-Wo-meN" firstAttribute="top" secondItem="rmu-ck-7EW" secondAttribute="bottom" constant="14.333333333333321" id="oFC-FG-g3p"/>
+                                        <constraint firstAttribute="trailing" secondItem="rmu-ck-7EW" secondAttribute="trailing" constant="20" id="ufL-7Z-lsZ"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="UE9-aD-Vxk" secondAttribute="bottom" constant="20" id="uuS-ZH-QSf"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kzD-YQ-jT4" userLabel="vwFriendRefered">
+                                    <rect key="frame" x="0.0" y="342" width="300" height="110.33333333333331"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="refer and earn terra points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ak-JV-xGQ" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="9.9999999999999982" width="300" height="20.333333333333329"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="theme_primary"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0LX-jI-WKt">
+                                            <rect key="frame" x="0.0" y="40.333333333333371" width="300" height="60"/>
+                                            <color key="backgroundColor" name="theme_background"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="0LX-jI-WKt" secondAttribute="height" multiplier="5:1" id="u0z-3Y-VVS"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="K7l-ow-H7T">
+                                                <size key="itemSize" width="128" height="128"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                        </collectionView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="theme_background"/>
+                                    <constraints>
+                                        <constraint firstItem="0LX-jI-WKt" firstAttribute="width" secondItem="kzD-YQ-jT4" secondAttribute="width" id="56N-9d-xTB"/>
+                                        <constraint firstAttribute="trailing" secondItem="9ak-JV-xGQ" secondAttribute="trailing" id="6kL-nJ-sWK"/>
+                                        <constraint firstItem="9ak-JV-xGQ" firstAttribute="leading" secondItem="kzD-YQ-jT4" secondAttribute="leading" id="80b-ZG-xIF"/>
+                                        <constraint firstItem="0LX-jI-WKt" firstAttribute="top" secondItem="9ak-JV-xGQ" secondAttribute="bottom" constant="10" id="Suc-3z-iMx"/>
+                                        <constraint firstItem="9ak-JV-xGQ" firstAttribute="top" secondItem="kzD-YQ-jT4" secondAttribute="top" constant="10" id="TaB-Wq-AHb"/>
+                                        <constraint firstItem="0LX-jI-WKt" firstAttribute="centerX" secondItem="kzD-YQ-jT4" secondAttribute="centerX" id="gdG-kw-BTB"/>
+                                        <constraint firstAttribute="bottom" secondItem="0LX-jI-WKt" secondAttribute="bottom" constant="10" id="qtF-Op-m6k"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6QA-3N-Vjp" userLabel="vwHistory">
+                                    <rect key="frame" x="0.0" y="452.33333333333337" width="300" height="795.00000000000011"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="history" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKl-0s-VWs" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="10" width="52.333333333333336" height="38"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="theme_primary"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27Z-Kz-VlO" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="169" y="10" width="131" height="38"/>
+                                            <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                            <state key="normal" title="Last Month &gt;">
+                                                <color key="titleColor" name="theme_primary"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="btnFilterTapped:" destination="-1" eventType="touchUpInside" id="Pad-iB-4Fs"/>
+                                            </connections>
+                                        </button>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-f3-Mwd">
+                                            <rect key="frame" x="0.0" y="68" width="300" height="707"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="707" id="SWT-ed-E6n"/>
+                                            </constraints>
+                                        </tableView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kH-4g-V0g" userLabel="emptyHistoryView">
+                                            <rect key="frame" x="0.0" y="68.000000000000014" width="300" height="230.33333333333337"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-no-referral-history" translatesAutoresizingMaskIntoConstraints="NO" id="BZ2-BZ-M34">
+                                                    <rect key="frame" x="75" y="20" width="150" height="150"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="BZ2-BZ-M34" secondAttribute="height" multiplier="1:1" id="fmV-K7-Qv3"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INR-7Z-hy0" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                                    <rect key="frame" x="129" y="190" width="42" height="20.333333333333343"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="INR-7Z-hy0" secondAttribute="bottom" constant="20" id="AlZ-6C-FvD"/>
+                                                <constraint firstItem="INR-7Z-hy0" firstAttribute="centerX" secondItem="6kH-4g-V0g" secondAttribute="centerX" id="UnQ-3B-3sG"/>
+                                                <constraint firstItem="BZ2-BZ-M34" firstAttribute="width" secondItem="6kH-4g-V0g" secondAttribute="width" multiplier="0.5" id="dyi-UX-vff"/>
+                                                <constraint firstItem="BZ2-BZ-M34" firstAttribute="centerX" secondItem="6kH-4g-V0g" secondAttribute="centerX" id="exa-qh-CXR"/>
+                                                <constraint firstItem="BZ2-BZ-M34" firstAttribute="top" secondItem="6kH-4g-V0g" secondAttribute="top" constant="20" id="g4i-UV-ka0"/>
+                                                <constraint firstItem="INR-7Z-hy0" firstAttribute="top" secondItem="BZ2-BZ-M34" secondAttribute="bottom" constant="20" id="lFB-Xm-aed"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="aVT-f3-Mwd" firstAttribute="width" secondItem="6QA-3N-Vjp" secondAttribute="width" id="9xA-uY-4bh"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6kH-4g-V0g" secondAttribute="bottom" constant="20" id="EEM-CB-FZa"/>
+                                        <constraint firstItem="fKl-0s-VWs" firstAttribute="leading" secondItem="6QA-3N-Vjp" secondAttribute="leading" id="KLE-Wa-Ihr"/>
+                                        <constraint firstItem="27Z-Kz-VlO" firstAttribute="top" secondItem="6QA-3N-Vjp" secondAttribute="top" constant="10" id="NFz-QR-rGx"/>
+                                        <constraint firstItem="6kH-4g-V0g" firstAttribute="leading" secondItem="aVT-f3-Mwd" secondAttribute="leading" id="Nht-Yh-dJk"/>
+                                        <constraint firstItem="aVT-f3-Mwd" firstAttribute="top" secondItem="27Z-Kz-VlO" secondAttribute="bottom" constant="20" id="Tcf-oU-aXW"/>
+                                        <constraint firstItem="fKl-0s-VWs" firstAttribute="top" secondItem="6QA-3N-Vjp" secondAttribute="top" constant="10" id="UiK-6C-ctV"/>
+                                        <constraint firstAttribute="bottom" secondItem="aVT-f3-Mwd" secondAttribute="bottom" priority="999" constant="20" id="gcy-oc-o50"/>
+                                        <constraint firstItem="aVT-f3-Mwd" firstAttribute="centerX" secondItem="6QA-3N-Vjp" secondAttribute="centerX" id="hFE-kZ-vjv"/>
+                                        <constraint firstItem="6kH-4g-V0g" firstAttribute="trailing" secondItem="aVT-f3-Mwd" secondAttribute="trailing" id="nsZ-bZ-ijx"/>
+                                        <constraint firstItem="fKl-0s-VWs" firstAttribute="centerY" secondItem="27Z-Kz-VlO" secondAttribute="centerY" id="qDs-Qc-edS"/>
+                                        <constraint firstItem="6kH-4g-V0g" firstAttribute="top" secondItem="aVT-f3-Mwd" secondAttribute="top" id="uc2-fK-p7E"/>
+                                        <constraint firstAttribute="trailing" secondItem="27Z-Kz-VlO" secondAttribute="trailing" id="v7f-gK-gyC"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="kzD-YQ-jT4" firstAttribute="top" secondItem="ric-AS-nmi" secondAttribute="bottom" id="0Ch-LW-6rU"/>
+                                <constraint firstItem="ric-AS-nmi" firstAttribute="trailing" secondItem="U6w-Xw-zbe" secondAttribute="trailing" id="0st-ex-qbc"/>
+                                <constraint firstItem="ric-AS-nmi" firstAttribute="top" secondItem="U6w-Xw-zbe" secondAttribute="bottom" id="3Al-We-4SZ"/>
+                                <constraint firstItem="U6w-Xw-zbe" firstAttribute="width" secondItem="Xd4-ev-sCy" secondAttribute="width" id="ABS-0z-6WU"/>
+                                <constraint firstItem="6QA-3N-Vjp" firstAttribute="width" secondItem="Xd4-ev-sCy" secondAttribute="width" id="Emb-Kh-zMr"/>
+                                <constraint firstItem="ric-AS-nmi" firstAttribute="leading" secondItem="U6w-Xw-zbe" secondAttribute="leading" id="RK7-Nw-Mc8"/>
+                                <constraint firstItem="U6w-Xw-zbe" firstAttribute="top" secondItem="Xd4-ev-sCy" secondAttribute="top" id="dC7-p0-RWf"/>
+                                <constraint firstItem="6QA-3N-Vjp" firstAttribute="centerX" secondItem="Xd4-ev-sCy" secondAttribute="centerX" id="ddk-9Q-qy0"/>
+                                <constraint firstItem="kzD-YQ-jT4" firstAttribute="bottom" secondItem="6QA-3N-Vjp" secondAttribute="top" id="e9i-vB-lTR"/>
+                                <constraint firstItem="kzD-YQ-jT4" firstAttribute="width" secondItem="Xd4-ev-sCy" secondAttribute="width" id="fus-nE-V1Q"/>
+                                <constraint firstAttribute="bottom" secondItem="6QA-3N-Vjp" secondAttribute="bottom" constant="20" id="j1c-4l-e1k"/>
+                                <constraint firstItem="kzD-YQ-jT4" firstAttribute="centerX" secondItem="Xd4-ev-sCy" secondAttribute="centerX" id="sWf-BY-Gdg"/>
+                                <constraint firstItem="U6w-Xw-zbe" firstAttribute="centerX" secondItem="Xd4-ev-sCy" secondAttribute="centerX" id="snd-MI-UoX"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Xd4-ev-sCy" firstAttribute="width" secondItem="Msw-Lg-la4" secondAttribute="width" id="12Y-Qc-gZd"/>
+                        <constraint firstItem="Xd4-ev-sCy" firstAttribute="centerX" secondItem="Msw-Lg-la4" secondAttribute="centerX" id="6bU-qc-paL"/>
+                        <constraint firstItem="Xd4-ev-sCy" firstAttribute="leading" secondItem="Msw-Lg-la4" secondAttribute="leading" id="Dd5-Ae-RqW"/>
+                        <constraint firstItem="Xd4-ev-sCy" firstAttribute="top" secondItem="Msw-Lg-la4" secondAttribute="top" id="HKP-xh-pBj"/>
+                        <constraint firstAttribute="trailing" secondItem="Xd4-ev-sCy" secondAttribute="trailing" id="ZD0-M7-qxt"/>
+                        <constraint firstAttribute="bottom" secondItem="Xd4-ev-sCy" secondAttribute="bottom" id="wER-4Q-tPg"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="d4a-C9-GI4"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="YtE-P3-Xvk"/>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uad-Jv-517" userLabel="btnLeft" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="20" y="64" width="60" height="60"/>
+                    <color key="backgroundColor" name="theme_primary_light"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="Cgq-mW-SUU"/>
+                        <constraint firstAttribute="width" secondItem="Uad-Jv-517" secondAttribute="height" multiplier="1:1" id="weZ-u6-1vx"/>
+                    </constraints>
+                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                    <connections>
+                        <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="eva-O3-038"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqG-Ga-6Yt" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="100" y="84" width="175" height="20.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="theme_primary"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Msw-Lg-la4" firstAttribute="top" secondItem="Uad-Jv-517" secondAttribute="bottom" constant="20" id="BT1-pC-EsX"/>
+                <constraint firstItem="Uad-Jv-517" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="JHQ-zD-buw"/>
+                <constraint firstItem="Msw-Lg-la4" firstAttribute="bottom" secondItem="VLJ-uh-dxO" secondAttribute="bottom" id="SYC-Bw-jXs"/>
+                <constraint firstItem="GqG-Ga-6Yt" firstAttribute="centerY" secondItem="Uad-Jv-517" secondAttribute="centerY" id="WYJ-vP-Qxo"/>
+                <constraint firstItem="Msw-Lg-la4" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" multiplier="0.8" id="cx4-tP-rTI"/>
+                <constraint firstItem="GqG-Ga-6Yt" firstAttribute="leading" secondItem="Uad-Jv-517" secondAttribute="trailing" constant="20" id="iNW-Lm-WKv"/>
+                <constraint firstItem="Uad-Jv-517" firstAttribute="width" secondItem="Uad-Jv-517" secondAttribute="height" multiplier="1:1" id="oqg-Sg-NQI"/>
+                <constraint firstItem="GqG-Ga-6Yt" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="s0Y-tp-G4y"/>
+                <constraint firstItem="Msw-Lg-la4" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="tIO-G9-3Wh"/>
+                <constraint firstItem="Uad-Jv-517" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="20" id="xLJ-i6-C7z"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
+            <point key="canvasLocation" x="131" y="154"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="asset-no-referral-history" width="21.333333969116211" height="21.333333969116211"/>
+        <namedColor name="theme_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary">
+            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary_light">
+            <color red="0.49803921568627452" green="0.7686274509803922" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary_light_background">
+            <color red="0.94509803921568625" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

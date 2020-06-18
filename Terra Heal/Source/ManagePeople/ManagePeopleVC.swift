@@ -74,7 +74,7 @@ class ManagePeopleVC: MainVC {
     }
 
     private func initialViewSetup() {
-        self.vwBar?.backgroundColor = UIColor.clear
+        
         self.setupTableView(tableView: self.tableView)
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.setTitle(title: "MANAGE_PEOPLE_TITLE".localized())

@@ -19,8 +19,6 @@ enum Currency: String {
             return "Euro"
         case .Dollar:
             return "Dollar"
-        default:
-            return ""
         }
     }
     func symbol() -> String {
@@ -30,8 +28,6 @@ enum Currency: String {
             return "Euro"
         case .Dollar:
             return "Dollar"
-        default:
-            return ""
         }
     }
 }

@@ -89,15 +89,15 @@
 "HOME_INFO_LBL_2" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 "HOME_LBL_USER" = "User";
 //MARK: Menu SCREEN
-"MENU_ITEM_1" = "how it works";
-"MENU_ITEM_2" = "refer now\n& earn discount";
-"MENU_ITEM_3" = "pricing and\nlocations";
-"MENU_ITEM_4" = "promo code";
-"MENU_ITEM_5" = "notifications";
-"MENU_ITEM_6" = "help";
-"MENU_ITEM_7" = "packs";
-"MENU_ITEM_8" = "campaigns";
-"MENU_ITEM_9" = "gift voucher";
+"MENU_HOW_IT_WORKS" = "how it works";
+"MENU_REFER_AND_EARN" = "refer now\n& earn discount";
+"MENU_PRINCING_AND_LOCATION" = "pricing and\nlocations";
+"MENU_PROMO_CODE" = "promo code";
+"MENU_NOTIFICATIONS" = "notifications";
+"MENU_HELP" = "help";
+"MENU_PACKS" = "packs";
+"MENU_CAMPAINGNS" = "campaigns";
+"MENU_GIFT_VOUCHER" = "gift voucher";
 //MARK: Profile Menu
 "PROFILE_MENU_ITEM_1" = "my profile";
 "PROFILE_MENU_ITEM_2" = "my bookings";
@@ -190,9 +190,26 @@
 "PROMOCODE_TITLE" = "promo code";
 "PROMOCODE_VOUCHER_CODE" = "voucher code";
 "PROMOCODE_BTN_ADD_NEW" = "Add New";
+//MARK: Promocode
+"PACK_TITLE" = "pack";
+"PACK_CODE" = "Pack code";
+"PACK_BTN_BUY_NEW" = "Buy New pack";
 
+//MARK: Refer And Earn
+"REFER_AND_EARN_TITLE" = "terra points";
+"REFER_AND_EARN_LBL_TOTAL_BALANCE" = "total balance";
+"REFER_AND_EARN_LBL_LIFETIME_EARNING" = "lifetime earnings";
+"REFER_AND_EARN_LBL_LIFETIME_BURNING" = "lifetime burns";
+"REFER_AND_EARN_LBL_INVITE_FRIEND_TITLE" = "refer and earn terra points";
+"REFER_AND_EARN_LBL_INVITE_FRIEND_MSG" = "invite a friend and given him 50 terra points and earn 50 terra points for yourself.";
+"REFER_AND_EARN_BTN_REFER_NOW" = "Refer Now";
 
+"REFER_AND_EARN_LBL_FRIEND_REFERRED_TITLE" = "friends referred";
+"REFER_AND_EARN_LBL_HISTORY" = "history";
+"REFER_AND_EARN_LBL_NO_HISTORY" = "no history found";
 
+"SHARE_REFERRAL_TITLE" = "refer and earn terra points";
+"BTN_INVITE_VIA_SOCIAL_MEDIA" = "Invite Via Whatsapp";
 //MARK: How It Work Screen
 
 "HOW_IT_WORK_TITLE" = "how it works?";

@@ -67,7 +67,7 @@ class PriceLocationVC: MainVC {
     }
 
     private func initialViewSetup() {
-        self.vwBar?.backgroundColor = UIColor.clear
+        
         self.setupTableView(tableView: self.tableView)
         self.setupSearchbar(searchBar: self.txtSearchBar)
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)

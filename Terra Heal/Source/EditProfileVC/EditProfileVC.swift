@@ -85,7 +85,7 @@ class EditProfileVC: MainVC {
     }
 
     private func initialViewSetup() {
-        self.vwBar?.backgroundColor = UIColor.clear
+        
 
         self.lblTitle?.text = "edit profile"//appSingleton.user.name
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
@@ -109,15 +109,31 @@ class EditProfileVC: MainVC {
         photoPickerAlert.show(animated: true)
         photoPickerAlert.onBtnCancelTapped = { [weak photoPickerAlert, weak self] in
             photoPickerAlert?.dismiss()
+            guard let self = self else {
+                return
+            }
+            print(self)
         }
         photoPickerAlert.onBtnDoneTapped = { [weak photoPickerAlert, weak self] in
             photoPickerAlert?.dismiss()
+            guard let self = self else {
+                return
+            }
+            print(self)
         }
         photoPickerAlert.onBtnCameraTapped = { [weak photoPickerAlert, weak self] in
             photoPickerAlert?.dismiss()
+            guard let self = self else {
+                return
+            }
+            print(self)
         }
         photoPickerAlert.onBtnGallaryTapped = { [weak photoPickerAlert, weak self] in
             photoPickerAlert?.dismiss()
+            guard let self = self else {
+                return
+            }
+            print(self)
         }
 
     }

@@ -65,7 +65,7 @@ class MyPlaceVC: MainVC {
     }
 
     private func initialViewSetup() {
-        self.vwBar?.backgroundColor = UIColor.clear
+        
         self.setupTableView(tableView: self.tableView)
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.setTitle(title: "MY_PLACE_TITLE".localized())

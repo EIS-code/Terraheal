@@ -106,7 +106,7 @@ class SettingVC: MainVC {
     }
 
     private func initialViewSetup() {
-        self.vwBar?.backgroundColor = UIColor.clear
+        
         self.setupTableView(tableView: self.tableView)
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.setTitle(title: "SETTING_MENU_TITTLE".localized())
@@ -120,11 +120,18 @@ class SettingVC: MainVC {
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
             alert?.dismiss()
+            guard let self = self else {
+                return
+            }
+            print(self)
         }
         alert.onBtnDoneTapped = {
              [weak alert, weak self] (pressure) in
             alert?.dismiss()
-            print(pressure.name())
+            guard let self = self else {
+                return
+            }
+            print(self)
         }
     }
 
@@ -151,11 +158,20 @@ extension SettingVC {
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
             alert?.dismiss()
+            guard let self = self else {
+                return
+            }
+            print(self)
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (language) in
             alert?.dismiss()
-            print(language.name())
+            guard let self = self else {
+                return
+            }
+            print(self)
+
+
         }
     }
 
@@ -212,12 +228,18 @@ extension SettingVC {
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
             alert?.dismiss()
+            guard let self = self else {
+                return
+            }
+            print(self)
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (pasword,newpasswod) in
             alert?.dismiss()
-            print(pasword)
-            print(newpasswod)
+            guard let self = self else {
+                return
+            }
+            print(self)
         }
     }
 

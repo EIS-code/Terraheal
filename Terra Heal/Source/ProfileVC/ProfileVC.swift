@@ -127,7 +127,7 @@ class ProfileVC: MainVC {
     }
 
     private func initialViewSetup() {
-        self.vwBar?.backgroundColor = UIColor.clear
+        
         self.lblEmail?.text = appSingleton.user.email
         self.lblEmail?.setFont(name: FontName.Regular, size: FontSize.label_14)
         self.lblMobile?.text = appSingleton.user.telNumber

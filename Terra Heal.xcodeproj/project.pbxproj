@@ -36,8 +36,6 @@
 		633B7126245FDA5800CF490D /* ThemeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B7123245FDA5800CF490D /* ThemeTextField.swift */; };
 		633B7127245FDA5800CF490D /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B7124245FDA5800CF490D /* ThemeButton.swift */; };
 		633B7128245FDA5800CF490D /* ThemeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B7125245FDA5800CF490D /* ThemeLabel.swift */; };
-		633B7130245FF18200CF490D /* TutorialVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633B712E245FF18200CF490D /* TutorialVC.xib */; };
-		633B7131245FF18200CF490D /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633B712F245FF18200CF490D /* TutorialVC.swift */; };
 		633C1AC224923D3B009EB6AE /* CountriesWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C1AC124923D3A009EB6AE /* CountriesWebService.swift */; };
 		633C1AC424923FCA009EB6AE /* CityWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C1AC324923FCA009EB6AE /* CityWebService.swift */; };
 		633C1ACB24924483009EB6AE /* CustomCountyPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633C1AC624924482009EB6AE /* CustomCountyPicker.xib */; };
@@ -45,10 +43,6 @@
 		633C1ACD24924483009EB6AE /* CustomCountyPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C1AC924924483009EB6AE /* CustomCountyPickerCell.swift */; };
 		633C1ACE24924483009EB6AE /* CustomCountyPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633C1ACA24924483009EB6AE /* CustomCountyPickerCell.xib */; };
 		633D1A422488B7910085AC56 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633D1A412488B7910085AC56 /* PinterestLayout.swift */; };
-		633E97EA248687B00097093E /* ContactVerifiedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633E97E4248687B00097093E /* ContactVerifiedVC.xib */; };
-		633E97EB248687B00097093E /* ContactVerifiedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633E97E5248687B00097093E /* ContactVerifiedVC.swift */; };
-		633E97EC248687B00097093E /* VerifyContactVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633E97E8248687B00097093E /* VerifyContactVC.xib */; };
-		633E97ED248687B00097093E /* VerifyContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633E97E9248687B00097093E /* VerifyContactVC.swift */; };
 		63409C6B246C17E10097C517 /* CustomAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63409C67246C17E10097C517 /* CustomAlert.xib */; };
 		63409C6C246C17E10097C517 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63409C68246C17E10097C517 /* CustomAlert.swift */; };
 		63432F80248F4B45006BA322 /* MassagePreferenceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63432F7B248F4B45006BA322 /* MassagePreferenceVC.xib */; };
@@ -79,8 +73,6 @@
 		634398B3245BEAB2009BCA1F /* CommonColor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 634398AF245BEAB1009BCA1F /* CommonColor.xcassets */; };
 		634398B4245BEAB2009BCA1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 634398B0245BEAB2009BCA1F /* Assets.xcassets */; };
 		634398B5245BEAB2009BCA1F /* ClientImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 634398B1245BEAB2009BCA1F /* ClientImages.xcassets */; };
-		634398C0245BECDC009BCA1F /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634398B9245BECDC009BCA1F /* LoginVC.xib */; };
-		634398C1245BECDC009BCA1F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634398BA245BECDC009BCA1F /* LoginVC.swift */; };
 		634398C2245BECDC009BCA1F /* LaunchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634398BD245BECDC009BCA1F /* LaunchVC.xib */; };
 		634398C3245BECDD009BCA1F /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634398BE245BECDC009BCA1F /* LaunchVC.swift */; };
 		63439FEF2488F1BB000E2F4C /* CustomDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63439FED2488F1BB000E2F4C /* CustomDatePicker.xib */; };
@@ -100,10 +92,6 @@
 		6349A12B2498C1F000E608C8 /* ManagePeopleTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6349A1252498C1F000E608C8 /* ManagePeopleTblCell.swift */; };
 		6349A12C2498C1F000E608C8 /* ManagePeopleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6349A1262498C1F000E608C8 /* ManagePeopleVC.swift */; };
 		634BB76F2461268C00494379 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634BB76E2461268B00494379 /* ThemeView.swift */; };
-		634BB77424612E7900494379 /* RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634BB77224612E7900494379 /* RegisterVC.xib */; };
-		634BB77524612E7900494379 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634BB77324612E7900494379 /* RegisterVC.swift */; };
-		634BB77A24613EFF00494379 /* TouchIdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634BB77824613EFF00494379 /* TouchIdVC.xib */; };
-		634BB77B24613EFF00494379 /* TouchIdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634BB77924613EFF00494379 /* TouchIdVC.swift */; };
 		634BB77E246141D000494379 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634BB77D246141D000494379 /* LocalAuthentication.framework */; };
 		6350C854248A0186002E13F2 /* CustomGenderPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6350C852248A0186002E13F2 /* CustomGenderPicker.xib */; };
 		6350C855248A0186002E13F2 /* CustomGenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350C853248A0186002E13F2 /* CustomGenderPicker.swift */; };
@@ -139,28 +127,8 @@
 		6358A088248F8968004F2CA8 /* PreferGenderPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6358A084248F8968004F2CA8 /* PreferGenderPickerCell.xib */; };
 		6358A089248F8968004F2CA8 /* CustomPreferGenderPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6358A085248F8968004F2CA8 /* CustomPreferGenderPicker.xib */; };
 		6358A08A248F8968004F2CA8 /* CustomPreferGenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6358A086248F8968004F2CA8 /* CustomPreferGenderPicker.swift */; };
-		635A0E3B2463B9A400080194 /* TutorialCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 635A0E392463B9A400080194 /* TutorialCell.xib */; };
-		635A0E3C2463B9A400080194 /* TutorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635A0E3A2463B9A400080194 /* TutorialCell.swift */; };
 		635DE3B6248E44900030DC69 /* EditProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 635DE3B4248E44900030DC69 /* EditProfileVC.xib */; };
 		635DE3B7248E44900030DC69 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635DE3B5248E44900030DC69 /* EditProfileVC.swift */; };
-		6361ECEA2462924900CC317A /* ContactVerificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6361ECE82462924900CC317A /* ContactVerificationVC.xib */; };
-		6361ECEB2462924900CC317A /* ContactVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6361ECE92462924900CC317A /* ContactVerificationVC.swift */; };
-		6364005B24697BD7009A8F5E /* CompleteIdentityVerificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6364003B24697BD7009A8F5E /* CompleteIdentityVerificationVC.xib */; };
-		6364005C24697BD7009A8F5E /* CompleteIdentityVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364003C24697BD7009A8F5E /* CompleteIdentityVerificationVC.swift */; };
-		6364005D24697BD7009A8F5E /* KycVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6364003F24697BD7009A8F5E /* KycVC.xib */; };
-		6364005E24697BD7009A8F5E /* KycVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364004024697BD7009A8F5E /* KycVC.swift */; };
-		6364005F24697BD7009A8F5E /* AddCardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6364004324697BD7009A8F5E /* AddCardVC.xib */; };
-		6364006024697BD7009A8F5E /* AddCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364004424697BD7009A8F5E /* AddCardVC.swift */; };
-		6364006124697BD7009A8F5E /* KycInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6364004724697BD7009A8F5E /* KycInfoVC.xib */; };
-		6364006224697BD7009A8F5E /* KycInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364004824697BD7009A8F5E /* KycInfoVC.swift */; };
-		6364006324697BD7009A8F5E /* ScanPassportInstructionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6364004C24697BD7009A8F5E /* ScanPassportInstructionVC.xib */; };
-		6364006424697BD7009A8F5E /* ScanPassportInstructionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364004D24697BD7009A8F5E /* ScanPassportInstructionVC.swift */; };
-		6364006524697BD7009A8F5E /* ScanPassportVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6364005024697BD7009A8F5E /* ScanPassportVC.xib */; };
-		6364006624697BD7009A8F5E /* ScanPassportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364005124697BD7009A8F5E /* ScanPassportVC.swift */; };
-		6364006724697BD7009A8F5E /* ScanSelfieVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6364005524697BD7009A8F5E /* ScanSelfieVC.xib */; };
-		6364006824697BD7009A8F5E /* ScanSelfieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364005624697BD7009A8F5E /* ScanSelfieVC.swift */; };
-		6364006924697BD7009A8F5E /* ScanSelfieInstructionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6364005924697BD7009A8F5E /* ScanSelfieInstructionVC.xib */; };
-		6364006A24697BD7009A8F5E /* ScanSelfieInstructionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364005A24697BD7009A8F5E /* ScanSelfieInstructionVC.swift */; };
 		63672D2C2491072900A12D91 /* CustomLanguagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63672D272491072900A12D91 /* CustomLanguagePicker.swift */; };
 		63672D2D2491072900A12D91 /* CustomLanguagePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63672D292491072900A12D91 /* CustomLanguagePickerCell.xib */; };
 		63672D2E2491072900A12D91 /* CustomLanguagePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63672D2A2491072900A12D91 /* CustomLanguagePickerCell.swift */; };
@@ -189,10 +157,6 @@
 		63681AD22497B1730087CC36 /* MyAddressTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63681ACE2497B1730087CC36 /* MyAddressTblCell.xib */; };
 		63681AD32497B1730087CC36 /* MyAddressTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63681ACF2497B1730087CC36 /* MyAddressTblCell.swift */; };
 		63681AD42497B1730087CC36 /* MyAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63681AD02497B1730087CC36 /* MyAddressVC.swift */; };
-		6368738B2462C08D0076779B /* VerificationAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636873892462C08D0076779B /* VerificationAlert.xib */; };
-		6368738C2462C08D0076779B /* VerificationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6368738A2462C08D0076779B /* VerificationAlert.swift */; };
-		636873902462C5800076779B /* OTPFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6368738E2462C5800076779B /* OTPFieldView.swift */; };
-		636873912462C5800076779B /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6368738F2462C5800076779B /* OTPTextField.swift */; };
 		637A7C542487E668005D3819 /* HomeTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637A7C522487E667005D3819 /* HomeTblCell.swift */; };
 		637A7C552487E668005D3819 /* HomeTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 637A7C532487E668005D3819 /* HomeTblCell.xib */; };
 		637E3A7124990687002DE275 /* CustomPhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637E3A6F24990687002DE275 /* CustomPhotoPicker.swift */; };
@@ -204,6 +168,62 @@
 		63AFB5E624893A7D007566D4 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63AFB5E124893A7C007566D4 /* ProfileVC.xib */; };
 		63AFB5E724893A7D007566D4 /* ProfileTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AFB5E324893A7C007566D4 /* ProfileTblCell.swift */; };
 		63AFB5E824893A7D007566D4 /* ProfileTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63AFB5E424893A7C007566D4 /* ProfileTblCell.xib */; };
+		63B9673D249B471E0015DDCA /* PackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B96738249B471E0015DDCA /* PackVC.xib */; };
+		63B9673E249B471E0015DDCA /* PackTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B9673A249B471E0015DDCA /* PackTblCell.xib */; };
+		63B9673F249B471E0015DDCA /* PackTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9673B249B471E0015DDCA /* PackTblCell.swift */; };
+		63B96740249B471E0015DDCA /* PackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9673C249B471E0015DDCA /* PackVC.swift */; };
+		63B9678A249B62190015DDCA /* CompleteIdentityVerificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B96745249B62180015DDCA /* CompleteIdentityVerificationVC.xib */; };
+		63B9678B249B62190015DDCA /* CompleteIdentityVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B96746249B62180015DDCA /* CompleteIdentityVerificationVC.swift */; };
+		63B9678C249B62190015DDCA /* KycVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B96749249B62180015DDCA /* KycVC.xib */; };
+		63B9678D249B62190015DDCA /* KycVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9674A249B62180015DDCA /* KycVC.swift */; };
+		63B9678E249B62190015DDCA /* AddCardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B9674D249B62180015DDCA /* AddCardVC.xib */; };
+		63B9678F249B62190015DDCA /* AddCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9674E249B62180015DDCA /* AddCardVC.swift */; };
+		63B96790249B62190015DDCA /* KycInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B96751249B62180015DDCA /* KycInfoVC.xib */; };
+		63B96791249B62190015DDCA /* KycInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B96752249B62180015DDCA /* KycInfoVC.swift */; };
+		63B96792249B62190015DDCA /* ScanPassportInstructionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B96756249B62180015DDCA /* ScanPassportInstructionVC.xib */; };
+		63B96793249B62190015DDCA /* ScanPassportInstructionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B96757249B62180015DDCA /* ScanPassportInstructionVC.swift */; };
+		63B96794249B62190015DDCA /* ScanPassportVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B9675A249B62180015DDCA /* ScanPassportVC.xib */; };
+		63B96795249B62190015DDCA /* ScanPassportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9675B249B62180015DDCA /* ScanPassportVC.swift */; };
+		63B96796249B62190015DDCA /* ScanSelfieVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B9675F249B62180015DDCA /* ScanSelfieVC.xib */; };
+		63B96797249B62190015DDCA /* ScanSelfieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B96760249B62180015DDCA /* ScanSelfieVC.swift */; };
+		63B96798249B62190015DDCA /* ScanSelfieInstructionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B96763249B62180015DDCA /* ScanSelfieInstructionVC.xib */; };
+		63B96799249B62190015DDCA /* ScanSelfieInstructionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B96764249B62180015DDCA /* ScanSelfieInstructionVC.swift */; };
+		63B9679A249B62190015DDCA /* ContactVerificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B96767249B62180015DDCA /* ContactVerificationVC.xib */; };
+		63B9679B249B62190015DDCA /* ContactVerifiedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B9676A249B62180015DDCA /* ContactVerifiedVC.xib */; };
+		63B9679C249B62190015DDCA /* ContactVerifiedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9676B249B62180015DDCA /* ContactVerifiedVC.swift */; };
+		63B9679D249B62190015DDCA /* ContactVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9676C249B62180015DDCA /* ContactVerificationVC.swift */; };
+		63B9679E249B62190015DDCA /* VerifyContactVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B9676F249B62180015DDCA /* VerifyContactVC.xib */; };
+		63B9679F249B62190015DDCA /* VerifyContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B96770249B62180015DDCA /* VerifyContactVC.swift */; };
+		63B967A0249B62190015DDCA /* VerificationAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B96772249B62190015DDCA /* VerificationAlert.xib */; };
+		63B967A1249B62190015DDCA /* OTPFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B96774249B62190015DDCA /* OTPFieldView.swift */; };
+		63B967A2249B62190015DDCA /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B96775249B62190015DDCA /* OTPTextField.swift */; };
+		63B967A3249B62190015DDCA /* VerificationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B96776249B62190015DDCA /* VerificationAlert.swift */; };
+		63B967A4249B62190015DDCA /* TutorialVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B96779249B62190015DDCA /* TutorialVC.xib */; };
+		63B967A5249B62190015DDCA /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9677A249B62190015DDCA /* TutorialVC.swift */; };
+		63B967A6249B62190015DDCA /* TutorialCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B9677C249B62190015DDCA /* TutorialCell.xib */; };
+		63B967A7249B62190015DDCA /* TutorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9677D249B62190015DDCA /* TutorialCell.swift */; };
+		63B967A8249B62190015DDCA /* RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B96780249B62190015DDCA /* RegisterVC.xib */; };
+		63B967A9249B62190015DDCA /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B96781249B62190015DDCA /* RegisterVC.swift */; };
+		63B967AA249B62190015DDCA /* TouchIdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B96784249B62190015DDCA /* TouchIdVC.xib */; };
+		63B967AB249B62190015DDCA /* TouchIdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B96785249B62190015DDCA /* TouchIdVC.swift */; };
+		63B967AC249B62190015DDCA /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B96788249B62190015DDCA /* LoginVC.xib */; };
+		63B967AD249B62190015DDCA /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B96789249B62190015DDCA /* LoginVC.swift */; };
+		63B967B8249B63BF0015DDCA /* ReferAndEarnVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B967AF249B63BF0015DDCA /* ReferAndEarnVC.swift */; };
+		63B967B9249B63BF0015DDCA /* ReferAndEarnVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B967B1249B63BF0015DDCA /* ReferAndEarnVC.xib */; };
+		63B967BA249B63BF0015DDCA /* ReferAndEarnUserCltCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B967B3249B63BF0015DDCA /* ReferAndEarnUserCltCell.swift */; };
+		63B967BB249B63BF0015DDCA /* ReferAndEarnUserCltCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B967B4249B63BF0015DDCA /* ReferAndEarnUserCltCell.xib */; };
+		63B967BC249B63BF0015DDCA /* ReferAndEarnTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B967B6249B63BF0015DDCA /* ReferAndEarnTblCell.swift */; };
+		63B967BD249B63BF0015DDCA /* ReferAndEarnTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B967B7249B63BF0015DDCA /* ReferAndEarnTblCell.xib */; };
+		63B967C1249B9A710015DDCA /* CustomShareReferralDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B967BF249B9A710015DDCA /* CustomShareReferralDialog.xib */; };
+		63B967C2249B9A710015DDCA /* CustomShareReferralDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B967C0249B9A710015DDCA /* CustomShareReferralDialog.swift */; };
+		63B967C9249BA3890015DDCA /* CustomHistoryFilterPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B967C5249BA3890015DDCA /* CustomHistoryFilterPickerCell.swift */; };
+		63B967CA249BA3890015DDCA /* CustomHistoryFilterPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B967C6249BA3890015DDCA /* CustomHistoryFilterPickerCell.xib */; };
+		63B967CB249BA3890015DDCA /* CustomHistoryFilterPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B967C7249BA3890015DDCA /* CustomHistoryFilterPicker.xib */; };
+		63B967CC249BA3890015DDCA /* CustomHistoryFilterPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B967C8249BA3890015DDCA /* CustomHistoryFilterPicker.swift */; };
+		63B967D4249BAC720015DDCA /* CampaignsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B967CF249BAC720015DDCA /* CampaignsVC.xib */; };
+		63B967D5249BAC720015DDCA /* CampaignsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B967D0249BAC720015DDCA /* CampaignsVC.swift */; };
+		63B967D6249BAC720015DDCA /* CampaignsTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B967D2249BAC720015DDCA /* CampaignsTblCell.xib */; };
+		63B967D7249BAC720015DDCA /* CampaignsTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B967D3249BAC720015DDCA /* CampaignsTblCell.swift */; };
 		63E94A7C24920887000F375E /* EditProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E94A7A24920887000F375E /* EditProfileCell.swift */; };
 		63E94A7D24920887000F375E /* EditProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E94A7B24920887000F375E /* EditProfileCell.xib */; };
 		63EA7D0F2493ADC40027F9D3 /* CustomTextFieldDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EA7D0D2493ADC30027F9D3 /* CustomTextFieldDialog.xib */; };
@@ -245,8 +265,6 @@
 		633B7123245FDA5800CF490D /* ThemeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextField.swift; sourceTree = "<group>"; };
 		633B7124245FDA5800CF490D /* ThemeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeButton.swift; sourceTree = "<group>"; };
 		633B7125245FDA5800CF490D /* ThemeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeLabel.swift; sourceTree = "<group>"; };
-		633B712E245FF18200CF490D /* TutorialVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialVC.xib; sourceTree = "<group>"; };
-		633B712F245FF18200CF490D /* TutorialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
 		633C1AC124923D3A009EB6AE /* CountriesWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesWebService.swift; sourceTree = "<group>"; };
 		633C1AC324923FCA009EB6AE /* CityWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityWebService.swift; sourceTree = "<group>"; };
 		633C1AC624924482009EB6AE /* CustomCountyPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCountyPicker.xib; sourceTree = "<group>"; };
@@ -254,10 +272,6 @@
 		633C1AC924924483009EB6AE /* CustomCountyPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCountyPickerCell.swift; sourceTree = "<group>"; };
 		633C1ACA24924483009EB6AE /* CustomCountyPickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCountyPickerCell.xib; sourceTree = "<group>"; };
 		633D1A412488B7910085AC56 /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
-		633E97E4248687B00097093E /* ContactVerifiedVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactVerifiedVC.xib; sourceTree = "<group>"; };
-		633E97E5248687B00097093E /* ContactVerifiedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactVerifiedVC.swift; sourceTree = "<group>"; };
-		633E97E8248687B00097093E /* VerifyContactVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerifyContactVC.xib; sourceTree = "<group>"; };
-		633E97E9248687B00097093E /* VerifyContactVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyContactVC.swift; sourceTree = "<group>"; };
 		63409C67246C17E10097C517 /* CustomAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomAlert.xib; sourceTree = "<group>"; };
 		63409C68246C17E10097C517 /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		63432F7B248F4B45006BA322 /* MassagePreferenceVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MassagePreferenceVC.xib; sourceTree = "<group>"; };
@@ -291,8 +305,6 @@
 		634398AF245BEAB1009BCA1F /* CommonColor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CommonColor.xcassets; sourceTree = "<group>"; };
 		634398B0245BEAB2009BCA1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		634398B1245BEAB2009BCA1F /* ClientImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ClientImages.xcassets; sourceTree = "<group>"; };
-		634398B9245BECDC009BCA1F /* LoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
-		634398BA245BECDC009BCA1F /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		634398BD245BECDC009BCA1F /* LaunchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchVC.xib; sourceTree = "<group>"; };
 		634398BE245BECDC009BCA1F /* LaunchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchVC.swift; sourceTree = "<group>"; };
 		63439FED2488F1BB000E2F4C /* CustomDatePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomDatePicker.xib; sourceTree = "<group>"; };
@@ -312,10 +324,6 @@
 		6349A1252498C1F000E608C8 /* ManagePeopleTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagePeopleTblCell.swift; sourceTree = "<group>"; };
 		6349A1262498C1F000E608C8 /* ManagePeopleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagePeopleVC.swift; sourceTree = "<group>"; };
 		634BB76E2461268B00494379 /* ThemeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
-		634BB77224612E7900494379 /* RegisterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterVC.xib; sourceTree = "<group>"; };
-		634BB77324612E7900494379 /* RegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
-		634BB77824613EFF00494379 /* TouchIdVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TouchIdVC.xib; sourceTree = "<group>"; };
-		634BB77924613EFF00494379 /* TouchIdVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIdVC.swift; sourceTree = "<group>"; };
 		634BB77D246141D000494379 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		6350C852248A0186002E13F2 /* CustomGenderPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomGenderPicker.xib; sourceTree = "<group>"; };
 		6350C853248A0186002E13F2 /* CustomGenderPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomGenderPicker.swift; sourceTree = "<group>"; };
@@ -351,28 +359,8 @@
 		6358A084248F8968004F2CA8 /* PreferGenderPickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferGenderPickerCell.xib; sourceTree = "<group>"; };
 		6358A085248F8968004F2CA8 /* CustomPreferGenderPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPreferGenderPicker.xib; sourceTree = "<group>"; };
 		6358A086248F8968004F2CA8 /* CustomPreferGenderPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPreferGenderPicker.swift; sourceTree = "<group>"; };
-		635A0E392463B9A400080194 /* TutorialCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialCell.xib; sourceTree = "<group>"; };
-		635A0E3A2463B9A400080194 /* TutorialCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialCell.swift; sourceTree = "<group>"; };
 		635DE3B4248E44900030DC69 /* EditProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileVC.xib; sourceTree = "<group>"; };
 		635DE3B5248E44900030DC69 /* EditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
-		6361ECE82462924900CC317A /* ContactVerificationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactVerificationVC.xib; sourceTree = "<group>"; };
-		6361ECE92462924900CC317A /* ContactVerificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactVerificationVC.swift; sourceTree = "<group>"; };
-		6364003B24697BD7009A8F5E /* CompleteIdentityVerificationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompleteIdentityVerificationVC.xib; sourceTree = "<group>"; };
-		6364003C24697BD7009A8F5E /* CompleteIdentityVerificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteIdentityVerificationVC.swift; sourceTree = "<group>"; };
-		6364003F24697BD7009A8F5E /* KycVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KycVC.xib; sourceTree = "<group>"; };
-		6364004024697BD7009A8F5E /* KycVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KycVC.swift; sourceTree = "<group>"; };
-		6364004324697BD7009A8F5E /* AddCardVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCardVC.xib; sourceTree = "<group>"; };
-		6364004424697BD7009A8F5E /* AddCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardVC.swift; sourceTree = "<group>"; };
-		6364004724697BD7009A8F5E /* KycInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KycInfoVC.xib; sourceTree = "<group>"; };
-		6364004824697BD7009A8F5E /* KycInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KycInfoVC.swift; sourceTree = "<group>"; };
-		6364004C24697BD7009A8F5E /* ScanPassportInstructionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanPassportInstructionVC.xib; sourceTree = "<group>"; };
-		6364004D24697BD7009A8F5E /* ScanPassportInstructionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanPassportInstructionVC.swift; sourceTree = "<group>"; };
-		6364005024697BD7009A8F5E /* ScanPassportVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanPassportVC.xib; sourceTree = "<group>"; };
-		6364005124697BD7009A8F5E /* ScanPassportVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanPassportVC.swift; sourceTree = "<group>"; };
-		6364005524697BD7009A8F5E /* ScanSelfieVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanSelfieVC.xib; sourceTree = "<group>"; };
-		6364005624697BD7009A8F5E /* ScanSelfieVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanSelfieVC.swift; sourceTree = "<group>"; };
-		6364005924697BD7009A8F5E /* ScanSelfieInstructionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanSelfieInstructionVC.xib; sourceTree = "<group>"; };
-		6364005A24697BD7009A8F5E /* ScanSelfieInstructionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanSelfieInstructionVC.swift; sourceTree = "<group>"; };
 		63672D272491072900A12D91 /* CustomLanguagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLanguagePicker.swift; sourceTree = "<group>"; };
 		63672D292491072900A12D91 /* CustomLanguagePickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomLanguagePickerCell.xib; sourceTree = "<group>"; };
 		63672D2A2491072900A12D91 /* CustomLanguagePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLanguagePickerCell.swift; sourceTree = "<group>"; };
@@ -401,10 +389,6 @@
 		63681ACE2497B1730087CC36 /* MyAddressTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyAddressTblCell.xib; sourceTree = "<group>"; };
 		63681ACF2497B1730087CC36 /* MyAddressTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAddressTblCell.swift; sourceTree = "<group>"; };
 		63681AD02497B1730087CC36 /* MyAddressVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAddressVC.swift; sourceTree = "<group>"; };
-		636873892462C08D0076779B /* VerificationAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerificationAlert.xib; sourceTree = "<group>"; };
-		6368738A2462C08D0076779B /* VerificationAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationAlert.swift; sourceTree = "<group>"; };
-		6368738E2462C5800076779B /* OTPFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPFieldView.swift; sourceTree = "<group>"; };
-		6368738F2462C5800076779B /* OTPTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
 		637A7C522487E667005D3819 /* HomeTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTblCell.swift; sourceTree = "<group>"; };
 		637A7C532487E668005D3819 /* HomeTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTblCell.xib; sourceTree = "<group>"; };
 		637E3A6F24990687002DE275 /* CustomPhotoPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPhotoPicker.swift; sourceTree = "<group>"; };
@@ -416,6 +400,62 @@
 		63AFB5E124893A7C007566D4 /* ProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		63AFB5E324893A7C007566D4 /* ProfileTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTblCell.swift; sourceTree = "<group>"; };
 		63AFB5E424893A7C007566D4 /* ProfileTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileTblCell.xib; sourceTree = "<group>"; };
+		63B96738249B471E0015DDCA /* PackVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PackVC.xib; sourceTree = "<group>"; };
+		63B9673A249B471E0015DDCA /* PackTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PackTblCell.xib; sourceTree = "<group>"; };
+		63B9673B249B471E0015DDCA /* PackTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackTblCell.swift; sourceTree = "<group>"; };
+		63B9673C249B471E0015DDCA /* PackVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackVC.swift; sourceTree = "<group>"; };
+		63B96745249B62180015DDCA /* CompleteIdentityVerificationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompleteIdentityVerificationVC.xib; sourceTree = "<group>"; };
+		63B96746249B62180015DDCA /* CompleteIdentityVerificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteIdentityVerificationVC.swift; sourceTree = "<group>"; };
+		63B96749249B62180015DDCA /* KycVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KycVC.xib; sourceTree = "<group>"; };
+		63B9674A249B62180015DDCA /* KycVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KycVC.swift; sourceTree = "<group>"; };
+		63B9674D249B62180015DDCA /* AddCardVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCardVC.xib; sourceTree = "<group>"; };
+		63B9674E249B62180015DDCA /* AddCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardVC.swift; sourceTree = "<group>"; };
+		63B96751249B62180015DDCA /* KycInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KycInfoVC.xib; sourceTree = "<group>"; };
+		63B96752249B62180015DDCA /* KycInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KycInfoVC.swift; sourceTree = "<group>"; };
+		63B96756249B62180015DDCA /* ScanPassportInstructionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanPassportInstructionVC.xib; sourceTree = "<group>"; };
+		63B96757249B62180015DDCA /* ScanPassportInstructionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanPassportInstructionVC.swift; sourceTree = "<group>"; };
+		63B9675A249B62180015DDCA /* ScanPassportVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanPassportVC.xib; sourceTree = "<group>"; };
+		63B9675B249B62180015DDCA /* ScanPassportVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanPassportVC.swift; sourceTree = "<group>"; };
+		63B9675F249B62180015DDCA /* ScanSelfieVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanSelfieVC.xib; sourceTree = "<group>"; };
+		63B96760249B62180015DDCA /* ScanSelfieVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanSelfieVC.swift; sourceTree = "<group>"; };
+		63B96763249B62180015DDCA /* ScanSelfieInstructionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanSelfieInstructionVC.xib; sourceTree = "<group>"; };
+		63B96764249B62180015DDCA /* ScanSelfieInstructionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanSelfieInstructionVC.swift; sourceTree = "<group>"; };
+		63B96767249B62180015DDCA /* ContactVerificationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactVerificationVC.xib; sourceTree = "<group>"; };
+		63B9676A249B62180015DDCA /* ContactVerifiedVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactVerifiedVC.xib; sourceTree = "<group>"; };
+		63B9676B249B62180015DDCA /* ContactVerifiedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactVerifiedVC.swift; sourceTree = "<group>"; };
+		63B9676C249B62180015DDCA /* ContactVerificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactVerificationVC.swift; sourceTree = "<group>"; };
+		63B9676F249B62180015DDCA /* VerifyContactVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerifyContactVC.xib; sourceTree = "<group>"; };
+		63B96770249B62180015DDCA /* VerifyContactVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyContactVC.swift; sourceTree = "<group>"; };
+		63B96772249B62190015DDCA /* VerificationAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerificationAlert.xib; sourceTree = "<group>"; };
+		63B96774249B62190015DDCA /* OTPFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPFieldView.swift; sourceTree = "<group>"; };
+		63B96775249B62190015DDCA /* OTPTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
+		63B96776249B62190015DDCA /* VerificationAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationAlert.swift; sourceTree = "<group>"; };
+		63B96779249B62190015DDCA /* TutorialVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialVC.xib; sourceTree = "<group>"; };
+		63B9677A249B62190015DDCA /* TutorialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
+		63B9677C249B62190015DDCA /* TutorialCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialCell.xib; sourceTree = "<group>"; };
+		63B9677D249B62190015DDCA /* TutorialCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialCell.swift; sourceTree = "<group>"; };
+		63B96780249B62190015DDCA /* RegisterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterVC.xib; sourceTree = "<group>"; };
+		63B96781249B62190015DDCA /* RegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		63B96784249B62190015DDCA /* TouchIdVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TouchIdVC.xib; sourceTree = "<group>"; };
+		63B96785249B62190015DDCA /* TouchIdVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIdVC.swift; sourceTree = "<group>"; };
+		63B96788249B62190015DDCA /* LoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		63B96789249B62190015DDCA /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		63B967AF249B63BF0015DDCA /* ReferAndEarnVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferAndEarnVC.swift; sourceTree = "<group>"; };
+		63B967B1249B63BF0015DDCA /* ReferAndEarnVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReferAndEarnVC.xib; sourceTree = "<group>"; };
+		63B967B3249B63BF0015DDCA /* ReferAndEarnUserCltCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferAndEarnUserCltCell.swift; sourceTree = "<group>"; };
+		63B967B4249B63BF0015DDCA /* ReferAndEarnUserCltCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReferAndEarnUserCltCell.xib; sourceTree = "<group>"; };
+		63B967B6249B63BF0015DDCA /* ReferAndEarnTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferAndEarnTblCell.swift; sourceTree = "<group>"; };
+		63B967B7249B63BF0015DDCA /* ReferAndEarnTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReferAndEarnTblCell.xib; sourceTree = "<group>"; };
+		63B967BF249B9A710015DDCA /* CustomShareReferralDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomShareReferralDialog.xib; sourceTree = "<group>"; };
+		63B967C0249B9A710015DDCA /* CustomShareReferralDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomShareReferralDialog.swift; sourceTree = "<group>"; };
+		63B967C5249BA3890015DDCA /* CustomHistoryFilterPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHistoryFilterPickerCell.swift; sourceTree = "<group>"; };
+		63B967C6249BA3890015DDCA /* CustomHistoryFilterPickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomHistoryFilterPickerCell.xib; sourceTree = "<group>"; };
+		63B967C7249BA3890015DDCA /* CustomHistoryFilterPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomHistoryFilterPicker.xib; sourceTree = "<group>"; };
+		63B967C8249BA3890015DDCA /* CustomHistoryFilterPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHistoryFilterPicker.swift; sourceTree = "<group>"; };
+		63B967CF249BAC720015DDCA /* CampaignsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CampaignsVC.xib; sourceTree = "<group>"; };
+		63B967D0249BAC720015DDCA /* CampaignsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampaignsVC.swift; sourceTree = "<group>"; };
+		63B967D2249BAC720015DDCA /* CampaignsTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CampaignsTblCell.xib; sourceTree = "<group>"; };
+		63B967D3249BAC720015DDCA /* CampaignsTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampaignsTblCell.swift; sourceTree = "<group>"; };
 		63E94A7A24920887000F375E /* EditProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileCell.swift; sourceTree = "<group>"; };
 		63E94A7B24920887000F375E /* EditProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileCell.xib; sourceTree = "<group>"; };
 		63EA7D0D2493ADC30027F9D3 /* CustomTextFieldDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTextFieldDialog.xib; sourceTree = "<group>"; };
@@ -574,24 +614,6 @@
 			path = xib;
 			sourceTree = "<group>";
 		};
-		633B712C245FF18200CF490D /* TutorialVC */ = {
-			isa = PBXGroup;
-			children = (
-				635A0E382463B9A400080194 /* TutorialCell */,
-				633B712D245FF18200CF490D /* xib */,
-				633B712F245FF18200CF490D /* TutorialVC.swift */,
-			);
-			path = TutorialVC;
-			sourceTree = "<group>";
-		};
-		633B712D245FF18200CF490D /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				633B712E245FF18200CF490D /* TutorialVC.xib */,
-			);
-			path = xib;
-			sourceTree = "<group>";
-		};
 		633C1AC524924482009EB6AE /* CustomCountyPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -609,40 +631,6 @@
 				633C1ACA24924483009EB6AE /* CustomCountyPickerCell.xib */,
 			);
 			path = CustomCountyPickerCell;
-			sourceTree = "<group>";
-		};
-		633E97E2248687B00097093E /* ContactVerifiedVC */ = {
-			isa = PBXGroup;
-			children = (
-				633E97E3248687B00097093E /* xib */,
-				633E97E5248687B00097093E /* ContactVerifiedVC.swift */,
-			);
-			path = ContactVerifiedVC;
-			sourceTree = "<group>";
-		};
-		633E97E3248687B00097093E /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				633E97E4248687B00097093E /* ContactVerifiedVC.xib */,
-			);
-			path = xib;
-			sourceTree = "<group>";
-		};
-		633E97E6248687B00097093E /* VerifyContactVC */ = {
-			isa = PBXGroup;
-			children = (
-				633E97E7248687B00097093E /* xib */,
-				633E97E9248687B00097093E /* VerifyContactVC.swift */,
-			);
-			path = VerifyContactVC;
-			sourceTree = "<group>";
-		};
-		633E97E7248687B00097093E /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				633E97E8248687B00097093E /* VerifyContactVC.xib */,
-			);
-			path = xib;
 			sourceTree = "<group>";
 		};
 		63409C66246C17E10097C517 /* AlertDialog */ = {
@@ -828,6 +816,7 @@
 		634397D1245BE6DF009BCA1F /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				63B96741249B62180015DDCA /* PreloginScene */,
 				635675BC2499FA2E006F5511 /* MenuScene */,
 				6349A11D2498C1F000E608C8 /* ManagePeople */,
 				63681ACA2497B1730087CC36 /* MyAddresses */,
@@ -841,7 +830,6 @@
 				63838EF1247CDD9B007F1154 /* HomeVC */,
 				633B711B245FC8A100CF490D /* WelcomeVC */,
 				634398BC245BECDC009BCA1F /* LaunchVC */,
-				634398B6245BECDC009BCA1F /* Client */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -876,36 +864,6 @@
 				633B7123245FDA5800CF490D /* ThemeTextField.swift */,
 			);
 			path = BaseSubClasses;
-			sourceTree = "<group>";
-		};
-		634398B6245BECDC009BCA1F /* Client */ = {
-			isa = PBXGroup;
-			children = (
-				6364003824697BD6009A8F5E /* KYC SCENE */,
-				6361ECE62462924900CC317A /* ContactVerification */,
-				634BB77624613EFF00494379 /* TouchIdVC */,
-				634BB77024612E7900494379 /* Register */,
-				633B712C245FF18200CF490D /* TutorialVC */,
-				634398B7245BECDC009BCA1F /* Login */,
-			);
-			path = Client;
-			sourceTree = "<group>";
-		};
-		634398B7245BECDC009BCA1F /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				634398B8245BECDC009BCA1F /* xib */,
-				634398BA245BECDC009BCA1F /* LoginVC.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		634398B8245BECDC009BCA1F /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				634398B9245BECDC009BCA1F /* LoginVC.xib */,
-			);
-			path = xib;
 			sourceTree = "<group>";
 		};
 		634398BC245BECDC009BCA1F /* LaunchVC */ = {
@@ -982,40 +940,6 @@
 			path = ManagePeopleCell;
 			sourceTree = "<group>";
 		};
-		634BB77024612E7900494379 /* Register */ = {
-			isa = PBXGroup;
-			children = (
-				634BB77124612E7900494379 /* xib */,
-				634BB77324612E7900494379 /* RegisterVC.swift */,
-			);
-			path = Register;
-			sourceTree = "<group>";
-		};
-		634BB77124612E7900494379 /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				634BB77224612E7900494379 /* RegisterVC.xib */,
-			);
-			path = xib;
-			sourceTree = "<group>";
-		};
-		634BB77624613EFF00494379 /* TouchIdVC */ = {
-			isa = PBXGroup;
-			children = (
-				634BB77724613EFF00494379 /* xib */,
-				634BB77924613EFF00494379 /* TouchIdVC.swift */,
-			);
-			path = TouchIdVC;
-			sourceTree = "<group>";
-		};
-		634BB77724613EFF00494379 /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				634BB77824613EFF00494379 /* TouchIdVC.xib */,
-			);
-			path = xib;
-			sourceTree = "<group>";
-		};
 		634BB77C246141CF00494379 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1047,6 +971,9 @@
 		635675BC2499FA2E006F5511 /* MenuScene */ = {
 			isa = PBXGroup;
 			children = (
+				63B967CD249BAC720015DDCA /* Campaigns */,
+				63B967AE249B63BF0015DDCA /* ReferAndEarnVC */,
+				63B96736249B471E0015DDCA /* Pack */,
 				635675F6249A41DE006F5511 /* PromoCode */,
 				635675E8249A1D02006F5511 /* PricingAndLocation */,
 				635675BD2499FA2E006F5511 /* SideVC */,
@@ -1230,15 +1157,6 @@
 			path = PrefereGenderPickerCell;
 			sourceTree = "<group>";
 		};
-		635A0E382463B9A400080194 /* TutorialCell */ = {
-			isa = PBXGroup;
-			children = (
-				635A0E392463B9A400080194 /* TutorialCell.xib */,
-				635A0E3A2463B9A400080194 /* TutorialCell.swift */,
-			);
-			path = TutorialCell;
-			sourceTree = "<group>";
-		};
 		635DE3B2248E44900030DC69 /* EditProfileVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1253,193 +1171,6 @@
 			isa = PBXGroup;
 			children = (
 				635DE3B4248E44900030DC69 /* EditProfileVC.xib */,
-			);
-			path = xib;
-			sourceTree = "<group>";
-		};
-		6361ECE62462924900CC317A /* ContactVerification */ = {
-			isa = PBXGroup;
-			children = (
-				633E97E2248687B00097093E /* ContactVerifiedVC */,
-				633E97E6248687B00097093E /* VerifyContactVC */,
-				636873882462C08D0076779B /* VerificationView */,
-				6361ECE72462924900CC317A /* xib */,
-				6361ECE92462924900CC317A /* ContactVerificationVC.swift */,
-			);
-			path = ContactVerification;
-			sourceTree = "<group>";
-		};
-		6361ECE72462924900CC317A /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				6361ECE82462924900CC317A /* ContactVerificationVC.xib */,
-			);
-			path = xib;
-			sourceTree = "<group>";
-		};
-		6364003824697BD6009A8F5E /* KYC SCENE */ = {
-			isa = PBXGroup;
-			children = (
-				6364003924697BD7009A8F5E /* CompleteIdentityVerificationVC */,
-				6364003D24697BD7009A8F5E /* KYCVC */,
-				6364004124697BD7009A8F5E /* AddCardVC */,
-				6364004524697BD7009A8F5E /* KycInfoVC */,
-				6364004924697BD7009A8F5E /* PassportVerificattionVC */,
-				6364005224697BD7009A8F5E /* SelfieVerificattionVC */,
-			);
-			path = "KYC SCENE";
-			sourceTree = "<group>";
-		};
-		6364003924697BD7009A8F5E /* CompleteIdentityVerificationVC */ = {
-			isa = PBXGroup;
-			children = (
-				6364003A24697BD7009A8F5E /* xib */,
-				6364003C24697BD7009A8F5E /* CompleteIdentityVerificationVC.swift */,
-			);
-			path = CompleteIdentityVerificationVC;
-			sourceTree = "<group>";
-		};
-		6364003A24697BD7009A8F5E /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				6364003B24697BD7009A8F5E /* CompleteIdentityVerificationVC.xib */,
-			);
-			path = xib;
-			sourceTree = "<group>";
-		};
-		6364003D24697BD7009A8F5E /* KYCVC */ = {
-			isa = PBXGroup;
-			children = (
-				6364003E24697BD7009A8F5E /* xib */,
-				6364004024697BD7009A8F5E /* KycVC.swift */,
-			);
-			path = KYCVC;
-			sourceTree = "<group>";
-		};
-		6364003E24697BD7009A8F5E /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				6364003F24697BD7009A8F5E /* KycVC.xib */,
-			);
-			path = xib;
-			sourceTree = "<group>";
-		};
-		6364004124697BD7009A8F5E /* AddCardVC */ = {
-			isa = PBXGroup;
-			children = (
-				6364004224697BD7009A8F5E /* xib */,
-				6364004424697BD7009A8F5E /* AddCardVC.swift */,
-			);
-			path = AddCardVC;
-			sourceTree = "<group>";
-		};
-		6364004224697BD7009A8F5E /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				6364004324697BD7009A8F5E /* AddCardVC.xib */,
-			);
-			path = xib;
-			sourceTree = "<group>";
-		};
-		6364004524697BD7009A8F5E /* KycInfoVC */ = {
-			isa = PBXGroup;
-			children = (
-				6364004624697BD7009A8F5E /* xib */,
-				6364004824697BD7009A8F5E /* KycInfoVC.swift */,
-			);
-			path = KycInfoVC;
-			sourceTree = "<group>";
-		};
-		6364004624697BD7009A8F5E /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				6364004724697BD7009A8F5E /* KycInfoVC.xib */,
-			);
-			path = xib;
-			sourceTree = "<group>";
-		};
-		6364004924697BD7009A8F5E /* PassportVerificattionVC */ = {
-			isa = PBXGroup;
-			children = (
-				6364004A24697BD7009A8F5E /* InstructionVC */,
-				6364004E24697BD7009A8F5E /* ScanPassportVC */,
-			);
-			path = PassportVerificattionVC;
-			sourceTree = "<group>";
-		};
-		6364004A24697BD7009A8F5E /* InstructionVC */ = {
-			isa = PBXGroup;
-			children = (
-				6364004B24697BD7009A8F5E /* xib */,
-				6364004D24697BD7009A8F5E /* ScanPassportInstructionVC.swift */,
-			);
-			path = InstructionVC;
-			sourceTree = "<group>";
-		};
-		6364004B24697BD7009A8F5E /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				6364004C24697BD7009A8F5E /* ScanPassportInstructionVC.xib */,
-			);
-			path = xib;
-			sourceTree = "<group>";
-		};
-		6364004E24697BD7009A8F5E /* ScanPassportVC */ = {
-			isa = PBXGroup;
-			children = (
-				6364004F24697BD7009A8F5E /* xib */,
-				6364005124697BD7009A8F5E /* ScanPassportVC.swift */,
-			);
-			path = ScanPassportVC;
-			sourceTree = "<group>";
-		};
-		6364004F24697BD7009A8F5E /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				6364005024697BD7009A8F5E /* ScanPassportVC.xib */,
-			);
-			path = xib;
-			sourceTree = "<group>";
-		};
-		6364005224697BD7009A8F5E /* SelfieVerificattionVC */ = {
-			isa = PBXGroup;
-			children = (
-				6364005324697BD7009A8F5E /* ScanSelfieVC */,
-				6364005724697BD7009A8F5E /* InstructionVC */,
-			);
-			path = SelfieVerificattionVC;
-			sourceTree = "<group>";
-		};
-		6364005324697BD7009A8F5E /* ScanSelfieVC */ = {
-			isa = PBXGroup;
-			children = (
-				6364005424697BD7009A8F5E /* xib */,
-				6364005624697BD7009A8F5E /* ScanSelfieVC.swift */,
-			);
-			path = ScanSelfieVC;
-			sourceTree = "<group>";
-		};
-		6364005424697BD7009A8F5E /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				6364005524697BD7009A8F5E /* ScanSelfieVC.xib */,
-			);
-			path = xib;
-			sourceTree = "<group>";
-		};
-		6364005724697BD7009A8F5E /* InstructionVC */ = {
-			isa = PBXGroup;
-			children = (
-				6364005824697BD7009A8F5E /* xib */,
-				6364005A24697BD7009A8F5E /* ScanSelfieInstructionVC.swift */,
-			);
-			path = InstructionVC;
-			sourceTree = "<group>";
-		};
-		6364005824697BD7009A8F5E /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				6364005924697BD7009A8F5E /* ScanSelfieInstructionVC.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -1609,25 +1340,6 @@
 			path = MyAddressTblCell;
 			sourceTree = "<group>";
 		};
-		636873882462C08D0076779B /* VerificationView */ = {
-			isa = PBXGroup;
-			children = (
-				6368738D2462C5800076779B /* OTPView */,
-				636873892462C08D0076779B /* VerificationAlert.xib */,
-				6368738A2462C08D0076779B /* VerificationAlert.swift */,
-			);
-			path = VerificationView;
-			sourceTree = "<group>";
-		};
-		6368738D2462C5800076779B /* OTPView */ = {
-			isa = PBXGroup;
-			children = (
-				6368738E2462C5800076779B /* OTPFieldView.swift */,
-				6368738F2462C5800076779B /* OTPTextField.swift */,
-			);
-			path = OTPView;
-			sourceTree = "<group>";
-		};
 		637A7C512487E667005D3819 /* HomeCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1690,6 +1402,458 @@
 				63AFB5E424893A7C007566D4 /* ProfileTblCell.xib */,
 			);
 			path = ProfileTblCell;
+			sourceTree = "<group>";
+		};
+		63B96736249B471E0015DDCA /* Pack */ = {
+			isa = PBXGroup;
+			children = (
+				63B96737249B471E0015DDCA /* xib */,
+				63B96739249B471E0015DDCA /* PackCell */,
+				63B9673C249B471E0015DDCA /* PackVC.swift */,
+			);
+			path = Pack;
+			sourceTree = "<group>";
+		};
+		63B96737249B471E0015DDCA /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63B96738249B471E0015DDCA /* PackVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63B96739249B471E0015DDCA /* PackCell */ = {
+			isa = PBXGroup;
+			children = (
+				63B9673A249B471E0015DDCA /* PackTblCell.xib */,
+				63B9673B249B471E0015DDCA /* PackTblCell.swift */,
+			);
+			path = PackCell;
+			sourceTree = "<group>";
+		};
+		63B96741249B62180015DDCA /* PreloginScene */ = {
+			isa = PBXGroup;
+			children = (
+				63B96742249B62180015DDCA /* KYC SCENE */,
+				63B96765249B62180015DDCA /* ContactVerification */,
+				63B96777249B62190015DDCA /* TutorialVC */,
+				63B9677E249B62190015DDCA /* Register */,
+				63B96782249B62190015DDCA /* TouchIdVC */,
+				63B96786249B62190015DDCA /* Login */,
+			);
+			path = PreloginScene;
+			sourceTree = "<group>";
+		};
+		63B96742249B62180015DDCA /* KYC SCENE */ = {
+			isa = PBXGroup;
+			children = (
+				63B96743249B62180015DDCA /* CompleteIdentityVerificationVC */,
+				63B96747249B62180015DDCA /* KYCVC */,
+				63B9674B249B62180015DDCA /* AddCardVC */,
+				63B9674F249B62180015DDCA /* KycInfoVC */,
+				63B96753249B62180015DDCA /* PassportVerificattionVC */,
+				63B9675C249B62180015DDCA /* SelfieVerificattionVC */,
+			);
+			path = "KYC SCENE";
+			sourceTree = "<group>";
+		};
+		63B96743249B62180015DDCA /* CompleteIdentityVerificationVC */ = {
+			isa = PBXGroup;
+			children = (
+				63B96744249B62180015DDCA /* xib */,
+				63B96746249B62180015DDCA /* CompleteIdentityVerificationVC.swift */,
+			);
+			path = CompleteIdentityVerificationVC;
+			sourceTree = "<group>";
+		};
+		63B96744249B62180015DDCA /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63B96745249B62180015DDCA /* CompleteIdentityVerificationVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63B96747249B62180015DDCA /* KYCVC */ = {
+			isa = PBXGroup;
+			children = (
+				63B96748249B62180015DDCA /* xib */,
+				63B9674A249B62180015DDCA /* KycVC.swift */,
+			);
+			path = KYCVC;
+			sourceTree = "<group>";
+		};
+		63B96748249B62180015DDCA /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63B96749249B62180015DDCA /* KycVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63B9674B249B62180015DDCA /* AddCardVC */ = {
+			isa = PBXGroup;
+			children = (
+				63B9674C249B62180015DDCA /* xib */,
+				63B9674E249B62180015DDCA /* AddCardVC.swift */,
+			);
+			path = AddCardVC;
+			sourceTree = "<group>";
+		};
+		63B9674C249B62180015DDCA /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63B9674D249B62180015DDCA /* AddCardVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63B9674F249B62180015DDCA /* KycInfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				63B96750249B62180015DDCA /* xib */,
+				63B96752249B62180015DDCA /* KycInfoVC.swift */,
+			);
+			path = KycInfoVC;
+			sourceTree = "<group>";
+		};
+		63B96750249B62180015DDCA /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63B96751249B62180015DDCA /* KycInfoVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63B96753249B62180015DDCA /* PassportVerificattionVC */ = {
+			isa = PBXGroup;
+			children = (
+				63B96754249B62180015DDCA /* InstructionVC */,
+				63B96758249B62180015DDCA /* ScanPassportVC */,
+			);
+			path = PassportVerificattionVC;
+			sourceTree = "<group>";
+		};
+		63B96754249B62180015DDCA /* InstructionVC */ = {
+			isa = PBXGroup;
+			children = (
+				63B96755249B62180015DDCA /* xib */,
+				63B96757249B62180015DDCA /* ScanPassportInstructionVC.swift */,
+			);
+			path = InstructionVC;
+			sourceTree = "<group>";
+		};
+		63B96755249B62180015DDCA /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63B96756249B62180015DDCA /* ScanPassportInstructionVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63B96758249B62180015DDCA /* ScanPassportVC */ = {
+			isa = PBXGroup;
+			children = (
+				63B96759249B62180015DDCA /* xib */,
+				63B9675B249B62180015DDCA /* ScanPassportVC.swift */,
+			);
+			path = ScanPassportVC;
+			sourceTree = "<group>";
+		};
+		63B96759249B62180015DDCA /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63B9675A249B62180015DDCA /* ScanPassportVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63B9675C249B62180015DDCA /* SelfieVerificattionVC */ = {
+			isa = PBXGroup;
+			children = (
+				63B9675D249B62180015DDCA /* ScanSelfieVC */,
+				63B96761249B62180015DDCA /* InstructionVC */,
+			);
+			path = SelfieVerificattionVC;
+			sourceTree = "<group>";
+		};
+		63B9675D249B62180015DDCA /* ScanSelfieVC */ = {
+			isa = PBXGroup;
+			children = (
+				63B9675E249B62180015DDCA /* xib */,
+				63B96760249B62180015DDCA /* ScanSelfieVC.swift */,
+			);
+			path = ScanSelfieVC;
+			sourceTree = "<group>";
+		};
+		63B9675E249B62180015DDCA /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63B9675F249B62180015DDCA /* ScanSelfieVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63B96761249B62180015DDCA /* InstructionVC */ = {
+			isa = PBXGroup;
+			children = (
+				63B96762249B62180015DDCA /* xib */,
+				63B96764249B62180015DDCA /* ScanSelfieInstructionVC.swift */,
+			);
+			path = InstructionVC;
+			sourceTree = "<group>";
+		};
+		63B96762249B62180015DDCA /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63B96763249B62180015DDCA /* ScanSelfieInstructionVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63B96765249B62180015DDCA /* ContactVerification */ = {
+			isa = PBXGroup;
+			children = (
+				63B96766249B62180015DDCA /* xib */,
+				63B96768249B62180015DDCA /* ContactVerifiedVC */,
+				63B9676C249B62180015DDCA /* ContactVerificationVC.swift */,
+				63B9676D249B62180015DDCA /* VerifyContactVC */,
+				63B96771249B62180015DDCA /* VerificationView */,
+			);
+			path = ContactVerification;
+			sourceTree = "<group>";
+		};
+		63B96766249B62180015DDCA /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63B96767249B62180015DDCA /* ContactVerificationVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63B96768249B62180015DDCA /* ContactVerifiedVC */ = {
+			isa = PBXGroup;
+			children = (
+				63B96769249B62180015DDCA /* xib */,
+				63B9676B249B62180015DDCA /* ContactVerifiedVC.swift */,
+			);
+			path = ContactVerifiedVC;
+			sourceTree = "<group>";
+		};
+		63B96769249B62180015DDCA /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63B9676A249B62180015DDCA /* ContactVerifiedVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63B9676D249B62180015DDCA /* VerifyContactVC */ = {
+			isa = PBXGroup;
+			children = (
+				63B9676E249B62180015DDCA /* xib */,
+				63B96770249B62180015DDCA /* VerifyContactVC.swift */,
+			);
+			path = VerifyContactVC;
+			sourceTree = "<group>";
+		};
+		63B9676E249B62180015DDCA /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63B9676F249B62180015DDCA /* VerifyContactVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63B96771249B62180015DDCA /* VerificationView */ = {
+			isa = PBXGroup;
+			children = (
+				63B96772249B62190015DDCA /* VerificationAlert.xib */,
+				63B96773249B62190015DDCA /* OTPView */,
+				63B96776249B62190015DDCA /* VerificationAlert.swift */,
+			);
+			path = VerificationView;
+			sourceTree = "<group>";
+		};
+		63B96773249B62190015DDCA /* OTPView */ = {
+			isa = PBXGroup;
+			children = (
+				63B96774249B62190015DDCA /* OTPFieldView.swift */,
+				63B96775249B62190015DDCA /* OTPTextField.swift */,
+			);
+			path = OTPView;
+			sourceTree = "<group>";
+		};
+		63B96777249B62190015DDCA /* TutorialVC */ = {
+			isa = PBXGroup;
+			children = (
+				63B96778249B62190015DDCA /* xib */,
+				63B9677A249B62190015DDCA /* TutorialVC.swift */,
+				63B9677B249B62190015DDCA /* TutorialCell */,
+			);
+			path = TutorialVC;
+			sourceTree = "<group>";
+		};
+		63B96778249B62190015DDCA /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63B96779249B62190015DDCA /* TutorialVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63B9677B249B62190015DDCA /* TutorialCell */ = {
+			isa = PBXGroup;
+			children = (
+				63B9677C249B62190015DDCA /* TutorialCell.xib */,
+				63B9677D249B62190015DDCA /* TutorialCell.swift */,
+			);
+			path = TutorialCell;
+			sourceTree = "<group>";
+		};
+		63B9677E249B62190015DDCA /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				63B9677F249B62190015DDCA /* xib */,
+				63B96781249B62190015DDCA /* RegisterVC.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		63B9677F249B62190015DDCA /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63B96780249B62190015DDCA /* RegisterVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63B96782249B62190015DDCA /* TouchIdVC */ = {
+			isa = PBXGroup;
+			children = (
+				63B96783249B62190015DDCA /* xib */,
+				63B96785249B62190015DDCA /* TouchIdVC.swift */,
+			);
+			path = TouchIdVC;
+			sourceTree = "<group>";
+		};
+		63B96783249B62190015DDCA /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63B96784249B62190015DDCA /* TouchIdVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63B96786249B62190015DDCA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				63B96787249B62190015DDCA /* xib */,
+				63B96789249B62190015DDCA /* LoginVC.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		63B96787249B62190015DDCA /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63B96788249B62190015DDCA /* LoginVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63B967AE249B63BF0015DDCA /* ReferAndEarnVC */ = {
+			isa = PBXGroup;
+			children = (
+				63B967AF249B63BF0015DDCA /* ReferAndEarnVC.swift */,
+				63B967C3249BA3890015DDCA /* CustomHistoryFilterPicker */,
+				63B967BE249B9A710015DDCA /* CustomShareReferralDialog */,
+				63B967B0249B63BF0015DDCA /* xib */,
+				63B967B2249B63BF0015DDCA /* ReferAndEarnUserCltCell */,
+				63B967B5249B63BF0015DDCA /* ReferAndEarnTblCell */,
+			);
+			path = ReferAndEarnVC;
+			sourceTree = "<group>";
+		};
+		63B967B0249B63BF0015DDCA /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63B967B1249B63BF0015DDCA /* ReferAndEarnVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63B967B2249B63BF0015DDCA /* ReferAndEarnUserCltCell */ = {
+			isa = PBXGroup;
+			children = (
+				63B967B3249B63BF0015DDCA /* ReferAndEarnUserCltCell.swift */,
+				63B967B4249B63BF0015DDCA /* ReferAndEarnUserCltCell.xib */,
+			);
+			path = ReferAndEarnUserCltCell;
+			sourceTree = "<group>";
+		};
+		63B967B5249B63BF0015DDCA /* ReferAndEarnTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				63B967B6249B63BF0015DDCA /* ReferAndEarnTblCell.swift */,
+				63B967B7249B63BF0015DDCA /* ReferAndEarnTblCell.xib */,
+			);
+			path = ReferAndEarnTblCell;
+			sourceTree = "<group>";
+		};
+		63B967BE249B9A710015DDCA /* CustomShareReferralDialog */ = {
+			isa = PBXGroup;
+			children = (
+				63B967BF249B9A710015DDCA /* CustomShareReferralDialog.xib */,
+				63B967C0249B9A710015DDCA /* CustomShareReferralDialog.swift */,
+			);
+			path = CustomShareReferralDialog;
+			sourceTree = "<group>";
+		};
+		63B967C3249BA3890015DDCA /* CustomHistoryFilterPicker */ = {
+			isa = PBXGroup;
+			children = (
+				63B967C4249BA3890015DDCA /* CustomHistoryFilterPickerCell */,
+				63B967C7249BA3890015DDCA /* CustomHistoryFilterPicker.xib */,
+				63B967C8249BA3890015DDCA /* CustomHistoryFilterPicker.swift */,
+			);
+			path = CustomHistoryFilterPicker;
+			sourceTree = "<group>";
+		};
+		63B967C4249BA3890015DDCA /* CustomHistoryFilterPickerCell */ = {
+			isa = PBXGroup;
+			children = (
+				63B967C5249BA3890015DDCA /* CustomHistoryFilterPickerCell.swift */,
+				63B967C6249BA3890015DDCA /* CustomHistoryFilterPickerCell.xib */,
+			);
+			path = CustomHistoryFilterPickerCell;
+			sourceTree = "<group>";
+		};
+		63B967CD249BAC720015DDCA /* Campaigns */ = {
+			isa = PBXGroup;
+			children = (
+				63B967CE249BAC720015DDCA /* xib */,
+				63B967D0249BAC720015DDCA /* CampaignsVC.swift */,
+				63B967D1249BAC720015DDCA /* CampaignsCell */,
+			);
+			path = Campaigns;
+			sourceTree = "<group>";
+		};
+		63B967CE249BAC720015DDCA /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63B967CF249BAC720015DDCA /* CampaignsVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63B967D1249BAC720015DDCA /* CampaignsCell */ = {
+			isa = PBXGroup;
+			children = (
+				63B967D2249BAC720015DDCA /* CampaignsTblCell.xib */,
+				63B967D3249BAC720015DDCA /* CampaignsTblCell.swift */,
+			);
+			path = CampaignsCell;
 			sourceTree = "<group>";
 		};
 		63E94A7924920887000F375E /* EditProfileCell */ = {
@@ -1810,79 +1974,89 @@
 				63AFB5E624893A7D007566D4 /* ProfileVC.xib in Resources */,
 				63672D2F2491072900A12D91 /* CustomLanguagePicker.xib in Resources */,
 				635675DC2499FA2E006F5511 /* MenuCellVerticle.xib in Resources */,
+				63B967CB249BA3890015DDCA /* CustomHistoryFilterPicker.xib in Resources */,
 				6349A12A2498C1F000E608C8 /* ManagePeopleTblCell.xib in Resources */,
+				63B967BD249B63BF0015DDCA /* ReferAndEarnTblCell.xib in Resources */,
 				63672D3F2491148B00A12D91 /* CustomCurrencyPicker.xib in Resources */,
 				635DE3B6248E44900030DC69 /* EditProfileVC.xib in Resources */,
+				63B967A4249B62190015DDCA /* TutorialVC.xib in Resources */,
 				6348E20424723B2B00C15975 /* Nunito-Regular.ttf in Resources */,
 				635675FF249A41DE006F5511 /* PromoCodeTblCell.xib in Resources */,
 				63672D2D2491072900A12D91 /* CustomLanguagePickerCell.xib in Resources */,
 				6348E20524723B2B00C15975 /* Nunito-SemiBold.ttf in Resources */,
+				63B967D4249BAC720015DDCA /* CampaignsVC.xib in Resources */,
 				635675F0249A1D03006F5511 /* PriceLocationTblCell.xib in Resources */,
+				63B96796249B62190015DDCA /* ScanSelfieVC.xib in Resources */,
 				63EA7D192493B5880027F9D3 /* CustomCityPickerCell.xib in Resources */,
 				635675E62499FA2E006F5511 /* NotificationTblFooter.xib in Resources */,
-				635A0E3B2463B9A400080194 /* TutorialCell.xib in Resources */,
-				634BB77424612E7900494379 /* RegisterVC.xib in Resources */,
+				63B967AA249B62190015DDCA /* TouchIdVC.xib in Resources */,
+				63B96790249B62190015DDCA /* KycInfoVC.xib in Resources */,
 				63672D4D249120F400A12D91 /* SettingSwitchTblCell.xib in Resources */,
 				63672D3724910DC000A12D91 /* SettingVC.xib in Resources */,
 				63672D432491190B00A12D91 /* CustomInformationDialog.xib in Resources */,
-				6361ECEA2462924900CC317A /* ContactVerificationVC.xib in Resources */,
+				63B96798249B62190015DDCA /* ScanSelfieInstructionVC.xib in Resources */,
 				635675E42499FA2E006F5511 /* NotificationTblCell.xib in Resources */,
+				63B9678C249B62190015DDCA /* KycVC.xib in Resources */,
 				63409C6B246C17E10097C517 /* CustomAlert.xib in Resources */,
+				63B967A0249B62190015DDCA /* VerificationAlert.xib in Resources */,
+				63B96792249B62190015DDCA /* ScanPassportInstructionVC.xib in Resources */,
+				63B967C1249B9A710015DDCA /* CustomShareReferralDialog.xib in Resources */,
 				635675EF249A1D03006F5511 /* PriceLocationVC.xib in Resources */,
-				6368738B2462C08D0076779B /* VerificationAlert.xib in Resources */,
+				63B967BB249B63BF0015DDCA /* ReferAndEarnUserCltCell.xib in Resources */,
+				63B967A6249B62190015DDCA /* TutorialCell.xib in Resources */,
 				63681ABC24979C990087CC36 /* TherapistQuestionariesVC.xib in Resources */,
 				635675DB2499FA2E006F5511 /* MenuCellHorizontal.xib in Resources */,
-				634398C0245BECDC009BCA1F /* LoginVC.xib in Resources */,
 				63681AD12497B1730087CC36 /* MyAddressVC.xib in Resources */,
-				6364005F24697BD7009A8F5E /* AddCardVC.xib in Resources */,
+				63B967D6249BAC720015DDCA /* CampaignsTblCell.xib in Resources */,
 				63681AD22497B1730087CC36 /* MyAddressTblCell.xib in Resources */,
 				634398C2245BECDC009BCA1F /* LaunchVC.xib in Resources */,
 				6349A11B2498A5CA00E608C8 /* CustomAlertConfirmation.xib in Resources */,
-				6364006524697BD7009A8F5E /* ScanPassportVC.xib in Resources */,
+				63B967B9249B63BF0015DDCA /* ReferAndEarnVC.xib in Resources */,
 				63432F93248F6685006BA322 /* PressureSelectionTblCell.xib in Resources */,
 				632DB050248F9EE000B65B46 /* MyTherapistTblCell.xib in Resources */,
 				635675FD249A41DE006F5511 /* PromoCodeVC.xib in Resources */,
 				63432F88248F5D0B006BA322 /* CustomPressurePicker.xib in Resources */,
 				6349A1292498C1F000E608C8 /* CustomAddPeopleDialog.xib in Resources */,
 				63EA7D172493B5880027F9D3 /* CustomCityPicker.xib in Resources */,
-				633E97EA248687B00097093E /* ContactVerifiedVC.xib in Resources */,
 				63681ABE24979C990087CC36 /* TherapistQuestionariesTblCell.xib in Resources */,
+				63B9678A249B62190015DDCA /* CompleteIdentityVerificationVC.xib in Resources */,
 				63672D4924911D3200A12D91 /* CustomChangePasswordDialog.xib in Resources */,
 				63EA7D0F2493ADC40027F9D3 /* CustomTextFieldDialog.xib in Resources */,
 				63838EF5247CDD9B007F1154 /* HomeVC.xib in Resources */,
 				635675E02499FA2E006F5511 /* HowItWorkTblCell.xib in Resources */,
-				6364005B24697BD7009A8F5E /* CompleteIdentityVerificationVC.xib in Resources */,
-				6364006724697BD7009A8F5E /* ScanSelfieVC.xib in Resources */,
+				63B9679B249B62190015DDCA /* ContactVerifiedVC.xib in Resources */,
 				63672D3924910DC000A12D91 /* SettingTblCell.xib in Resources */,
 				633C1ACB24924483009EB6AE /* CustomCountyPicker.xib in Resources */,
 				632DB047248F8FDD00B65B46 /* CustomTextViewDialog.xib in Resources */,
-				6364006924697BD7009A8F5E /* ScanSelfieInstructionVC.xib in Resources */,
 				6350C854248A0186002E13F2 /* CustomGenderPicker.xib in Resources */,
 				63AFB5E824893A7D007566D4 /* ProfileTblCell.xib in Resources */,
 				632DB057248FA54200B65B46 /* CustomRateViewDialog.xib in Resources */,
+				63B9673E249B471E0015DDCA /* PackTblCell.xib in Resources */,
 				63432F80248F4B45006BA322 /* MassagePreferenceVC.xib in Resources */,
-				633B7130245FF18200CF490D /* TutorialVC.xib in Resources */,
 				6350C859248A2F33002E13F2 /* ProfileTblUserInfoCell.xib in Resources */,
+				63B967AC249B62190015DDCA /* LoginVC.xib in Resources */,
 				634398B3245BEAB2009BCA1F /* CommonColor.xcassets in Resources */,
 				635675E22499FA2E006F5511 /* NotificationVC.xib in Resources */,
 				633C1ACE24924483009EB6AE /* CustomCountyPickerCell.xib in Resources */,
+				63B9679A249B62190015DDCA /* ContactVerificationVC.xib in Resources */,
+				63B9678E249B62190015DDCA /* AddCardVC.xib in Resources */,
+				63B96794249B62190015DDCA /* ScanPassportVC.xib in Resources */,
 				635675DE2499FA2E006F5511 /* HowItWorkVC.xib in Resources */,
 				63432F81248F4B45006BA322 /* MassagePreferenceTblCell.xib in Resources */,
 				6358A088248F8968004F2CA8 /* PreferGenderPickerCell.xib in Resources */,
-				6364005D24697BD7009A8F5E /* KycVC.xib in Resources */,
-				6364006124697BD7009A8F5E /* KycInfoVC.xib in Resources */,
+				63B967CA249BA3890015DDCA /* CustomHistoryFilterPickerCell.xib in Resources */,
 				6349A1272498C1F000E608C8 /* ManagePeopleVC.xib in Resources */,
 				63439FEF2488F1BB000E2F4C /* CustomDatePicker.xib in Resources */,
 				633B711F245FC8A100CF490D /* WelcomeVC.xib in Resources */,
-				6364006324697BD7009A8F5E /* ScanPassportInstructionVC.xib in Resources */,
 				634398B4245BEAB2009BCA1F /* Assets.xcassets in Resources */,
 				635675D92499FA2E006F5511 /* SideVC.xib in Resources */,
 				632DB04F248F9EE000B65B46 /* MyTherapistVC.xib in Resources */,
 				6343985B245BE6DF009BCA1F /* Localizable.strings in Resources */,
 				63681AC92497AD8B0087CC36 /* MyPlaceTblCell.xib in Resources */,
 				634398B5245BEAB2009BCA1F /* ClientImages.xcassets in Resources */,
-				633E97EC248687B00097093E /* VerifyContactVC.xib in Resources */,
-				634BB77A24613EFF00494379 /* TouchIdVC.xib in Resources */,
+				63B967A8249B62190015DDCA /* RegisterVC.xib in Resources */,
+				63B9679E249B62190015DDCA /* VerifyContactVC.xib in Resources */,
+				63B9673D249B471E0015DDCA /* PackVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1937,35 +2111,48 @@
 			files = (
 				633D1A422488B7910085AC56 /* PinterestLayout.swift in Sources */,
 				6343984D245BE6DF009BCA1F /* PreferenceHelper.swift in Sources */,
-				634BB77524612E7900494379 /* RegisterVC.swift in Sources */,
-				635A0E3C2463B9A400080194 /* TutorialCell.swift in Sources */,
 				632DB046248F8FDD00B65B46 /* CustomTextViewDialog.swift in Sources */,
+				63B9673F249B471E0015DDCA /* PackTblCell.swift in Sources */,
 				63435B4F24769C4900AF7100 /* AppWebApi.swift in Sources */,
+				63B967A2249B62190015DDCA /* OTPTextField.swift in Sources */,
 				632DB093248FA5CC00B65B46 /* EditProfileTextfield.swift in Sources */,
 				635675E12499FA2E006F5511 /* HowItWorkTblCell.swift in Sources */,
 				633C1ACD24924483009EB6AE /* CustomCountyPickerCell.swift in Sources */,
 				63EA7D102493ADC40027F9D3 /* CustomTextFieldDialog.swift in Sources */,
 				632DB09D248FA5CC00B65B46 /* JDDeviceHelper.swift in Sources */,
+				63B9679F249B62190015DDCA /* VerifyContactVC.swift in Sources */,
 				635675F1249A1D03006F5511 /* PriceLocationTblCell.swift in Sources */,
+				63B9679C249B62190015DDCA /* ContactVerifiedVC.swift in Sources */,
 				634398AC245BE92C009BCA1F /* Common.swift in Sources */,
+				63B967C9249BA3890015DDCA /* CustomHistoryFilterPickerCell.swift in Sources */,
+				63B967BA249B63BF0015DDCA /* ReferAndEarnUserCltCell.swift in Sources */,
+				63B96793249B62190015DDCA /* ScanPassportInstructionVC.swift in Sources */,
 				63672D4E249120F400A12D91 /* SettingSwitchTblCell.swift in Sources */,
+				63B96740249B471E0015DDCA /* PackVC.swift in Sources */,
 				63672D3E2491148B00A12D91 /* CustomCurrencyPicker.swift in Sources */,
+				63B967A7249B62190015DDCA /* TutorialCell.swift in Sources */,
 				6349A1282498C1F000E608C8 /* CustomAddPeopleDialog.swift in Sources */,
 				63409C6C246C17E10097C517 /* CustomAlert.swift in Sources */,
-				6364006424697BD7009A8F5E /* ScanPassportInstructionVC.swift in Sources */,
 				635DE3B7248E44900030DC69 /* EditProfileVC.swift in Sources */,
-				6364005C24697BD7009A8F5E /* CompleteIdentityVerificationVC.swift in Sources */,
+				63B96797249B62190015DDCA /* ScanSelfieVC.swift in Sources */,
 				6349A12B2498C1F000E608C8 /* ManagePeopleTblCell.swift in Sources */,
 				63567600249A41DE006F5511 /* PromoCodeVC.swift in Sources */,
+				63B967A3249B62190015DDCA /* VerificationAlert.swift in Sources */,
 				6349A1172498979B00E608C8 /* CustomAddNewAddressDialog.swift in Sources */,
 				635675F4249A1D69006F5511 /* PricingLocationWebService.swift in Sources */,
+				63B9678B249B62190015DDCA /* CompleteIdentityVerificationVC.swift in Sources */,
+				63B967C2249B9A710015DDCA /* CustomShareReferralDialog.swift in Sources */,
 				63672D3A24910DC000A12D91 /* SettingVC.swift in Sources */,
 				633B7126245FDA5800CF490D /* ThemeTextField.swift in Sources */,
 				633B7127245FDA5800CF490D /* ThemeButton.swift in Sources */,
+				63B967A9249B62190015DDCA /* RegisterVC.swift in Sources */,
 				63435B5024769C4900AF7100 /* Reachability.swift in Sources */,
+				63B967D7249BAC720015DDCA /* CampaignsTblCell.swift in Sources */,
 				6343985C245BE6DF009BCA1F /* AppTheme.swift in Sources */,
 				632DB09B248FA5CC00B65B46 /* String+Localization.swift in Sources */,
 				63838EF6247CDD9B007F1154 /* HomeVC.swift in Sources */,
+				63B9678F249B62190015DDCA /* AddCardVC.swift in Sources */,
+				63B967B8249B63BF0015DDCA /* ReferAndEarnVC.swift in Sources */,
 				63681ABD24979C990087CC36 /* TherapistQuestionariesTblCell.swift in Sources */,
 				635675DD2499FA2E006F5511 /* MenuCellVerticle.swift in Sources */,
 				63681AC72497AD8B0087CC36 /* MyPlaceVC.swift in Sources */,
@@ -1977,16 +2164,14 @@
 				63435B4E24769C4900AF7100 /* AlamofireHelper.swift in Sources */,
 				632DB099248FA5CC00B65B46 /* String + TypeCasting.swift in Sources */,
 				632DB0A1248FA5CC00B65B46 /* LocationHelper.swift in Sources */,
-				633E97ED248687B00097093E /* VerifyContactVC.swift in Sources */,
 				63432F8A248F5D37006BA322 /* ThemeBottomDialog.swift in Sources */,
 				632DB094248FA5CC00B65B46 /* ACFloatingTextfield.swift in Sources */,
 				63672D4824911D3200A12D91 /* CustomChangePasswordDialog.swift in Sources */,
 				632DB0A0248FA5CC00B65B46 /* UITextField + Extension.swift in Sources */,
+				63B96799249B62190015DDCA /* ScanSelfieInstructionVC.swift in Sources */,
 				635675BB2499E332006F5511 /* JDSegmentControl.swift in Sources */,
 				6343985A245BE6DF009BCA1F /* APP+NAVIGATION.swift in Sources */,
 				632DB056248FA54200B65B46 /* CustomRateViewDialog.swift in Sources */,
-				6364006024697BD7009A8F5E /* AddCardVC.swift in Sources */,
-				6364006224697BD7009A8F5E /* KycInfoVC.swift in Sources */,
 				63432F82248F4B45006BA322 /* MassagePreferenceTblCell.swift in Sources */,
 				63432F94248F6685006BA322 /* PressureSelectionTblCell.swift in Sources */,
 				632DB09A248FA5CC00B65B46 /* String + Validation.swift in Sources */,
@@ -2001,29 +2186,30 @@
 				6350C855248A0186002E13F2 /* CustomGenderPicker.swift in Sources */,
 				63AFB5E724893A7D007566D4 /* ProfileTblCell.swift in Sources */,
 				6349A12C2498C1F000E608C8 /* ManagePeopleVC.swift in Sources */,
-				6368738C2462C08D0076779B /* VerificationAlert.swift in Sources */,
+				63B967BC249B63BF0015DDCA /* ReferAndEarnTblCell.swift in Sources */,
 				635675E52499FA2E006F5511 /* NotificationTblFooter.swift in Sources */,
-				634BB77B24613EFF00494379 /* TouchIdVC.swift in Sources */,
-				6364005E24697BD7009A8F5E /* KycVC.swift in Sources */,
 				632DB095248FA5CC00B65B46 /* RatingView.swift in Sources */,
+				63B967AD249B62190015DDCA /* LoginVC.swift in Sources */,
+				63B9679D249B62190015DDCA /* ContactVerificationVC.swift in Sources */,
+				63B967A1249B62190015DDCA /* OTPFieldView.swift in Sources */,
 				632DB096248FA5CC00B65B46 /* Loader.swift in Sources */,
 				63439FF02488F1BB000E2F4C /* CustomDatePicker.swift in Sources */,
 				633C1AC224923D3B009EB6AE /* CountriesWebService.swift in Sources */,
 				63EA7D182493B5880027F9D3 /* CustomCityPickerCell.swift in Sources */,
 				635675DA2499FA2E006F5511 /* MenuCellHorizontal.swift in Sources */,
-				6364006824697BD7009A8F5E /* ScanSelfieVC.swift in Sources */,
-				6364006624697BD7009A8F5E /* ScanPassportVC.swift in Sources */,
 				63EA7D1A2493B5880027F9D3 /* CustomCityPicker.swift in Sources */,
+				63B96795249B62190015DDCA /* ScanPassportVC.swift in Sources */,
+				63B967D5249BAC720015DDCA /* CampaignsVC.swift in Sources */,
 				63672D2E2491072900A12D91 /* CustomLanguagePickerCell.swift in Sources */,
 				63435B5224769C4900AF7100 /* UserWebService.swift in Sources */,
 				632DB09C248FA5CC00B65B46 /* JDSubclasses + UIControl.swift in Sources */,
 				637E3A7124990687002DE275 /* CustomPhotoPicker.swift in Sources */,
 				635675E32499FA2E006F5511 /* NotificationTblCell.swift in Sources */,
+				63B96791249B62190015DDCA /* KycInfoVC.swift in Sources */,
 				63439848245BE6DF009BCA1F /* AppDelegate.swift in Sources */,
 				63E94A7C24920887000F375E /* EditProfileCell.swift in Sources */,
 				632DB098248FA5CC00B65B46 /* NSObject + Extension.swift in Sources */,
 				633C1ACC24924483009EB6AE /* CustomCountyPicker.swift in Sources */,
-				6364006A24697BD7009A8F5E /* ScanSelfieInstructionVC.swift in Sources */,
 				635675DF2499FA2E006F5511 /* HowItWorkVC.swift in Sources */,
 				63432F83248F4B45006BA322 /* MassagePreferenceVC.swift in Sources */,
 				6343984C245BE6DF009BCA1F /* Constant.swift in Sources */,
@@ -2032,9 +2218,9 @@
 				635675FE249A41DE006F5511 /* PromoCodeTblCell.swift in Sources */,
 				6358A08A248F8968004F2CA8 /* CustomPreferGenderPicker.swift in Sources */,
 				63681AD42497B1730087CC36 /* MyAddressVC.swift in Sources */,
-				636873912462C5800076779B /* OTPTextField.swift in Sources */,
+				63B9678D249B62190015DDCA /* KycVC.swift in Sources */,
 				633C1AC424923FCA009EB6AE /* CityWebService.swift in Sources */,
-				633B7131245FF18200CF490D /* TutorialVC.swift in Sources */,
+				63B967CC249BA3890015DDCA /* CustomHistoryFilterPicker.swift in Sources */,
 				63439861245BE6DF009BCA1F /* SceneDelegate.swift in Sources */,
 				63672D2C2491072900A12D91 /* CustomLanguagePicker.swift in Sources */,
 				63681AD32497B1730087CC36 /* MyAddressTblCell.swift in Sources */,
@@ -2043,15 +2229,13 @@
 				6343985E245BE6DF009BCA1F /* Main.swift in Sources */,
 				632DB097248FA5CC00B65B46 /* DataType + Extesnion.swift in Sources */,
 				63672D3824910DC000A12D91 /* SettingTblCell.swift in Sources */,
-				636873902462C5800076779B /* OTPFieldView.swift in Sources */,
 				63672D442491190B00A12D91 /* CustomInformationDialog.swift in Sources */,
 				63681AC82497AD8B0087CC36 /* MyPlaceTblCell.swift in Sources */,
-				6361ECEB2462924900CC317A /* ContactVerificationVC.swift in Sources */,
+				63B967AB249B62190015DDCA /* TouchIdVC.swift in Sources */,
 				63AFB5E524893A7C007566D4 /* ProfileVC.swift in Sources */,
-				634398C1245BECDC009BCA1F /* LoginVC.swift in Sources */,
+				63B967A5249B62190015DDCA /* TutorialVC.swift in Sources */,
 				634BB76F2461268C00494379 /* ThemeView.swift in Sources */,
 				6350C85A248A2F33002E13F2 /* ProfileTblUserInfoCell.swift in Sources */,
-				633E97EB248687B00097093E /* ContactVerifiedVC.swift in Sources */,
 				63435B5324769C4900AF7100 /* Singleton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

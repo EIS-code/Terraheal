@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -58,7 +58,7 @@
                             <constraint firstItem="zbl-J2-KSJ" firstAttribute="leading" secondItem="evN-os-n1y" secondAttribute="trailing" constant="20" id="O5Y-tD-qIO"/>
                             <constraint firstAttribute="trailing" secondItem="LzM-Rc-egA" secondAttribute="trailing" constant="10" id="OQX-HH-mgv"/>
                             <constraint firstItem="zbl-J2-KSJ" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" constant="20" id="ajV-hu-GdZ"/>
-                            <constraint firstItem="XlJ-aK-tt0" firstAttribute="top" secondItem="zbl-J2-KSJ" secondAttribute="bottom" constant="20" id="gdJ-lO-Fy5"/>
+                            <constraint firstItem="XlJ-aK-tt0" firstAttribute="top" secondItem="zbl-J2-KSJ" secondAttribute="bottom" priority="999" constant="20" id="gdJ-lO-Fy5"/>
                             <constraint firstItem="evN-os-n1y" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="20" id="rxs-pa-aby"/>
                             <constraint firstItem="evN-os-n1y" firstAttribute="top" secondItem="zbl-J2-KSJ" secondAttribute="top" id="t1y-jt-Foo"/>
                             <constraint firstItem="LzM-Rc-egA" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" constant="10" id="uca-kM-6fX"/>

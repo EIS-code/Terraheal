@@ -488,6 +488,50 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
+    func loadPackVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: PackVC =  nc.findVCs(ofType: PackVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+            } else {
+                let targetVC: PackVC = PackVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+            }
+        } else {
+            let targetVC: PackVC = PackVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+    func loadReferAndEarnVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: ReferAndEarnVC =  nc.findVCs(ofType: ReferAndEarnVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+            } else {
+                let targetVC: ReferAndEarnVC = ReferAndEarnVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+            }
+        } else {
+            let targetVC: ReferAndEarnVC = ReferAndEarnVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
+    func loadCampaignsVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: CampaignsVC =  nc.findVCs(ofType: CampaignsVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+            } else {
+                let targetVC: CampaignsVC = CampaignsVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+            }
+        } else {
+            let targetVC: CampaignsVC = CampaignsVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
 
 }
 

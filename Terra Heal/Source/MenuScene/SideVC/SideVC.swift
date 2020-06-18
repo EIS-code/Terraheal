@@ -53,27 +53,26 @@ enum Menu: String {
     func name() -> String {
         switch self {
         case .HowItWork:
-            return "MENU_ITEM_1".localized()
+            return "MENU_HOW_IT_WORKS".localized()
         case .ReferAndEarn:
-            return "MENU_ITEM_2".localized()
+            return "MENU_REFER_AND_EARN".localized()
         case .PricingAndLocation:
-            return "MENU_ITEM_3".localized()
+            return "MENU_PRINCING_AND_LOCATION".localized()
         case .PromoCode:
-            return "MENU_ITEM_4".localized()
+            return "MENU_PROMO_CODE".localized()
         case .Notifications:
-            return "MENU_ITEM_5".localized()
+            return "MENU_NOTIFICATIONS".localized()
         case .Packs:
-            return "MENU_ITEM_6".localized()
+            return "MENU_PACKS".localized()
         case .Help:
-            return "MENU_ITEM_7".localized()
+            return "MENU_HELP".localized()
         case .Campaigns:
-            return "MENU_ITEM_8".localized()
+            return "MENU_CAMPAINGNS".localized()
         case .GiftVoucher:
-            return "MENU_ITEM_9".localized()
-        default:
-            return ""
+            return "MENU_GIFT_VOUCHER".localized()
         }
     }
+
 
 }
 class SideVC: MainVC {
@@ -98,10 +97,10 @@ class SideVC: MainVC {
         MenuItem.init(id: Menu.PricingAndLocation, image: "", isVerticle: true),
         MenuItem.init(id: Menu.PromoCode, image: "", isVerticle: true),
         MenuItem.init(id: Menu.Notifications, image: "", isVerticle: false),
-        MenuItem.init(id: Menu.Help, image: "", isVerticle: false),
         MenuItem.init(id: Menu.Packs, image: "", isVerticle: false),
-        MenuItem.init(id: Menu.GiftVoucher, image: "", isVerticle: true),
         MenuItem.init(id: Menu.Campaigns, image: "", isVerticle: false),
+        MenuItem.init(id: Menu.GiftVoucher, image: "", isVerticle: true),
+        MenuItem.init(id: Menu.Help, image: "", isVerticle: false),
 
     ]
 
@@ -418,7 +417,12 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
             Common.appDelegate.loadPriceLocationVC(navigaionVC: Common.appDelegate.window?.rootViewController  as? NC)
         case Menu.PromoCode:
             Common.appDelegate.loadPromocodeVC(navigaionVC: Common.appDelegate.window?.rootViewController  as? NC)
-
+        case Menu.Packs:
+            Common.appDelegate.loadPackVC(navigaionVC: Common.appDelegate.window?.rootViewController  as? NC)
+        case Menu.ReferAndEarn:
+            Common.appDelegate.loadReferAndEarnVC(navigaionVC: Common.appDelegate.window?.rootViewController  as? NC)
+        case Menu.Campaigns:
+            Common.appDelegate.loadCampaignsVC(navigaionVC: Common.appDelegate.window?.rootViewController  as? NC)
         default:
             print("")
         }
@@ -430,7 +434,7 @@ extension SideVC: PinterestLayoutDelegate {
     func collectionView(
         _ collectionView: UICollectionView,
         heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
-        let heightSizes = [(collectionView.bounds.height/3),(collectionView.bounds.height/6)]
+        let heightSizes = [(collectionView.bounds.height/3.5),(collectionView.bounds.height/7)]
         return CGFloat(heightSizes[arrForMenu[indexPath.row].isVerticle ? 0 : 1])
 
     }

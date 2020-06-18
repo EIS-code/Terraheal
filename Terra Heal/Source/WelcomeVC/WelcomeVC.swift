@@ -57,7 +57,7 @@ class WelcomeVC: MainVC {
         }
     }
     private func initialViewSetup() {
-        self.vwBar?.backgroundColor = UIColor.clear
+        
         self.lblHeader1?.text = "WELCOME_LBL_HEADER_1".localized()
         self.lblHeader1?.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.lblMsg1?.text = "WELCOME_LBL_MESSAGE_1".localized()

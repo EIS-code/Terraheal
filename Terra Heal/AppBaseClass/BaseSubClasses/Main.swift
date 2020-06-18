@@ -9,9 +9,8 @@ import UIKit
 
 class MainVC: UIViewController {
    
-    @IBOutlet weak var vwBar: UIView?
     @IBOutlet weak var lblTitle: ThemeLabel?
-    @IBOutlet weak var btnLeft: ThemeButton?
+    @IBOutlet weak var btnLeft: FloatingRoundButton?
     @IBOutlet weak var btnRight: ThemeButton?
     @IBOutlet weak var headerGradient: UIView!
     @IBOutlet weak var footerGradient: UIView!
@@ -33,7 +32,7 @@ class MainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.vwBar?.backgroundColor = UIColor.clear
+        self.btnLeft?.setBackButton()
     }
     
     override func viewDidLayoutSubviews() {
@@ -66,6 +65,7 @@ class MainVC: UIViewController {
 
     func setTitle(title: String) {
         lblTitle?.text = title
+        lblTitle?.textAlignment = .center
     }
     func isViewAvailable() -> Bool {
         return self.view.subviews.count >  0
