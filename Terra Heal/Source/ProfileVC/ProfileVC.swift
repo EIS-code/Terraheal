@@ -10,37 +10,40 @@ import UIKit
 
 enum ProfileMenu: String {
     case MyProfile = "1"
-    case MyBookings = "2"
-    case MyPlaces = "3"
-    case MyMassagePreference = "4"
-    case MyTherapist = "5"
-    case TherapistQuestionaries = "6"
-    case ManageAddress = "7"
-    case MangagePeople = "8"
-    case PaymentPreference = "9"
-    case Settings = "10"
+    case MyBookings = "3"
+    case Varification = "2"
+    case MyPlaces = "4"
+    case MyMassagePreference = "5"
+    case MyTherapist = "6"
+    case TherapistQuestionaries = "7"
+    case ManageAddress = "8"
+    case MangagePeople = "9"
+    case PaymentPreference = "10"
+    case Settings = "11"
     func name() -> String {
         switch self {
         case .MyProfile:
-            return "PROFILE_MENU_ITEM_1".localized()
+            return "PROFILE_MENU_Profile".localized()
+        case .Varification:
+            return "PROFILE_MENU_VARIFICATION".localized()
         case .MyBookings:
-            return  "PROFILE_MENU_ITEM_2".localized()
+            return  "PROFILE_MENU_MY_BOOKING".localized()
         case .MyPlaces:
-            return  "PROFILE_MENU_ITEM_3".localized()
+            return  "PROFILE_MENU_MY_PLACES".localized()
         case .MyMassagePreference:
-            return  "PROFILE_MENU_ITEM_4".localized()
+            return  "PROFILE_MENU_MY_MASSAGE_PREFERENCE".localized()
         case .MyTherapist:
-            return  "PROFILE_MENU_ITEM_5".localized()
+            return  "PROFILE_MENU_MY_THERAPIST".localized()
         case .TherapistQuestionaries:
-            return  "PROFILE_MENU_ITEM_6".localized()
+            return  "PROFILE_MENU_THERAPIST_QUESTIONARIES".localized()
         case .ManageAddress:
-            return  "PROFILE_MENU_ITEM_7".localized()
+            return  "PROFILE_MENU_MANAGE_ADDRESS".localized()
         case .MangagePeople:
-            return  "PROFILE_MENU_ITEM_8".localized()
+            return  "PROFILE_MENU_MANAGE_PEOPLE".localized()
         case .PaymentPreference:
-            return  "PROFILE_MENU_ITEM_9".localized()
+            return  "PROFILE_MENU_PAYMENT_PREFERENCE".localized()
         case .Settings:
-            return  "PROFILE_MENU_ITEM_10".localized()
+            return  "PROFILE_MENU_SETTING".localized()
         }
     }
 }
@@ -205,6 +208,8 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
         switch selectedType {
         case .MyProfile:
             Common.appDelegate.loadEditProfileVC(navigaionVC: self.navigationController)
+        case .Varification:
+             Common.showAlert(message: "Under Construction")
         case .MyBookings:
             Common.showAlert(message: "Under Construction")
         case .MyPlaces:

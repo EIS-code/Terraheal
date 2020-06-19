@@ -44,20 +44,38 @@
                                     <color key="textColor" name="theme_primary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="search country" translatesAutoresizingMaskIntoConstraints="NO" id="Z8R-8V-elL">
-                                    <rect key="frame" x="18.5" y="65.5" width="337" height="56"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MI6-Bi-CfP" userLabel="serchView">
+                                    <rect key="frame" x="0.0" y="65.5" width="374" height="50"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-search" translatesAutoresizingMaskIntoConstraints="NO" id="0O5-jI-Owk">
+                                            <rect key="frame" x="20" y="19.5" width="11" height="11"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="0O5-jI-Owk" secondAttribute="height" multiplier="1:1" id="9SS-BB-Ilb"/>
+                                            </constraints>
+                                        </imageView>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="An4-F4-4Wz" customClass="ThemeTextField" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="71.5" y="16" width="282.5" height="18.5"/>
+                                            <color key="textColor" name="theme_primary"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" name="theme_background"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="56" id="upM-EV-LvX"/>
+                                        <constraint firstItem="0O5-jI-Owk" firstAttribute="leading" secondItem="MI6-Bi-CfP" secondAttribute="leading" constant="20" id="3tu-CK-sGh"/>
+                                        <constraint firstItem="An4-F4-4Wz" firstAttribute="leading" secondItem="0O5-jI-Owk" secondAttribute="trailing" constant="40.5" id="BwU-oc-gHz"/>
+                                        <constraint firstItem="0O5-jI-Owk" firstAttribute="centerY" secondItem="MI6-Bi-CfP" secondAttribute="centerY" id="Jx9-gT-12M"/>
+                                        <constraint firstItem="An4-F4-4Wz" firstAttribute="centerY" secondItem="0O5-jI-Owk" secondAttribute="centerY" id="Njc-ok-81B"/>
+                                        <constraint firstAttribute="trailing" secondItem="An4-F4-4Wz" secondAttribute="trailing" constant="20" id="c2d-tT-KzL"/>
+                                        <constraint firstAttribute="height" constant="50" id="zbu-J8-6Tj"/>
                                     </constraints>
-                                    <color key="barTintColor" name="theme_background"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
+                                </view>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tfg-GV-f0f">
-                                    <rect key="frame" x="18.5" y="141.5" width="337" height="291.5"/>
+                                    <rect key="frame" x="18.5" y="135.5" width="337" height="291.5"/>
                                     <color key="backgroundColor" name="theme_primary_light_background"/>
                                 </tableView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="120.5" y="453" width="133" height="40"/>
+                                    <rect key="frame" x="120.5" y="447" width="133" height="46"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                     <state key="normal" title="Sign In">
@@ -76,8 +94,8 @@
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="Z8R-8V-elL" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" multiplier="0.9" id="04z-h3-2GV"/>
                                 <constraint firstItem="tfg-GV-f0f" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" multiplier="0.9" id="6Op-Ym-9rR"/>
+                                <constraint firstItem="MI6-Bi-CfP" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" id="AZQ-jJ-06L"/>
                             </constraints>
                         </stackView>
                     </subviews>
@@ -108,14 +126,16 @@
                 <outlet property="btnDone" destination="W3s-UH-gbE" id="Cp0-qH-ylB"/>
                 <outlet property="dialogView" destination="Yaj-p7-IIT" id="I5L-DG-Qv7"/>
                 <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
-                <outlet property="searchBar" destination="Z8R-8V-elL" id="8Db-jC-Szn"/>
+                <outlet property="searchVw" destination="MI6-Bi-CfP" id="8uI-NP-GRP"/>
                 <outlet property="tableView" destination="tfg-GV-f0f" id="Ira-PT-Aex"/>
+                <outlet property="txtSearchBar" destination="An4-F4-4Wz" id="ggj-9U-CQT"/>
                 <outlet property="vwTopBar" destination="OsI-uf-Fb8" id="VT3-o0-WSd"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="130.58035714285714"/>
         </view>
     </objects>
     <resources>
+        <image name="asset-search" width="10.666666984558105" height="10.666666984558105"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

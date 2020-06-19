@@ -22,7 +22,8 @@ class CampaignsTblCell: TableCell {
     }
 
     func setData(data: CampaignsDetail ) {
-
+        self.btnDetails.setTitle("CAMPAIGNS_BTN_DETAILS".localized(), for: .normal)
+        self.btnDetails.setFont(name: FontName.SemiBold, size: FontSize.button_14)
     }
 
     override func layoutSubviews() {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -30,72 +30,16 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-J2-KSJ" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="80" y="10" width="108" height="77"/>
+                                <rect key="frame" x="80" y="10" width="15.5" height="77"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="theme_primary"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39g-Hj-VEp" userLabel="vwSwitch">
-                                <rect key="frame" x="198" y="33.5" width="98" height="30"/>
-                                <subviews>
-                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kkC-Nl-kph" userLabel="vwSegment">
-                                        <rect key="frame" x="0.0" y="0.0" width="98" height="30"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </view>
-                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DxG-Qj-4uS" userLabel="vwEnable">
-                                        <rect key="frame" x="0.0" y="0.0" width="49" height="30"/>
-                                        <color key="backgroundColor" name="theme_primary"/>
-                                    </view>
-                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qze-nU-Zgy" userLabel="vwDisable">
-                                        <rect key="frame" x="49" y="0.0" width="49" height="30"/>
-                                        <color key="backgroundColor" name="theme_primary"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uT6-iw-9Gf" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="49" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
-                                        <state key="normal" title="Enanble">
-                                            <color key="titleColor" name="theme_light_text_color"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnEnableTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="zEZ-KG-guh"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baL-O7-CRG" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                        <rect key="frame" x="49" y="0.0" width="49" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
-                                        <state key="normal" title="Disable">
-                                            <color key="titleColor" name="theme_light_text_color"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnDisableTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="FD2-F8-szf"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39g-Hj-VEp" userLabel="vwSwitch" customClass="JDSegmentedControl" customModule="Terra_Heal" customModuleProvider="target">
+                                <rect key="frame" x="105.5" y="33.5" width="190.5" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="qze-nU-Zgy" firstAttribute="top" secondItem="baL-O7-CRG" secondAttribute="top" id="15L-tT-aWp"/>
-                                    <constraint firstItem="qze-nU-Zgy" firstAttribute="leading" secondItem="baL-O7-CRG" secondAttribute="leading" id="965-GT-VeB"/>
-                                    <constraint firstItem="kkC-Nl-kph" firstAttribute="trailing" secondItem="qze-nU-Zgy" secondAttribute="trailing" id="H3T-ad-bzj"/>
-                                    <constraint firstItem="uT6-iw-9Gf" firstAttribute="leading" secondItem="39g-Hj-VEp" secondAttribute="leading" id="Hhi-QI-WF1"/>
-                                    <constraint firstItem="DxG-Qj-4uS" firstAttribute="top" secondItem="uT6-iw-9Gf" secondAttribute="top" id="LOY-kF-dJA"/>
-                                    <constraint firstItem="uT6-iw-9Gf" firstAttribute="centerY" secondItem="39g-Hj-VEp" secondAttribute="centerY" id="NxC-7h-1Rx"/>
-                                    <constraint firstItem="DxG-Qj-4uS" firstAttribute="bottom" secondItem="uT6-iw-9Gf" secondAttribute="bottom" id="WWi-Tf-I5m"/>
-                                    <constraint firstItem="uT6-iw-9Gf" firstAttribute="height" secondItem="39g-Hj-VEp" secondAttribute="height" id="XCr-76-S93"/>
-                                    <constraint firstAttribute="centerX" secondItem="uT6-iw-9Gf" secondAttribute="trailing" id="YjZ-cn-QRH"/>
-                                    <constraint firstItem="qze-nU-Zgy" firstAttribute="trailing" secondItem="baL-O7-CRG" secondAttribute="trailing" id="hmc-uW-Wt7"/>
-                                    <constraint firstItem="kkC-Nl-kph" firstAttribute="top" secondItem="DxG-Qj-4uS" secondAttribute="top" id="i2b-e9-7Nv"/>
-                                    <constraint firstItem="kkC-Nl-kph" firstAttribute="leading" secondItem="DxG-Qj-4uS" secondAttribute="leading" id="i8Z-8w-N1y"/>
-                                    <constraint firstItem="DxG-Qj-4uS" firstAttribute="leading" secondItem="uT6-iw-9Gf" secondAttribute="leading" id="iEn-Jo-RVY"/>
-                                    <constraint firstItem="kkC-Nl-kph" firstAttribute="bottom" secondItem="DxG-Qj-4uS" secondAttribute="bottom" id="kEi-eI-Cy2"/>
-                                    <constraint firstItem="baL-O7-CRG" firstAttribute="width" secondItem="uT6-iw-9Gf" secondAttribute="width" id="l65-0h-GFo"/>
-                                    <constraint firstItem="DxG-Qj-4uS" firstAttribute="trailing" secondItem="uT6-iw-9Gf" secondAttribute="trailing" id="mY8-Kg-Smi"/>
-                                    <constraint firstItem="qze-nU-Zgy" firstAttribute="bottom" secondItem="baL-O7-CRG" secondAttribute="bottom" id="mZU-mK-PMX"/>
-                                    <constraint firstItem="baL-O7-CRG" firstAttribute="centerY" secondItem="39g-Hj-VEp" secondAttribute="centerY" id="pzK-KO-IfW"/>
                                     <constraint firstAttribute="height" constant="30" id="sjA-zX-6dd"/>
-                                    <constraint firstItem="baL-O7-CRG" firstAttribute="height" secondItem="39g-Hj-VEp" secondAttribute="height" id="szY-eD-hA5"/>
-                                    <constraint firstItem="baL-O7-CRG" firstAttribute="leading" secondItem="uT6-iw-9Gf" secondAttribute="trailing" id="y6N-Iz-bXN"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LzM-Rc-egA">
@@ -133,23 +77,16 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="btnDisable" destination="baL-O7-CRG" id="9qq-O1-1O2"/>
-                <outlet property="btnEnable" destination="uT6-iw-9Gf" id="ORE-EK-Fxo"/>
                 <outlet property="imgSelected" destination="LzM-Rc-egA" id="2ko-Uz-2DU"/>
                 <outlet property="ivIcon" destination="evN-os-n1y" id="jPb-MN-uw7"/>
                 <outlet property="lblName" destination="zbl-J2-KSJ" id="uPE-In-SOw"/>
                 <outlet property="vwBg" destination="fTr-D4-KiU" id="gMF-14-1KR"/>
-                <outlet property="vwSegment" destination="kkC-Nl-kph" id="mjO-Ku-gXr"/>
-                <outlet property="vwTabDisable" destination="qze-nU-Zgy" id="O2r-J9-eRn"/>
-                <outlet property="vwTabEnable" destination="DxG-Qj-4uS" id="UN4-uD-XfI"/>
+                <outlet property="vwSwitch" destination="39g-Hj-VEp" id="wfW-JK-SJy"/>
             </connections>
             <point key="canvasLocation" x="136.23188405797103" y="151.67410714285714"/>
         </tableViewCell>
     </objects>
     <resources>
-        <namedColor name="theme_light_text_color">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="theme_primary">
             <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

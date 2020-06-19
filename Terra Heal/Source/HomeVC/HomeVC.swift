@@ -45,7 +45,14 @@ class HomeVC: MainVC {
         self.initialViewSetup()
         vwFloatingBottom.allowChangeThumbWidth = false
         vwFloatingBottom.itemTitles = ["Home","Explore","My Fav"]
+        vwFloatingBottom.itemImages =  [UIImage.init(named: "asset-home")!, UIImage.init(named: "asset-home")!, UIImage.init(named: "asset-home")!]
+        vwFloatingBottom.itemSelectedImages = [UIImage.init(named: "asset-home-selected")!, UIImage.init(named: "asset-home-selected")!, UIImage.init(named: "asset-home-selected")!]
         vwFloatingBottom.changeBackgroundColor(UIColor.themeLightTextColor)
+        vwFloatingBottom.didSelectItemWith = { [weak self] (index,title) in
+
+            print("\(index) - \(title)")
+
+        }
        //self.addLocationObserver()
         self.addBottomFade()
         self.addTopFade()

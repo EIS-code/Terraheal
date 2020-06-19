@@ -41,6 +41,8 @@
 "REGISTR_LBL_ACCEPT" = "accept";
 "REGISTER_BTN_SIGN_UP" = "Sign Up";
 "REGISTER_LBL_CONNECT_VIA" = " or connect via ";
+"PROFILE_TXT_SEARCH_COUNTRY" = "search country";
+"PROFILE_TXT_SEARCH_CITY" = "search city";
 //MARK: TOUCH ID  SCREEN
 "TOUCH_ID_LBL_TITLE" = "Welcome Back";
 "TOUCH_ID_LBL_MESSAGE" = "You need to identify\nto sign back in";
@@ -99,16 +101,19 @@
 "MENU_CAMPAINGNS" = "campaigns";
 "MENU_GIFT_VOUCHER" = "gift voucher";
 //MARK: Profile Menu
-"PROFILE_MENU_ITEM_1" = "my profile";
-"PROFILE_MENU_ITEM_2" = "my bookings";
-"PROFILE_MENU_ITEM_3" = "my places";
-"PROFILE_MENU_ITEM_4" = "my massage preferences";
-"PROFILE_MENU_ITEM_5" = "my therapists";
-"PROFILE_MENU_ITEM_6" = "therapies questionnaire";
-"PROFILE_MENU_ITEM_7" = "manage addresses";
-"PROFILE_MENU_ITEM_8" = "manage people";
-"PROFILE_MENU_ITEM_9" = "payment preference";
-"PROFILE_MENU_ITEM_10" = "settings";
+
+"PROFILE_MENU_Profile" = "my profile";
+"PROFILE_MENU_VARIFICATION" = "varification";
+"PROFILE_MENU_MY_BOOKING" = "my bookings";
+"PROFILE_MENU_MY_PLACES" = "my places";
+"PROFILE_MENU_MY_MASSAGE_PREFERENCE" = "my massage preferences";
+"PROFILE_MENU_MY_THERAPIST" = "my therapists";
+"PROFILE_MENU_THERAPIST_QUESTIONARIES" = "therapies questionnaires";
+"PROFILE_MENU_MANAGE_ADDRESS" = "manage addresses";
+"PROFILE_MENU_MANAGE_PEOPLE" = "manage people";
+"PROFILE_MENU_PAYMENT_PREFERENCE" = "payment preference";
+"PROFILE_MENU_SETTING" = "settings";
+
 //MARK: Gender Dialog
 "GENDER_DIALOG_TITLE" = "Gender";
 "GENDER_MALE" = "male";
@@ -183,6 +188,7 @@
 //MARK: Price  And Location
 "PRICE_AND_LOCATION_TITLE" = "pricing and locations";
 "PRICE_AND_LOCATION_TXT_SEARCH_LOCATION" = "search location";
+
 "NO_LOCATION_TITLE" =  "you don't have any location\naddresses";
 "NO_LOCATION_MSG" =  "--";
 
@@ -190,10 +196,19 @@
 "PROMOCODE_TITLE" = "promo code";
 "PROMOCODE_VOUCHER_CODE" = "voucher code";
 "PROMOCODE_BTN_ADD_NEW" = "Add New";
-//MARK: Promocode
+//MARK: Pack
 "PACK_TITLE" = "pack";
 "PACK_CODE" = "Pack code";
 "PACK_BTN_BUY_NEW" = "Buy New pack";
+
+//MARK: Help
+"HELP_TITLE" = "Help";
+"CHAT_DIALOG_TITLE" = "Chat";
+"CHAT_DIALOG_MSG" = "there are no pending issues to fix";
+"CHAT_DIALOG_BTN_CHAT_NOW" = "Have Doubts? Chat Now";
+//MARK: Faq
+"FAQ_TITLE" = "FAQs";
+
 
 //MARK: Refer And Earn
 "REFER_AND_EARN_TITLE" = "terra points";
@@ -207,9 +222,16 @@
 "REFER_AND_EARN_LBL_FRIEND_REFERRED_TITLE" = "friends referred";
 "REFER_AND_EARN_LBL_HISTORY" = "history";
 "REFER_AND_EARN_LBL_NO_HISTORY" = "no history found";
-
+"HISTORY_FILTER_TITLE" =  "Choose filter range";
 "SHARE_REFERRAL_TITLE" = "refer and earn terra points";
 "BTN_INVITE_VIA_SOCIAL_MEDIA" = "Invite Via Whatsapp";
+
+//MARK: Campaigns
+"CAMPAIGNS_TITLE" = "Campaigns";
+"CAMPAIGNS_BTN_DETAILS" = "Details";
+"CAMPAIGNS_DETAIL_DIALOG_TITLE" = "campaigns details";
+"CAMPAIGNS_DETAIL_DIALOG_MSG" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget. Nullam eget felis eget nunc lobortis. Faucibus ornare suspendisse sed nisi. Sagittis eu volutpat odio facilisis mauris sit amet massa. Erat velit scelerisque in dictum non consectetur a erat. Amet nulla facilisi morbi tempus iaculis urna.";
+
 //MARK: How It Work Screen
 
 "HOW_IT_WORK_TITLE" = "how it works?";
@@ -236,6 +258,8 @@
 "LBL_MENU" =  "menu";
 "PRIVACY_CONTENT" =  "<p>manage privacy settings</p><p>last updated on may 26th, 2020</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod.</p>";
 "TERMS_AND_CONDITION_CONTENT" =  "<p>terms &amp; conditions</p><p>last updated on may 26th, 2020</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod.</p>";
+
+"FAQ_CONTENT" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget. Nullam eget felis eget nunc lobortis. Faucibus ornare suspendisse sed nisi. Sagittis eu volutpat odio facilisis mauris sit amet massa. Erat velit scelerisque in dictum non consectetur a erat. Amet nulla facilisi morbi tempus iaculis urna.";
 //MARK: -
 //MARK: VALIDATION TOAST MESSAGES
 //MARK: -
@@ -249,7 +273,8 @@
 "VALIDATION_MSG_INVALID_DATA" = "Please enter valid data";
 "VALIDATION_MSG_SELECT_TERMS_AND_CONDITION" = "Please select terms and conditions";
 "VALIDATION_MSG_SELECT_COUNTRY_FIRST" = "Please select country first";
-
+"VALIDATION_MSG_PLEASE_SELECT_DATA" = "Please select valid data";
+"VALIDATION_MSG_PLEASE_SELECT_DATE" = "Please select valid date";
 /*
  //MARK: KYC WELCOME  SCREEN
  "KYC_LBL_TITLE" = "Welcome";

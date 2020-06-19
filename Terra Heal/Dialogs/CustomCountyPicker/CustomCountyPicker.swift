@@ -17,7 +17,8 @@ class CustomCountyPicker: ThemeBottomDialogView {
     @IBOutlet weak var btnDone: ThemeButton!
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchVw: UIView!
+    @IBOutlet weak var txtSearchBar: ThemeTextField!
 
     var onBtnDoneTapped: ((_ data: Country) -> Void)? = nil
     var selectedData: Country? = nil
@@ -36,7 +37,7 @@ class CustomCountyPicker: ThemeBottomDialogView {
         }
         self.select(data: self.selectedData)
         self.setupTableView(tableView: self.tableView)
-        self.setupSearchbar(searchBar: self.searchBar)
+        self.setupSearchbar(searchBar: self.txtSearchBar)
         self.getCountryList()
     }
 
@@ -62,8 +63,10 @@ class CustomCountyPicker: ThemeBottomDialogView {
     override func layoutSubviews() {
         super.layoutSubviews()
         vwTopBar?.setRound(withBorderColor: .clear, andCornerRadious: 2.5, borderWidth: 1.0)
+        self.btnDone?.layoutIfNeeded()
         self.btnDone?.setHighlighted(isHighlighted: true)
         self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.searchVw.setRound(withBorderColor: .clear, andCornerRadious: self.searchVw.bounds.height/2.0, borderWidth: 1.0)
     }
 
     @IBAction func btnDoneTapped(_ sender: Any) {
@@ -132,11 +135,14 @@ extension CustomCountyPicker : UITableViewDelegate,UITableViewDataSource {
     }
 }
 
-extension CustomCountyPicker : UISearchBarDelegate {
+extension CustomCountyPicker : UITextFieldDelegate {
 
-    private func setupSearchbar(searchBar: UISearchBar) {
-        searchBar.delegate = self
-
+    private func setupSearchbar(searchBar: UITextField) {
+        txtSearchBar.delegate = self
+        txtSearchBar.setFont(name: FontName.Regular, size: FontSize.label_14)
+        txtSearchBar.addTarget(self, action: #selector(searching(_:)), for: .editingChanged)
+        txtSearchBar.changePlaceHolder(color: UIColor.themePrimary)
+        txtSearchBar.placeholder = "PROFILE_TXT_SEARCH_COUNTRY".localized()
     }
 
     func searchData(for text: String) {
@@ -156,8 +162,8 @@ extension CustomCountyPicker : UISearchBarDelegate {
         self.reloadTableDateToFitHeight(tableView: tableView)
     }
 
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.searchData(for: searchText)
+    @IBAction func searching(_ sender: UITextField) {
+        searchData(for: sender.text ?? "")
     }
 }
 //MARK: Web Service Call

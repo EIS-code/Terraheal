@@ -131,7 +131,7 @@ extension MyPlaceVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.openRateViewPicker(name: self.arrForMyPlaces[indexPath.row].title)
+        //self.openRateViewPicker(name: self.arrForMyPlaces[indexPath.row].title)
     }
     
 }

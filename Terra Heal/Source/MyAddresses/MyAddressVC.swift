@@ -119,17 +119,15 @@ class MyAddressVC: MainVC {
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (address) in
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
             alert?.dismiss()
             if index == -1 {
                 self.arrForMyPlaces.append(address)
             } else {
                 self.arrForMyPlaces[index] = address
             }
+            self.updateUI()
 
-            self.tableView.reloadData()
         }
     }
 
@@ -150,7 +148,7 @@ class MyAddressVC: MainVC {
                 return
             }
             self.arrForMyPlaces.remove(at: index)
-            self.tableView.reloadData()
+            self.updateUI()
         }
     }
     @objc func removeAddress(button: UIButton) {

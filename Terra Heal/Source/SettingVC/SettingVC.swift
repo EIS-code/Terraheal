@@ -120,18 +120,13 @@ class SettingVC: MainVC {
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
             alert?.dismiss()
-            guard let self = self else {
-                return
-            }
-            print(self)
+            guard let self = self else { return }
         }
         alert.onBtnDoneTapped = {
              [weak alert, weak self] (pressure) in
             alert?.dismiss()
-            guard let self = self else {
-                return
-            }
-            print(self)
+            guard let self = self else { return }
+
         }
     }
 
@@ -158,20 +153,12 @@ extension SettingVC {
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
             alert?.dismiss()
-            guard let self = self else {
-                return
-            }
-            print(self)
+            guard let self = self else { return }
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (language) in
             alert?.dismiss()
-            guard let self = self else {
-                return
-            }
-            print(self)
-
-
+            guard let self = self else { return }
         }
     }
 
@@ -228,18 +215,12 @@ extension SettingVC {
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
             alert?.dismiss()
-            guard let self = self else {
-                return
-            }
-            print(self)
+            guard let self = self else { return }
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (pasword,newpasswod) in
             alert?.dismiss()
-            guard let self = self else {
-                return
-            }
-            print(self)
+            guard let self = self else { return }
         }
     }
 

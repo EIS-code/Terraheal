@@ -109,31 +109,19 @@ class EditProfileVC: MainVC {
         photoPickerAlert.show(animated: true)
         photoPickerAlert.onBtnCancelTapped = { [weak photoPickerAlert, weak self] in
             photoPickerAlert?.dismiss()
-            guard let self = self else {
-                return
-            }
-            print(self)
+            guard let self = self else { return }
         }
         photoPickerAlert.onBtnDoneTapped = { [weak photoPickerAlert, weak self] in
             photoPickerAlert?.dismiss()
-            guard let self = self else {
-                return
-            }
-            print(self)
+            guard let self = self else { return }
         }
         photoPickerAlert.onBtnCameraTapped = { [weak photoPickerAlert, weak self] in
             photoPickerAlert?.dismiss()
-            guard let self = self else {
-                return
-            }
-            print(self)
+            guard let self = self else { return }
         }
         photoPickerAlert.onBtnGallaryTapped = { [weak photoPickerAlert, weak self] in
             photoPickerAlert?.dismiss()
-            guard let self = self else {
-                return
-            }
-            print(self)
+            guard let self = self else { return }
         }
 
     }
@@ -186,9 +174,7 @@ class EditProfileVC: MainVC {
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (description) in
             alert?.dismiss()
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
             self.arrForProfile[index].vlaue = description
             self.collectionVwForProfile.reloadData()
         }
@@ -206,9 +192,7 @@ class EditProfileVC: MainVC {
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (description) in
             alert?.dismiss()
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
             self.arrForProfile[index].vlaue = description
             self.collectionVwForProfile.reloadData()
         }

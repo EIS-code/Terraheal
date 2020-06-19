@@ -46,8 +46,8 @@ open class JDSegmentedControl: UIView {
     }
 
     open var itemTitles: [String] = ["Item1", "Item2", "Item3"]
-    open var itemImages: [UIImage] = [UIImage.init(named: "asset-home")!, UIImage.init(named: "asset-home")!, UIImage.init(named: "asset-home")!]
-    open var itemSelectedImages:  [UIImage] = [UIImage.init(named: "asset-home-selected")!, UIImage.init(named: "asset-home-selected")!, UIImage.init(named: "asset-home-selected")!]
+    open var itemImages: [UIImage] = []
+    open var itemSelectedImages:  [UIImage] = []
 
     open var attributedDefaultTitles: [NSAttributedString]!
     open var attributedSelectedTitles: [NSAttributedString]!
@@ -284,7 +284,11 @@ extension JDSegmentedControl {
     fileprivate func configureItems() {
         var i = 0
         for title in attributedDefaultTitles {
-            let label = createLabelWithTitle(title, tag: i, image: itemImages[i])
+            var image: UIImage? = nil
+            if itemImages.count > i {
+                image = itemImages[i]
+            }
+            let label = createLabelWithTitle(title, tag: i, image: image)
             containerView.addSubview(label)
             allItemLabels.append(label)
             i += 1
@@ -294,14 +298,18 @@ extension JDSegmentedControl {
     fileprivate func configureSelectedLabelItems() {
         var i = 0
         for title in attributedSelectedTitles {
-            let label = createLabelWithTitle(title, tag: i, image: itemSelectedImages[i])
+            var image: UIImage? = nil
+            if itemSelectedImages.count > i {
+                image = itemSelectedImages[i]
+            }
+            let label = createLabelWithTitle(title, tag: i, image: image)
             selectedLabelsView.addSubview(label)
             allSelectedItemLabels.append(label)
             i += 1
         }
     }
 
-    fileprivate func createLabelWithTitle(_ attributedTitle: NSAttributedString, tag: Int, image:UIImage) -> UIButton {
+    fileprivate func createLabelWithTitle(_ attributedTitle: NSAttributedString, tag: Int, image:UIImage?) -> UIButton {
         let label = UIButton()
         label.imageEdgeInsets = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 5)
         label.titleEdgeInsets = UIEdgeInsets.init(top: 0, left: 5, bottom: 0, right: 0)

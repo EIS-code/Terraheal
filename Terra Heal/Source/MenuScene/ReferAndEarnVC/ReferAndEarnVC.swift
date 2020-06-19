@@ -166,17 +166,13 @@ class ReferAndEarnVC: MainVC {
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
             alert?.dismiss()
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
             self.btnReferNow.isEnabled = true
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (description) in
             alert?.dismiss()
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
 
 
             self.btnReferNow.isEnabled = true
@@ -184,22 +180,18 @@ class ReferAndEarnVC: MainVC {
     }
     func openHistoryFilterDialog() {
         let alert: CustomHistoryFilterPicker = CustomHistoryFilterPicker.fromNib()
-        alert.initialize(title: "SHARE_REFERRAL_TITLE".localized(), buttonTitle: "BTN_INVITE_VIA_SOCIAL_MEDIA".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+        alert.initialize(title: "HISTORY_FILTER_TITLE".localized(), buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
             alert?.dismiss()
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
             self.btnFilter.isEnabled = true
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (description) in
             alert?.dismiss()
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
             if description.id == "0" {
                 self.arrForReferredHistory = []
             } else {

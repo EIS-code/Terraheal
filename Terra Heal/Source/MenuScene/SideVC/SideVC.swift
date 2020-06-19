@@ -423,8 +423,10 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
             Common.appDelegate.loadReferAndEarnVC(navigaionVC: Common.appDelegate.window?.rootViewController  as? NC)
         case Menu.Campaigns:
             Common.appDelegate.loadCampaignsVC(navigaionVC: Common.appDelegate.window?.rootViewController  as? NC)
-        default:
-            print("")
+        case Menu.Help:
+            Common.appDelegate.loadHelpVC(navigaionVC: Common.appDelegate.window?.rootViewController  as? NC)
+        case Menu.GiftVoucher:
+            Common.appDelegate.loadGiftVoucherVC(navigaionVC: Common.appDelegate.window?.rootViewController  as? NC)
         }
     }
 

@@ -128,9 +128,7 @@ class MassagePreferenceVC: MainVC {
         }
         alert.onBtnDoneTapped = {
              [weak alert, weak self] (pressure) in
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
             alert?.dismiss()
             appSingleton.myMassagePreference.pressure = pressure
             self.arrForMenu[index].isSelected = true
@@ -150,9 +148,7 @@ class MassagePreferenceVC: MainVC {
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (gender) in
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
 
             alert?.dismiss()
             appSingleton.myMassagePreference.prefereGender = gender
@@ -173,9 +169,7 @@ class MassagePreferenceVC: MainVC {
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (description) in
             alert?.dismiss()
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
 
             self.arrForMenu[index].isSelected = true
             self.arrForMenu[index].strDetail = description

@@ -133,7 +133,6 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="Xd4-ev-sCy" firstAttribute="width" secondItem="Msw-Lg-la4" secondAttribute="width" id="12Y-Qc-gZd"/>
-                        <constraint firstItem="Xd4-ev-sCy" firstAttribute="height" secondItem="Msw-Lg-la4" secondAttribute="height" priority="998" id="6U0-5c-jUj"/>
                         <constraint firstItem="Xd4-ev-sCy" firstAttribute="centerX" secondItem="Msw-Lg-la4" secondAttribute="centerX" id="6bU-qc-paL"/>
                         <constraint firstItem="Xd4-ev-sCy" firstAttribute="leading" secondItem="Msw-Lg-la4" secondAttribute="leading" id="Dd5-Ae-RqW"/>
                         <constraint firstItem="Xd4-ev-sCy" firstAttribute="top" secondItem="Msw-Lg-la4" secondAttribute="top" id="HKP-xh-pBj"/>

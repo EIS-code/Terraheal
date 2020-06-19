@@ -46,6 +46,37 @@
                     <color key="textColor" name="theme_primary"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1vj-Dw-czR" userLabel="headerView">
+                    <rect key="frame" x="0.0" y="114" width="375" height="150"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ioG-BP-L40">
+                            <rect key="frame" x="131.33333333333334" y="0.0" width="112.33333333333334" height="112.66666666666667"/>
+                            <color key="backgroundColor" name="theme_primary_border"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="ioG-BP-L40" secondAttribute="height" multiplier="1:1" id="F1l-Wn-xXY"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqS-Co-4qV">
+                            <rect key="frame" x="213.66666666666666" y="82.666666666666657" width="30" height="30"/>
+                            <color key="backgroundColor" name="theme_background"/>
+                            <state key="normal" title="+">
+                                <color key="titleColor" name="theme_primary"/>
+                            </state>
+                            <connections>
+                                <action selector="btnAddPictureTapped:" destination="-1" eventType="touchUpInside" id="BbI-sH-WKb"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="1vj-Dw-czR" secondAttribute="height" multiplier="5:2" id="UVc-9U-UhN"/>
+                        <constraint firstItem="XqS-Co-4qV" firstAttribute="trailing" secondItem="ioG-BP-L40" secondAttribute="trailing" id="bOW-4L-OZJ"/>
+                        <constraint firstItem="ioG-BP-L40" firstAttribute="width" secondItem="1vj-Dw-czR" secondAttribute="width" multiplier="0.3" id="dKj-i6-Ohk"/>
+                        <constraint firstItem="XqS-Co-4qV" firstAttribute="bottom" secondItem="ioG-BP-L40" secondAttribute="bottom" id="oFH-X2-ugF"/>
+                        <constraint firstItem="ioG-BP-L40" firstAttribute="centerX" secondItem="1vj-Dw-czR" secondAttribute="centerX" id="pfY-pt-4b6"/>
+                        <constraint firstItem="ioG-BP-L40" firstAttribute="top" secondItem="1vj-Dw-czR" secondAttribute="top" id="sZ5-0D-PcR"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gr9-kt-5QC" userLabel="vwBg">
                     <rect key="frame" x="0.0" y="114" width="375" height="742"/>
                     <color key="backgroundColor" name="theme_primary"/>
@@ -89,37 +120,6 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="d4a-C9-GI4"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="YtE-P3-Xvk"/>
                 </scrollView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1vj-Dw-czR" userLabel="headerView">
-                    <rect key="frame" x="0.0" y="114" width="375" height="150"/>
-                    <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ioG-BP-L40">
-                            <rect key="frame" x="131.33333333333334" y="0.0" width="112.33333333333334" height="112.66666666666667"/>
-                            <color key="backgroundColor" name="theme_primary_border"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="ioG-BP-L40" secondAttribute="height" multiplier="1:1" id="F1l-Wn-xXY"/>
-                            </constraints>
-                        </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqS-Co-4qV">
-                            <rect key="frame" x="213.66666666666666" y="82.666666666666657" width="30" height="30"/>
-                            <color key="backgroundColor" name="theme_background"/>
-                            <state key="normal" title="+">
-                                <color key="titleColor" name="theme_primary"/>
-                            </state>
-                            <connections>
-                                <action selector="btnAddPictureTapped:" destination="-1" eventType="touchUpInside" id="BbI-sH-WKb"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="1vj-Dw-czR" secondAttribute="height" multiplier="5:2" id="UVc-9U-UhN"/>
-                        <constraint firstItem="XqS-Co-4qV" firstAttribute="trailing" secondItem="ioG-BP-L40" secondAttribute="trailing" id="bOW-4L-OZJ"/>
-                        <constraint firstItem="ioG-BP-L40" firstAttribute="width" secondItem="1vj-Dw-czR" secondAttribute="width" multiplier="0.3" id="dKj-i6-Ohk"/>
-                        <constraint firstItem="XqS-Co-4qV" firstAttribute="bottom" secondItem="ioG-BP-L40" secondAttribute="bottom" id="oFH-X2-ugF"/>
-                        <constraint firstItem="ioG-BP-L40" firstAttribute="centerX" secondItem="1vj-Dw-czR" secondAttribute="centerX" id="pfY-pt-4b6"/>
-                        <constraint firstItem="ioG-BP-L40" firstAttribute="top" secondItem="1vj-Dw-czR" secondAttribute="top" id="sZ5-0D-PcR"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>

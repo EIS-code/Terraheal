@@ -176,7 +176,7 @@ class CustomGenderPicker: ThemeDialogView {
 
     @IBAction func btnDoneTapped(_ sender: Any) {
         if selectedGender == Gender.Other {
-            Common.showAlert(message: "VALIDATION_MSG_PLEASE_SELECT_DATE".localized())
+            Common.showAlert(message: "VALIDATION_MSG_PLEASE_SELECT_DATA".localized())
         } else {
             if self.onBtnDoneTapped != nil {
                 self.onBtnDoneTapped!(selectedGender);

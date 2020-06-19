@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="380" id="KGk-i7-Jjw" userLabel="PackTblCell" customClass="GiftVoucherTblCell" customModule="Terra_Heal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="475" height="380"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="475" height="380"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTr-D4-KiU" userLabel="vwForBackground">
+                        <rect key="frame" x="5" y="51.5" width="465" height="323.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-J2-KSJ" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <rect key="frame" x="40" y="56.5" width="385" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="theme_primary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kWw-1h-rwI">
+                                <rect key="frame" x="26" y="97" width="413" height="206.5"/>
+                                <color key="backgroundColor" name="theme_primary"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kWw-1h-rwI" secondAttribute="height" multiplier="200:100" id="UtM-7d-Ckz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="theme_background"/>
+                        <constraints>
+                            <constraint firstItem="zbl-J2-KSJ" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="40" id="6mP-6o-QSq"/>
+                            <constraint firstItem="kWw-1h-rwI" firstAttribute="top" secondItem="zbl-J2-KSJ" secondAttribute="bottom" constant="20" id="GXe-Zi-GYb"/>
+                            <constraint firstItem="kWw-1h-rwI" firstAttribute="centerX" secondItem="fTr-D4-KiU" secondAttribute="centerX" id="f1T-Fd-B12"/>
+                            <constraint firstAttribute="trailing" secondItem="zbl-J2-KSJ" secondAttribute="trailing" constant="40" id="oY4-e2-ct6"/>
+                            <constraint firstAttribute="bottom" secondItem="kWw-1h-rwI" secondAttribute="bottom" constant="20" id="qFm-0P-r2F"/>
+                        </constraints>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-home-selected" translatesAutoresizingMaskIntoConstraints="NO" id="HQO-Oy-Hm5">
+                        <rect key="frame" x="191" y="5" width="93" height="93"/>
+                        <color key="backgroundColor" name="theme_primary"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="HQO-Oy-Hm5" secondAttribute="height" multiplier="1:1" id="aVg-Hg-fWX"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="fTr-D4-KiU" secondAttribute="trailing" constant="5" id="AWN-UN-JV4"/>
+                    <constraint firstItem="HQO-Oy-Hm5" firstAttribute="width" secondItem="fTr-D4-KiU" secondAttribute="width" multiplier="0.2" id="dJM-RM-ea6"/>
+                    <constraint firstItem="HQO-Oy-Hm5" firstAttribute="centerY" secondItem="fTr-D4-KiU" secondAttribute="top" id="fn5-iN-P3q"/>
+                    <constraint firstItem="HQO-Oy-Hm5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="naB-BI-j6N"/>
+                    <constraint firstItem="fTr-D4-KiU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="p1a-dc-cSm"/>
+                    <constraint firstItem="zbl-J2-KSJ" firstAttribute="top" secondItem="HQO-Oy-Hm5" secondAttribute="bottom" constant="10" id="p2H-6a-lSK"/>
+                    <constraint firstItem="HQO-Oy-Hm5" firstAttribute="centerX" secondItem="fTr-D4-KiU" secondAttribute="centerX" id="tJ1-TY-9on"/>
+                    <constraint firstAttribute="bottom" secondItem="fTr-D4-KiU" secondAttribute="bottom" constant="5" id="uHV-Oa-H3d"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="ivPack" destination="HQO-Oy-Hm5" id="52O-xU-MpQ"/>
+                <outlet property="lblname" destination="zbl-J2-KSJ" id="1vH-XY-fgk"/>
+                <outlet property="vwBg" destination="fTr-D4-KiU" id="gMF-14-1KR"/>
+                <outlet property="vwForgiftPack" destination="kWw-1h-rwI" id="h0q-qi-vpi"/>
+            </connections>
+            <point key="canvasLocation" x="242.75362318840581" y="242.41071428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="asset-home-selected" width="21.333333969116211" height="21.333333969116211"/>
+        <namedColor name="theme_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary">
+            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

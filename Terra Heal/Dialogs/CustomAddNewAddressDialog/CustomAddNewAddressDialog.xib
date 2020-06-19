@@ -143,7 +143,7 @@
                             </subviews>
                             <constraints>
                                 <constraint firstItem="w4k-c1-F6Z" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" id="FaN-Wg-Afq"/>
-                                <constraint firstItem="w4k-c1-F6Z" firstAttribute="height" secondItem="cXW-IL-cWe" secondAttribute="height" multiplier="0.5" id="sjT-gC-S8J"/>
+                                <constraint firstItem="w4k-c1-F6Z" firstAttribute="height" relation="greaterThanOrEqual" secondItem="cXW-IL-cWe" secondAttribute="height" multiplier="0.5" id="sjT-gC-S8J"/>
                             </constraints>
                         </stackView>
                     </subviews>
@@ -163,7 +163,7 @@
                 <constraint firstAttribute="bottom" secondItem="Yaj-p7-IIT" secondAttribute="bottom" id="JTg-za-1ir"/>
                 <constraint firstItem="6ZW-DU-hOd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O4e-FZ-uqZ"/>
                 <constraint firstItem="6ZW-DU-hOd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Q6J-jS-lz5"/>
-                <constraint firstItem="Yaj-p7-IIT" firstAttribute="height" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.8" id="dDB-Rt-k3M"/>
+                <constraint firstItem="Yaj-p7-IIT" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.8" id="dDB-Rt-k3M"/>
                 <constraint firstItem="Yaj-p7-IIT" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" id="pYV-Pm-HG9"/>
                 <constraint firstAttribute="bottom" secondItem="6ZW-DU-hOd" secondAttribute="bottom" id="xcn-ZA-5s5"/>
             </constraints>

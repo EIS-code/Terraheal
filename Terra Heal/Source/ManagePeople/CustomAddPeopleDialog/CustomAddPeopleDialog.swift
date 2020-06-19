@@ -101,6 +101,7 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.imgProfilePic?.layoutIfNeeded()
         self.btnFemale?.setShadow()
         self.btnMale?.setShadow()
         self.btnTherapistGender?.setHighlighted(isHighlighted: false)
@@ -174,17 +175,13 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
             alert?.dismiss()
             self.btnTherapistGender.isEnabled = true
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (gender) in
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
 
             alert?.dismiss()
             self.selectedPeople.preferGender = gender

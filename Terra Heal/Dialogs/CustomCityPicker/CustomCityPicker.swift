@@ -64,6 +64,7 @@ class CustomCityPicker: ThemeBottomDialogView {
     override func layoutSubviews() {
         super.layoutSubviews()
         vwTopBar?.setRound(withBorderColor: .clear, andCornerRadious: 2.5, borderWidth: 1.0)
+        self.btnDone?.layoutIfNeeded()
         self.btnDone?.setHighlighted(isHighlighted: true)
         self.reloadTableDateToFitHeight(tableView: self.tableView)
         self.searchVw.setRound(withBorderColor: .clear, andCornerRadious: self.searchVw.bounds.height/2.0, borderWidth: 1.0)
@@ -140,8 +141,10 @@ extension CustomCityPicker : UITextFieldDelegate {
 
     private func setupSearchbar(searchBar: UITextField) {
         txtSearchBar.delegate = self
-        txtSearchBar.setFont(name: FontName.Regular, size: FontSize.label_10)
-        txtSearchBar.placeholder = "search country"
+        txtSearchBar.setFont(name: FontName.Regular, size: FontSize.label_14)
+        txtSearchBar.addTarget(self, action: #selector(searching(_:)), for: .editingChanged)
+        txtSearchBar.changePlaceHolder(color: UIColor.themePrimary)
+        txtSearchBar.placeholder = "PROFILE_TXT_SEARCH_CITY".localized()
         
     }
     @IBAction func searching(_ sender: UITextField) {

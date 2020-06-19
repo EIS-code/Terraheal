@@ -8,8 +8,7 @@ import UIKit
 
 
 struct CampaignsDetail {
-    var code: String = ""
-    var expiry: String = ""
+    var name: String = ""
     var description: String = ""
     var isSelected: Bool = false
 }
@@ -21,8 +20,8 @@ class CampaignsVC: MainVC {
 
 
     var arrForData: [CampaignsDetail] = [
-        CampaignsDetail.init(code:"9S75894",expiry: "expire in 6 days", description: "FLAT 30 % OFF"),
-        CampaignsDetail.init(code:"ABCDEF",expiry: "expire in 6 days", description: "FLAT 50 % OFF")
+        CampaignsDetail.init(name:"9S75894",description: "FLAT 30 % OFF"),
+        CampaignsDetail.init(name:"ABCDEF", description: "FLAT 50 % OFF")
 
     ]
     // MARK: Object lifecycle
@@ -76,7 +75,7 @@ class CampaignsVC: MainVC {
         
         self.setupTableView(tableView: self.tableView)
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
-        self.setTitle(title: "PROMOCODE_TITLE".localized())
+        self.setTitle(title: "CAMPAIGNS_TITLE".localized())
        self.btnBack.setBackButton()
     }
 
@@ -86,25 +85,21 @@ class CampaignsVC: MainVC {
         _ = self.navigationController?.popViewController(animated: true)
     }
 
-    func openTextFieldPicker() {
-        let alert: CustomTextFieldDialog = CustomTextFieldDialog.fromNib()
-        alert.initialize(title: "PROMOCODE_TITLE".localized(), data:"", buttonTitle: "PROMOCODE_BTN_ADD_NEW".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
-        alert.txtData.placeholder = "code"
+    func openCampaignDetail() {
+        let alert: CustomCampaignsDetailDialog = CustomCampaignsDetailDialog.fromNib()
+        alert.initialize(title: "CAMPAIGNS_DETAIL_DIALOG_TITLE".localized(), buttonTitle: "".localized(), cancelButtonTitle: "BTN_BACK".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
             alert?.dismiss()
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
 
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (description) in
             alert?.dismiss()
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
+
         }
     }
 
@@ -135,6 +130,7 @@ extension CampaignsVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDe
         let cell = tableView.dequeueReusableCell(withIdentifier: CampaignsTblCell.name, for: indexPath) as?  CampaignsTblCell
         cell?.layoutIfNeeded()
         cell?.setData(data: arrForData[indexPath.row])
+        cell?.btnDetails.addTarget(self, action: #selector(btnDetailTapped(button:)), for: .touchUpInside)
         cell?.layoutIfNeeded()
         return cell!
     }
@@ -143,8 +139,9 @@ extension CampaignsVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDe
         tableView.deselectRow(at: indexPath, animated: true)
 
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160
+
+    @objc func btnDetailTapped(button: UIButton) {
+        self.openCampaignDetail()
     }
     
 }

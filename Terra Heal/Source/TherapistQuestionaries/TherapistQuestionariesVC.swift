@@ -113,9 +113,7 @@ class TherapistQuestionariesVC: MainVC {
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (description) in
             alert?.dismiss()
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
             self.arrForTherapistQuestion[index].answer = description
             self.tableView.reloadData()
         }

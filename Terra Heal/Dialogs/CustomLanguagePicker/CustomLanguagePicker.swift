@@ -99,7 +99,7 @@ class CustomLanguagePicker: ThemeBottomDialogView {
     @IBAction func btnDoneTapped(_ sender: Any) {
         if selectedLanguage
             == PreferLanguage.NoPreference {
-            Common.showAlert(message: "VALIDATION_MSG_PLEASE_SELECT_DATE".localized())
+            Common.showAlert(message: "VALIDATION_MSG_PLEASE_SELECT_DATA".localized())
         } else {
             if self.onBtnDoneTapped != nil {
                 self.onBtnDoneTapped!(selectedLanguage);

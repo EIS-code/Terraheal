@@ -256,18 +256,18 @@
                                             </constraints>
                                         </tableView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kH-4g-V0g" userLabel="emptyHistoryView">
-                                            <rect key="frame" x="0.0" y="68.000000000000014" width="300" height="230.33333333333337"/>
+                                            <rect key="frame" x="0.0" y="68.000000000000014" width="300" height="170.33333333333337"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-no-referral-history" translatesAutoresizingMaskIntoConstraints="NO" id="BZ2-BZ-M34">
-                                                    <rect key="frame" x="75" y="20" width="150" height="150"/>
+                                                    <rect key="frame" x="105" y="20" width="90" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="BZ2-BZ-M34" secondAttribute="height" multiplier="1:1" id="fmV-K7-Qv3"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INR-7Z-hy0" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                                    <rect key="frame" x="129" y="190" width="42" height="20.333333333333343"/>
+                                                    <rect key="frame" x="129" y="130" width="42" height="20.333333333333343"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" name="theme_primary"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -275,7 +275,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="INR-7Z-hy0" secondAttribute="bottom" constant="20" id="AlZ-6C-FvD"/>
                                                 <constraint firstItem="INR-7Z-hy0" firstAttribute="centerX" secondItem="6kH-4g-V0g" secondAttribute="centerX" id="UnQ-3B-3sG"/>
-                                                <constraint firstItem="BZ2-BZ-M34" firstAttribute="width" secondItem="6kH-4g-V0g" secondAttribute="width" multiplier="0.5" id="dyi-UX-vff"/>
+                                                <constraint firstItem="BZ2-BZ-M34" firstAttribute="width" secondItem="6kH-4g-V0g" secondAttribute="width" multiplier="0.3" id="dyi-UX-vff"/>
                                                 <constraint firstItem="BZ2-BZ-M34" firstAttribute="centerX" secondItem="6kH-4g-V0g" secondAttribute="centerX" id="exa-qh-CXR"/>
                                                 <constraint firstItem="BZ2-BZ-M34" firstAttribute="top" secondItem="6kH-4g-V0g" secondAttribute="top" constant="20" id="g4i-UV-ka0"/>
                                                 <constraint firstItem="INR-7Z-hy0" firstAttribute="top" secondItem="BZ2-BZ-M34" secondAttribute="bottom" constant="20" id="lFB-Xm-aed"/>

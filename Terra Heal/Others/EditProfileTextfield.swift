@@ -30,6 +30,11 @@ import UIKit
             self.floatTheLabel()
         }
     }
+    @IBInspectable open var leftViewColor : UIColor = UIColor.themePrimaryBorder {
+        didSet{
+            self.floatTheLabel()
+        }
+    }
 
     @IBInspectable open var selectedLineColor : UIColor = UIColor.themeLightTextColor{
         didSet{
@@ -334,7 +339,7 @@ extension EditProfileTextfield {
             let paddingView : UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.getPaddingHeight() + 10, height: self.getPaddingHeight()))
             let imageView = UIImageView(frame: CGRect.init(x: 0, y: 0, width:  self.getPaddingHeight(), height:  self.getPaddingHeight()))
             imageView.contentMode = .scaleAspectFit
-            imageView.backgroundColor = UIColor.themePrimaryLightBackground
+            imageView.backgroundColor = self.leftViewColor
             imageView.image = image
             paddingView.addSubview(imageView)
             imageView.setRound()

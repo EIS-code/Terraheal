@@ -33,6 +33,7 @@ class MainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.btnLeft?.setBackButton()
+        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
     }
     
     override func viewDidLayoutSubviews() {

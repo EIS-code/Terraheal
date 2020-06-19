@@ -102,17 +102,13 @@ class PackVC: MainVC {
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
             alert?.dismiss()
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
             self.btnSubmit.isEnabled = true
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (description) in
             alert?.dismiss()
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
 
             self.arrForData.append(PackDetail.init(code:description,name: "TESt", description: "FLAT 50 % OFF"))
             self.tableView.reloadData()
