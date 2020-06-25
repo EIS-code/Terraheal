@@ -185,8 +185,8 @@ extension User {
             self.shopId = (dictionary["shop_id"] as? String) ??  ""
             self.shortDescription = (dictionary["short_description"] as? String) ??  ""
             self.telNumber = (dictionary["tel_number"] as? String) ??  ""
-            self.isMobileVerified = (dictionary["is_mobile_verified"] as? String) ??  ""
-            self.isEmailVerified = (dictionary["is_email_verified"] as? String) ??  ""
+            self.isMobileVerified = "0"// (dictionary["is_mobile_verified"] as? String) ??  ""
+            self.isEmailVerified = "0"//(dictionary["is_email_verified"] as? String) ??  ""
             self.updatedAt = (dictionary["updated_at"] as? String) ??  ""
         }
 

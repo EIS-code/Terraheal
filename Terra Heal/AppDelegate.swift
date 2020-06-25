@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.loadLaunchVC()
         IQKeyboardManager.shared().isEnabled = true
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true
-        IQKeyboardManager.shared().isEnableAutoToolbar = false
+        IQKeyboardManager.shared().isEnableAutoToolbar = true
         //self.setupFireBaseConfiguration()
         //self.loadWelcomeVC()
         return true

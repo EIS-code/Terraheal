@@ -71,8 +71,11 @@ class ProfileVC: MainVC {
 
     @IBOutlet weak var hVwContent: NSLayoutConstraint!
 
+
+
     var arrForMenu: [ProfileItemDetail] = [
         ProfileItemDetail(type: ProfileMenu.MyProfile,  image: ""),
+        ProfileItemDetail(type: ProfileMenu.Varification, image: ""),
         ProfileItemDetail(type: ProfileMenu.MyBookings, image: ""),
         ProfileItemDetail(type: ProfileMenu.MyPlaces, image: ""),
         ProfileItemDetail(type: ProfileMenu.MyMassagePreference, image: ""),
@@ -166,15 +169,12 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
         tableView.register(ProfileTblCell.nib()
             , forCellReuseIdentifier: ProfileTblCell.name)
         tableView.tableFooterView = UIView()
-
-
-
-
-
     }
+
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         updateHeaderView()
     }
+
     func updateHeaderView() {
 
         if self.scrVw.contentOffset.y < 0 {
@@ -209,7 +209,7 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
         case .MyProfile:
             Common.appDelegate.loadEditProfileVC(navigaionVC: self.navigationController)
         case .Varification:
-             Common.showAlert(message: "Under Construction")
+            Common.appDelegate.loadVerificationVC(navigaionVC: self.navigationController)
         case .MyBookings:
             Common.showAlert(message: "Under Construction")
         case .MyPlaces:

@@ -76,6 +76,7 @@ class VerifyContactVC: MainVC {
     func openVerification() {
         alertForVerification = VerificationAlert.fromNib()
         alertForVerification.initialize(message: "VERIFICATION_EMAIL_TITLE".localized(), data: Singleton.shared.user.email)
+        alertForVerification.setVerificationFor(type: .Phone)
         alertForVerification.show(animated: true)
         alertForVerification.onBtnDoneTapped = { [weak alertForVerification, weak self] (code:String) in
             alertForVerification?.dismiss()

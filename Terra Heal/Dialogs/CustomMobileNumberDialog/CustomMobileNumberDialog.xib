@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -16,60 +16,66 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomTextViewDialog" customModule="Terra_Heal" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomMobileNumberDialog" customModule="Terra_Heal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ZW-DU-hOd">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
-                    <rect key="frame" x="0.0" y="433" width="414" height="463"/>
+                    <rect key="frame" x="0.0" y="264.5" width="320" height="303.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe">
-                            <rect key="frame" x="20" y="56" width="374" height="377"/>
+                            <rect key="frame" x="20" y="56" width="280" height="217.5"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNR-iD-dqO">
-                                    <rect key="frame" x="167" y="0.0" width="40" height="5"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0MS-OB-pU6">
+                                    <rect key="frame" x="120" y="0.0" width="40" height="5"/>
                                     <color key="backgroundColor" name="theme_primary"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="5" id="a8a-TZ-7Di"/>
-                                        <constraint firstAttribute="width" constant="40" id="rpV-Iq-QrS"/>
+                                        <constraint firstAttribute="width" constant="40" id="2V3-Qo-eDC"/>
+                                        <constraint firstAttribute="height" constant="5" id="kSv-J6-vlk"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-4J-xGz" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="166" y="25" width="42" height="20.5"/>
+                                    <rect key="frame" x="119" y="25" width="42" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" name="theme_primary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qi1-qS-KMx" customClass="ThemeTextView" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="37.5" y="65.5" width="299" height="199.5"/>
-                                    <color key="backgroundColor" name="theme_primary_light_background"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8YR-YN-3Uz">
+                                    <rect key="frame" x="28" y="65.5" width="224" height="40"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SOX-Vt-MjR" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="40"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hfi-pA-asW" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="87" y="0.0" width="137" height="40"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="width" secondItem="Qi1-qS-KMx" secondAttribute="height" multiplier="300:200" id="j4q-as-CiT"/>
+                                        <constraint firstItem="SOX-Vt-MjR" firstAttribute="width" secondItem="8YR-YN-3Uz" secondAttribute="width" multiplier="0.3" id="4M7-Ek-D8c"/>
+                                        <constraint firstAttribute="width" secondItem="8YR-YN-3Uz" secondAttribute="height" multiplier="28:5" id="Rfm-EE-5X5"/>
                                     </constraints>
-                                    <color key="textColor" name="theme_primary"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter your text here"/>
-                                    </userDefinedRuntimeAttributes>
-                                </textView>
+                                </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="120.5" y="285" width="133" height="40"/>
+                                    <rect key="frame" x="73.5" y="125.5" width="133" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                     <state key="normal" title="Sign In">
                                         <color key="titleColor" name="theme_primary"/>
                                     </state>
                                     <connections>
-                                        <action selector="btnDoneTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="Qes-fj-kjZ"/>
+                                        <action selector="btnDoneTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="wh8-Sw-Wux"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="581-cI-fuY" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="160.5" y="345" width="53" height="32"/>
+                                    <rect key="frame" x="113.5" y="185.5" width="53" height="32"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <state key="normal" title="Sign In">
                                         <color key="titleColor" name="theme_primary"/>
@@ -80,7 +86,7 @@
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="Qi1-qS-KMx" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" multiplier="0.8" id="5Po-cG-8Zw"/>
+                                <constraint firstItem="8YR-YN-3Uz" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" multiplier="0.8" id="AXW-ef-E37"/>
                             </constraints>
                         </stackView>
                     </subviews>
@@ -110,8 +116,9 @@
                 <outlet property="btnDone" destination="W3s-UH-gbE" id="4jk-wN-Zhb"/>
                 <outlet property="dialogView" destination="Yaj-p7-IIT" id="Sjt-cS-gvV"/>
                 <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
-                <outlet property="txtDescription" destination="Qi1-qS-KMx" id="bhk-CN-T0M"/>
-                <outlet property="vwTopBar" destination="NNR-iD-dqO" id="Pa4-r2-FTM"/>
+                <outlet property="txtCountryPhoneCode" destination="SOX-Vt-MjR" id="iPN-KX-blv"/>
+                <outlet property="txtMobileNumber" destination="hfi-pA-asW" id="x4m-5q-njk"/>
+                <outlet property="vwTopBar" destination="0MS-OB-pU6" id="iDl-Hc-heQ"/>
             </connections>
             <point key="canvasLocation" x="132" y="131"/>
         </view>

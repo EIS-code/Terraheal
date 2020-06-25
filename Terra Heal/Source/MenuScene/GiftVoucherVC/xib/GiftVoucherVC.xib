@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GiftVoucherVC">
             <connections>
-                <outlet property="btnGetStarted" destination="FZm-nS-Vsb" id="Liq-ZI-pQ7"/>
+                <outlet property="btnGetStarted" destination="FZm-nS-Vsb" id="wgb-Hs-E8o"/>
                 <outlet property="btnLeft" destination="Tzt-ie-DPd" id="VKx-VJ-RAx"/>
                 <outlet property="hVwContent" destination="pWp-Cw-Yab" id="X2d-c4-KYf"/>
                 <outlet property="headerView" destination="1vj-Dw-czR" id="cSC-pd-oOA"/>
@@ -61,6 +61,9 @@
                                     <rect key="frame" x="104.66666666666669" y="306.33333333333337" width="126" height="38"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                     <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="btnGetStartedTapped:" destination="-1" eventType="touchUpInside" id="EUY-Vn-2T4"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
@@ -79,17 +82,17 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gr9-kt-5QC" userLabel="vwBg">
-                    <rect key="frame" x="0.0" y="595" width="375" height="261"/>
+                    <rect key="frame" x="0.0" y="190.66666666666669" width="375" height="665.33333333333326"/>
                     <color key="backgroundColor" name="theme_primary_light_background"/>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msw-Lg-la4" userLabel="scrView">
-                    <rect key="frame" x="0.0" y="615" width="375" height="163"/>
+                    <rect key="frame" x="0.0" y="210.66666666666669" width="375" height="567.33333333333326"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xd4-ev-sCy" userLabel="contentView">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="707"/>
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-f3-Mwd">
-                                    <rect key="frame" x="20" y="0.0" width="335" height="707"/>
+                                    <rect key="frame" x="20" y="20" width="335" height="687"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Gift Cards" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LJp-zj-MXA" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="44"/>
@@ -102,7 +105,7 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="aVT-f3-Mwd" firstAttribute="top" secondItem="Xd4-ev-sCy" secondAttribute="top" id="EJ8-lY-hXM"/>
+                                <constraint firstItem="aVT-f3-Mwd" firstAttribute="top" secondItem="Xd4-ev-sCy" secondAttribute="top" constant="20" id="707-AU-vMI"/>
                                 <constraint firstAttribute="trailing" secondItem="aVT-f3-Mwd" secondAttribute="trailing" constant="20" id="GOP-ea-I0V"/>
                                 <constraint firstAttribute="bottom" secondItem="aVT-f3-Mwd" secondAttribute="bottom" id="dBf-GE-Gbj"/>
                                 <constraint firstAttribute="height" constant="707" id="pWp-Cw-Yab"/>
@@ -144,9 +147,9 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Tzt-ie-DPd" firstAttribute="width" secondItem="Tzt-ie-DPd" secondAttribute="height" multiplier="1:1" id="0Oy-pa-mxD"/>
-                <constraint firstItem="Msw-Lg-la4" firstAttribute="top" secondItem="1vj-Dw-czR" secondAttribute="bottom" constant="20" id="61r-8k-P5V"/>
+                <constraint firstItem="Msw-Lg-la4" firstAttribute="top" secondItem="1vj-Dw-czR" secondAttribute="top" id="61r-8k-P5V"/>
                 <constraint firstItem="Gr9-kt-5QC" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" constant="44" id="68p-Iu-wDx"/>
+                <constraint firstItem="Gr9-kt-5QC" firstAttribute="top" secondItem="Xd4-ev-sCy" secondAttribute="top" id="J7a-RR-OKh"/>
                 <constraint firstItem="Tzt-ie-DPd" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="20" id="MOB-Xx-Jg6"/>
                 <constraint firstItem="Tzt-ie-DPd" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="Nzj-40-dlD"/>
                 <constraint firstItem="1vj-Dw-czR" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="PNw-gg-Iru"/>
@@ -155,12 +158,12 @@
                 <constraint firstItem="JnC-z0-4Np" firstAttribute="leading" secondItem="Tzt-ie-DPd" secondAttribute="trailing" constant="20" id="aWW-62-l3W"/>
                 <constraint firstItem="Gr9-kt-5QC" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" id="avJ-AN-aTP"/>
                 <constraint firstItem="Msw-Lg-la4" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" id="cx4-tP-rTI"/>
-                <constraint firstItem="Gr9-kt-5QC" firstAttribute="top" secondItem="Msw-Lg-la4" secondAttribute="top" constant="-20" id="dUp-aw-zHK"/>
                 <constraint firstItem="1vj-Dw-czR" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" id="gB8-Lh-7JA"/>
                 <constraint firstItem="JnC-z0-4Np" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="i3Y-zT-9Ah"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="Gr9-kt-5QC" secondAttribute="trailing" id="roy-zg-A68"/>
                 <constraint firstItem="Msw-Lg-la4" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="tIO-G9-3Wh"/>
                 <constraint firstItem="1vj-Dw-czR" firstAttribute="top" secondItem="Tzt-ie-DPd" secondAttribute="bottom" constant="20" id="u6F-HX-HeM"/>
+                <constraint firstItem="Gr9-kt-5QC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1vj-Dw-czR" secondAttribute="top" constant="-20" id="xcg-mB-uvR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
             <point key="canvasLocation" x="131" y="154"/>

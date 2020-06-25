@@ -23,16 +23,17 @@ class EditProfileVC: MainVC {
     var selectedCity:City? = nil
 
     var arrForProfile: [EditProfileTextFieldDetail] = [
-        EditProfileTextFieldDetail(vlaue: appSingleton.user.name, placeholder: "name", isMadatory: true, contentType: ""),
-        EditProfileTextFieldDetail(vlaue: appSingleton.user.name, placeholder: "surname", isMadatory: true, contentType: ""),
-        EditProfileTextFieldDetail(vlaue: appSingleton.user.gender, placeholder: "gender", isMadatory: true, contentType: ""),
-        EditProfileTextFieldDetail(vlaue: appSingleton.user.dob, placeholder: "Date Of Birth", isMadatory: true, contentType: ""),
-        EditProfileTextFieldDetail(vlaue: appSingleton.user.telNumber, placeholder: "Mobile", isMadatory: true, contentType: ""),
-        EditProfileTextFieldDetail(vlaue: appSingleton.user.telNumber, placeholder: "Emergency Contact", isMadatory: true, contentType: ""),
-        EditProfileTextFieldDetail(vlaue: "--", placeholder: "city", isMadatory: true, contentType: ""),
-        EditProfileTextFieldDetail(vlaue: "--", placeholder: "country", isMadatory: true, contentType: ""),
-        EditProfileTextFieldDetail(vlaue: "--", placeholder: "Nif", isMadatory: true, contentType: ""),
-        EditProfileTextFieldDetail(vlaue: "--", placeholder: "Id/ Password", isMadatory: true, contentType: "")
+        EditProfileTextFieldDetail(vlaue: appSingleton.user.name, placeholder: "name", isMadatory: true, contentType:TextFieldContentType.Other ),
+        EditProfileTextFieldDetail(vlaue: appSingleton.user.name, placeholder: "surname", isMadatory: true, contentType: TextFieldContentType.Other),
+        EditProfileTextFieldDetail(vlaue: appSingleton.user.gender, placeholder: "gender", isMadatory: true, contentType: TextFieldContentType.Gender),
+        EditProfileTextFieldDetail(vlaue: appSingleton.user.dob, placeholder: "Date Of Birth", isMadatory: true, contentType: TextFieldContentType.DOB),
+        EditProfileTextFieldDetail(vlaue: appSingleton.user.telNumber, placeholder: "Mobile", isMadatory: true, contentType: TextFieldContentType.Phone),
+        EditProfileTextFieldDetail(vlaue: appSingleton.user.telNumber, placeholder: "Emergency Contact", isMadatory: true, contentType: TextFieldContentType.EmergencyContact),
+        EditProfileTextFieldDetail(vlaue: appSingleton.user.email, placeholder: "Email", isMadatory: true, contentType: TextFieldContentType.Email),
+        EditProfileTextFieldDetail(vlaue: "--", placeholder: "city", isMadatory: true, contentType: TextFieldContentType.City),
+        EditProfileTextFieldDetail(vlaue: "--", placeholder: "country", isMadatory: true, contentType: TextFieldContentType.Country),
+        EditProfileTextFieldDetail(vlaue: "--", placeholder: "Nif", isMadatory: true, contentType: TextFieldContentType.Nif),
+        EditProfileTextFieldDetail(vlaue: "--", placeholder: "Id/ Password", isMadatory: true, contentType: TextFieldContentType.Other)
     ]
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -167,6 +168,17 @@ class EditProfileVC: MainVC {
         let alert: CustomTextFieldDialog = CustomTextFieldDialog.fromNib()
         alert.initialize(title: arrForProfile[index].placeholder, data: arrForProfile[index].vlaue, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
         alert.show(animated: true)
+        if arrForProfile[index].contentType == .Email {
+            alert.txtData.keyboardType = .emailAddress
+        } else if arrForProfile[index].contentType == .Nif {
+            alert.txtData.keyboardType = .numberPad
+        }
+        else {
+            alert.txtData.keyboardType = .default
+        }
+
+
+
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
             alert?.dismiss()
@@ -176,6 +188,23 @@ class EditProfileVC: MainVC {
             alert?.dismiss()
             guard let self = self else { return }
             self.arrForProfile[index].vlaue = description
+            self.collectionVwForProfile.reloadData()
+        }
+    }
+
+    func openMobileNumberDialog(index:Int = 0) {
+        let alert: CustomMobileNumberDialog = CustomMobileNumberDialog.fromNib()
+        alert.initialize(title: arrForProfile[index].placeholder,countryPhoneCode: "+91",phoneNumber: "9876543210", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            alert?.dismiss()
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (countryPhoneCode,mobileNumber) in
+            alert?.dismiss()
+            guard let self = self else { return }
+            self.arrForProfile[index].vlaue = countryPhoneCode + " " + mobileNumber
             self.collectionVwForProfile.reloadData()
         }
     }
@@ -296,16 +325,21 @@ extension EditProfileVC:  UICollectionViewDelegate, UICollectionViewDataSource, 
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        switch indexPath.row {
-        case 0,1,4,5,8,9 :
+        let data = arrForProfile[indexPath.row]
+        switch data.contentType {
+        case .Other :
             self.openTextFieldPicker(index: indexPath.row)
-        case 2:
+        case .Gender:
             self.openGenderPicker(index: indexPath.row)
-        case 3:
+        case .DOB:
             self.openDatePicker(index: indexPath.row)
-        case 6:
+        case .Phone:
+            self.openMobileNumberDialog(index: indexPath.row)
+        case .EmergencyContact:
+            self.openMobileNumberDialog(index: indexPath.row)
+        case .City:
             self.openCityPicker(index: indexPath.row, countryId: (selectedCountry?.id) ??  "")
-        case 7:
+        case .Country:
             self.openCountryPicker(index: indexPath.row)
         default:
             print("")
@@ -314,7 +348,9 @@ extension EditProfileVC:  UICollectionViewDelegate, UICollectionViewDataSource, 
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = collectionView.bounds.width
-        if indexPath.row == 6 || indexPath.row == 7  {
+
+        let data = arrForProfile[indexPath.row]
+        if data.contentType == .Country || data.contentType == .City  {
             return CGSize(width: (size / 2.0) - 10, height: size * 0.2)
         }
         return CGSize(width: size , height: size * 0.2)

@@ -44,11 +44,17 @@ class GiftVoucherVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        singleTap.cancelsTouchesInView = false
+        singleTap.numberOfTapsRequired = 1
+        scrVw.addGestureRecognizer(singleTap)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.headerView.layoutIfNeeded()
+        self.kTableHeaderHeight = self.headerView.frame.height
+        scrVw.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
 
     }
 
@@ -72,6 +78,22 @@ class GiftVoucherVC: MainVC {
         }
     }
 
+
+    @objc func handleTap(_ recognizer: UITapGestureRecognizer) {
+        var point = recognizer.location(in: self.scrVw)
+        point.y = point.y + self.kTableHeaderHeight + self.scrVw.frame.origin.y
+        var buttonFrame = self.btnGetStarted.superview!.convert(self.btnGetStarted.frame, to: self.view)
+        if (buttonFrame.contains(point)) {
+            self.btnGetStartedTapped(self.btnGetStarted)
+        }
+
+    }
+    @IBAction func btnGetStartedTapped(_ sender: Any) {
+        print("Get Started Tapped")
+    }
+
+
+
     private func initialViewSetup() {
         self.setTitle(title: "Gift Voucher")
         self.setupTableView(tableView: self.tableView)
@@ -93,6 +115,7 @@ class GiftVoucherVC: MainVC {
 
 extension GiftVoucherVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegate {
 
+
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
@@ -111,15 +134,15 @@ extension GiftVoucherVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
 
     func updateHeaderView() {
 
-       /* if self.scrVw.contentOffset.y < 0 {
+        if self.scrVw.contentOffset.y < 0 {
             let y = abs(self.scrVw.contentOffset.y)
             let transLation = y/kTableHeaderHeight
             headerView.alpha = transLation
             headerView.transform = CGAffineTransform.init(scaleX: transLation, y: transLation)
-            
+
         } else {
             headerView.alpha = 0.0
-        }*/
+        }
         
     }
 

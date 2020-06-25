@@ -106,23 +106,23 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gr9-kt-5QC" userLabel="vwBg">
-                    <rect key="frame" x="0.0" y="159" width="375" height="697"/>
+                    <rect key="frame" x="0.0" y="139" width="375" height="717"/>
                     <color key="backgroundColor" name="theme_primary"/>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msw-Lg-la4" userLabel="scrView">
-                    <rect key="frame" x="0.0" y="179" width="375" height="599"/>
+                    <rect key="frame" x="0.0" y="159" width="375" height="619"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xd4-ev-sCy" userLabel="contentView">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="707"/>
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-f3-Mwd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="707"/>
+                                    <rect key="frame" x="0.0" y="20" width="375" height="687"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="aVT-f3-Mwd" firstAttribute="top" secondItem="Xd4-ev-sCy" secondAttribute="top" id="EJ8-lY-hXM"/>
+                                <constraint firstItem="aVT-f3-Mwd" firstAttribute="top" secondItem="Xd4-ev-sCy" secondAttribute="top" constant="20" id="EJ8-lY-hXM"/>
                                 <constraint firstAttribute="trailing" secondItem="aVT-f3-Mwd" secondAttribute="trailing" id="GOP-ea-I0V"/>
                                 <constraint firstAttribute="bottom" secondItem="aVT-f3-Mwd" secondAttribute="bottom" id="dBf-GE-Gbj"/>
                                 <constraint firstAttribute="height" constant="707" id="pWp-Cw-Yab"/>
@@ -148,7 +148,7 @@
                 <constraint firstItem="rdH-Uz-r9U" firstAttribute="leading" secondItem="dk0-AN-Hja" secondAttribute="trailing" constant="20" id="0Br-aT-YW6"/>
                 <constraint firstItem="dk0-AN-Hja" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="20" id="1iZ-Cw-RkL"/>
                 <constraint firstItem="rdH-Uz-r9U" firstAttribute="bottom" secondItem="dk0-AN-Hja" secondAttribute="bottom" id="3vX-6Q-6aw"/>
-                <constraint firstItem="Msw-Lg-la4" firstAttribute="top" secondItem="1vj-Dw-czR" secondAttribute="top" constant="20" id="61r-8k-P5V"/>
+                <constraint firstItem="Msw-Lg-la4" firstAttribute="top" secondItem="1vj-Dw-czR" secondAttribute="top" id="61r-8k-P5V"/>
                 <constraint firstItem="Gr9-kt-5QC" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" constant="44" id="68p-Iu-wDx"/>
                 <constraint firstItem="1vj-Dw-czR" firstAttribute="top" secondItem="rdH-Uz-r9U" secondAttribute="bottom" constant="20" id="8F3-Ik-GFv"/>
                 <constraint firstItem="rdH-Uz-r9U" firstAttribute="top" secondItem="dk0-AN-Hja" secondAttribute="top" id="FSP-gL-Xnq"/>
@@ -160,10 +160,10 @@
                 <constraint firstItem="ABs-WT-4wl" firstAttribute="leading" secondItem="rdH-Uz-r9U" secondAttribute="trailing" constant="20" id="XXc-ZJ-vak"/>
                 <constraint firstItem="Gr9-kt-5QC" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" id="avJ-AN-aTP"/>
                 <constraint firstItem="Msw-Lg-la4" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" id="cx4-tP-rTI"/>
+                <constraint firstItem="Gr9-kt-5QC" firstAttribute="top" secondItem="Xd4-ev-sCy" secondAttribute="top" id="ebq-xT-xCj"/>
                 <constraint firstItem="1vj-Dw-czR" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" id="gB8-Lh-7JA"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="ABs-WT-4wl" secondAttribute="trailing" constant="20" id="gpq-kw-Vhw"/>
-                <constraint firstItem="Gr9-kt-5QC" firstAttribute="top" secondItem="aVT-f3-Mwd" secondAttribute="top" priority="999" constant="-20" id="i6F-Qp-o5N"/>
-                <constraint firstItem="Gr9-kt-5QC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1vj-Dw-czR" secondAttribute="top" id="jfL-kU-l8n"/>
+                <constraint firstItem="Gr9-kt-5QC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1vj-Dw-czR" secondAttribute="top" constant="-20" id="jfL-kU-l8n"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="Gr9-kt-5QC" secondAttribute="trailing" id="roy-zg-A68"/>
                 <constraint firstItem="Msw-Lg-la4" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="tIO-G9-3Wh"/>
             </constraints>

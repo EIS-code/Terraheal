@@ -170,6 +170,22 @@ extension AppDelegate {
         }
     }
 
+    func loadVerificationVC(navigaionVC:UINavigationController? = nil) {
+
+        if let nc = navigaionVC as? NC {
+            if let targetVC: VerificationVC =  nc.findVCs(ofType: VerificationVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+            } else {
+                let targetVC: VerificationVC = VerificationVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+            }
+        } else {
+            let targetVC: VerificationVC = VerificationVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
     func loadKycWelcomeVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: KycVC =  nc.findVCs(ofType: KycVC.self).first {

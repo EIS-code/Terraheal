@@ -20,10 +20,8 @@ class SettingSwitchTblCell: TableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-
         self.vwSwitch.allowChangeThumbWidth = false
         self.vwSwitch.itemTitles = ["Enable","Disable"]
         self.vwSwitch.changeBackgroundColor(UIColor.themeLightTextColor)

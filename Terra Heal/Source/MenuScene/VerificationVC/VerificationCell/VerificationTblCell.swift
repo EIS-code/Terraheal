@@ -6,27 +6,7 @@
 import UIKit
 import Foundation
 
-enum TextFieldContentType: Int {
-    case Other = 0
-    case Email = 1
-    case Phone = 2
-    case EmergencyContact = 3
-
-    case City = 4
-    case Country = 5
-    case DOB = 6
-    case Gender = 7
-    case Nif = 8
-
-}
-struct EditProfileTextFieldDetail {
-    var vlaue:String = ""
-    var placeholder:String = ""
-    var isMadatory:Bool = true
-    var contentType: TextFieldContentType = TextFieldContentType.Other
-}
-
-class EditProfileCell: CollectionCell {
+class VerificationTblCell: TableCell {
 
     @IBOutlet weak var vwEditText: UIView!
     @IBOutlet weak var tfForContent: EditProfileTextfield!
@@ -35,8 +15,9 @@ class EditProfileCell: CollectionCell {
     var data: EditProfileTextFieldDetail!
 
 
-    override class func awakeFromNib() {
+    override func awakeFromNib() {
         super.awakeFromNib()
+        
 
     }
 
@@ -103,4 +84,5 @@ class EditProfileCell: CollectionCell {
         }
     }
 }
+
 
