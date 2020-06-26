@@ -40,49 +40,9 @@ class VerificationTblCell: TableCell {
     override func layoutSubviews() {
             super.layoutSubviews()
     }
-    @IBAction func btnVerifyTapped(_ sender: Any) {
-        if self.data.contentType == .Email {
-            self.openEmailVerification()
-        } else if self.data.contentType == .Phone {
-            self.openMobileVerification()
-        }
+    
 
-    }
-
-    func openEmailVerification() {
-        let alertForVerification: VerificationAlert  = VerificationAlert.fromNib()
-        alertForVerification.initialize(message: "VERIFICATION_EMAIL_TITLE".localized(), data: Singleton.shared.user.email)
-        alertForVerification.show(animated: true)
-        alertForVerification.setVerificationFor(type: .Email)
-        alertForVerification.onBtnDoneTapped = { [weak alertForVerification, weak self] (code:String) in
-            alertForVerification?.dismiss()
-            Common.appDelegate.loadVerifiedContactVC()
-        }
-
-        alertForVerification.onBtnResendTapped = { [weak self] in
-
-        }
-        alertForVerification.onBtnCancelTapped = { [weak alertForVerification,  weak self] in
-            alertForVerification?.dismiss()
-        }
-    }
-    func openMobileVerification() {
-        let alertForVerification: VerificationAlert  = VerificationAlert.fromNib()
-        alertForVerification.initialize(message: "VERIFICATION_MOBILE_TITLE".localized(), data: Singleton.shared.user.telNumber)
-        alertForVerification.show(animated: true)
-        alertForVerification.setVerificationFor(type: .Phone)
-        alertForVerification.onBtnDoneTapped = { [weak alertForVerification, weak self] (code:String) in
-            alertForVerification?.dismiss()
-            Common.appDelegate.loadVerifiedContactVC()
-        }
-
-        alertForVerification.onBtnResendTapped = { [weak self] in
-
-        }
-        alertForVerification.onBtnCancelTapped = { [weak alertForVerification,  weak self] in
-            alertForVerification?.dismiss()
-        }
-    }
+    
 }
 
 

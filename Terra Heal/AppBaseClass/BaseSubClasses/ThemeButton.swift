@@ -12,13 +12,20 @@ class ThemeButton: UIButton {
     var isButtonHighlighted: Bool = false
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.tintColor = self.backgroundColor
 
     }
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        self.tintColor = self.backgroundColor
     }
 
-
+    override public var isHighlighted: Bool {
+           didSet {
+              /* To get rid of the tint background */
+            self.tintColor = self.backgroundColor
+           }
+       }
 
 
     func setUpRoundedButton() {
@@ -51,7 +58,7 @@ class ThemeButton: UIButton {
             self.setTitleColor(UIColor.themePrimary, for: .normal)
             self.setRound(withBorderColor: UIColor.themePrimary, andCornerRadious: self.frame.height/2.0, borderWidth: 1.0)
         }
-
+        self.tintColor = self.backgroundColor
     }
 
     func setHomeSelected(isSelected: Bool) {

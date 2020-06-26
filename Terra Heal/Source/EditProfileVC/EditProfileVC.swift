@@ -22,19 +22,7 @@ class EditProfileVC: MainVC {
     var selectedCountry:Country? = nil
     var selectedCity:City? = nil
 
-    var arrForProfile: [EditProfileTextFieldDetail] = [
-        EditProfileTextFieldDetail(vlaue: appSingleton.user.name, placeholder: "name", isMadatory: true, contentType:TextFieldContentType.Other ),
-        EditProfileTextFieldDetail(vlaue: appSingleton.user.name, placeholder: "surname", isMadatory: true, contentType: TextFieldContentType.Other),
-        EditProfileTextFieldDetail(vlaue: appSingleton.user.gender, placeholder: "gender", isMadatory: true, contentType: TextFieldContentType.Gender),
-        EditProfileTextFieldDetail(vlaue: appSingleton.user.dob, placeholder: "Date Of Birth", isMadatory: true, contentType: TextFieldContentType.DOB),
-        EditProfileTextFieldDetail(vlaue: appSingleton.user.telNumber, placeholder: "Mobile", isMadatory: true, contentType: TextFieldContentType.Phone),
-        EditProfileTextFieldDetail(vlaue: appSingleton.user.telNumber, placeholder: "Emergency Contact", isMadatory: true, contentType: TextFieldContentType.EmergencyContact),
-        EditProfileTextFieldDetail(vlaue: appSingleton.user.email, placeholder: "Email", isMadatory: true, contentType: TextFieldContentType.Email),
-        EditProfileTextFieldDetail(vlaue: "--", placeholder: "city", isMadatory: true, contentType: TextFieldContentType.City),
-        EditProfileTextFieldDetail(vlaue: "--", placeholder: "country", isMadatory: true, contentType: TextFieldContentType.Country),
-        EditProfileTextFieldDetail(vlaue: "--", placeholder: "Nif", isMadatory: true, contentType: TextFieldContentType.Nif),
-        EditProfileTextFieldDetail(vlaue: "--", placeholder: "Id/ Password", isMadatory: true, contentType: TextFieldContentType.Other)
-    ]
+    var arrForProfile: [EditProfileTextFieldDetail] = []
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -56,6 +44,7 @@ class EditProfileVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
+        self.setUserData()
         self.setupCollectionView(collectionView: collectionVwForProfile)
     }
 
@@ -86,13 +75,9 @@ class EditProfileVC: MainVC {
     }
 
     private func initialViewSetup() {
-        
-
         self.lblTitle?.text = "edit profile"//appSingleton.user.name
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.btnBack.setBackButton()
-
-        
     }
 
     @IBAction func btnBackTapped(_ sender: Any) {
@@ -136,9 +121,11 @@ class EditProfileVC: MainVC {
         }
         countryPickerAlert.onBtnDoneTapped = { [weak countryPickerAlert, weak self] (country) in
             countryPickerAlert?.dismiss()
-            self?.selectedCountry = country
-            self?.arrForProfile[7].vlaue = country.name
-            self?.collectionVwForProfile.reloadData()
+            guard let self = self else { return }
+            self.selectedCountry = country
+            var request: User.RequestProfile = User.RequestProfile()
+            request.country_id = country.id
+            self.wsUpdateProfile(request: request)
         }
     }
 
@@ -159,9 +146,11 @@ class EditProfileVC: MainVC {
         cityPickerAlert.onBtnDoneTapped = {
             [weak cityPickerAlert, weak self] (city) in
             cityPickerAlert?.dismiss()
-            self?.selectedCity = city
-            self?.arrForProfile[6].vlaue = city.name
-            self?.collectionVwForProfile.reloadData()
+               guard let self = self else { return }
+            self.selectedCity = city
+            var request: User.RequestProfile = User.RequestProfile()
+            request.city_id = city.id
+            self.wsUpdateProfile(request: request)
         }
     }
     func openTextFieldPicker(index:Int = 0) {
@@ -176,9 +165,6 @@ class EditProfileVC: MainVC {
         else {
             alert.txtData.keyboardType = .default
         }
-
-
-
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
             alert?.dismiss()
@@ -188,7 +174,22 @@ class EditProfileVC: MainVC {
             alert?.dismiss()
             guard let self = self else { return }
             self.arrForProfile[index].vlaue = description
-            self.collectionVwForProfile.reloadData()
+            var request: User.RequestProfile = User.RequestProfile()
+            switch self.arrForProfile[index].contentType
+            {
+            case .Name:
+                request.name = description
+            case .Surname:
+                request.surname = description
+            case .IdPassport:
+                 request.id_passport = description
+            case .Nif :
+                 request.nif = description
+            case .Email :
+                 request.email = description
+            default : print("Default")
+            }
+            self.wsUpdateProfile(request: request)
         }
     }
 
@@ -204,8 +205,19 @@ class EditProfileVC: MainVC {
             [weak alert, weak self] (countryPhoneCode,mobileNumber) in
             alert?.dismiss()
             guard let self = self else { return }
-            self.arrForProfile[index].vlaue = countryPhoneCode + " " + mobileNumber
-            self.collectionVwForProfile.reloadData()
+            var request: User.RequestProfile = User.RequestProfile()
+                       switch self.arrForProfile[index].contentType
+                       {
+                       case .EmergencyContact:
+                           request.emergency_tel_number = mobileNumber
+                           request.emergency_tel_number_code = countryPhoneCode
+                       case .Phone:
+                            request.tel_number = mobileNumber
+                            request.tel_number_code = countryPhoneCode
+                       default : print("Default")
+                       }
+                       self.wsUpdateProfile(request: request)
+            
         }
     }
 
@@ -222,8 +234,8 @@ class EditProfileVC: MainVC {
             [weak alert, weak self] (description) in
             alert?.dismiss()
             guard let self = self else { return }
-            self.arrForProfile[index].vlaue = description
-            self.collectionVwForProfile.reloadData()
+            var request: User.RequestProfile = User.RequestProfile()
+           
         }
     }
 
@@ -240,8 +252,10 @@ class EditProfileVC: MainVC {
             [weak datePickerAlert, weak self] (date) in
             datePickerAlert?.dismiss()
             print()
-            self?.arrForProfile[index].vlaue = Date.milliSecToDate(milliseconds: date, format: "dd MMM yyyy")
-            self?.collectionVwForProfile.reloadData()
+            guard let self = self else { return }
+            var request: User.RequestProfile = User.RequestProfile()
+            request.dob = date.toString()
+            self.wsUpdateProfile(request: request)
         }
     }
 
@@ -256,13 +270,36 @@ class EditProfileVC: MainVC {
         }
         genderPickerAlert.onBtnDoneTapped = {
             [weak genderPickerAlert, weak self] (gender) in
+            guard let self = self else { return }
             genderPickerAlert?.dismiss()
-            self?.arrForProfile[index].vlaue = gender.name()
-            self?.collectionVwForProfile.reloadData()
+            var request: User.RequestProfile = User.RequestProfile()
+            request.gender = gender.rawValue
+            self.wsUpdateProfile(request: request)
 
         }
     }
 
+    func setUserData() {
+        
+        self.arrForProfile = [
+            EditProfileTextFieldDetail(vlaue: appSingleton.user.name, paramName: "name", placeholder: "PROFILE_NAME".localized(), isMadatory: true, contentType:TextFieldContentType.Name ),
+            EditProfileTextFieldDetail(vlaue: appSingleton.user.surname, paramName: "surname", placeholder: "PROFILE_SURNAME".localized(), isMadatory: true, contentType: TextFieldContentType.Surname),
+            EditProfileTextFieldDetail(vlaue: appSingleton.user.getGenderName(), paramName: "gender", placeholder: "PROFILE_GENDER".localized()
+                , isMadatory: true, contentType: TextFieldContentType.Gender),
+            EditProfileTextFieldDetail(vlaue: appSingleton.user.dob, paramName: "dob", placeholder: "PROFILE_DOB".localized(), isMadatory: true, contentType: TextFieldContentType.DOB),
+            EditProfileTextFieldDetail(vlaue: appSingleton.user.telNumberCode + " " + appSingleton.user.telNumber,paramName: "",  placeholder: "PROFILE_MOBILE".localized(), isMadatory: true, contentType: TextFieldContentType.Phone),
+            EditProfileTextFieldDetail(vlaue: appSingleton.user.emergencyTelNumberCode + " " + appSingleton.user.emergencyTelNumber, placeholder: "PROFILE_EMERGENCY_CONTACT".localized(), isMadatory: true, contentType: TextFieldContentType.EmergencyContact),
+            EditProfileTextFieldDetail(vlaue: appSingleton.user.email,paramName: "email", placeholder: "PROFILE_EMAIL".localized(), isMadatory: true, contentType: TextFieldContentType.Email),
+            EditProfileTextFieldDetail(vlaue: appSingleton.user.city.name, paramName: "city_id", placeholder: "PROFILE_CITY".localized(), isMadatory: true, contentType: TextFieldContentType.City),
+            EditProfileTextFieldDetail(vlaue: appSingleton.user.country.name,paramName: "country_id", placeholder: "PROFILE_COUNTRY".localized(), isMadatory: true, contentType: TextFieldContentType.Country),
+            EditProfileTextFieldDetail(vlaue: appSingleton.user.nif,paramName: "nif", placeholder: "PROFILE_NIF".localized(), isMadatory: true, contentType: TextFieldContentType.Nif),
+            EditProfileTextFieldDetail(vlaue: appSingleton.user.idPassport, paramName: "id_passport", placeholder: "PROFILE_ID_PASSWORD".localized(), isMadatory: true, contentType: TextFieldContentType.IdPassport)
+        ]
+        self.selectedCity = appSingleton.user.city
+        self.selectedCountry = appSingleton.user.country
+        self.collectionVwForProfile.reloadData()
+        
+    }
 }
 
 
@@ -327,7 +364,7 @@ extension EditProfileVC:  UICollectionViewDelegate, UICollectionViewDataSource, 
         collectionView.deselectItem(at: indexPath, animated: true)
         let data = arrForProfile[indexPath.row]
         switch data.contentType {
-        case .Other :
+        case .Name,.Surname,.IdPassport,.Nif, .Email :
             self.openTextFieldPicker(index: indexPath.row)
         case .Gender:
             self.openGenderPicker(index: indexPath.row)
@@ -357,4 +394,22 @@ extension EditProfileVC:  UICollectionViewDelegate, UICollectionViewDataSource, 
     }
 
 
+}
+
+extension EditProfileVC {
+    func wsUpdateProfile(request: User.RequestProfile =  User.RequestProfile()) {
+            Loader.showLoading()
+            AppWebApi.profile(params: request) { (response) in
+                let model: ResponseModel = ResponseModel.init(fromDictionary: response.toDictionary())
+                Loader.hideLoading()
+                if ResponseModel.isSuccess(response: model, withSuccessToast: false, andErrorToast: true) {
+                    let user = response.data
+                    PreferenceHelper.shared.setUserId(user.id)
+                    appSingleton.user = user
+                    Singleton.saveInDb()
+                    self.setUserData()
+                    
+                }
+            }
+    }
 }

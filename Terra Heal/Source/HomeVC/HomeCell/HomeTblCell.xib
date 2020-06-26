@@ -44,6 +44,9 @@ loadTherapistKycInfoVC</string>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="Book Now"/>
+                                <connections>
+                                    <action selector="btnBookNowTaaped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="B69-j9-c66"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="theme_primary_light"/>

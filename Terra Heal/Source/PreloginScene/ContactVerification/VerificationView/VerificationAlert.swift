@@ -14,7 +14,7 @@ class VerificationAlert: ThemeBottomDialogView {
     @IBOutlet weak var lblMessage: ThemeLabel!
     @IBOutlet weak var lblMessageDetail: ThemeLabel!
     @IBOutlet weak var btnVerify: ThemeButton!
-    @IBOutlet weak var btnDone: ThemeButton!
+    
     @IBOutlet var otpTextFieldView: OTPFieldView!
     @IBOutlet weak var btnResend: UnderlineTextButton!
 
@@ -74,12 +74,12 @@ class VerificationAlert: ThemeBottomDialogView {
             guard let self = self else {
                 return
             }
-
             if index == 0 {
                 self.mobileTapped()
             } else {
                 self.emailTapped()
             }
+            
         }
     }
 
@@ -99,7 +99,7 @@ class VerificationAlert: ThemeBottomDialogView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.btnDone?.setUpRoundedButton()
+        
     }
 
 
@@ -173,8 +173,6 @@ extension VerificationAlert {
 
     private func wsVerifyEmail(isResend:Bool = false) {
         if appSingleton.user.isEmailVerified.toBool {
-            self.vwSwitch.selectItemAt(index: 0)
-            self.emailTapped()
             return;
         }
         Loader.showLoading()
@@ -209,8 +207,6 @@ extension VerificationAlert {
 
     private func wsVerifyPhone(isResend:Bool = false) {
         if appSingleton.user.isMobileVerified.toBool {
-            self.vwSwitch.selectItemAt(index: 1)
-            self.mobileTapped()
             return;
         }
         Loader.showLoading()

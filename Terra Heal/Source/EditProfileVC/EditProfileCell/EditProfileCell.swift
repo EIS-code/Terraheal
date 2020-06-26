@@ -7,23 +7,26 @@ import UIKit
 import Foundation
 
 enum TextFieldContentType: Int {
-    case Other = 0
-    case Email = 1
-    case Phone = 2
-    case EmergencyContact = 3
-
-    case City = 4
-    case Country = 5
-    case DOB = 6
-    case Gender = 7
-    case Nif = 8
+    
+    case Name = 0
+    case Surname = 1
+    case Gender = 2
+    case DOB = 3
+    case Phone = 4
+    case EmergencyContact = 5
+    case Email = 6
+    case City = 7
+    case Country = 8
+    case Nif = 9
+    case IdPassport = 10
 
 }
 struct EditProfileTextFieldDetail {
     var vlaue:String = ""
+    var paramName:String = ""
     var placeholder:String = ""
     var isMadatory:Bool = true
-    var contentType: TextFieldContentType = TextFieldContentType.Other
+    var contentType: TextFieldContentType = TextFieldContentType.Name
 }
 
 class EditProfileCell: CollectionCell {
@@ -75,7 +78,6 @@ class EditProfileCell: CollectionCell {
         alertForVerification.setVerificationFor(type: .Email)
         alertForVerification.onBtnDoneTapped = { [weak alertForVerification, weak self] (code:String) in
             alertForVerification?.dismiss()
-            Common.appDelegate.loadVerifiedContactVC()
         }
 
         alertForVerification.onBtnResendTapped = { [weak self] in
@@ -92,7 +94,6 @@ class EditProfileCell: CollectionCell {
         alertForVerification.setVerificationFor(type: .Phone)
         alertForVerification.onBtnDoneTapped = { [weak alertForVerification, weak self] (code:String) in
             alertForVerification?.dismiss()
-            Common.appDelegate.loadVerifiedContactVC()
         }
 
         alertForVerification.onBtnResendTapped = { [weak self] in

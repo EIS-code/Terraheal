@@ -60,9 +60,6 @@
                                 <state key="normal" title="Verify">
                                     <color key="titleColor" name="theme_primary"/>
                                 </state>
-                                <connections>
-                                    <action selector="btnVerifyTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jxW-yy-HVW"/>
-                                </connections>
                             </button>
                         </subviews>
                         <constraints>

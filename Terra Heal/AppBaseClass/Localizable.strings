@@ -43,6 +43,19 @@
 "REGISTER_LBL_CONNECT_VIA" = " or connect via ";
 "PROFILE_TXT_SEARCH_COUNTRY" = "search country";
 "PROFILE_TXT_SEARCH_CITY" = "search city";
+
+//MARK:  Profile Screen
+"PROFILE_NAME"  = "Name";
+"PROFILE_SURNAME"  = "Surname";
+"PROFILE_GENDER"  = "Gender";
+"PROFILE_DOB"  = "Date Of Birth";
+"PROFILE_MOBILE"  = "Mobile";
+"PROFILE_EMERGENCY_CONTACT"  = "Emergency Contact";
+"PROFILE_EMAIL"  = "Email";
+"PROFILE_CITY"  = "City";
+"PROFILE_COUNTRY"  = "Country";
+"PROFILE_NIF"  = "Nif";
+"PROFILE_ID_PASSWORD"  = "Id./ Password";
 //MARK: TOUCH ID  SCREEN
 "TOUCH_ID_LBL_TITLE" = "Welcome Back";
 "TOUCH_ID_LBL_MESSAGE" = "You need to identify\nto sign back in";
@@ -245,7 +258,18 @@
 "HOW_IT_WORK_SHORT_DESCRIPTION" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 "HOW_IT_WORK_LONG_DESCRIPTION" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget.";
 
+//MARK: Event Booking Success
 
+"EVENT_BOOKING_TITLE" = "request Successful";
+"EVENT_BOOKING_MESSAGE" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut";
+"EVENT_BOOKING_BTN_HOME" = "Home";
+"HOME_ITEM_TYPE_INFO" = "info";
+
+"HOME_ITEM_TYPE_HOTEL_OR_ROOM" = "Our closest centers to you send therapist for home / hotel visits. Check the menu to make your choice as each center offer different massages and therapies. You will pay the same price + mobile service fee extra.";
+
+//MAKR:  Service Map VC
+"BTN_BOOK_HERE" = "Book Here";
+"BTN_CHECK_SERVICE" = "Check Service";
 
 //MARK: -
 //MARK: Common Strings
@@ -256,6 +280,7 @@
 "BTN_SAVE" = "Save";
 "BTN_PROCEED" = "Proceed";
 "BTN_BACK" = "Back";
+"BTN_SEND" = "Send";
 "BTN_CANCEL" = "Cancel";
 "BTN_SKIP" = "skip";
 "BTN_APPLY" =  "Apply";

@@ -113,6 +113,8 @@ extension VerificationVC: UITableViewDelegate,UITableViewDataSource, UIScrollVie
             let cell = tableView.dequeueReusableCell(withIdentifier: VerificationTblCell.name, for: indexPath) as?  VerificationTblCell
             cell?.layoutIfNeeded()
             cell?.setData(data: arrForProfile[indexPath.row])
+            cell?.btnVerify.tag = indexPath.row
+            cell?.btnVerify.addTarget(self, action: #selector(btnVerifyTapped(_:)), for: .touchUpInside)
             cell?.layoutIfNeeded()
             return cell!
 
@@ -120,6 +122,50 @@ extension VerificationVC: UITableViewDelegate,UITableViewDataSource, UIScrollVie
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    @IBAction func btnVerifyTapped(_ sender: UIButton) {
+            let data = self.arrForProfile[sender.tag]
+           if data.contentType == .Email {
+               self.openEmailVerification()
+           } else if data.contentType == .Phone {
+               self.openMobileVerification()
+           }
+       }
+    
+    func openEmailVerification() {
+        let alertForVerification: VerificationAlert  = VerificationAlert.fromNib()
+        alertForVerification.initialize(message: "VERIFICATION_EMAIL_TITLE".localized(), data: Singleton.shared.user.email)
+        alertForVerification.show(animated: true)
+        alertForVerification.setVerificationFor(type: .Email)
+        alertForVerification.onBtnDoneTapped = { [weak alertForVerification, weak self] (code:String) in
+            alertForVerification?.dismiss()
+            Common.appDelegate.loadVerifiedContactVC()
+        }
+
+        alertForVerification.onBtnResendTapped = { [weak self] in
+
+        }
+        alertForVerification.onBtnCancelTapped = { [weak alertForVerification,  weak self] in
+            alertForVerification?.dismiss()
+        }
+    }
+    func openMobileVerification() {
+        let alertForVerification: VerificationAlert  = VerificationAlert.fromNib()
+        alertForVerification.initialize(message: "VERIFICATION_MOBILE_TITLE".localized(), data: Singleton.shared.user.telNumber)
+        alertForVerification.show(animated: true)
+        alertForVerification.setVerificationFor(type: .Phone)
+        alertForVerification.onBtnDoneTapped = { [weak alertForVerification, weak self] (code:String) in
+            alertForVerification?.dismiss()
+            Common.appDelegate.loadVerifiedContactVC()
+        }
+
+        alertForVerification.onBtnResendTapped = { [weak self] in
+
+        }
+        alertForVerification.onBtnCancelTapped = { [weak alertForVerification,  weak self] in
+            alertForVerification?.dismiss()
+        }
     }
     
 }

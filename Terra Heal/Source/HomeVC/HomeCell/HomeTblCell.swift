@@ -7,10 +7,16 @@
 //
 
 import UIKit
+enum HomeItemType: Int {
+    case MassageCenter = 0
+    case HotelOrRoom = 1
+    case EventAndCorporate = 2
+}
 struct HomeItemDetail {
     var title: String = ""
     var buttonTitle: String = ""
     var image: String = ""
+    var homeItemtype: HomeItemType = .MassageCenter
 }
 class HomeTblCell: TableCell {
 
@@ -18,7 +24,7 @@ class HomeTblCell: TableCell {
     @IBOutlet weak var ivHome: UIImageView!
     @IBOutlet weak var btnAction: ThemeButton!
     @IBOutlet weak var vwBg: UIView!
-
+    var data: HomeItemDetail!
 
 
     override func awakeFromNib() {
@@ -33,6 +39,7 @@ class HomeTblCell: TableCell {
 
     func setData(data: HomeItemDetail ) {
         self.lblName.text = data.title
+        self.data = data
         self.btnAction.setTitle(data.buttonTitle, for: .normal)
 
     }
@@ -49,5 +56,51 @@ class HomeTblCell: TableCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    @IBAction func btnBookNowTaaped(_ sender: Any) {
+        switch self.data.homeItemtype {
+        case .MassageCenter:
+            self.openEventDialog()
+            print("")
+        case .HotelOrRoom:
+            self.openInfoDialog()
+            print("")
+        case .EventAndCorporate:
+            self.openEventDialog()
+             print("")
+        default:
+            print("")
+        }
+        
+    }
+    
+    func openEventDialog() {
+         let alert: CustomAddNewEventDialog = CustomAddNewEventDialog.fromNib()
+               alert.initialize(title:"events and corporate Booking", buttonTitle: "BTN_SEND".localized(), cancelButtonTitle: "BTN_BACK".localized())
+               alert.show(animated: true)
+               alert.onBtnCancelTapped = {
+                   [weak alert, weak self] in
+                   alert?.dismiss()
+               }
+                alert.onBtnDoneTapped = {
+                    [weak alert, weak self] (event) in
+                    alert?.dismiss()
+                    print(event)
+                    Common.appDelegate.loadEventBookingCompleteVC()
+                }
+    }
+    
+    func openInfoDialog() {
+        let alert: CustomInformationDialog = CustomInformationDialog.fromNib()
+        alert.initialize(title: "HOME_ITEM_TYPE_INFO".localized(), data: "HOME_ITEM_TYPE_HOTEL_OR_ROOM".localized(), buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+                [weak alert, weak self] in
+                alert?.dismiss()
+        }
+        alert.onBtnDoneTapped = {
+                [weak alert, weak self]  in
+                alert?.dismiss()
+        }
     }
 }

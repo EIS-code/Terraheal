@@ -19,16 +19,23 @@ enum User {
         var oauth_uid: String = ""
         var oauth_provider: String = LoginBy.Manual
 
+        
         var name: String? = nil
+        var surname: String? = nil
+        var id_passport: String? = nil
+        var nif: String? = nil
         var email: String? = nil
         var phone: String? = nil
         var dob: String? = nil
+        var country_id:String? = nil
+        var city_id:String? = nil
         var password: String? = nil
         var gender: String? = nil
+        var emergency_tel_number: String? = nil
+        var emergency_tel_number_code: String? = nil
         var tel_number: String? = nil
-        var hobbies: String? = nil
-        var short_description: String? = nil
-        var paid_percentage: String? = nil
+        var tel_number_code: String? = nil
+        
    }
 
     struct RequestLogout: Codable {
@@ -151,112 +158,203 @@ extension User {
     }
 
     class UserData: Codable {
+        var address : String = ""
+        var appVersion : String = ""
+        var avatar : String = ""
+        var avatarOriginal : String = ""
+        var city : City = City(fromDictionary: [:])
+        var cityId : String = ""
+        var country : Country = Country(fromDictionary: [:])
+        var countryId : String = ""
         var createdAt : String = ""
+        var deviceToken : String = ""
+        var deviceType : String = ""
         var dob : String = ""
         var email : String = ""
+        var emergencyTelNumber : String = ""
+        var emergencyTelNumberCode : String = ""
         var gender : String = ""
-        var hobbies : String = ""
         var id : String = ""
+        var idPassport : String = ""
         var isDeleted : String = ""
-        var isFreelancer : String = ""
+        var isDocumentVerified : String = ""
+        var isEmailVerified : String = ""
+        var isMobileVerified : String = ""
         var name : String = ""
-        var paidPercentage : String = ""
-        var password : String = ""
+        var nif : String = ""
+        var oauthProvider : String = ""
+        var oauthUid : String = ""
+        var profilePhoto : String = ""
+        var referralCode : String = ""
         var shopId : String = ""
-        var shortDescription : String = ""
+        var surname : String = ""
         var telNumber : String = ""
+        var telNumberCode : String = ""
         var updatedAt : String = ""
-        var isMobileVerified: String = ""
-        var isEmailVerified: String = ""
 
-
+        
         init(fromDictionary dictionary: [String:Any]) {
-            self.createdAt = (dictionary["created_at"] as? String) ??  ""
-            self.dob = (dictionary["dob"] as? String) ??  ""
-            self.email = (dictionary["email"] as? String) ??  ""
-            self.gender = (dictionary["gender"] as? String) ??  ""
-            self.hobbies = (dictionary["hobbies"] as? String) ??  ""
-            self.id = (dictionary["id"] as? String) ??  ""
-            self.isDeleted = (dictionary["is_deleted"] as? String) ??  ""
-            self.isFreelancer = (dictionary["is_freelancer"] as? String) ??  ""
-            self.name = (dictionary["name"] as? String) ??  ""
-            self.paidPercentage = (dictionary["paid_percentage"] as? String) ??  ""
-            self.password = (dictionary["password"] as? String) ??  ""
-            self.shopId = (dictionary["shop_id"] as? String) ??  ""
-            self.shortDescription = (dictionary["short_description"] as? String) ??  ""
-            self.telNumber = (dictionary["tel_number"] as? String) ??  ""
-            self.isMobileVerified = "0"// (dictionary["is_mobile_verified"] as? String) ??  ""
-            self.isEmailVerified = "0"//(dictionary["is_email_verified"] as? String) ??  ""
-            self.updatedAt = (dictionary["updated_at"] as? String) ??  ""
+            self.address = (dictionary["address"] as? String) ?? ""
+            self.appVersion = (dictionary["app_version"] as? String) ?? ""
+            self.avatar = (dictionary["avatar"] as? String) ?? ""
+            self.avatarOriginal = (dictionary["avatar_original"] as? String) ?? ""
+            self.countryId = (dictionary["country_id"] as? String) ?? ""
+            self.createdAt = (dictionary["created_at"] as? String) ?? ""
+            self.deviceToken = (dictionary["device_token"] as? String) ?? ""
+            self.deviceType = (dictionary["device_type"] as? String) ?? ""
+            self.dob = (dictionary["dob"] as? String) ?? ""
+            self.email = (dictionary["email"] as? String) ?? ""
+            self.emergencyTelNumber = (dictionary["emergency_tel_number"] as? String) ?? ""
+            self.emergencyTelNumberCode = (dictionary["emergency_tel_number_code"] as? String) ?? ""
+            self.gender = (dictionary["gender"] as? String) ?? ""
+            self.id = (dictionary["id"] as? String) ?? ""
+            self.idPassport = (dictionary["id_passport"] as? String) ?? ""
+            self.isDeleted = (dictionary["is_deleted"] as? String) ?? ""
+            self.isDocumentVerified = (dictionary["is_document_verified"] as? String) ?? ""
+            self.isEmailVerified = (dictionary["is_email_verified"] as? String) ?? ""
+            self.isMobileVerified = (dictionary["is_mobile_verified"] as? String) ?? ""
+            self.name = (dictionary["name"] as? String) ?? ""
+            self.nif = (dictionary["nif"] as? String) ?? ""
+            self.oauthProvider = (dictionary["oauth_provider"] as? String) ?? ""
+            self.oauthUid = (dictionary["oauth_uid"] as? String) ?? ""
+            self.profilePhoto = (dictionary["profile_photo"] as? String) ?? ""
+            self.referralCode = (dictionary["referral_code"] as? String) ?? ""
+            self.shopId = (dictionary["shop_id"] as? String) ?? ""
+            self.surname = (dictionary["surname"] as? String) ?? ""
+            self.telNumber = (dictionary["tel_number"] as? String) ?? ""
+            self.telNumberCode = (dictionary["tel_number_code"] as? String) ?? ""
+            self.updatedAt = (dictionary["updated_at"] as? String) ?? ""
+            self.cityId = (dictionary["city_id"] as? String) ?? ""
+            
+            if let cityData = dictionary["city"] as? [String:Any]{
+                city = City(fromDictionary: cityData)
+            }
+            
+            if let countryData = dictionary["country"] as? [String:Any]{
+                country = Country(fromDictionary: countryData)
+            }
+            
         }
 
         @objc required init(coder aDecoder: NSCoder) {
+            self.address = (aDecoder.decodeObject(forKey: "address") as? String) ?? ""
+            self.appVersion = (aDecoder.decodeObject(forKey: "app_version") as? String) ?? ""
+            self.avatar = (aDecoder.decodeObject(forKey: "avatar") as? String) ?? ""
+            self.avatarOriginal = (aDecoder.decodeObject(forKey: "avatar_original") as? String) ?? ""
+            self.city = (aDecoder.decodeObject(forKey: "city") as? City) ?? City(fromDictionary: [:])
+            self.cityId = (aDecoder.decodeObject(forKey: "city_id") as? String) ?? ""
+            self.country = (aDecoder.decodeObject(forKey: "country") as? Country) ?? Country(fromDictionary: [:])
+            self.countryId = (aDecoder.decodeObject(forKey: "country_id") as? String) ?? ""
             self.createdAt = (aDecoder.decodeObject(forKey: "created_at") as? String) ?? ""
+            self.deviceToken = (aDecoder.decodeObject(forKey: "device_token") as? String) ?? ""
+            self.deviceType = (aDecoder.decodeObject(forKey: "device_type") as? String) ?? ""
             self.dob = (aDecoder.decodeObject(forKey: "dob") as? String) ?? ""
             self.email = (aDecoder.decodeObject(forKey: "email") as? String) ?? ""
+            self.emergencyTelNumber = (aDecoder.decodeObject(forKey: "emergency_tel_number") as? String) ?? ""
+            self.emergencyTelNumberCode = (aDecoder.decodeObject(forKey: "emergency_tel_number_code") as? String) ?? ""
             self.gender = (aDecoder.decodeObject(forKey: "gender") as? String) ?? ""
-            self.hobbies = (aDecoder.decodeObject(forKey: "hobbies") as? String) ?? ""
             self.id = (aDecoder.decodeObject(forKey: "id") as? String) ?? ""
+            self.idPassport = (aDecoder.decodeObject(forKey: "id_passport") as? String) ?? ""
             self.isDeleted = (aDecoder.decodeObject(forKey: "is_deleted") as? String) ?? ""
-            self.isFreelancer = (aDecoder.decodeObject(forKey: "is_freelancer") as? String) ?? ""
-            self.name = (aDecoder.decodeObject(forKey: "name") as? String) ?? ""
-            self.paidPercentage = (aDecoder.decodeObject(forKey: "paid_percentage") as? String) ?? ""
-            self.password = (aDecoder.decodeObject(forKey: "password") as? String) ?? ""
-            self.shopId = (aDecoder.decodeObject(forKey: "shop_id") as? String) ?? ""
-            self.shortDescription = (aDecoder.decodeObject(forKey: "short_description") as? String) ?? ""
-            self.telNumber = (aDecoder.decodeObject(forKey: "tel_number") as? String) ?? ""
-            self.updatedAt = (aDecoder.decodeObject(forKey: "updated_at") as? String) ?? ""
-            self.isMobileVerified = (aDecoder.decodeObject(forKey: "is_mobile_verified") as? String) ?? ""
+            self.isDocumentVerified = (aDecoder.decodeObject(forKey: "is_document_verified") as? String) ?? ""
             self.isEmailVerified = (aDecoder.decodeObject(forKey: "is_email_verified") as? String) ?? ""
+            self.isMobileVerified = (aDecoder.decodeObject(forKey: "is_mobile_verified") as? String) ?? ""
+            self.name = (aDecoder.decodeObject(forKey: "name") as? String) ?? ""
+            self.nif = (aDecoder.decodeObject(forKey: "nif") as? String) ?? ""
+            self.oauthProvider = (aDecoder.decodeObject(forKey: "oauth_provider") as? String) ?? ""
+            self.oauthUid = (aDecoder.decodeObject(forKey: "oauth_uid") as? String) ?? ""
+            self.profilePhoto = (aDecoder.decodeObject(forKey: "profile_photo") as? String) ?? ""
+            self.referralCode = (aDecoder.decodeObject(forKey: "referral_code") as? String) ?? ""
+            self.shopId = (aDecoder.decodeObject(forKey: "shop_id") as? String) ?? ""
+            self.surname = (aDecoder.decodeObject(forKey: "surname") as? String) ?? ""
+            self.telNumber = (aDecoder.decodeObject(forKey: "tel_number") as? String) ?? ""
+            self.telNumberCode = (aDecoder.decodeObject(forKey: "tel_number_code") as? String) ?? ""
+            self.updatedAt = (aDecoder.decodeObject(forKey: "updated_at") as? String) ?? ""
 
         }
 
         @objc func encode(with aCoder: NSCoder) {
-            aCoder.encode(createdAt, forKey: "created_at")
-            aCoder.encode(dob, forKey: "dob")
-            aCoder.encode(email, forKey: "email")
-            aCoder.encode(gender, forKey: "gender")
-            aCoder.encode(hobbies, forKey: "hobbies")
-            aCoder.encode(id, forKey: "id")
-            aCoder.encode(isDeleted, forKey: "is_deleted")
-            aCoder.encode(isFreelancer, forKey: "is_freelancer")
-            aCoder.encode(name, forKey: "name")
-            aCoder.encode(paidPercentage, forKey: "paid_percentage")
-            aCoder.encode(password, forKey: "password")
-            aCoder.encode(shopId, forKey: "shop_id")
-            aCoder.encode(shortDescription, forKey: "short_description")
-            aCoder.encode(telNumber, forKey: "tel_number")
-            aCoder.encode(updatedAt, forKey: "updated_at")
-            aCoder.encode(isMobileVerified, forKey: "is_mobile_verified")
-            aCoder.encode(isEmailVerified, forKey: "is_email_verified")
-
+                aCoder.encode(address, forKey: "address")
+                aCoder.encode(appVersion, forKey: "app_version")
+                aCoder.encode(avatar, forKey: "avatar")
+                aCoder.encode(avatarOriginal, forKey: "avatar_original")
+                aCoder.encode(city, forKey: "city")
+                aCoder.encode(cityId, forKey: "city_id")
+                aCoder.encode(country, forKey: "country")
+                aCoder.encode(countryId, forKey: "country_id")
+                aCoder.encode(createdAt, forKey: "created_at")
+                aCoder.encode(deviceToken, forKey: "device_token")
+                aCoder.encode(deviceType, forKey: "device_type")
+                aCoder.encode(dob, forKey: "dob")
+                aCoder.encode(email, forKey: "email")
+                aCoder.encode(emergencyTelNumber, forKey: "emergency_tel_number")
+                aCoder.encode(emergencyTelNumberCode, forKey: "emergency_tel_number_code")
+                aCoder.encode(gender, forKey: "gender")
+                aCoder.encode(id, forKey: "id")
+                aCoder.encode(idPassport, forKey: "id_passport")
+                aCoder.encode(isDeleted, forKey: "is_deleted")
+                aCoder.encode(isDocumentVerified, forKey: "is_document_verified")
+                aCoder.encode(isEmailVerified, forKey: "is_email_verified")
+                aCoder.encode(isMobileVerified, forKey: "is_mobile_verified")
+                aCoder.encode(name, forKey: "name")
+                aCoder.encode(nif, forKey: "nif")
+                aCoder.encode(oauthProvider, forKey: "oauth_provider")
+                aCoder.encode(oauthUid, forKey: "oauth_uid")
+                aCoder.encode(profilePhoto, forKey: "profile_photo")
+                aCoder.encode(referralCode, forKey: "referral_code")
+                aCoder.encode(shopId, forKey: "shop_id")
+                aCoder.encode(surname, forKey: "surname")
+                aCoder.encode(telNumber, forKey: "tel_number")
+                aCoder.encode(telNumberCode, forKey: "tel_number_code")
+                aCoder.encode(updatedAt, forKey: "updated_at")
         }
 
         func toDictionary() -> [String:Any] {
-            var dictionary = [String:Any]()
-            dictionary["created_at"] = createdAt
-            dictionary["dob"] = dob
-            dictionary["email"] = email
-            dictionary["gender"] = gender
-            dictionary["hobbies"] = hobbies
-            dictionary["id"] = id
-            dictionary["is_deleted"] = isDeleted
-            dictionary["is_freelancer"] = isFreelancer
-            dictionary["name"] = name
-            dictionary["paid_percentage"] = paidPercentage
-            dictionary["password"] = password
-            dictionary["shop_id"] = shopId
-            dictionary["short_description"] = shortDescription
-            dictionary["tel_number"] = telNumber
-            dictionary["updated_at"] = updatedAt
-            dictionary["is_mobile_verified"] = isMobileVerified
-            dictionary["is_email_verified"] = isEmailVerified
-            return dictionary
+                var dictionary = [String:Any]()
+                dictionary["address"] = address
+                dictionary["app_version"] = appVersion
+                dictionary["avatar"] = avatar
+                dictionary["avatar_original"] = avatarOriginal
+                dictionary["city"] = city.toDictionary()
+                dictionary["city_id"] = cityId
+                dictionary["country"] = country.toDictionary()
+                dictionary["country_id"] = countryId
+                dictionary["created_at"] = createdAt
+                dictionary["device_token"] = deviceToken
+                dictionary["device_type"] = deviceType
+                dictionary["dob"] = dob
+                dictionary["email"] = email
+                dictionary["emergency_tel_number"] = emergencyTelNumber
+                dictionary["emergency_tel_number_code"] = emergencyTelNumberCode
+                dictionary["gender"] = gender
+                dictionary["id"] = id
+                dictionary["id_passport"] = idPassport
+                dictionary["is_deleted"] = isDeleted
+                dictionary["is_document_verified"] = isDocumentVerified
+                dictionary["is_email_verified"] = isEmailVerified
+                dictionary["is_mobile_verified"] = isMobileVerified
+                dictionary["name"] = name
+                dictionary["nif"] = nif
+                dictionary["oauth_provider"] = oauthProvider
+                dictionary["oauth_uid"] = oauthUid
+                dictionary["profile_photo"] = profilePhoto
+                dictionary["referral_code"] = referralCode
+                dictionary["shop_id"] = shopId
+                dictionary["surname"] = surname
+                dictionary["tel_number"] = telNumber
+                dictionary["tel_number_code"] = telNumberCode
+                dictionary["updated_at"] = updatedAt
+                return dictionary
         }
 
         func isContactVerified() -> Bool {
             return self.isMobileVerified.toBool && self.isEmailVerified.toBool
         }
+        
+        func getGenderName() -> String {
+            return Gender.init(rawValue: self.gender)?.name() ?? Gender.Male.name()
+        }
+        
     }
 
 }

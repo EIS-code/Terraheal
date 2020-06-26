@@ -146,9 +146,51 @@ class CustomSegmentedControl: UISegmentedControl {
     }
 }
 
-class PaddedImageView: UIImageView {
-    override var alignmentRectInsets: UIEdgeInsets {
-        return UIEdgeInsets(top: -5, left: -5, bottom: -5, right: -5)
+@IBDesignable class PaddedImageView: UIImageView {
+    @IBInspectable open var padding: CGFloat = 0 {
+        didSet{
+            self.setPadding(padding: self.padding)
+        }
     }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setPadding(padding: self.padding)
+    }
+    
+    override init(image: UIImage?) {
+        super.init(image: nil)
+        self.setPadding(padding: self.padding)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.setPadding(padding: self.padding)
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.setPadding(padding: self.padding)
+    }
+    func setPadding(padding:CGFloat) {
+            self.image = self.image?.imageWithInsets(insetDimen: padding)
+    }
+}
+
+extension UIImage {
+    func imageWithInsets(insetDimen: CGFloat) -> UIImage {
+        return imageWithInset(insets: UIEdgeInsets(top: insetDimen, left: insetDimen, bottom: insetDimen, right: insetDimen))
+    }
+    
+    func imageWithInset(insets: UIEdgeInsets) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(
+            CGSize(width: self.size.width + insets.left + insets.right,
+                   height: self.size.height + insets.top + insets.bottom), false, self.scale)
+        let origin = CGPoint(x: insets.left, y: insets.top)
+        self.draw(at: origin)
+        let imageWithInsets = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return imageWithInsets!
+    }
+    
 }
 

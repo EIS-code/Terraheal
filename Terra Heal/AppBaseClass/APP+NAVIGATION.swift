@@ -578,6 +578,34 @@ extension AppDelegate {
         }
     }
 
+    func loadEventBookingCompleteVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: EventBookCompleteVC =  nc.findVCs(ofType: EventBookCompleteVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+            } else {
+                let targetVC: EventBookCompleteVC = EventBookCompleteVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+            }
+        } else {
+            let targetVC: EventBookCompleteVC = EventBookCompleteVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
 
+    func loadServiceMapVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: ServiceMapVC =  nc.findVCs(ofType: ServiceMapVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+            } else {
+                let targetVC: ServiceMapVC = ServiceMapVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+            }
+        } else {
+            let targetVC: ServiceMapVC = ServiceMapVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
 }
 

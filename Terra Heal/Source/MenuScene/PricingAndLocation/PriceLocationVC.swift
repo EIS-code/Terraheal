@@ -85,7 +85,7 @@ class PriceLocationVC: MainVC {
     }
 
     @IBAction func btnSubmitTapped(_ sender: Any) {
-        self.openNewAddressDialog()
+        self.openLocationServiceDialog()
     }
 
     func updateUI()  {
@@ -100,8 +100,22 @@ class PriceLocationVC: MainVC {
         }
         self.tableView.reloadData()
     }
-    func openNewAddressDialog(index:Int = -1) {
-
+    func openLocationServiceDialog() {
+        let locationServiceDialog: CustomLocationServiceDialog  = CustomLocationServiceDialog.fromNib()
+        locationServiceDialog.initialize(title: selectedData!.name, buttonTitle: "Proceed", cancelButtonTitle: "Cancel")
+        
+        
+        locationServiceDialog.show(animated: true)
+        locationServiceDialog.onBtnCancelTapped = {
+            [weak locationServiceDialog, weak self] in
+            locationServiceDialog?.dismiss()
+        }
+        locationServiceDialog.onBtnDoneTapped = {
+            [weak locationServiceDialog, weak self]  in
+            locationServiceDialog?.dismiss()
+        }
+        
+       
     }
 
 

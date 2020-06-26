@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0348DC1C24A5B7A50095CCD3 /* ServiceMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0348DC1924A5B7A50095CCD3 /* ServiceMapVC.swift */; };
+		0348DC1D24A5B7A50095CCD3 /* ServiceMapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0348DC1B24A5B7A50095CCD3 /* ServiceMapVC.xib */; };
+		0348DC2124A5CCDB0095CCD3 /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0348DC1F24A5CCDB0095CCD3 /* ServiceCell.xib */; };
+		0348DC2224A5CCDB0095CCD3 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0348DC2024A5CCDB0095CCD3 /* ServiceCell.swift */; };
+		035FAFC424A5FF26008EF8B0 /* CustomServiceHourSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035FAFC024A5FF25008EF8B0 /* CustomServiceHourSelectionCell.xib */; };
+		035FAFC524A5FF26008EF8B0 /* CustomServiceHourSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035FAFC124A5FF25008EF8B0 /* CustomServiceHourSelectionCell.swift */; };
+		035FAFC624A5FF26008EF8B0 /* CustomServiceHourSelectionDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035FAFC224A5FF25008EF8B0 /* CustomServiceHourSelectionDialog.xib */; };
+		035FAFC724A5FF26008EF8B0 /* CustomServiceHourSelectionDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035FAFC324A5FF25008EF8B0 /* CustomServiceHourSelectionDialog.swift */; };
+		03728B8124A4C53E00C983BC /* LocationServiceCltCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03728B7D24A4C53E00C983BC /* LocationServiceCltCell.swift */; };
+		03728B8224A4C53E00C983BC /* LocationServiceCltCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03728B7E24A4C53E00C983BC /* LocationServiceCltCell.xib */; };
+		03728B8324A4C53E00C983BC /* CustomLocationServiceDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03728B7F24A4C53E00C983BC /* CustomLocationServiceDialog.xib */; };
+		03728B8424A4C53E00C983BC /* CustomLocationServiceDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03728B8024A4C53E00C983BC /* CustomLocationServiceDialog.swift */; };
+		03728B9224A4E02F00C983BC /* EventBookCompleteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03728B8D24A4E02F00C983BC /* EventBookCompleteVC.xib */; };
+		03728B9324A4E02F00C983BC /* EventBookCompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03728B8E24A4E02F00C983BC /* EventBookCompleteVC.swift */; };
+		03728B9424A4E02F00C983BC /* CustomAddNewEventDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03728B9024A4E02F00C983BC /* CustomAddNewEventDialog.xib */; };
+		03728B9524A4E02F00C983BC /* CustomAddNewEventDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03728B9124A4E02F00C983BC /* CustomAddNewEventDialog.swift */; };
 		55164A22FACE35DC8CBD8350 /* Pods_Terra_Heal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897AF53337FB6FB8116C0500 /* Pods_Terra_Heal.framework */; };
 		632DB046248F8FDD00B65B46 /* CustomTextViewDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632DB044248F8FDD00B65B46 /* CustomTextViewDialog.swift */; };
 		632DB047248F8FDD00B65B46 /* CustomTextViewDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 632DB045248F8FDD00B65B46 /* CustomTextViewDialog.xib */; };
@@ -262,6 +278,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0348DC1924A5B7A50095CCD3 /* ServiceMapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceMapVC.swift; sourceTree = "<group>"; };
+		0348DC1B24A5B7A50095CCD3 /* ServiceMapVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceMapVC.xib; sourceTree = "<group>"; };
+		0348DC1F24A5CCDB0095CCD3 /* ServiceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
+		0348DC2024A5CCDB0095CCD3 /* ServiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
+		035FAFC024A5FF25008EF8B0 /* CustomServiceHourSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomServiceHourSelectionCell.xib; sourceTree = "<group>"; };
+		035FAFC124A5FF25008EF8B0 /* CustomServiceHourSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomServiceHourSelectionCell.swift; sourceTree = "<group>"; };
+		035FAFC224A5FF25008EF8B0 /* CustomServiceHourSelectionDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomServiceHourSelectionDialog.xib; sourceTree = "<group>"; };
+		035FAFC324A5FF25008EF8B0 /* CustomServiceHourSelectionDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomServiceHourSelectionDialog.swift; sourceTree = "<group>"; };
+		03728B7D24A4C53E00C983BC /* LocationServiceCltCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServiceCltCell.swift; sourceTree = "<group>"; };
+		03728B7E24A4C53E00C983BC /* LocationServiceCltCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationServiceCltCell.xib; sourceTree = "<group>"; };
+		03728B7F24A4C53E00C983BC /* CustomLocationServiceDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomLocationServiceDialog.xib; sourceTree = "<group>"; };
+		03728B8024A4C53E00C983BC /* CustomLocationServiceDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLocationServiceDialog.swift; sourceTree = "<group>"; };
+		03728B8D24A4E02F00C983BC /* EventBookCompleteVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventBookCompleteVC.xib; sourceTree = "<group>"; };
+		03728B8E24A4E02F00C983BC /* EventBookCompleteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventBookCompleteVC.swift; sourceTree = "<group>"; };
+		03728B9024A4E02F00C983BC /* CustomAddNewEventDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomAddNewEventDialog.xib; sourceTree = "<group>"; };
+		03728B9124A4E02F00C983BC /* CustomAddNewEventDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAddNewEventDialog.swift; sourceTree = "<group>"; };
 		168AB6908BA3531B68A95E2E /* Pods-Terra Heal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Terra Heal.debug.xcconfig"; path = "Target Support Files/Pods-Terra Heal/Pods-Terra Heal.debug.xcconfig"; sourceTree = "<group>"; };
 		4B09919DBC145176C38FE81D /* Pods-Terra Heal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Terra Heal.release.xcconfig"; path = "Target Support Files/Pods-Terra Heal/Pods-Terra Heal.release.xcconfig"; sourceTree = "<group>"; };
 		632DB044248F8FDD00B65B46 /* CustomTextViewDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextViewDialog.swift; sourceTree = "<group>"; };
@@ -535,6 +567,107 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0348DC1824A5B7A50095CCD3 /* ServiceMapVC */ = {
+			isa = PBXGroup;
+			children = (
+				035FAFBE24A5FF25008EF8B0 /* CustomServiceHourSelectionDialog */,
+				0348DC1E24A5CCDB0095CCD3 /* ServiceCell */,
+				0348DC1924A5B7A50095CCD3 /* ServiceMapVC.swift */,
+				0348DC1A24A5B7A50095CCD3 /* xib */,
+			);
+			path = ServiceMapVC;
+			sourceTree = "<group>";
+		};
+		0348DC1A24A5B7A50095CCD3 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				0348DC1B24A5B7A50095CCD3 /* ServiceMapVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		0348DC1E24A5CCDB0095CCD3 /* ServiceCell */ = {
+			isa = PBXGroup;
+			children = (
+				0348DC1F24A5CCDB0095CCD3 /* ServiceCell.xib */,
+				0348DC2024A5CCDB0095CCD3 /* ServiceCell.swift */,
+			);
+			path = ServiceCell;
+			sourceTree = "<group>";
+		};
+		035FAFBE24A5FF25008EF8B0 /* CustomServiceHourSelectionDialog */ = {
+			isa = PBXGroup;
+			children = (
+				035FAFBF24A5FF25008EF8B0 /* CustomServiceHourSelectionCell */,
+				035FAFC224A5FF25008EF8B0 /* CustomServiceHourSelectionDialog.xib */,
+				035FAFC324A5FF25008EF8B0 /* CustomServiceHourSelectionDialog.swift */,
+			);
+			path = CustomServiceHourSelectionDialog;
+			sourceTree = "<group>";
+		};
+		035FAFBF24A5FF25008EF8B0 /* CustomServiceHourSelectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				035FAFC024A5FF25008EF8B0 /* CustomServiceHourSelectionCell.xib */,
+				035FAFC124A5FF25008EF8B0 /* CustomServiceHourSelectionCell.swift */,
+			);
+			path = CustomServiceHourSelectionCell;
+			sourceTree = "<group>";
+		};
+		03728B7B24A4C53E00C983BC /* CustomLocationServiceDialog */ = {
+			isa = PBXGroup;
+			children = (
+				03728B7C24A4C53E00C983BC /* LocationServiceCltCell */,
+				03728B7F24A4C53E00C983BC /* CustomLocationServiceDialog.xib */,
+				03728B8024A4C53E00C983BC /* CustomLocationServiceDialog.swift */,
+			);
+			path = CustomLocationServiceDialog;
+			sourceTree = "<group>";
+		};
+		03728B7C24A4C53E00C983BC /* LocationServiceCltCell */ = {
+			isa = PBXGroup;
+			children = (
+				03728B7D24A4C53E00C983BC /* LocationServiceCltCell.swift */,
+				03728B7E24A4C53E00C983BC /* LocationServiceCltCell.xib */,
+			);
+			path = LocationServiceCltCell;
+			sourceTree = "<group>";
+		};
+		03728B8A24A4E02F00C983BC /* EventBooking */ = {
+			isa = PBXGroup;
+			children = (
+				03728B8B24A4E02F00C983BC /* EventBookCompleteVC */,
+				03728B8F24A4E02F00C983BC /* CustomAddNewEventDialog */,
+			);
+			path = EventBooking;
+			sourceTree = "<group>";
+		};
+		03728B8B24A4E02F00C983BC /* EventBookCompleteVC */ = {
+			isa = PBXGroup;
+			children = (
+				03728B8C24A4E02F00C983BC /* xib */,
+				03728B8E24A4E02F00C983BC /* EventBookCompleteVC.swift */,
+			);
+			path = EventBookCompleteVC;
+			sourceTree = "<group>";
+		};
+		03728B8C24A4E02F00C983BC /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				03728B8D24A4E02F00C983BC /* EventBookCompleteVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		03728B8F24A4E02F00C983BC /* CustomAddNewEventDialog */ = {
+			isa = PBXGroup;
+			children = (
+				03728B9024A4E02F00C983BC /* CustomAddNewEventDialog.xib */,
+				03728B9124A4E02F00C983BC /* CustomAddNewEventDialog.swift */,
+			);
+			path = CustomAddNewEventDialog;
+			sourceTree = "<group>";
+		};
 		632DB043248F8FDD00B65B46 /* CustomTextViewDialog */ = {
 			isa = PBXGroup;
 			children = (
@@ -872,6 +1005,7 @@
 		634397D1245BE6DF009BCA1F /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				0348DC1824A5B7A50095CCD3 /* ServiceMapVC */,
 				63B96741249B62180015DDCA /* PreloginScene */,
 				635675BC2499FA2E006F5511 /* MenuScene */,
 				6349A11D2498C1F000E608C8 /* ManagePeople */,
@@ -1146,6 +1280,7 @@
 		635675E8249A1D02006F5511 /* PricingAndLocation */ = {
 			isa = PBXGroup;
 			children = (
+				03728B7B24A4C53E00C983BC /* CustomLocationServiceDialog */,
 				635675E9249A1D02006F5511 /* xib */,
 				635675EB249A1D02006F5511 /* PriceLocationCell */,
 				635675EE249A1D02006F5511 /* PriceLocationVC.swift */,
@@ -1447,6 +1582,7 @@
 		63838EF1247CDD9B007F1154 /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
+				03728B8A24A4E02F00C983BC /* EventBooking */,
 				637A7C512487E667005D3819 /* HomeCell */,
 				63838EF2247CDD9B007F1154 /* xib */,
 				63838EF4247CDD9B007F1154 /* HomeVC.swift */,
@@ -2173,12 +2309,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				637A7C552487E668005D3819 /* HomeTblCell.xib in Resources */,
+				03728B8324A4C53E00C983BC /* CustomLocationServiceDialog.xib in Resources */,
 				6358A089248F8968004F2CA8 /* CustomPreferGenderPicker.xib in Resources */,
 				6349A1162498979B00E608C8 /* CustomAddNewAddressDialog.xib in Resources */,
 				639C69A424A218E2005FACDB /* CustomCountyPhoneCodePickerCell.xib in Resources */,
 				6348E20224723B2B00C15975 /* Nunito-Bold.ttf in Resources */,
 				6348E20324723B2B00C15975 /* Nunito-Light.ttf in Resources */,
 				637E3A7224990687002DE275 /* CustomPhotoPicker.xib in Resources */,
+				035FAFC424A5FF26008EF8B0 /* CustomServiceHourSelectionCell.xib in Resources */,
 				63E94A7D24920887000F375E /* EditProfileCell.xib in Resources */,
 				63681AC62497AD8B0087CC36 /* MyPlaceVC.xib in Resources */,
 				63AFB5E624893A7D007566D4 /* ProfileVC.xib in Resources */,
@@ -2188,7 +2326,9 @@
 				639C699724A21229005FACDB /* CustomMobileNumberDialog.xib in Resources */,
 				637FC48824A37F63009695F2 /* VerificationTblCell.xib in Resources */,
 				6349A12A2498C1F000E608C8 /* ManagePeopleTblCell.xib in Resources */,
+				0348DC2124A5CCDB0095CCD3 /* ServiceCell.xib in Resources */,
 				63B967BD249B63BF0015DDCA /* ReferAndEarnTblCell.xib in Resources */,
+				03728B8224A4C53E00C983BC /* LocationServiceCltCell.xib in Resources */,
 				63672D3F2491148B00A12D91 /* CustomCurrencyPicker.xib in Resources */,
 				635DE3B6248E44900030DC69 /* EditProfileVC.xib in Resources */,
 				63B967A4249B62190015DDCA /* TutorialVC.xib in Resources */,
@@ -2198,6 +2338,8 @@
 				6348E20524723B2B00C15975 /* Nunito-SemiBold.ttf in Resources */,
 				638CAC34249CB71D001A4135 /* GiftVoucherTblCell.xib in Resources */,
 				63B967D4249BAC720015DDCA /* CampaignsVC.xib in Resources */,
+				0348DC1D24A5B7A50095CCD3 /* ServiceMapVC.xib in Resources */,
+				03728B9424A4E02F00C983BC /* CustomAddNewEventDialog.xib in Resources */,
 				635675F0249A1D03006F5511 /* PriceLocationTblCell.xib in Resources */,
 				63B96796249B62190015DDCA /* ScanSelfieVC.xib in Resources */,
 				63EA7D192493B5880027F9D3 /* CustomCityPickerCell.xib in Resources */,
@@ -2239,6 +2381,7 @@
 				638CAC25249C995B001A4135 /* CustomFaqDialog.xib in Resources */,
 				63681ABE24979C990087CC36 /* TherapistQuestionariesTblCell.xib in Resources */,
 				63B9678A249B62190015DDCA /* CompleteIdentityVerificationVC.xib in Resources */,
+				035FAFC624A5FF26008EF8B0 /* CustomServiceHourSelectionDialog.xib in Resources */,
 				63672D4924911D3200A12D91 /* CustomChangePasswordDialog.xib in Resources */,
 				63EA7D0F2493ADC40027F9D3 /* CustomTextFieldDialog.xib in Resources */,
 				639C69A624A21AD4005FACDB /* country_list.json in Resources */,
@@ -2268,6 +2411,7 @@
 				63B967CA249BA3890015DDCA /* CustomHistoryFilterPickerCell.xib in Resources */,
 				6349A1272498C1F000E608C8 /* ManagePeopleVC.xib in Resources */,
 				63439FEF2488F1BB000E2F4C /* CustomDatePicker.xib in Resources */,
+				03728B9224A4E02F00C983BC /* EventBookCompleteVC.xib in Resources */,
 				633B711F245FC8A100CF490D /* WelcomeVC.xib in Resources */,
 				634398B4245BEAB2009BCA1F /* Assets.xcassets in Resources */,
 				635675D92499FA2E006F5511 /* SideVC.xib in Resources */,
@@ -2364,6 +2508,7 @@
 				63567600249A41DE006F5511 /* PromoCodeVC.swift in Sources */,
 				63B967A3249B62190015DDCA /* VerificationAlert.swift in Sources */,
 				638CAC1A249C8199001A4135 /* HelpTblCell.swift in Sources */,
+				03728B9524A4E02F00C983BC /* CustomAddNewEventDialog.swift in Sources */,
 				6349A1172498979B00E608C8 /* CustomAddNewAddressDialog.swift in Sources */,
 				635675F4249A1D69006F5511 /* PricingLocationWebService.swift in Sources */,
 				63B9678B249B62190015DDCA /* CompleteIdentityVerificationVC.swift in Sources */,
@@ -2397,6 +2542,7 @@
 				63432F8A248F5D37006BA322 /* ThemeBottomDialog.swift in Sources */,
 				632DB094248FA5CC00B65B46 /* ACFloatingTextfield.swift in Sources */,
 				637FC48524A37F28009695F2 /* VerificationTblCell.swift in Sources */,
+				0348DC2224A5CCDB0095CCD3 /* ServiceCell.swift in Sources */,
 				639C699824A21229005FACDB /* CustomMobileNumberDialog.swift in Sources */,
 				63672D4824911D3200A12D91 /* CustomChangePasswordDialog.swift in Sources */,
 				632DB0A0248FA5CC00B65B46 /* UITextField + Extension.swift in Sources */,
@@ -2418,6 +2564,7 @@
 				6350C855248A0186002E13F2 /* CustomGenderPicker.swift in Sources */,
 				63AFB5E724893A7D007566D4 /* ProfileTblCell.swift in Sources */,
 				6349A12C2498C1F000E608C8 /* ManagePeopleVC.swift in Sources */,
+				03728B8424A4C53E00C983BC /* CustomLocationServiceDialog.swift in Sources */,
 				63B967BC249B63BF0015DDCA /* ReferAndEarnTblCell.swift in Sources */,
 				635675E52499FA2E006F5511 /* NotificationTblFooter.swift in Sources */,
 				632DB095248FA5CC00B65B46 /* RatingView.swift in Sources */,
@@ -2428,8 +2575,10 @@
 				63439FF02488F1BB000E2F4C /* CustomDatePicker.swift in Sources */,
 				633C1AC224923D3B009EB6AE /* CountriesWebService.swift in Sources */,
 				63EA7D182493B5880027F9D3 /* CustomCityPickerCell.swift in Sources */,
+				035FAFC524A5FF26008EF8B0 /* CustomServiceHourSelectionCell.swift in Sources */,
 				635675DA2499FA2E006F5511 /* MenuCellHorizontal.swift in Sources */,
 				63EA7D1A2493B5880027F9D3 /* CustomCityPicker.swift in Sources */,
+				03728B9324A4E02F00C983BC /* EventBookCompleteVC.swift in Sources */,
 				63B96795249B62190015DDCA /* ScanPassportVC.swift in Sources */,
 				63B967D5249BAC720015DDCA /* CampaignsVC.swift in Sources */,
 				63672D2E2491072900A12D91 /* CustomLanguagePickerCell.swift in Sources */,
@@ -2438,8 +2587,10 @@
 				632DB09C248FA5CC00B65B46 /* JDSubclasses + UIControl.swift in Sources */,
 				637E3A7124990687002DE275 /* CustomPhotoPicker.swift in Sources */,
 				635675E32499FA2E006F5511 /* NotificationTblCell.swift in Sources */,
+				03728B8124A4C53E00C983BC /* LocationServiceCltCell.swift in Sources */,
 				63B96791249B62190015DDCA /* KycInfoVC.swift in Sources */,
 				63439848245BE6DF009BCA1F /* AppDelegate.swift in Sources */,
+				035FAFC724A5FF26008EF8B0 /* CustomServiceHourSelectionDialog.swift in Sources */,
 				63E94A7C24920887000F375E /* EditProfileCell.swift in Sources */,
 				632DB098248FA5CC00B65B46 /* NSObject + Extension.swift in Sources */,
 				633C1ACC24924483009EB6AE /* CustomCountyPicker.swift in Sources */,
@@ -2459,6 +2610,7 @@
 				63672D2C2491072900A12D91 /* CustomLanguagePicker.swift in Sources */,
 				639C69A224A2184F005FACDB /* CustomCountyPhoneCodePickerCell.swift in Sources */,
 				63681AD32497B1730087CC36 /* MyAddressTblCell.swift in Sources */,
+				0348DC1C24A5B7A50095CCD3 /* ServiceMapVC.swift in Sources */,
 				633B7120245FC8A100CF490D /* WelcomeVC.swift in Sources */,
 				632DB09F248FA5CC00B65B46 /* UIViewController + Extension.swift in Sources */,
 				6343985E245BE6DF009BCA1F /* Main.swift in Sources */,
@@ -2529,7 +2681,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2583,7 +2735,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
