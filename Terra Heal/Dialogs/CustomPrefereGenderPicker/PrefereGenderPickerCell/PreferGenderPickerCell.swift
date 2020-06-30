@@ -22,7 +22,7 @@ class PreferGenderPickerCell: TableCell {
       
     }
 
-    func setData(data: GenderDetail ) {
+    func setData(data: PreferenceOption ) {
         self.lblName.text = data.name
         if data.isSelected {
             self.vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)

@@ -10,7 +10,7 @@ struct PeopleDetail{
     var image: String = ""
     var age: String = ""
     var gender: Gender = Gender.Male
-    var preferGender:  PreferGender = .NoPreference
+    var preferGender:  PreferenceOption = PreferenceOption.init(fromDictionary: [:])
     var isSelected: Bool = false
 }
 

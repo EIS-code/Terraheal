@@ -171,7 +171,7 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
     func openPreferGenderPicker() {
         let alert: CustomPreferGenderPicker = CustomPreferGenderPicker.fromNib()
         alert.initialize(title: MassagePreferenceMenu.GenderPreference.name(), buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
-        alert.select(gender: appSingleton.myMassagePreference.prefereGender)
+       // alert.setDataSource(data: <#T##MassagePreferenceDetail#>)
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in

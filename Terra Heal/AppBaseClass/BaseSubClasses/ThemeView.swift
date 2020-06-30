@@ -172,7 +172,7 @@ class CustomSegmentedControl: UISegmentedControl {
         self.setPadding(padding: self.padding)
     }
     func setPadding(padding:CGFloat) {
-            self.image = self.image?.imageWithInsets(insetDimen: padding)
+          //  self.image = self.image?.imageWithInsets(insetDimen: padding)
     }
 }
 

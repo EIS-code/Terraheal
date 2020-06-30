@@ -211,7 +211,7 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
         case .Varification:
             Common.appDelegate.loadVerificationVC(navigaionVC: self.navigationController)
         case .MyBookings:
-            Common.showAlert(message: "Under Construction")
+            Common.appDelegate.loadMyBookingVC(navigaionVC: self.navigationController)
         case .MyPlaces:
             Common.appDelegate.loadMyPlacesVC(navigaionVC: self.navigationController)
         case .MyMassagePreference:

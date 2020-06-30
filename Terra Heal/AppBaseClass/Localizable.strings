@@ -265,11 +265,21 @@
 "EVENT_BOOKING_BTN_HOME" = "Home";
 "HOME_ITEM_TYPE_INFO" = "info";
 
+"MY_BOOKING_TITLE" = "my bookings";
+
+
 "HOME_ITEM_TYPE_HOTEL_OR_ROOM" = "Our closest centers to you send therapist for home / hotel visits. Check the menu to make your choice as each center offer different massages and therapies. You will pay the same price + mobile service fee extra.";
 
 //MAKR:  Service Map VC
 "BTN_BOOK_HERE" = "Book Here";
 "BTN_CHECK_SERVICE" = "Check Service";
+
+//MARK: Photo Dialog
+"PHOTO_DIALOG_FROM_TITLE" = "upload a photo ";
+"PHOTO_DIALOG_FROM_CAMERA" = "take a photo ";
+"PHOTO_DIALOG_FROM_GALLARY" = "load from gallary";
+"CAMERA_LBL_MESSAGE" = "Hold your phone at eye level so that your selfie is similar to your passport photo";
+
 
 //MARK: -
 //MARK: Common Strings

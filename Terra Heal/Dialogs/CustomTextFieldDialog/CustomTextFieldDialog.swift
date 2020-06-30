@@ -66,9 +66,10 @@ class CustomTextFieldDialog: ThemeBottomDialogView {
 
 
     func checkValidation() -> Bool {
-        if txtData.text!.isEmpty {
+        
+        if !txtData.validate().0 {
             let alert: CustomAlert = CustomAlert.fromNib()
-            alert.initialize(message: "VALIDATION_MSG_INVALID_DATA".localized())
+            alert.initialize(message: txtData.validate().1)
             alert.show(animated: true)
             alert.onBtnCancelTapped = {
                 [weak alert, weak self] in
@@ -87,6 +88,11 @@ class CustomTextFieldDialog: ThemeBottomDialogView {
                 self.onBtnDoneTapped!(txtData!.text!);
             }
         }
+    }
+    func configTextField(data:InputTextFieldDetail) {
+        self.txtData.inputConfiguration = data
+        self.txtData.configureTextField()
+        
     }
 
 }

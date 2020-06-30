@@ -21,9 +21,8 @@ class PressureSelectionTblCell: TableCell {
       
     }
 
-    func setData(data: PressureDetail ) {
+    func setData(data: PreferenceOption ) {
         self.lblName.text = data.name
-
         self.btnAction.isSelected = data.isSelected
 
     }

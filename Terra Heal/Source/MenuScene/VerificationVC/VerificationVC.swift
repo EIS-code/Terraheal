@@ -18,8 +18,8 @@ class VerificationVC: MainVC {
     @IBOutlet weak var imgBackSide: UIImageView!
 
     var arrForProfile: [EditProfileTextFieldDetail] = [
-        EditProfileTextFieldDetail(vlaue: appSingleton.user.telNumber, placeholder: "Mobile", isMadatory: true, contentType: TextFieldContentType.Phone),
-        EditProfileTextFieldDetail(vlaue: appSingleton.user.email, placeholder: "Email", isMadatory: true, contentType: TextFieldContentType.Email),
+        EditProfileTextFieldDetail(placeholder: "Mobile", value: appSingleton.user.telNumber, contentType: TextFieldContentType.Phone),
+        EditProfileTextFieldDetail(placeholder: "Email", value: appSingleton.user.email, contentType: TextFieldContentType.Email),
      ]
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {

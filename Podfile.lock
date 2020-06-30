@@ -2,23 +2,29 @@ PODS:
   - Alamofire (5.2.1)
   - FSCalendar (2.8.1)
   - IQKeyboardManager (6.5.5)
+  - SDWebImage (5.8.1):
+    - SDWebImage/Core (= 5.8.1)
+  - SDWebImage/Core (5.8.1)
 
 DEPENDENCIES:
   - Alamofire
   - FSCalendar
   - IQKeyboardManager
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - FSCalendar
     - IQKeyboardManager
+    - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
   FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
+  SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
 
-PODFILE CHECKSUM: afa35bd87f00e9bf538f81c9c2e34fd16d991946
+PODFILE CHECKSUM: b6fe8b42b32c5d3dfdd8a80c95c0490cf0e6d396
 
 COCOAPODS: 1.8.4

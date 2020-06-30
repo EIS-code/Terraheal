@@ -16,6 +16,9 @@ import UIKit
     fileprivate var bottomLineViewHeight : NSLayoutConstraint?
     fileprivate var placeholderLabelHeight : NSLayoutConstraint?
     fileprivate var errorLabelHieght : NSLayoutConstraint?
+    
+    var inputConfiguration: InputTextFieldDetail = InputTextFieldDetail.init()
+    
     let rightButton  = UIButton(type: .custom)
     /// Disable Floating Label when true.
     @IBInspectable open var disableFloatingLabel : Bool = false
@@ -144,8 +147,54 @@ import UIKit
         self.isSecureTextEntry = true
 
     }
-    
-    
+    public func configureTextField() {
+           self.maxLength = self.inputConfiguration.maxLength
+           self.textContentType = self.inputConfiguration.textContentType
+           self.keyboardType = self.inputConfiguration.keyBoardType
+    }
+    public func validate() -> (Bool,String) {
+           if !self.inputConfiguration.isMadatory {
+               return (true,"")
+           } else {
+               if self.text!.isEmpty() {
+                       return(false,"Please enter details")
+               } else {
+                    if self.text!.count < self.inputConfiguration.minLength || self.text!.count > self.inputConfiguration.maxLength {
+                        return(false,"detail length should be between \(self.inputConfiguration.minLength) - \(self.inputConfiguration.maxLength) ")
+                    }
+                   switch self.inputConfiguration.texFieldType {
+                   case .Name:
+                        return(true,"")
+                   case .Surname:
+                       return(true,"")
+                   case .Gender:
+                       return(true,"")
+                   case .DOB:
+                       return(true,"")
+                   case .Phone:
+                       return(self.text!.isPhoneNumber,"you have entered invalid phone number")
+                   case .EmergencyContact:
+                       return(self.text!.isPhoneNumber,"you have entered invalid phone number")
+                   case .Email:
+                       return(self.text!.isValidEmail(),"you have entered invalid email address")
+                   case .City:
+                       return(true,"")
+                   case .Country:
+                       return(true,"")
+                   case .Nif:
+                       return(true,"")
+                   case .IdPassport:
+                       return(true,"")
+                   case .Number:
+                       return(self.text!.isNumber(),"you have to enter numbers only")
+                   case .Default:
+                       return(true,"")
+                   }
+                       
+               }
+               
+           }
+       }
 }
 
 fileprivate extension ACFloatingTextfield {
@@ -334,6 +383,9 @@ fileprivate extension ACFloatingTextfield {
     func textFieldDidEndEditing() -> Void {
         self.floatTheLabel()
     }
+   
+    
+   
 }
 
 

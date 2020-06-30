@@ -247,6 +247,45 @@ extension AppDelegate {
     }
 
 
+    func loadGallaryVC(navigaionVC:UINavigationController? = nil) -> GallaryVC {
+
+        if let nc = navigaionVC as? NC {
+            if let targetVC: GallaryVC =  nc.findVCs(ofType: GallaryVC.self).first {
+                _ =  nc.popToViewController(targetVC, animated: true)
+                return targetVC
+            } else {
+                let targetVC: GallaryVC = GallaryVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+                return targetVC
+            }
+        } else {
+            let targetVC: GallaryVC = GallaryVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+            return targetVC
+        }
+    }
+
+    
+    func loadCameraVC(navigaionVC:UINavigationController? = nil) -> CameraVC {
+
+        if let nc = navigaionVC as? NC {
+            if let targetVC: CameraVC =  nc.findVCs(ofType: CameraVC.self).first {
+                _ =  nc.popToViewController(targetVC, animated: true)
+                return targetVC
+            } else {
+                let targetVC: CameraVC = CameraVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+                return targetVC
+            }
+        } else {
+            let targetVC: CameraVC = CameraVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+            return targetVC
+        }
+    }
+    
     func loadProfileVC(navigaionVC:UINavigationController? = nil) {
 
         if let nc = navigaionVC as? NC {
@@ -263,6 +302,22 @@ extension AppDelegate {
         }
     }
 
+    func loadMyBookingVC(navigaionVC:UINavigationController? = nil) {
+
+           if let nc = navigaionVC as? NC {
+               if let targetVC: MyBookingVC =  nc.findVCs(ofType: MyBookingVC.self).first {
+                   _ = nc.popToViewController(targetVC, animated: true)
+               } else {
+                   let targetVC: MyBookingVC = MyBookingVC.fromNib()
+                   nc.pushViewController(targetVC, animated: true)
+               }
+           } else {
+               let targetVC: MyBookingVC = MyBookingVC.fromNib()
+               let nC: NC = NC(rootViewController: targetVC)
+               self.windowConfig(withRootVC: nC)
+           }
+       }
+    
     func loadEditProfileVC(navigaionVC:UINavigationController? = nil) {
 
         if let nc = navigaionVC as? NC {

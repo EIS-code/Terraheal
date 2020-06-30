@@ -49,8 +49,9 @@ class HomeVC: MainVC {
         vwFloatingBottom.itemSelectedImages = [UIImage.init(named: "asset-home-selected")!, UIImage.init(named: "asset-home-selected")!, UIImage.init(named: "asset-home-selected")!]
         vwFloatingBottom.changeBackgroundColor(UIColor.themeLightTextColor)
         vwFloatingBottom.didSelectItemWith = { [weak self] (index,title) in
-            Common.appDelegate.loadServiceMapVC(navigaionVC: self?.navigationController)
             print("\(index) - \(title)")
+           
+            
 
         }
        //self.addLocationObserver()
@@ -99,7 +100,8 @@ class HomeVC: MainVC {
      //MARK: Action Methods
 
     @IBAction func btnMenuTapped(_ sender: Any) {
-        SideVC.shared.show()
+        //SideVC.shared.show()
+         Common.appDelegate.loadServiceMapVC(navigaionVC: self.navigationController)
     }
 
     @IBAction func btnProfileTapped(_ sender: Any) {

@@ -19,7 +19,6 @@ enum MassagePreferenceMenu: String {
         switch self {
         case .Pressure:
             return "MASSAGE_PREFERENCE_MENU_ITEM_1".localized()
-
         case .GenderPreference:
             return  "MASSAGE_PREFERENCE_MENU_ITEM_2".localized()
         case .TreatMent:
@@ -37,11 +36,8 @@ enum MassagePreferenceMenu: String {
 
 }
 
-struct MassagePreferenceDetail {
-    var type: MassagePreferenceMenu = MassagePreferenceMenu.Pressure
-    var strDetail: String = ""
-    var isSelected: Bool = false
-}
+
+
 
 class MassagePreferenceVC: MainVC {
 
@@ -49,15 +45,7 @@ class MassagePreferenceVC: MainVC {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnSubmit: ThemeButton!
 
-    var arrForMenu: [MassagePreferenceDetail] = [
-        MassagePreferenceDetail(type: .Pressure, isSelected: false),
-        MassagePreferenceDetail(type: .GenderPreference, isSelected: false),
-        MassagePreferenceDetail(type: .TreatMent, isSelected: false),
-        MassagePreferenceDetail(type: .Problems, isSelected: false),
-        MassagePreferenceDetail(type: .PastSurgery, isSelected: false),
-        MassagePreferenceDetail(type: .Allergies, isSelected: false),
-        MassagePreferenceDetail(type: .HealthCondition,isSelected: false),
-    ]
+    var arrForMenu: [MassagePreferenceDetail] = []
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -69,8 +57,7 @@ class MassagePreferenceVC: MainVC {
         setup()
     }
     private func setup() {
-
-
+        
     }
 
     // MARK: View lifecycle
@@ -80,7 +67,7 @@ class MassagePreferenceVC: MainVC {
         self.initialViewSetup()
         self.addBottomFade()
         self.addTopFade()
-
+        self.wsGetMassagePreferenceList()
 
     }
 
@@ -119,8 +106,8 @@ class MassagePreferenceVC: MainVC {
     func openMassagerPressurePicker(index:Int = 0) {
         let alert: CustomPressurePicker = CustomPressurePicker.fromNib()
 
-        alert.initialize(title: MassagePreferenceMenu.Pressure.name(), buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
-        alert.select(pressure: appSingleton.myMassagePreference.pressure)
+        alert.initialize(title: arrForMenu[index].name, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+        alert.setDataSource(data: arrForMenu[index])
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
@@ -132,15 +119,15 @@ class MassagePreferenceVC: MainVC {
             alert?.dismiss()
             appSingleton.myMassagePreference.pressure = pressure
             self.arrForMenu[index].isSelected = true
-            self.arrForMenu[index].strDetail = pressure.name()
+            self.arrForMenu[index].selectedPreference = pressure
             self.tableView.reloadData()
         }
     }
 
     func openPreferGenderPicker(index:Int = 0) {
         let alert: CustomPreferGenderPicker = CustomPreferGenderPicker.fromNib()
-        alert.initialize(title: MassagePreferenceMenu.GenderPreference.name(), buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
-        alert.select(gender: appSingleton.myMassagePreference.prefereGender)
+        alert.initialize(title: arrForMenu[index].name, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+        alert.setDataSource(data: arrForMenu[index])
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
@@ -151,16 +138,16 @@ class MassagePreferenceVC: MainVC {
             guard let self = self else { return }
 
             alert?.dismiss()
-            appSingleton.myMassagePreference.prefereGender = gender
             self.arrForMenu[index].isSelected = true
-            self.arrForMenu[index].strDetail = gender.name()
+            self.arrForMenu[index].selectedPreference = gender
             self.tableView.reloadData()
         }
     }
 
     func openTextViewPicker(index:Int = 0) {
         let alert: CustomTextViewDialog = CustomTextViewDialog.fromNib()
-        alert.initialize(title: arrForMenu[index].type.name(), data: arrForMenu[index].strDetail, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+        alert.initialize(title: arrForMenu[index].name
+            , data: arrForMenu[index].selectedPreference.value, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
@@ -172,7 +159,7 @@ class MassagePreferenceVC: MainVC {
             guard let self = self else { return }
 
             self.arrForMenu[index].isSelected = true
-            self.arrForMenu[index].strDetail = description
+            self.arrForMenu[index].selectedPreference.value = description
             self.tableView.reloadData()
         }
     }
@@ -238,3 +225,20 @@ extension MassagePreferenceVC: UITableViewDelegate,UITableViewDataSource, UIScro
     
 }
 
+//MARK: Web Service Call
+extension MassagePreferenceVC {
+    func wsGetMassagePreferenceList() {
+        
+        Loader.showLoading()
+        AppWebApi.massagePreferencceList { (response) in
+                self.arrForMenu.removeAll()
+                if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
+                    for data in response.massagePreferenceList {
+                        self.arrForMenu.append(data)
+                    }
+                    self.tableView.reloadData()
+                }
+                Loader.hideLoading()
+        }
+    }
+}

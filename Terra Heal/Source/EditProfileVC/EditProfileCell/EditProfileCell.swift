@@ -19,14 +19,43 @@ enum TextFieldContentType: Int {
     case Country = 8
     case Nif = 9
     case IdPassport = 10
+    
+    case Number = 11
+    case Default = 12
 
 }
-struct EditProfileTextFieldDetail {
-    var vlaue:String = ""
-    var paramName:String = ""
-    var placeholder:String = ""
+
+struct InputTextFieldDetail {
     var isMadatory:Bool = true
-    var contentType: TextFieldContentType = TextFieldContentType.Name
+    var textContentType: UITextContentType = .name
+    var texFieldType: TextFieldContentType = .Name
+    var minLength: Int = 0
+    var maxLength: Int = 20
+    var keyBoardType: UIKeyboardType = .default
+    
+    static func getEmailConfiguration() -> InputTextFieldDetail {
+        return InputTextFieldDetail(isMadatory: true, textContentType: .emailAddress, texFieldType: .Email, minLength: 2, maxLength: 20, keyBoardType: .emailAddress)
+    }
+    static func getMobileConfiguration() -> InputTextFieldDetail {
+        return InputTextFieldDetail(isMadatory: true, textContentType: .telephoneNumber, texFieldType: .Phone, minLength: 8, maxLength: 10, keyBoardType: .phonePad)
+    }
+    
+    static func getNameConfiguration() -> InputTextFieldDetail {
+        return InputTextFieldDetail(isMadatory: true, textContentType: .name, texFieldType: .Name, minLength: 2, maxLength: 20, keyBoardType: .default)
+    }
+    static func getCurrencyConfiguration() -> InputTextFieldDetail {
+        return InputTextFieldDetail(isMadatory: true, textContentType: .postalCode, texFieldType: .Number, minLength: 2, maxLength: 20, keyBoardType: .decimalPad)
+    }
+    static func getNumberConfiguration() -> InputTextFieldDetail {
+        return InputTextFieldDetail(isMadatory: true, textContentType: .postalCode, texFieldType: .Number, minLength: 2, maxLength: 20, keyBoardType: .numberPad)
+    }
+}
+
+struct EditProfileTextFieldDetail {
+    var placeholder:String = ""
+    var value:String = ""
+    var contentType: TextFieldContentType = .Name
+    var inputConfiguration = InputTextFieldDetail.init()
 }
 
 class EditProfileCell: CollectionCell {
@@ -36,7 +65,7 @@ class EditProfileCell: CollectionCell {
     @IBOutlet weak var btnVerify: UIButton!
     @IBOutlet weak var imgVerified: UIImageView!
     var data: EditProfileTextFieldDetail!
-
+    var parent: UIViewController? = nil
 
     override class func awakeFromNib() {
         super.awakeFromNib()
@@ -46,7 +75,7 @@ class EditProfileCell: CollectionCell {
     func setData(data:EditProfileTextFieldDetail) {
         self.data = data
         self.tfForContent.placeholder = data.placeholder
-        self.tfForContent.text = data.vlaue
+        self.tfForContent.text = data.value
         if data.contentType == TextFieldContentType.Email  {
             self.btnVerify.isHidden = appSingleton.user.isEmailVerified.toBool
             self.imgVerified.isHidden = !appSingleton.user.isEmailVerified.toBool
@@ -78,8 +107,9 @@ class EditProfileCell: CollectionCell {
         alertForVerification.setVerificationFor(type: .Email)
         alertForVerification.onBtnDoneTapped = { [weak alertForVerification, weak self] (code:String) in
             alertForVerification?.dismiss()
+            (self?.parent as? EditProfileVC)?.setUserData()
+            
         }
-
         alertForVerification.onBtnResendTapped = { [weak self] in
 
         }
@@ -94,6 +124,7 @@ class EditProfileCell: CollectionCell {
         alertForVerification.setVerificationFor(type: .Phone)
         alertForVerification.onBtnDoneTapped = { [weak alertForVerification, weak self] (code:String) in
             alertForVerification?.dismiss()
+            (self?.parent as? EditProfileVC)?.setUserData()
         }
 
         alertForVerification.onBtnResendTapped = { [weak self] in

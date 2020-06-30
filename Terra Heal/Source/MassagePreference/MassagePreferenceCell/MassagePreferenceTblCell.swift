@@ -26,7 +26,7 @@ class MassagePreferenceTblCell: TableCell {
     }
 
     func setData(data: MassagePreferenceDetail ) {
-        self.lblName.text = data.type.name()
+        self.lblName.text = data.name
         self.imgSelected.isHidden = !data.isSelected
     }
 

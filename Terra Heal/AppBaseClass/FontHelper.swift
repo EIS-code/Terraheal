@@ -40,7 +40,7 @@ class FontHelper: UIFont {
 struct FontSymbol {
     static let next_arrow = "❯"
     static let back_arrow = "❮"
-    static let down_arrow = "❮"
+    static let down_arrow = "˅"
     static let up_arrow = "❮"
     static let check = "✓"
 }

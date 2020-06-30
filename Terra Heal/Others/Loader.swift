@@ -15,10 +15,12 @@ class Loader: NSObject {
     static func showLoading(color: UIColor = UIColor.white){
         DispatchQueue.main.async {
 
-            if let window = UIApplication.shared.windows.last {
-
+            
+            if let window = UIApplication.shared.keyWindow {
+                window.endEditing(true)
                 if let view = window.viewWithTag(701) {
                     window.bringSubviewToFront(view)
+                    print("Loader Bring Front")
                 }
                 else {
                     self.mainView.frame = UIScreen.main.bounds
@@ -40,6 +42,7 @@ class Loader: NSObject {
                     }
                     self.mainView.tag = 701
                     window.addSubview(mainView)
+                    print("Loader Added")
                 }
             }
         }
@@ -48,6 +51,7 @@ class Loader: NSObject {
     static func hideLoading(){
         DispatchQueue.main.async {
             mainView.removeFromSuperview()
+            print("Loader Removed")
             UIApplication.shared.windows.last?.viewWithTag(701)?.removeFromSuperview()
             UIApplication.shared.keyWindow?.viewWithTag(701)?.removeFromSuperview()
         }

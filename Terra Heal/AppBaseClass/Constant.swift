@@ -66,7 +66,7 @@ struct LoginBy {
 
 struct DateFormat {
     static let DD_MM_YYYY = "dd/MM/YYYY"
-    static let DOB = "YYYY-MM-dd"
+    static let DOB = "dd MMM yyyy"
     static let check = "✓"
 }
 

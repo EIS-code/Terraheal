@@ -24,6 +24,7 @@ class AppWebApi: NSObject {
         private  struct Routes {
             static let Client = "/api/user"
             static let Exception = "/api/error"
+            static let Massage = "/api/massage"
             static let Location = "/api/location"
 
         }
@@ -48,16 +49,16 @@ class AppWebApi: NSObject {
         }
 
         static var VerifyEmail: String {
-            return Domain + Routes.Client + "/verify/email/" + PreferenceHelper.shared.getUserId()
+            return Domain + Routes.Client + "/verify/email"
         }
         static var VerifyPhone: String {
-            return Domain + Routes.Client + "/verify/mobile/" + PreferenceHelper.shared.getUserId()
+            return Domain + Routes.Client + "/verify/mobile"
         }
         static var VerifyEmailOTP: String {
-            return Domain + Routes.Client + "/compare/otp/email/" + PreferenceHelper.shared.getUserId()
+            return Domain + Routes.Client + "/compare/otp/email"
         }
         static var VerifyPhoneOTP: String {
-            return Domain + Routes.Client + "/compare/otp/mobile/" + PreferenceHelper.shared.getUserId()
+            return Domain + Routes.Client + "/compare/otp/mobile"
         }
         static var CheckExeption: String {
             return Domain + Routes.Exception
@@ -74,7 +75,9 @@ class AppWebApi: NSObject {
         static var GetLocationList: String {
             return  Domain + Routes.Location + "/get/province"
         }
-
+        static var GetMassagePreferenceList: String {
+                   return  Domain + Routes.Massage + "/preference"
+        }
 
     }
 }
@@ -192,5 +195,12 @@ extension AppWebApi {
             completionHandler(response)
         }
     }
+    
+    class func massagePreferencceList(params:MassagePreference.RequestMassagePrefenceList = MassagePreference.RequestMassagePrefenceList(), completionHandler: @escaping ((MassagePreference.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetMassagePreferenceList, methodName: AlamofireHelper.GET_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+               let response = MassagePreference.Response.init(fromDictionary: dictionary)
+               completionHandler(response)
+           }
+       }
 }
 

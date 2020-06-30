@@ -39,7 +39,7 @@ enum User {
    }
 
     struct RequestLogout: Codable {
-        var id: String = PreferenceHelper.shared.getUserId()
+        var user_id: String = PreferenceHelper.shared.getUserId()
         var token: String = PreferenceHelper.shared.getSessionToken()
     }
 
@@ -74,6 +74,7 @@ enum User {
     }
 
     struct RequestEmailOTP: Codable {
+        var user_id: String = PreferenceHelper.shared.getUserId()
         var email: String = ""
         var device_token: String = PreferenceHelper.shared.getDeviceToken()
         var device_type: String = Constant.typeIOS
@@ -81,6 +82,7 @@ enum User {
     }
 
     struct RequestVerifyEmailOTP: Codable {
+        var user_id: String = PreferenceHelper.shared.getUserId()
         var otp: String = ""
         var device_token: String = PreferenceHelper.shared.getDeviceToken()
         var device_type: String = Constant.typeIOS
@@ -88,6 +90,7 @@ enum User {
     }
 
     struct RequestPhoneOTP: Codable {
+        var user_id: String = PreferenceHelper.shared.getUserId()
         var mobile: String = ""
         var device_token: String = PreferenceHelper.shared.getDeviceToken()
         var device_type: String = Constant.typeIOS
@@ -95,6 +98,7 @@ enum User {
     }
 
     struct RequestVerifyPhoneOTP: Codable {
+        var user_id: String = PreferenceHelper.shared.getUserId()
         var otp: String = ""
         var device_token: String = PreferenceHelper.shared.getDeviceToken()
         var device_type: String = Constant.typeIOS
@@ -236,6 +240,9 @@ extension User {
             
         }
 
+        func getDob() ->  String {
+            return Date.milliSecToDate(milliseconds: appSingleton.user.dob.toDouble, format: DateFormat.DOB)
+        }
         @objc required init(coder aDecoder: NSCoder) {
             self.address = (aDecoder.decodeObject(forKey: "address") as? String) ?? ""
             self.appVersion = (aDecoder.decodeObject(forKey: "app_version") as? String) ?? ""

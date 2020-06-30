@@ -9,7 +9,7 @@
 import UIKit
 
 class VerificationAlert: ThemeBottomDialogView {
-
+    
     @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var lblMessage: ThemeLabel!
     @IBOutlet weak var lblMessageDetail: ThemeLabel!
@@ -17,20 +17,20 @@ class VerificationAlert: ThemeBottomDialogView {
     
     @IBOutlet var otpTextFieldView: OTPFieldView!
     @IBOutlet weak var btnResend: UnderlineTextButton!
-
+    
     var currentTab = 0
-
+    
     var verificationData: String = ""
-
+    
     var onBtnResendTapped: (() -> Void)? = nil
     var onBtnDoneTapped: ((_ code:String) -> Void)? = nil
-
+    
     var strEnteredOtp:String = ""
-
+    
     @IBOutlet weak var vwSwitch: JDSegmentedControl!
-
+    
     func initialize(message:String, data:String) {
-
+        
         self.lblTitle.text = "VERIFICATION_LBL_TITLE".localized()
         self.lblMessage.text = message
         self.lblMessageDetail.text = "VERIFICATION_MSG_DETAIL".localized() + " " + data
@@ -42,7 +42,7 @@ class VerificationAlert: ThemeBottomDialogView {
         self.btnVerify.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.initialSetup()
     }
-
+    
     func setVerificationFor(type:TextFieldContentType) {
         if type == .Email {
             self.vwSwitch.selectItemAt(index: 1)
@@ -52,7 +52,7 @@ class VerificationAlert: ThemeBottomDialogView {
             self.mobileTapped()
         }
     }
-
+    
     func initialSetup() {
         dialogView.clipsToBounds = true
         self.backgroundColor = .clear
@@ -66,7 +66,7 @@ class VerificationAlert: ThemeBottomDialogView {
         self.setupOtpView()
         self.addPanGesture(view: self)
         transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
-
+        
         self.vwSwitch.allowChangeThumbWidth = false
         self.vwSwitch.itemTitles = ["VERIFICATION_BTN_MOBILE".localized(),"VERIFICATION_BTN_EMAIL".localized()]
         self.vwSwitch.changeBackgroundColor(UIColor.themeLightTextColor)
@@ -82,27 +82,27 @@ class VerificationAlert: ThemeBottomDialogView {
             
         }
     }
-
+    
     func mobileTapped(){
-
+        
         self.currentTab = 0
         self.wsVerifyPhone()
         self.lblMessageDetail.text = "VERIFICATION_MSG_DETAIL".localized() + " " + Singleton.shared.user.telNumber
-
+        
     }
     func emailTapped(){
         self.currentTab = 1
         self.wsVerifyEmail()
         self.lblMessageDetail.text = "VERIFICATION_MSG_DETAIL".localized() + " " + Singleton.shared.user.email
-
+        
     }
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
     }
-
-
+    
+    
     @IBAction func btnResendTapped(_ sender: Any) {
         if self.onBtnResendTapped != nil {
             self.onBtnResendTapped!();
@@ -113,7 +113,7 @@ class VerificationAlert: ThemeBottomDialogView {
             }
         }
     }
-
+    
     @IBAction func btnDoneTapped(_ sender: Any) {
         if strEnteredOtp.isEmpty() {
             Common.showAlert(message: "VALIDATION_MSG_PLEASE_ENTER_OTP".localized())
@@ -125,11 +125,11 @@ class VerificationAlert: ThemeBottomDialogView {
             }
         }
     }
-
+    
 }
 //OTP  Setup
 extension VerificationAlert:  OTPFieldViewDelegate {
-
+    
     func setupOtpView(){
         self.otpTextFieldView.fieldsCount = 4
         self.otpTextFieldView.fieldBorderWidth = 0
@@ -146,22 +146,19 @@ extension VerificationAlert:  OTPFieldViewDelegate {
     func hasEnteredAllOTP(hasEnteredAll hasEntered: Bool) -> Bool {
         return false
     }
-
+    
     func shouldBecomeFirstResponderForOTP(otpTextFieldIndex index: Int) -> Bool {
         return true
     }
-
+    
     func enteredOTP(otp otpString: String) {
         self.strEnteredOtp = otpString
     }
     func updateVerificationView() {
         Singleton.saveInDb()
-        if Singleton.shared.user.isContactVerified() {
-            if self.onBtnDoneTapped != nil {
-                self.onBtnDoneTapped!(strEnteredOtp);
-            }
+        if self.onBtnDoneTapped != nil {
+            self.onBtnDoneTapped!(strEnteredOtp);
         }
-
     }
 }
 
@@ -170,7 +167,7 @@ extension VerificationAlert:  OTPFieldViewDelegate {
 
 //MARK:   - WS Web API
 extension VerificationAlert {
-
+    
     private func wsVerifyEmail(isResend:Bool = false) {
         if appSingleton.user.isEmailVerified.toBool {
             return;
@@ -183,11 +180,11 @@ extension VerificationAlert {
             if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
                 self.otpTextFieldView.clearTextField()
             } else {
-
+                
             }
         }
     }
-
+    
     private func wsVerifyEmailOtp(code:String) {
         Loader.showLoading()
         var request: User.RequestVerifyEmailOTP = User.RequestVerifyEmailOTP()
@@ -199,12 +196,12 @@ extension VerificationAlert {
                 Singleton.shared.user.isEmailVerified = Constant.True
                 self.updateVerificationView()
             } else {
-
+                
             }
         }
     }
-
-
+    
+    
     private func wsVerifyPhone(isResend:Bool = false) {
         if appSingleton.user.isMobileVerified.toBool {
             return;
@@ -215,13 +212,13 @@ extension VerificationAlert {
         AppWebApi.getPhoneOtp(params: request) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
-               self.otpTextFieldView.clearTextField()
+                self.otpTextFieldView.clearTextField()
             } else {
-
+                
             }
         }
     }
-
+    
     private func wsVerifyPhoneOtp(code:String) {
         Loader.showLoading()
         var request: User.RequestVerifyPhoneOTP = User.RequestVerifyPhoneOTP()
@@ -236,6 +233,6 @@ extension VerificationAlert {
             }
         }
     }
-
-
+    
+    
 }

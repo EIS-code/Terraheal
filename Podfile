@@ -10,4 +10,5 @@ target 'Terra Heal' do
 	pod 'IQKeyboardManager'
 	pod 'Alamofire'
   pod 'FSCalendar'
+  pod 'SDWebImage'
 end

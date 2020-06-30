@@ -2,3 +2,4 @@ ${PODS_ROOT}/Target Support Files/Pods-Terra Heal/Pods-Terra Heal-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework

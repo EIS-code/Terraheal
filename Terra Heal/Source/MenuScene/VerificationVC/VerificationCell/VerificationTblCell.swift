@@ -24,7 +24,7 @@ class VerificationTblCell: TableCell {
     func setData(data:EditProfileTextFieldDetail) {
         self.data = data
         self.tfForContent.placeholder = data.placeholder
-        self.tfForContent.text = data.vlaue
+        self.tfForContent.text = data.value
         if data.contentType == TextFieldContentType.Email  {
             self.btnVerify.isHidden = appSingleton.user.isEmailVerified.toBool
             self.imgVerified.isHidden = !appSingleton.user.isEmailVerified.toBool

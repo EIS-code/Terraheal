@@ -42,14 +42,9 @@ class CustomPreferGenderPicker: ThemeBottomDialogView {
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
 
-    var onBtnDoneTapped: ((_ gender:PreferGender) -> Void)? = nil
-    var selectedGender: PreferGender = PreferGender.NoPreference
-    var arrForGender: [GenderDetail] = [
-        GenderDetail.init(type: PreferGender.NoPreference, name: PreferGender.NoPreference.name(), isSelected: false),
-        GenderDetail.init(type: PreferGender.PreferMale, name: PreferGender.PreferMale.name(), isSelected: false),
-        GenderDetail.init(type: PreferGender.MaleOnly, name: PreferGender.MaleOnly.name(), isSelected: false),
-        GenderDetail.init(type: PreferGender.PrefereFemale, name: PreferGender.PrefereFemale.name(), isSelected: false),
-        GenderDetail.init(type: PreferGender.FemaleOnly, name: PreferGender.FemaleOnly.name(), isSelected: false),
+    var onBtnDoneTapped: ((_ gender:PreferenceOption) -> Void)? = nil
+    var selectedData: PreferenceOption = PreferenceOption.init(fromDictionary: [:])
+    var arrForData: [PreferenceOption] = [
     ]
     func initialize(title:String,buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
@@ -61,22 +56,31 @@ class CustomPreferGenderPicker: ThemeBottomDialogView {
             self.btnCancel.setTitle(cancelButtonTitle, for: .normal)
             self.btnCancel.isHidden = false
         }
-        self.select(gender: self.selectedGender)
+        self.select(data: self.selectedData)
         self.setupTableView(tableView: self.tableView)
 
     }
 
-    func select(gender:PreferGender) {
-        self.selectedGender = gender
-        for i in 0..<arrForGender.count {
-            arrForGender[i].isSelected = false
-            if arrForGender[i].type == gender {
-                arrForGender[i].isSelected = true
+    func select(data:PreferenceOption) {
+        self.selectedData = data
+        for i in 0..<arrForData.count {
+            arrForData[i].isSelected = false
+            if arrForData[i].id == data.id {
+                arrForData[i].isSelected = true
             }
         }
         self.tableView.reloadData()
     }
-
+    func setDataSource(data:  MassagePreferenceDetail) {
+        self.arrForData.removeAll()
+        for option in data.preferenceOptions {
+            self.arrForData.append(option)
+            if option.isSelected {
+                self.selectedData = option
+            }
+        }
+        self.select(data:self.selectedData)
+    }
     func initialSetup() {
         dialogView.clipsToBounds = true
         self.backgroundColor = .clear
@@ -100,12 +104,11 @@ class CustomPreferGenderPicker: ThemeBottomDialogView {
     }
 
     @IBAction func btnDoneTapped(_ sender: Any) {
-        if selectedGender
-            == PreferGender.NoPreference {
+        if selectedData.id == "" {
             Common.showAlert(message: "VALIDATION_MSG_PLEASE_SELECT_DATA".localized())
         } else {
             if self.onBtnDoneTapped != nil {
-                self.onBtnDoneTapped!(selectedGender);
+                self.onBtnDoneTapped!(selectedData);
             }
         }
 
@@ -132,25 +135,25 @@ extension CustomPreferGenderPicker : UITableViewDelegate,UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrForGender.count
+        return arrForData.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: PreferGenderPickerCell.name, for: indexPath) as?  PreferGenderPickerCell
         cell?.layoutIfNeeded()
-        cell?.setData(data: arrForGender[indexPath.row])
+        cell?.setData(data: arrForData[indexPath.row])
         cell?.layoutIfNeeded()
         return cell!
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        for i in 0..<arrForGender.count {
-            arrForGender[i].isSelected = false
+        for i in 0..<arrForData.count {
+            arrForData[i].isSelected = false
         }
-        self.arrForGender[indexPath.row].isSelected = true
-        self.selectedGender = self.arrForGender[indexPath.row].type
+        self.arrForData[indexPath.row].isSelected = true
+        self.selectedData = self.arrForData[indexPath.row]
         tableView.reloadData()
     }
 

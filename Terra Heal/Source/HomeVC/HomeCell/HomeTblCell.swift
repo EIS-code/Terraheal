@@ -92,7 +92,7 @@ class HomeTblCell: TableCell {
     
     func openInfoDialog() {
         let alert: CustomInformationDialog = CustomInformationDialog.fromNib()
-        alert.initialize(title: "HOME_ITEM_TYPE_INFO".localized(), data: "HOME_ITEM_TYPE_HOTEL_OR_ROOM".localized(), buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        alert.initialize(title: "HOME_ITEM_TYPE_INFO".localized(), data: "HOME_ITEM_TYPE_HOTEL_OR_ROOM".localized(), buttonTitle: "".localized(), cancelButtonTitle: "BTN_BACK".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
                 [weak alert, weak self] in

@@ -41,7 +41,7 @@ class MyMassagePreference: NSObject {
         super.init()
     }
 
-    var pressure:  Pressure = .Other
+    var pressure:  PreferenceOption = PreferenceOption.init(fromDictionary: [:])
     var prefereGender: PreferGender = .NoPreference
     var treatmentDescription: String = ""
     var problemsDescription: String = ""
