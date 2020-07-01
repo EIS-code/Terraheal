@@ -17,6 +17,17 @@ enum MassagePreference {
     }
 
 
+    struct SaveMassagePrefenceList: Codable {
+        var user_id: String = PreferenceHelper.shared.getUserId()
+        var token: String = PreferenceHelper.shared.getSessionToken()
+        var data: [PreferenceData] = []
+    }
+    
+    struct PreferenceData: Codable {
+           var id: String = ""
+           var value: String = ""
+    }
+    //MARK: Response
     class Response: ResponseModel {
         var massagePreferenceList: [MassagePreferenceDetail] = []
         override init(fromDictionary dictionary: [String:Any]) {
@@ -29,8 +40,11 @@ enum MassagePreference {
             }
         }
     }
+    
+   
+   
 
-
+    
 }
 
 class MassagePreferenceDetail: ResponseModel {
@@ -55,6 +69,7 @@ class MassagePreferenceDetail: ResponseModel {
                 preferenceOptions.append(preferenceOption)
                 if preferenceOption.selected.toBool {
                     self.selectedPreference = PreferenceOption.init(fromDictionary: data)
+                    self.isSelected = true
                 }
                     
             }

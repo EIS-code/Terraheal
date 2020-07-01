@@ -30,13 +30,13 @@
                             <constraint firstAttribute="width" secondItem="mj4-Vg-zDh" secondAttribute="height" multiplier="1:1" id="9Qi-Lg-4pS"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wN0-af-H7V" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wN0-af-H7V" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                         <rect key="frame" x="23" y="256" width="183" height="19"/>
                         <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="16"/>
                         <color key="textColor" name="theme_primary"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPH-zQ-6LJ" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPH-zQ-6LJ" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                         <rect key="frame" x="23" y="295" width="183" height="26"/>
                         <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="22"/>
                         <color key="textColor" name="theme_primary"/>

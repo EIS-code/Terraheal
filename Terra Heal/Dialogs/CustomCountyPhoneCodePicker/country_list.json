@@ -1,5 +1,13 @@
 [
     {
+        "country_flag" : "🇵🇹",
+        "maximum_phone_number_length" : 10,
+        "country_name" : "Portugal",
+        "country_code" : "PT",
+        "country_phone_code" : "+351",
+        "minimum_phone_number_length" : 8
+    },
+    {
         "country_flag" : "🇮🇳",
         "maximum_phone_number_length" : 10,
         "country_name" : "India",
@@ -1383,14 +1391,7 @@
         "country_phone_code" : "+48",
         "minimum_phone_number_length" : 8
     },
-    {
-        "country_flag" : "🇵🇹",
-        "maximum_phone_number_length" : 10,
-        "country_name" : "Portugal",
-        "country_code" : "PT",
-        "country_phone_code" : "+351",
-        "minimum_phone_number_length" : 8
-    },
+    
     {
         "country_flag" : "🇵🇷",
         "maximum_phone_number_length" : 10,

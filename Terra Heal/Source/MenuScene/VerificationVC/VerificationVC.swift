@@ -123,6 +123,9 @@ extension VerificationVC: UITableViewDelegate,UITableViewDataSource, UIScrollVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.bounds.width * 0.2
+    }
     
     @IBAction func btnVerifyTapped(_ sender: UIButton) {
             let data = self.arrForProfile[sender.tag]
@@ -140,7 +143,6 @@ extension VerificationVC: UITableViewDelegate,UITableViewDataSource, UIScrollVie
         alertForVerification.setVerificationFor(type: .Email)
         alertForVerification.onBtnDoneTapped = { [weak alertForVerification, weak self] (code:String) in
             alertForVerification?.dismiss()
-            Common.appDelegate.loadVerifiedContactVC()
         }
 
         alertForVerification.onBtnResendTapped = { [weak self] in
@@ -157,7 +159,6 @@ extension VerificationVC: UITableViewDelegate,UITableViewDataSource, UIScrollVie
         alertForVerification.setVerificationFor(type: .Phone)
         alertForVerification.onBtnDoneTapped = { [weak alertForVerification, weak self] (code:String) in
             alertForVerification?.dismiss()
-            Common.appDelegate.loadVerifiedContactVC()
         }
 
         alertForVerification.onBtnResendTapped = { [weak self] in

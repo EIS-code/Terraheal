@@ -6,6 +6,35 @@
 
 import UIKit
 
+public struct InputTextFieldDetail {
+    var isMadatory:Bool = true
+    var textContentType: UITextContentType = .name
+    var texFieldType: TextFieldContentType = .Name
+    var minLength: Int = 0
+    var maxLength: Int = 20
+    var keyBoardType: UIKeyboardType = .default
+    
+    static func getEmailConfiguration() -> InputTextFieldDetail {
+        return InputTextFieldDetail(isMadatory: true, textContentType: .emailAddress, texFieldType: .Email, minLength: 2, maxLength: 20, keyBoardType: .emailAddress)
+    }
+    static func getMobileConfiguration() -> InputTextFieldDetail {
+        return InputTextFieldDetail(isMadatory: true, textContentType: .telephoneNumber, texFieldType: .Phone, minLength: 8, maxLength: 10, keyBoardType: .phonePad)
+    }
+    
+    static func getNameConfiguration() -> InputTextFieldDetail {
+        return InputTextFieldDetail(isMadatory: true, textContentType: .name, texFieldType: .Name, minLength: 2, maxLength: 20, keyBoardType: .default)
+    }
+    static func getCurrencyConfiguration() -> InputTextFieldDetail {
+        return InputTextFieldDetail(isMadatory: true, textContentType: .postalCode, texFieldType: .Number, minLength: 2, maxLength: 20, keyBoardType: .decimalPad)
+    }
+    static func getNumberConfiguration() -> InputTextFieldDetail {
+        return InputTextFieldDetail(isMadatory: true, textContentType: .postalCode, texFieldType: .Number, minLength: 2, maxLength: 20, keyBoardType: .numberPad)
+    }
+    static func getPassowordConfiguration() -> InputTextFieldDetail {
+           return InputTextFieldDetail(isMadatory: true, textContentType: .password, texFieldType: .Password, minLength: 6, maxLength: 20, keyBoardType: .default)
+    }
+}
+
 @IBDesignable
 @objc open class ACFloatingTextfield: ThemeTextField {
     
@@ -147,46 +176,59 @@ import UIKit
         self.isSecureTextEntry = true
 
     }
-    public func configureTextField() {
+    public func configureTextField(_ configuration: InputTextFieldDetail) {
+            self.inputConfiguration = configuration
            self.maxLength = self.inputConfiguration.maxLength
            self.textContentType = self.inputConfiguration.textContentType
            self.keyboardType = self.inputConfiguration.keyBoardType
     }
-    public func validate() -> (Bool,String) {
+    public func validate() -> (isValid: Bool, message: String) {
            if !self.inputConfiguration.isMadatory {
                return (true,"")
            } else {
-               if self.text!.isEmpty() {
-                       return(false,"Please enter details")
-               } else {
-                    if self.text!.count < self.inputConfiguration.minLength || self.text!.count > self.inputConfiguration.maxLength {
-                        return(false,"detail length should be between \(self.inputConfiguration.minLength) - \(self.inputConfiguration.maxLength) ")
-                    }
+            
+            var textDetial = ""
+            if  let placeholderDetail = self.placeholder, !placeholderDetail.isEmpty() {
+                textDetial = placeholderDetail
+            } else {
+                textDetial = self.labelPlaceholder?.text ?? ""
+            }
+            if self.text!.isEmpty() {
+                return(false,"Please enter \(textDetial) details")
+            } else {
+                if self.inputConfiguration.minLength == 0 && self.inputConfiguration.maxLength == 0 {
+                    
+                }
+                else if self.text!.count < self.inputConfiguration.minLength || self.text!.count > self.inputConfiguration.maxLength {
+                        return(false,"\(textDetial) detail length should be between \(self.inputConfiguration.minLength) - \(self.inputConfiguration.maxLength) ")
+                }
                    switch self.inputConfiguration.texFieldType {
                    case .Name:
-                        return(true,"")
+                    return(true,"VALIDATION_MSG_INVALID_NAME".localized())
+                   case .Password:
+                    return(self.text!.isValidPassword,"VALIDATION_MSG_INVALID_PASSWORD".localized())
                    case .Surname:
-                       return(true,"")
+                    return(true,"VALIDATION_MSG_INVALID_SURNAME".localized())
                    case .Gender:
-                       return(true,"")
+                    return(true,"VALIDATION_MSG_INVALID_GENDER".localized())
                    case .DOB:
-                       return(true,"")
+                    return(true,"VALIDATION_MSG_INVALID_DOB".localized())
                    case .Phone:
-                       return(self.text!.isPhoneNumber,"you have entered invalid phone number")
+                    return(self.text!.isPhoneNumber,"VALIDATION_MSG_INVALID_MOBILE".localized())
                    case .EmergencyContact:
-                       return(self.text!.isPhoneNumber,"you have entered invalid phone number")
+                       return(self.text!.isPhoneNumber,"VALIDATION_MSG_INVALID_MOBILE".localized())
                    case .Email:
-                       return(self.text!.isValidEmail(),"you have entered invalid email address")
+                    return(self.text!.isValidEmail(),"VALIDATION_MSG_INVALID_EMAIL".localized())
                    case .City:
-                       return(true,"")
+                       return(true,"VALIDATION_MSG_INVALID_CITY".localized())
                    case .Country:
-                       return(true,"")
+                       return(true,"VALIDATION_MSG_INVALID_COUNTRY".localized())
                    case .Nif:
-                       return(true,"")
+                       return(true,"VALIDATION_MSG_INVALID_NIF".localized())
                    case .IdPassport:
-                       return(true,"")
+                       return(true,"VALIDATION_MSG_INVALID_ID".localized())
                    case .Number:
-                       return(self.text!.isNumber(),"you have to enter numbers only")
+                       return(self.text!.isNumber(),"VALIDATION_MSG_NUMBER_ONLY".localized())
                    case .Default:
                        return(true,"")
                    }
@@ -203,6 +245,7 @@ fileprivate extension ACFloatingTextfield {
     func initialize() -> Void {
         self.clipsToBounds = true
         self.textColor = UIColor.themePrimary
+        self.autocorrectionType = .no
         self.setFont(name:FontName.Regular,size:FontSize.textField_20)
         addBottomLine()
         addFloatingLabel()

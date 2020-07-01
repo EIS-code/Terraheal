@@ -114,13 +114,15 @@ class MassagePreferenceVC: MainVC {
             alert?.dismiss()
         }
         alert.onBtnDoneTapped = {
-             [weak alert, weak self] (pressure) in
+             [weak alert, weak self] (preferenceData) in
             guard let self = self else { return }
             alert?.dismiss()
-            appSingleton.myMassagePreference.pressure = pressure
+            appSingleton.myMassagePreference.pressure = preferenceData
             self.arrForMenu[index].isSelected = true
-            self.arrForMenu[index].selectedPreference = pressure
-            self.tableView.reloadData()
+            self.arrForMenu[index].selectedPreference = preferenceData
+            var request: MassagePreference.SaveMassagePrefenceList = MassagePreference.SaveMassagePrefenceList()
+            request.data = [MassagePreference.PreferenceData.init(id: preferenceData.id, value: "")]
+            self.wsSaveMassagePreferenceList(request: request)
         }
     }
 
@@ -134,13 +136,15 @@ class MassagePreferenceVC: MainVC {
             alert?.dismiss()
         }
         alert.onBtnDoneTapped = {
-            [weak alert, weak self] (gender) in
+            [weak alert, weak self] (preferenceData) in
             guard let self = self else { return }
 
             alert?.dismiss()
             self.arrForMenu[index].isSelected = true
-            self.arrForMenu[index].selectedPreference = gender
-            self.tableView.reloadData()
+            self.arrForMenu[index].selectedPreference = preferenceData
+            var request: MassagePreference.SaveMassagePrefenceList = MassagePreference.SaveMassagePrefenceList()
+            request.data = [MassagePreference.PreferenceData.init(id: preferenceData.id, value: "")]
+            self.wsSaveMassagePreferenceList(request: request)
         }
     }
 
@@ -160,7 +164,10 @@ class MassagePreferenceVC: MainVC {
 
             self.arrForMenu[index].isSelected = true
             self.arrForMenu[index].selectedPreference.value = description
-            self.tableView.reloadData()
+            var request: MassagePreference.SaveMassagePrefenceList = MassagePreference.SaveMassagePrefenceList()
+            request.data = [MassagePreference.PreferenceData.init(id: self.arrForMenu[index].preferenceOptions.first?.id ?? self.arrForMenu[index].id, value: description)]
+            self.wsSaveMassagePreferenceList(request: request)
+            //self.tableView.reloadData()
         }
     }
 
@@ -240,5 +247,16 @@ extension MassagePreferenceVC {
                 }
                 Loader.hideLoading()
         }
+    }
+    
+    func wsSaveMassagePreferenceList(request:MassagePreference.SaveMassagePrefenceList) {
+       
+        AppWebApi.saveMassagePreferencceList(params: request) { (response) in
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
+                self.tableView.reloadData()
+            }
+            Loader.hideLoading()
+        }
+        
     }
 }

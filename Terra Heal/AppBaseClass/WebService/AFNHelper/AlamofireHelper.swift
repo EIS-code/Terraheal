@@ -30,30 +30,21 @@ class AlamofireHelper: NSObject
     
     
     override init() {
-        
         super.init()
-
     }
    
-    func getDataFrom(urlString : String,methodName : String,paramData : [String:Any] , block:@escaping APIManagerCompletion)
-    {
-        
+    func getDataFrom(urlString : String,methodName : String,paramData : [String:Any] , block:@escaping APIManagerCompletion) {
         self.dataBlock = block
-
-        if Connectivity.isConnectedToInternet {
-
-        } else {
+        if !Connectivity.isConnectedToInternet {
             Loader.hideLoading()
             let dictResponse:[String :Any] = [:]
             self.dataBlock(nil, dictResponse,"Internet Connection Error")
             Common.showAlert(message: "Internet Connection Error")
+            return
         }
         if (methodName == AlamofireHelper.POST_METHOD) {
 
-
-
-                let request = AF.request(urlString, method: .post, parameters:  paramData)
-
+            let request = AF.request(urlString, method: .post, parameters:  paramData, encoding: JSONEncoding.prettyPrinted)
                 request.response { (response) in
                     switch(response.result) {
                     case .success(let value):
@@ -77,12 +68,7 @@ class AlamofireHelper: NSObject
                     }
                     print(response.data.dictionary)
                 }
-
-
-
-
-
-            }
+        }
         else {
 
             var request: DataRequest!
@@ -119,20 +105,14 @@ class AlamofireHelper: NSObject
         }
     }
 
-
-
-
     func uploadDocumentToURL(urlString: String ,paramData : [String:Any] ,documents :[UploadDocumentDetail], paramName:String = "", block:@escaping APIManagerCompletion) {
         self.dataBlock = block
-
         let headers: HTTPHeaders
         headers = ["Content-type": "multipart/form-data",
                    "Content-Disposition" : "form-data"]
         AF.upload(multipartFormData: { (multipartFormData) in
-
             for document in documents {
                 multipartFormData.append(document.data!, withName: paramName, fileName: document.name, mimeType: "*/*")
-
             }
             for (key, value) in paramData {
                 multipartFormData.append((value as! String).data(using: String.Encoding.utf8)!, withName: key)
@@ -161,42 +141,6 @@ class AlamofireHelper: NSObject
             }
             print(response.data.dictionary)
         }
-        
-
-
-        
     }
-
-
-    func getalarmofireResponse(url:String, params: [String:Any] = [:], method:HTTPMethod = .get) {
-
-        let request = AF.request(url, method: method, parameters:  params)
-
-        request.response { (response) in
-                switch(response.result) {
-                case .success(let value):
-                    if value != nil {
-                        print("Success")
-                        print("Request URL :- \(url)\n")
-                        print("Request Parameters :- \(params)\n")
-                        let dictionary = try! value!.toDictionary()
-                        print("Request Response :- \(dictionary)")
-
-                    }
-                    break
-                case .failure(let error):
-                    Loader.hideLoading()
-                    print("Failed")
-                    print("Request URL :- \(url)\n")
-                    print("Request Parameters :- \(params)\n")
-                    print("Request Response :- \(response.data.dictionary)")
-                    Common.showAlert(message: error.localizedDescription)
-                }
-                print(response.data.dictionary)
-            }
-
-
-    }
-
- }
+}
 

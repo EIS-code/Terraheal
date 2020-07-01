@@ -26,6 +26,7 @@ class AppWebApi: NSObject {
             static let Exception = "/api/error"
             static let Massage = "/api/massage"
             static let Location = "/api/location"
+            static let Therapy = "/api/therapy"
 
         }
 
@@ -78,7 +79,15 @@ class AppWebApi: NSObject {
         static var GetMassagePreferenceList: String {
                    return  Domain + Routes.Massage + "/preference"
         }
-
+        static var SaveMassagePreferenceList: String {
+                   return  Domain + Routes.Massage + "/preference/save"
+        }
+        static var TherapistQuesionaryList: String {
+                   return  Domain + Routes.Therapy + "/questionnaire"
+        }
+        static var SaveTherapistQuesionaryList: String {
+                   return  Domain + Routes.Therapy + "/questionnaire/save"
+        }
     }
 }
 
@@ -197,10 +206,33 @@ extension AppWebApi {
     }
     
     class func massagePreferencceList(params:MassagePreference.RequestMassagePrefenceList = MassagePreference.RequestMassagePrefenceList(), completionHandler: @escaping ((MassagePreference.Response) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetMassagePreferenceList, methodName: AlamofireHelper.GET_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetMassagePreferenceList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
                let response = MassagePreference.Response.init(fromDictionary: dictionary)
                completionHandler(response)
            }
        }
+    
+    class func saveMassagePreferencceList(params:MassagePreference.SaveMassagePrefenceList = MassagePreference.SaveMassagePrefenceList(), completionHandler: @escaping ((MassagePreference.Response) -> Void)) {
+        
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.SaveMassagePreferenceList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = MassagePreference.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    
+    class func therapistQuestionList(params:TherapistQuastionaries.RequestQuestionList = TherapistQuastionaries.RequestQuestionList(), completionHandler: @escaping ((TherapistQuastionaries.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.TherapistQuesionaryList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+               let response = TherapistQuastionaries.Response.init(fromDictionary: dictionary)
+               completionHandler(response)
+           }
+       }
+    
+    class func saveQuestionList(params:TherapistQuastionaries.SaveQuestionList = TherapistQuastionaries.SaveQuestionList(), completionHandler: @escaping ((TherapistQuastionaries.Response) -> Void)) {
+        
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.SaveTherapistQuesionaryList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = TherapistQuastionaries.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
 }
 

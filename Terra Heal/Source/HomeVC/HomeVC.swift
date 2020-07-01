@@ -50,8 +50,8 @@ class HomeVC: MainVC {
         vwFloatingBottom.changeBackgroundColor(UIColor.themeLightTextColor)
         vwFloatingBottom.didSelectItemWith = { [weak self] (index,title) in
             print("\(index) - \(title)")
-           
-            
+            guard let self = self else { return }
+            Common.appDelegate.loadServiceMapVC(navigaionVC: self.navigationController)
 
         }
        //self.addLocationObserver()
@@ -100,8 +100,7 @@ class HomeVC: MainVC {
      //MARK: Action Methods
 
     @IBAction func btnMenuTapped(_ sender: Any) {
-        //SideVC.shared.show()
-         Common.appDelegate.loadServiceMapVC(navigaionVC: self.navigationController)
+        SideVC.shared.show()
     }
 
     @IBAction func btnProfileTapped(_ sender: Any) {

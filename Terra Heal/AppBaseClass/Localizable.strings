@@ -10,6 +10,19 @@
 "TUTORIAL_LBL_MESSAGE" = "This is a description,\nthis is a sample text";
 "TUTORIAL_BTN_NEXT" = "next";
 "TUTORIAL_BTN_BACK" = "back";
+
+"TUTORIAL_LBL_TITLE_1" = "book quality professional massage or therapy";
+"TUTORIAL_LBL_MESSAGE_1" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+"TUTORIAL_LBL_TITLE_2" = "wide variety of options, short or long duration";
+"TUTORIAL_LBL_MESSAGE_2" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+
+"TUTORIAL_LBL_TITLE_3" = "certified therapist and personalized approach to each client";
+"TUTORIAL_LBL_MESSAGE_3" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+
+
+
+
+
 //MARK: WELCOME SCREEN
 "WELCOME_LBL_HEADER_1" = "you come to us";
 "WELCOME_LBL_MESSAGE_1" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
@@ -43,7 +56,7 @@
 "REGISTER_LBL_CONNECT_VIA" = " or connect via ";
 "PROFILE_TXT_SEARCH_COUNTRY" = "search country";
 "PROFILE_TXT_SEARCH_CITY" = "search city";
-
+"COUNTRY_PHONE_CODE_TITLE" = "Country Phone Code";
 //MARK:  Profile Screen
 "PROFILE_NAME"  = "Name";
 "PROFILE_SURNAME"  = "Surname";
@@ -314,6 +327,17 @@
 "VALIDATION_MSG_SELECT_COUNTRY_FIRST" = "Please select country first";
 "VALIDATION_MSG_PLEASE_SELECT_DATA" = "Please select valid data";
 "VALIDATION_MSG_PLEASE_SELECT_DATE" = "Please select valid date";
+"VALIDATION_MSG_PLEASE_SELECT_LOCATION" = "Please select loccation";
+
+"VALIDATION_MSG_INVALID_NAME"  =  "Please enter valid name";
+"VALIDATION_MSG_INVALID_SURNAME"  =  "Please enter valid surname";
+"VALIDATION_MSG_INVALID_GENDER"  =  "Please select gender";
+"VALIDATION_MSG_INVALID_DOB"  =  "Please select valid Date Of Birth";
+"VALIDATION_MSG_INVALID_CITY"  =  "Please select valid city";
+"VALIDATION_MSG_INVALID_COUNTRY"  =  "Please select valid country";
+"VALIDATION_MSG_INVALID_NIF"  =  "Please enter valid nif";
+"VALIDATION_MSG_INVALID_ID"  =  "Please enter valid id";
+"VALIDATION_MSG_NUMBER_ONLY"  =  "Please enter numbers only";
 /*
  //MARK: KYC WELCOME  SCREEN
  "KYC_LBL_TITLE" = "Welcome";

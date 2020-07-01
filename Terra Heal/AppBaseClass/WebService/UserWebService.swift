@@ -66,6 +66,7 @@ enum User {
         var password: String = ""
         var referral_code:  String = ""
         var tel_number:  String = ""
+        var tel_number_code: String = ""
         var device_token: String = PreferenceHelper.shared.getDeviceToken()
         var device_type: String = Constant.typeIOS
         var app_version: String = Bundle.appVesion

@@ -169,10 +169,10 @@ class CustomSegmentedControl: UISegmentedControl {
     }
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.setPadding(padding: self.padding)
+        //self.setPadding(padding: self.padding)
     }
     func setPadding(padding:CGFloat) {
-          //  self.image = self.image?.imageWithInsets(insetDimen: padding)
+            self.image = self.image?.imageWithInsets(insetDimen: padding)
     }
 }
 

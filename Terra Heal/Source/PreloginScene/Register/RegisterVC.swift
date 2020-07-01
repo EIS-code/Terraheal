@@ -17,6 +17,7 @@ class RegisterVC: MainVC {
     @IBOutlet weak var txtName: ACFloatingTextfield!
     @IBOutlet weak var txtEmail: ACFloatingTextfield!
     @IBOutlet weak var txtMobileNumber: ACFloatingTextfield!
+    @IBOutlet weak var txtCountryPhoneCode: ACFloatingTextfield!
     @IBOutlet weak var txtReferralCode: ACFloatingTextfield!
 
     @IBOutlet weak var txtPassword: ACFloatingTextfield!
@@ -83,18 +84,34 @@ class RegisterVC: MainVC {
         self.lblMessage?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
         self.txtName?.placeholder = "REGISTER_TXT_NAME".localized()
         self.txtName?.delegate = self
+        self.txtName?.configureTextField(InputTextFieldDetail.getNameConfiguration())
+        
         self.txtEmail?.placeholder = "REGISTER_TXT_EMAIL".localized()
         self.txtEmail?.delegate = self
+        self.txtEmail?.configureTextField(InputTextFieldDetail.getEmailConfiguration())
+        
+        self.txtCountryPhoneCode?.placeholder = "".localized()
+        self.txtCountryPhoneCode?.delegate = self
+        self.txtCountryPhoneCode?.text = CountryPhone.modelsFromDictionaryArray().first?.countryPhoneCode
+        
         self.txtMobileNumber?.placeholder = "REGISTER_TXT_MOBILE_NUMBER".localized()
         self.txtMobileNumber?.delegate = self
+        self.txtMobileNumber?.configureTextField(InputTextFieldDetail.getMobileConfiguration())
+        
         self.txtReferralCode?.placeholder = "REGISTER_TXT_REFFERAL_CODE".localized()
         self.txtReferralCode?.delegate = self
+        self.txtReferralCode?.configureTextField(InputTextFieldDetail.getNameConfiguration())
+        
+        
         self.txtPassword?.placeholder = "REGISTER_TXT_PASSWORD".localized()
         self.txtPassword?.delegate = self
+        self.txtPassword?.setupPasswordTextFielad()
+        self.txtPassword?.configureTextField(InputTextFieldDetail.getPassowordConfiguration())
         self.txtConfirmPassword?.placeholder = "REGISTER_TXT_CONFIRM_PASSWORD".localized()
         self.txtConfirmPassword?.delegate = self
-        self.txtPassword.setupPasswordTextFielad()
-        self.txtConfirmPassword.setupPasswordTextFielad()
+        self.txtConfirmPassword?.setupPasswordTextFielad()
+        self.txtConfirmPassword?.configureTextField(InputTextFieldDetail.getPassowordConfiguration())
+        
         self.lblConnect?.text = "REGISTER_LBL_CONNECT_VIA".localized()
         self.lblConnect?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
 
@@ -139,6 +156,25 @@ class RegisterVC: MainVC {
             self.wsRegister()
         }
     }
+    
+    //MARK: Custom Dialogs
+    func openCountryCodePicker() {
+        let alert: CustomCountyPhoneCodePicker = CustomCountyPhoneCodePicker.fromNib()
+        alert.initialize(title: "COUNTRY_PHONE_CODE_TITLE".localized(),buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            alert?.dismiss()
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (countryPhoneCode:  CountryPhone) in
+            alert?.dismiss()
+            guard let self = self else { return }
+            self.txtCountryPhoneCode.text = countryPhoneCode.countryPhoneCode
+            print(countryPhoneCode.countryName)
+
+        }
+    }
 
 }
 
@@ -159,6 +195,13 @@ extension RegisterVC: UITextFieldDelegate {
         }
         return true
     }
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == txtCountryPhoneCode {
+            self.openCountryCodePicker()
+            return false
+        }
+        return true
+    }
 }
 // MARK: - Web API Methods
 extension RegisterVC {
@@ -169,6 +212,7 @@ extension RegisterVC {
         request.email = txtEmail.text?.trim() ?? ""
         request.password = txtPassword.text!
         request.name = (txtName.text?.trim())!
+        request.tel_number_code = (txtCountryPhoneCode.text?.trim())!
         request.tel_number = (txtMobileNumber.text?.trim())!
         request.referral_code = (txtReferralCode.text?.trim())!
         AppWebApi.register(params: request) { (response) in
@@ -188,19 +232,20 @@ extension RegisterVC {
 
     func checkValidation() -> Bool {
 
-        if txtName.text!.isEmpty() {
+        if !txtName.validate().isValid {
             let alert: CustomAlert = CustomAlert.fromNib()
-            alert.initialize(message: "VALIDATION_MSG_INVALID_NAME".localized())
+            alert.initialize(message: txtName.validate().message)
             alert.show(animated: true)
-            alert.onBtnCancelTapped = {
-                [weak alert, weak self] in
-                alert?.dismiss()
-                _ = self?.txtName.becomeFirstResponder()
-            }
-            return false
-        } else if !txtEmail.text!.isValidEmail() {
+            alert.onBtnCancelTapped = { [weak alert, weak self] in
+                    alert?.dismiss()
+                guard let self = self else { return }
+                    _ = self.txtName.becomeFirstResponder()
+                }
+                return false
+        }
+        else if !txtEmail.validate().isValid{
             let alert: CustomAlert = CustomAlert.fromNib()
-            alert.initialize(message: "VALIDATION_MSG_INVALID_EMAIL".localized())
+            alert.initialize(message: txtEmail.validate().message)
             alert.show(animated: true)
             alert.onBtnCancelTapped = {
                 [weak alert, weak self] in
@@ -209,9 +254,9 @@ extension RegisterVC {
             }
             return false
         }
-        else if !txtMobileNumber.text!.isPhoneNumber {
+        else if !txtMobileNumber.validate().isValid {
             let alert: CustomAlert = CustomAlert.fromNib()
-            alert.initialize(message: "VALIDATION_MSG_INVALID_MOBILE".localized())
+            alert.initialize(message: txtMobileNumber.validate().message)
             alert.show(animated: true)
             alert.onBtnCancelTapped = {
                 [weak alert, weak self] in
@@ -220,9 +265,9 @@ extension RegisterVC {
             }
             return false
         }
-        else if txtPassword.text!.isEmpty {
+        else if !txtPassword.validate().isValid {
             let alert: CustomAlert = CustomAlert.fromNib()
-            alert.initialize(message: "VALIDATION_MSG_INVALID_PASSWORD".localized())
+            alert.initialize(message: txtPassword.validate().message)
             alert.show(animated: true)
             alert.onBtnCancelTapped = {
                 [weak alert, weak self] in

@@ -30,7 +30,7 @@ class LaunchVC: MainVC {
         super .viewDidAppear(animated)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
             if !PreferenceHelper.shared.getUserId().isEmpty() {
-                Common.appDelegate.loadServiceMapVC()//loadHomeVC()
+                Common.appDelegate.loadHomeVC()
             }
             else if PreferenceHelper.shared.getIsTutorialShow()  {
                 Common.appDelegate.loadTutoraiVC()

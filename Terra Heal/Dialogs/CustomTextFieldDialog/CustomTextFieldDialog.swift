@@ -90,8 +90,7 @@ class CustomTextFieldDialog: ThemeBottomDialogView {
         }
     }
     func configTextField(data:InputTextFieldDetail) {
-        self.txtData.inputConfiguration = data
-        self.txtData.configureTextField()
+        self.txtData.configureTextField(data)
         
     }
 

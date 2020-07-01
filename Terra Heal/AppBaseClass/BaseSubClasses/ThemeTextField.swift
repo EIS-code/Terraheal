@@ -111,7 +111,10 @@ extension ThemeTextField {
     }
     @objc func fix(textField: UITextField) {
         if let t = textField.text  {
-            textField.text = String(t.prefix(maxLength))
+            if maxLength != 0 {
+                    textField.text = String(t.prefix(maxLength))
+            }
+            
         }
     }
 }

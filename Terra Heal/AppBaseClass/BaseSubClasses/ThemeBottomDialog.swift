@@ -54,11 +54,12 @@ extension  ThemeBottomDialogView {
 
 
     func show(animated:Bool){
-
+        
         self.isAnimated = animated
         self.backgroundView.alpha = 0
         self.frame = UIScreen.main.bounds
         if let topController = Common.appDelegate.getTopViewController() {
+            topController.view.endEditing(true)
             topController.view.addSubview(self)
         }
 

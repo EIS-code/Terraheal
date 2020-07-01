@@ -18,7 +18,9 @@ public extension String {
     func isEmpty() -> Bool {
         return self.trim().isEmpty
     }
-
+    func isNotEmpty() -> Bool {
+        return !self.trim().isEmpty
+    }
     func isValidEmail() -> Bool  {
 
         let stremail = self.trimmingCharacters(in:CharacterSet.whitespacesAndNewlines);

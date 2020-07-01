@@ -301,19 +301,19 @@ class EditProfileVC: MainVC {
         
         self.ivProfilePic.downloadedFrom(link: appSingleton.user.profilePhoto)
         self.arrForProfile = [
-            EditProfileTextFieldDetail(placeholder: "PROFILE_NAME".localized(), value: appSingleton.user.name,  contentType:TextFieldContentType.Name, inputConfiguration: InputTextFieldDetail.getMobileConfiguration()),
-            EditProfileTextFieldDetail(placeholder: "PROFILE_SURNAME".localized(), value: appSingleton.user.surname, contentType:TextFieldContentType.Surname),
+            EditProfileTextFieldDetail(placeholder: "PROFILE_NAME".localized(), value: appSingleton.user.name,  contentType:TextFieldContentType.Name, inputConfiguration: InputTextFieldDetail.getNameConfiguration()),
+            EditProfileTextFieldDetail(placeholder: "PROFILE_SURNAME".localized(), value: appSingleton.user.surname, contentType:TextFieldContentType.Surname, inputConfiguration: InputTextFieldDetail.getNameConfiguration()),
             EditProfileTextFieldDetail(placeholder: "PROFILE_GENDER".localized(), value: appSingleton.user.getGenderName(), contentType: TextFieldContentType.Gender),
             EditProfileTextFieldDetail(placeholder: "PROFILE_DOB".localized(), value: appSingleton.user.getDob(), contentType: TextFieldContentType.DOB),
-            EditProfileTextFieldDetail(placeholder: "PROFILE_MOBILE".localized(), value: appSingleton.user.telNumberCode + " " + appSingleton.user.telNumber, contentType: TextFieldContentType.Phone),
+            EditProfileTextFieldDetail(placeholder: "PROFILE_MOBILE".localized(), value: appSingleton.user.telNumberCode + " " + appSingleton.user.telNumber, contentType: TextFieldContentType.Phone, inputConfiguration: InputTextFieldDetail.getMobileConfiguration()),
             
-            EditProfileTextFieldDetail(placeholder: "PROFILE_EMERGENCY_CONTACT".localized(), value: appSingleton.user.emergencyTelNumberCode + " " + appSingleton.user.emergencyTelNumber,  contentType: TextFieldContentType.EmergencyContact),
+            EditProfileTextFieldDetail(placeholder: "PROFILE_EMERGENCY_CONTACT".localized(), value: appSingleton.user.emergencyTelNumberCode + " " + appSingleton.user.emergencyTelNumber,  contentType: TextFieldContentType.EmergencyContact, inputConfiguration: InputTextFieldDetail.getMobileConfiguration()),
             
-            EditProfileTextFieldDetail(placeholder: "PROFILE_EMAIL".localized(), value: appSingleton.user.email, contentType: TextFieldContentType.Email,inputConfiguration: InputTextFieldDetail.getEmailConfiguration() ),
-            EditProfileTextFieldDetail(placeholder: "PROFILE_CITY".localized(), value: appSingleton.user.city.name,  contentType: TextFieldContentType.City),
-            EditProfileTextFieldDetail(placeholder: "PROFILE_COUNTRY".localized(), value: appSingleton.user.country.name,  contentType: TextFieldContentType.Country),
-            EditProfileTextFieldDetail(placeholder: "PROFILE_NIF".localized(), value: appSingleton.user.nif,  contentType: TextFieldContentType.Nif,inputConfiguration: InputTextFieldDetail.getNumberConfiguration()),
-            EditProfileTextFieldDetail(placeholder: "PROFILE_ID_PASSWORD".localized(), value: appSingleton.user.idPassport,  contentType: TextFieldContentType.IdPassport,inputConfiguration: InputTextFieldDetail.getCurrencyConfiguration())
+            EditProfileTextFieldDetail(placeholder: "PROFILE_EMAIL".localized(), value: appSingleton.user.email, contentType: TextFieldContentType.Email,inputConfiguration: InputTextFieldDetail.getEmailConfiguration()),
+            EditProfileTextFieldDetail(placeholder: "PROFILE_CITY".localized(), value: appSingleton.user.city.name,  contentType: TextFieldContentType.City, inputConfiguration: InputTextFieldDetail.getNameConfiguration()),
+            EditProfileTextFieldDetail(placeholder: "PROFILE_COUNTRY".localized(), value: appSingleton.user.country.name,  contentType: TextFieldContentType.Country, inputConfiguration: InputTextFieldDetail.getNameConfiguration()),
+            EditProfileTextFieldDetail(placeholder: "PROFILE_NIF".localized(), value: appSingleton.user.nif,  contentType: TextFieldContentType.Nif, inputConfiguration: InputTextFieldDetail.getNumberConfiguration()),
+            EditProfileTextFieldDetail(placeholder: "PROFILE_ID_PASSWORD".localized(), value: appSingleton.user.idPassport,  contentType: TextFieldContentType.IdPassport, inputConfiguration: InputTextFieldDetail.getNumberConfiguration())
         ]
         self.selectedCity = appSingleton.user.city
         self.selectedCountry = appSingleton.user.country

@@ -35,8 +35,9 @@
                 <outlet property="lblMessage" destination="7jV-sf-aUO" id="At4-da-45B"/>
                 <outlet property="scrVw" destination="Agl-Wb-btm" id="bu9-vP-nMg"/>
                 <outlet property="txtConfirmPassword" destination="bTc-Ja-HUs" id="nae-n5-YQM"/>
+                <outlet property="txtCountryPhoneCode" destination="SYQ-bq-Hmf" id="Z75-ua-fmF"/>
                 <outlet property="txtEmail" destination="0Yb-4K-vhh" id="b7b-CD-Rmu"/>
-                <outlet property="txtMobileNumber" destination="HZe-yT-jsW" id="4wF-Z6-MLi"/>
+                <outlet property="txtMobileNumber" destination="udr-25-Kfq" id="TvQ-gb-tJ1"/>
                 <outlet property="txtName" destination="ov9-Oy-oJD" id="onl-8N-v2Y"/>
                 <outlet property="txtPassword" destination="n6s-st-fuG" id="rBl-rz-mAu"/>
                 <outlet property="txtReferralCode" destination="8iT-7M-aZg" id="y9T-JW-HEs"/>
@@ -91,14 +92,25 @@ to sign back in</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HZe-yT-jsW" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GpX-JJ-cAO">
                                             <rect key="frame" x="0.0" y="113" width="288" height="51.5"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SYQ-bq-Hmf" userLabel="countryPhoneCode" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="51.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="--" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="udr-25-Kfq" userLabel="mobileNumber" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                                    <rect key="frame" x="92" y="0.0" width="196" height="51.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="HZe-yT-jsW" secondAttribute="height" multiplier="28:5" id="Q3e-fs-eEi"/>
+                                                <constraint firstItem="SYQ-bq-Hmf" firstAttribute="width" secondItem="GpX-JJ-cAO" secondAttribute="width" multiplier="0.25" id="a9U-io-euk"/>
+                                                <constraint firstAttribute="width" secondItem="GpX-JJ-cAO" secondAttribute="height" multiplier="28:5" id="tws-l3-u2X"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
-                                        </textField>
+                                        </stackView>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8iT-7M-aZg" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="169.5" width="288" height="51"/>
                                             <constraints>
@@ -126,9 +138,8 @@ to sign back in</string>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="8iT-7M-aZg" firstAttribute="width" secondItem="8iT-7M-aZg" secondAttribute="height" multiplier="28:5" id="C47-De-1db"/>
-                                        <constraint firstItem="HZe-yT-jsW" firstAttribute="width" secondItem="HZe-yT-jsW" secondAttribute="height" multiplier="28:5" id="JIK-GV-836"/>
+                                        <constraint firstItem="GpX-JJ-cAO" firstAttribute="width" secondItem="GpX-JJ-cAO" secondAttribute="height" multiplier="28:5" id="Nac-BG-RWF"/>
                                         <constraint firstItem="0Yb-4K-vhh" firstAttribute="width" secondItem="0Yb-4K-vhh" secondAttribute="height" multiplier="28:5" id="Ppe-DG-JuO"/>
-                                        <constraint firstItem="HZe-yT-jsW" firstAttribute="width" secondItem="HZe-yT-jsW" secondAttribute="height" multiplier="28:5" id="S8b-pb-cL8"/>
                                         <constraint firstItem="bTc-Ja-HUs" firstAttribute="width" secondItem="bTc-Ja-HUs" secondAttribute="height" multiplier="28:5" id="SEs-ts-WDl"/>
                                         <constraint firstItem="8iT-7M-aZg" firstAttribute="width" secondItem="8iT-7M-aZg" secondAttribute="height" multiplier="28:5" id="p0v-8M-rBO"/>
                                     </constraints>

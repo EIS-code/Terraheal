@@ -101,8 +101,11 @@ class PriceLocationVC: MainVC {
         self.tableView.reloadData()
     }
     func openLocationServiceDialog() {
+        if selectedData == nil {
+            Common.showAlert(message: "VALIDATION_MSG_PLEASE_SELECT_LOCATION".localized())
+        }
         let locationServiceDialog: CustomLocationServiceDialog  = CustomLocationServiceDialog.fromNib()
-        locationServiceDialog.initialize(title: selectedData!.name, buttonTitle: "Proceed", cancelButtonTitle: "Cancel")
+        locationServiceDialog.initialize(title: selectedData!.name, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
         
         
         locationServiceDialog.show(animated: true)

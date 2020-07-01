@@ -12,18 +12,20 @@ class TherapistQuestionariesTblCell: TableCell {
 
     @IBOutlet weak var vwBg: UIView!
     @IBOutlet weak var txtQuestion: ACFloatingTextfield!
-
+    @IBOutlet weak var lblTitle: ThemeLabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-
+        self.txtQuestion.disableFloatingLabel = true
+        self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.label_18)
     }
 
-    func setData(data: TherapistQuesionDetail ) {
-        self.txtQuestion.placeholder = data.question
-        self.txtQuestion.text = data.answer
-
+    func setData(data: QuestionDetail ) {
+        self.lblTitle.text = data.title
+        self.txtQuestion.placeholder = data.placeholder
+        self.txtQuestion.text = data.value
     }
 
     override func layoutSubviews() {

@@ -75,8 +75,11 @@ class LoginVC: MainVC {
         self.lblMessage?.setFont(name: FontName.Regular, size: FontSize.label_18)
         self.txtEmail?.placeholder = "LOGIN_TXT_EMAIL".localized()
         self.txtEmail?.delegate = self
+        self.txtEmail?.configureTextField(InputTextFieldDetail.getEmailConfiguration())
         self.txtPassword?.placeholder = "LOGIN_TXT_PASSWORD".localized()
         self.txtPassword?.delegate = self
+        self.txtPassword.setupPasswordTextFielad()
+        self.txtPassword.configureTextField(InputTextFieldDetail.getPassowordConfiguration())
         self.btnForgotPassword?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnForgotPassword?.setTitle("LOGIN_BTN_FORGOT_PASSWORD".localized(), for: .normal)
         self.btnSignUp?.setFont(name: FontName.SemiBold, size: FontSize.button_22)
@@ -85,11 +88,8 @@ class LoginVC: MainVC {
         self.btnLogin?.setTitle("LOGIN_BTN_SIGN_IN".localized(), for: .normal)
         self.btnLogin.setHighlighted(isHighlighted: true)
         self.imgChecked?.isHidden = true
-        self.txtPassword.setupPasswordTextFielad()
-
         self.lblConnect?.text = "LOGIN_LBL_CONNECT_VIA".localized()
         self.lblConnect?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
-
         self.lblDontHaveAccount?.text = "LOGIN_LBL_DO_NOT_HAVE_ACCOUNT".localized()
         self.lblDontHaveAccount?.setFont(name: FontName.Regular, size: FontSize.label_18)
 
@@ -149,21 +149,16 @@ extension LoginVC {
                 //PreferenceHelper.shared.setSessionToken(user.token)
                 appSingleton.user = user
                 Singleton.saveInDb()
-                if appSingleton.user.isContactVerified() {
-                    Common.appDelegate.loadHomeVC()
-                } else {
-                    Common.appDelegate.loadContactVerificationVC()
-                }
-
+                Common.appDelegate.loadHomeVC()
             }
         }
     }
 
     func checkValidation() -> Bool {
 
-        if !txtEmail.text!.isValidEmail() {
+        if !txtEmail.validate().isValid {
             let alert: CustomAlert = CustomAlert.fromNib()
-            alert.initialize(message: "VALIDATION_MSG_INVALID_EMAIL".localized())
+            alert.initialize(message: txtEmail.validate().message)
             alert.show(animated: true)
             alert.onBtnCancelTapped = {
                 [weak alert, weak self] in
@@ -172,9 +167,9 @@ extension LoginVC {
             }
             return false
         }
-        else if txtPassword.text!.isEmpty {
+        else if !txtPassword.validate().isValid {
             let alert: CustomAlert = CustomAlert.fromNib()
-            alert.initialize(message: "VALIDATION_MSG_INVALID_PASSWORD".localized())
+            alert.initialize(message: txtPassword.validate().message)
             alert.show(animated: true)
             alert.onBtnCancelTapped = {
                 [weak alert, weak self] in

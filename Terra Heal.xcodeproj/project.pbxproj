@@ -39,6 +39,7 @@
 		03728B9324A4E02F00C983BC /* EventBookCompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03728B8E24A4E02F00C983BC /* EventBookCompleteVC.swift */; };
 		03728B9424A4E02F00C983BC /* CustomAddNewEventDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03728B9024A4E02F00C983BC /* CustomAddNewEventDialog.xib */; };
 		03728B9524A4E02F00C983BC /* CustomAddNewEventDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03728B9124A4E02F00C983BC /* CustomAddNewEventDialog.swift */; };
+		0382C04E24ACB91E0041A4B6 /* TherapistQuastionariesWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0382C04D24ACB91E0041A4B6 /* TherapistQuastionariesWebservice.swift */; };
 		03D77F3D24AB2FAF0098DD01 /* JDImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D77F3C24AB2FAF0098DD01 /* JDImageExtension.swift */; };
 		03F5255824AB546F008E1493 /* MassagePreferenceWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5255724AB546F008E1493 /* MassagePreferenceWebservice.swift */; };
 		55164A22FACE35DC8CBD8350 /* Pods_Terra_Heal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897AF53337FB6FB8116C0500 /* Pods_Terra_Heal.framework */; };
@@ -326,6 +327,7 @@
 		03728B8E24A4E02F00C983BC /* EventBookCompleteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventBookCompleteVC.swift; sourceTree = "<group>"; };
 		03728B9024A4E02F00C983BC /* CustomAddNewEventDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomAddNewEventDialog.xib; sourceTree = "<group>"; };
 		03728B9124A4E02F00C983BC /* CustomAddNewEventDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAddNewEventDialog.swift; sourceTree = "<group>"; };
+		0382C04D24ACB91E0041A4B6 /* TherapistQuastionariesWebservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TherapistQuastionariesWebservice.swift; sourceTree = "<group>"; };
 		03D77F3C24AB2FAF0098DD01 /* JDImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDImageExtension.swift; sourceTree = "<group>"; };
 		03F5255724AB546F008E1493 /* MassagePreferenceWebservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MassagePreferenceWebservice.swift; sourceTree = "<group>"; };
 		168AB6908BA3531B68A95E2E /* Pods-Terra Heal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Terra Heal.debug.xcconfig"; path = "Target Support Files/Pods-Terra Heal/Pods-Terra Heal.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1025,6 +1027,7 @@
 				63435B4B24769C4900AF7100 /* ResponseModel.swift */,
 				635675F3249A1D68006F5511 /* PricingLocationWebService.swift */,
 				03F5255724AB546F008E1493 /* MassagePreferenceWebservice.swift */,
+				0382C04D24ACB91E0041A4B6 /* TherapistQuastionariesWebservice.swift */,
 				633C1AC324923FCA009EB6AE /* CityWebService.swift */,
 				633C1AC124923D3A009EB6AE /* CountriesWebService.swift */,
 				63435B4C24769C4900AF7100 /* UserWebService.swift */,
@@ -2630,6 +2633,7 @@
 				63EA7D102493ADC40027F9D3 /* CustomTextFieldDialog.swift in Sources */,
 				632DB09D248FA5CC00B65B46 /* JDDeviceHelper.swift in Sources */,
 				637FC48124A37B89009695F2 /* VerificationVC.swift in Sources */,
+				0382C04E24ACB91E0041A4B6 /* TherapistQuastionariesWebservice.swift in Sources */,
 				63B9679F249B62190015DDCA /* VerifyContactVC.swift in Sources */,
 				03F5255824AB546F008E1493 /* MassagePreferenceWebservice.swift in Sources */,
 				635675F1249A1D03006F5511 /* PriceLocationTblCell.swift in Sources */,

@@ -25,7 +25,7 @@
                                 <color key="backgroundColor" name="theme_primary"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92m-kt-8e8" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="111.5" width="156" height="47.5"/>
+                                <rect key="frame" x="15.5" y="111.5" width="125" height="47.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="theme_primary"/>
                                 <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
                             <constraint firstItem="fsl-wV-zjF" firstAttribute="width" secondItem="9kn-XN-5Zv" secondAttribute="width" multiplier="0.9" id="7Cg-Fs-IxA"/>
                             <constraint firstItem="fsl-wV-zjF" firstAttribute="top" secondItem="9kn-XN-5Zv" secondAttribute="top" id="LDB-74-Mpu"/>
                             <constraint firstItem="fsl-wV-zjF" firstAttribute="centerX" secondItem="9kn-XN-5Zv" secondAttribute="centerX" id="RdH-li-HdY"/>
-                            <constraint firstItem="92m-kt-8e8" firstAttribute="width" secondItem="9kn-XN-5Zv" secondAttribute="width" id="U8o-fL-29p"/>
+                            <constraint firstItem="92m-kt-8e8" firstAttribute="width" secondItem="9kn-XN-5Zv" secondAttribute="width" multiplier="0.8" id="U8o-fL-29p"/>
                             <constraint firstItem="92m-kt-8e8" firstAttribute="centerX" secondItem="9kn-XN-5Zv" secondAttribute="centerX" id="VeY-Vx-S84"/>
                             <constraint firstItem="fsl-wV-zjF" firstAttribute="height" secondItem="9kn-XN-5Zv" secondAttribute="height" multiplier="0.7" id="VvD-tD-Zv8"/>
                             <constraint firstAttribute="bottom" secondItem="92m-kt-8e8" secondAttribute="bottom" id="lCc-8M-h1h"/>
