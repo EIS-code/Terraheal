@@ -146,13 +146,28 @@
                                 <constraint firstItem="w4k-c1-F6Z" firstAttribute="height" relation="greaterThanOrEqual" secondItem="cXW-IL-cWe" secondAttribute="height" multiplier="0.5" id="sjT-gC-S8J"/>
                             </constraints>
                         </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gd8-8q-HDU" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="258" y="56" width="42" height="42"/>
+                            <color key="backgroundColor" name="theme_background"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="gd8-8q-HDU" secondAttribute="height" multiplier="1:1" id="ksV-43-JCd"/>
+                            </constraints>
+                            <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                            <state key="normal" image="asset-map-location"/>
+                            <connections>
+                                <action selector="btnLocationTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="NuU-6n-zu4"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" name="theme_primary_light_background"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" constant="20" id="1HJ-Xp-DOL"/>
+                        <constraint firstItem="gd8-8q-HDU" firstAttribute="width" secondItem="gd8-8q-HDU" secondAttribute="height" multiplier="1:1" id="MDA-gr-vao"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="RrZ-kW-n5i"/>
+                        <constraint firstItem="gd8-8q-HDU" firstAttribute="top" secondItem="cXW-IL-cWe" secondAttribute="top" id="VvU-OS-Nvu"/>
                         <constraint firstAttribute="bottom" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="30" id="fhi-OD-EBT"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="56" id="gm5-2t-GbH"/>
+                        <constraint firstItem="gd8-8q-HDU" firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" id="oeu-Hx-v81"/>
                     </constraints>
                 </view>
             </subviews>
@@ -172,6 +187,7 @@
                 <outlet property="backgroundView" destination="6ZW-DU-hOd" id="lFA-bQ-tdV"/>
                 <outlet property="btnCancel" destination="581-cI-fuY" id="Hnk-iZ-ihl"/>
                 <outlet property="btnDone" destination="W3s-UH-gbE" id="4jk-wN-Zhb"/>
+                <outlet property="btnMapLocation" destination="gd8-8q-HDU" id="R6J-CN-6FV"/>
                 <outlet property="dialogView" destination="Yaj-p7-IIT" id="Sjt-cS-gvV"/>
                 <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
                 <outlet property="txtAddressLine1" destination="hfi-pA-asW" id="d7S-UX-cJf"/>
@@ -187,6 +203,10 @@
         </view>
     </objects>
     <resources>
+        <image name="asset-map-location" width="21.333333969116211" height="21.333333969116211"/>
+        <namedColor name="theme_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="theme_primary">
             <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

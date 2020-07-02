@@ -28,9 +28,9 @@ class MyAddressTblCell: TableCell {
 
     }
 
-    func setData(data: MyAddressDetail ) {
+    func setData(data: Address ) {
         self.lblName.text = data.name
-        self.lblAddress.text = data.addressLine1 + "\n" + data.addressLine2 + "\n" + data.city +  "-" + data.pincode
+        self.lblAddress.text = data.addressLine1 + "\n" + data.addressLine2 + "\n" + data.city +  "-" + data.pinCode
         
     }
 

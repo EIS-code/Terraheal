@@ -4,6 +4,8 @@
 //
 import UIKit
 import IQKeyboardManager
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared().isEnabled = true
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true
         IQKeyboardManager.shared().isEnableAutoToolbar = true
+        
+        GMSServices.provideAPIKey("AIzaSyBuupL4pg_TJS76EVkKrrquH3gCgFs--u4")
+        GMSPlacesClient.provideAPIKey("AIzaSyBuupL4pg_TJS76EVkKrrquH3gCgFs--u4")
         //self.setupFireBaseConfiguration()
         //self.loadWelcomeVC()
         return true

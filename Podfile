@@ -11,4 +11,6 @@ target 'Terra Heal' do
 	pod 'Alamofire'
   pod 'FSCalendar'
   pod 'SDWebImage'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
 end

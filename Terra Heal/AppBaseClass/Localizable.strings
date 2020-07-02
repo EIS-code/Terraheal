@@ -10,18 +10,12 @@
 "TUTORIAL_LBL_MESSAGE" = "This is a description,\nthis is a sample text";
 "TUTORIAL_BTN_NEXT" = "next";
 "TUTORIAL_BTN_BACK" = "back";
-
 "TUTORIAL_LBL_TITLE_1" = "book quality professional massage or therapy";
 "TUTORIAL_LBL_MESSAGE_1" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 "TUTORIAL_LBL_TITLE_2" = "wide variety of options, short or long duration";
 "TUTORIAL_LBL_MESSAGE_2" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-
 "TUTORIAL_LBL_TITLE_3" = "certified therapist and personalized approach to each client";
 "TUTORIAL_LBL_MESSAGE_3" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-
-
-
-
 
 //MARK: WELCOME SCREEN
 "WELCOME_LBL_HEADER_1" = "you come to us";
@@ -56,6 +50,7 @@
 "REGISTER_LBL_CONNECT_VIA" = " or connect via ";
 "PROFILE_TXT_SEARCH_COUNTRY" = "search country";
 "PROFILE_TXT_SEARCH_CITY" = "search city";
+"TXT_SEARCH_ADDRESS" = "search address";
 "COUNTRY_PHONE_CODE_TITLE" = "Country Phone Code";
 //MARK:  Profile Screen
 "PROFILE_NAME"  = "Name";
@@ -79,7 +74,7 @@
 "CONTACT_VERIFICATION_BTN_VERIFY" = "Verify";
 //MARK: CONTACT VERIFIED  SCREEN
 "CONTACT_VERIFICATION_BTN_HOME" = "Home";
-"CONTACT_VERIFIED_LBL_TITLE" = "Verified";
+"CONTACT_VERIFIED_LBL_TITLE" = "Thank you";
 "CONTACT_VERIFIED_LBL_MESSAGE" = "Your identity is verified successfully.";
 //MARK: Verification Dialog
 "CONTACT_VERIFICATION_BTN_PROCEED" = "Proceed";
@@ -338,6 +333,10 @@
 "VALIDATION_MSG_INVALID_NIF"  =  "Please enter valid nif";
 "VALIDATION_MSG_INVALID_ID"  =  "Please enter valid id";
 "VALIDATION_MSG_NUMBER_ONLY"  =  "Please enter numbers only";
+
+
+
+
 /*
  //MARK: KYC WELCOME  SCREEN
  "KYC_LBL_TITLE" = "Welcome";
@@ -375,6 +374,8 @@
  "ADD_CARD_TXT_EXPIRY_DATE" = "MM/YY";
  "ADD_CARD_BTN_ADD_CARD" = "Add Card";
  //MARK: COMPLETE IDENTITY VERFICATION SCREEN
- "COMPLETE_VERIFICATION_LBL_TITLE" = "Success";
+ "COMPLETE_VERIFICATION_LBL_TITLE" = "Thank you";
  "COMPLETE_VERIFICATION_LBL_MESSAGE" = "Your identity is verified successfully.";
- "COMPLETE_VERIFICATION_BTN_HOME" = "Home";*/
+ "COMPLETE_VERIFICATION_BTN_HOME" = "Home";
+ 
+ */

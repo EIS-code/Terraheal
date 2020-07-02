@@ -201,6 +201,25 @@ extension AppDelegate {
         }
     }
 
+    func loadMapLocationVC(navigaionVC:UINavigationController? = nil) -> MapLocationVC {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: MapLocationVC =  nc.findVCs(ofType: MapLocationVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+                return targetVC
+            } else {
+                let targetVC: MapLocationVC = MapLocationVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+                return targetVC
+            }
+        } else {
+            let targetVC: MapLocationVC = MapLocationVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+            return targetVC
+        }
+    }
+
+    
     func loadKycInfoVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: KycInfoVC =  nc.findVCs(ofType: KycInfoVC.self).first {

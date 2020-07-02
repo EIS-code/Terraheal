@@ -1,6 +1,13 @@
 PODS:
   - Alamofire (5.2.1)
   - FSCalendar (2.8.1)
+  - GoogleMaps (3.9.0):
+    - GoogleMaps/Maps (= 3.9.0)
+  - GoogleMaps/Base (3.9.0)
+  - GoogleMaps/Maps (3.9.0):
+    - GoogleMaps/Base
+  - GooglePlaces (3.9.0):
+    - GoogleMaps/Base (= 3.9.0)
   - IQKeyboardManager (6.5.5)
   - SDWebImage (5.8.1):
     - SDWebImage/Core (= 5.8.1)
@@ -9,6 +16,8 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - FSCalendar
+  - GoogleMaps
+  - GooglePlaces
   - IQKeyboardManager
   - SDWebImage
 
@@ -16,15 +25,19 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - FSCalendar
+    - GoogleMaps
+    - GooglePlaces
     - IQKeyboardManager
     - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
   FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
+  GoogleMaps: 4b5346bddfe6911bb89155d43c903020170523ac
+  GooglePlaces: 1634d019549b969d40fe0ccb0b9513055adebe01
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
   SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
 
-PODFILE CHECKSUM: b6fe8b42b32c5d3dfdd8a80c95c0490cf0e6d396
+PODFILE CHECKSUM: 6d804cc4766013615b61067c0c13046d735e1f99
 
 COCOAPODS: 1.8.4

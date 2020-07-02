@@ -20,21 +20,17 @@ class CustomAddNewAddressDialog: ThemeBottomDialogView {
     @IBOutlet weak var txtCity: ACFloatingTextfield!
     @IBOutlet weak var txtState: ACFloatingTextfield!
     @IBOutlet weak var txtName: ACFloatingTextfield!
+    @IBOutlet weak var btnMapLocation: FloatingRoundButton!
+    
+    var onBtnDoneTapped: ((_ data: Address ) -> Void)? = nil
+    var selectedAddress: Address = Address.init(fromDictionary: [:])
 
-    var onBtnDoneTapped: ((_ data: MyAddressDetail ) -> Void)? = nil
-    var selectedAddress: MyAddressDetail = MyAddressDetail.init()
+    func initialize(title:String, data:Address, buttonTitle:String,cancelButtonTitle:String) {
 
-    func initialize(title:String, data:MyAddressDetail, buttonTitle:String,cancelButtonTitle:String) {
-
+        self.selectedAddress = data
         self.initialSetup()
         self.lblTitle.text = title
-        self.txtAddressLine1.text = data.addressLine1
-        self.txtAddressLine2.text = data.addressLine2
-        self.txtLandmark.text = data.landMark
-        self.txtPincode.text = data.pincode
-        self.txtCity.text = data.city
-        self.txtState.text = data.state
-        self.txtName.text = data.name
+        self.setData(data: data)
         self.btnDone.setTitle(buttonTitle, for: .normal)
 
         if cancelButtonTitle.isEmpty() {
@@ -51,7 +47,15 @@ class CustomAddNewAddressDialog: ThemeBottomDialogView {
         }
         
     }
-
+    func setData(data:Address) {
+        self.txtAddressLine1.text = data.addressLine1
+               self.txtAddressLine2.text = data.addressLine2
+               self.txtLandmark.text = data.landMark
+               self.txtPincode.text = data.pinCode
+               self.txtCity.text = data.city
+               self.txtState.text = data.province
+               self.txtName.text = data.name
+    }
     func initialSetup() {
         dialogView.clipsToBounds = true
         self.backgroundColor = .clear
@@ -166,8 +170,8 @@ class CustomAddNewAddressDialog: ThemeBottomDialogView {
             selectedAddress.addressLine2 = txtAddressLine2.text ?? ""
             selectedAddress.landMark = txtLandmark.text ?? ""
             selectedAddress.city = txtCity.text ?? ""
-            selectedAddress.state = txtState.text ?? ""
-            selectedAddress.pincode = txtPincode.text ?? ""
+            selectedAddress.province = txtState.text ?? ""
+            selectedAddress.pinCode = txtPincode.text ?? ""
             selectedAddress.name = txtName.text ?? ""
 
             if self.onBtnDoneTapped != nil {
@@ -175,7 +179,22 @@ class CustomAddNewAddressDialog: ThemeBottomDialogView {
             }
         }
     }
-
+    @IBAction func btnLocationTapped(_ sender: ThemeButton) {
+        let locationVC: MapLocationVC = MapLocationVC.fromNib()
+        Common.appDelegate.getTopViewController()?.present(locationVC, animated: true, completion: {
+            
+        })
+        locationVC.onBtnDoneTapped =  { [weak self] (address) in
+            let id = self?.selectedAddress.id
+            self?.selectedAddress = address
+            self?.selectedAddress.id = id ?? ""
+            self?.setData(data: address)
+            locationVC.dismiss(animated: true) {
+                
+            }
+        }
+    }
+    
 }
 
 extension CustomAddNewAddressDialog: UITextFieldDelegate {

@@ -27,6 +27,7 @@ class AppWebApi: NSObject {
             static let Massage = "/api/massage"
             static let Location = "/api/location"
             static let Therapy = "/api/therapy"
+            static let Address = "/api/user/address"
 
         }
 
@@ -88,6 +89,20 @@ class AppWebApi: NSObject {
         static var SaveTherapistQuesionaryList: String {
                    return  Domain + Routes.Therapy + "/questionnaire/save"
         }
+        //Address APIs
+        static var GetAddressList: String {
+                   return  Domain + Routes.Address + "/get"
+        }
+        static var RemoveAddress: String {
+                   return  Domain + Routes.Address + "/remove"
+        }
+        static var UpdateAddress: String {
+                   return  Domain + Routes.Address + "/update"
+        }
+        static var AddAddress: String {
+                   return  Domain + Routes.Address + "/save"
+        }
+        
     }
 }
 
@@ -233,6 +248,35 @@ extension AppWebApi {
             let response = TherapistQuastionaries.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }
+    }
+    //MARK:  Address Related APIS
+    
+    class func addAddress(params:Addresses.RequestAddAddress, completionHandler: @escaping ((Addresses.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.AddAddress, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = Addresses.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    
+    class func getAddress(params:Addresses.RequestAddresslist = Addresses.RequestAddresslist(), completionHandler: @escaping ((Addresses.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetAddressList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = Addresses.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    
+    
+    class func updateAddress(params:Addresses.RequestUpdateAddress, completionHandler: @escaping ((Addresses.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.UpdateAddress, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = Addresses.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    class func removeAddress(params:Addresses.RequestDeleteAddress, completionHandler: @escaping ((Addresses.Response) -> Void)) {
+           AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.RemoveAddress, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+               let response = Addresses.Response.init(fromDictionary: dictionary)
+               completionHandler(response)
+           }
     }
 }
 

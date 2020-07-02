@@ -15,6 +15,12 @@
 		0348DC1D24A5B7A50095CCD3 /* ServiceMapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0348DC1B24A5B7A50095CCD3 /* ServiceMapVC.xib */; };
 		0348DC2124A5CCDB0095CCD3 /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0348DC1F24A5CCDB0095CCD3 /* ServiceCell.xib */; };
 		0348DC2224A5CCDB0095CCD3 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0348DC2024A5CCDB0095CCD3 /* ServiceCell.swift */; };
+		0353012E24ADB8CE00452F8C /* MapLocationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0353012924ADB8CE00452F8C /* MapLocationVC.xib */; };
+		0353012F24ADB8CE00452F8C /* AutocompleteLocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0353012B24ADB8CE00452F8C /* AutocompleteLocationCell.xib */; };
+		0353013024ADB8CE00452F8C /* AutocompleteLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0353012C24ADB8CE00452F8C /* AutocompleteLocationCell.swift */; };
+		0353013124ADB8CE00452F8C /* MapLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0353012D24ADB8CE00452F8C /* MapLocationVC.swift */; };
+		0353013324ADC3F900452F8C /* styleable_map.json in Resources */ = {isa = PBXBuildFile; fileRef = 0353013224ADC3F900452F8C /* styleable_map.json */; };
+		0353013524ADDBF800452F8C /* AddressWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0353013424ADDBF800452F8C /* AddressWebService.swift */; };
 		03599B8524A9E6E2002814A5 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03599B8224A9E6E2002814A5 /* CameraVC.swift */; };
 		03599B8624A9E6E2002814A5 /* CameraVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03599B8424A9E6E2002814A5 /* CameraVC.xib */; };
 		03599B8924AA03F1002814A5 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03599B8824AA03F1002814A5 /* CameraController.swift */; };
@@ -303,6 +309,12 @@
 		0348DC1B24A5B7A50095CCD3 /* ServiceMapVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceMapVC.xib; sourceTree = "<group>"; };
 		0348DC1F24A5CCDB0095CCD3 /* ServiceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
 		0348DC2024A5CCDB0095CCD3 /* ServiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
+		0353012924ADB8CE00452F8C /* MapLocationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapLocationVC.xib; sourceTree = "<group>"; };
+		0353012B24ADB8CE00452F8C /* AutocompleteLocationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AutocompleteLocationCell.xib; sourceTree = "<group>"; };
+		0353012C24ADB8CE00452F8C /* AutocompleteLocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutocompleteLocationCell.swift; sourceTree = "<group>"; };
+		0353012D24ADB8CE00452F8C /* MapLocationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapLocationVC.swift; sourceTree = "<group>"; };
+		0353013224ADC3F900452F8C /* styleable_map.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = styleable_map.json; sourceTree = "<group>"; };
+		0353013424ADDBF800452F8C /* AddressWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressWebService.swift; sourceTree = "<group>"; };
 		03599B8224A9E6E2002814A5 /* CameraVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		03599B8424A9E6E2002814A5 /* CameraVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraVC.xib; sourceTree = "<group>"; };
 		03599B8824AA03F1002814A5 /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
@@ -654,6 +666,33 @@
 				0348DC2024A5CCDB0095CCD3 /* ServiceCell.swift */,
 			);
 			path = ServiceCell;
+			sourceTree = "<group>";
+		};
+		0353012724ADB8CE00452F8C /* MapLocationVC */ = {
+			isa = PBXGroup;
+			children = (
+				0353012824ADB8CE00452F8C /* xib */,
+				0353012A24ADB8CE00452F8C /* AutocompleteLocationCell */,
+				0353012D24ADB8CE00452F8C /* MapLocationVC.swift */,
+			);
+			path = MapLocationVC;
+			sourceTree = "<group>";
+		};
+		0353012824ADB8CE00452F8C /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				0353012924ADB8CE00452F8C /* MapLocationVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		0353012A24ADB8CE00452F8C /* AutocompleteLocationCell */ = {
+			isa = PBXGroup;
+			children = (
+				0353012B24ADB8CE00452F8C /* AutocompleteLocationCell.xib */,
+				0353012C24ADB8CE00452F8C /* AutocompleteLocationCell.swift */,
+			);
+			path = AutocompleteLocationCell;
 			sourceTree = "<group>";
 		};
 		03599B8324A9E6E2002814A5 /* xib */ = {
@@ -1032,6 +1071,7 @@
 				633C1AC124923D3A009EB6AE /* CountriesWebService.swift */,
 				63435B4C24769C4900AF7100 /* UserWebService.swift */,
 				63435B4D24769C4900AF7100 /* Singleton.swift */,
+				0353013424ADDBF800452F8C /* AddressWebService.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -1151,6 +1191,7 @@
 		634397D1245BE6DF009BCA1F /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				0353012724ADB8CE00452F8C /* MapLocationVC */,
 				03428AE324AB12BC00BD24A0 /* MyBooking */,
 				035BE6ED24A763CB000F0FE0 /* ImagePickerVC */,
 				0348DC1824A5B7A50095CCD3 /* ServiceMapVC */,
@@ -1175,6 +1216,7 @@
 		634398A7245BE6E9009BCA1F /* support */ = {
 			isa = PBXGroup;
 			children = (
+				0353013224ADC3F900452F8C /* styleable_map.json */,
 				634397C6245BE6DF009BCA1F /* SceneDelegate.swift */,
 				6343976E245BE467009BCA1F /* Info.plist */,
 				634397A7245BE6DF009BCA1F /* AppDelegate.swift */,
@@ -2398,6 +2440,7 @@
 				6343975A245BE460009BCA1F /* Frameworks */,
 				6343975B245BE460009BCA1F /* Resources */,
 				2F9D370D1D6FC77E659CFB25 /* [CP] Embed Pods Frameworks */,
+				9F344C7E91EDE5B4723D38A1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2447,6 +2490,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0353012F24ADB8CE00452F8C /* AutocompleteLocationCell.xib in Resources */,
 				637A7C552487E668005D3819 /* HomeTblCell.xib in Resources */,
 				03728B8324A4C53E00C983BC /* CustomLocationServiceDialog.xib in Resources */,
 				035BE6F924A764EE000F0FE0 /* GallaryVC.xib in Resources */,
@@ -2477,6 +2521,7 @@
 				63672D2D2491072900A12D91 /* CustomLanguagePickerCell.xib in Resources */,
 				6348E20524723B2B00C15975 /* Nunito-SemiBold.ttf in Resources */,
 				638CAC34249CB71D001A4135 /* GiftVoucherTblCell.xib in Resources */,
+				0353013324ADC3F900452F8C /* styleable_map.json in Resources */,
 				63B967D4249BAC720015DDCA /* CampaignsVC.xib in Resources */,
 				0348DC1D24A5B7A50095CCD3 /* ServiceMapVC.xib in Resources */,
 				03728B9424A4E02F00C983BC /* CustomAddNewEventDialog.xib in Resources */,
@@ -2532,6 +2577,7 @@
 				635675E02499FA2E006F5511 /* HowItWorkTblCell.xib in Resources */,
 				63B9679B249B62190015DDCA /* ContactVerifiedVC.xib in Resources */,
 				63672D3924910DC000A12D91 /* SettingTblCell.xib in Resources */,
+				0353012E24ADB8CE00452F8C /* MapLocationVC.xib in Resources */,
 				633C1ACB24924483009EB6AE /* CustomCountyPicker.xib in Resources */,
 				035BE6F524A763CB000F0FE0 /* CustomPhotoPicker.xib in Resources */,
 				632DB047248F8FDD00B65B46 /* CustomTextViewDialog.xib in Resources */,
@@ -2614,6 +2660,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9F344C7E91EDE5B4723D38A1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Terra Heal/Pods-Terra Heal-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Terra Heal/Pods-Terra Heal-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Terra Heal/Pods-Terra Heal-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -2667,6 +2730,7 @@
 				633B7126245FDA5800CF490D /* ThemeTextField.swift in Sources */,
 				633B7127245FDA5800CF490D /* ThemeButton.swift in Sources */,
 				63B967A9249B62190015DDCA /* RegisterVC.swift in Sources */,
+				0353013124ADB8CE00452F8C /* MapLocationVC.swift in Sources */,
 				63435B5024769C4900AF7100 /* Reachability.swift in Sources */,
 				639C69A024A2184F005FACDB /* CustomCountyPhoneCodePicker.swift in Sources */,
 				63B967D7249BAC720015DDCA /* CampaignsTblCell.swift in Sources */,
@@ -2678,6 +2742,7 @@
 				63681ABD24979C990087CC36 /* TherapistQuestionariesTblCell.swift in Sources */,
 				03428AEB24AB12BC00BD24A0 /* MyBookingVC.swift in Sources */,
 				635675DD2499FA2E006F5511 /* MenuCellVerticle.swift in Sources */,
+				0353013524ADDBF800452F8C /* AddressWebService.swift in Sources */,
 				63681AC72497AD8B0087CC36 /* MyPlaceVC.swift in Sources */,
 				638CAC35249CB71D001A4135 /* GiftVoucherTblCell.swift in Sources */,
 				63432F87248F5D0B006BA322 /* CustomPressurePicker.swift in Sources */,
@@ -2747,6 +2812,7 @@
 				035BE6F424A763CB000F0FE0 /* CustomPhotoPicker.swift in Sources */,
 				63E94A7C24920887000F375E /* EditProfileCell.swift in Sources */,
 				632DB098248FA5CC00B65B46 /* NSObject + Extension.swift in Sources */,
+				0353013024ADB8CE00452F8C /* AutocompleteLocationCell.swift in Sources */,
 				633C1ACC24924483009EB6AE /* CustomCountyPicker.swift in Sources */,
 				635675DF2499FA2E006F5511 /* HowItWorkVC.swift in Sources */,
 				63432F83248F4B45006BA322 /* MassagePreferenceVC.swift in Sources */,

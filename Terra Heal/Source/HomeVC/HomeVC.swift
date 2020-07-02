@@ -100,7 +100,9 @@ class HomeVC: MainVC {
      //MARK: Action Methods
 
     @IBAction func btnMenuTapped(_ sender: Any) {
-        SideVC.shared.show()
+        //SideVC.shared.show()
+        Common.appDelegate.loadMapLocationVC(navigaionVC: self.navigationController)
+        
     }
 
     @IBAction func btnProfileTapped(_ sender: Any) {

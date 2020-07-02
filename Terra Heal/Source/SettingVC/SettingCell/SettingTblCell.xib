@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,15 +22,15 @@
                         <rect key="frame" x="5" y="5" width="316" height="97"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="evN-os-n1y">
-                                <rect key="frame" x="20" y="28.5" width="40" height="40"/>
+                                <rect key="frame" x="20" y="20" width="57" height="57"/>
                                 <color key="backgroundColor" name="theme_primary"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="8m8-2X-43B"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="999" constant="40" id="8m8-2X-43B"/>
                                     <constraint firstAttribute="width" secondItem="evN-os-n1y" secondAttribute="height" multiplier="1:1" id="xED-4H-sBI"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-J2-KSJ" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="80" y="10" width="166" height="77"/>
+                                <rect key="frame" x="97" y="10" width="149" height="77"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="theme_primary"/>
                                 <nil key="highlightedColor"/>
@@ -59,7 +59,7 @@
                             <constraint firstItem="zbl-J2-KSJ" firstAttribute="leading" secondItem="evN-os-n1y" secondAttribute="trailing" constant="20" id="O5Y-tD-qIO"/>
                             <constraint firstAttribute="trailing" secondItem="LzM-Rc-egA" secondAttribute="trailing" constant="10" id="OQX-HH-mgv"/>
                             <constraint firstAttribute="trailing" secondItem="YiN-jg-Jzo" secondAttribute="trailing" constant="20" id="QJK-Xf-Rdl"/>
-                            <constraint firstItem="evN-os-n1y" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fTr-D4-KiU" secondAttribute="top" constant="20" id="XXB-SD-RdP"/>
+                            <constraint firstItem="evN-os-n1y" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" constant="20" id="XXB-SD-RdP"/>
                             <constraint firstItem="evN-os-n1y" firstAttribute="centerY" secondItem="fTr-D4-KiU" secondAttribute="centerY" id="bck-H7-M2i"/>
                             <constraint firstItem="YiN-jg-Jzo" firstAttribute="leading" secondItem="zbl-J2-KSJ" secondAttribute="trailing" constant="20" id="kkG-JB-wRa"/>
                             <constraint firstItem="evN-os-n1y" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="20" id="rxs-pa-aby"/>
