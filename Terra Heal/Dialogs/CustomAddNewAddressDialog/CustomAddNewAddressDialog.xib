@@ -48,9 +48,9 @@
                                     <rect key="frame" x="0.0" y="65.5" width="280" height="184.5"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tmm-pq-3Oq">
-                                            <rect key="frame" x="20" y="20" width="240" height="420"/>
+                                            <rect key="frame" x="20" y="20" width="240" height="546"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hfi-pA-asW" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hfi-pA-asW" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="hfi-pA-asW" secondAttribute="height" multiplier="28:5" id="f59-eY-6p2"/>
@@ -104,9 +104,29 @@
                                                         <constraint firstAttribute="width" secondItem="MtW-Tf-Zzw" secondAttribute="height" multiplier="28:5" id="d5d-sl-l4h"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" textContentType="location"/>
+                                                </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iDs-mp-aFX" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="440" width="240" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="iDs-mp-aFX" secondAttribute="height" multiplier="28:5" id="mTd-n0-3pK"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" textContentType="location"/>
+                                                </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XjI-N1-a7N" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="503" width="240" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="XjI-N1-a7N" secondAttribute="height" multiplier="28:5" id="5ac-iO-IYb"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" textContentType="location"/>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="iDs-mp-aFX" firstAttribute="width" secondItem="iDs-mp-aFX" secondAttribute="height" multiplier="28:5" id="Ag9-Yw-kbT"/>
+                                                <constraint firstItem="XjI-N1-a7N" firstAttribute="width" secondItem="XjI-N1-a7N" secondAttribute="height" multiplier="28:5" id="faA-1c-wJv"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
@@ -194,7 +214,9 @@
                 <outlet property="txtAddressLine2" destination="zMy-3y-WvT" id="MB5-m1-Nmx"/>
                 <outlet property="txtCity" destination="BCz-LQ-Bco" id="bV4-Ye-8br"/>
                 <outlet property="txtLandmark" destination="qBa-m1-M8t" id="PKN-yu-bwN"/>
-                <outlet property="txtName" destination="MtW-Tf-Zzw" id="KNx-t7-GPh"/>
+                <outlet property="txtLatitude" destination="iDs-mp-aFX" id="yG7-f6-mfb"/>
+                <outlet property="txtLongitude" destination="XjI-N1-a7N" id="wtM-en-s9x"/>
+                <outlet property="txtName" destination="MtW-Tf-Zzw" id="Y5y-4i-z2l"/>
                 <outlet property="txtPincode" destination="snU-Wd-9Uv" id="7JJ-5X-m49"/>
                 <outlet property="txtState" destination="prj-oK-oSz" id="W7B-B5-doi"/>
                 <outlet property="vwTopBar" destination="0MS-OB-pU6" id="iDl-Hc-heQ"/>

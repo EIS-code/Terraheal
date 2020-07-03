@@ -9,7 +9,7 @@ import UIKit
 import QuartzCore
 import CoreLocation
 import GooglePlaces
-
+import GoogleMaps
 
 typealias LC = LocationCenter
 
@@ -165,25 +165,23 @@ extension LocationCenter {
     
     func getAddressFromCoordinate(coordinate:CLLocationCoordinate2D, completion : @escaping ((Address) -> Void))
     {
-        let address = CLGeocoder.init()
-        address.reverseGeocodeLocation(CLLocation.init(latitude: coordinate.latitude, longitude:coordinate.longitude)) { (places, error) in
+        if geocoder.isGeocoding {
+            geocoder.cancelGeocode()
+        }
+        geocoder.reverseGeocodeLocation(CLLocation.init(latitude: coordinate.latitude, longitude:coordinate.longitude)) { (places, error) in
             
             let address:Address = Address.init(fromDictionary: [:])
             if error == nil{
                 if let place = places?.first {
-                    
-                    address.addressLine1 = place.thoroughfare ?? ""
+                    address.addressLine1 = place.thoroughfare ?? place.name ?? ""
                     address.addressLine2 = place.subThoroughfare ?? ""
                     address.city = place.locality ?? ""
-                    address.name = place.name ?? ""
                     address.landMark = place.subLocality ?? ""
                     address.latitude = place.location?.coordinate.latitude.toString(places: 8) ?? ""
                     address.longitude = place.location?.coordinate.longitude.toString(places: 8) ?? ""
                     address.pinCode = place.postalCode ?? ""
                     address.province = place.administrativeArea ?? ""
-                    print(address.toDictionary())
                     completion(address)
-                    //here you can get all the info by combining that you can make address
                 } else {
                     completion(address)
                 }
@@ -193,6 +191,28 @@ extension LocationCenter {
         }
     }
     
+    
+    func getGMSAddress(coordinate:CLLocationCoordinate2D, completion: @escaping ((Address) -> Void)) {
+        GMSGeocoder.init().reverseGeocodeCoordinate(coordinate) { (result, error) in
+            let address:Address = Address.init(fromDictionary: [:])
+            if error != nil {
+                print(error?.localizedDescription ?? "")
+                completion(address)
+            } else  {
+                if let place = result?.firstResult() {
+                    address.addressLine1 = place.lines?.joined() ?? ""
+                    address.addressLine2 = ""
+                    address.city = place.locality ?? ""
+                    address.landMark = place.subLocality ?? ""
+                    address.latitude = place.coordinate.latitude.toString(places: 8)
+                    address.longitude = place.coordinate.longitude.toString(places: 8)
+                    address.pinCode = place.postalCode ?? ""
+                    address.province = place.administrativeArea ?? ""
+                }
+                completion(address)
+            }
+        }
+    }
     func getAutocomplete(text:String, completion: @escaping  (([AutoCompleteAddress]) -> Void)) {
         let token = GMSAutocompleteSessionToken.init()
         
@@ -200,7 +220,7 @@ extension LocationCenter {
         let filter = GMSAutocompleteFilter()
         filter.type = .establishment
         let placeClient = GMSPlacesClient.shared()
-        placeClient.findAutocompletePredictions(fromQuery: text, bounds: nil, boundsMode: .bias, filter: filter, sessionToken: token) { (results, error) in
+        placeClient.findAutocompletePredictions(fromQuery: text, filter: filter, sessionToken: token) {  (results, error) in
             var arrForAutoComplete: [AutoCompleteAddress] = []
             if let error = error {
                 print("Autocomplete error: \(error)")
@@ -219,83 +239,50 @@ extension LocationCenter {
         }
         
     }
-    /*
-     func getAddressFromLatitudeLongitude(latitude:Double,longitude:Double) -> (String,[Double]) {
-     let strURL:String = "\(Google.GEOCODE_URL)\(Google.LAT_LNG)=\(latitude),\(longitude)&\(Google.KEY)=\(preferenceHelper.getGoogleKey())"
-     let urlStr : String = strURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-     guard let url = URL(string: urlStr) else {
-     return ("",[0.0,0.0])
-     }
-     do{
-     let data = try Data(contentsOf: url)
-     let jsonObject:[String:Any] = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:Any]
-     if ((jsonObject[Google.STATUS] as! String) == Google.OK)
-     {
-     
-     let resultObject:[String:Any] = ((jsonObject[Google.RESULTS] as! NSArray)[0] as! [String:Any])
-     
-     let address:String = (resultObject[Google.FORMATTED_ADDRESS] as? String) ?? ""
-     let geometryObject:[String:Any] = resultObject[Google.GEOMETRY] as! [String:Any];
-     
-     let location = [((geometryObject[Google.LOCATION] as! [String:Any])[Google.LAT] as? Double) ?? 0.0, ((geometryObject[Google.LOCATION] as! [String:Any])[Google.LNG] as? Double) ?? 0.0]
-     
-     return (address,location)
-     }
-     return ("",[0.0,0.0])
-     
-     }
-     catch let error as NSError
-     {
-     print(error)
-     return ("",[0.0,0.0])
-     }
-     }
-     
-     func getLatLongFromAddress(address:String) -> [Double]
-     {
-     
-     if address.isEmpty()
-     {
-     return [0.0,0.0]
-     }
-     else
-     {
-     let strURL:String = "\(Google.GEOCODE_URL)\(Google.ADDRESS)=\(address)&\(Google.KEY)=\(Google.API_KEY)"
-     
-     let urlStr : String = strURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-     
-     
-     guard let url = URL(string: urlStr)
-     else
-     {
-     return [0.0,0.0]
-     }
-     
-     do{
-     let data = try Data(contentsOf: url)
-     let jsonObject:[String:Any] = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:Any]
-     if ((jsonObject[Google.STATUS] as! String) == Google.OK)
-     {
-     
-     let resultObject:[String:Any] = ((jsonObject[Google.RESULTS] as! NSArray)[0] as! [String:Any])
-     
-     let geometryObject:[String:Any] = resultObject[Google.GEOMETRY] as! [String:Any];
-     
-     let latitude = ((geometryObject[Google.LOCATION] as! [String:Any])[Google.LAT] as? Double) ?? 0.0
-     
-     let longitude =
-     ((geometryObject[Google.LOCATION] as! [String:Any])[Google.LNG] as? Double) ?? 0.0
-     return [latitude,longitude]
-     }
-     return [0.0,0.0]
-     }
-     catch _ as NSError
-     {
-     return [0.0,0.0]
-     }
-     
-     }
-     } */
+    
+    
+    func getAddress(placeId:String, completion: @escaping  ((Address) -> Void)) {
+        let token = GMSAutocompleteSessionToken.init()
+        let placeClient = GMSPlacesClient.shared()
+        placeClient.fetchPlace(fromPlaceID: placeId, placeFields: GMSPlaceField.all, sessionToken: token) { (place, error) in
+            let address:Address = Address.init(fromDictionary: [:])
+            if let error = error {
+                print("lookup place id query error: \(error.localizedDescription)")
+                completion(address)
+                return
+            }
+            
+            guard let place = place else {
+                print("No place details for \(placeId)")
+                completion(address)
+                return
+            }
+            
+            address.addressLine1 = place.formattedAddress ?? ""
+            address.latitude = place.coordinate.latitude.toString(places: 8)
+            address.longitude = place.coordinate.longitude.toString(places: 8)
+            
+            if let addressComponents = place.addressComponents {
+                for component: GMSAddressComponent in addressComponents {
+                    for type: String in component.types {
+                        switch type {
+                        case "postal_code":
+                            address.pinCode = component.name
+                        case "administrative_area_level_2":
+                            address.city = component.name
+                        case "administrative_area_level_1":
+                            address.province = component.name
+                        case "locality":
+                            address.landMark = component.name
+                        default:
+                            print(component.name)
+                        }
+                    }
+                }
+            }
+            completion(address)
+        }
+    }
     
 }
 

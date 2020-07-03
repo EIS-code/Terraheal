@@ -11,6 +11,7 @@
 		03428AEB24AB12BC00BD24A0 /* MyBookingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03428AE624AB12BC00BD24A0 /* MyBookingVC.swift */; };
 		03428AEC24AB12BC00BD24A0 /* MyBookingTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03428AE824AB12BC00BD24A0 /* MyBookingTblCell.swift */; };
 		03428AED24AB12BC00BD24A0 /* MyBookingTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03428AE924AB12BC00BD24A0 /* MyBookingTblCell.xib */; };
+		0342B40924AF0E05003E5D59 /* ManagePeopleWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342B40824AF0E05003E5D59 /* ManagePeopleWebService.swift */; };
 		0348DC1C24A5B7A50095CCD3 /* ServiceMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0348DC1924A5B7A50095CCD3 /* ServiceMapVC.swift */; };
 		0348DC1D24A5B7A50095CCD3 /* ServiceMapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0348DC1B24A5B7A50095CCD3 /* ServiceMapVC.xib */; };
 		0348DC2124A5CCDB0095CCD3 /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0348DC1F24A5CCDB0095CCD3 /* ServiceCell.xib */; };
@@ -305,6 +306,7 @@
 		03428AE624AB12BC00BD24A0 /* MyBookingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingVC.swift; sourceTree = "<group>"; };
 		03428AE824AB12BC00BD24A0 /* MyBookingTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingTblCell.swift; sourceTree = "<group>"; };
 		03428AE924AB12BC00BD24A0 /* MyBookingTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBookingTblCell.xib; sourceTree = "<group>"; };
+		0342B40824AF0E05003E5D59 /* ManagePeopleWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagePeopleWebService.swift; sourceTree = "<group>"; };
 		0348DC1924A5B7A50095CCD3 /* ServiceMapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceMapVC.swift; sourceTree = "<group>"; };
 		0348DC1B24A5B7A50095CCD3 /* ServiceMapVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceMapVC.xib; sourceTree = "<group>"; };
 		0348DC1F24A5CCDB0095CCD3 /* ServiceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
@@ -1072,6 +1074,7 @@
 				63435B4C24769C4900AF7100 /* UserWebService.swift */,
 				63435B4D24769C4900AF7100 /* Singleton.swift */,
 				0353013424ADDBF800452F8C /* AddressWebService.swift */,
+				0342B40824AF0E05003E5D59 /* ManagePeopleWebService.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -2796,6 +2799,7 @@
 				035FAFC524A5FF26008EF8B0 /* CustomServiceHourSelectionCell.swift in Sources */,
 				635675DA2499FA2E006F5511 /* MenuCellHorizontal.swift in Sources */,
 				63EA7D1A2493B5880027F9D3 /* CustomCityPicker.swift in Sources */,
+				0342B40924AF0E05003E5D59 /* ManagePeopleWebService.swift in Sources */,
 				03728B9324A4E02F00C983BC /* EventBookCompleteVC.swift in Sources */,
 				63B96795249B62190015DDCA /* ScanPassportVC.swift in Sources */,
 				63B967D5249BAC720015DDCA /* CampaignsVC.swift in Sources */,

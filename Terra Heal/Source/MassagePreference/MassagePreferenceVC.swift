@@ -129,7 +129,7 @@ class MassagePreferenceVC: MainVC {
     func openPreferGenderPicker(index:Int = 0) {
         let alert: CustomPreferGenderPicker = CustomPreferGenderPicker.fromNib()
         alert.initialize(title: arrForMenu[index].name, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
-        alert.setDataSource(data: arrForMenu[index])
+        alert.setDataSource(data: arrForMenu[index].preferenceOptions)
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in

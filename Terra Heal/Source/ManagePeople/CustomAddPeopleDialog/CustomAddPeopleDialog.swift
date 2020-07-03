@@ -29,20 +29,17 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
     @IBOutlet weak var btnTherapistGender: ThemeButton!
     
     @IBOutlet weak var btnDelete: FloatingRoundButton!
-    var onBtnDoneTapped: ((_ people:PeopleDetail) -> Void)? = nil
+    var onBtnDoneTapped: ((_ people:People,_ doc:UploadDocumentDetail?) -> Void)? = nil
     var onBtnDeleteTapped: (() -> Void)? = nil
-    var selectedPeople:PeopleDetail = PeopleDetail.init()
+    var selectedPeople:People = People.init(fromDictionary: [:])
     var selectedGender:Gender = Gender.Male
+    var selectedProfileDoc: UploadDocumentDetail? = nil
+    var genderPreferenceArray:[PreferenceOption] = []
 
-
-
-    fileprivate let gregorian: NSCalendar! = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
-
-
-
-    func initialize(title:String, data:PeopleDetail?,  buttonTitle:String,cancelButtonTitle:String) {
+    func initialize(title:String, data:People?, genderPreference:[PreferenceOption],  buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
         self.btnDelete.isHidden = true
+        self.genderPreferenceArray = genderPreference
         if data != nil {
             self.btnDelete.isHidden = false
             self.selectedPeople = data!
@@ -62,8 +59,18 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
     func setData() {
         self.txtAge.text = self.selectedPeople.age
         self.txtName.text = self.selectedPeople.name
-        self.selectedGender = self.selectedPeople.gender
+        self.selectedGender = Gender.init(rawValue:self.selectedPeople.gender ) ?? Gender.Male
         self.select(gender: self.selectedGender)
+        self.imgProfilePic.downloadedFrom(link: self.selectedPeople.photo)
+        var selectedPrefereceGender: PreferenceOption = PreferenceOption.init(fromDictionary: [:])
+        for data in genderPreferenceArray {
+            data.isSelected = false
+            if data.id ==  self.selectedPeople.userGenderPreferenceId {
+                data.isSelected = true
+                selectedPrefereceGender = data
+            }
+        }
+        self.btnTherapistGender.setTitle(selectedPrefereceGender.name, for: .normal)
     }
 
     func select(gender:Gender) {
@@ -130,10 +137,10 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
         if checkValidation() {
             selectedPeople.name = self.txtName.text ?? ""
             selectedPeople.age = self.txtAge.text ?? ""
-            selectedPeople.gender = self.selectedGender
+            selectedPeople.gender = self.selectedGender.rawValue
 
             if self.onBtnDoneTapped != nil {
-                self.onBtnDoneTapped!(selectedPeople);
+                self.onBtnDoneTapped!(selectedPeople,selectedProfileDoc);
             }
         }
     }
@@ -142,6 +149,12 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
         self.btnTherapistGender.isEnabled = false
         self.openPreferGenderPicker()
     }
+    
+    @IBAction func btnAddPictureTapped(_ sender: Any) {
+        self.openPhotoPicker()
+    }
+    
+    
     func checkValidation() -> Bool {
         if txtName.text!.isEmpty {
             let alert: CustomAlert = CustomAlert.fromNib()
@@ -164,14 +177,24 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
             }
             return false
         }
-
+        else  if selectedPeople.userGenderPreferenceId.isEmpty {
+            let alert: CustomAlert = CustomAlert.fromNib()
+            alert.initialize(message: "select Therapist Gender".localized())
+            alert.show(animated: true)
+            alert.onBtnCancelTapped = {
+                [weak alert, weak self] in
+                alert?.dismiss()
+                
+            }
+            return false
+        }
         return true
     }
 
     func openPreferGenderPicker() {
         let alert: CustomPreferGenderPicker = CustomPreferGenderPicker.fromNib()
         alert.initialize(title: MassagePreferenceMenu.GenderPreference.name(), buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
-       // alert.setDataSource(data: <#T##MassagePreferenceDetail#>)
+        alert.setDataSource(data: self.genderPreferenceArray)
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
@@ -182,17 +205,57 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (gender) in
             guard let self = self else { return }
-
             alert?.dismiss()
-            self.selectedPeople.preferGender = gender
+            self.selectedPeople.userGenderPreferenceId = gender.id
+            self.btnTherapistGender.setTitle(gender.name, for: .normal)
             self.btnTherapistGender.isEnabled = true
+        }
+    }
+    
+    func openPhotoPicker() {
+        
+        let photoPickerAlert: CustomPhotoPicker = CustomPhotoPicker.fromNib()
+        photoPickerAlert.initialize(title:"PHOTO_DIALOG_FROM_TITLE".localized(), buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized())
+        photoPickerAlert.show(animated: true)
+        photoPickerAlert.onBtnCancelTapped = { [weak photoPickerAlert, weak self] in
+            photoPickerAlert?.dismiss()
+            guard let self = self else { return }
+        }
+        photoPickerAlert.onBtnDoneTapped = { [weak photoPickerAlert, weak self] in
+            photoPickerAlert?.dismiss()
+            guard let self = self else { return }
+        }
+        photoPickerAlert.onBtnCameraTapped = { [weak photoPickerAlert, weak self] (doc) in
+            photoPickerAlert?.dismiss()
+            guard let self = self else { return }
+            self.selectedProfileDoc = doc
+            self.openCropper(image: doc.image ?? UIImage())
+            
+        }
+        photoPickerAlert.onBtnGallaryTapped = { [weak photoPickerAlert, weak self] (doc) in
+            photoPickerAlert?.dismiss()
+            guard let self = self else { return }
+            self.selectedProfileDoc = doc
+            self.openCropper(image: doc.image ?? UIImage())
+            //let gallaryVC:GallaryVC = Common.appDelegate.loadGallaryVC(navigaionVC: self.navigationController)
+        }
+    }
+    
+    func openCropper(image: UIImage) {
+        
+        let cropper: UIImageCropperVC = UIImageCropperVC.fromNib()
+        cropper.cropRatio = 1/1
+        cropper.delegate = self
+        cropper.picker = nil
+        cropper.image = image
+        cropper.cancelButtonText = "Cancel"
+        cropper.view.layoutIfNeeded()
+        DispatchQueue.main.async {
+            Common.appDelegate.getTopViewController()?.present(cropper, animated: true, completion: nil)
         }
     }
 
 }
-
-
-
 
 extension CustomAddPeopleDialog: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -205,3 +268,22 @@ extension CustomAddPeopleDialog: UITextFieldDelegate {
         return true
     }
 }
+
+
+extension CustomAddPeopleDialog: UIImageCropperProtocol {
+    func didCropImage(originalImage: UIImage?, croppedImage: UIImage?) {
+        imgProfilePic.image = croppedImage
+        self.selectedProfileDoc?.image = croppedImage
+        Common.appDelegate.getTopViewController()?.dismiss(animated: true, completion: nil)
+       // self.wsUpdateProfile()
+        
+    }
+    
+    //optional
+    func didCancel() {
+        print("did cancel")
+        (Common.appDelegate.getTopViewController() as? UINavigationController)?.popViewController(animated: true)
+        //self.wsUpdateProfile()
+    }
+}
+

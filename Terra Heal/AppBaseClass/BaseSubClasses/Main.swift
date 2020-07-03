@@ -143,7 +143,10 @@ class CollectionCell: UICollectionViewCell {
 }
 
 class TableCell: UITableViewCell {
-
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.selectionStyle = .none
+    }
 }
 
 

@@ -15,9 +15,13 @@
                 <outlet property="btnBack" destination="dk0-AN-Hja" id="g3C-po-hKO"/>
                 <outlet property="footerGradient" destination="Vl3-GD-87f" id="gty-cx-JMA"/>
                 <outlet property="headerGradient" destination="kXe-MZ-CKX" id="IM4-bk-gFM"/>
+                <outlet property="lblEmptyMsg" destination="dq6-Ju-L13" id="qcb-PW-Kgr"/>
+                <outlet property="lblEmptyTitle" destination="Rev-Gl-Obc" id="jHK-xP-Agn"/>
                 <outlet property="lblTitle" destination="qXO-ds-8JK" id="CeN-Oc-tng"/>
                 <outlet property="tableView" destination="aVT-f3-Mwd" id="nhg-gV-smz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="vwBg" destination="jzi-bO-Bct" id="0QU-Af-Fb1"/>
+                <outlet property="vwForEmpty" destination="GK8-Yw-bGx" id="9A4-HR-azn"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -38,6 +42,44 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Vl3-GD-87f" secondAttribute="height" multiplier="75:26" id="Ypk-C9-9LR"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GK8-Yw-bGx" userLabel="emptyView">
+                    <rect key="frame" x="0.0" y="39" width="375" height="734"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9CR-4q-nXD">
+                            <rect key="frame" x="47" y="186" width="281" height="362"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jzi-bO-Bct" userLabel="vwBg">
+                                    <rect key="frame" x="0.0" y="0.0" width="281" height="281.33333333333331"/>
+                                    <color key="backgroundColor" name="theme_primary_light_background"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="jzi-bO-Bct" secondAttribute="height" multiplier="1:1" id="AkO-cv-Q4g"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rev-Gl-Obc" userLabel="lblTitle" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="301.33333333333337" width="281" height="20.333333333333314"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="theme_primary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dq6-Ju-L13" userLabel="lblMessage" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="341.66666666666663" width="281" height="20.333333333333314"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="theme_primary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="jzi-bO-Bct" firstAttribute="width" secondItem="jzi-bO-Bct" secondAttribute="height" multiplier="1:1" id="gKx-Sc-auD"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="9CR-4q-nXD" firstAttribute="centerY" secondItem="GK8-Yw-bGx" secondAttribute="centerY" id="7DK-V8-dAg"/>
+                        <constraint firstItem="9CR-4q-nXD" firstAttribute="centerX" secondItem="GK8-Yw-bGx" secondAttribute="centerX" id="EqQ-dt-CAQ"/>
+                        <constraint firstItem="9CR-4q-nXD" firstAttribute="width" secondItem="GK8-Yw-bGx" secondAttribute="width" multiplier="0.75" id="cYz-EH-41z"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
@@ -84,6 +126,7 @@
                 <constraint firstItem="aVT-f3-Mwd" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" id="12k-3X-GBL"/>
                 <constraint firstItem="dk0-AN-Hja" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="20" id="1iZ-Cw-RkL"/>
                 <constraint firstItem="kXe-MZ-CKX" firstAttribute="height" secondItem="Vl3-GD-87f" secondAttribute="height" id="24e-85-FXX"/>
+                <constraint firstItem="GK8-Yw-bGx" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" id="5pK-ur-vpc"/>
                 <constraint firstItem="qXO-ds-8JK" firstAttribute="leading" secondItem="dk0-AN-Hja" secondAttribute="trailing" constant="20" id="5qF-se-3uE"/>
                 <constraint firstItem="kXe-MZ-CKX" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="7aY-pm-3LF"/>
                 <constraint firstItem="kXe-MZ-CKX" firstAttribute="top" secondItem="aVT-f3-Mwd" secondAttribute="top" id="8pq-K6-idJ"/>
@@ -92,12 +135,15 @@
                 <constraint firstItem="Vl3-GD-87f" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="NIW-WP-pdO"/>
                 <constraint firstItem="dk0-AN-Hja" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="PCD-nQ-9GP"/>
                 <constraint firstItem="qXO-ds-8JK" firstAttribute="centerY" secondItem="dk0-AN-Hja" secondAttribute="centerY" id="Qb0-xD-7vO"/>
+                <constraint firstItem="VLJ-uh-dxO" firstAttribute="top" secondItem="GK8-Yw-bGx" secondAttribute="top" constant="5" id="ZrQ-T8-qJf"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="T7T-52-C6p" secondAttribute="trailing" id="aSa-J7-G27"/>
                 <constraint firstItem="Vl3-GD-87f" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="bze-5P-CPg"/>
                 <constraint firstItem="kXe-MZ-CKX" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="dQS-6u-aqg"/>
+                <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="GK8-Yw-bGx" secondAttribute="trailing" id="f2v-VF-1pe"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="T7T-52-C6p" secondAttribute="bottom" constant="20" id="hv8-jO-pDX"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="aVT-f3-Mwd" secondAttribute="trailing" id="jaq-Pv-ANN"/>
                 <constraint firstItem="T7T-52-C6p" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" id="pW5-Rz-ZWy"/>
+                <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="GK8-Yw-bGx" secondAttribute="bottom" constant="5" id="rBG-dD-Kas"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="aVT-f3-Mwd" secondAttribute="bottom" id="xL1-kH-6pc"/>
                 <constraint firstItem="Vl3-GD-87f" firstAttribute="bottom" secondItem="aVT-f3-Mwd" secondAttribute="bottom" id="zZF-5G-0if"/>
             </constraints>
@@ -111,6 +157,9 @@
         </namedColor>
         <namedColor name="theme_primary_light">
             <color red="0.49803921568627452" green="0.7686274509803922" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary_light_background">
+            <color red="0.94509803921568625" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

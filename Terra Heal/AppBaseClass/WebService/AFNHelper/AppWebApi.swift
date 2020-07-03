@@ -11,16 +11,16 @@ typealias API_ERROR_CODE = AppWebApi.ErrorCode
 
 //MARK: WEb Urls
 class AppWebApi: NSObject {
-
+    
     struct URL {
-
+        
         private struct Domains {
             static let Dev = "http://35.180.253.133"
             static let Production = "http://35.180.253.133"
             static let Local = "http://35.180.253.133"
-
+            
         }
-
+        
         private  struct Routes {
             static let Client = "/api/user"
             static let Exception = "/api/error"
@@ -28,12 +28,15 @@ class AppWebApi: NSObject {
             static let Location = "/api/location"
             static let Therapy = "/api/therapy"
             static let Address = "/api/user/address"
-
+            static let People = "/api/user/people"
+            
+            
+            
         }
-
+        
         private  static let Domain = Domains.Production
-
-
+        
+        
         static var UserLogin: String {
             return Domain + Routes.Client  + "/signin"
         }
@@ -49,7 +52,7 @@ class AppWebApi: NSObject {
         static var UploadDocument: String {
             return Domain + Routes.Client + "/documents/" + PreferenceHelper.shared.getUserId()
         }
-
+        
         static var VerifyEmail: String {
             return Domain + Routes.Client + "/verify/email"
         }
@@ -78,29 +81,42 @@ class AppWebApi: NSObject {
             return  Domain + Routes.Location + "/get/province"
         }
         static var GetMassagePreferenceList: String {
-                   return  Domain + Routes.Massage + "/preference"
+            return  Domain + Routes.Massage + "/preference"
         }
         static var SaveMassagePreferenceList: String {
-                   return  Domain + Routes.Massage + "/preference/save"
+            return  Domain + Routes.Massage + "/preference/save"
         }
         static var TherapistQuesionaryList: String {
-                   return  Domain + Routes.Therapy + "/questionnaire"
+            return  Domain + Routes.Therapy + "/questionnaire"
         }
         static var SaveTherapistQuesionaryList: String {
-                   return  Domain + Routes.Therapy + "/questionnaire/save"
+            return  Domain + Routes.Therapy + "/questionnaire/save"
         }
         //Address APIs
         static var GetAddressList: String {
-                   return  Domain + Routes.Address + "/get"
+            return  Domain + Routes.Address + "/get"
         }
         static var RemoveAddress: String {
-                   return  Domain + Routes.Address + "/remove"
+            return  Domain + Routes.Address + "/remove"
         }
         static var UpdateAddress: String {
-                   return  Domain + Routes.Address + "/update"
+            return  Domain + Routes.Address + "/update"
         }
         static var AddAddress: String {
-                   return  Domain + Routes.Address + "/save"
+            return  Domain + Routes.Address + "/save"
+        }
+        //Manage People APIs
+        static var GetPeopleList: String {
+            return  Domain + Routes.People + "/get"
+        }
+        static var RemovePeople: String {
+            return  Domain + Routes.People + "/remove"
+        }
+        static var UpdatePeople: String {
+            return  Domain + Routes.People + "/update"
+        }
+        static var AddPeople: String {
+            return  Domain + Routes.People + "/save"
         }
         
     }
@@ -109,7 +125,7 @@ class AppWebApi: NSObject {
 //MARK: Known Error Codes
 
 extension AppWebApi {
-
+    
     struct ErrorCode {
         static let InvalidServerToken: String = "ERROR_12"
         static let DetailNotFound: String = "ERROR_13"
@@ -118,59 +134,59 @@ extension AppWebApi {
 
 
 extension AppWebApi {
-
+    
     class func login(params:User.RequestLogin, completionHandler: @escaping ((User.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.UserLogin, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
             let response = User.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }
-
+    
     class func getUserDetail(completionHandler: @escaping ((User.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetUserDetail, methodName: AlamofireHelper.GET_METHOD, paramData:[:]) { (data, dictionary, error) in
             let response = User.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }
-
+    
     class func register(params:User.RequestRegister, completionHandler: @escaping ((User.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.UserRegister, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
             let response = User.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }
-
+    
     class func getEmailOtp(params:User.RequestEmailOTP, completionHandler: @escaping ((User.ResponseVerification) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.VerifyEmail, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
             let response = User.ResponseVerification.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }
-
+    
     class func getPhoneOtp(params:User.RequestPhoneOTP, completionHandler: @escaping ((User.ResponseVerification) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.VerifyPhone, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
             let response = User.ResponseVerification.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }
-
+    
     class func verifyEmailOtp(params:User.RequestVerifyEmailOTP, completionHandler: @escaping ((User.ResponseVerification) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.VerifyEmailOTP, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
             let response = User.ResponseVerification.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }
-
+    
     class func verifyPhoneOtp(params:User.RequestVerifyPhoneOTP, completionHandler: @escaping ((User.ResponseVerification) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.VerifyPhoneOTP, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
             let response = User.ResponseVerification.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }
-
+    
     class func profile(params:User.RequestProfile, image:UploadDocumentDetail? = nil, paramName:String = "profile_photo", completionHandler: @escaping ((User.Response) -> Void)) {
-
-
+        
+        
         if let imageToUpload = image {
             AlamofireHelper().uploadDocumentToURL(urlString:AppWebApi.URL.UserProfile , paramData: params.dictionary, documents: [imageToUpload],paramName: paramName)  { (data, dictionary, error) in
                 let response = User.Response.init(fromDictionary: dictionary)
@@ -183,36 +199,36 @@ extension AppWebApi {
             }
         }
     }
-
-
+    
+    
     class func uploadDocument(params:User.RequestUploadDocument, documents:[UploadDocumentDetail],paramName:String = "file", completionHandler: @escaping ((User.Response) -> Void)) {
         AlamofireHelper().uploadDocumentToURL(urlString:AppWebApi.URL.UploadDocument , paramData: params.dictionary, documents: documents, paramName: paramName)  { (data, dictionary, error) in
             let response = User.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }
-
+    
     class func exception(params:[String:String], completionHandler: @escaping ((User.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.CheckExeption, methodName: AlamofireHelper.GET_METHOD, paramData:[:]) { (data, dictionary, error) in
             let response = User.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }
-
+    
     class func countryList(params:Countries.RequestCountrylist = Countries.RequestCountrylist(), completionHandler: @escaping ((Countries.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetCountryList, methodName: AlamofireHelper.GET_METHOD, paramData: [:]) { (data, dictionary, error) in
             let response = Countries.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }
-
+    
     class func locationList(params:PriceAndLocation.RequestLocationlist = PriceAndLocation.RequestLocationlist(), completionHandler: @escaping ((PriceAndLocation.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetLocationList, methodName: AlamofireHelper.GET_METHOD, paramData: [:]) { (data, dictionary, error) in
             let response = PriceAndLocation.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }
-
+    
     class func cityList(params:Cities.RequestCitylist, completionHandler: @escaping ((Cities.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetCityList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
             let response = Cities.Response.init(fromDictionary: dictionary)
@@ -222,10 +238,10 @@ extension AppWebApi {
     
     class func massagePreferencceList(params:MassagePreference.RequestMassagePrefenceList = MassagePreference.RequestMassagePrefenceList(), completionHandler: @escaping ((MassagePreference.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetMassagePreferenceList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-               let response = MassagePreference.Response.init(fromDictionary: dictionary)
-               completionHandler(response)
-           }
-       }
+            let response = MassagePreference.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
     
     class func saveMassagePreferencceList(params:MassagePreference.SaveMassagePrefenceList = MassagePreference.SaveMassagePrefenceList(), completionHandler: @escaping ((MassagePreference.Response) -> Void)) {
         
@@ -237,10 +253,10 @@ extension AppWebApi {
     
     class func therapistQuestionList(params:TherapistQuastionaries.RequestQuestionList = TherapistQuastionaries.RequestQuestionList(), completionHandler: @escaping ((TherapistQuastionaries.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.TherapistQuesionaryList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-               let response = TherapistQuastionaries.Response.init(fromDictionary: dictionary)
-               completionHandler(response)
-           }
-       }
+            let response = TherapistQuastionaries.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
     
     class func saveQuestionList(params:TherapistQuastionaries.SaveQuestionList = TherapistQuastionaries.SaveQuestionList(), completionHandler: @escaping ((TherapistQuastionaries.Response) -> Void)) {
         
@@ -273,10 +289,58 @@ extension AppWebApi {
         }
     }
     class func removeAddress(params:Addresses.RequestDeleteAddress, completionHandler: @escaping ((Addresses.Response) -> Void)) {
-           AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.RemoveAddress, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-               let response = Addresses.Response.init(fromDictionary: dictionary)
-               completionHandler(response)
-           }
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.RemoveAddress, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = Addresses.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    
+    //MARK:  Address Related APIS
+    
+    class func addPeople(params:ManagePeople.RequestAddPeoples, image:UploadDocumentDetail? = nil, paramName:String = "photo", completionHandler: @escaping ((ManagePeople.Response) -> Void)) {
+        
+        if let imageToUpload = image {
+            AlamofireHelper().uploadDocumentToURL(urlString:AppWebApi.URL.AddPeople , paramData: params.dictionary, documents: [imageToUpload],paramName: paramName)  { (data, dictionary, error) in
+                let response = ManagePeople.Response.init(fromDictionary: dictionary)
+                completionHandler(response)
+            }
+        } else {
+                AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.AddPeople, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+                    let response = ManagePeople.Response.init(fromDictionary: dictionary)
+                    completionHandler(response)
+                }
+        }
+        
+        
+    }
+    
+    class func getPeopleList(params:ManagePeople.RequestPeoplelist = ManagePeople.RequestPeoplelist(), completionHandler: @escaping ((ManagePeople.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetPeopleList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = ManagePeople.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    
+    
+    class func updatePeople(params:ManagePeople.RequestUpdatePeople, image:UploadDocumentDetail? = nil, paramName:String = "photo", completionHandler: @escaping ((ManagePeople.Response) -> Void)) {
+        if let imageToUpload = image {
+            AlamofireHelper().uploadDocumentToURL(urlString:AppWebApi.URL.UpdatePeople , paramData: params.dictionary, documents: [imageToUpload],paramName: paramName)  { (data, dictionary, error) in
+                let response = ManagePeople.Response.init(fromDictionary: dictionary)
+                completionHandler(response)
+            }
+        } else {
+            AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.UpdatePeople, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+                let response = ManagePeople.Response.init(fromDictionary: dictionary)
+                completionHandler(response)
+            }
+        }
+        
+    }
+    class func removePeople(params:ManagePeople.RequestDeletePeople, completionHandler: @escaping ((ManagePeople.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.RemovePeople, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = ManagePeople.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
     }
 }
 

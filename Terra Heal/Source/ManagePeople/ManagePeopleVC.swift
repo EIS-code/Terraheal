@@ -5,27 +5,19 @@
 
 import UIKit
 
-struct PeopleDetail{
-    var name: String = ""
-    var image: String = ""
-    var age: String = ""
-    var gender: Gender = Gender.Male
-    var preferGender:  PreferenceOption = PreferenceOption.init(fromDictionary: [:])
-    var isSelected: Bool = false
-}
-
 class ManagePeopleVC: MainVC {
 
     @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnAddNewPeople: ThemeButton!
 
-    var arrForData: [PeopleDetail] = [
-        PeopleDetail(name: "Jaydeep", image: "", age: "25", gender: Gender.Male, isSelected: false),
-        PeopleDetail(name: "ABC", image: "", age: "24", gender: Gender.Female, isSelected: false),
-        PeopleDetail(name: "Test", image: "", age: "23", gender: Gender.Male, isSelected: true),
-        PeopleDetail(name: "Jd", image: "", age: "22", gender: Gender.Male, isSelected: false),
-    ]
+    @IBOutlet weak var vwForEmpty: UIView!
+    @IBOutlet weak var vwBg: UIView!
+    @IBOutlet weak var lblEmptyTitle: ThemeLabel!
+    @IBOutlet weak var lblEmptyMsg: ThemeLabel!
+    
+    var arrForData: [People] = []
+    var arrForGenderPreference: [PreferenceOption] = []
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -48,8 +40,7 @@ class ManagePeopleVC: MainVC {
         self.initialViewSetup()
         self.addBottomFade()
         self.addTopFade()
-
-
+        self.wsGetPeoples()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -58,18 +49,19 @@ class ManagePeopleVC: MainVC {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
+            self.vwBg?.layoutIfNeeded()
+            self.vwBg?.setRound()
             self.btnAddNewPeople.layoutIfNeeded()
             self.btnAddNewPeople.setHighlighted(isHighlighted: true)
             self.tableView?.reloadData({
-
+                
             })
-           self.tableView?.contentInset = UIEdgeInsets(top: headerGradient.frame.height, left: 0, bottom: footerGradient.frame.height, right: 0)
+            self.tableView?.contentInset = UIEdgeInsets(top: headerGradient.frame.height, left: 0, bottom: footerGradient.frame.height, right: 0)
         }
     }
 
@@ -82,17 +74,20 @@ class ManagePeopleVC: MainVC {
         self.btnAddNewPeople?.setTitle("MANAGE_PEOPLE_BTN_ADD_NEW".localized(), for: .normal)
         self.btnAddNewPeople?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnAddNewPeople?.setHighlighted(isHighlighted: true)
+        self.lblEmptyTitle.text = "NO_PEOPLE_TITLE".localized()
+        self.lblEmptyMsg.text = "NO_PEOPLE_MSG".localized()
+        
     }
 
     func openAddPeopleDialog(index: Int = -1) {
 
         let alert: CustomAddPeopleDialog = CustomAddPeopleDialog.fromNib()
         if index == -1 {
-            alert.initialize(title: "MANAGE_PEOPLE_BTN_ADD_NEW".localized(), data: nil, buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_SKIP".localized())
+            alert.initialize(title: "MANAGE_PEOPLE_BTN_ADD_NEW".localized(), data: nil, genderPreference: arrForGenderPreference, buttonTitle: "BTN_SAVE".localized(),cancelButtonTitle: "BTN_SKIP".localized())
             alert.select(gender: Gender.Male)
 
         } else {
-            alert.initialize(title: "MANAGE_PEOPLE_BTN_ADD_NEW".localized(), data: self.arrForData[index],buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_SKIP".localized())
+            alert.initialize(title: "MANAGE_PEOPLE_BTN_ADD_NEW".localized(), data: self.arrForData[index], genderPreference: arrForGenderPreference, buttonTitle: "BTN_SAVE".localized(),cancelButtonTitle: "BTN_SKIP".localized())
 
         }
         alert.show(animated: true)
@@ -107,22 +102,19 @@ class ManagePeopleVC: MainVC {
             [weak alert, weak self] in
             alert?.dismiss()
             guard let self = self else { return }
-            self.arrForData.remove(at: index)
-            self.tableView.reloadData()
-
+            self.wsDeletePeople(request: ManagePeople.RequestDeletePeople(id: self.arrForData[index].id))
         }
         alert.onBtnDoneTapped = {
-            [weak alert, weak self] (people) in
+            [weak alert, weak self] (people,doc) in
             alert?.dismiss()
             guard let self = self else { return }
             self.btnAddNewPeople.isEnabled = true
             if index == -1 {
-                self.arrForData.append(people)
+                self.wsSavePeople(request: people.toAddRequest(), doc: doc)
+                
             }else {
-                self.arrForData[index] = people
+                self.wsUpdatePeople(request: people.toUpdateRequest(), doc: doc)
             }
-
-            self.tableView.reloadData()
         }
     }
 
@@ -134,8 +126,20 @@ class ManagePeopleVC: MainVC {
         btnAddNewPeople.isEnabled = false
         self.openAddPeopleDialog()
     }
+    
+    func updateUI()  {
+        if arrForData.isEmpty {
+            self.vwForEmpty.isHidden = false
+            self.tableView.isHidden = true
+        } else {
+            self.vwForEmpty.isHidden = true
+            self.tableView.isHidden = false
+        }
+        self.tableView.reloadData()
+    }
 
 
+    
 }
 
 
@@ -174,3 +178,69 @@ extension ManagePeopleVC: UITableViewDelegate,UITableViewDataSource, UIScrollVie
     
 }
 
+
+//MARK:- Web Service Calls
+extension ManagePeopleVC {
+    
+    func wsGetPeoples() {
+        Loader.showLoading()
+        AppWebApi.getPeopleList { (response) in
+            self.arrForData.removeAll()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
+                for data in response.peopleList {
+                    self.arrForData.append(data)
+                }
+                for data in response.preferenceOptions {
+                    self.arrForGenderPreference.append(data)
+                }
+                self.tableView.reloadData()
+            }
+            self.updateUI()
+            Loader.hideLoading()
+        }
+        
+    }
+    
+    func wsSavePeople(request:ManagePeople.RequestAddPeoples, doc: UploadDocumentDetail?) {
+        Loader.showLoading()
+        AppWebApi.addPeople(params: request, image: doc, completionHandler: { (response) in
+                if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
+                    self.arrForData.append(response.people)
+                    self.tableView.reloadData()
+                    self.updateUI()
+                }
+                Loader.hideLoading()
+        })
+    }
+    
+    func wsUpdatePeople(request:ManagePeople.RequestUpdatePeople, doc: UploadDocumentDetail?) {
+        Loader.showLoading()
+        AppWebApi.updatePeople(params: request, image: doc, completionHandler: { (response) in
+                if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
+                    if let index = (self.arrForData.firstIndex { (address) -> Bool in
+                        address.id == request.id
+                        }) {
+                        self.arrForData[index]  = response.people
+                    }
+                    self.tableView.reloadData()
+                    self.updateUI()
+                }
+                Loader.hideLoading()
+        })
+    }
+    func wsDeletePeople(request:ManagePeople.RequestDeletePeople) {
+        Loader.showLoading()
+        AppWebApi.removePeople(params: request, completionHandler: { (response) in
+                if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
+                    if let index = (self.arrForData.firstIndex { (people) -> Bool in
+                        people.id == request.id
+                        }) {
+                        self.arrForData.remove(at: index)
+                    }
+                    self.tableView.reloadData()
+                    self.updateUI()
+                }
+                Loader.hideLoading()
+        })
+    }
+}

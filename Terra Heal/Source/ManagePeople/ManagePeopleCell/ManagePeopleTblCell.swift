@@ -33,10 +33,11 @@ class ManagePeopleTblCell: TableCell {
         self.ivPeople?.setRound()
     }
 
-    func setData(data: PeopleDetail ) {
+    func setData(data: People) {
         self.lblName.text = data.name
-        self.lblGender.text = data.gender.rawValue
+        self.lblGender.text = data.getGenderName()
         self.lblAge.text = data.age
+        self.ivPeople.downloadedFrom(link: data.photo)
         self.imgSelected.isHidden = !data.isSelected
     }
 

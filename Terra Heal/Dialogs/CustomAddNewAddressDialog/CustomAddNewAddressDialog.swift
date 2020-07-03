@@ -10,7 +10,7 @@ import UIKit
 
 
 class CustomAddNewAddressDialog: ThemeBottomDialogView {
-
+    
     @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var btnDone: ThemeButton!
     @IBOutlet weak var txtAddressLine1: ACFloatingTextfield!
@@ -21,18 +21,20 @@ class CustomAddNewAddressDialog: ThemeBottomDialogView {
     @IBOutlet weak var txtState: ACFloatingTextfield!
     @IBOutlet weak var txtName: ACFloatingTextfield!
     @IBOutlet weak var btnMapLocation: FloatingRoundButton!
+    @IBOutlet weak var txtLatitude: ACFloatingTextfield!
+    @IBOutlet weak var txtLongitude: ACFloatingTextfield!
     
     var onBtnDoneTapped: ((_ data: Address ) -> Void)? = nil
     var selectedAddress: Address = Address.init(fromDictionary: [:])
-
+    var locationVC: MapLocationVC? = nil
     func initialize(title:String, data:Address, buttonTitle:String,cancelButtonTitle:String) {
-
+        
         self.selectedAddress = data
         self.initialSetup()
         self.lblTitle.text = title
-        self.setData(data: data)
+        self.setAddressData(data: data)
         self.btnDone.setTitle(buttonTitle, for: .normal)
-
+        
         if cancelButtonTitle.isEmpty() {
             self.btnCancel.isHidden = true
         } else {
@@ -47,14 +49,24 @@ class CustomAddNewAddressDialog: ThemeBottomDialogView {
         }
         
     }
-    func setData(data:Address) {
-        self.txtAddressLine1.text = data.addressLine1
-               self.txtAddressLine2.text = data.addressLine2
-               self.txtLandmark.text = data.landMark
-               self.txtPincode.text = data.pinCode
-               self.txtCity.text = data.city
-               self.txtState.text = data.province
-               self.txtName.text = data.name
+    func setAddressData(data:Address) {
+        self.txtCity.text = data.city
+        self.txtState.text = data.province
+        self.txtName.text = data.name
+        self.txtLatitude.text = data.latitude
+        self.txtLongitude.text = data.longitude
+        
+        if data.addressLine1.count >= self.txtAddressLine1.maxLength {
+                let index = data.addressLine1.index(data.addressLine1.startIndex, offsetBy: self.txtAddressLine1.maxLength)
+            self.txtAddressLine1.text = String(data.addressLine1[..<index])
+        } else  {
+            self.txtAddressLine1.text = data.addressLine1
+        }
+        print(data.addressLine1)
+        self.txtAddressLine2.text = data.addressLine2
+        self.txtLandmark.text = data.landMark
+        self.txtPincode.text = data.pinCode
+       
     }
     func initialSetup() {
         dialogView.clipsToBounds = true
@@ -73,6 +85,10 @@ class CustomAddNewAddressDialog: ThemeBottomDialogView {
         self.txtState.delegate = self
         self.txtName?.placeholder = "MANAGE_ADDRESS_TXT_ADDRESS_NAME".localized()
         self.txtName.delegate = self
+        self.txtLatitude?.placeholder = "MANAGE_ADDRESS_TXT_ADDRESS_LATITUDE".localized()
+        self.txtLatitude.delegate = self
+        self.txtLongitude?.placeholder = "MANAGE_ADDRESS_TXT_ADDRESS_LONGITUDE".localized()
+        self.txtLongitude.delegate = self
         self.backgroundView.backgroundColor = UIColor.black
         self.backgroundView.alpha = 0.0
         self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
@@ -84,14 +100,14 @@ class CustomAddNewAddressDialog: ThemeBottomDialogView {
         self.btnDone.setHighlighted(isHighlighted: true)
         transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
     }
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         self.btnDone?.layoutIfNeeded()
         self.btnDone?.setHighlighted(isHighlighted: true)
     }
-
-
+    
+    
     func checkValidation() -> Bool {
         if txtAddressLine1.text!.isEmpty {
             let alert: CustomAlert = CustomAlert.fromNib()
@@ -163,7 +179,7 @@ class CustomAddNewAddressDialog: ThemeBottomDialogView {
             return true
         }
     }
-
+    
     @IBAction func btnDoneTapped(_ sender: Any) {
         if self.checkValidation() {
             selectedAddress.addressLine1 = txtAddressLine1.text ?? ""
@@ -173,25 +189,36 @@ class CustomAddNewAddressDialog: ThemeBottomDialogView {
             selectedAddress.province = txtState.text ?? ""
             selectedAddress.pinCode = txtPincode.text ?? ""
             selectedAddress.name = txtName.text ?? ""
-
+            selectedAddress.latitude = txtLatitude.text ??  "22.30"
+            selectedAddress.longitude = txtLatitude.text ??  "70.30"
             if self.onBtnDoneTapped != nil {
                 self.onBtnDoneTapped!(selectedAddress);
             }
         }
     }
     @IBAction func btnLocationTapped(_ sender: ThemeButton) {
-        let locationVC: MapLocationVC = MapLocationVC.fromNib()
-        Common.appDelegate.getTopViewController()?.present(locationVC, animated: true, completion: {
+        if locationVC == nil {
+             locationVC = MapLocationVC.fromNib()
+        }
+        Common.appDelegate.getTopViewController()?.present(locationVC!, animated: true, completion: {
             
         })
-        locationVC.onBtnDoneTapped =  { [weak self] (address) in
-            let id = self?.selectedAddress.id
-            self?.selectedAddress = address
-            self?.selectedAddress.id = id ?? ""
-            self?.setData(data: address)
-            locationVC.dismiss(animated: true) {
-                
+        locationVC?.onLocationSelected =  { [weak self, weak locationVC = locationVC] (address) in
+           
+            guard let self = self else {
+                return
             }
+            let id = self.selectedAddress.id
+            self.selectedAddress = address
+            self.selectedAddress.id = id ?? ""
+            DispatchQueue.main.async {
+                self.setAddressData(data: self.selectedAddress)
+            }
+            locationVC?.dismiss(animated: true, completion: {
+                       })
+            
+            
+            
         }
     }
     

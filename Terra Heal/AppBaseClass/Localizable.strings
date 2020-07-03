@@ -199,12 +199,15 @@
 "MANAGE_ADDRESS_TXT_ADDRESS_STATE" = "state";
 "MANAGE_ADDRESS_TXT_ADDRESS_CITY" = "city";
 "MANAGE_ADDRESS_TXT_ADDRESS_NAME" = "home / work / office";
+"MANAGE_ADDRESS_TXT_ADDRESS_LATITUDE" = "latitude";
+"MANAGE_ADDRESS_TXT_ADDRESS_LONGITUDE" = "longitude";
 //MARK: Manage People
 "MANAGE_PEOPLE_TITLE" = "manage people";
 "MANAGE_PEOPLE_BTN_ADD_NEW" = "add new";
 "MANAGE_PEOPLE_TXT_NAME" = "Name";
 "MANAGE_PEOPLE_TXT_AGE" = "Age";
-
+"NO_PEOPLE_TITLE" = "";
+"NO_PEOPLE_MSG" = "";
 
 //MARK: Price  And Location
 "PRICE_AND_LOCATION_TITLE" = "pricing and locations";

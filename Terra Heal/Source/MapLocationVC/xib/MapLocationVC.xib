@@ -15,6 +15,7 @@
                 <outlet property="btnDone" destination="gqD-5m-63a" id="0gD-In-3ec"/>
                 <outlet property="heightForAutoComplete" destination="F9o-8P-P09" id="GWe-1U-wdF"/>
                 <outlet property="imgForLocation" destination="26x-e7-0XI" id="Kch-re-v7o"/>
+                <outlet property="lblAddressValue" destination="2xC-vK-VPV" id="yGq-af-vuJ"/>
                 <outlet property="mapView" destination="0ux-6h-A7d" id="CC7-kS-m2l"/>
                 <outlet property="searchVw" destination="SAe-F0-Nm9" id="kgp-lL-tbn"/>
                 <outlet property="tblAutocomplete" destination="1Mr-ca-1pk" id="cMe-7z-hDL"/>
@@ -28,11 +29,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ux-6h-A7d" userLabel="vwMap" customClass="GMSMapView">
-                    <rect key="frame" x="0.0" y="134.66666666666669" width="375" height="643.33333333333326"/>
+                    <rect key="frame" x="0.0" y="126" width="375" height="686"/>
                     <color key="backgroundColor" name="theme_primary_border"/>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-location" translatesAutoresizingMaskIntoConstraints="NO" id="26x-e7-0XI" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="172.66666666666666" y="441.33333333333331" width="30" height="30"/>
+                    <rect key="frame" x="172.66666666666666" y="454" width="30" height="30"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="15y-Ia-6mc"/>
@@ -45,10 +46,10 @@
                     </userDefinedRuntimeAttributes>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RkY-uq-l4w" userLabel="vwBar">
-                    <rect key="frame" x="0.0" y="44.000000000000007" width="375" height="90.666666666666686"/>
+                    <rect key="frame" x="0.0" y="44" width="375" height="82"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IND-Az-SGv" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="304.33333333333331" y="19.999999999999996" width="50.666666666666686" height="50.666666666666657"/>
+                            <rect key="frame" x="313" y="20" width="42" height="42"/>
                             <color key="backgroundColor" name="theme_primary_light_background"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="IND-Az-SGv" secondAttribute="height" multiplier="1:1" id="1zD-Jl-dP8"/>
@@ -59,52 +60,45 @@
                                 <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="Zrg-UD-ub4"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xk9-ZP-J9T" userLabel="lblAddressTitle" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="55" y="20" width="43" height="20.333333333333329"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" name="theme_primary"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xC-vK-VPV" userLabel="lblAddress" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="55" y="50.333333333333329" width="43" height="20.333333333333329"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xC-vK-VPV" userLabel="lblAddress" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="65" y="20" width="228" height="42"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" name="theme_primary"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-location" translatesAutoresizingMaskIntoConstraints="NO" id="m6T-4o-idN">
-                            <rect key="frame" x="20" y="20" width="25" height="25"/>
+                            <rect key="frame" x="20" y="28.666666666666671" width="25" height="25"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="m6T-4o-idN" secondAttribute="height" multiplier="1:1" id="Kys-A8-8eK"/>
-                                <constraint firstAttribute="height" constant="25" id="Udw-1L-zek"/>
+                                <constraint firstAttribute="width" constant="25" id="CLA-ft-JLO"/>
+                                <constraint firstAttribute="height" constant="25" id="wc0-IL-KGA"/>
                             </constraints>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
+                        <constraint firstItem="IND-Az-SGv" firstAttribute="leading" secondItem="2xC-vK-VPV" secondAttribute="trailing" constant="20" id="2T7-Q3-Tcc"/>
                         <constraint firstAttribute="trailing" secondItem="IND-Az-SGv" secondAttribute="trailing" constant="20" id="4Yl-M3-HUK"/>
                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="IND-Az-SGv" secondAttribute="bottom" constant="20" id="56A-rL-hLm"/>
-                        <constraint firstItem="2xC-vK-VPV" firstAttribute="top" secondItem="xk9-ZP-J9T" secondAttribute="bottom" constant="10" id="7jI-d2-hK5"/>
+                        <constraint firstItem="2xC-vK-VPV" firstAttribute="leading" secondItem="m6T-4o-idN" secondAttribute="trailing" constant="20" id="8R5-Y0-MGe"/>
                         <constraint firstAttribute="bottom" secondItem="2xC-vK-VPV" secondAttribute="bottom" constant="20" id="BBU-Pp-OBd"/>
-                        <constraint firstItem="2xC-vK-VPV" firstAttribute="leading" secondItem="xk9-ZP-J9T" secondAttribute="leading" id="GKe-Nx-ss5"/>
                         <constraint firstItem="m6T-4o-idN" firstAttribute="leading" secondItem="RkY-uq-l4w" secondAttribute="leading" constant="20" id="M1I-va-qos"/>
+                        <constraint firstItem="2xC-vK-VPV" firstAttribute="centerY" secondItem="RkY-uq-l4w" secondAttribute="centerY" id="PyG-6a-qmX"/>
                         <constraint firstItem="IND-Az-SGv" firstAttribute="centerY" secondItem="RkY-uq-l4w" secondAttribute="centerY" id="SBr-ma-Tof"/>
                         <constraint firstItem="IND-Az-SGv" firstAttribute="top" secondItem="RkY-uq-l4w" secondAttribute="top" constant="20" id="Uzl-6u-hFn"/>
-                        <constraint firstItem="m6T-4o-idN" firstAttribute="top" secondItem="RkY-uq-l4w" secondAttribute="top" constant="20" id="V99-F2-0ev"/>
-                        <constraint firstItem="xk9-ZP-J9T" firstAttribute="top" secondItem="RkY-uq-l4w" secondAttribute="top" constant="20" id="ujh-YJ-2ow"/>
-                        <constraint firstItem="xk9-ZP-J9T" firstAttribute="leading" secondItem="m6T-4o-idN" secondAttribute="trailing" constant="10" id="zVR-wy-Y1K"/>
+                        <constraint firstItem="m6T-4o-idN" firstAttribute="centerY" secondItem="IND-Az-SGv" secondAttribute="centerY" id="VZN-UI-6JH"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAe-F0-Nm9" userLabel="serchView">
-                    <rect key="frame" x="20" y="154.66666666666666" width="335" height="50"/>
+                    <rect key="frame" x="20" y="146" width="335" height="50"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-search" translatesAutoresizingMaskIntoConstraints="NO" id="oll-oF-uqK">
-                            <rect key="frame" x="20" y="19.666666666666686" width="11" height="11"/>
+                            <rect key="frame" x="20" y="19.666666666666657" width="11" height="11"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="oll-oF-uqK" secondAttribute="height" multiplier="1:1" id="BYt-8Q-YLU"/>
                             </constraints>
                         </imageView>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zR6-ST-mFz" customClass="ThemeTextField" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="71.666666666666671" y="15.666666666666687" width="243.33333333333331" height="18.666666666666671"/>
+                            <rect key="frame" x="71.666666666666671" y="15.666666666666659" width="243.33333333333331" height="18.666666666666671"/>
                             <color key="textColor" name="theme_primary"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -121,7 +115,7 @@
                     </constraints>
                 </view>
                 <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Mr-ca-1pk">
-                    <rect key="frame" x="20" y="224.66666666666663" width="335" height="128"/>
+                    <rect key="frame" x="20" y="216" width="335" height="128"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="128" id="F9o-8P-P09"/>
@@ -161,7 +155,7 @@
                 <constraint firstItem="0ux-6h-A7d" firstAttribute="top" secondItem="RkY-uq-l4w" secondAttribute="bottom" id="Mbb-AO-ukf"/>
                 <constraint firstItem="26x-e7-0XI" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="QLp-so-L3n"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="gqD-5m-63a" secondAttribute="bottom" constant="20" id="Sec-kG-rUx"/>
-                <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="0ux-6h-A7d" secondAttribute="bottom" id="TIX-3g-fYr"/>
+                <constraint firstAttribute="bottom" secondItem="0ux-6h-A7d" secondAttribute="bottom" id="TIX-3g-fYr"/>
                 <constraint firstItem="SAe-F0-Nm9" firstAttribute="top" secondItem="0ux-6h-A7d" secondAttribute="top" constant="20" id="USa-iL-Ykq"/>
                 <constraint firstItem="SAe-F0-Nm9" firstAttribute="leading" secondItem="0ux-6h-A7d" secondAttribute="leading" constant="20" id="VQ8-7K-JaR"/>
                 <constraint firstItem="SAe-F0-Nm9" firstAttribute="trailing" secondItem="0ux-6h-A7d" secondAttribute="trailing" constant="-20" id="k3T-gT-zki"/>

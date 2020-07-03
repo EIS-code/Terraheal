@@ -29,6 +29,7 @@ class HomeTblCell: TableCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
         self.ivHome?.setRound()

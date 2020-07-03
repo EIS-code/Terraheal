@@ -114,13 +114,15 @@ extension CustomPhotoPicker:  UIImagePickerControllerDelegate {
                 return
             }
             self.imageSelected = document
-            Common.appDelegate.getTopViewController()?.dismiss(animated: true, completion: nil)
-            if self.onBtnGallaryTapped != nil {
-                if let image = self.imageSelected {
-                        self.onBtnCameraTapped!(image);
-                }
-                
-            }
+            
+            Common.appDelegate.getTopViewController()?.dismiss(animated: true, completion: {
+                    if self.onBtnCameraTapped != nil {
+                        if let image = self.imageSelected {
+                                self.onBtnCameraTapped!(image);
+                        }
+                        
+                    }
+            })
         }
         
     }
@@ -158,13 +160,14 @@ extension CustomPhotoPicker:  UIImagePickerControllerDelegate {
         else {
             imageSelected = nil
         }
-        Common.appDelegate.getTopViewController()?.dismiss(animated: true, completion: nil)
-        if self.onBtnGallaryTapped != nil {
-            if let image = imageSelected {
-                    self.onBtnGallaryTapped!(image);
-            }
-            
-        }
+        Common.appDelegate.getTopViewController()?.dismiss(animated: true, completion: {
+                if self.onBtnGallaryTapped != nil {
+                    if let image = self.imageSelected {
+                            self.onBtnGallaryTapped!(image);
+                    }
+                    
+                }
+        })
     }
 
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

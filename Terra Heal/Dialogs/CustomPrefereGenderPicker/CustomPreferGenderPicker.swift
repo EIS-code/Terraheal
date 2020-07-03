@@ -71,9 +71,9 @@ class CustomPreferGenderPicker: ThemeBottomDialogView {
         }
         self.tableView.reloadData()
     }
-    func setDataSource(data:  MassagePreferenceDetail) {
+    func setDataSource(data:  [PreferenceOption]) {
         self.arrForData.removeAll()
-        for option in data.preferenceOptions {
+        for option in data {
             self.arrForData.append(option)
             if option.isSelected {
                 self.selectedData = option
