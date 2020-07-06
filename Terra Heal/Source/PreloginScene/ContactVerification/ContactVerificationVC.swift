@@ -152,7 +152,7 @@ class ContactVerificationVC: MainVC {
     }
 
     @IBAction func btnNextTapped(_ sender: Any) {
-        Common.appDelegate.loadKycInfoVC()
+        Common.appDelegate.loadHomeVC()
     }
 
     //MARK: Other Function

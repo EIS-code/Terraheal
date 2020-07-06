@@ -96,7 +96,7 @@
                         <rect key="frame" x="191" y="5" width="93" height="93"/>
                         <color key="backgroundColor" name="theme_primary"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="HQO-Oy-Hm5" secondAttribute="height" multiplier="1:1" id="aVg-Hg-fWX"/>
+                            <constraint firstAttribute="width" secondItem="HQO-Oy-Hm5" secondAttribute="height" multiplier="1:1" priority="999" id="aVg-Hg-fWX"/>
                         </constraints>
                     </imageView>
                 </subviews>

@@ -13,7 +13,7 @@ enum PriceAndLocation {
 
     struct RequestLocationlist: Codable {
         var id: String = PreferenceHelper.shared.getUserId()
-        var token: String = PreferenceHelper.shared.getSessionToken()
+       // var token: String = PreferenceHelper.shared.getSessionToken()
     }
 
 

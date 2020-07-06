@@ -212,7 +212,6 @@
 //MARK: Price  And Location
 "PRICE_AND_LOCATION_TITLE" = "pricing and locations";
 "PRICE_AND_LOCATION_TXT_SEARCH_LOCATION" = "search location";
-
 "NO_LOCATION_TITLE" =  "you don't have any location\naddresses";
 "NO_LOCATION_MSG" =  "--";
 
@@ -285,6 +284,24 @@
 "BTN_BOOK_HERE" = "Book Here";
 "BTN_CHECK_SERVICE" = "Check Service";
 
+//MARK: Manage Document Screen
+"MANAGE_DOCUMENT_TITLE" = "Id / Passport";
+"DOCUMENT_EMPTY_TITLE" = "no documents available";
+"DOCUMENT_EMPTY_MSG" = "add document to continue";
+"MANAGE_DOCUMENT_BTN_ADD_NEW" = "Add New";
+
+
+"MANAGE_ADDRESS_DIALOG_ADD_NEW_ADDRESS_TITLE" = "Add New Address";
+"MANAGE_ADDRESS_DIALOG_EDIT_ADDRESS_TITLE" = "Edit Address";
+"MANAGE_ADDRESS_TXT_ADDRESS_LINE_1" = "address line 1";
+"MANAGE_ADDRESS_TXT_ADDRESS_LINE_2" = "address line 2 ( optional )";
+"MANAGE_ADDRESS_TXT_LANDMARK" = "landmark";
+"MANAGE_ADDRESS_TXT_ADDRESS_PINCODE" = "pincode";
+"MANAGE_ADDRESS_TXT_ADDRESS_STATE" = "state";
+"MANAGE_ADDRESS_TXT_ADDRESS_CITY" = "city";
+"MANAGE_ADDRESS_TXT_ADDRESS_NAME" = "home / work / office";
+"MANAGE_ADDRESS_TXT_ADDRESS_LATITUDE" = "latitude";
+"MANAGE_ADDRESS_TXT_ADDRESS_LONGITUDE" = "longitude";
 //MARK: Photo Dialog
 "PHOTO_DIALOG_FROM_TITLE" = "upload a photo ";
 "PHOTO_DIALOG_FROM_CAMERA" = "take a photo ";
@@ -326,7 +343,6 @@
 "VALIDATION_MSG_PLEASE_SELECT_DATA" = "Please select valid data";
 "VALIDATION_MSG_PLEASE_SELECT_DATE" = "Please select valid date";
 "VALIDATION_MSG_PLEASE_SELECT_LOCATION" = "Please select loccation";
-
 "VALIDATION_MSG_INVALID_NAME"  =  "Please enter valid name";
 "VALIDATION_MSG_INVALID_SURNAME"  =  "Please enter valid surname";
 "VALIDATION_MSG_INVALID_GENDER"  =  "Please select gender";
@@ -340,45 +356,3 @@
 
 
 
-/*
- //MARK: KYC WELCOME  SCREEN
- "KYC_LBL_TITLE" = "Welcome";
- "KYC_LBL_MESSAGE" = "You need to complete your identity verification in order to hire therapists. You can book massages at shop without doing it.\n\nDo you want to complete this step?";
- "KYC_BTN_SKIP" = "Skip";
- "KYC_BTN_PROCEED" = "Yes Proceed";
- //MARK: KYC INFO  SCREEN
- "KYC_INFO_LBL_TITLE" = "Let's Get Started";
- "KYC_INFO_LBL_MESSAGE" = "For identity variation we will follow 3 simple steps.";
- "KYC_INFO_BTN_PROCEED" = "Yes I am Ready";
- "KYC_INFO_LBL_SCAN_PASSPORT" = "Scan Passport";
- "KYC_INFO_LBL_TAKE_SELFIE" = "Take Selfie";
- "KYC_INFO_LBL_ADD_CREDIT_CARD" = "Add Credit Card";
- //MARK: SCAN PASSPORT SCREEN
- "SCAN_PASSPORT_LBL_TITLE" = "Scan Passport";
- "SCAN_PASSPORT_LBL_MESSAGE" = "Please scan your passport as per given instruction";
- "SCAN_PASSPORT_BTN_SCAN_NOW" = "Scan Now";
- "SCAN_PASSPORT_LBL_FRONT_SIDE"  = "Scan Front Side";
- "SCAN_PASSPORT_LBL_BACK_SIDE"  = "Scan Back Side";
- //MARK: SELFIE SCREEN
- "SELFIE_LBL_TITLE" = "Take Selfie";
- "SELFIE_LBL_MESSAGE" = "We use your selfie to compare with your passport photo";
- "SELFIE_BTN_OPEN_CAMERA" = "Open Camera";
- "SELFIE_LBL_INFO_1_TITLE"  = "Good lighting";
- "SELFIE_LBL_INFO_1_MESSAGE"  = "Make sure you are in a well lit area and both ears are uncovered";
- "SELFIE_LBL_INFO_2_TITLE"  = "Look straight";
- "SELFIE_LBL_INFO_2_MESSAGE"  = "Hold your phone at eye level and look straight to the camera";
- "SELFIE_SCAN_LBL_INFO" = "Hold your phone at eye level so that your selfie is similar to your passport photo";
- //MARK: ADD CARD SCREEN
- "ADD_CARD_LBL_TITLE" = "Add Credit card";
- "ADD_CARD_LBL_MESSAGE" = "verify and secure your card";
- "ADD_CARD_LBL_CARD_NUMBER" = "Card Number";
- "ADD_CARD_LBL_EXPIRY_DATE" = "Expiry";
- "ADD_CARD_TXT_CARD_NUMBER" = "XXXX XXXX XXXX XXXX";
- "ADD_CARD_TXT_EXPIRY_DATE" = "MM/YY";
- "ADD_CARD_BTN_ADD_CARD" = "Add Card";
- //MARK: COMPLETE IDENTITY VERFICATION SCREEN
- "COMPLETE_VERIFICATION_LBL_TITLE" = "Thank you";
- "COMPLETE_VERIFICATION_LBL_MESSAGE" = "Your identity is verified successfully.";
- "COMPLETE_VERIFICATION_BTN_HOME" = "Home";
- 
- */

@@ -102,13 +102,13 @@ class PackVC: MainVC {
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
             alert?.dismiss()
-            guard let self = self else { return }
+             guard let self = self else { return } ; print(self)
             self.btnSubmit.isEnabled = true
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (description) in
             alert?.dismiss()
-            guard let self = self else { return }
+             guard let self = self else { return } ; print(self)
 
             self.arrForData.append(PackDetail.init(code:description,name: "TESt", description: "FLAT 50 % OFF"))
             self.tableView.reloadData()
@@ -128,7 +128,7 @@ extension PackVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
         tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 250
         tableView.register(PackTblCell.nib()
             , forCellReuseIdentifier: PackTblCell.name)
         tableView.tableFooterView = UIView()

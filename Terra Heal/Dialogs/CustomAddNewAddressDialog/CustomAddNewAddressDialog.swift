@@ -55,14 +55,7 @@ class CustomAddNewAddressDialog: ThemeBottomDialogView {
         self.txtName.text = data.name
         self.txtLatitude.text = data.latitude
         self.txtLongitude.text = data.longitude
-        
-        if data.addressLine1.count >= self.txtAddressLine1.maxLength {
-                let index = data.addressLine1.index(data.addressLine1.startIndex, offsetBy: self.txtAddressLine1.maxLength)
-            self.txtAddressLine1.text = String(data.addressLine1[..<index])
-        } else  {
-            self.txtAddressLine1.text = data.addressLine1
-        }
-        print(data.addressLine1)
+        self.txtAddressLine1.text = data.addressLine1
         self.txtAddressLine2.text = data.addressLine2
         self.txtLandmark.text = data.landMark
         self.txtPincode.text = data.pinCode
@@ -210,7 +203,7 @@ class CustomAddNewAddressDialog: ThemeBottomDialogView {
             }
             let id = self.selectedAddress.id
             self.selectedAddress = address
-            self.selectedAddress.id = id ?? ""
+            self.selectedAddress.id = id 
             DispatchQueue.main.async {
                 self.setAddressData(data: self.selectedAddress)
             }

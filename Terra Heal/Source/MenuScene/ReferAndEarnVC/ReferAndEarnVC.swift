@@ -166,13 +166,13 @@ class ReferAndEarnVC: MainVC {
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
             alert?.dismiss()
-            guard let self = self else { return }
+             guard let self = self else { return } ; print(self)
             self.btnReferNow.isEnabled = true
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (description) in
             alert?.dismiss()
-            guard let self = self else { return }
+             guard let self = self else { return } ; print(self)
 
 
             self.btnReferNow.isEnabled = true
@@ -185,13 +185,13 @@ class ReferAndEarnVC: MainVC {
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
             alert?.dismiss()
-            guard let self = self else { return }
+             guard let self = self else { return } ; print(self)
             self.btnFilter.isEnabled = true
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (description) in
             alert?.dismiss()
-            guard let self = self else { return }
+             guard let self = self else { return } ; print(self)
             if description.id == "0" {
                 self.arrForReferredHistory = []
             } else {

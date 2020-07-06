@@ -9,8 +9,8 @@
 import UIKit
 
 enum PreferLanguage: String {
-    case English  = "english"
-    case Portugues  = "portugues"
+    case English  = "en"
+    case Portugues  = "pt"
     case NoPreference = ""
 
     func name()-> String {
@@ -27,6 +27,14 @@ enum PreferLanguage: String {
         // Use Internationalization, as appropriate.
         case .English: return "🇬🇧"
         case .Portugues: return "🇵🇹"
+        default: return "--"
+        }
+    }
+    func code() -> String {
+        switch self {
+        // Use Internationalization, as appropriate.
+        case .English: return "en"
+        case .Portugues: return "pt"
         default: return "--"
         }
     }
@@ -65,13 +73,20 @@ class CustomLanguagePicker: ThemeBottomDialogView {
             self.btnCancel.setTitle(cancelButtonTitle, for: .normal)
             self.btnCancel.isHidden = false
         }
-        self.select(Language: self.selectedLanguage)
+        self.select(language: self.selectedLanguage)
         self.setupTableView(tableView: self.tableView)
 
     }
 
-    func select(Language:PreferLanguage) {
-        self.selectedLanguage = Language
+    func select(language:PreferLanguage) {
+        self.selectedLanguage = language
+        for i in 0..<arrForLanguage.count {
+            arrForLanguage[i].isSelected = false
+            if arrForLanguage[i].type == language {
+              arrForLanguage[i].isSelected = true
+            }
+        }
+        self.tableView.reloadData()
     }
 
     func initialSetup() {

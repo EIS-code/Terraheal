@@ -13,7 +13,7 @@ enum Cities {
     
     struct RequestCitylist: Codable {
         var id: String = PreferenceHelper.shared.getUserId()
-        var token: String = PreferenceHelper.shared.getSessionToken()
+      //  var token: String = PreferenceHelper.shared.getSessionToken()
         var country_id: String = ""
     }
     

@@ -13,13 +13,13 @@ enum MassagePreference {
 
     struct RequestMassagePrefenceList: Codable {
         var user_id: String = PreferenceHelper.shared.getUserId()
-        var token: String = PreferenceHelper.shared.getSessionToken()
+       // var token: String = PreferenceHelper.shared.getSessionToken()
     }
 
 
     struct SaveMassagePrefenceList: Codable {
         var user_id: String = PreferenceHelper.shared.getUserId()
-        var token: String = PreferenceHelper.shared.getSessionToken()
+       // var token: String = PreferenceHelper.shared.getSessionToken()
         var data: [PreferenceData] = []
     }
     

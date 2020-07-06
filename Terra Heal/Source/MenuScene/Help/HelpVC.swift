@@ -96,7 +96,7 @@ class HelpVC: MainVC {
         alert.onBtnDoneTapped = {
             [weak alert, weak self] () in
             alert?.dismiss()
-            guard let self = self else { return }
+             guard let self = self else { return } ; print(self)
             self.tableView.reloadData()
         }
     }
@@ -112,7 +112,7 @@ class HelpVC: MainVC {
         alert.onBtnDoneTapped = {
             [weak alert, weak self] () in
             alert?.dismiss()
-            guard let self = self else { return }
+             guard let self = self else { return } ; print(self)
             self.tableView.reloadData()
         }
     }

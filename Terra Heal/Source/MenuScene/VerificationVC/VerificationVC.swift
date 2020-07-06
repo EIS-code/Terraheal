@@ -83,7 +83,7 @@ class VerificationVC: MainVC {
     }
 
     @IBAction func btnVerifiedTapped(_ sender: Any) {
-
+        Common.appDelegate.loadManageDocumentVC(navigaionVC: self.navigationController)
     }
 
 }

@@ -13,13 +13,13 @@ enum TherapistQuastionaries {
 
     struct RequestQuestionList: Codable {
         var user_id: String = PreferenceHelper.shared.getUserId()
-        var token: String = PreferenceHelper.shared.getSessionToken()
+       // var token: String = PreferenceHelper.shared.getSessionToken()
     }
 
 
     struct SaveQuestionList: Codable {
         var user_id: String = PreferenceHelper.shared.getUserId()
-        var token: String = PreferenceHelper.shared.getSessionToken()
+       // var token: String = PreferenceHelper.shared.getSessionToken()
         var data: [QuestionData] = []
     }
     

@@ -169,7 +169,7 @@ class RegisterVC: MainVC {
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (countryPhoneCode:  CountryPhone) in
             alert?.dismiss()
-            guard let self = self else { return }
+             guard let self = self else { return } ; print(self)
             self.txtCountryPhoneCode.text = countryPhoneCode.countryPhoneCode
             print(countryPhoneCode.countryName)
 
@@ -238,7 +238,7 @@ extension RegisterVC {
             alert.show(animated: true)
             alert.onBtnCancelTapped = { [weak alert, weak self] in
                     alert?.dismiss()
-                guard let self = self else { return }
+                 guard let self = self else { return } ; print(self)
                     _ = self.txtName.becomeFirstResponder()
                 }
                 return false

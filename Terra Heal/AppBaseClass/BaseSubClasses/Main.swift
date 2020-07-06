@@ -143,6 +143,7 @@ class CollectionCell: UICollectionViewCell {
 }
 
 class TableCell: UITableViewCell {
+    var parentVC: UIViewController? = nil
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none

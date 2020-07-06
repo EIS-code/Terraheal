@@ -13,7 +13,7 @@ enum ManagePeople {
     
     struct RequestPeoplelist: Codable {
         var user_id: String = PreferenceHelper.shared.getUserId()
-        var token: String = PreferenceHelper.shared.getSessionToken()
+        //var token: String = PreferenceHelper.shared.getSessionToken()
     }
     struct RequestUpdatePeople: Codable {
         var user_id: String = PreferenceHelper.shared.getUserId()

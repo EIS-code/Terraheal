@@ -12,7 +12,7 @@ import Foundation
 enum User {
 
     struct RequestProfile: Codable  {
-        var id: String = PreferenceHelper.shared.getUserId()
+        var user_id: String = PreferenceHelper.shared.getUserId()
        // var token: String = PreferenceHelper.shared.getSessionToken()
         var device_token: String = PreferenceHelper.shared.getDeviceToken()
         var app_version: String = Bundle.appVesion
@@ -40,15 +40,23 @@ enum User {
 
     struct RequestLogout: Codable {
         var user_id: String = PreferenceHelper.shared.getUserId()
-        var token: String = PreferenceHelper.shared.getSessionToken()
+       // var token: String = PreferenceHelper.shared.getSessionToken()
     }
 
     struct RequestUploadDocument: Codable {
         var id: String = PreferenceHelper.shared.getUserId()
         var type: String = "1"
-        var token: String = PreferenceHelper.shared.getSessionToken()
+      //  var token: String = PreferenceHelper.shared.getSessionToken()
     }
 
+    struct RequestChangePassword: Codable {
+        var user_id: String = PreferenceHelper.shared.getUserId()
+      //  var token: String = PreferenceHelper.shared.getSessionToken()
+        var old_password: String = ""
+        var new_password: String = ""
+    }
+
+    
     struct RequestLogin: Codable {
         var email: String = ""
         var password: String = ""

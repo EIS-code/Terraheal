@@ -92,13 +92,13 @@ class CampaignsVC: MainVC {
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
             alert?.dismiss()
-            guard let self = self else { return }
+             guard let self = self else { return } ; print(self)
 
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (description) in
             alert?.dismiss()
-            guard let self = self else { return }
+             guard let self = self else { return } ; print(self)
 
         }
     }

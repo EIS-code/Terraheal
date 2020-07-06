@@ -41,12 +41,12 @@ class CustomCurrencyPicker: ThemeBottomDialogView {
     @IBOutlet weak var vwDollar: UIView!
     @IBOutlet weak var btnDollar: UIButton!
     @IBOutlet weak var lblDollar: ThemeLabel!
-    @IBOutlet weak var ivDollarSelected: UIImageView!
+    @IBOutlet weak var ivDollarSelected: PaddedImageView!
 
     @IBOutlet weak var vwEuro: UIView!
     @IBOutlet weak var btnEuro: UIButton!
     @IBOutlet weak var lblEuro: ThemeLabel!
-    @IBOutlet weak var ivEuroSelected: UIImageView!
+    @IBOutlet weak var ivEuroSelected: PaddedImageView!
 
 
     var onBtnDoneTapped: ((_ currency:Currency) -> Void)? = nil

@@ -186,21 +186,7 @@ extension AppDelegate {
         }
     }
 
-    func loadKycWelcomeVC(navigaionVC:UINavigationController? = nil) {
-        if let nc = navigaionVC as? NC {
-            if let targetVC: KycVC =  nc.findVCs(ofType: KycVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
-            } else {
-                let targetVC: KycVC = KycVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
-            }
-        } else {
-            let targetVC: KycVC = KycVC.fromNib()
-            let nC: NC = NC(rootViewController: targetVC)
-            self.windowConfig(withRootVC: nC)
-        }
-    }
-
+   
     func loadMapLocationVC(navigaionVC:UINavigationController? = nil) -> MapLocationVC {
         if let nc = navigaionVC as? NC {
             if let targetVC: MapLocationVC =  nc.findVCs(ofType: MapLocationVC.self).first {
@@ -220,51 +206,7 @@ extension AppDelegate {
     }
 
     
-    func loadKycInfoVC(navigaionVC:UINavigationController? = nil) {
-        if let nc = navigaionVC as? NC {
-            if let targetVC: KycInfoVC =  nc.findVCs(ofType: KycInfoVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
-            } else {
-                let targetVC: KycInfoVC = KycInfoVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
-            }
-        } else {
-            let targetVC: KycInfoVC = KycInfoVC.fromNib()
-            let nC: NC = NC(rootViewController: targetVC)
-            self.windowConfig(withRootVC: nC)
-        }
-    }
-
-    func loadScanPassportInstructionVC(navigaionVC:UINavigationController? = nil) {
-        if let nc = navigaionVC as? NC {
-            if let targetVC: ScanPassportInstructionVC =  nc.findVCs(ofType: ScanPassportInstructionVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
-            } else {
-                let targetVC: ScanPassportInstructionVC = ScanPassportInstructionVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
-            }
-        } else {
-            let targetVC: ScanPassportInstructionVC = ScanPassportInstructionVC.fromNib()
-            let nC: NC = NC(rootViewController: targetVC)
-            self.windowConfig(withRootVC: nC)
-        }
-    }
-
-    func loadScanPassportVC(navigaionVC:UINavigationController? = nil) {
-        if let nc = navigaionVC as? NC {
-            if let targetVC: ScanPassportVC =  nc.findVCs(ofType: ScanPassportVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
-            } else {
-                let targetVC: ScanPassportVC = ScanPassportVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
-            }
-        } else {
-            let targetVC: ScanPassportVC = ScanPassportVC.fromNib()
-            let nC: NC = NC(rootViewController: targetVC)
-            self.windowConfig(withRootVC: nC)
-        }
-    }
-
+    
 
     func loadGallaryVC(navigaionVC:UINavigationController? = nil) -> GallaryVC {
 
@@ -353,66 +295,7 @@ extension AppDelegate {
         }
     }
 
-    func loadScanSelfieInstructionVC(navigaionVC:UINavigationController? = nil) {
-        if let nc = navigaionVC as? NC {
-            if let targetVC: ScanSelfieInstructionVC =  nc.findVCs(ofType: ScanSelfieInstructionVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
-            } else {
-                let targetVC: ScanSelfieInstructionVC = ScanSelfieInstructionVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
-            }
-        } else {
-            let targetVC: ScanSelfieInstructionVC = ScanSelfieInstructionVC.fromNib()
-            let nC: NC = NC(rootViewController: targetVC)
-            self.windowConfig(withRootVC: nC)
-        }
-    }
-
-    func loadScanSelfieVC(navigaionVC:UINavigationController? = nil) {
-        if let nc = navigaionVC as? NC {
-            if let targetVC: ScanSelfieVC =  nc.findVCs(ofType: ScanSelfieVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
-            } else {
-                let targetVC: ScanSelfieVC = ScanSelfieVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
-            }
-        } else {
-            let targetVC: ScanSelfieVC = ScanSelfieVC.fromNib()
-            let nC: NC = NC(rootViewController: targetVC)
-            self.windowConfig(withRootVC: nC)
-        }
-    }
-
-    func loadAddCardVC(navigaionVC:UINavigationController? = nil) {
-        if let nc = navigaionVC as? NC {
-            if let targetVC: AddCardVC =  nc.findVCs(ofType: AddCardVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
-            } else {
-                let targetVC: AddCardVC = AddCardVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
-            }
-        } else {
-            let targetVC: AddCardVC = AddCardVC.fromNib()
-            let nC: NC = NC(rootViewController: targetVC)
-            self.windowConfig(withRootVC: nC)
-        }
-    }
-
-    func loadCompleteIdentityVerificationVC(navigaionVC:UINavigationController? = nil) {
-        if let nc = navigaionVC as? NC {
-            if let targetVC: CompleteIdentityVerificationVC =  nc.findVCs(ofType: CompleteIdentityVerificationVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
-            } else {
-                let targetVC: CompleteIdentityVerificationVC = CompleteIdentityVerificationVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
-            }
-        } else {
-            let targetVC: CompleteIdentityVerificationVC = CompleteIdentityVerificationVC.fromNib()
-            let nC: NC = NC(rootViewController: targetVC)
-            self.windowConfig(withRootVC: nC)
-        }
-    }
-
+ 
     func loadMassagePreferenceVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: MassagePreferenceVC =  nc.findVCs(ofType: MassagePreferenceVC.self).first {
@@ -681,5 +564,23 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
+    
+
+    func loadManageDocumentVC(navigaionVC:UINavigationController? = nil) {
+
+           if let nc = navigaionVC as? NC {
+               if let targetVC: ManageDocumentVC =  nc.findVCs(ofType: ManageDocumentVC.self).first {
+                   _ = nc.popToViewController(targetVC, animated: true)
+               } else {
+                   let targetVC: ManageDocumentVC = ManageDocumentVC.fromNib()
+                   nc.pushViewController(targetVC, animated: true)
+               }
+           } else {
+               let targetVC: ManageDocumentVC = ManageDocumentVC.fromNib()
+               let nC: NC = NC(rootViewController: targetVC)
+               self.windowConfig(withRootVC: nC)
+           }
+       }
+    
 }
 

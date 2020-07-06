@@ -99,13 +99,13 @@ class PromoCodeVC: MainVC {
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
             alert?.dismiss()
-            guard let self = self else { return }
+             guard let self = self else { return } ; print(self)
             self.btnSubmit.isEnabled = true
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (description) in
             alert?.dismiss()
-            guard let self = self else { return }
+             guard let self = self else { return } ; print(self)
 
             self.arrForData.append(PromocodeDetail.init(code:description,expiry: "expire in 6 days", description: "FLAT 50 % OFF"))
             self.tableView.reloadData()

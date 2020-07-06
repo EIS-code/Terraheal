@@ -103,7 +103,7 @@ extension CustomCityPicker : UITableViewDelegate,UITableViewDataSource {
         tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 70
         tableView.register(CustomCityPickerCell.nib()
             , forCellReuseIdentifier: CustomCityPickerCell.name)
         tableView.tableFooterView = UIView()

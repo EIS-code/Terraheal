@@ -13,7 +13,7 @@ enum Addresses {
     
     struct RequestAddresslist: Codable {
         var user_id: String = PreferenceHelper.shared.getUserId()
-        var token: String = PreferenceHelper.shared.getSessionToken()
+       // var token: String = PreferenceHelper.shared.getSessionToken()
     }
     struct RequestUpdateAddress: Codable {
         var user_id: String = PreferenceHelper.shared.getUserId()

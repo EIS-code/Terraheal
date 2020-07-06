@@ -55,6 +55,7 @@ class LoginVC: MainVC {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        print("viewDidLayoutSubviewsCall")
         if self.isViewAvailable() {
             self.btnLogin.layoutIfNeeded()
             self.btnLogin.setHighlighted(isHighlighted: true)

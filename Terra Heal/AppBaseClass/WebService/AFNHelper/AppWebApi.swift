@@ -23,6 +23,7 @@ class AppWebApi: NSObject {
         
         private  struct Routes {
             static let Client = "/api/user"
+            static let Setting = "/api/user/setting"
             static let Exception = "/api/error"
             static let Massage = "/api/massage"
             static let Location = "/api/location"
@@ -40,15 +41,31 @@ class AppWebApi: NSObject {
         static var UserLogin: String {
             return Domain + Routes.Client  + "/signin"
         }
-        static var UserLogout: String {
-            return Domain + Routes.Client  + "/logout"
-        }
+        
         static var UserRegister: String {
             return Domain + Routes.Client + "/signup"
         }
         static var UserProfile: String {
-            return Domain + Routes.Client + "/profile/update/" + PreferenceHelper.shared.getUserId()
+            return Domain + Routes.Client + "/profile/update"
         }
+        
+        static var UserLogout: String {
+            return Domain + Routes.Setting  + "/logout"
+            
+        }
+        
+        static var ChangePassword: String {
+                   return Domain + Routes.Setting + "/update/password"
+        }
+       
+        static var SettingDetail: String {
+                   return Domain + Routes.Setting + "/get"
+        }
+        
+        static var UpdateSettingDetail: String {
+                   return Domain + Routes.Setting + "/save"
+        }
+      
         static var UploadDocument: String {
             return Domain + Routes.Client + "/documents/" + PreferenceHelper.shared.getUserId()
         }
@@ -342,5 +359,35 @@ extension AppWebApi {
             completionHandler(response)
         }
     }
+    
+    
+    //MARK:   Setting APIS
+    class func getSettingDetail(params:SettingPreference.RequestSettingPrefenceList = SettingPreference.RequestSettingPrefenceList(), completionHandler: @escaping ((SettingPreference.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.SettingDetail, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = SettingPreference.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    
+    class func updateSetting(params:SettingPreference.SaveSettingPrefence, completionHandler: @escaping ((SettingPreference.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.UpdateSettingDetail, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = SettingPreference.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    class func userLogout(params:User.RequestLogout = User.RequestLogout(), completionHandler: @escaping ((ResponseModel) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.UserLogout, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = ResponseModel.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    
+    class func changePassword(params:User.RequestChangePassword, completionHandler: @escaping ((ResponseModel) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.ChangePassword, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = ResponseModel.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
 }
+
 

@@ -76,12 +76,17 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check" translatesAutoresizingMaskIntoConstraints="NO" id="KDS-9J-oFM">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check" translatesAutoresizingMaskIntoConstraints="NO" id="KDS-9J-oFM" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
                                                             <rect key="frame" x="103.5" y="20" width="26" height="26"/>
                                                             <color key="backgroundColor" name="theme_primary"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="KDS-9J-oFM" secondAttribute="height" multiplier="1:1" id="ACv-eC-1t6"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                                    <real key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
@@ -120,12 +125,17 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check" translatesAutoresizingMaskIntoConstraints="NO" id="0Gj-VT-xex">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check" translatesAutoresizingMaskIntoConstraints="NO" id="0Gj-VT-xex" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
                                                             <rect key="frame" x="103.5" y="20" width="26" height="26"/>
                                                             <color key="backgroundColor" name="theme_primary"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="0Gj-VT-xex" secondAttribute="height" multiplier="1:1" id="Mo9-WX-Cbi"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                                    <real key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>

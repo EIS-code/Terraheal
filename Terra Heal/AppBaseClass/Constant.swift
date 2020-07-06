@@ -74,10 +74,3 @@ struct DateFormat {
     static let check = "✓"
 }
 
-struct UploadDocumentDetail {
-    var id: String  = ""
-    var name: String  = ""
-    var image: UIImage? = nil
-    var data: Data? = nil
-    var isCompleted: Bool  = false
-}
