@@ -162,7 +162,6 @@ extension User {
         func toDictionary() -> [String:Any] {
             var dictionary = [String:Any]()
             dictionary["code"] = code
-            var dictionaryElements = [[String:Any]]()
             dictionary["data"] = data.toDictionary()
             dictionary["msg"] = message
             return dictionary

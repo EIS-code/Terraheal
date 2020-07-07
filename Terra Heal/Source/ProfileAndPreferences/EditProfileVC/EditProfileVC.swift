@@ -134,11 +134,12 @@ class EditProfileVC: MainVC {
         countryPickerAlert.initialize(title:arrForProfile[index].placeholder, buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized())
         countryPickerAlert.show(animated: true)
         countryPickerAlert.onBtnCancelTapped = { [weak countryPickerAlert, weak self] in
+            guard let self = self else { return } ; print(self)
             countryPickerAlert?.dismiss()
         }
         countryPickerAlert.onBtnDoneTapped = { [weak countryPickerAlert, weak self] (country) in
+            guard let self = self else { return } ; print(self)
             countryPickerAlert?.dismiss()
-             guard let self = self else { return } ; print(self)
             self.selectedCountry = country
             var request: User.RequestProfile = User.RequestProfile()
             request.country_id = country.id
@@ -158,12 +159,13 @@ class EditProfileVC: MainVC {
         cityPickerAlert.show(animated: true)
         cityPickerAlert.onBtnCancelTapped = {
             [weak cityPickerAlert, weak self] in
+            guard let self = self else { return } ; print(self)
             cityPickerAlert?.dismiss()
         }
         cityPickerAlert.onBtnDoneTapped = {
             [weak cityPickerAlert, weak self] (city) in
+            guard let self = self else { return } ; print(self)
             cityPickerAlert?.dismiss()
-             guard let self = self else { return } ; print(self)
             self.selectedCity = city
             var request: User.RequestProfile = User.RequestProfile()
             request.city_id = city.id
@@ -178,12 +180,13 @@ class EditProfileVC: MainVC {
         alert.configTextField(data: data.inputConfiguration)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
+            guard let self = self else { return } ; print(self)
             alert?.dismiss()
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (description) in
+            guard let self = self else { return } ; print(self)
             alert?.dismiss()
-             guard let self = self else { return } ; print(self)
             self.arrForProfile[index].value = description
             var request: User.RequestProfile = User.RequestProfile()
             switch self.arrForProfile[index].contentType
@@ -217,12 +220,13 @@ class EditProfileVC: MainVC {
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
+            guard let self = self else { return } ; print(self)
             alert?.dismiss()
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (countryPhoneCode,mobileNumber) in
+            guard let self = self else { return } ; print(self)
             alert?.dismiss()
-             guard let self = self else { return } ; print(self)
             var request: User.RequestProfile = User.RequestProfile()
             switch self.arrForProfile[index].contentType
             {
@@ -239,38 +243,19 @@ class EditProfileVC: MainVC {
         }
     }
     
-    
-    func openTextViewPicker(index:Int = 0) {
-        let alert: CustomTextViewDialog = CustomTextViewDialog.fromNib()
-        alert.initialize(title: arrForProfile[index].placeholder, data: arrForProfile[index].value, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
-        alert.show(animated: true)
-        alert.onBtnCancelTapped = {
-            [weak alert, weak self] in
-            alert?.dismiss()
-        }
-        alert.onBtnDoneTapped = {
-            [weak alert, weak self] (description) in
-            alert?.dismiss()
-             guard let self = self else { return } ; print(self)
-            var request: User.RequestProfile = User.RequestProfile()
-            
-        }
-    }
-    
-    
     func openDatePicker(index:Int = 0) {
         let datePickerAlert: CustomDatePicker = CustomDatePicker.fromNib()
         datePickerAlert.initialize(title: arrForProfile[index].placeholder, buttonTitle: "Proceed",cancelButtonTitle: "Back")
         datePickerAlert.show(animated: true)
         datePickerAlert.onBtnCancelTapped = {
             [weak datePickerAlert, weak self] in
+            guard let self = self else { return } ; print(self)
             datePickerAlert?.dismiss()
         }
         datePickerAlert.onBtnDoneTapped = {
             [weak datePickerAlert, weak self] (date) in
+            guard let self = self else { return } ; print(self)
             datePickerAlert?.dismiss()
-            print()
-             guard let self = self else { return } ; print(self)
             var request: User.RequestProfile = User.RequestProfile()
             request.dob = date.toString()
             self.wsUpdateProfile(request: request)
@@ -284,11 +269,12 @@ class EditProfileVC: MainVC {
         genderPickerAlert.show(animated: true)
         genderPickerAlert.onBtnCancelTapped = {
             [weak genderPickerAlert, weak self] in
+            guard let self = self else { return } ; print(self)
             genderPickerAlert?.dismiss()
         }
         genderPickerAlert.onBtnDoneTapped = {
             [weak genderPickerAlert, weak self] (gender) in
-             guard let self = self else { return } ; print(self)
+            guard let self = self else { return } ; print(self)
             genderPickerAlert?.dismiss()
             var request: User.RequestProfile = User.RequestProfile()
             request.gender = gender.rawValue
@@ -329,9 +315,9 @@ extension EditProfileVC:  UIScrollViewDelegate {
     @objc func handleTap(_ recognizer: UITapGestureRecognizer) {
         var point = recognizer.location(in: self.scrVw)
         point.y = point.y + self.kTableHeaderHeight + self.scrVw.frame.origin.y
-        var buttonFrame = self.btnAddPicture.superview!.convert(self.btnAddPicture.frame, to: self.view)
+        let buttonFrame = self.btnAddPicture.superview!.convert(self.btnAddPicture.frame, to: self.view)
         if (buttonFrame.contains(point)) {
-            self.btnAddPictureTapped(self.btnAddPicture)
+            self.btnAddPictureTapped(btnAddPicture ?? UIButton())
         }
     }
     

@@ -92,7 +92,7 @@
                             <constraint firstItem="vkL-On-Gbz" firstAttribute="top" secondItem="DvS-ga-ouT" secondAttribute="bottom" priority="998" constant="20" id="ofo-l0-uaT"/>
                         </constraints>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-home-selected" translatesAutoresizingMaskIntoConstraints="NO" id="HQO-Oy-Hm5">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center-white" translatesAutoresizingMaskIntoConstraints="NO" id="HQO-Oy-Hm5">
                         <rect key="frame" x="191" y="5" width="93" height="93"/>
                         <color key="backgroundColor" name="theme_primary"/>
                         <constraints>
@@ -127,8 +127,8 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="asset-center-white" width="42.666667938232422" height="42.666667938232422"/>
         <image name="asset-copy" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="asset-home-selected" width="21.333333969116211" height="21.333333969116211"/>
         <namedColor name="theme_primary">
             <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

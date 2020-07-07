@@ -71,9 +71,7 @@ class VerificationAlert: ThemeBottomDialogView {
         self.vwSwitch.itemTitles = ["VERIFICATION_BTN_MOBILE".localized(),"VERIFICATION_BTN_EMAIL".localized()]
         self.vwSwitch.changeBackgroundColor(UIColor.themeLightTextColor)
         self.vwSwitch.didSelectItemWith = { [weak self] (index,title) in
-            guard let self = self else {
-                return
-            }
+            guard let self = self else {return}; print(self)
             if index == 0 {
                 self.mobileTapped()
             } else {

@@ -48,17 +48,17 @@ class ThemeButton: UIButton {
 
     func setHighlighted(isHighlighted: Bool) {
         self.isButtonHighlighted = isHighlighted
-        self.isSelected = isHighlighted
+        //self.isSelected = isHighlighted
         if isHighlighted {
             self.backgroundColor = UIColor.themePrimary
-            self.setTitleColor(UIColor.themeLightTextColor, for: .normal)
+            self.setTitleColor(UIColor.white, for: .normal)
             self.setRound(withBorderColor: UIColor.clear, andCornerRadious: self.frame.height/2.0, borderWidth: 1.0)
         } else {
             self.backgroundColor = UIColor.themeLightTextColor
             self.setTitleColor(UIColor.themePrimary, for: .normal)
             self.setRound(withBorderColor: UIColor.themePrimary, andCornerRadious: self.frame.height/2.0, borderWidth: 1.0)
         }
-        self.tintColor = self.backgroundColor
+        //self.tintColor = self.backgroundColor
     }
 
     func setHomeSelected(isSelected: Bool) {

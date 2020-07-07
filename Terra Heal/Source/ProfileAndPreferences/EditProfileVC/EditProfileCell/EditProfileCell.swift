@@ -22,7 +22,7 @@ enum TextFieldContentType: Int {
     case Password = 13
     case Number = 11
     case Default = 12
-
+    
 }
 
 
@@ -35,19 +35,19 @@ struct EditProfileTextFieldDetail {
 }
 
 class EditProfileCell: CollectionCell {
-
+    
     @IBOutlet weak var vwEditText: UIView!
     @IBOutlet weak var tfForContent: EditProfileTextfield!
     @IBOutlet weak var btnVerify: UIButton!
     @IBOutlet weak var imgVerified: UIImageView!
     var data: EditProfileTextFieldDetail!
     var parent: UIViewController? = nil
-
+    
     override class func awakeFromNib() {
         super.awakeFromNib()
-
+        
     }
-
+    
     func setData(data:EditProfileTextFieldDetail) {
         self.data = data
         self.tfForContent.placeholder = data.placeholder
@@ -65,7 +65,7 @@ class EditProfileCell: CollectionCell {
     }
     
     override func layoutSubviews() {
-            super.layoutSubviews()
+        super.layoutSubviews()
     }
     @IBAction func btnVerifyTapped(_ sender: Any) {
         if self.data.contentType == .Email {
@@ -73,23 +73,28 @@ class EditProfileCell: CollectionCell {
         } else if self.data.contentType == .Phone {
             self.openMobileVerification()
         }
-
+        
     }
-
+    
     func openEmailVerification() {
         let alertForVerification: VerificationAlert  = VerificationAlert.fromNib()
         alertForVerification.initialize(message: "VERIFICATION_EMAIL_TITLE".localized(), data: Singleton.shared.user.email)
         alertForVerification.show(animated: true)
         alertForVerification.setVerificationFor(type: .Email)
         alertForVerification.onBtnDoneTapped = { [weak alertForVerification, weak self] (code:String) in
+            guard let self = self else { return } ; print(self)
             alertForVerification?.dismiss()
-            (self?.parent as? EditProfileVC)?.setUserData()
+            (self.parent as? EditProfileVC)?.setUserData()
             
         }
         alertForVerification.onBtnResendTapped = { [weak self] in
-
+            guard let self = self else { return } ; print(self)
+            
+            
         }
         alertForVerification.onBtnCancelTapped = { [weak alertForVerification,  weak self] in
+            guard let self = self else { return } ; print(self)
+            
             alertForVerification?.dismiss()
         }
     }
@@ -99,14 +104,20 @@ class EditProfileCell: CollectionCell {
         alertForVerification.show(animated: true)
         alertForVerification.setVerificationFor(type: .Phone)
         alertForVerification.onBtnDoneTapped = { [weak alertForVerification, weak self] (code:String) in
+            guard let self = self else { return } ; print(self)
+            
             alertForVerification?.dismiss()
-            (self?.parent as? EditProfileVC)?.setUserData()
+            (self.parent as? EditProfileVC)?.setUserData()
         }
-
+        
         alertForVerification.onBtnResendTapped = { [weak self] in
-
+            guard let self = self else { return } ; print(self)
+            
+            
         }
         alertForVerification.onBtnCancelTapped = { [weak alertForVerification,  weak self] in
+            guard let self = self else { return } ; print(self)
+            
             alertForVerification?.dismiss()
         }
     }

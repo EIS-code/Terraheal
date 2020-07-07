@@ -40,6 +40,8 @@ extension UIImageView {
                 self.contentMode = .scaleAspectFill
             case .aspectFit:
                 self.contentMode = .scaleAspectFit
+            @unknown default:
+                print("")
             }
             self.image = image
         }

@@ -23,11 +23,13 @@ class ServiceCell: CollectionCell {
         self.lblServices?.setFont(name: FontName.SemiBold, size: FontSize.label_14)
         self.btnNumberOfServices?.setFont(name: FontName.Regular, size: FontSize.label_14)
         self.btnNumberOfServices?.setRound()
+        self.btnHours.setTitle(" hours", for: .normal)
     }
 
     func setData(data:ServiceDetail) {
         self.lblName?.text = data.name
         self.lblAddress?.text = data.address
+        self.btnNumberOfServices.setTitle(data.numberOfServices + "+", for: .normal)
     }
     
     override func layoutSubviews() {
@@ -45,11 +47,12 @@ class ServiceCell: CollectionCell {
         hourSelectionDialog.initialize(title: "centers hours", buttonTitle: "", cancelButtonTitle: "")
         hourSelectionDialog.show(animated: true)
         hourSelectionDialog.onBtnDoneTapped = { [weak self, weak hourSelectionDialog] (hours) in
-            print(hours.day)
+            guard let self = self else { return } ; print(self)
             hourSelectionDialog?.dismiss()
+            self.btnHours.setTitle(" " + hours.day + " " + hours.startHour + " - " + hours.endHour, for: .normal)
         }
         hourSelectionDialog.onBtnCancelTapped = { [weak self, weak hourSelectionDialog] in
-            print("cancel")
+            guard let self = self else { return } ; print(self)
             hourSelectionDialog?.dismiss()
         }
         

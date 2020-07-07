@@ -101,7 +101,7 @@ extension MyBookingTblCell :  UITableViewDelegate,UITableViewDataSource {
         return "Section \(section)"
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let vw = UIView()
         vw.backgroundColor = UIColor.red
         return vw

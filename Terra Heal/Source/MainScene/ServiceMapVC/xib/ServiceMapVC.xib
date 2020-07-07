@@ -59,7 +59,7 @@
                         <constraint firstItem="0xa-H5-01s" firstAttribute="leading" secondItem="QQv-Wj-FT7" secondAttribute="leading" id="vos-NB-6W0"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-home-selected" translatesAutoresizingMaskIntoConstraints="NO" id="26x-e7-0XI" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center-white" translatesAutoresizingMaskIntoConstraints="NO" id="26x-e7-0XI" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="150" y="370.66666666666669" width="75" height="75"/>
                     <color key="backgroundColor" name="theme_primary"/>
                     <constraints>
@@ -67,7 +67,7 @@
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="padding">
-                            <real key="value" value="5"/>
+                            <real key="value" value="15"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </imageView>
@@ -162,7 +162,7 @@
                         <constraint firstAttribute="width" secondItem="4bD-XR-1BI" secondAttribute="height" multiplier="1:1" id="EGY-3z-GcC"/>
                         <constraint firstAttribute="height" constant="60" id="dZd-Fn-q11"/>
                     </constraints>
-                    <state key="normal" title="Button" image="asset-my-location"/>
+                    <state key="normal" image="asset-my-location"/>
                     <connections>
                         <action selector="btnCurrentLocationTapped:" destination="-1" eventType="touchUpInside" id="E9z-6N-gp3"/>
                     </connections>
@@ -199,10 +199,10 @@
         </view>
     </objects>
     <resources>
+        <image name="asset-center-white" width="42.666667938232422" height="42.666667938232422"/>
         <image name="asset-cross" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="asset-home-selected" width="21.333333969116211" height="21.333333969116211"/>
         <image name="asset-location" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="asset-my-location" width="326.66665649414062" height="326.66665649414062"/>
+        <image name="asset-my-location" width="42.666667938232422" height="42.666667938232422"/>
         <namedColor name="theme_light_text_color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

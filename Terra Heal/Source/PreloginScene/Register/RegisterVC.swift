@@ -164,15 +164,15 @@ class RegisterVC: MainVC {
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
+            guard let self = self else { return } ; print(self)
+
             alert?.dismiss()
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (countryPhoneCode:  CountryPhone) in
+            guard let self = self else { return } ; print(self)
             alert?.dismiss()
-             guard let self = self else { return } ; print(self)
             self.txtCountryPhoneCode.text = countryPhoneCode.countryPhoneCode
-            print(countryPhoneCode.countryName)
-
         }
     }
 
@@ -271,8 +271,10 @@ extension RegisterVC {
             alert.show(animated: true)
             alert.onBtnCancelTapped = {
                 [weak alert, weak self] in
+                guard let self = self else { return } ; print(self)
+
                 alert?.dismiss()
-                _ = self?.txtPassword.becomeFirstResponder()
+                _ = self.txtPassword.becomeFirstResponder()
             }
             return false
         } else if txtPassword.text! != txtConfirmPassword.text! {
@@ -281,8 +283,10 @@ extension RegisterVC {
             alert.show(animated: true)
             alert.onBtnCancelTapped = {
                 [weak alert, weak self] in
+                guard let self = self else { return } ; print(self)
+
                 alert?.dismiss()
-                _ = self?.txtConfirmPassword.becomeFirstResponder()
+                _ = self.txtConfirmPassword.becomeFirstResponder()
 
             }
             return false
@@ -292,6 +296,7 @@ extension RegisterVC {
             alert.show(animated: true)
             alert.onBtnCancelTapped = {
                 [weak alert, weak self] in
+                guard let self = self else { return } ; print(self)
                 alert?.dismiss()
 
             }

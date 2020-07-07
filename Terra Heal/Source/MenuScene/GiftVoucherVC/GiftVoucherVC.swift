@@ -82,9 +82,9 @@ class GiftVoucherVC: MainVC {
     @objc func handleTap(_ recognizer: UITapGestureRecognizer) {
         var point = recognizer.location(in: self.scrVw)
         point.y = point.y + self.kTableHeaderHeight + self.scrVw.frame.origin.y
-        var buttonFrame = self.btnGetStarted.superview!.convert(self.btnGetStarted.frame, to: self.view)
+        let buttonFrame = self.btnGetStarted.superview!.convert(self.btnGetStarted.frame, to: self.view)
         if (buttonFrame.contains(point)) {
-            self.btnGetStartedTapped(self.btnGetStarted)
+            self.btnGetStartedTapped(self.btnGetStarted ?? UIButton())
         }
 
     }

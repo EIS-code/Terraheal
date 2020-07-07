@@ -142,13 +142,15 @@ extension VerificationVC: UITableViewDelegate,UITableViewDataSource, UIScrollVie
         alertForVerification.show(animated: true)
         alertForVerification.setVerificationFor(type: .Email)
         alertForVerification.onBtnDoneTapped = { [weak alertForVerification, weak self] (code:String) in
+            guard let self = self else {return}; print(self)
             alertForVerification?.dismiss()
         }
 
         alertForVerification.onBtnResendTapped = { [weak self] in
-
+            guard let self = self else {return}; print(self)
         }
         alertForVerification.onBtnCancelTapped = { [weak alertForVerification,  weak self] in
+            guard let self = self else {return}; print(self)
             alertForVerification?.dismiss()
         }
     }
@@ -158,13 +160,15 @@ extension VerificationVC: UITableViewDelegate,UITableViewDataSource, UIScrollVie
         alertForVerification.show(animated: true)
         alertForVerification.setVerificationFor(type: .Phone)
         alertForVerification.onBtnDoneTapped = { [weak alertForVerification, weak self] (code:String) in
+            guard let self = self else {return}; print(self)
             alertForVerification?.dismiss()
         }
 
         alertForVerification.onBtnResendTapped = { [weak self] in
-
+            guard let self = self else {return}; print(self)
         }
         alertForVerification.onBtnCancelTapped = { [weak alertForVerification,  weak self] in
+            guard let self = self else {return}; print(self)
             alertForVerification?.dismiss()
         }
     }

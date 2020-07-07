@@ -52,6 +52,7 @@ class WelcomeVC: MainVC {
             self.iv1?.setRound()
             self.iv2.layoutIfNeeded()
             self.iv2?.setRound()
+            self.btnSignUp?.superview?.layoutIfNeeded()
             self.btnSignUp?.setHighlighted(isHighlighted: true)
             self.btnHome?.setHighlighted(isHighlighted: false)
         }

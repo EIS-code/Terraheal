@@ -85,12 +85,8 @@ extension CustomServiceHourSelectionDialog : UITableViewDelegate,UITableViewData
     private func reloadTableDateToFitHeight(tableView: UITableView) {
         DispatchQueue.main.async {
 
-            tableView.reloadData {
-
+            tableView.reloadData(heightToFit: self.hTblVw) {
             }
-            /*tableView.reloadData(heightToFit: self.hTblVw) {
-
-             }*/
         }
 
     }
@@ -99,7 +95,7 @@ extension CustomServiceHourSelectionDialog : UITableViewDelegate,UITableViewData
         tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 60
         tableView.register(CustomServiceHourSelectionCell.nib()
             , forCellReuseIdentifier: CustomServiceHourSelectionCell.name)
         tableView.tableFooterView = UIView()

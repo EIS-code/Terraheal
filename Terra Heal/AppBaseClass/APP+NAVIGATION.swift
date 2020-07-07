@@ -582,5 +582,23 @@ extension AppDelegate {
            }
        }
     
+    func loadServiceDetailVC(navigaionVC:UINavigationController? = nil) -> ServiceDetailVC {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: ServiceDetailVC =  nc.findVCs(ofType: ServiceDetailVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+                return targetVC
+            } else {
+                let targetVC: ServiceDetailVC = ServiceDetailVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+                return targetVC
+            }
+        } else {
+            let targetVC: ServiceDetailVC = ServiceDetailVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+            return targetVC
+        }
+    }
+    
 }
 

@@ -63,7 +63,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NhL-qx-JRo" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="36" width="97.5" height="42"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" title="  hours" image="asset-home">
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                <state key="normal" title="  hours" image="asset-time">
                                     <color key="titleColor" name="theme_primary"/>
                                 </state>
                                 <connections>
@@ -72,9 +73,8 @@
                             </button>
                         </subviews>
                     </stackView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mj4-Vg-zDh">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo-map" translatesAutoresizingMaskIntoConstraints="NO" id="mj4-Vg-zDh">
                         <rect key="frame" x="20" y="150" width="134.5" height="134"/>
-                        <color key="backgroundColor" name="theme_primary"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="mj4-Vg-zDh" secondAttribute="height" multiplier="1:1" id="9Qi-Lg-4pS"/>
                         </constraints>
@@ -109,7 +109,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="asset-home" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="asset-time" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="demo-map" width="49" height="49.666667938232422"/>
         <namedColor name="theme_light_text_color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

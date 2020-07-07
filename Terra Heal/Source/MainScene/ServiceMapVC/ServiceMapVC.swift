@@ -11,11 +11,18 @@ struct ServiceDetail {
     var name:String = ""
     var address:String = ""
     var numberOfServices: String = ""
+    var serviceDetails: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget. Nullam eget felis eget nunc lobortis."
+    var latitude: String = ""
+    var longitude: String = ""
+    func getCoordinatte() -> CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: self.latitude.toDouble, longitude: self.longitude.toDouble)
+    }
+    
 }
 
 class ServiceMapVC: MainVC {
-
-
+    
+    
     @IBOutlet weak var btnCheckService: ThemeButton!
     @IBOutlet weak var btnBook: ThemeButton!
     @IBOutlet weak var lblAddressTitle: ThemeLabel!
@@ -27,37 +34,39 @@ class ServiceMapVC: MainVC {
     @IBOutlet weak var btnKm: ThemeButton!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var btnMyLocation: UIButton!
-    
+    var currentMarker: GMSMarker? = nil
+    var path: GMSPolyline =   GMSPolyline.init()
+    var currentIndex: Int = 0
     // MARK: Object lifecycle
     var arrForServices: [ServiceDetail] = [
-        ServiceDetail(name: "terra heal massage center", address: "Lorem ipsum dolor sit,lisbon, portugal -25412", numberOfServices: "25"),
-    ServiceDetail(name: "terra heal massage center 2", address: "Lorem ipsum dolor sit,lisbon, portugal -25112", numberOfServices: "35"),
-    ServiceDetail(name: "terra heal massage center 3", address: "Lorem ipsum dolor sit,lisbon, portugal -25212", numberOfServices: "15")]
+        ServiceDetail(name: "terra heal massage center", address: "Lorem ipsum dolor sit,lisbon, portugal -25412", numberOfServices: "25",latitude: "22.35",longitude: "70.90"),
+        ServiceDetail(name: "terra heal massage center 2", address: "Lorem ipsum dolor sit,lisbon, portugal -25112", numberOfServices: "35",  latitude: "22.50",longitude: "70.50"),
+        ServiceDetail(name: "terra heal massage center 3", address: "Lorem ipsum dolor sit,lisbon, portugal -25212", numberOfServices: "15", latitude: "22.70",longitude: "70.30")]
     
-       var currentIndex: IndexPath = IndexPath.init(row: 0, section: 0)
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
-
+    
     private func setup() {
-
+        
     }
-
+    
     // MARK: View lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
+        self.currentMarker = GMSMarker.init()
         self.setupMapView(mapView: self.mapView)
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
@@ -82,11 +91,9 @@ class ServiceMapVC: MainVC {
         self.btnCheckService.setTitle("BTN_CHECK_SERVICE".localized(), for: .normal)
         self.btnCheckService.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.setupCollectionView(collectionView: self.collectionView)
-        
-        
     }
-
-
+    
+    
     // MARK: Action Buttons
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
         super.btnLeftTapped(btn)
@@ -94,15 +101,41 @@ class ServiceMapVC: MainVC {
     }
     @IBAction func btnCheckServiceTapped(_ sender: Any) {
         //Common.appDelegate.loadRegisterVC()
+        self.openServiceSelectionDialog()
     }
     @IBAction func btnBookhereTapped(_ sender: Any) {
         //Common.appDelegate.loadHomeVC()
     }
     @IBAction func btnCurrentLocationTapped(_ sender: Any) {
+        var arrForCoordinate: [CLLocationCoordinate2D] = [self.currentMarker!.position]
+        for center in arrForServices {
+            arrForCoordinate.append(center.getCoordinatte())
+        }
+        self.mapView.focusMap(locations: arrForCoordinate)
     }
     
     // MARK: Other Functions
-
+    func openServiceSelectionDialog() {
+        let serviceSelectionDialog: CustomServiceSelectionDialog  = CustomServiceSelectionDialog.fromNib()
+        serviceSelectionDialog.initialize(title: arrForServices[currentIndex].name, buttonTitle: "BTN_PROCEED".localized())
+        
+        
+        serviceSelectionDialog.show(animated: true)
+        serviceSelectionDialog.onBtnCancelTapped = {
+            [weak serviceSelectionDialog, weak self] in
+            guard let self = self else { return } ; print(self)
+            serviceSelectionDialog?.dismiss()
+        }
+        serviceSelectionDialog.onBtnDoneTapped = {
+            [weak serviceSelectionDialog, weak self]  in
+            guard let self = self else { return } ; print(self)
+            serviceSelectionDialog?.dismiss()
+            let serviceDetailVC =  Common.appDelegate.loadServiceDetailVC(navigaionVC: self.navigationController)
+            serviceDetailVC.serviceDetail = self.arrForServices[self.currentIndex]
+        }
+        
+       
+    }
 }
 
 
@@ -120,17 +153,17 @@ extension ServiceMapVC:  UICollectionViewDelegate, UICollectionViewDataSource, U
         collectionView.dataSource = self
         collectionView.register(ServiceCell.nib()
             , forCellWithReuseIdentifier: ServiceCell.name)
-
+        
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrForServices.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ServiceCell.name, for: indexPath) as! ServiceCell
         cell.layoutIfNeeded()
@@ -138,39 +171,26 @@ extension ServiceMapVC:  UICollectionViewDelegate, UICollectionViewDataSource, U
         cell.layoutIfNeeded()
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = collectionView.bounds.width
         return CGSize(width: size - 10, height: collectionView.bounds.height)
     }
-
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-
-        if scrollView == collectionView {
-
-            /*let middlePoint = Int(scrollView.contentOffset.x + UIScreen.main.bounds.width / 2)
-            if let indexPath = self.cvForTutorial.indexPathForItem(at: CGPoint(x: middlePoint, y: Int(self.cvForTutorial.center.y))) {
-                self.currentIndex = indexPath
-                self.snapToNearestCell(indexPath: indexPath)
-            }*/
-
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let center = CGPoint(x: scrollView.contentOffset.x + (scrollView.frame.width / 2), y: (scrollView.frame.height / 2))
+        if let ip = collectionView.indexPathForItem(at: center) {
+            self.currentIndex = ip.row
+            
+            self.mapView.focusMap(locations: [self.currentMarker!.position,arrForServices[self.currentIndex].getCoordinatte()])
+            self.mapView.drawPolyline(polyline: path, source: self.currentMarker!.position, destination: arrForServices[self.currentIndex].getCoordinatte())
         }
-
     }
-
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        /*if scrollView == cvForTutorial {
-            let middlePoint = Int(scrollView.contentOffset.x + UIScreen.main.bounds.width / 2)
-            if let indexPath = self.cvForTutorial.indexPathForItem(at: CGPoint(x: middlePoint, y: Int(self.cvForTutorial.center.y))) {
-                self.currentIndex = indexPath
-                self.snapToNearestCell(indexPath: indexPath)
-            }
-        }*/
-    }
+    
 }
 
 
@@ -183,52 +203,23 @@ extension ServiceMapVC :GMSMapViewDelegate {
         mapView.padding = UIEdgeInsets.init(top: 20, left: 20, bottom: 60, right: 20)
         mapView.animate(toLocation: CLLocationCoordinate2D.init(latitude: 22.30, longitude: 70.80))
         mapView.animate(toZoom: 15)
-        self.setMarker()
+        self.mapView.setCurrentMarker(marker: self.currentMarker!, location: CLLocationCoordinate2D.init(latitude: 22.30, longitude: 70.80))
+        self.setMassageCenterMarker()
+        self.mapView.applyStyle()
+        self.mapView.focusMap(locations: [self.currentMarker!.position,arrForServices[self.currentIndex].getCoordinatte()])
     }
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition){
-     
+        
     }
     
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
-       
+        mapView.updateLine(polyline: path)
     }
     
-    func setMarker() {
-        let m = GMSMarker(position:CLLocationCoordinate2D.init(latitude: 22.30, longitude: 70.80))
-
-        //custom marker image
-        let pulseRingImg = UIImageView(frame: CGRect(x: -30, y: -30, width: 78, height: 78))
-        pulseRingImg.image = UIImage(named: "demo-pulse")
-        pulseRingImg.isUserInteractionEnabled = false
-        CATransaction.begin()
-        CATransaction.setAnimationDuration(3.5)
-
-        //transform scale animation
-        var theAnimation: CABasicAnimation?
-        theAnimation = CABasicAnimation(keyPath: "transform.scale.xy")
-        theAnimation?.repeatCount = Float.infinity
-        theAnimation?.autoreverses = false
-        theAnimation?.fromValue = Float(0.0)
-        theAnimation?.toValue = Float(2.0)
-        theAnimation?.isRemovedOnCompletion = false
-
-        pulseRingImg.layer.add(theAnimation!, forKey: "pulse")
-        pulseRingImg.isUserInteractionEnabled = false
-        CATransaction.setCompletionBlock({() -> Void in
-
-            //alpha Animation for the image
-            let animation = CAKeyframeAnimation(keyPath: "opacity")
-            animation.duration = 3.5
-            animation.repeatCount = Float.infinity
-            animation.values = [Float(2.0), Float(0.0)]
-            m.iconView?.layer.add(animation, forKey: "opacity")
-        })
-
-        CATransaction.commit()
-        m.iconView = pulseRingImg
-        m.layer.addSublayer(pulseRingImg.layer)
-        m.map = mapView
-        m.groundAnchor = CGPoint(x: 0.5, y: 0.5)
+    func setMassageCenterMarker() {
+        for center in arrForServices {
+            self.mapView.setMassageCenterMarker(marker: GMSMarker.init(), image: UIImage.init(named: "asset-center")!, location: center.getCoordinatte())
+        }
     }
 }

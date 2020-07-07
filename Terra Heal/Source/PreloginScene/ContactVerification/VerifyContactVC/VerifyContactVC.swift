@@ -79,14 +79,17 @@ class VerifyContactVC: MainVC {
         alertForVerification.setVerificationFor(type: .Phone)
         alertForVerification.show(animated: true)
         alertForVerification.onBtnDoneTapped = { [weak alertForVerification, weak self] (code:String) in
+            guard let self = self else { return } ; print(self)
             alertForVerification?.dismiss()
             Common.appDelegate.loadVerifiedContactVC()
         }
 
         alertForVerification.onBtnResendTapped = { [weak self] in
+            guard let self = self else { return } ; print(self)
 
         }
         alertForVerification.onBtnCancelTapped = { [weak alertForVerification,  weak self] in
+            guard let self = self else { return } ; print(self)
             alertForVerification?.dismiss()
         }
     }

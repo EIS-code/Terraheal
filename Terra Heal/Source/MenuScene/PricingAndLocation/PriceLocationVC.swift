@@ -111,10 +111,12 @@ class PriceLocationVC: MainVC {
         locationServiceDialog.show(animated: true)
         locationServiceDialog.onBtnCancelTapped = {
             [weak locationServiceDialog, weak self] in
+            guard let self = self else { return } ; print(self)
             locationServiceDialog?.dismiss()
         }
         locationServiceDialog.onBtnDoneTapped = {
             [weak locationServiceDialog, weak self]  in
+            guard let self = self else { return } ; print(self)
             locationServiceDialog?.dismiss()
         }
         

@@ -55,7 +55,6 @@ class LoginVC: MainVC {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        print("viewDidLayoutSubviewsCall")
         if self.isViewAvailable() {
             self.btnLogin.layoutIfNeeded()
             self.btnLogin.setHighlighted(isHighlighted: true)
@@ -266,6 +265,7 @@ extension LoginVC {
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
+            guard let self = self else { return } ; print(self)
             alert?.dismiss()
         }
     }

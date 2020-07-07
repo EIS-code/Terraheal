@@ -69,8 +69,8 @@ class UIImageCropperVC: MainVC, UIImagePickerControllerDelegate, UINavigationCon
     
     @IBOutlet weak var topConst: NSLayoutConstraint!
     @IBOutlet weak var leadConst: NSLayoutConstraint!
-    @IBOutlet weak var imageHeightConst: NSLayoutConstraint!
-    @IBOutlet weak var imageWidthConst: NSLayoutConstraint!
+    @IBOutlet var imageHeightConst: NSLayoutConstraint!
+    @IBOutlet var imageWidthConst: NSLayoutConstraint!
     
     
 
@@ -101,9 +101,9 @@ class UIImageCropperVC: MainVC, UIImagePickerControllerDelegate, UINavigationCon
         // image view
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageWidthConst = NSLayoutConstraint(item: imageView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 1)
+        imageWidthConst = NSLayoutConstraint(item: imageView!, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 1)
         imageWidthConst?.priority = .required
-        imageHeightConst = NSLayoutConstraint(item: imageView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 1)
+        imageHeightConst = NSLayoutConstraint(item: imageView!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 1)
         imageHeightConst?.priority = .required
         imageView.addConstraints([imageHeightConst!, imageWidthConst!])
         imageView.image = self.image
@@ -118,7 +118,7 @@ class UIImageCropperVC: MainVC, UIImagePickerControllerDelegate, UINavigationCon
         // crop overlay
         cropView.translatesAutoresizingMaskIntoConstraints = false
         cropView.isUserInteractionEnabled = false
-        let ratioConst = NSLayoutConstraint(item: cropView, attribute: .width, relatedBy: .equal, toItem: cropView, attribute: .height, multiplier: cropRatio, constant: 0)
+        let ratioConst = NSLayoutConstraint(item: cropView ?? UIView(), attribute: .width, relatedBy: .equal, toItem: cropView, attribute: .height, multiplier: cropRatio, constant: 0)
         cropView.addConstraints([ratioConst])
         cropView.layer.borderWidth = 1
         cropView.layer.borderColor = UIColor.themePrimary.cgColor

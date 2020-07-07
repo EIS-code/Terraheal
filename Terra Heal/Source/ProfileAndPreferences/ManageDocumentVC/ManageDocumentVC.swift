@@ -113,14 +113,14 @@ class ManageDocumentVC: MainVC {
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
+            guard let self = self else {return}; print(self)
             alert?.dismiss()
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self]  in
+            guard let self = self else {return}; print(self)
             alert?.dismiss()
-            guard  let self = self else {
-                return
-            }
+            
             
         }
     }

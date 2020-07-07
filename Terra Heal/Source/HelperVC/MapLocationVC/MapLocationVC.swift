@@ -70,16 +70,7 @@ class MapLocationVC: MainVC {
         self.btnDone.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         
         self.lblAddressValue.setFont(name: FontName.Regular, size: FontSize.label_14)
-        do {
-            // Set the map style by passing the URL of the local file. Make sure style.json is present in your project
-            if let styleURL = Bundle.main.url(forResource: "styleable_map", withExtension: "json") {
-                mapView.mapStyle = try GMSMapStyle(contentsOfFileURL: styleURL)
-            } else {
-                print("Unable to find style.json")
-            }
-        } catch {
-            print("The style definition could not be loaded: \(error)")
-        }
+        
         
     }
     
@@ -151,6 +142,7 @@ extension MapLocationVC :GMSMapViewDelegate {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.settings.allowScrollGesturesDuringRotateOrZoom = false;
         mapView.padding = UIEdgeInsets.init(top: searchVw.frame.maxY, left: 20, bottom: btnDone.frame.height, right: 20)
+        mapView.applyStyle()
     }
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition){

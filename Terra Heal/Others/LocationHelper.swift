@@ -140,23 +140,6 @@ class LocationCenter: NSObject, CLLocationManagerDelegate {
     func locationManagerDidResumeLocationUpdates(_ manager: CLLocationManager) {
         debugPrint("\(self) \(#function)")
     }
-    
-    func getAddressFromGeocodeCoordinate(coordinate: CLLocationCoordinate2D) {
-        
-        if geocoder.isGeocoding {
-            geocoder.cancelGeocode()
-        }
-        geocoder.reverseGeocodeLocation(CLLocation.init(latitude: coordinate.latitude, longitude: coordinate.longitude), preferredLocale: .current) { (placemarks, error) in
-            if error != nil {
-                print(error?.localizedDescription)
-            } else  {
-                if let placeMark = placemarks?.last {
-                    print(placeMark.addressDictionary)
-                }
-            }
-        }
-        
-    }
 }
 
 extension LocationCenter {

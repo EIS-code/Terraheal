@@ -77,7 +77,7 @@ class MyBookingVC: MainVC {
         self.vwTab.itemTitles = ["pending","upcoming","past"]
         self.vwTab.changeBackgroundColor(UIColor.themeLightTextColor)
         self.vwTab.didSelectItemWith = { [weak self] (index,title) in
-            print("\(index) - \(title)")
+            guard let self = self else { return } ; print(self)
         }
     }
 

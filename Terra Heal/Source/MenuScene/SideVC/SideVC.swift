@@ -230,7 +230,7 @@ class STouchVw: ThemeView {
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         let vw: UIView = super.hitTest(point, with: event) ?? UIView()
 
-        let screenWidth: CGFloat = Common.screenRect.size.width
+        let _: CGFloat = Common.screenRect.size.width
         let condition: Bool = (point.x < 20.0)
 
         if let sideVC = self.sideVC  {

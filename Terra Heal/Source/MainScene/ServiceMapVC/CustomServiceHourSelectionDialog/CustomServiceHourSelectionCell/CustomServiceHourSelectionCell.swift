@@ -36,6 +36,7 @@ class CustomServiceHourSelectionCell: TableCell {
 
     @IBOutlet weak var lblDay: ThemeLabel!
     @IBOutlet weak var lblHours: ThemeLabel!
+    @IBOutlet weak var ivTime: UIImageView!
     
 
     override func awakeFromNib() {
@@ -48,6 +49,11 @@ class CustomServiceHourSelectionCell: TableCell {
     }
 
     func setData(data: HoursDetails ) {
+        if data.day == "mon" {
+            self.ivTime.isHidden  = false
+        } else {
+            self.ivTime.isHidden  = true
+        }
         self.lblDay.text = data.day
         self.lblHours.text = data.startHour + " to " + data.endHour
     }

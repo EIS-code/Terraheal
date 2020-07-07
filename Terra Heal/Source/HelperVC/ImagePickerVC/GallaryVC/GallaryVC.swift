@@ -165,6 +165,8 @@ extension GallaryVC {
                 print("Not allowed")
             case .notDetermined:
                 print("Not determined yet")
+            @unknown default:
+                print("Not determined yet")
             }
         }
     }

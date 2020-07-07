@@ -131,7 +131,7 @@ extension CustomPhotoPicker:  UIImagePickerControllerDelegate {
         if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             let fileManager = FileManager.default
             let documentsPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
-            let imagePath = documentsPath?.appendingPathComponent("image.jpg")
+            _ = documentsPath?.appendingPathComponent("image.jpg")
             var imageName: String = "mydocumentImage"
             if let asset = info[UIImagePickerController.InfoKey.phAsset] as? PHAsset {
                 let assetResources = PHAssetResource.assetResources(for: asset)
@@ -146,7 +146,7 @@ extension CustomPhotoPicker:  UIImagePickerControllerDelegate {
         else if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             let fileManager = FileManager.default
             let documentsPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
-            let imagePath = documentsPath?.appendingPathComponent("image.jpg")
+            _ = documentsPath?.appendingPathComponent("image.jpg")
             var imageName: String = "mydocumentImage"
             if let asset = info[UIImagePickerController.InfoKey.phAsset] as? PHAsset {
                 let assetResources = PHAssetResource.assetResources(for: asset)
@@ -181,7 +181,7 @@ extension CustomPhotoPicker: UIDocumentPickerDelegate, UINavigationControllerDel
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         for url in urls {
             let data = try! Data(contentsOf: url)
-            let document: UploadDocumentDetail = UploadDocumentDetail(id: url.absoluteString, name: url.pathComponents.last!,image: nil , data: data,isCompleted: true)
+            let _: UploadDocumentDetail = UploadDocumentDetail(id: url.absoluteString, name: url.pathComponents.last!,image: nil , data: data,isCompleted: true)
             //self.addFileToArray(document: document)
 
         }

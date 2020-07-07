@@ -215,14 +215,9 @@ extension UICollectionView {
         DispatchQueue.main.async {
             self.contentOffset = CGPoint.zero
             self.reloadData({
-                print("Collection Content Height : \(ceil(self.contentSize.height))")
                 cntrnt?.constant = ceil(self.contentSize.height)
-
                 self.superview?.layoutIfNeeded()
-                print("Collection Constraint Height : \(cntrnt?.constant)")
-                print("Collection Frame Height : \(ceil(self.frame.height))")
-
-                if self.isHEqualToCH {
+                   if self.isHEqualToCH {
                     completion?()
                 }
                 else {
