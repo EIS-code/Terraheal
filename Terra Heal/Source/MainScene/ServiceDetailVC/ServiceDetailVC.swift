@@ -80,10 +80,10 @@ class ServiceDetailVC: MainVC {
         self.navigationController?.popViewController(animated: true)
     }
     
-   
+    
     // MARK: - Other Methods
     
-   
+    
     func setCollectionData() {
         
         self.ivPicture.downloadedFrom(link: appSingleton.user.profilePhoto)
@@ -127,21 +127,17 @@ extension ServiceDetailVC:  UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SeviceDurationCltCell.name, for: indexPath) as! SeviceDurationCltCell
         cell.setData(data: self.arrForData[indexPath.row])
-        cell.parent = self
+        cell.parentVC = self
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        let data = arrForData[indexPath.row]
-        
+        //let data = arrForData[indexPath.row]
     }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = collectionView.bounds.width / 2.0 - 5
         return CGSize(width: size , height:size)
     }
-    
-    
 }
 

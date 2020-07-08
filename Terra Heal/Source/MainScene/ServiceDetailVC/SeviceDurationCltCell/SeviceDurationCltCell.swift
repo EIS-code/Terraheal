@@ -7,14 +7,16 @@ import UIKit
 import Foundation
 
 struct ServiceDurationDetail {
+    var id:String = ""
     var amount:String = ""
     var duration:String = ""
+    var isSelected: Bool = false
 }
 
 class SeviceDurationCltCell: CollectionCell {
     
     var data: ServiceDurationDetail!
-    var parent: UIViewController? = nil
+    
     
     @IBOutlet weak var vwBg: UIView!
     @IBOutlet weak var lblDuration: ThemeLabel!

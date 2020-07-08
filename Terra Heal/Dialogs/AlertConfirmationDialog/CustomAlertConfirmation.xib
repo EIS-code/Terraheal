@@ -25,10 +25,10 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWD-qT-vi6" userLabel="contetnView">
-                    <rect key="frame" x="0.0" y="438.5" width="375" height="253.5"/>
+                    <rect key="frame" x="0.0" y="398" width="375" height="294"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NCB-os-EvZ">
-                            <rect key="frame" x="20" y="56" width="335" height="167.5"/>
+                            <rect key="frame" x="20" y="56" width="335" height="208"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ysj-r2-46W">
                                     <rect key="frame" x="147.5" y="0.0" width="40" height="5"/>
@@ -38,20 +38,20 @@
                                         <constraint firstAttribute="width" constant="40" id="L7X-Gk-SrO"/>
                                     </constraints>
                                 </view>
-                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBY-6I-evM" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="146.5" y="15" width="42" height="0.0"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" name="theme_primary"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Qe-FC-Fvc" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fT6-Kk-Rhk" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                     <rect key="frame" x="146.5" y="25" width="42" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" name="theme_primary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Qe-FC-Fvc" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="146.5" y="65.5" width="42" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="theme_primary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZP6-Da-KrV" userLabel="vwOkButton">
-                                    <rect key="frame" x="33.5" y="65.5" width="268" height="50"/>
+                                    <rect key="frame" x="33.5" y="106" width="268" height="50"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Rqi-IJ-x8k" userLabel="Stack View - Next">
                                             <rect key="frame" x="151" y="5" width="117" height="40"/>
@@ -91,7 +91,7 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpg-NK-hBn" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="141" y="135.5" width="53" height="32"/>
+                                    <rect key="frame" x="141" y="176" width="53" height="32"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <state key="normal" title="Sign In">
                                         <color key="titleColor" name="theme_primary"/>
@@ -133,7 +133,7 @@
                 <outlet property="btnNext" destination="Pf4-I0-zI7" id="XCp-jI-3qO"/>
                 <outlet property="dialogView" destination="jWD-qT-vi6" id="23a-Hn-gFo"/>
                 <outlet property="lblMessage" destination="8Qe-FC-Fvc" id="PAn-Da-zAD"/>
-                <outlet property="lblTitle" destination="WBY-6I-evM" id="Idm-Am-puK"/>
+                <outlet property="lblTitle" destination="fT6-Kk-Rhk" id="VaL-46-BwT"/>
                 <outlet property="vwTopBar" destination="Ysj-r2-46W" id="uqH-lL-yjK"/>
             </connections>
             <point key="canvasLocation" x="132" y="131"/>

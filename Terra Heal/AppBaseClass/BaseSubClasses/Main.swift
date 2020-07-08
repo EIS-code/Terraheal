@@ -139,7 +139,7 @@ extension MainVC {
 
 
 class CollectionCell: UICollectionViewCell {
-
+    var parentVC: UIViewController? = nil
 }
 
 class TableCell: UITableViewCell {

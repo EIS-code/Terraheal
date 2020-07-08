@@ -2,7 +2,7 @@
 //  CustomAlert.swift
 //  ModalView
 //
-//  Created by Aatish Rajkarnikar on 3/20/17.
+//  Created by Jaydeep Vyas on 3/20/17.
 //  Copyright © 2017 Aatish. All rights reserved.
 //
 

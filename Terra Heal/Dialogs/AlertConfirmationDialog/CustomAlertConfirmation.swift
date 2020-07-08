@@ -2,7 +2,7 @@
 //  CustomAlert.swift
 //  ModalView
 //
-//  Created by Aatish Rajkarnikar on 3/20/17.
+//  Created by Jaydeep Vyas on 3/20/17.
 //  Copyright © 2017 Aatish. All rights reserved.
 //
 
@@ -11,8 +11,8 @@ import UIKit
 class CustomAlertConfirmation: ThemeBottomDialogView {
 
     @IBOutlet weak var lblMessage: ThemeLabel!
-    @IBOutlet weak var btnDone: FloatingRoundButton!
     @IBOutlet weak var lblTitle: ThemeLabel!
+    @IBOutlet weak var btnDone: FloatingRoundButton!
     @IBOutlet weak var btnNext: ThemeButton!
     
     var onBtnDoneTapped : (() -> Void)? = nil
@@ -23,7 +23,6 @@ class CustomAlertConfirmation: ThemeBottomDialogView {
         self.lblTitle.text = title
         self.lblMessage.setFont(name: FontName.Regular, size: FontSize.label_26)
         lblMessage.text = message
-        self.btnNext.setTitle(buttonTitle, for: .normal)
         if cancelButtonTitle.isEmpty() {
             self.btnCancel.isHidden = true
         } else {
@@ -33,7 +32,6 @@ class CustomAlertConfirmation: ThemeBottomDialogView {
         if buttonTitle.isEmpty() {
             self.btnNext.isHidden = true
         } else {
-            self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
             self.btnNext.setTitle(buttonTitle, for: .normal)
             self.btnNext.isHidden = false
         }
@@ -43,7 +41,6 @@ class CustomAlertConfirmation: ThemeBottomDialogView {
         self.backgroundColor = .clear
         dialogView.clipsToBounds = true
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
-            
         self.backgroundView.backgroundColor = UIColor.black
         self.backgroundView.alpha = 0.0
         self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))

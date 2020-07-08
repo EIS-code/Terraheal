@@ -2,13 +2,13 @@
 //  CustomAlert.swift
 //  ModalView
 //
-//  Created by Aatish Rajkarnikar on 3/20/17.
+//  Created by Jaydeep Vyas on 3/20/17.
 //  Copyright © 2017 Aatish. All rights reserved.
 //
 
 import UIKit
 
-enum LocationService: Int {
+enum ServiceType: Int {
     case Massages = 0
     case Therapies = 1
 }
@@ -18,7 +18,7 @@ class CustomLocationServiceDialog: ThemeBottomDialogView {
     @IBOutlet weak var btnDone: ThemeButton!
     @IBOutlet weak var collectionVw: UICollectionView!
     @IBOutlet weak var vwServiceSelection: JDSegmentedControl!
-    var selectedService: LocationService = LocationService.Massages
+    var selectedService: ServiceType = ServiceType.Massages
     var onBtnDoneTapped: (( ) -> Void)? = nil
     
     var arrForData: [String] = ["head, neck and shoulders", "tok sen - thai massage", "hand or foot massage","thai yoga massage","head, neck and shoulders", "tok sen - thai massage", "hand or foot massage","thai yoga massage"]
@@ -89,7 +89,7 @@ class CustomLocationServiceDialog: ThemeBottomDialogView {
             }
     }
 
-    func setServicesFor(type:LocationService) {
+    func setServicesFor(type:ServiceType) {
         if type == .Massages {
             self.massagesTapped()
         } else {
@@ -100,14 +100,14 @@ class CustomLocationServiceDialog: ThemeBottomDialogView {
     func massagesTapped(){
         self.arrForData = self.arrForMassage
         self.vwServiceSelection.selectItemAt(index: 0)
-        self.selectedService = LocationService.Massages
+        self.selectedService = ServiceType.Massages
         collectionVw.reloadData()
     }
     
     func therapiesTapped(){
         self.arrForData = self.arrForTherapies
         self.vwServiceSelection.selectItemAt(index: 1)
-        self.selectedService = LocationService.Therapies
+        self.selectedService = ServiceType.Therapies
         collectionVw.reloadData()
     }
 

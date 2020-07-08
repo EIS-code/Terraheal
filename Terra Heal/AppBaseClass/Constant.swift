@@ -35,7 +35,6 @@ enum Gender: String {
         default: return "GENDER_NO_PREFERENCE".localized()
         }
     }
-
 }
 
 enum Pressure: String {
@@ -69,6 +68,9 @@ struct LoginBy {
 
 
 struct DateFormat {
+    
+    static let BookingDateSelection = "dd MMM yyyy"
+    static let BookingTimeSelection = "HH:mm"
     static let DD_MM_YYYY = "dd/MM/YYYY"
     static let DOB = "dd MMM yyyy"
     static let check = "✓"

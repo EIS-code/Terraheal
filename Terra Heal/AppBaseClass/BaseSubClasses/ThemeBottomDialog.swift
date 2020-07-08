@@ -21,6 +21,7 @@ class ThemeDialogView: ThemeView {
 class ThemeBottomDialogView: ThemeView {
     @IBOutlet weak var btnCancel: UnderlineTextButton!
     @IBOutlet weak var vwTopBar: UIView!
+    
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var dialogView: UIView!
 

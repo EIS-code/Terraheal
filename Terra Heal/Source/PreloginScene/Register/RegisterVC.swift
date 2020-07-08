@@ -159,7 +159,7 @@ class RegisterVC: MainVC {
     
     //MARK: Custom Dialogs
     func openCountryCodePicker() {
-        let alert: CustomCountyPhoneCodePicker = CustomCountyPhoneCodePicker.fromNib()
+        let alert: CustomCountryPhoneCodePicker = CustomCountryPhoneCodePicker.fromNib()
         alert.initialize(title: "COUNTRY_PHONE_CODE_TITLE".localized(),buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {

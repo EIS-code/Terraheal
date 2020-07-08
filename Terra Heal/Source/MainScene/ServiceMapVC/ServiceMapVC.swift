@@ -75,9 +75,7 @@ class ServiceMapVC: MainVC {
             self.mapView.roundCorners(corners:[.topLeft,.topRight], radius: 40.0)
             self.vwService.roundCorners(corners:[.topLeft,.topRight], radius: 40.0)
             self.btnKm.setHighlighted(isHighlighted: true)
-            
             self.ivService.setRound()
-            
         }
     }
     
@@ -100,11 +98,12 @@ class ServiceMapVC: MainVC {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func btnCheckServiceTapped(_ sender: Any) {
-        //Common.appDelegate.loadRegisterVC()
-        self.openServiceSelectionDialog()
+        //self.openServiceSelectionDialog()
+        self.openTextViewPicker()
     }
     @IBAction func btnBookhereTapped(_ sender: Any) {
-        //Common.appDelegate.loadHomeVC()
+        //self.openSessionSelectionDialog()
+        self.openRecipientSelectionDialog()
     }
     @IBAction func btnCurrentLocationTapped(_ sender: Any) {
         var arrForCoordinate: [CLLocationCoordinate2D] = [self.currentMarker!.position]
@@ -114,12 +113,53 @@ class ServiceMapVC: MainVC {
         self.mapView.focusMap(locations: arrForCoordinate)
     }
     
-    // MARK: Other Functions
+    
+    
+}
+
+// MARK: Dialogs
+extension ServiceMapVC {
+    
+    func openCancelBookingDialog() {
+        let cancelBookingDialog: CustomAlertConfirmation  = CustomAlertConfirmation.fromNib()
+        cancelBookingDialog.initialize(title: "cancel", message: "are you sure you want to cancel it?", buttonTitle: "yes cancel".localized(),cancelButtonTitle: "BTN_BACK".localized())
+        cancelBookingDialog.show(animated: true)
+        cancelBookingDialog.onBtnCancelTapped = {
+            [weak cancelBookingDialog, weak self] in
+            guard let self = self else { return } ; print(self)
+            cancelBookingDialog?.dismiss()
+        }
+        cancelBookingDialog.onBtnDoneTapped = {
+            [weak cancelBookingDialog, weak self]  in
+            guard let self = self else { return } ; print(self)
+            cancelBookingDialog?.dismiss()
+           Common.appDelegate.loadBookingCompleteVC(navigaionVC: self.navigationController)
+           
+        }
+    }
+    
+    func openTextViewPicker() {
+           let alert: TextViewDialog = TextViewDialog.fromNib()
+           alert.initialize(title: "booking notes"
+               , data: "", buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
+           alert.show(animated: true)
+           alert.onBtnCancelTapped = {
+               [weak alert, weak self] in
+               guard let self = self else {return}; print(self)
+               alert?.dismiss()
+           }
+           alert.onBtnDoneTapped = {
+               [weak alert, weak self] (description) in
+               guard let self = self else { return } ; print(self)
+               alert?.dismiss()
+             
+           }
+       }
+
+    
     func openServiceSelectionDialog() {
         let serviceSelectionDialog: CustomServiceSelectionDialog  = CustomServiceSelectionDialog.fromNib()
         serviceSelectionDialog.initialize(title: arrForServices[currentIndex].name, buttonTitle: "BTN_PROCEED".localized())
-        
-        
         serviceSelectionDialog.show(animated: true)
         serviceSelectionDialog.onBtnCancelTapped = {
             [weak serviceSelectionDialog, weak self] in
@@ -133,93 +173,58 @@ class ServiceMapVC: MainVC {
             let serviceDetailVC =  Common.appDelegate.loadServiceDetailVC(navigaionVC: self.navigationController)
             serviceDetailVC.serviceDetail = self.arrForServices[self.currentIndex]
         }
-        
-       
-    }
-}
-
-
-// MARK: - CollectionView Methods
-extension ServiceMapVC:  UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
-    // MARK: UICollectionViewDataSource
-    
-    private func setupCollectionView(collectionView:  UICollectionView) {
-        collectionView.backgroundColor = UIColor.clear
-        collectionView.isUserInteractionEnabled = true
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.isPagingEnabled = true
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(ServiceCell.nib()
-            , forCellWithReuseIdentifier: ServiceCell.name)
-        
     }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrForServices.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ServiceCell.name, for: indexPath) as! ServiceCell
-        cell.layoutIfNeeded()
-        cell.setData(data: self.arrForServices[indexPath.row])
-        cell.layoutIfNeeded()
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = collectionView.bounds.width
-        return CGSize(width: size - 10, height: collectionView.bounds.height)
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let center = CGPoint(x: scrollView.contentOffset.x + (scrollView.frame.width / 2), y: (scrollView.frame.height / 2))
-        if let ip = collectionView.indexPathForItem(at: center) {
-            self.currentIndex = ip.row
-            
-            self.mapView.focusMap(locations: [self.currentMarker!.position,arrForServices[self.currentIndex].getCoordinatte()])
-            self.mapView.drawPolyline(polyline: path, source: self.currentMarker!.position, destination: arrForServices[self.currentIndex].getCoordinatte())
+    func openDateTimeSelectionDialog() {
+        let dateTimeSelectionDialog: DateTimeDialog  = DateTimeDialog.fromNib()
+        dateTimeSelectionDialog.initialize(title: "DATE_DIALOG_TITLE".localized(), buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        dateTimeSelectionDialog.show(animated: true)
+        dateTimeSelectionDialog.onBtnCancelTapped = {
+            [weak dateTimeSelectionDialog, weak self] in
+            guard let self = self else { return } ; print(self)
+            dateTimeSelectionDialog?.dismiss()
+        }
+        dateTimeSelectionDialog.onBtnDoneTapped = {
+            [weak dateTimeSelectionDialog, weak self]  in
+            guard let self = self else { return } ; print(self)
+            dateTimeSelectionDialog?.dismiss()
         }
     }
     
-}
-
-
-extension ServiceMapVC :GMSMapViewDelegate {
-    
-    func setupMapView(mapView: GMSMapView) {
-        mapView.delegate = self;
-        mapView.translatesAutoresizingMaskIntoConstraints = false
-        mapView.settings.allowScrollGesturesDuringRotateOrZoom = false;
-        mapView.padding = UIEdgeInsets.init(top: 20, left: 20, bottom: 60, right: 20)
-        mapView.animate(toLocation: CLLocationCoordinate2D.init(latitude: 22.30, longitude: 70.80))
-        mapView.animate(toZoom: 15)
-        self.mapView.setCurrentMarker(marker: self.currentMarker!, location: CLLocationCoordinate2D.init(latitude: 22.30, longitude: 70.80))
-        self.setMassageCenterMarker()
-        self.mapView.applyStyle()
-        self.mapView.focusMap(locations: [self.currentMarker!.position,arrForServices[self.currentIndex].getCoordinatte()])
+    func openSessionSelectionDialog() {
+        let sessionSelectionDialog: SessionDialog  = SessionDialog.fromNib()
+        sessionSelectionDialog.initialize(title: "Session Type", buttonTitle: "".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        sessionSelectionDialog.setDataSource(data: SessionDetail.getDemoArray())
+        sessionSelectionDialog.show(animated: true)
+        sessionSelectionDialog.onBtnCancelTapped = {
+            [weak sessionSelectionDialog, weak self] in
+            guard let self = self else { return } ; print(self)
+            sessionSelectionDialog?.dismiss()
+        }
+        sessionSelectionDialog.onBtnDoneTapped = {
+            [weak sessionSelectionDialog, weak self] (session) in
+            guard let self = self else { return } ; print(self)
+            sessionSelectionDialog?.dismiss()
+            self.openRecipientSelectionDialog()
+        }
     }
     
-    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition){
-        
-    }
-    
-    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
-        mapView.updateLine(polyline: path)
-    }
-    
-    func setMassageCenterMarker() {
-        for center in arrForServices {
-            self.mapView.setMassageCenterMarker(marker: GMSMarker.init(), image: UIImage.init(named: "asset-center")!, location: center.getCoordinatte())
+    func openRecipientSelectionDialog() {
+        let recipientSelectionDialog: RecipientSelectionDialog  = RecipientSelectionDialog.fromNib()
+        recipientSelectionDialog.initialize(title: "RECIEPENT_DIALOG__TITLE".localized(), buttonTitle: "RECIEPENT_DIALOG_BTN_ADD".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        recipientSelectionDialog.show(animated: true)
+        recipientSelectionDialog.onBtnCancelTapped = {
+            [weak recipientSelectionDialog, weak self] in
+            guard let self = self else { return } ; print(self)
+            recipientSelectionDialog?.dismiss()
+        }
+        recipientSelectionDialog.onBtnDoneTapped = {
+            [weak recipientSelectionDialog, weak self] (session) in
+            guard let self = self else { return } ; print(self)
+            recipientSelectionDialog?.dismiss()
         }
     }
 }
+
+
+

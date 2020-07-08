@@ -130,7 +130,7 @@ class EditProfileVC: MainVC {
     }
     
     func openCountryPicker(index:Int = 0) {
-        let countryPickerAlert: CustomCountyPicker = CustomCountyPicker.fromNib()
+        let countryPickerAlert: CustomCountryPicker = CustomCountryPicker.fromNib()
         countryPickerAlert.initialize(title:arrForProfile[index].placeholder, buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized())
         countryPickerAlert.show(animated: true)
         countryPickerAlert.onBtnCancelTapped = { [weak countryPickerAlert, weak self] in

@@ -600,5 +600,38 @@ extension AppDelegate {
         }
     }
     
+    func loadServiceSelectionVC(navigaionVC:UINavigationController? = nil) -> ServiceSelectionVC {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: ServiceSelectionVC =  nc.findVCs(ofType: ServiceSelectionVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+                return targetVC
+            } else {
+                let targetVC: ServiceSelectionVC = ServiceSelectionVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+                return targetVC
+            }
+        } else {
+            let targetVC: ServiceSelectionVC = ServiceSelectionVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+            return targetVC
+        }
+    }
+    
+    func loadBookingCompleteVC(navigaionVC:UINavigationController? = nil) {
+           if let nc = navigaionVC as? NC {
+               if let targetVC: BookingCompleteVC =  nc.findVCs(ofType: BookingCompleteVC.self).first {
+                   _ = nc.popToViewController(targetVC, animated: true)
+               } else {
+                   let targetVC: BookingCompleteVC = BookingCompleteVC.fromNib()
+                   nc.pushViewController(targetVC, animated: true)
+               }
+           } else {
+               let targetVC: BookingCompleteVC = BookingCompleteVC.fromNib()
+               let nC: NC = NC(rootViewController: targetVC)
+               self.windowConfig(withRootVC: nC)
+           }
+       }
+    
 }
 
