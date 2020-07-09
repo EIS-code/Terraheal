@@ -19,11 +19,7 @@ class DurationSelectionDialog: ThemeBottomDialogView {
     @IBOutlet weak var collectionVw: UICollectionView!
     var onBtnDoneTapped: ((_ data:ServiceDurationDetail) -> Void)? = nil
     var selectedData:ServiceDurationDetail = ServiceDurationDetail.init()
-    var arrForData: [ServiceDurationDetail] =  [
-        ServiceDurationDetail(id:"1", amount: "100", duration: "120 min",isSelected: true),
-        ServiceDurationDetail(id:"2",amount: "100", duration: "120 min",isSelected: false),
-        ServiceDurationDetail(id:"3",amount: "100", duration: "120 min",isSelected: false),
-        ServiceDurationDetail(id:"4",amount: "100", duration: "120 min",isSelected: false)]
+    var arrForData: [ServiceDurationDetail] =  []
     
     func initialize(title:String, message:String, buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()

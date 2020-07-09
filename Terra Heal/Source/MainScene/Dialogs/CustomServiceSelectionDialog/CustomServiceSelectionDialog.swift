@@ -20,10 +20,9 @@ class CustomServiceSelectionDialog: ThemeBottomDialogView {
     @IBOutlet weak var ivMassageCenter: PaddedImageView!
     
     @IBOutlet weak var contentView: UIView!
-    var arrForData: [String] = ["head, neck and shoulders", "tok sen - thai massage", "hand or foot massage","thai yoga massage","head, neck and shoulders", "tok sen - thai massage", "hand or foot massage","thai yoga massage"]
-    
-     var arrForMassage: [String] = ["head, neck massage", "tok sen - thai massage", "hand or foot massage","thai yoga massage","head, neck and shoulders", "tok sen - thai massage", "hand or foot massage","thai yoga massage"]
-     var arrForTherapies: [String] = ["head, neck therapy", "tok sen - thai therapy", "hand or foot therapy","thai yoga therapy","head, neck and therapy", "tok sen - thai therapy", "hand or foot therapy","thai yoga therapy"]
+    var arrForData: [ServiceDetail] = ServiceDetail.getMassageArray()
+    var arrForMassage: [ServiceDetail] = ServiceDetail.getMassageArray()
+    var arrForTherapies: [ServiceDetail] = ServiceDetail.getTherapyArray()
     
     func initialize(title:String,buttonTitle:String) {
 
@@ -140,6 +139,13 @@ extension CustomServiceSelectionDialog:  UICollectionViewDelegate, UICollectionV
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+
+        let serviceDetailVC:  ServiceDetailVC =  ServiceDetailVC.fromNib()
+        serviceDetailVC.serviceDetail = self.arrForData[indexPath.row]
+        DispatchQueue.main.async {
+               Common.appDelegate.getTopViewController()?.present(serviceDetailVC, animated: true, completion: nil)
+        }
+        
         
     }
 

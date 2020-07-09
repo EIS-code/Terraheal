@@ -204,8 +204,13 @@ public extension Date {
 
     func startOfMonth() -> Date {
         return Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self)))!
+        
     }
 
+    func startOfDay() -> Date {
+        return Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self)))!
+    }
+    
     func endOfMonth() -> Date {
         return Calendar.current.date(byAdding: DateComponents(month: 1, second: -1), to: self.startOfMonth())!
     }
@@ -231,6 +236,18 @@ public extension Date {
         return dtFormatter.string(from: self)
     }
 
+    func getOnlyHourAndMinutMilli () -> Double {
+        var calendar: Calendar = Calendar.current
+        calendar.timeZone = TimeZone.init(secondsFromGMT: 0) ?? TimeZone.current
+        let comp = calendar.dateComponents([.hour,.minute], from: self)
+        let hora = comp.hour ?? 0
+        let minute = comp.minute ??  0
+        let hours = hora*3600
+        let minuts = minute*60
+        let totseconds = (hours+minuts) * 1000
+        return Double(totseconds)
+    }
+    
     static func milliSecToDate(milliseconds:Double, format:String,timezone:TimeZone = TimeZone.current) ->   String {
         let date = Date(timeIntervalSince1970: TimeInterval(milliseconds) / 1000)
         return date.toString(format: format)

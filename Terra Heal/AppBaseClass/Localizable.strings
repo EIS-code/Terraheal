@@ -281,6 +281,15 @@
 "HOME_ITEM_TYPE_HOTEL_OR_ROOM" = "Our closest centers to you send therapist for home / hotel visits. Check the menu to make your choice as each center offer different massages and therapies. You will pay the same price + mobile service fee extra.";
 
 
+//MARK:  Reciepent Detail VC
+"RECIEPENT_DETAIL_TITLE" = "add reciepent";
+"RECIEPENT_BTN_ADD_RECIEPENT" = "Add Reciepent";
+"RECIEPENT_BTN_ADD_SERVICE" = "Add Service";
+"RECIEPENT_LBL_TOTAL" = "total";
+
+
+
+
 //MARK:  Service Map VC
 "BOOKING_COMPLETE_TITLE" = "booking successful";
 "BOOKING_COMPLETE_MESSAGE" = "thanks for choosing our services! we have received your booking and will confirm it as soon as possible";
@@ -288,12 +297,9 @@
 
 
 //MARK:  Service Map VC
-
-
-
 "BTN_BOOK_HERE" = "Book Here";
 "BTN_CHECK_SERVICE" = "Check Service";
-
+"SESSION_TYPE_TITLE" = "Session Type";
 //MARK: Manage Document Screen
 "MANAGE_DOCUMENT_TITLE" = "Id / Passport";
 "DOCUMENT_EMPTY_TITLE" = "no documents available";
@@ -372,6 +378,8 @@
 "VALIDATION_MSG_INVALID_NIF"  =  "Please enter valid nif";
 "VALIDATION_MSG_INVALID_ID"  =  "Please enter valid id";
 "VALIDATION_MSG_NUMBER_ONLY"  =  "Please enter numbers only";
+"VALIDATION_MSG_DATE_SELECTION"  =  "Please select date";
+"VALIDATION_MSG_TIME_SELECTION"  =  "Please select time";
 
 
 

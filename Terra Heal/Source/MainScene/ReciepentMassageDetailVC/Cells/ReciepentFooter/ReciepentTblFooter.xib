@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="fTr-D4-KiU" userLabel="vwForBackground" customClass="ReciepentTblFooter" customModule="Terra_Heal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6GD-a7-jdb" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="10" y="54" width="143" height="812"/>
+                    <color key="backgroundColor" name="theme_primary"/>
+                    <inset key="contentEdgeInsets" minX="30" minY="10" maxX="30" maxY="10"/>
+                    <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                    <state key="normal" title="Book Now"/>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ajz-1c-Kva" customClass="ThemeView" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="876" width="414" height="10"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="dIX-DG-sMN"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Ajz-1c-Kva" secondAttribute="bottom" constant="10" id="0h5-aW-OIU"/>
+                <constraint firstItem="Ajz-1c-Kva" firstAttribute="top" secondItem="6GD-a7-jdb" secondAttribute="bottom" constant="10" id="2kz-wQ-Go2"/>
+                <constraint firstItem="Ajz-1c-Kva" firstAttribute="centerX" secondItem="fTr-D4-KiU" secondAttribute="centerX" id="Snu-cZ-zQz"/>
+                <constraint firstItem="Ajz-1c-Kva" firstAttribute="width" secondItem="fTr-D4-KiU" secondAttribute="width" id="Tp6-cN-cxK"/>
+                <constraint firstItem="6GD-a7-jdb" firstAttribute="top" secondItem="fmg-yg-kpn" secondAttribute="top" constant="10" id="aPW-9v-bPT"/>
+                <constraint firstItem="6GD-a7-jdb" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="10" id="kZm-yz-aPo"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fmg-yg-kpn"/>
+            <connections>
+                <outlet property="btnAddService" destination="6GD-a7-jdb" id="r3r-Vk-Hsg"/>
+                <outlet property="vwDashed" destination="Ajz-1c-Kva" id="uwT-uS-Kdq"/>
+            </connections>
+            <point key="canvasLocation" x="154" y="522"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="theme_primary">
+            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

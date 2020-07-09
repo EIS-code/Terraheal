@@ -7,7 +7,7 @@ import UIKit
 import GoogleMaps
 
 
-struct ServiceDetail {
+struct ServiceCenterDetail {
     var name:String = ""
     var address:String = ""
     var numberOfServices: String = ""
@@ -17,6 +17,7 @@ struct ServiceDetail {
     func getCoordinatte() -> CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: self.latitude.toDouble, longitude: self.longitude.toDouble)
     }
+    var servicesList: [ServiceDetail]
     
 }
 
@@ -37,11 +38,13 @@ class ServiceMapVC: MainVC {
     var currentMarker: GMSMarker? = nil
     var path: GMSPolyline =   GMSPolyline.init()
     var currentIndex: Int = 0
+    var requestBooking: RequestBooking.Create = RequestBooking.Create.init()
+    var sheetCoordinator: UBottomSheetCoordinator!
     // MARK: Object lifecycle
-    var arrForServices: [ServiceDetail] = [
-        ServiceDetail(name: "terra heal massage center", address: "Lorem ipsum dolor sit,lisbon, portugal -25412", numberOfServices: "25",latitude: "22.35",longitude: "70.90"),
-        ServiceDetail(name: "terra heal massage center 2", address: "Lorem ipsum dolor sit,lisbon, portugal -25112", numberOfServices: "35",  latitude: "22.50",longitude: "70.50"),
-        ServiceDetail(name: "terra heal massage center 3", address: "Lorem ipsum dolor sit,lisbon, portugal -25212", numberOfServices: "15", latitude: "22.70",longitude: "70.30")]
+    var arrForServices: [ServiceCenterDetail] = [
+        ServiceCenterDetail(name: "terra heal massage center", address: "Lorem ipsum dolor sit,lisbon, portugal -25412", numberOfServices: "25",latitude: "22.35",longitude: "70.90", servicesList: []),
+        ServiceCenterDetail(name: "terra heal massage center 2", address: "Lorem ipsum dolor sit,lisbon, portugal -25112", numberOfServices: "35",  latitude: "22.50",longitude: "70.50", servicesList: []),
+        ServiceCenterDetail(name: "terra heal massage center 3", address: "Lorem ipsum dolor sit,lisbon, portugal -25212", numberOfServices: "15", latitude: "22.70",longitude: "70.30", servicesList: [])]
     
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -99,11 +102,12 @@ class ServiceMapVC: MainVC {
     }
     @IBAction func btnCheckServiceTapped(_ sender: Any) {
         //self.openServiceSelectionDialog()
-        self.openTextViewPicker()
+        self.openDateTimeSelectionDialog()
+        //self.openReciepentMassageDetailVCDialog()
     }
     @IBAction func btnBookhereTapped(_ sender: Any) {
-        //self.openSessionSelectionDialog()
-        self.openRecipientSelectionDialog()
+        self.openSessionSelectionDialog()
+        //self.openRecipientSelectionDialog()
     }
     @IBAction func btnCurrentLocationTapped(_ sender: Any) {
         var arrForCoordinate: [CLLocationCoordinate2D] = [self.currentMarker!.position]
@@ -138,10 +142,28 @@ extension ServiceMapVC {
         }
     }
     
+    func openReciepentMassageDetailVCDialog() {
+        
+        let reciepentMassageDetailVC: ReciepentMassageDetailVC  = ReciepentMassageDetailVC.fromNib()
+        guard sheetCoordinator == nil else {return}
+        sheetCoordinator = UBottomSheetCoordinator(parent: self)
+        reciepentMassageDetailVC.sheetCoordinator = sheetCoordinator
+        reciepentMassageDetailVC.onBtnNextSelectedTapped = { [weak self] (arrForReceipents) in
+             guard let self = self else { return } ; print(self)
+            self.requestBooking.reciepentData = arrForReceipents
+            reciepentMassageDetailVC.dismissAction()
+        }
+        sheetCoordinator.addSheet(reciepentMassageDetailVC, to: self, didContainerCreate: { container in
+                   let f = self.view.frame
+                   let rect = CGRect(x: f.minX, y: f.minY, width: f.width, height: f.height)
+                    container.roundCorners(corners: [.topLeft, .topRight], radius: 40)
+        })
+      }
+    
     func openTextViewPicker() {
            let alert: TextViewDialog = TextViewDialog.fromNib()
            alert.initialize(title: "booking notes"
-               , data: "", buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
+               , data: self.requestBooking.bookingNotes, buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
            alert.show(animated: true)
            alert.onBtnCancelTapped = {
                [weak alert, weak self] in
@@ -152,6 +174,7 @@ extension ServiceMapVC {
                [weak alert, weak self] (description) in
                guard let self = self else { return } ; print(self)
                alert?.dismiss()
+               self.requestBooking.bookingNotes = description
              
            }
        }
@@ -159,7 +182,7 @@ extension ServiceMapVC {
     
     func openServiceSelectionDialog() {
         let serviceSelectionDialog: CustomServiceSelectionDialog  = CustomServiceSelectionDialog.fromNib()
-        serviceSelectionDialog.initialize(title: arrForServices[currentIndex].name, buttonTitle: "BTN_PROCEED".localized())
+        serviceSelectionDialog.initialize(title: arrForServices[currentIndex].name, buttonTitle: "BTN_BOOK_HERE".localized())
         serviceSelectionDialog.show(animated: true)
         serviceSelectionDialog.onBtnCancelTapped = {
             [weak serviceSelectionDialog, weak self] in
@@ -170,8 +193,7 @@ extension ServiceMapVC {
             [weak serviceSelectionDialog, weak self]  in
             guard let self = self else { return } ; print(self)
             serviceSelectionDialog?.dismiss()
-            let serviceDetailVC =  Common.appDelegate.loadServiceDetailVC(navigaionVC: self.navigationController)
-            serviceDetailVC.serviceDetail = self.arrForServices[self.currentIndex]
+            self.openSessionSelectionDialog()
         }
     }
     
@@ -185,15 +207,18 @@ extension ServiceMapVC {
             dateTimeSelectionDialog?.dismiss()
         }
         dateTimeSelectionDialog.onBtnDoneTapped = {
-            [weak dateTimeSelectionDialog, weak self]  in
+            [weak dateTimeSelectionDialog, weak self]  (millis)in
             guard let self = self else { return } ; print(self)
             dateTimeSelectionDialog?.dismiss()
+            print(Date.milliSecToDate(milliseconds: millis, format: "dd-MM-yyyy HH:mm"))
+            self.requestBooking.date = millis
+            
         }
     }
     
     func openSessionSelectionDialog() {
         let sessionSelectionDialog: SessionDialog  = SessionDialog.fromNib()
-        sessionSelectionDialog.initialize(title: "Session Type", buttonTitle: "".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        sessionSelectionDialog.initialize(title: "SESSION_TYPE_TITLE".localized(), buttonTitle: "".localized(), cancelButtonTitle: "BTN_BACK".localized())
         sessionSelectionDialog.setDataSource(data: SessionDetail.getDemoArray())
         sessionSelectionDialog.show(animated: true)
         sessionSelectionDialog.onBtnCancelTapped = {
@@ -205,25 +230,11 @@ extension ServiceMapVC {
             [weak sessionSelectionDialog, weak self] (session) in
             guard let self = self else { return } ; print(self)
             sessionSelectionDialog?.dismiss()
-            self.openRecipientSelectionDialog()
+            self.openReciepentMassageDetailVCDialog()
         }
     }
     
-    func openRecipientSelectionDialog() {
-        let recipientSelectionDialog: RecipientSelectionDialog  = RecipientSelectionDialog.fromNib()
-        recipientSelectionDialog.initialize(title: "RECIEPENT_DIALOG__TITLE".localized(), buttonTitle: "RECIEPENT_DIALOG_BTN_ADD".localized(), cancelButtonTitle: "BTN_BACK".localized())
-        recipientSelectionDialog.show(animated: true)
-        recipientSelectionDialog.onBtnCancelTapped = {
-            [weak recipientSelectionDialog, weak self] in
-            guard let self = self else { return } ; print(self)
-            recipientSelectionDialog?.dismiss()
-        }
-        recipientSelectionDialog.onBtnDoneTapped = {
-            [weak recipientSelectionDialog, weak self] (session) in
-            guard let self = self else { return } ; print(self)
-            recipientSelectionDialog?.dismiss()
-        }
-    }
+   
 }
 
 

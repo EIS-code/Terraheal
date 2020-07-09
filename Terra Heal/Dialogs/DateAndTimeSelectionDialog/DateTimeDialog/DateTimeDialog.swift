@@ -14,7 +14,7 @@ class DateTimeDialog: ThemeBottomDialogView {
     @IBOutlet weak var btnDone: FloatingRoundButton!
     @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var btnNext: ThemeButton!
-    var onBtnDoneTapped : (() -> Void)? = nil
+    var onBtnDoneTapped : ((_ millis:Double) -> Void)? = nil
     
     @IBOutlet weak var vwForDateSelection: UIView!
     @IBOutlet weak var lblSelectDate: ThemeLabel!
@@ -26,6 +26,8 @@ class DateTimeDialog: ThemeBottomDialogView {
     @IBOutlet weak var lblTimeValue: ThemeLabel!
     @IBOutlet weak var btnSelectTime: ThemeButton!
     
+    var dateMilli: Double = 0
+    var timeMilli: Double = 0
     func initialize(title:String,buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
         self.lblTitle.text = title
@@ -72,8 +74,16 @@ class DateTimeDialog: ThemeBottomDialogView {
     }
     
     @IBAction func onClickBtnDone(_ sender: Any) {
-        if self.onBtnDoneTapped != nil {
-            self.onBtnDoneTapped!();
+        if dateMilli == 0 {
+            Common.showAlert(message: "VALIDATION_MSG_DATE_SELECTION".localized())
+        }
+        else if  timeMilli == 0 {
+            Common.showAlert(message: "VALIDATION_MSG_TIME_SELECTION".localized())
+        } else {
+            let mill = dateMilli.advanced(by: timeMilli)
+            if self.onBtnDoneTapped != nil {
+                self.onBtnDoneTapped!(mill);
+            }
         }
     }
     
@@ -88,8 +98,8 @@ class DateTimeDialog: ThemeBottomDialogView {
     }
     
     @IBAction func btnTimeTapped(_ sender: Any) {
-          self.openTimePicker()
-      }
+        self.openTimePicker()
+    }
     
     func openDatePicker() {
         let datePickerAlert: CustomDatePicker = CustomDatePicker.fromNib()
@@ -104,6 +114,8 @@ class DateTimeDialog: ThemeBottomDialogView {
             [weak datePickerAlert, weak self] (date) in
             guard let self = self else { return } ; print(self)
             datePickerAlert?.dismiss()
+            print(date)
+            self.dateMilli = date
             self.lblDateValue.text = Date.milliSecToDate(milliseconds: date, format: DateFormat.BookingDateSelection)
         }
     }
@@ -120,8 +132,10 @@ class DateTimeDialog: ThemeBottomDialogView {
         timePickerAlert.onBtnDoneTapped = {
             [weak timePickerAlert, weak self] (date) in
             guard let self = self else { return } ; print(self)
+            print(date)
             timePickerAlert?.dismiss()
-            self.lblTimeValue.text = Date.milliSecToDate(milliseconds: date, format: DateFormat.BookingTimeSelection)
+            self.timeMilli = date
+            self.lblTimeValue.text = Date.milliSecToDate(milliseconds: date - Double((TimeZone.current.secondsFromGMT() * 1000)), format: DateFormat.BookingTimeSelection)
         }
     }
     

@@ -71,13 +71,15 @@ class ServiceDetailVC: MainVC {
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.lblServiceName?.text = serviceDetail.name
         self.lblServiceName?.setFont(name: FontName.Bold, size: FontSize.label_26)
-        self.lblServiceDetail?.text = serviceDetail.serviceDetails
+        self.lblServiceDetail?.text = serviceDetail.details
         self.lblServiceDetail?.setFont(name: FontName.Regular, size: FontSize.label_14)
         self.btnBack.setBackButton()
     }
     
     @IBAction func btnBackTapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true) {
+                self.navigationController?.popViewController(animated: true)
+        }
     }
     
     
@@ -87,10 +89,7 @@ class ServiceDetailVC: MainVC {
     func setCollectionData() {
         
         self.ivPicture.downloadedFrom(link: appSingleton.user.profilePhoto)
-        self.arrForData = [ ServiceDurationDetail(amount: "100", duration: "120 min"),
-                            ServiceDurationDetail(amount: "100", duration: "120 min"),
-                            ServiceDurationDetail(amount: "100", duration: "120 min"),
-                            ServiceDurationDetail(amount: "100", duration: "120 min")]
+        self.arrForData = self.serviceDetail.duration
         self.collectionVw.reloadData(heightToFit: self.hCltVw) {
             
         }

@@ -60,7 +60,7 @@ class TimeDialog: ThemeBottomDialogView {
     
     @IBAction func onClickBtnDone(_ sender: Any) {
         if self.onBtnDoneTapped != nil {
-            self.onBtnDoneTapped!(self.timePicker.date.millisecondsSince1970);
+            self.onBtnDoneTapped!(self.timePicker.date.millisecondsSince1970 - Calendar.current.startOfDay(for: timePicker.date).millisecondsSince1970);
         }
     }
     

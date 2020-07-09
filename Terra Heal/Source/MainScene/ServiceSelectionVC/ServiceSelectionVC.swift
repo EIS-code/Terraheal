@@ -11,11 +11,12 @@ class ServiceSelectionVC: MainVC {
     @IBOutlet weak var collectionVw: UICollectionView!
     @IBOutlet weak var vwServiceSelection: JDSegmentedControl!
     
-    var selectedService: ServiceType = ServiceType.Massages
-    var arrForData: [String] = ["head, neck and shoulders", "tok sen - thai massage", "hand or foot massage","thai yoga massage","head, neck and shoulders", "tok sen - thai massage", "hand or foot massage","thai yoga massage"]
-    
-    var arrForMassage: [String] = ["head, neck massage", "tok sen - thai massage", "hand or foot massage","thai yoga massage","head, neck and shoulders", "tok sen - thai massage", "hand or foot massage","thai yoga massage"]
-    var arrForTherapies: [String] = ["head, neck therapy", "tok sen - thai therapy", "hand or foot therapy","thai yoga therapy","head, neck and therapy", "tok sen - thai therapy", "hand or foot therapy","thai yoga therapy"]
+    var selectedServiceType: ServiceType = ServiceType.Massages
+    var arrForData: [ServiceDetail] = ServiceDetail.getMassageArray()
+    var arrForMassage: [ServiceDetail] = ServiceDetail.getMassageArray()
+    var arrForTherapies: [ServiceDetail] = ServiceDetail.getTherapyArray()
+    var selectedService: ServiceDetail = ServiceDetail.init()
+     var onBtnServiceSelectedTapped: ((_ data: ServiceDetail) -> Void)? = nil
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -83,27 +84,30 @@ class ServiceSelectionVC: MainVC {
     
     
     @IBAction func btnBackTapped(_ sender: Any) {
-        _ = self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true) {
+                _ = self.navigationController?.popViewController(animated: true)
+        }
     }
     
     func massagesTapped(){
         self.arrForData = self.arrForMassage
         self.vwServiceSelection.selectItemAt(index: 0)
-        self.selectedService = ServiceType.Massages
+        self.selectedServiceType = ServiceType.Massages
         collectionVw.reloadData()
     }
     
     func therapiesTapped(){
         self.arrForData = self.arrForTherapies
         self.vwServiceSelection.selectItemAt(index: 1)
-        self.selectedService = ServiceType.Therapies
+        self.selectedServiceType = ServiceType.Therapies
         collectionVw.reloadData()
     }
     
-    func openServiceDurationSelection() {
-        
+    func openServiceDurationSelection(index: Int) {
+        self.selectedService = self.arrForData[index]
         let durationSelectionDialog: DurationSelectionDialog = DurationSelectionDialog.fromNib()
         durationSelectionDialog.initialize(title: "Select duration",message: "note:- 23% VAT is included", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        durationSelectionDialog.setDataSource(data: arrForData[index].duration)
         durationSelectionDialog.show(animated: true)
         durationSelectionDialog.onBtnCancelTapped = {
             [weak durationSelectionDialog, weak self] in
@@ -114,7 +118,10 @@ class ServiceSelectionVC: MainVC {
             [weak durationSelectionDialog, weak self]  (hour) in
             guard let self = self else { return } ; print(self)
             durationSelectionDialog?.dismiss()
-            
+            self.selectedService.duration = [hour]
+            if self.onBtnServiceSelectedTapped != nil {
+                self.onBtnServiceSelectedTapped!(self.selectedService)
+            }
         }
     }
     
@@ -154,7 +161,7 @@ extension ServiceSelectionVC:  UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        self.openServiceDurationSelection()
+        self.openServiceDurationSelection(index: indexPath.row)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -26,7 +26,7 @@ class ServiceCell: CollectionCell {
         self.btnHours.setTitle(" hours", for: .normal)
     }
 
-    func setData(data:ServiceDetail) {
+    func setData(data:ServiceCenterDetail) {
         self.lblName?.text = data.name
         self.lblAddress?.text = data.address
         self.btnNumberOfServices.setTitle(data.numberOfServices + "+", for: .normal)
