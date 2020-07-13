@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="89" id="KGk-i7-Jjw" userLabel="CreditCardTblCell" customClass="CreditCardTblCell" customModule="Terra_Heal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="396" height="89"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="396" height="89"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVt-KG-059" userLabel="vwCard">
+                        <rect key="frame" x="0.0" y="0.0" width="396" height="89"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4DP-9l-fOa">
+                                <rect key="frame" x="20" y="20" width="49.5" height="49.5"/>
+                                <color key="backgroundColor" name="theme_primary"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4DP-9l-fOa" secondAttribute="height" multiplier="1:1" id="rkO-To-iVb"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="c9B-uy-PV7">
+                                <rect key="frame" x="89.5" y="20" width="196.5" height="49"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udg-85-RGu" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="196.5" height="24.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="theme_primary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcz-Gd-NAR" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="196.5" height="24.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="theme_primary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAg-ST-CEy" userLabel="btnDefault" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                <rect key="frame" x="306" y="30.5" width="70" height="28"/>
+                                <color key="backgroundColor" name="theme_primary"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <state key="normal" title="Default">
+                                    <color key="titleColor" name="theme_light_text_color"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="theme_primary_light_background"/>
+                        <constraints>
+                            <constraint firstItem="4DP-9l-fOa" firstAttribute="leading" secondItem="jVt-KG-059" secondAttribute="leading" constant="20" id="0zf-r4-ZFp"/>
+                            <constraint firstItem="c9B-uy-PV7" firstAttribute="centerY" secondItem="jVt-KG-059" secondAttribute="centerY" id="1tf-aW-Eqy"/>
+                            <constraint firstItem="eAg-ST-CEy" firstAttribute="centerY" secondItem="jVt-KG-059" secondAttribute="centerY" id="337-cA-y1u"/>
+                            <constraint firstItem="4DP-9l-fOa" firstAttribute="top" secondItem="jVt-KG-059" secondAttribute="top" constant="20" id="5WC-SN-J0r"/>
+                            <constraint firstItem="eAg-ST-CEy" firstAttribute="leading" secondItem="c9B-uy-PV7" secondAttribute="trailing" constant="20" id="Idy-as-Y6f"/>
+                            <constraint firstItem="c9B-uy-PV7" firstAttribute="leading" secondItem="4DP-9l-fOa" secondAttribute="trailing" constant="20" id="O8d-kN-88a"/>
+                            <constraint firstItem="4DP-9l-fOa" firstAttribute="width" secondItem="jVt-KG-059" secondAttribute="width" multiplier="0.125" id="T4e-IX-KXa"/>
+                            <constraint firstAttribute="trailing" secondItem="eAg-ST-CEy" secondAttribute="trailing" constant="20" id="Yev-nv-l1Q"/>
+                            <constraint firstAttribute="bottom" secondItem="c9B-uy-PV7" secondAttribute="bottom" constant="20" id="iXT-rR-UTy"/>
+                            <constraint firstItem="c9B-uy-PV7" firstAttribute="top" secondItem="jVt-KG-059" secondAttribute="top" constant="20" id="wa8-Wh-596"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="jVt-KG-059" secondAttribute="bottom" id="KIw-GH-KPA"/>
+                    <constraint firstItem="jVt-KG-059" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="NSC-yA-cM9"/>
+                    <constraint firstAttribute="trailing" secondItem="jVt-KG-059" secondAttribute="trailing" id="cdC-Pw-s3A"/>
+                    <constraint firstItem="jVt-KG-059" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="uGe-Qi-AdP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="btnDefult" destination="eAg-ST-CEy" id="GJl-cJ-7vf"/>
+                <outlet property="ivCard" destination="4DP-9l-fOa" id="VsF-9r-rDs"/>
+                <outlet property="lblCardValue" destination="qcz-Gd-NAR" id="2ve-d6-3JT"/>
+                <outlet property="lblName" destination="udg-85-RGu" id="tyh-gL-zqZ"/>
+            </connections>
+            <point key="canvasLocation" x="-33.333333333333336" y="59.933035714285708"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="theme_light_text_color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary">
+            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary_light_background">
+            <color red="0.94509803921568625" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

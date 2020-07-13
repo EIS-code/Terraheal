@@ -372,6 +372,7 @@ public class UBottomSheetCoordinator {
         case .began:
             lastY = 0
             if let scroll = scrollView{
+                scroll.alwaysBounceVertical = false
                 //set last contentOffset y value by adding 'dy' i.e. pre pan gesture happened.
                 lastContentOffset.y = scroll.contentOffset.y + dy
             }
@@ -384,6 +385,7 @@ public class UBottomSheetCoordinator {
              .cancelled,
              .failed:
             if let scroll = scrollView{
+                 scroll.alwaysBounceVertical = false
                 let minY = container!.frame.minY
                 switch dragDirection(vel) {
                 case .up where minY - minSheetPosition! > tolerance:

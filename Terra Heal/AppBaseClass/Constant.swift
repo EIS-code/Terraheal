@@ -71,8 +71,17 @@ struct DateFormat {
     
     static let BookingDateSelection = "dd MMM yyyy"
     static let BookingTimeSelection = "HH:mm"
+    static let ReviewBookingDateDisplay = "HH:mm | EEE, dd MMM yyyy"
     static let DD_MM_YYYY = "dd/MM/YYYY"
     static let DOB = "dd MMM yyyy"
     static let check = "✓"
 }
 
+struct ImageAsset {
+    static let upArrow = "asset-arrow-down"
+    static let downArrow = "asset-arrow-down"
+    static let rightArrow = "asset-arrow-right"
+    static let leftArrow = "asset-arrow-left"
+    
+    
+}

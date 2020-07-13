@@ -97,6 +97,7 @@ extension AppDelegate {
     }
 
     func loadHomeVC(navigaionVC:UINavigationController? = nil) {
+         CurrentBooking.shared.clear()
         if !PreferenceHelper.shared.getUserId().isEmpty() {
             AppWebApi.getUserDetail { (response) in
                 Loader.hideLoading()
@@ -631,7 +632,36 @@ extension AppDelegate {
                let nC: NC = NC(rootViewController: targetVC)
                self.windowConfig(withRootVC: nC)
            }
-       }
+    }
     
+    func loadReviewAndBookVC(navigaionVC:UINavigationController? = nil) {
+           if let nc = navigaionVC as? NC {
+               if let targetVC: ReviewAndBookVC =  nc.findVCs(ofType: ReviewAndBookVC.self).first {
+                   _ = nc.popToViewController(targetVC, animated: true)
+               } else {
+                   let targetVC: ReviewAndBookVC = ReviewAndBookVC.fromNib()
+                   nc.pushViewController(targetVC, animated: true)
+               }
+           } else {
+               let targetVC: ReviewAndBookVC = ReviewAndBookVC.fromNib()
+               let nC: NC = NC(rootViewController: targetVC)
+               self.windowConfig(withRootVC: nC)
+           }
+    }
+    
+    func loadPaymentReferenceVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: PaymentPreferenceVC =  nc.findVCs(ofType: PaymentPreferenceVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+            } else {
+                let targetVC: PaymentPreferenceVC = PaymentPreferenceVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+            }
+        } else {
+            let targetVC: PaymentPreferenceVC = PaymentPreferenceVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
 }
 

@@ -195,7 +195,6 @@ extension CameraController: AVCapturePhotoCaptureDelegate {
             
        /* else if let buffer = photoSampleBuffer, let data = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: buffer, previewPhotoSampleBuffer: nil),
             let image = UIImage(data: data) {
-            
             self.photoCaptureCompletionBlock?(image, nil)
         }*/
             

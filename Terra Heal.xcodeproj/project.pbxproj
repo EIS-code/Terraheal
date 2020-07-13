@@ -61,7 +61,7 @@
 		0344499724B604A000C8B763 /* CustomPressurePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0344498224B6049F00C8B763 /* CustomPressurePicker.xib */; };
 		0344499824B604A000C8B763 /* CustomCountryPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0344498524B6049F00C8B763 /* CustomCountryPickerCell.swift */; };
 		0344499924B604A000C8B763 /* CustomCountryPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0344498624B6049F00C8B763 /* CustomCountryPickerCell.xib */; };
-		0344499A24B604A000C8B763 /* CustomCountyPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0344498724B6049F00C8B763 /* CustomCountyPicker.xib */; };
+		0344499A24B604A000C8B763 /* CustomCountryPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0344498724B6049F00C8B763 /* CustomCountryPicker.xib */; };
 		0344499B24B604A000C8B763 /* CustomCountryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0344498824B6049F00C8B763 /* CustomCountryPicker.swift */; };
 		0344499C24B604A000C8B763 /* CustomGenderPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0344498A24B6049F00C8B763 /* CustomGenderPicker.xib */; };
 		0344499D24B604A000C8B763 /* CustomGenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0344498B24B604A000C8B763 /* CustomGenderPicker.swift */; };
@@ -254,9 +254,29 @@
 		034878B124B2F2FF006774AB /* ManageDocumentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034878AD24B2F2FF006774AB /* ManageDocumentVC.swift */; };
 		034878B324B30DC4006774AB /* GoogleMapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034878B224B30DC4006774AB /* GoogleMapHelper.swift */; };
 		034878B524B32789006774AB /* SettingPreferenceWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034878B424B32789006774AB /* SettingPreferenceWebservice.swift */; };
+		034CD80A24BC48F200BFD6E1 /* PaymentPreferenceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034CD80524BC48F200BFD6E1 /* PaymentPreferenceVC.xib */; };
+		034CD80D24BC48F200BFD6E1 /* PaymentPreferenceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CD80924BC48F200BFD6E1 /* PaymentPreferenceVC.swift */; };
+		034CD81024BC594700BFD6E1 /* CreditCardTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034CD80E24BC594700BFD6E1 /* CreditCardTblCell.xib */; };
+		034CD81124BC594700BFD6E1 /* CreditCardTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CD80F24BC594700BFD6E1 /* CreditCardTblCell.swift */; };
+		034CD81824BC947800BFD6E1 /* AddPaymentTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CD81424BC947700BFD6E1 /* AddPaymentTblCell.swift */; };
+		034CD81924BC947800BFD6E1 /* AddPaymentTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034CD81524BC947700BFD6E1 /* AddPaymentTblCell.xib */; };
+		034CD81A24BC947800BFD6E1 /* AddPaymentPreferenceDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034CD81624BC947700BFD6E1 /* AddPaymentPreferenceDialog.xib */; };
+		034CD81B24BC947800BFD6E1 /* AddPaymentPreferenceDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CD81724BC947700BFD6E1 /* AddPaymentPreferenceDialog.swift */; };
 		0353013324ADC3F900452F8C /* styleable_map.json in Resources */ = {isa = PBXBuildFile; fileRef = 0353013224ADC3F900452F8C /* styleable_map.json */; };
 		0353013524ADDBF800452F8C /* AddressWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0353013424ADDBF800452F8C /* AddressWebService.swift */; };
 		0382C04E24ACB91E0041A4B6 /* TherapistQuastionariesWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0382C04D24ACB91E0041A4B6 /* TherapistQuastionariesWebservice.swift */; };
+		0383B27A24B80F2C003622F6 /* ReviewAndBookVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0383B27424B80F2C003622F6 /* ReviewAndBookVC.xib */; };
+		0383B27B24B80F2C003622F6 /* ReviewReciepentTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0383B27724B80F2C003622F6 /* ReviewReciepentTblCell.xib */; };
+		0383B27C24B80F2C003622F6 /* ReviewReciepentTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383B27824B80F2C003622F6 /* ReviewReciepentTblCell.swift */; };
+		0383B27D24B80F2C003622F6 /* ReviewAndBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383B27924B80F2C003622F6 /* ReviewAndBookVC.swift */; };
+		0383B28124B83584003622F6 /* ReviewSummaryTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383B27F24B83584003622F6 /* ReviewSummaryTblCell.swift */; };
+		0383B28224B83584003622F6 /* ReviewSummaryTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0383B28024B83584003622F6 /* ReviewSummaryTblCell.xib */; };
+		0383B28924B86C26003622F6 /* PaymentPercentatgeSelectionDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383B28424B86C25003622F6 /* PaymentPercentatgeSelectionDialog.swift */; };
+		0383B28A24B86C26003622F6 /* PaymentPercentatgeSelectionDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0383B28524B86C25003622F6 /* PaymentPercentatgeSelectionDialog.xib */; };
+		0383B28B24B86C26003622F6 /* CustomButtonTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383B28724B86C25003622F6 /* CustomButtonTblCell.swift */; };
+		0383B28C24B86C26003622F6 /* CustomButtonTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0383B28824B86C25003622F6 /* CustomButtonTblCell.xib */; };
+		0383B29024B87073003622F6 /* ReviewReciepentTblSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383B28E24B87073003622F6 /* ReviewReciepentTblSection.swift */; };
+		0383B29124B87073003622F6 /* ReviewReciepentTblSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0383B28F24B87073003622F6 /* ReviewReciepentTblSection.xib */; };
 		039B509324B6F52800B06312 /* ReciepentTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 039B508B24B6F52800B06312 /* ReciepentTblCell.xib */; };
 		039B509424B6F52800B06312 /* ReciepentTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039B508C24B6F52800B06312 /* ReciepentTblCell.swift */; };
 		039B509524B6F52800B06312 /* ReciepentTblFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 039B508E24B6F52800B06312 /* ReciepentTblFooter.xib */; };
@@ -396,7 +416,7 @@
 		0344498224B6049F00C8B763 /* CustomPressurePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPressurePicker.xib; sourceTree = "<group>"; };
 		0344498524B6049F00C8B763 /* CustomCountryPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCountryPickerCell.swift; sourceTree = "<group>"; };
 		0344498624B6049F00C8B763 /* CustomCountryPickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCountryPickerCell.xib; sourceTree = "<group>"; };
-		0344498724B6049F00C8B763 /* CustomCountyPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCountyPicker.xib; sourceTree = "<group>"; };
+		0344498724B6049F00C8B763 /* CustomCountryPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCountryPicker.xib; sourceTree = "<group>"; };
 		0344498824B6049F00C8B763 /* CustomCountryPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCountryPicker.swift; sourceTree = "<group>"; };
 		0344498A24B6049F00C8B763 /* CustomGenderPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomGenderPicker.xib; sourceTree = "<group>"; };
 		0344498B24B604A000C8B763 /* CustomGenderPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomGenderPicker.swift; sourceTree = "<group>"; };
@@ -589,9 +609,29 @@
 		034878AD24B2F2FF006774AB /* ManageDocumentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageDocumentVC.swift; sourceTree = "<group>"; };
 		034878B224B30DC4006774AB /* GoogleMapHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapHelper.swift; sourceTree = "<group>"; };
 		034878B424B32789006774AB /* SettingPreferenceWebservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingPreferenceWebservice.swift; sourceTree = "<group>"; };
+		034CD80524BC48F200BFD6E1 /* PaymentPreferenceVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentPreferenceVC.xib; sourceTree = "<group>"; };
+		034CD80924BC48F200BFD6E1 /* PaymentPreferenceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentPreferenceVC.swift; sourceTree = "<group>"; };
+		034CD80E24BC594700BFD6E1 /* CreditCardTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditCardTblCell.xib; sourceTree = "<group>"; };
+		034CD80F24BC594700BFD6E1 /* CreditCardTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardTblCell.swift; sourceTree = "<group>"; };
+		034CD81424BC947700BFD6E1 /* AddPaymentTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPaymentTblCell.swift; sourceTree = "<group>"; };
+		034CD81524BC947700BFD6E1 /* AddPaymentTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPaymentTblCell.xib; sourceTree = "<group>"; };
+		034CD81624BC947700BFD6E1 /* AddPaymentPreferenceDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPaymentPreferenceDialog.xib; sourceTree = "<group>"; };
+		034CD81724BC947700BFD6E1 /* AddPaymentPreferenceDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPaymentPreferenceDialog.swift; sourceTree = "<group>"; };
 		0353013224ADC3F900452F8C /* styleable_map.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = styleable_map.json; sourceTree = "<group>"; };
 		0353013424ADDBF800452F8C /* AddressWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressWebService.swift; sourceTree = "<group>"; };
 		0382C04D24ACB91E0041A4B6 /* TherapistQuastionariesWebservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TherapistQuastionariesWebservice.swift; sourceTree = "<group>"; };
+		0383B27424B80F2C003622F6 /* ReviewAndBookVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewAndBookVC.xib; sourceTree = "<group>"; };
+		0383B27724B80F2C003622F6 /* ReviewReciepentTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewReciepentTblCell.xib; sourceTree = "<group>"; };
+		0383B27824B80F2C003622F6 /* ReviewReciepentTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewReciepentTblCell.swift; sourceTree = "<group>"; };
+		0383B27924B80F2C003622F6 /* ReviewAndBookVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewAndBookVC.swift; sourceTree = "<group>"; };
+		0383B27F24B83584003622F6 /* ReviewSummaryTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewSummaryTblCell.swift; sourceTree = "<group>"; };
+		0383B28024B83584003622F6 /* ReviewSummaryTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewSummaryTblCell.xib; sourceTree = "<group>"; };
+		0383B28424B86C25003622F6 /* PaymentPercentatgeSelectionDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentPercentatgeSelectionDialog.swift; sourceTree = "<group>"; };
+		0383B28524B86C25003622F6 /* PaymentPercentatgeSelectionDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentPercentatgeSelectionDialog.xib; sourceTree = "<group>"; };
+		0383B28724B86C25003622F6 /* CustomButtonTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonTblCell.swift; sourceTree = "<group>"; };
+		0383B28824B86C25003622F6 /* CustomButtonTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomButtonTblCell.xib; sourceTree = "<group>"; };
+		0383B28E24B87073003622F6 /* ReviewReciepentTblSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewReciepentTblSection.swift; sourceTree = "<group>"; };
+		0383B28F24B87073003622F6 /* ReviewReciepentTblSection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewReciepentTblSection.xib; sourceTree = "<group>"; };
 		039B508B24B6F52800B06312 /* ReciepentTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReciepentTblCell.xib; sourceTree = "<group>"; };
 		039B508C24B6F52800B06312 /* ReciepentTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReciepentTblCell.swift; sourceTree = "<group>"; };
 		039B508E24B6F52800B06312 /* ReciepentTblFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReciepentTblFooter.xib; sourceTree = "<group>"; };
@@ -983,7 +1023,7 @@
 			isa = PBXGroup;
 			children = (
 				0344498424B6049F00C8B763 /* CustomCountryPickerCell */,
-				0344498724B6049F00C8B763 /* CustomCountyPicker.xib */,
+				0344498724B6049F00C8B763 /* CustomCountryPicker.xib */,
 				0344498824B6049F00C8B763 /* CustomCountryPicker.swift */,
 			);
 			path = CustomCountryPicker;
@@ -1077,6 +1117,7 @@
 		034876CF24B2EF61006774AB /* ProfileAndPreferences */ = {
 			isa = PBXGroup;
 			children = (
+				034CD80324BC48F200BFD6E1 /* PaymentPreferenceVC */,
 				0344497024B6049F00C8B763 /* Dialogs */,
 				034878A724B2F2FF006774AB /* ManageDocumentVC */,
 				034876D024B2EF61006774AB /* MassagePreference */,
@@ -1707,6 +1748,7 @@
 		0348776924B2EF63006774AB /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
+				0383B27324B80F2C003622F6 /* ReviewAndBookVC */,
 				03AA726324B6E41300F3B002 /* ReciepentMassageDetailVC */,
 				0344490524B5FC9400C8B763 /* BookingCompleteVC */,
 				03A1B54724B5C945008BAC3A /* ServiceSelectionVC */,
@@ -2291,6 +2333,118 @@
 			path = DocumentTblCell;
 			sourceTree = "<group>";
 		};
+		034CD80324BC48F200BFD6E1 /* PaymentPreferenceVC */ = {
+			isa = PBXGroup;
+			children = (
+				034CD80424BC48F200BFD6E1 /* xib */,
+				034CD80624BC48F200BFD6E1 /* CreditCardCell */,
+				034CD80924BC48F200BFD6E1 /* PaymentPreferenceVC.swift */,
+			);
+			path = PaymentPreferenceVC;
+			sourceTree = "<group>";
+		};
+		034CD80424BC48F200BFD6E1 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				034CD80524BC48F200BFD6E1 /* PaymentPreferenceVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		034CD80624BC48F200BFD6E1 /* CreditCardCell */ = {
+			isa = PBXGroup;
+			children = (
+				034CD80F24BC594700BFD6E1 /* CreditCardTblCell.swift */,
+				034CD80E24BC594700BFD6E1 /* CreditCardTblCell.xib */,
+			);
+			path = CreditCardCell;
+			sourceTree = "<group>";
+		};
+		034CD81224BC947700BFD6E1 /* AddPaymentPreferenceDialog */ = {
+			isa = PBXGroup;
+			children = (
+				034CD81324BC947700BFD6E1 /* AddPaymentTblCell */,
+				034CD81624BC947700BFD6E1 /* AddPaymentPreferenceDialog.xib */,
+				034CD81724BC947700BFD6E1 /* AddPaymentPreferenceDialog.swift */,
+			);
+			path = AddPaymentPreferenceDialog;
+			sourceTree = "<group>";
+		};
+		034CD81324BC947700BFD6E1 /* AddPaymentTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				034CD81424BC947700BFD6E1 /* AddPaymentTblCell.swift */,
+				034CD81524BC947700BFD6E1 /* AddPaymentTblCell.xib */,
+			);
+			path = AddPaymentTblCell;
+			sourceTree = "<group>";
+		};
+		0383B27324B80F2C003622F6 /* ReviewAndBookVC */ = {
+			isa = PBXGroup;
+			children = (
+				0383B27424B80F2C003622F6 /* ReviewAndBookVC.xib */,
+				0383B27524B80F2C003622F6 /* Cells */,
+				0383B27924B80F2C003622F6 /* ReviewAndBookVC.swift */,
+			);
+			path = ReviewAndBookVC;
+			sourceTree = "<group>";
+		};
+		0383B27524B80F2C003622F6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0383B28D24B87073003622F6 /* ReviewReciepentSection */,
+				0383B27E24B83584003622F6 /* ReviewSummaryTblCell */,
+				0383B27624B80F2C003622F6 /* ReviewReciepentTblCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0383B27624B80F2C003622F6 /* ReviewReciepentTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				0383B27724B80F2C003622F6 /* ReviewReciepentTblCell.xib */,
+				0383B27824B80F2C003622F6 /* ReviewReciepentTblCell.swift */,
+			);
+			path = ReviewReciepentTblCell;
+			sourceTree = "<group>";
+		};
+		0383B27E24B83584003622F6 /* ReviewSummaryTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				0383B27F24B83584003622F6 /* ReviewSummaryTblCell.swift */,
+				0383B28024B83584003622F6 /* ReviewSummaryTblCell.xib */,
+			);
+			path = ReviewSummaryTblCell;
+			sourceTree = "<group>";
+		};
+		0383B28324B86C25003622F6 /* PaymentPercentatgeSelectionDialog */ = {
+			isa = PBXGroup;
+			children = (
+				0383B28424B86C25003622F6 /* PaymentPercentatgeSelectionDialog.swift */,
+				0383B28524B86C25003622F6 /* PaymentPercentatgeSelectionDialog.xib */,
+				0383B28624B86C25003622F6 /* PaymentButtonTblCell */,
+			);
+			path = PaymentPercentatgeSelectionDialog;
+			sourceTree = "<group>";
+		};
+		0383B28624B86C25003622F6 /* PaymentButtonTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				0383B28724B86C25003622F6 /* CustomButtonTblCell.swift */,
+				0383B28824B86C25003622F6 /* CustomButtonTblCell.xib */,
+			);
+			path = PaymentButtonTblCell;
+			sourceTree = "<group>";
+		};
+		0383B28D24B87073003622F6 /* ReviewReciepentSection */ = {
+			isa = PBXGroup;
+			children = (
+				0383B28E24B87073003622F6 /* ReviewReciepentTblSection.swift */,
+				0383B28F24B87073003622F6 /* ReviewReciepentTblSection.xib */,
+			);
+			path = ReviewReciepentSection;
+			sourceTree = "<group>";
+		};
 		039B508924B6F52800B06312 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -2331,6 +2485,8 @@
 		03A1B53224B58EAD008BAC3A /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
+				034CD81224BC947700BFD6E1 /* AddPaymentPreferenceDialog */,
+				0383B28324B86C25003622F6 /* PaymentPercentatgeSelectionDialog */,
 				0344490B24B5FFE500C8B763 /* TextViewDialog */,
 				03A1B54D24B5D7BD008BAC3A /* DurationSelectionDialog */,
 				03A1B53D24B5A803008BAC3A /* RecipientSelectionDialog */,
@@ -2756,6 +2912,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				034CD81924BC947800BFD6E1 /* AddPaymentTblCell.xib in Resources */,
+				0383B28C24B86C26003622F6 /* CustomButtonTblCell.xib in Resources */,
 				0348781124B2EF64006774AB /* ProfileVC.xib in Resources */,
 				0348785724B2EF64006774AB /* ServiceMapVC.xib in Resources */,
 				0348782024B2EF64006774AB /* MyTherapistTblCell.xib in Resources */,
@@ -2776,6 +2934,7 @@
 				0348781424B2EF64006774AB /* ProfileTblUserInfoCell.xib in Resources */,
 				0348785124B2EF64006774AB /* CustomAddNewEventDialog.xib in Resources */,
 				03AA726724B6E41300F3B002 /* ReciepentMassageDetailVC.xib in Resources */,
+				034CD81024BC594700BFD6E1 /* CreditCardTblCell.xib in Resources */,
 				0348784824B2EF64006774AB /* TouchIdVC.xib in Resources */,
 				0344495B24B6045F00C8B763 /* CustomCountryPhoneCodePicker.xib in Resources */,
 				0348783A24B2EF64006774AB /* VerifyContactVC.xib in Resources */,
@@ -2802,10 +2961,11 @@
 				0348786224B2EF64006774AB /* VerificationVC.xib in Resources */,
 				034877F924B2EF64006774AB /* MassagePreferenceTblCell.xib in Resources */,
 				03A1B54424B5A804008BAC3A /* RecipientTblCell.xib in Resources */,
+				034CD81A24BC947800BFD6E1 /* AddPaymentPreferenceDialog.xib in Resources */,
 				0348786524B2EF64006774AB /* VerificationTblCell.xib in Resources */,
 				0348788024B2EF64006774AB /* LocationServiceCltCell.xib in Resources */,
 				0348781724B2EF64006774AB /* TherapistQuestionariesVC.xib in Resources */,
-				0344499A24B604A000C8B763 /* CustomCountyPicker.xib in Resources */,
+				0344499A24B604A000C8B763 /* CustomCountryPicker.xib in Resources */,
 				0344499024B604A000C8B763 /* CustomCityPicker.xib in Resources */,
 				0348783224B2EF64006774AB /* CustomPhotoPicker.xib in Resources */,
 				0348786724B2EF64006774AB /* ReferAndEarnVC.xib in Resources */,
@@ -2814,6 +2974,7 @@
 				0348787D24B2EF64006774AB /* PriceLocationTblCell.xib in Resources */,
 				0348782E24B2EF64006774AB /* UIImageCropperVC.xib in Resources */,
 				0348788E24B2EF64006774AB /* NotificationTblCell.xib in Resources */,
+				0383B28A24B86C26003622F6 /* PaymentPercentatgeSelectionDialog.xib in Resources */,
 				039B509724B6F52800B06312 /* ReciepentTblSection.xib in Resources */,
 				0344496824B6045F00C8B763 /* CustomTextFieldDialog.xib in Resources */,
 				0348787C24B2EF64006774AB /* PriceLocationVC.xib in Resources */,
@@ -2826,6 +2987,7 @@
 				0348784A24B2EF64006774AB /* LoginVC.xib in Resources */,
 				0348788624B2EF64006774AB /* PromoCodeTblCell.xib in Resources */,
 				0348788824B2EF64006774AB /* HowItWorkVC.xib in Resources */,
+				0383B27B24B80F2C003622F6 /* ReviewReciepentTblCell.xib in Resources */,
 				0348780824B2EF64006774AB /* MyPlaceVC.xib in Resources */,
 				0348789924B2EF64006774AB /* CustomFaqDialog.xib in Resources */,
 				0348780224B2EF64006774AB /* SettingVC.xib in Resources */,
@@ -2834,12 +2996,16 @@
 				0348780424B2EF64006774AB /* SettingTblCell.xib in Resources */,
 				0348784424B2EF64006774AB /* WelcomeVC.xib in Resources */,
 				0348783C24B2EF64006774AB /* VerificationAlert.xib in Resources */,
+				034CD80A24BC48F200BFD6E1 /* PaymentPreferenceVC.xib in Resources */,
 				634398B3245BEAB2009BCA1F /* CommonColor.xcassets in Resources */,
 				0348789824B2EF64006774AB /* HelpVC.xib in Resources */,
 				0348781E24B2EF64006774AB /* MyTherapistVC.xib in Resources */,
 				034449B124B604C000C8B763 /* CustomLanguagePicker.xib in Resources */,
 				034449AF24B604C000C8B763 /* CustomLanguagePickerCell.xib in Resources */,
+				0383B29124B87073003622F6 /* ReviewReciepentTblSection.xib in Resources */,
 				0344498C24B604A000C8B763 /* PreferGenderPickerCell.xib in Resources */,
+				0383B28224B83584003622F6 /* ReviewSummaryTblCell.xib in Resources */,
+				0383B27A24B80F2C003622F6 /* ReviewAndBookVC.xib in Resources */,
 				034449B524B604C000C8B763 /* CustomCurrencyPicker.xib in Resources */,
 				0348788424B2EF64006774AB /* PromoCodeVC.xib in Resources */,
 				0344499424B604A000C8B763 /* PressureSelectionTblCell.xib in Resources */,
@@ -3000,11 +3166,13 @@
 				0344491424B6035800C8B763 /* CustomAddNewAddressDialog.swift in Sources */,
 				0344496724B6045F00C8B763 /* CustomAlertConfirmation.swift in Sources */,
 				0348783D24B2EF64006774AB /* OTPFieldView.swift in Sources */,
+				0383B28B24B86C26003622F6 /* CustomButtonTblCell.swift in Sources */,
 				03D77F3D24AB2FAF0098DD01 /* JDImageExtension.swift in Sources */,
 				03AA725C24B6E3EA00F3B002 /* UBottomSheetCoordinator.swift in Sources */,
 				03AA725B24B6E3EA00F3B002 /* UBottomSheetCoordinatorDataSource.swift in Sources */,
 				635675F4249A1D69006F5511 /* PricingLocationWebService.swift in Sources */,
 				0344496F24B6045F00C8B763 /* CustomAlert.swift in Sources */,
+				0383B27C24B80F2C003622F6 /* ReviewReciepentTblCell.swift in Sources */,
 				034878A024B2EF64006774AB /* CustomChatDialog.swift in Sources */,
 				03AA726024B6E3EA00F3B002 /* Draggable.swift in Sources */,
 				633B7126245FDA5800CF490D /* ThemeTextField.swift in Sources */,
@@ -3037,12 +3205,14 @@
 				0348780524B2EF64006774AB /* SettingVC.swift in Sources */,
 				0348784324B2EF64006774AB /* TutorialCell.swift in Sources */,
 				632DB09B248FA5CC00B65B46 /* String+Localization.swift in Sources */,
+				034CD80D24BC48F200BFD6E1 /* PaymentPreferenceVC.swift in Sources */,
 				034878B524B32789006774AB /* SettingPreferenceWebservice.swift in Sources */,
 				0344499824B604A000C8B763 /* CustomCountryPickerCell.swift in Sources */,
 				0348781524B2EF64006774AB /* ProfileTblUserInfoCell.swift in Sources */,
 				0344490A24B5FC9400C8B763 /* BookingCompleteVC.swift in Sources */,
 				0348780724B2EF64006774AB /* SettingSwitchTblCell.swift in Sources */,
 				0353013524ADDBF800452F8C /* AddressWebService.swift in Sources */,
+				034CD81824BC947800BFD6E1 /* AddPaymentTblCell.swift in Sources */,
 				03A1B53C24B58EAD008BAC3A /* SessionDialog.swift in Sources */,
 				0344499B24B604A000C8B763 /* CustomCountryPicker.swift in Sources */,
 				0348785624B2EF64006774AB /* ServiceMapVC.swift in Sources */,
@@ -3077,6 +3247,7 @@
 				6343985A245BE6DF009BCA1F /* APP+NAVIGATION.swift in Sources */,
 				0348781624B2EF64006774AB /* TherapistQuestionariesVC.swift in Sources */,
 				0348789A24B2EF64006774AB /* CustomFaqDialog.swift in Sources */,
+				0383B29024B87073003622F6 /* ReviewReciepentTblSection.swift in Sources */,
 				0344490F24B5FFE600C8B763 /* TextViewDialog.swift in Sources */,
 				0348789124B2EF64006774AB /* NotificationVC.swift in Sources */,
 				0348789324B2EF64006774AB /* CampaignsVC.swift in Sources */,
@@ -3103,6 +3274,7 @@
 				63439860245BE6DF009BCA1F /* FontHelper.swift in Sources */,
 				0348785D24B2EF64006774AB /* ServiceCell.swift in Sources */,
 				633B7128245FDA5800CF490D /* ThemeLabel.swift in Sources */,
+				0383B27D24B80F2C003622F6 /* ReviewAndBookVC.swift in Sources */,
 				0348781D24B2EF64006774AB /* EditProfileVC.swift in Sources */,
 				0348780A24B2EF64006774AB /* MyPlaceTblCell.swift in Sources */,
 				632DB095248FA5CC00B65B46 /* RatingView.swift in Sources */,
@@ -3110,6 +3282,7 @@
 				0348781824B2EF64006774AB /* TherapistQuestionariesTblCell.swift in Sources */,
 				633C1AC224923D3B009EB6AE /* CountriesWebService.swift in Sources */,
 				0348780924B2EF64006774AB /* MyPlaceVC.swift in Sources */,
+				034CD81B24BC947800BFD6E1 /* AddPaymentPreferenceDialog.swift in Sources */,
 				03AA726624B6E41300F3B002 /* ReciepentMassageDetailVC.swift in Sources */,
 				0342B40924AF0E05003E5D59 /* ManagePeopleWebService.swift in Sources */,
 				0344495A24B6045F00C8B763 /* CustomCountryPhoneCodePicker.swift in Sources */,
@@ -3126,6 +3299,7 @@
 				63435B5224769C4900AF7100 /* UserWebService.swift in Sources */,
 				0348787B24B2EF64006774AB /* MenuCellVerticle.swift in Sources */,
 				0344495D24B6045F00C8B763 /* CustomMobileNumberDialog.swift in Sources */,
+				0383B28124B83584003622F6 /* ReviewSummaryTblCell.swift in Sources */,
 				632DB09C248FA5CC00B65B46 /* JDSubclasses + UIControl.swift in Sources */,
 				0348781024B2EF64006774AB /* ProfileVC.swift in Sources */,
 				63439848245BE6DF009BCA1F /* AppDelegate.swift in Sources */,
@@ -3138,6 +3312,7 @@
 				03429B0624B49565000059A2 /* CustomServiceSelectionDialog.swift in Sources */,
 				633C1AC424923FCA009EB6AE /* CityWebService.swift in Sources */,
 				03A1B53B24B58EAD008BAC3A /* SessionTblCell.swift in Sources */,
+				0383B28924B86C26003622F6 /* PaymentPercentatgeSelectionDialog.swift in Sources */,
 				63439861245BE6DF009BCA1F /* SceneDelegate.swift in Sources */,
 				0348784924B2EF64006774AB /* TouchIdVC.swift in Sources */,
 				0344495724B6045F00C8B763 /* CustomCountryPhoneCodePickerCell.swift in Sources */,
@@ -3148,6 +3323,7 @@
 				0348782F24B2EF64006774AB /* UIImageCropperVC.swift in Sources */,
 				0348787E24B2EF64006774AB /* PriceLocationTblCell.swift in Sources */,
 				6343985E245BE6DF009BCA1F /* Main.swift in Sources */,
+				034CD81124BC594700BFD6E1 /* CreditCardTblCell.swift in Sources */,
 				632DB097248FA5CC00B65B46 /* DataType + Extesnion.swift in Sources */,
 				634BB76F2461268C00494379 /* ThemeView.swift in Sources */,
 				0348782824B2EF64006774AB /* AutocompleteLocationCell.swift in Sources */,

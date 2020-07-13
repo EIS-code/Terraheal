@@ -300,6 +300,31 @@
 "BTN_BOOK_HERE" = "Book Here";
 "BTN_CHECK_SERVICE" = "Check Service";
 "SESSION_TYPE_TITLE" = "Session Type";
+
+//MARK:  Review And Book VC
+"REVIEW_AND_BOOK_TITLE" = "review and book";
+"REVIEW_AND_BOOK_TITLE_DETAIL" = "confirm details before payment";
+"REVIEW_AND_BOOK_LBL_BOOKING_DETAIL" = "booking details";
+"REVIEW_AND_BOOK_LBL_SESSION_DETAIL" = "session details";
+"REVIEW_AND_BOOK_LBL_SUMMARY" = "summary";
+"REVIEW_AND_BOOK_LBL_SUB_TOTAL" = "subtotal";
+"REVIEW_AND_BOOK_LBL_OTHER" = "other";
+"REVIEW_AND_BOOK_LBL_TOTAL" = "total";
+"REVIEW_AND_BOOK_LBL_HAVE_A_COUPEN" = "Have a Coupon?";
+"REVIEW_AND_BOOK_TXT_PROMO_PLACEHOLDER" = "enter coupon code";
+"REVIEW_AND_BOOK_BTN_APPLY" = "apply";
+"REVIEW_AND_BOOK_BTN_PREPAYMENT" = "prepayment";
+"REVIEW_AND_BOOK_BTN_WITHOUT_PAYMENT" = "without prepayment";
+
+
+//MARK: Payment Screen
+"PAYMENT_PREFERENCE_TITLE" = "payment preference";
+"PAYMENT_LBL_PAYPAL" = "Paypal";
+"PAYMENT_PAYPAL_EMAIL_ID" = "Paypal email id";
+"PAYMENT_LBL_DEFAULT" = "Default";
+"PAYMENT_LBL_CARDS" = "credit, debit & ATM cards";
+"PAYMENT_BTN_ADD_NEW" = "Add New";
+
 //MARK: Manage Document Screen
 "MANAGE_DOCUMENT_TITLE" = "Id / Passport";
 "DOCUMENT_EMPTY_TITLE" = "no documents available";
@@ -349,9 +374,6 @@
 "BTN_SKIP" = "skip";
 "BTN_APPLY" =  "Apply";
 "LBL_MENU" =  "menu";
-"PRIVACY_CONTENT" =  "<p>manage privacy settings</p><p>last updated on may 26th, 2020</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod.</p><p>last updated on may 26th, 2020</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod.</p><p>last updated on may 26th, 2020</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod.</p><p>last updated on may 26th, 2020</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod.</p><p>last updated on may 26th, 2020</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod.</p><p>last updated on may 26th, 2020</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod.</p>";
-"TERMS_AND_CONDITION_CONTENT" =  "<p>terms &amp; conditions</p><p>last updated on may 26th, 2020</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod.</p><p>last updated on may 26th, 2020</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod.</p><p>last updated on may 26th, 2020</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod.</p><p>last updated on may 26th, 2020</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod.</p><p>last updated on may 26th, 2020</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod.</p>";
-
 "FAQ_CONTENT" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget. Nullam eget felis eget nunc lobortis. Faucibus ornare suspendisse sed nisi. Sagittis eu volutpat odio facilisis mauris sit amet massa. Erat velit scelerisque in dictum non consectetur a erat. Amet nulla facilisi morbi tempus iaculis urna.";
 //MARK: -
 //MARK: VALIDATION TOAST MESSAGES

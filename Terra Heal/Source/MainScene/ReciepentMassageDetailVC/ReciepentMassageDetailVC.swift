@@ -33,9 +33,10 @@ class ReciepentMassageDetailVC: MainVC {
     @IBOutlet weak var lblTotalValue: ThemeLabel!
     @IBOutlet weak var tableView: UITableView!
     
-    var arrForData: [ReciepentMassageData] = ReciepentMassageData.getDemoArray()
+    var arrForData: [ReciepentMassageData] = []//ReciepentMassageData.getDemoArray()
     var sheetCoordinator: UBottomSheetCoordinator?
-      var onBtnNextSelectedTapped: ((_ data: [ReciepentMassageData]) -> Void)? = nil
+    var onBtnNextSelectedTapped: ((_ data: [ReciepentMassageData]) -> Void)? = nil
+    var onBtnBackTapped: (() -> Void)? = nil
     // MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +61,7 @@ class ReciepentMassageDetailVC: MainVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         sheetCoordinator?.startTracking(item: self)
+        self.calculateTotal()
     }
     
     override func viewDidLayoutSubviews() {
@@ -69,7 +71,11 @@ class ReciepentMassageDetailVC: MainVC {
         self.reloadTableDateToFitHeight(tableView: self.tableView)
     }
     @IBAction func btnCloseTapped(_ sender: Any) {
-        self.dismissAction()
+        if self.onBtnBackTapped != nil {
+            self.onBtnBackTapped!()
+        }
+        
+        
     }
     @IBAction func dismissAction(){
         sheetCoordinator?.removeSheetChild(item: self)
@@ -82,13 +88,20 @@ class ReciepentMassageDetailVC: MainVC {
     
     @IBAction func btnNextTapped(_ sender: Any) {
         self.btnAddReciepent.isEnabled = false
-        self.openRecipientSelectionDialog()
         if self.onBtnNextSelectedTapped != nil {
             self.onBtnNextSelectedTapped!(self.arrForData)
         }
     }
     
-    
+    func calculateTotal() {
+        var total: Double = 0.0
+        for  data in arrForData {
+            for service in data.services {
+                total = total + service.selectedDuration.amount.toDouble
+            }
+        }
+        self.lblTotalValue.text = total.toString()
+    }
     func openRecipientSelectionDialog() {
         let recipientSelectionDialog: RecipientSelectionDialog  = RecipientSelectionDialog.fromNib()
         recipientSelectionDialog.initialize(title: "RECIEPENT_DIALOG__TITLE".localized(), buttonTitle: "RECIEPENT_DIALOG_BTN_ADD".localized(), cancelButtonTitle: "BTN_BACK".localized())
@@ -204,6 +217,7 @@ extension ReciepentMassageDetailVC: UITableViewDelegate, UITableViewDataSource {
             guard let self = self else { return } ; print(self)
             serviceDetailVC.dismiss(animated: true) {
                 self.arrForData[sender.tag].services.append(service)
+                self.calculateTotal()
                 self.tableView.reloadData()
             }
         }
@@ -213,6 +227,7 @@ extension ReciepentMassageDetailVC: UITableViewDelegate, UITableViewDataSource {
         
         if let indexPath = tableView.indexPathForRow(at: buttonPostion) {
             self.arrForData[indexPath.section].services.remove(at: indexPath.row)
+            self.calculateTotal()
             self.tableView.reloadData()
         }
     }

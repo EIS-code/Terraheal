@@ -118,7 +118,13 @@ class ServiceSelectionVC: MainVC {
             [weak durationSelectionDialog, weak self]  (hour) in
             guard let self = self else { return } ; print(self)
             durationSelectionDialog?.dismiss()
-            self.selectedService.duration = [hour]
+            for i in 0..<self.selectedService.duration.count {
+                  self.selectedService.duration[i].isSelected = false
+                if self.selectedService.duration[i].id == hour.id {
+                   self.selectedService.duration[i].isSelected = true
+                    self.selectedService.selectedDuration = hour
+                }
+            }
             if self.onBtnServiceSelectedTapped != nil {
                 self.onBtnServiceSelectedTapped!(self.selectedService)
             }

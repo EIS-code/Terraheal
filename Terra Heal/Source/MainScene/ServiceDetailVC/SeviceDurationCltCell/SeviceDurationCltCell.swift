@@ -13,9 +13,9 @@ struct ServiceDurationDetail {
     var isSelected: Bool = false
     static func getDemoArray() ->  [ServiceDurationDetail] {
         let serviceDurationDetail1 = ServiceDurationDetail(id: "1", amount: "100", duration: "120", isSelected: false)
-        let serviceDurationDetail2 = ServiceDurationDetail(id: "1", amount: "120", duration: "140", isSelected: false)
-        let serviceDurationDetail3 = ServiceDurationDetail(id: "1", amount: "140", duration: "160", isSelected: false)
-        let serviceDurationDetail4 = ServiceDurationDetail(id: "1", amount: "200", duration: "80", isSelected: false)
+        let serviceDurationDetail2 = ServiceDurationDetail(id: "2", amount: "120", duration: "140", isSelected: false)
+        let serviceDurationDetail3 = ServiceDurationDetail(id: "3", amount: "140", duration: "160", isSelected: false)
+        let serviceDurationDetail4 = ServiceDurationDetail(id: "4", amount: "200", duration: "80", isSelected: false)
         return[serviceDurationDetail1,serviceDurationDetail2,serviceDurationDetail3,serviceDurationDetail4]
     }
 }

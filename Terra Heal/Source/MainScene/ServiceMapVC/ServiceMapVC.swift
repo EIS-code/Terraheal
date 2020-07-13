@@ -38,7 +38,7 @@ class ServiceMapVC: MainVC {
     var currentMarker: GMSMarker? = nil
     var path: GMSPolyline =   GMSPolyline.init()
     var currentIndex: Int = 0
-    var requestBooking: RequestBooking.Create = RequestBooking.Create.init()
+    var requestBooking: CurrentBooking = CurrentBooking.shared
     var sheetCoordinator: UBottomSheetCoordinator!
     // MARK: Object lifecycle
     var arrForServices: [ServiceCenterDetail] = [
@@ -101,13 +101,12 @@ class ServiceMapVC: MainVC {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func btnCheckServiceTapped(_ sender: Any) {
-        //self.openServiceSelectionDialog()
-        self.openDateTimeSelectionDialog()
-        //self.openReciepentMassageDetailVCDialog()
+        self.openServiceSelectionDialog()
+        
     }
     @IBAction func btnBookhereTapped(_ sender: Any) {
         self.openSessionSelectionDialog()
-        //self.openRecipientSelectionDialog()
+
     }
     @IBAction func btnCurrentLocationTapped(_ sender: Any) {
         var arrForCoordinate: [CLLocationCoordinate2D] = [self.currentMarker!.position]
@@ -124,23 +123,7 @@ class ServiceMapVC: MainVC {
 // MARK: Dialogs
 extension ServiceMapVC {
     
-    func openCancelBookingDialog() {
-        let cancelBookingDialog: CustomAlertConfirmation  = CustomAlertConfirmation.fromNib()
-        cancelBookingDialog.initialize(title: "cancel", message: "are you sure you want to cancel it?", buttonTitle: "yes cancel".localized(),cancelButtonTitle: "BTN_BACK".localized())
-        cancelBookingDialog.show(animated: true)
-        cancelBookingDialog.onBtnCancelTapped = {
-            [weak cancelBookingDialog, weak self] in
-            guard let self = self else { return } ; print(self)
-            cancelBookingDialog?.dismiss()
-        }
-        cancelBookingDialog.onBtnDoneTapped = {
-            [weak cancelBookingDialog, weak self]  in
-            guard let self = self else { return } ; print(self)
-            cancelBookingDialog?.dismiss()
-           Common.appDelegate.loadBookingCompleteVC(navigaionVC: self.navigationController)
-           
-        }
-    }
+    
     
     func openReciepentMassageDetailVCDialog() {
         
@@ -148,15 +131,24 @@ extension ServiceMapVC {
         guard sheetCoordinator == nil else {return}
         sheetCoordinator = UBottomSheetCoordinator(parent: self)
         reciepentMassageDetailVC.sheetCoordinator = sheetCoordinator
-        reciepentMassageDetailVC.onBtnNextSelectedTapped = { [weak self] (arrForReceipents) in
+        reciepentMassageDetailVC.onBtnNextSelectedTapped = { [weak self,  weak reciepentMassageDetailVC] (arrForReceipents) in
              guard let self = self else { return } ; print(self)
             self.requestBooking.reciepentData = arrForReceipents
-            reciepentMassageDetailVC.dismissAction()
+            reciepentMassageDetailVC?.dismissAction()
+            reciepentMassageDetailVC?.removeFromParent()
+            self.sheetCoordinator = nil
+            self.openDateTimeSelectionDialog()
+        }
+        reciepentMassageDetailVC.onBtnBackTapped = { [weak self, weak reciepentMassageDetailVC] in
+        guard let self = self else { return } ; print(self)
+            self.requestBooking.reciepentData = []
+            reciepentMassageDetailVC?.dismissAction()
+            reciepentMassageDetailVC?.removeFromParent()
+            self.sheetCoordinator = nil
         }
         sheetCoordinator.addSheet(reciepentMassageDetailVC, to: self, didContainerCreate: { container in
-                   let f = self.view.frame
-                   let rect = CGRect(x: f.minX, y: f.minY, width: f.width, height: f.height)
-                    container.roundCorners(corners: [.topLeft, .topRight], radius: 40)
+            container.roundCorners(corners: [.topLeft, .topRight], radius: 40)
+            
         })
       }
     
@@ -175,7 +167,8 @@ extension ServiceMapVC {
                guard let self = self else { return } ; print(self)
                alert?.dismiss()
                self.requestBooking.bookingNotes = description
-             
+             self.requestBooking.serviceCenterDetail = self.arrForServices[self.currentIndex]
+               Common.appDelegate.loadReviewAndBookVC(navigaionVC: self.navigationController)
            }
        }
 
@@ -212,7 +205,7 @@ extension ServiceMapVC {
             dateTimeSelectionDialog?.dismiss()
             print(Date.milliSecToDate(milliseconds: millis, format: "dd-MM-yyyy HH:mm"))
             self.requestBooking.date = millis
-            
+            self.openTextViewPicker()
         }
     }
     
@@ -230,6 +223,7 @@ extension ServiceMapVC {
             [weak sessionSelectionDialog, weak self] (session) in
             guard let self = self else { return } ; print(self)
             sessionSelectionDialog?.dismiss()
+            self.requestBooking.session = session
             self.openReciepentMassageDetailVCDialog()
         }
     }

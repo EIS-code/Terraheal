@@ -136,16 +136,13 @@ class CameraVC: MainVC {
             try? PHPhotoLibrary.shared().performChangesAndWait {
                 PHAssetChangeRequest.creationRequestForAsset(from: image)
             }
-            
+            self.uploadeDocument.image = image
+            self.uploadeDocument.name = appSingleton.user.name
+            self.uploadeDocument.id = appSingleton.user.id
+            if self.onBtnCaptureTapped != nil {
+                self.onBtnCaptureTapped!(self.uploadeDocument);
+            }
         }
-        let image = UIImage.init(named: "asset-camera")
-        self.uploadeDocument.image = image
-        self.uploadeDocument.name = appSingleton.user.name
-        self.uploadeDocument.id = appSingleton.user.id
-        if self.onBtnCaptureTapped != nil {
-            self.onBtnCaptureTapped!(uploadeDocument);
-        }
-        
     }
     
 }

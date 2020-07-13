@@ -14,6 +14,7 @@ struct ServiceDetail {
     var name:  String = ""
     var details:  String = ""
     var duration:  [ServiceDurationDetail] = []
+    var selectedDuration:ServiceDurationDetail = ServiceDurationDetail.init()
     var isSelected:  Bool = false
     static func getMassageArray() ->  [ServiceDetail] {
         let serviceDetail1 = ServiceDetail(id: "1", name: "head, neck and shoulders massage", details: ServiceDetail.getServiceDetail(),duration: ServiceDurationDetail.getDemoArray())
@@ -37,27 +38,31 @@ struct ServiceDetail {
         return "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget. Nullam eget felis eget nunc lobortis."
     }
 }
-enum RequestBooking {
+
+class CurrentBooking {
     
-    struct Create {
-        var id: String = PreferenceHelper.shared.getUserId()
-        var session: SessionDetail = SessionDetail.init(fromDictionary: [:])
-        var serviceType: ServiceType = ServiceType.Massages
-        var serviceCenterDetail: ServiceCenterDetail = ServiceCenterDetail.init(servicesList: [])
-        var reciepentData: [ReciepentMassageData] = []
-        var date: Double = 0.0
-        var bookingNotes: String = ""
-        
+    var id: String = PreferenceHelper.shared.getUserId()
+    var session: SessionDetail = SessionDetail.init(fromDictionary: [:])
+    var serviceType: ServiceType = ServiceType.Massages
+    var serviceCenterDetail: ServiceCenterDetail = ServiceCenterDetail.init(servicesList: [])
+    var reciepentData: [ReciepentMassageData] = []
+    var date: Double = 0.0
+    var bookingNotes: String = ""
+    
+    static let shared: CurrentBooking = {
+        let instance: CurrentBooking = CurrentBooking.init()
+        return instance
+    }()
+    private init() {
         
     }
-    
-    
-    class Response: ResponseModel {
-        override init(fromDictionary dictionary: [String:Any]) {
-            super.init(fromDictionary: dictionary)
-        }
+    func clear()  {
+        self.session = SessionDetail.init(fromDictionary: [:])
+        self.serviceType = ServiceType.Massages
+        self.serviceCenterDetail = ServiceCenterDetail.init(servicesList: [])
+        self.reciepentData = []
+        self.date = 0.0
+        self.bookingNotes = ""
     }
+    
 }
-
-
-

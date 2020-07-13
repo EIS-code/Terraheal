@@ -225,7 +225,7 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
         case .MangagePeople:
             Common.appDelegate.loadManagePeopleVC(navigaionVC: self.navigationController)
         case .PaymentPreference:
-            Common.showAlert(message: "Under Construction")
+            Common.appDelegate.loadPaymentReferenceVC(navigaionVC: self.navigationController)
         case .Settings:
             Common.appDelegate.loadSettingVC(navigaionVC: self.navigationController)
         }

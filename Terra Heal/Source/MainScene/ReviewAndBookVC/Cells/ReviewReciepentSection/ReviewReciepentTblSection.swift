@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class ReciepentTblSection: UITableViewHeaderFooterView {
+class ReviewReciepentTblSection: UITableViewHeaderFooterView {
     
     @IBOutlet weak var lblName: ThemeLabel!
     @IBOutlet weak var lblAge: ThemeLabel!
@@ -19,6 +19,7 @@ class ReciepentTblSection: UITableViewHeaderFooterView {
         self.lblAge.setFont(name: FontName.SemiBold, size: FontSize.label_18)
         self.lblGender.setFont(name: FontName.SemiBold, size: FontSize.label_18)
     }
+    
     
     func setData(data: People ) {
         self.lblName.text = data.name

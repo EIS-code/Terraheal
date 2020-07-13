@@ -7,14 +7,16 @@
 //
 
 import UIKit
-class ReciepentTblCell: TableCell {
+class ReviewReciepentTblCell: TableCell {
     
     @IBOutlet weak var lblName: ThemeLabel!
     @IBOutlet weak var lblDuration: ThemeLabel!
     @IBOutlet weak var btnDelete: UIButton!
-  
+    @IBOutlet weak var btnEdit: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.lblName.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblDuration.setFont(name: FontName.Regular, size: FontSize.label_14)
     }
     
     func setData(data: ServiceDetail ) {
