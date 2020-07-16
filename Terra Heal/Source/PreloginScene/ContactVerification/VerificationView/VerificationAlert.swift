@@ -29,6 +29,11 @@ class VerificationAlert: ThemeBottomDialogView {
     
     @IBOutlet weak var vwSwitch: JDSegmentedControl!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    
     func initialize(message:String, data:String) {
         
         self.lblTitle.text = "VERIFICATION_LBL_TITLE".localized()
@@ -53,20 +58,12 @@ class VerificationAlert: ThemeBottomDialogView {
         }
     }
     
-    func initialSetup() {
-        dialogView.clipsToBounds = true
-        self.backgroundColor = .clear
-        self.backgroundView.backgroundColor = UIColor.black
-        self.backgroundView.alpha = 0.0
-        self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
-        dialogView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
+    override func initialSetup() {
+        super.initialSetup()
         self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         self.lblMessage.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         self.lblMessageDetail.setFont(name: FontName.Regular, size: FontSize.label_14)
         self.setupOtpView()
-        self.addPanGesture(view: self)
-        transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
-        
         self.vwSwitch.allowChangeThumbWidth = false
         self.vwSwitch.itemTitles = ["VERIFICATION_BTN_MOBILE".localized(),"VERIFICATION_BTN_EMAIL".localized()]
         self.vwSwitch.changeBackgroundColor(UIColor.themeLightTextColor)
@@ -77,12 +74,10 @@ class VerificationAlert: ThemeBottomDialogView {
             } else {
                 self.emailTapped()
             }
-            
         }
     }
     
     func mobileTapped(){
-        
         self.currentTab = 0
         self.wsVerifyPhone()
         self.lblMessageDetail.text = "VERIFICATION_MSG_DETAIL".localized() + " " + Singleton.shared.user.telNumber

@@ -25,10 +25,10 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWD-qT-vi6" userLabel="contetnView">
-                    <rect key="frame" x="0.0" y="202.5" width="375" height="489.5"/>
+                    <rect key="frame" x="0.0" y="248.5" width="375" height="443.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NCB-os-EvZ">
-                            <rect key="frame" x="20" y="56" width="335" height="403.5"/>
+                            <rect key="frame" x="20" y="10" width="335" height="403.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ysj-r2-46W">
                                     <rect key="frame" x="147.5" y="0.0" width="40" height="5"/>
@@ -95,7 +95,7 @@
                                         <color key="titleColor" name="theme_primary"/>
                                     </state>
                                     <connections>
-                                        <action selector="btnCalcelTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="awt-Ph-7wj"/>
+                                        <action selector="btnCancelTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="GlV-q7-v32"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -107,7 +107,7 @@
                     <color key="backgroundColor" name="theme_primary_light_background"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="NCB-os-EvZ" secondAttribute="bottom" constant="30" id="9VT-eB-zvv"/>
-                        <constraint firstItem="NCB-os-EvZ" firstAttribute="top" secondItem="jWD-qT-vi6" secondAttribute="top" constant="56" id="GsQ-cd-kdK"/>
+                        <constraint firstItem="NCB-os-EvZ" firstAttribute="top" secondItem="jWD-qT-vi6" secondAttribute="top" constant="10" id="GsQ-cd-kdK"/>
                         <constraint firstItem="NCB-os-EvZ" firstAttribute="leading" secondItem="jWD-qT-vi6" secondAttribute="leading" constant="20" id="TFC-wd-6xS"/>
                         <constraint firstAttribute="trailing" secondItem="NCB-os-EvZ" secondAttribute="trailing" constant="20" id="nYa-ZC-izW"/>
                     </constraints>
@@ -127,11 +127,12 @@
             <connections>
                 <outlet property="backgroundView" destination="6ZW-DU-hOd" id="lFA-bQ-tdV"/>
                 <outlet property="btnCancel" destination="mpg-NK-hBn" id="KMs-9F-lbK"/>
-                <outlet property="btnDone" destination="n1W-AP-3eY" id="5vL-AL-EoE"/>
+                <outlet property="btnDoneFloating" destination="n1W-AP-3eY" id="uTx-b0-DaO"/>
                 <outlet property="btnNext" destination="Pf4-I0-zI7" id="XCp-jI-3qO"/>
                 <outlet property="dialogView" destination="jWD-qT-vi6" id="23a-Hn-gFo"/>
                 <outlet property="lblTitle" destination="sVJ-76-FfX" id="SJG-O0-u8o"/>
                 <outlet property="timePicker" destination="0Ay-fP-AhF" id="jok-m5-qOc"/>
+                <outlet property="topBarSpace" destination="GsQ-cd-kdK" id="edW-pk-Rfn"/>
                 <outlet property="vwTopBar" destination="Ysj-r2-46W" id="uqH-lL-yjK"/>
             </connections>
             <point key="canvasLocation" x="132" y="131"/>

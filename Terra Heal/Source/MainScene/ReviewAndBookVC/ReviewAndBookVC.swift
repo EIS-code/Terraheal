@@ -1,5 +1,5 @@
 //
-//  SideVC.swift
+//  ReviewAndBookVC.swift
 //  Dumparoo
 //  Created by Jaydeep Vyas on 03/05/19.
 //  Copyright © 2019 Jaydeepvyas. All rights reserved.

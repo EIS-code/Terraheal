@@ -1,5 +1,5 @@
 //
-//  SideVC.swift
+//  ReciepentMassageDetailVC.swift
 //  Dumparoo
 //  Created by Jaydeep Vyas on 03/05/19.
 //  Copyright © 2019 Jaydeepvyas. All rights reserved.
@@ -49,13 +49,14 @@ class ReciepentMassageDetailVC: MainVC {
         self.btnClose.setTitle("BTN_BACK".localized(), for: .normal)
         self.btnClose.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         self.btnNext.setTitle("BTN_NEXT".localized(), for: .normal)
-        self.btnNext.setFont(name: FontName.SemiBold, size: FontSize.button_22)
+        self.btnNext.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.lblTotal?.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.lblTotal?.text = "RECIEPENT_LBL_TOTAL".localized()
         self.lblTotalValue?.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.lblTotalValue?.text = "210".localized()
         self.setupTableView(tableView: self.tableView)
         self.btnDone.setForwardButton()
+       // self.sheetCoordinator?.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,10 +75,9 @@ class ReciepentMassageDetailVC: MainVC {
         if self.onBtnBackTapped != nil {
             self.onBtnBackTapped!()
         }
-        
-        
     }
-    @IBAction func dismissAction(){
+    
+    @IBAction func dismissAction() {
         sheetCoordinator?.removeSheetChild(item: self)
     }
     @IBAction func btnAddReciepentTapped(_ sender: Any) {
@@ -102,6 +102,8 @@ class ReciepentMassageDetailVC: MainVC {
         }
         self.lblTotalValue.text = total.toString()
     }
+    
+    
     func openRecipientSelectionDialog() {
         let recipientSelectionDialog: RecipientSelectionDialog  = RecipientSelectionDialog.fromNib()
         recipientSelectionDialog.initialize(title: "RECIEPENT_DIALOG__TITLE".localized(), buttonTitle: "RECIEPENT_DIALOG_BTN_ADD".localized(), cancelButtonTitle: "BTN_BACK".localized())
@@ -128,16 +130,11 @@ class ReciepentMassageDetailVC: MainVC {
 extension ReciepentMassageDetailVC: UITableViewDelegate, UITableViewDataSource {
     private func reloadTableDateToFitHeight(tableView: UITableView) {
         DispatchQueue.main.async {
-            
             tableView.reloadData {
-                
             }
-            /*tableView.reloadData(heightToFit: self.hTblVw) {
-             
-             }*/
         }
-        
     }
+    
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
@@ -242,4 +239,19 @@ extension ReciepentMassageDetailVC: Draggable {
 }
 
 
+extension ReciepentMassageDetailVC:  UBottomSheetCoordinatorDelegate {
+    public func bottomSheet(_ container: UIView?, finishTranslateWith extraAnimation: @escaping ((_ percent: CGFloat)->Void)->Void){
+        print("Bottom Sheet \(#function)")
+       /* if self.onBtnBackTapped != nil {
+            self.onBtnBackTapped!()
+        }*/
+        
+    }
+    public func bottomSheet(_ container: UIView?, didChange state: SheetTranslationState){
+        print("Bottom Sheet \(#function)")
+    }
+    public func bottomSheet(_ container: UIView?, didPresent state: SheetTranslationState){
+        print("Bottom Sheet \(#function)")
+    }
+}
 

@@ -28,7 +28,7 @@
                     <rect key="frame" x="0.0" y="113.5" width="320" height="454.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe">
-                            <rect key="frame" x="20" y="56" width="280" height="368.5"/>
+                            <rect key="frame" x="20" y="10" width="280" height="414.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0MS-OB-pU6">
                                     <rect key="frame" x="120" y="0.0" width="40" height="5"/>
@@ -45,7 +45,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4k-c1-F6Z">
-                                    <rect key="frame" x="0.0" y="65.5" width="280" height="184.5"/>
+                                    <rect key="frame" x="0.0" y="65.5" width="280" height="207.5"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tmm-pq-3Oq">
                                             <rect key="frame" x="20" y="20" width="240" height="546"/>
@@ -140,7 +140,7 @@
                                     <viewLayoutGuide key="frameLayoutGuide" id="qQE-ZM-GWo"/>
                                 </scrollView>
                                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="73.5" y="270" width="133" height="46.5"/>
+                                    <rect key="frame" x="73.5" y="293" width="133" height="69.5"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                     <state key="normal" title="Sign In">
@@ -151,7 +151,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="581-cI-fuY" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="113.5" y="336.5" width="53" height="32"/>
+                                    <rect key="frame" x="113.5" y="382.5" width="53" height="32"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <state key="normal" title="Sign In">
                                         <color key="titleColor" name="theme_primary"/>
@@ -167,7 +167,7 @@
                             </constraints>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gd8-8q-HDU" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="258" y="56" width="42" height="42"/>
+                            <rect key="frame" x="258" y="10" width="42" height="42"/>
                             <color key="backgroundColor" name="theme_background"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="gd8-8q-HDU" secondAttribute="height" multiplier="1:1" id="ksV-43-JCd"/>
@@ -182,11 +182,10 @@
                     <color key="backgroundColor" name="theme_primary_light_background"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" constant="20" id="1HJ-Xp-DOL"/>
-                        <constraint firstItem="gd8-8q-HDU" firstAttribute="width" secondItem="gd8-8q-HDU" secondAttribute="height" multiplier="1:1" id="MDA-gr-vao"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="RrZ-kW-n5i"/>
                         <constraint firstItem="gd8-8q-HDU" firstAttribute="top" secondItem="cXW-IL-cWe" secondAttribute="top" id="VvU-OS-Nvu"/>
                         <constraint firstAttribute="bottom" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="30" id="fhi-OD-EBT"/>
-                        <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="56" id="gm5-2t-GbH"/>
+                        <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="gm5-2t-GbH"/>
                         <constraint firstItem="gd8-8q-HDU" firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" id="oeu-Hx-v81"/>
                     </constraints>
                 </view>
@@ -210,6 +209,7 @@
                 <outlet property="btnMapLocation" destination="gd8-8q-HDU" id="R6J-CN-6FV"/>
                 <outlet property="dialogView" destination="Yaj-p7-IIT" id="Sjt-cS-gvV"/>
                 <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
+                <outlet property="topBarSpace" destination="gm5-2t-GbH" id="yaf-B1-RgK"/>
                 <outlet property="txtAddressLine1" destination="hfi-pA-asW" id="d7S-UX-cJf"/>
                 <outlet property="txtAddressLine2" destination="zMy-3y-WvT" id="MB5-m1-Nmx"/>
                 <outlet property="txtCity" destination="BCz-LQ-Bco" id="bV4-Ye-8br"/>

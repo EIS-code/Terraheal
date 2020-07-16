@@ -29,8 +29,8 @@ class MyPlaceTblCell: TableCell {
         self.ivForplace?.setRound()
     }
 
-    func setData(data: MyPlaceTblDetail ) {
-        self.lblName.text = data.title
+    func setData(data: ServiceCenterDetail ) {
+        self.lblName.text = data.name
         self.imgSelected.isHidden = !data.isSelected
 
     }

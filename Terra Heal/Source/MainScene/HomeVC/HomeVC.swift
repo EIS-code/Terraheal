@@ -109,22 +109,7 @@ class HomeVC: MainVC {
             Common.appDelegate.loadProfileVC(navigaionVC: self.navigationController)
         }
     }
-    
-    @IBAction func btnHomeTapped(_ sender: Any) {
-        
-        //Common.appDelegate.loadWelcomeVC()
-    }
-    
-    @IBAction func btnExploreTapped(_ sender: Any) {
-        PreferenceHelper.shared.setIsTutorialShow(true)
-    }
-    
-    @IBAction func btnMyFavTapped(_ sender: Any) {
-        
-    }
-    
     //MARK: Location Observer
-    
     override func locationUpdate(_ ntf: Notification = Common.defaultNtf) {
         if let locationDict: [String: Any]  = ntf.userInfo?["ncd"] as? [String:Any] {
             if let location = locationDict["location"]  {

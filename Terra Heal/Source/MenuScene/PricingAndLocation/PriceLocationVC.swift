@@ -103,6 +103,7 @@ class PriceLocationVC: MainVC {
     func openLocationServiceDialog() {
         if selectedData == nil {
             Common.showAlert(message: "VALIDATION_MSG_PLEASE_SELECT_LOCATION".localized())
+            return
         }
         let locationServiceDialog: CustomLocationServiceDialog  = CustomLocationServiceDialog.fromNib()
         locationServiceDialog.initialize(title: selectedData!.name, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
@@ -187,7 +188,7 @@ extension PriceLocationVC : UITextFieldDelegate {
 
     private func setupSearchbar(searchBar: UITextField) {
         txtSearchBar.delegate = self
-        txtSearchBar.setFont(name: FontName.Regular, size: FontSize.label_14)
+        txtSearchBar.setFont(name: FontName.Regular, size: FontSize.textField_20)
         txtSearchBar.addTarget(self, action: #selector(searching(_:)), for: .editingChanged)
         txtSearchBar.changePlaceHolder(color: UIColor.themePrimary)
         txtSearchBar.placeholder = "PRICE_AND_LOCATION_TXT_SEARCH_LOCATION".localized()

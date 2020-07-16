@@ -25,10 +25,10 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
-                    <rect key="frame" x="0.0" y="264.5" width="320" height="303.5"/>
+                    <rect key="frame" x="0.0" y="310.5" width="320" height="257.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe">
-                            <rect key="frame" x="20" y="56" width="280" height="217.5"/>
+                            <rect key="frame" x="20" y="10" width="280" height="217.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0MS-OB-pU6">
                                     <rect key="frame" x="120" y="0.0" width="40" height="5"/>
@@ -95,7 +95,7 @@
                         <constraint firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" constant="20" id="1HJ-Xp-DOL"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="RrZ-kW-n5i"/>
                         <constraint firstAttribute="bottom" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="30" id="fhi-OD-EBT"/>
-                        <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="56" id="gm5-2t-GbH"/>
+                        <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="gm5-2t-GbH"/>
                     </constraints>
                 </view>
             </subviews>
@@ -116,6 +116,7 @@
                 <outlet property="btnDone" destination="W3s-UH-gbE" id="4jk-wN-Zhb"/>
                 <outlet property="dialogView" destination="Yaj-p7-IIT" id="Sjt-cS-gvV"/>
                 <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
+                <outlet property="topBarSpace" destination="gm5-2t-GbH" id="hxw-H6-q9u"/>
                 <outlet property="txtCountryPhoneCode" destination="SOX-Vt-MjR" id="iPN-KX-blv"/>
                 <outlet property="txtMobileNumber" destination="hfi-pA-asW" id="x4m-5q-njk"/>
                 <outlet property="vwTopBar" destination="0MS-OB-pU6" id="iDl-Hc-heQ"/>

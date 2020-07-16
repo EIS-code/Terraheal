@@ -19,6 +19,7 @@ public class UBottomSheetCoordinator {
     private var container: UIView?
     public weak var dataSource: UBottomSheetCoordinatorDataSource!{
         didSet{
+            
             minSheetPosition = dataSource.sheetPositions(availableHeight).min()
             maxSheetPosition = dataSource.sheetPositions(availableHeight).max()
         }

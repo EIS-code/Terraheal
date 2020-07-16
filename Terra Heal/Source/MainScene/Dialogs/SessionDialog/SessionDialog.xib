@@ -25,10 +25,10 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
-                    <rect key="frame" x="0.0" y="552.5" width="414" height="343.5"/>
+                    <rect key="frame" x="0.0" y="562.5" width="414" height="333.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe" userLabel="Stack View - main">
-                            <rect key="frame" x="20" y="20" width="374" height="303.5"/>
+                            <rect key="frame" x="20" y="10" width="374" height="303.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OsI-uf-Fb8">
                                     <rect key="frame" x="167" y="0.0" width="40" height="5"/>
@@ -79,7 +79,7 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" constant="20" id="1HJ-Xp-DOL"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="RrZ-kW-n5i"/>
-                        <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="20" id="Zud-Qp-ll1"/>
+                        <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="Zud-Qp-ll1"/>
                         <constraint firstAttribute="bottom" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="20" id="fhi-OD-EBT"/>
                     </constraints>
                 </view>
@@ -103,6 +103,7 @@
                 <outlet property="hTblVw" destination="YYE-9t-jcw" id="TWI-WA-p54"/>
                 <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
                 <outlet property="tableView" destination="tfg-GV-f0f" id="Ira-PT-Aex"/>
+                <outlet property="topBarSpace" destination="Zud-Qp-ll1" id="xKJ-Ye-PNm"/>
                 <outlet property="vwTopBar" destination="OsI-uf-Fb8" id="VT3-o0-WSd"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="130.58035714285714"/>

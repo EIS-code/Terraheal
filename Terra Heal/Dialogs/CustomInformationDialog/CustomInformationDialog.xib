@@ -28,7 +28,7 @@
                     <rect key="frame" x="0.0" y="179" width="414" height="717"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe">
-                            <rect key="frame" x="20" y="56" width="374" height="631"/>
+                            <rect key="frame" x="20" y="10" width="374" height="677"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZI-tS-EDa">
                                     <rect key="frame" x="167" y="0.0" width="40" height="5"/>
@@ -45,7 +45,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muj-Ae-Rvi">
-                                    <rect key="frame" x="18.5" y="65.5" width="337" height="315.5"/>
+                                    <rect key="frame" x="18.5" y="65.5" width="337" height="338.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3M5-yW-8Kq" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="337" height="20.5"/>
@@ -66,7 +66,7 @@
                                     <viewLayoutGuide key="frameLayoutGuide" id="cNy-L6-FE1"/>
                                 </scrollView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="120.5" y="401" width="133" height="178"/>
+                                    <rect key="frame" x="120.5" y="424" width="133" height="201"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                     <state key="normal" title="Sign In">
@@ -74,7 +74,7 @@
                                     </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="581-cI-fuY" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="160.5" y="599" width="53" height="32"/>
+                                    <rect key="frame" x="160.5" y="645" width="53" height="32"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <state key="normal" title="Sign In">
                                         <color key="titleColor" name="theme_primary"/>
@@ -95,7 +95,7 @@
                         <constraint firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" constant="20" id="1HJ-Xp-DOL"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="RrZ-kW-n5i"/>
                         <constraint firstAttribute="bottom" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="30" id="fhi-OD-EBT"/>
-                        <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="56" id="gm5-2t-GbH"/>
+                        <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="gm5-2t-GbH"/>
                     </constraints>
                 </view>
             </subviews>
@@ -118,6 +118,7 @@
                 <outlet property="dialogView" destination="Yaj-p7-IIT" id="Sjt-cS-gvV"/>
                 <outlet property="lblMessage" destination="3M5-yW-8Kq" id="rgc-An-7Lc"/>
                 <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
+                <outlet property="topBarSpace" destination="gm5-2t-GbH" id="QH3-c5-Q2k"/>
                 <outlet property="vwTopBar" destination="CZI-tS-EDa" id="anh-0Z-gym"/>
             </connections>
             <point key="canvasLocation" x="132" y="131"/>

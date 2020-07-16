@@ -14,7 +14,7 @@ class MenuCellVerticle: CollectionCell {
     @IBOutlet weak var ivBg: UIImageView!
     @IBOutlet weak var ivMenu: UIImageView!
 
-    override class func awakeFromNib() {
+    override func awakeFromNib()  {
         super.awakeFromNib()
 
     }

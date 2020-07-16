@@ -25,10 +25,10 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
-                    <rect key="frame" x="0.0" y="553.5" width="414" height="342.5"/>
+                    <rect key="frame" x="0.0" y="563.5" width="414" height="332.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KG3-VU-mTa" userLabel="Stack View - main">
-                            <rect key="frame" x="20" y="20" width="374" height="302.5"/>
+                            <rect key="frame" x="20" y="10" width="374" height="302.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zxe-MR-Qtg">
                                     <rect key="frame" x="167" y="0.0" width="40" height="5"/>
@@ -152,7 +152,7 @@
                         <constraint firstItem="KG3-VU-mTa" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="5vA-fC-CgM"/>
                         <constraint firstAttribute="trailing" secondItem="KG3-VU-mTa" secondAttribute="trailing" constant="20" id="8AY-bB-vUi"/>
                         <constraint firstAttribute="bottom" secondItem="KG3-VU-mTa" secondAttribute="bottom" constant="20" id="h5x-Sb-gdz"/>
-                        <constraint firstItem="KG3-VU-mTa" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="20" id="iYK-DE-J76"/>
+                        <constraint firstItem="KG3-VU-mTa" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="iYK-DE-J76"/>
                     </constraints>
                 </view>
             </subviews>
@@ -177,6 +177,7 @@
                 <outlet property="lblCamera" destination="Ioq-iS-r7L" id="Lsc-N1-DGt"/>
                 <outlet property="lblGallary" destination="xgv-6m-XId" id="OJL-35-eNV"/>
                 <outlet property="lblTitle" destination="FJJ-fK-tcA" id="aRE-d3-x9D"/>
+                <outlet property="topBarSpace" destination="iYK-DE-J76" id="4ZZ-lP-SoM"/>
                 <outlet property="vwCamera" destination="csK-rm-xoP" id="YDt-iS-kse"/>
                 <outlet property="vwGallary" destination="v5S-xR-Y3S" id="Kgu-65-uug"/>
                 <outlet property="vwTopBar" destination="zxe-MR-Qtg" id="Uct-Xi-sKc"/>

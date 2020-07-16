@@ -18,7 +18,6 @@ struct EventBookingDetail {
 class CustomAddNewEventDialog: ThemeBottomDialogView {
 
     @IBOutlet weak var lblTitle: ThemeLabel!
-    @IBOutlet weak var btnDone: ThemeButton!
     @IBOutlet weak var txtName: ACFloatingTextfield!
     @IBOutlet weak var txtMobile: ACFloatingTextfield!
     @IBOutlet weak var txtEmail: ACFloatingTextfield!
@@ -26,6 +25,12 @@ class CustomAddNewEventDialog: ThemeBottomDialogView {
     
     var onBtnDoneTapped: ((_ data: EventBookingDetail ) -> Void)? = nil
     var selectedData: EventBookingDetail? = nil
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    
     func initialize(title:String, buttonTitle:String,cancelButtonTitle:String) {
 
         self.initialSetup()
@@ -34,9 +39,6 @@ class CustomAddNewEventDialog: ThemeBottomDialogView {
         self.txtMobile.text = ""
         self.txtEmail.text = ""
         self.txtDescription.text = ""
-      
-        self.btnDone.setTitle(buttonTitle, for: .normal)
-
         if cancelButtonTitle.isEmpty() {
             self.btnCancel.isHidden = true
         } else {
@@ -52,9 +54,8 @@ class CustomAddNewEventDialog: ThemeBottomDialogView {
         
     }
 
-    func initialSetup() {
-        dialogView.clipsToBounds = true
-        self.backgroundColor = .clear
+    override func initialSetup() {
+        super.initialSetup()
         self.txtName?.placeholder = "name".localized()
         self.txtName.delegate = self
         self.txtMobile?.placeholder = "mobile".localized()
@@ -63,22 +64,11 @@ class CustomAddNewEventDialog: ThemeBottomDialogView {
         self.txtEmail.delegate = self
         self.txtDescription?.placeholder = "message".localized()
         self.txtDescription.delegate = self
-        self.backgroundView.backgroundColor = UIColor.black
-        self.backgroundView.alpha = 0.0
-        self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
-        dialogView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
-        self.addPanGesture(view: self)
-        self.btnDone.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnCancel.setFont(name: FontName.Bold, size: FontSize.button_22)
-        self.btnDone.setHighlighted(isHighlighted: true)
-        transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.btnDone?.layoutIfNeeded()
-        self.btnDone?.setHighlighted(isHighlighted: true)
     }
 
 

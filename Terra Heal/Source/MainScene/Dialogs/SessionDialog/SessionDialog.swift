@@ -46,13 +46,18 @@ class SessionDetail: ResponseModel {
 class SessionDialog: ThemeBottomDialogView {
     
     @IBOutlet weak var lblTitle: ThemeLabel!
-    @IBOutlet weak var btnDone: ThemeButton!
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     
     var onBtnDoneTapped: ((_ data:SessionDetail) -> Void)? = nil
     var selectedData:SessionDetail = SessionDetail.init(fromDictionary: [:])
     var arrForData: [SessionDetail] = []
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    
     func initialize(title:String,buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
         self.lblTitle.text = title
@@ -63,7 +68,6 @@ class SessionDialog: ThemeBottomDialogView {
             self.btnCancel.isHidden = false
         }
         if buttonTitle.isEmpty() {
-            
             self.btnDone.isHidden = true
         } else {
             self.btnDone.setTitle(buttonTitle, for: .normal)
@@ -95,25 +99,13 @@ class SessionDialog: ThemeBottomDialogView {
         self.reloadTableDateToFitHeight(tableView: self.tableView)
         //self.select(data: self.selectedData)
     }
-    func initialSetup() {
-        dialogView.clipsToBounds = true
-        self.backgroundColor = .clear
-        self.backgroundView.backgroundColor = UIColor.black
-        self.backgroundView.alpha = 0.0
-        self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
-        self.btnDone.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnDone.setHighlighted(isHighlighted: true)
-        self.btnCancel.setFont(name: FontName.Bold, size: FontSize.button_22)
-        dialogView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
+    override func initialSetup() {
+        super.initialSetup()
         self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.button_22)
-        transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
-        self.addPanGesture(view: dialogView)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        vwTopBar?.setRound(withBorderColor: .clear, andCornerRadious: 2.5, borderWidth: 1.0)
-        self.btnDone?.setHighlighted(isHighlighted: true)
         self.reloadTableDateToFitHeight(tableView: self.tableView)
     }
     

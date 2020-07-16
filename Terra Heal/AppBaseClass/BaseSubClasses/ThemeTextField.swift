@@ -93,7 +93,7 @@ extension UITextView: NSTextStorageDelegate {
     }
     func setPlaceholderFont(name:String,size:CGFloat) {
 
-        self.placeholderLabel.setFont(name: FontName.Regular, size: FontSize.label_22)
+        self.placeholderLabel.setFont(name:name, size: size)
     }
 
     @IBInspectable

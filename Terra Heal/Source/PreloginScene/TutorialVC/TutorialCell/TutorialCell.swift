@@ -18,7 +18,7 @@ class TutorialCell: CollectionCell {
     @IBOutlet weak var lblDescription: ThemeLabel!
     @IBOutlet weak var ivTutorial: UIImageView!
 
-    override class func awakeFromNib() {
+    override func awakeFromNib()  {
         super.awakeFromNib()
 
     }

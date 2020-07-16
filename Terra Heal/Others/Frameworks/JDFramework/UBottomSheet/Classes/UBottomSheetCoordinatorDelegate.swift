@@ -17,7 +17,15 @@ public protocol UBottomSheetCoordinatorDelegate: class {
 
 ///Default empty implementations
 extension UBottomSheetCoordinatorDelegate{
-    public func bottomSheet(_ container: UIView?, finishTranslateWith extraAnimation: @escaping ((_ percent: CGFloat)->Void)->Void){ }
-    public func bottomSheet(_ container: UIView?, didChange state: SheetTranslationState){ }
-    public func bottomSheet(_ container: UIView?, didPresent state: SheetTranslationState){ }
+    public func bottomSheet(_ container: UIView?, finishTranslateWith extraAnimation: @escaping ((_ percent: CGFloat)->Void)->Void){
+        
+        print("Bottom Sheet \(#function)")
+        
+    }
+    public func bottomSheet(_ container: UIView?, didChange state: SheetTranslationState){
+        print("Bottom Sheet \(#function)")
+    }
+    public func bottomSheet(_ container: UIView?, didPresent state: SheetTranslationState){
+        print("Bottom Sheet \(#function)")
+    }
 }

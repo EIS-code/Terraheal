@@ -75,6 +75,13 @@
 		034449B524B604C000C8B763 /* CustomCurrencyPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034449AA24B604C000C8B763 /* CustomCurrencyPicker.xib */; };
 		034449B624B604C000C8B763 /* CustomChangePasswordDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034449AC24B604C000C8B763 /* CustomChangePasswordDialog.swift */; };
 		034449B724B604C000C8B763 /* CustomChangePasswordDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034449AD24B604C000C8B763 /* CustomChangePasswordDialog.xib */; };
+		0347835124BDB1AA00E3D4EC /* AddCardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0347834F24BDB1A900E3D4EC /* AddCardVC.xib */; };
+		0347835224BDB1AA00E3D4EC /* AddCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0347835024BDB1A900E3D4EC /* AddCardVC.swift */; };
+		0347835724BDD52300E3D4EC /* MonthYearDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0347835424BDD52300E3D4EC /* MonthYearDialog.xib */; };
+		0347835824BDD52300E3D4EC /* MonthYearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0347835524BDD52300E3D4EC /* MonthYearPickerView.swift */; };
+		0347835924BDD52300E3D4EC /* MonthYearDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0347835624BDD52300E3D4EC /* MonthYearDialog.swift */; };
+		0347835D24BDDB2D00E3D4EC /* ServiceCenterDetailDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0347835B24BDDB2C00E3D4EC /* ServiceCenterDetailDialog.swift */; };
+		0347835E24BDDB2D00E3D4EC /* ServiceCenterDetailDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0347835C24BDDB2C00E3D4EC /* ServiceCenterDetailDialog.xib */; };
 		034876CB24B2E9EF006774AB /* EditProfileTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034876C924B2E9EF006774AB /* EditProfileTextfield.swift */; };
 		034876CC24B2E9EF006774AB /* ACFloatingTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034876CA24B2E9EF006774AB /* ACFloatingTextfield.swift */; };
 		034876CE24B2EA13006774AB /* TextField + InputConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034876CD24B2EA13006774AB /* TextField + InputConfiguration.swift */; };
@@ -430,6 +437,13 @@
 		034449AA24B604C000C8B763 /* CustomCurrencyPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCurrencyPicker.xib; sourceTree = "<group>"; };
 		034449AC24B604C000C8B763 /* CustomChangePasswordDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomChangePasswordDialog.swift; sourceTree = "<group>"; };
 		034449AD24B604C000C8B763 /* CustomChangePasswordDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomChangePasswordDialog.xib; sourceTree = "<group>"; };
+		0347834F24BDB1A900E3D4EC /* AddCardVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCardVC.xib; sourceTree = "<group>"; };
+		0347835024BDB1A900E3D4EC /* AddCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardVC.swift; sourceTree = "<group>"; };
+		0347835424BDD52300E3D4EC /* MonthYearDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthYearDialog.xib; sourceTree = "<group>"; };
+		0347835524BDD52300E3D4EC /* MonthYearPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthYearPickerView.swift; sourceTree = "<group>"; };
+		0347835624BDD52300E3D4EC /* MonthYearDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthYearDialog.swift; sourceTree = "<group>"; };
+		0347835B24BDDB2C00E3D4EC /* ServiceCenterDetailDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCenterDetailDialog.swift; sourceTree = "<group>"; };
+		0347835C24BDDB2C00E3D4EC /* ServiceCenterDetailDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceCenterDetailDialog.xib; sourceTree = "<group>"; };
 		034876C924B2E9EF006774AB /* EditProfileTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileTextfield.swift; sourceTree = "<group>"; };
 		034876CA24B2E9EF006774AB /* ACFloatingTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACFloatingTextfield.swift; sourceTree = "<group>"; };
 		034876CD24B2EA13006774AB /* TextField + InputConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField + InputConfiguration.swift"; sourceTree = "<group>"; };
@@ -809,6 +823,7 @@
 		0344492F24B6045E00C8B763 /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
+				0347835324BDD52300E3D4EC /* MonthYearDialog */,
 				0344493024B6045E00C8B763 /* PhoneNumberDialogs */,
 				0344493B24B6045E00C8B763 /* CustomTextViewDialog */,
 				0344493E24B6045E00C8B763 /* DateAndTimeSelectionDialog */,
@@ -1102,6 +1117,42 @@
 				034449AD24B604C000C8B763 /* CustomChangePasswordDialog.xib */,
 			);
 			path = CustomChangePasswordDialog;
+			sourceTree = "<group>";
+		};
+		0347834D24BDB1A900E3D4EC /* AddCardVC */ = {
+			isa = PBXGroup;
+			children = (
+				0347834E24BDB1A900E3D4EC /* xib */,
+				0347835024BDB1A900E3D4EC /* AddCardVC.swift */,
+			);
+			path = AddCardVC;
+			sourceTree = "<group>";
+		};
+		0347834E24BDB1A900E3D4EC /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				0347834F24BDB1A900E3D4EC /* AddCardVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		0347835324BDD52300E3D4EC /* MonthYearDialog */ = {
+			isa = PBXGroup;
+			children = (
+				0347835424BDD52300E3D4EC /* MonthYearDialog.xib */,
+				0347835524BDD52300E3D4EC /* MonthYearPickerView.swift */,
+				0347835624BDD52300E3D4EC /* MonthYearDialog.swift */,
+			);
+			path = MonthYearDialog;
+			sourceTree = "<group>";
+		};
+		0347835A24BDDB2C00E3D4EC /* ServiceCenterDetailDialog */ = {
+			isa = PBXGroup;
+			children = (
+				0347835B24BDDB2C00E3D4EC /* ServiceCenterDetailDialog.swift */,
+				0347835C24BDDB2C00E3D4EC /* ServiceCenterDetailDialog.xib */,
+			);
+			path = ServiceCenterDetailDialog;
 			sourceTree = "<group>";
 		};
 		034876C824B2E9EF006774AB /* TextField */ = {
@@ -2339,6 +2390,7 @@
 				034CD80424BC48F200BFD6E1 /* xib */,
 				034CD80624BC48F200BFD6E1 /* CreditCardCell */,
 				034CD80924BC48F200BFD6E1 /* PaymentPreferenceVC.swift */,
+				0347834D24BDB1A900E3D4EC /* AddCardVC */,
 			);
 			path = PaymentPreferenceVC;
 			sourceTree = "<group>";
@@ -2485,6 +2537,7 @@
 		03A1B53224B58EAD008BAC3A /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
+				0347835A24BDDB2C00E3D4EC /* ServiceCenterDetailDialog */,
 				034CD81224BC947700BFD6E1 /* AddPaymentPreferenceDialog */,
 				0383B28324B86C25003622F6 /* PaymentPercentatgeSelectionDialog */,
 				0344490B24B5FFE500C8B763 /* TextViewDialog */,
@@ -2951,6 +3004,7 @@
 				0353013324ADC3F900452F8C /* styleable_map.json in Resources */,
 				03429B0724B49565000059A2 /* CustomServiceSelectionDialog.xib in Resources */,
 				0348782324B2EF64006774AB /* MyAddressTblCell.xib in Resources */,
+				0347835724BDD52300E3D4EC /* MonthYearDialog.xib in Resources */,
 				0348785424B2EF64006774AB /* HomeTblCell.xib in Resources */,
 				0348784C24B2EF64006774AB /* LaunchVC.xib in Resources */,
 				0348784F24B2EF64006774AB /* EventBookCompleteVC.xib in Resources */,
@@ -3001,6 +3055,7 @@
 				0348789824B2EF64006774AB /* HelpVC.xib in Resources */,
 				0348781E24B2EF64006774AB /* MyTherapistVC.xib in Resources */,
 				034449B124B604C000C8B763 /* CustomLanguagePicker.xib in Resources */,
+				0347835124BDB1AA00E3D4EC /* AddCardVC.xib in Resources */,
 				034449AF24B604C000C8B763 /* CustomLanguagePickerCell.xib in Resources */,
 				0383B29124B87073003622F6 /* ReviewReciepentTblSection.xib in Resources */,
 				0344498C24B604A000C8B763 /* PreferGenderPickerCell.xib in Resources */,
@@ -3051,6 +3106,7 @@
 				6343985B245BE6DF009BCA1F /* Localizable.strings in Resources */,
 				0344496424B6045F00C8B763 /* TimeDialog.xib in Resources */,
 				039B509324B6F52800B06312 /* ReciepentTblCell.xib in Resources */,
+				0347835E24BDDB2D00E3D4EC /* ServiceCenterDetailDialog.xib in Resources */,
 				0348782724B2EF64006774AB /* AutocompleteLocationCell.xib in Resources */,
 				0348780624B2EF64006774AB /* SettingSwitchTblCell.xib in Resources */,
 				0348788A24B2EF64006774AB /* HowItWorkTblCell.xib in Resources */,
@@ -3230,6 +3286,7 @@
 				034449B024B604C000C8B763 /* CustomLanguagePickerCell.swift in Sources */,
 				632DB099248FA5CC00B65B46 /* String + TypeCasting.swift in Sources */,
 				0344496A24B6045F00C8B763 /* CustomRateViewDialog.swift in Sources */,
+				0347835D24BDDB2D00E3D4EC /* ServiceCenterDetailDialog.swift in Sources */,
 				034878B324B30DC4006774AB /* GoogleMapHelper.swift in Sources */,
 				0348781B24B2EF64006774AB /* EditProfileCell.swift in Sources */,
 				0348787424B2EF64006774AB /* PackTblCell.swift in Sources */,
@@ -3288,8 +3345,10 @@
 				0344495A24B6045F00C8B763 /* CustomCountryPhoneCodePicker.swift in Sources */,
 				0344496D24B6045F00C8B763 /* CustomInformationDialog.swift in Sources */,
 				0348780324B2EF64006774AB /* SettingTblCell.swift in Sources */,
+				0347835924BDD52300E3D4EC /* MonthYearDialog.swift in Sources */,
 				0348789624B2EF64006774AB /* CustomCampaignsDetailDialog.swift in Sources */,
 				0344495E24B6045F00C8B763 /* CustomTextViewDialog.swift in Sources */,
+				0347835824BDD52300E3D4EC /* MonthYearPickerView.swift in Sources */,
 				030B2D4224B4A65E0072C564 /* ServiceDetailVC.swift in Sources */,
 				0348782924B2EF64006774AB /* MapLocationVC.swift in Sources */,
 				0348786124B2EF64006774AB /* GiftVoucherVC.swift in Sources */,
@@ -3301,6 +3360,7 @@
 				0344495D24B6045F00C8B763 /* CustomMobileNumberDialog.swift in Sources */,
 				0383B28124B83584003622F6 /* ReviewSummaryTblCell.swift in Sources */,
 				632DB09C248FA5CC00B65B46 /* JDSubclasses + UIControl.swift in Sources */,
+				0347835224BDB1AA00E3D4EC /* AddCardVC.swift in Sources */,
 				0348781024B2EF64006774AB /* ProfileVC.swift in Sources */,
 				63439848245BE6DF009BCA1F /* AppDelegate.swift in Sources */,
 				0344498D24B604A000C8B763 /* PreferGenderPickerCell.swift in Sources */,

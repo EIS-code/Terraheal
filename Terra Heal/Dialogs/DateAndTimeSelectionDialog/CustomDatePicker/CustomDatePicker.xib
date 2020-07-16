@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,10 +31,10 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
-                    <rect key="frame" x="0.0" y="264" width="414" height="632"/>
+                    <rect key="frame" x="0.0" y="274" width="414" height="622"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe">
-                            <rect key="frame" x="20" y="20" width="374" height="592"/>
+                            <rect key="frame" x="20" y="10" width="374" height="592"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OsI-uf-Fb8">
                                     <rect key="frame" x="167" y="0.0" width="40" height="5"/>
@@ -170,7 +170,7 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" constant="20" id="1HJ-Xp-DOL"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="RrZ-kW-n5i"/>
-                        <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="20" id="Zud-Qp-ll1"/>
+                        <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="Zud-Qp-ll1"/>
                         <constraint firstAttribute="bottom" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="20" id="fhi-OD-EBT"/>
                     </constraints>
                 </view>
@@ -190,12 +190,13 @@
                 <outlet property="backgroundView" destination="6ZW-DU-hOd" id="lFA-bQ-tdV"/>
                 <outlet property="btnCancel" destination="BVl-el-UJJ" id="mZE-lE-kWH"/>
                 <outlet property="btnDone" destination="W3s-UH-gbE" id="Cp0-qH-ylB"/>
-                <outlet property="btnNext" destination="8ea-h3-HKj" id="h3C-vf-sJI"/>
-                <outlet property="btnPrevious" destination="vIF-jh-Ad7" id="PLS-N6-s3e"/>
+                <outlet property="btnNextMonth" destination="8ea-h3-HKj" id="E15-h7-Ddf"/>
+                <outlet property="btnPreviousMonth" destination="vIF-jh-Ad7" id="7Iy-HZ-gEv"/>
                 <outlet property="dialogView" destination="Yaj-p7-IIT" id="Sjt-cS-gvV"/>
                 <outlet property="lblSelectedDate" destination="oyA-kj-E1P" id="zSK-Fv-qOB"/>
                 <outlet property="lblSelectedYear" destination="uh3-3K-ZQb" id="0Xw-o9-2hL"/>
                 <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
+                <outlet property="topBarSpace" destination="Zud-Qp-ll1" id="aT7-7D-M22"/>
                 <outlet property="vwCalendar" destination="KPe-ks-amL" id="1LK-Bw-iKT"/>
                 <outlet property="vwMainCalender" destination="ybQ-MH-AIg" id="c2q-xh-fIG"/>
                 <outlet property="vwTopBar" destination="OsI-uf-Fb8" id="VT3-o0-WSd"/>

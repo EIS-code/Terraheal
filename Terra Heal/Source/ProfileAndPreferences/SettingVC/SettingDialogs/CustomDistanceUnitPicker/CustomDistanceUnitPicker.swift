@@ -33,18 +33,12 @@ enum DistanceUnit: String {
 }
 class CustomDistanceUnitPicker: ThemeBottomDialogView {
 
-
     @IBOutlet weak var lblTitle: ThemeLabel!
-
-    @IBOutlet weak var btnDone: ThemeButton!
     @IBOutlet weak var vwMainSelection: UIView!
-    
-    
     @IBOutlet weak var vwOption1: UIView!
     @IBOutlet weak var btnOption1: UIButton!
     @IBOutlet weak var lblOption1: ThemeLabel!
     @IBOutlet weak var ivOption1Selected: PaddedImageView!
-
     @IBOutlet weak var vwOption2: UIView!
     @IBOutlet weak var btnOption2: UIButton!
     @IBOutlet weak var lblOption2: ThemeLabel!
@@ -62,14 +56,18 @@ class CustomDistanceUnitPicker: ThemeBottomDialogView {
         self.initialSetup()
 
         self.lblTitle.text = title
-        self.btnDone.setTitle(buttonTitle, for: .normal)
         if cancelButtonTitle.isEmpty() {
             self.btnCancel.isHidden = true
         } else {
             self.btnCancel.setTitle(cancelButtonTitle, for: .normal)
             self.btnCancel.isHidden = false
         }
-
+        if buttonTitle.isEmpty() {
+            self.btnDone.isHidden = true
+        } else {
+            self.btnDone.setTitle(buttonTitle, for: .normal)
+            self.btnDone.isHidden = false
+        }
 
         self.select(data: self.selectedData)
     }
@@ -87,28 +85,13 @@ class CustomDistanceUnitPicker: ThemeBottomDialogView {
         ivOption2Selected?.setRound()
     }
 
-    func initialSetup() {
-        dialogView.clipsToBounds = true
-        self.backgroundColor = .clear
-        self.backgroundView.backgroundColor = UIColor.black
-        self.backgroundView.alpha = 0.0
-        self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
-
+    override func initialSetup() {
+        super.initialSetup()
         self.lblOption1.text = Currency.Dollar.name()
         self.lblOption1.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.lblOption2.text = Currency.Euro.name()
         self.lblOption2.setFont(name: FontName.Bold, size: FontSize.label_18)
-
-        self.btnDone.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnDone.setHighlighted(isHighlighted: true)
-
-        self.btnCancel.setFont(name: FontName.Bold, size: FontSize.button_22)
-
-        dialogView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
         self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.button_22)
-        transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
-
-        self.addPanGesture(view: dialogView)
     }
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -116,7 +99,6 @@ class CustomDistanceUnitPicker: ThemeBottomDialogView {
         btnOption1?.setShadow()
         ivOption1Selected?.setRound()
         ivOption2Selected?.setRound()
-        vwTopBar?.setRound(withBorderColor: .clear, andCornerRadious: 2.5, borderWidth: 1.0)
     }
 
     @IBAction func btnOption1Tapped(_ sender: Any) {

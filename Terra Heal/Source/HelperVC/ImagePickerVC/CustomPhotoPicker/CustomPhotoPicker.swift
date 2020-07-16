@@ -16,7 +16,6 @@ class CustomPhotoPicker: ThemeBottomDialogView {
 
     @IBOutlet weak var lblTitle: ThemeLabel!
 
-    @IBOutlet weak var btnDone: ThemeButton!
     @IBOutlet weak var vwCamera: UIView!
     @IBOutlet weak var btnCamera: UIButton!
     @IBOutlet weak var lblCamera: ThemeLabel!
@@ -31,43 +30,36 @@ class CustomPhotoPicker: ThemeBottomDialogView {
     var onBtnGallaryTapped: ((_ image: UploadDocumentDetail) -> Void)? = nil
     var onBtnDoneTapped: (() -> Void)? = nil
     
-    //Animation Properties
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
     func initialize(title:String,buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
         self.lblTitle.text = title
-        self.btnDone.setTitle(buttonTitle, for: .normal)
         if cancelButtonTitle.isEmpty() {
             self.btnCancel.isHidden = true
         } else {
             self.btnCancel.setTitle(cancelButtonTitle, for: .normal)
             self.btnCancel.isHidden = false
         }
+        if buttonTitle.isEmpty() {
+            self.btnDone.isHidden = true
+        } else {
+            self.btnDone.setTitle(buttonTitle, for: .normal)
+            self.btnDone.isHidden = false
+        }
     }
 
 
 
-    func initialSetup() {
-        dialogView.clipsToBounds = true
-        self.backgroundColor = .clear
-        self.backgroundView.backgroundColor = UIColor.black
-        self.backgroundView.alpha = 0.0
-        self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
-
+    override func initialSetup() {
+        super.initialSetup()
         self.lblCamera.text = "PHOTO_DIALOG_FROM_CAMERA".localized()
         self.lblCamera.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.lblGallary.text = "PHOTO_DIALOG_FROM_GALLARY".localized()
         self.lblGallary.setFont(name: FontName.Bold, size: FontSize.label_18)
-
-        self.btnDone.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnDone.setHighlighted(isHighlighted: true)
-
-        self.btnCancel.setFont(name: FontName.Bold, size: FontSize.button_22)
-
-        dialogView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
         self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.button_22)
-        transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
-
-        self.addPanGesture(view: dialogView)
     }
     override func layoutSubviews() {
         super.layoutSubviews()

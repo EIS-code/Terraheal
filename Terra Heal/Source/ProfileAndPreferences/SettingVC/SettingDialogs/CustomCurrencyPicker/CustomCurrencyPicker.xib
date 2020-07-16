@@ -25,10 +25,10 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
-                    <rect key="frame" x="0.0" y="480.5" width="414" height="415.5"/>
+                    <rect key="frame" x="0.0" y="490.5" width="414" height="405.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe" userLabel="Stack View - main">
-                            <rect key="frame" x="20" y="20" width="374" height="375.5"/>
+                            <rect key="frame" x="20" y="10" width="374" height="375.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OsI-uf-Fb8">
                                     <rect key="frame" x="167" y="0.0" width="40" height="5"/>
@@ -187,7 +187,7 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" constant="20" id="1HJ-Xp-DOL"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="RrZ-kW-n5i"/>
-                        <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="20" id="Zud-Qp-ll1"/>
+                        <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="Zud-Qp-ll1"/>
                         <constraint firstAttribute="bottom" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="20" id="fhi-OD-EBT"/>
                     </constraints>
                 </view>
@@ -215,6 +215,7 @@
                 <outlet property="lblDollar" destination="obW-hg-MDN" id="uNW-NY-xd9"/>
                 <outlet property="lblEuro" destination="IvB-L7-sgV" id="DfD-Th-u7p"/>
                 <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
+                <outlet property="topBarSpace" destination="Zud-Qp-ll1" id="cc3-XK-lAg"/>
                 <outlet property="vwDollar" destination="HPt-2p-CpU" id="MLk-Yl-xad"/>
                 <outlet property="vwEuro" destination="WKJ-ju-eCS" id="hbo-yV-WJI"/>
                 <outlet property="vwMainSelection" destination="ybQ-MH-AIg" id="KNZ-eF-5AP"/>

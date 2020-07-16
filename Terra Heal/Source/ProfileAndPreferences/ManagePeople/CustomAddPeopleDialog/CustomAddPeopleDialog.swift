@@ -12,7 +12,6 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
 
 
     @IBOutlet weak var lblTitle: ThemeLabel!
-    @IBOutlet weak var btnDone: ThemeButton!
     @IBOutlet weak var vwMainGender: UIView!
     @IBOutlet weak var vwMale: UIView!
     @IBOutlet weak var btnMale: UIButton!
@@ -27,7 +26,7 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
     @IBOutlet weak var txtName: ACFloatingTextfield!
     @IBOutlet weak var txtAge: ACFloatingTextfield!
     @IBOutlet weak var btnTherapistGender: ThemeButton!
-    
+    @IBOutlet weak var scrVw: UIScrollView!
     @IBOutlet weak var btnDelete: FloatingRoundButton!
     var onBtnDoneTapped: ((_ people:People,_ doc:UploadDocumentDetail?) -> Void)? = nil
     var onBtnDeleteTapped: (() -> Void)? = nil
@@ -36,6 +35,11 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
     var selectedProfileDoc: UploadDocumentDetail? = nil
     var genderPreferenceArray:[PreferenceOption] = []
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    
     func initialize(title:String, data:People?, genderPreference:[PreferenceOption],  buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
         self.btnDelete.isHidden = true
@@ -46,14 +50,20 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
             self.setData()
         }
         self.lblTitle.text = title
-        self.btnDone.setTitle(buttonTitle, for: .normal)
         if cancelButtonTitle.isEmpty() {
             self.btnCancel.isHidden = true
         } else {
             self.btnCancel.setTitle(cancelButtonTitle, for: .normal)
             self.btnCancel.isHidden = false
         }
+        if buttonTitle.isEmpty() {
+            self.btnDone.isHidden = true
+        } else {
+            self.btnDone.setTitle(buttonTitle, for: .normal)
+            self.btnDone.isHidden = false
+        }
         self.select(gender: self.selectedGender)
+        self.setDataForStepUpAnimation()
     }
 
     func setData() {
@@ -71,6 +81,7 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
             }
         }
         self.btnTherapistGender.setTitle(selectedPrefereceGender.name, for: .normal)
+       
     }
 
     func select(gender:Gender) {
@@ -85,39 +96,30 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
         ivFemaleSelected?.setRound()
     }
 
-    func initialSetup() {
-        dialogView.clipsToBounds = true
-        self.backgroundColor = .clear
-        self.backgroundView.backgroundColor = UIColor.black
-        self.backgroundView.alpha = 0.0
-        self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
+    override func initialSetup() {
+        super.initialSetup()
         self.txtName.placeholder = "MANAGE_PEOPLE_TXT_NAME".localized()
         self.txtAge.placeholder = "MANAGE_PEOPLE_TXT_AGE".localized()
         self.lblMale.text = "GENDER_MALE".localized()
         self.lblMale.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.lblFemale.text = "GENDER_FEMALE".localized()
         self.lblFemale.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.btnDone.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnDone.setHighlighted(isHighlighted: true)
-        self.btnCancel.setFont(name: FontName.Bold, size: FontSize.button_22)
-        dialogView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
         self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.button_22)
-        transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
-        self.addPanGesture(view: dialogView)
+        
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.dialogView?.layoutIfNeeded()
         self.imgProfilePic?.layoutIfNeeded()
         self.btnFemale?.setShadow()
         self.btnMale?.setShadow()
         self.btnTherapistGender?.setHighlighted(isHighlighted: false)
-        self.btnDone?.setHighlighted(isHighlighted: true)
         self.imgProfilePic?.setRound()
         self.btnAddPicture?.setRound()
         self.ivMaleSelected?.setRound()
         self.ivFemaleSelected?.setRound()
-        self.vwTopBar?.setRound(withBorderColor: .clear, andCornerRadious: 2.5, borderWidth: 1.0)
+    
     }
 
     @IBAction func btnMaleTapped(_ sender: Any) {

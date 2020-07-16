@@ -13,13 +13,18 @@ import UIKit
 class RecipientSelectionDialog: ThemeBottomDialogView {
     
     @IBOutlet weak var lblTitle: ThemeLabel!
-    @IBOutlet weak var btnDone: ThemeButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var hTblVw: NSLayoutConstraint!
     
     var onBtnDoneTapped: ((_ data:People) -> Void)? = nil
     var selectedData:People = People.init(fromDictionary: [:])
     var arrForData: [People] = []
     var arrForGenderPreference: [PreferenceOption] = []
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
     
     func initialize(title:String,buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
@@ -62,25 +67,14 @@ class RecipientSelectionDialog: ThemeBottomDialogView {
         self.reloadTableDateToFitHeight(tableView: self.tableView)
         //self.select(data: self.selectedData)
     }
-    func initialSetup() {
-        dialogView.clipsToBounds = true
-        self.backgroundColor = .clear
-        self.backgroundView.backgroundColor = UIColor.black
-        self.backgroundView.alpha = 0.0
-        self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
-        self.btnDone.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnDone.setHighlighted(isHighlighted: true)
-        self.btnCancel.setFont(name: FontName.Bold, size: FontSize.button_22)
-        dialogView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
+    override func initialSetup() {
+        super.initialSetup()
         self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.button_22)
-        transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
-        self.addPanGesture(view: dialogView)
+        
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        vwTopBar?.setRound(withBorderColor: .clear, andCornerRadious: 2.5, borderWidth: 1.0)
-        self.btnDone?.setHighlighted(isHighlighted: true)
         self.reloadTableDateToFitHeight(tableView: self.tableView)
     }
     
@@ -123,11 +117,9 @@ class RecipientSelectionDialog: ThemeBottomDialogView {
 extension RecipientSelectionDialog : UITableViewDelegate,UITableViewDataSource {
     
     private func reloadTableDateToFitHeight(tableView: UITableView) {
-        tableView.reloadData {
-            print("")
+        self.tableView.reloadData(heightToFit: self.hTblVw, maxHeight: self.dialogView.bounds.height * 0.5) {
+            
         }
-        /*tableView.reloadData(heightToFit: self.hTblVw) {}*/
-        
     }
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self

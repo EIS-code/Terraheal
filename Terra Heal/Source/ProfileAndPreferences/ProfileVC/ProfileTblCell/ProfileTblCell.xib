@@ -34,7 +34,7 @@
                                 <color key="textColor" name="theme_light_text_color"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="749" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6GD-a7-jdb" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="749" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6GD-a7-jdb" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
                                 <rect key="frame" x="169" y="0.0" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6GD-a7-jdb" secondAttribute="height" multiplier="1:1" id="maU-Op-f5b"/>

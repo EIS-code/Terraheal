@@ -9,32 +9,32 @@ import UIKit
 
 // MARK: - NAVIGATION
 extension AppDelegate {
-
+    
     func windowConfig(withRootVC rootVC: UIViewController?) {
         DispatchQueue.main.async {
+            SideVC.remove()
             self.window?.clean()
             self.window?.rootViewController?.clean()
-
+            
             self.window?.rootViewController = rootVC
             self.window?.makeKeyAndVisible()
         }
     }
-
+    
     func loadLaunchVC() {
         if let launchVc: LaunchVC = Bundle.main.loadNibNamed(LaunchVC.name, owner: nil, options: nil)?.first as? LaunchVC{
             self.windowConfig(withRootVC: launchVc)
         }
     }
-
+    
     func loadWelcomeVC() {
-        SideVC.remove()
         PreferenceHelper.shared.setUserId("")
         Singleton.shared.user = User.UserData.init(fromDictionary: [:])
         let welcomeVc: WelcomeVC = WelcomeVC.fromNib()
         let nC: NC = NC(rootViewController: welcomeVc)
         self.windowConfig(withRootVC: nC)
     }
-
+    
     func loadTutoraiVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: TutorialVC =  nc.findVCs(ofType: TutorialVC.self).first {
@@ -49,7 +49,7 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
+    
     func loadRegisterVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: RegisterVC =  nc.findVCs(ofType: RegisterVC.self).first {
@@ -63,9 +63,9 @@ extension AppDelegate {
             let nC: NC = NC(rootViewController: targetVC)
             self.windowConfig(withRootVC: nC)
         }
-
+        
     }
-
+    
     func loadLoginVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: LoginVC =  nc.findVCs(ofType: LoginVC.self).first {
@@ -80,7 +80,7 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
+    
     fileprivate func loadHomeVC(_ navigaionVC: UINavigationController?) {
         if let nc = navigaionVC as? NC {
             if let targetVC: HomeVC =  nc.findVCs(ofType: HomeVC.self).first {
@@ -95,9 +95,10 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
+    
     func loadHomeVC(navigaionVC:UINavigationController? = nil) {
-         CurrentBooking.shared.clear()
+        CurrentBooking.shared.clear()
+        
         if !PreferenceHelper.shared.getUserId().isEmpty() {
             AppWebApi.getUserDetail { (response) in
                 Loader.hideLoading()
@@ -108,18 +109,18 @@ extension AppDelegate {
                     appSingleton.user = user
                     Singleton.saveInDb()
                     self.loadHomeVC(navigaionVC)
-
+                    
                 } else {
                     self.loadHomeVC(navigaionVC)
                 }
-
+                
             }
-
-            } else {
+            
+        } else {
             loadHomeVC(navigaionVC)
-            }
+        }
     }
-
+    
     func loadTouchIdVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: TouchIdVC =  nc.findVCs(ofType: TouchIdVC.self).first {
@@ -134,7 +135,7 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
+    
     func loadContactVerificationVC(navigaionVC:UINavigationController? = nil) {
         if Singleton.shared.user.isContactVerified() {
             Common.showAlert(message: "Already Verified")
@@ -152,11 +153,11 @@ extension AppDelegate {
                 self.windowConfig(withRootVC: nC)
             }
         }
-
+        
     }
-
+    
     func loadVerifiedContactVC(navigaionVC:UINavigationController? = nil) {
-
+        
         if let nc = navigaionVC as? NC {
             if let targetVC: ContactVerifiedVC =  nc.findVCs(ofType: ContactVerifiedVC.self).first {
                 _ = nc.popToViewController(targetVC, animated: true)
@@ -170,9 +171,9 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
+    
     func loadVerificationVC(navigaionVC:UINavigationController? = nil) {
-
+        
         if let nc = navigaionVC as? NC {
             if let targetVC: VerificationVC =  nc.findVCs(ofType: VerificationVC.self).first {
                 _ = nc.popToViewController(targetVC, animated: true)
@@ -186,8 +187,8 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
-   
+    
+    
     func loadMapLocationVC(navigaionVC:UINavigationController? = nil) -> MapLocationVC {
         if let nc = navigaionVC as? NC {
             if let targetVC: MapLocationVC =  nc.findVCs(ofType: MapLocationVC.self).first {
@@ -205,12 +206,12 @@ extension AppDelegate {
             return targetVC
         }
     }
-
     
     
-
+    
+    
     func loadGallaryVC(navigaionVC:UINavigationController? = nil) -> GallaryVC {
-
+        
         if let nc = navigaionVC as? NC {
             if let targetVC: GallaryVC =  nc.findVCs(ofType: GallaryVC.self).first {
                 _ =  nc.popToViewController(targetVC, animated: true)
@@ -227,10 +228,10 @@ extension AppDelegate {
             return targetVC
         }
     }
-
+    
     
     func loadCameraVC(navigaionVC:UINavigationController? = nil) -> CameraVC {
-
+        
         if let nc = navigaionVC as? NC {
             if let targetVC: CameraVC =  nc.findVCs(ofType: CameraVC.self).first {
                 _ =  nc.popToViewController(targetVC, animated: true)
@@ -249,7 +250,7 @@ extension AppDelegate {
     }
     
     func loadProfileVC(navigaionVC:UINavigationController? = nil) {
-
+        
         if let nc = navigaionVC as? NC {
             if let targetVC: ProfileVC =  nc.findVCs(ofType: ProfileVC.self).first {
                 _ = nc.popToViewController(targetVC, animated: true)
@@ -263,25 +264,25 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
+    
     func loadMyBookingVC(navigaionVC:UINavigationController? = nil) {
-
-           if let nc = navigaionVC as? NC {
-               if let targetVC: MyBookingVC =  nc.findVCs(ofType: MyBookingVC.self).first {
-                   _ = nc.popToViewController(targetVC, animated: true)
-               } else {
-                   let targetVC: MyBookingVC = MyBookingVC.fromNib()
-                   nc.pushViewController(targetVC, animated: true)
-               }
-           } else {
-               let targetVC: MyBookingVC = MyBookingVC.fromNib()
-               let nC: NC = NC(rootViewController: targetVC)
-               self.windowConfig(withRootVC: nC)
-           }
-       }
+        
+        if let nc = navigaionVC as? NC {
+            if let targetVC: MyBookingVC =  nc.findVCs(ofType: MyBookingVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+            } else {
+                let targetVC: MyBookingVC = MyBookingVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+            }
+        } else {
+            let targetVC: MyBookingVC = MyBookingVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
     
     func loadEditProfileVC(navigaionVC:UINavigationController? = nil) {
-
+        
         if let nc = navigaionVC as? NC {
             if let targetVC: EditProfileVC =  nc.findVCs(ofType: EditProfileVC.self).first {
                 _ = nc.popToViewController(targetVC, animated: true)
@@ -295,8 +296,8 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
- 
+    
+    
     func loadMassagePreferenceVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: MassagePreferenceVC =  nc.findVCs(ofType: MassagePreferenceVC.self).first {
@@ -311,7 +312,7 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
+    
     func loadMyTherapistVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: MyTherapistVC =  nc.findVCs(ofType: MyTherapistVC.self).first {
@@ -326,7 +327,7 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
+    
     func loadSettingVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: SettingVC =  nc.findVCs(ofType: SettingVC.self).first {
@@ -341,7 +342,7 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
+    
     func loadNotificationVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: NotificationVC =  nc.findVCs(ofType: NotificationVC.self).first {
@@ -356,7 +357,7 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
+    
     func loadMyPlacesVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: MyPlaceVC =  nc.findVCs(ofType: MyPlaceVC.self).first {
@@ -371,7 +372,7 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
+    
     func loadTherapistQuestionaryVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: TherapistQuestionariesVC =  nc.findVCs(ofType: TherapistQuestionariesVC.self).first {
@@ -386,7 +387,7 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
+    
     func loadManageAddressVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: MyAddressVC =  nc.findVCs(ofType: MyAddressVC.self).first {
@@ -401,8 +402,8 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
-
+    
+    
     func loadManagePeopleVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: ManagePeopleVC =  nc.findVCs(ofType: ManagePeopleVC.self).first {
@@ -417,7 +418,7 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
+    
     func loadHowItWorkVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: HowItWorkVC =  nc.findVCs(ofType: HowItWorkVC.self).first {
@@ -432,7 +433,7 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
+    
     func loadPriceLocationVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: PriceLocationVC =  nc.findVCs(ofType: PriceLocationVC.self).first {
@@ -447,7 +448,7 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
+    
     func loadPromocodeVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: PromoCodeVC =  nc.findVCs(ofType: PromoCodeVC.self).first {
@@ -490,7 +491,7 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
+    
     func loadCampaignsVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: CampaignsVC =  nc.findVCs(ofType: CampaignsVC.self).first {
@@ -505,7 +506,7 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
+    
     func loadHelpVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: HelpVC =  nc.findVCs(ofType: HelpVC.self).first {
@@ -520,7 +521,7 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
+    
     func loadGiftVoucherVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: GiftVoucherVC =  nc.findVCs(ofType: GiftVoucherVC.self).first {
@@ -535,7 +536,7 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
+    
     func loadEventBookingCompleteVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: EventBookCompleteVC =  nc.findVCs(ofType: EventBookCompleteVC.self).first {
@@ -550,7 +551,7 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-
+    
     func loadServiceMapVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: ServiceMapVC =  nc.findVCs(ofType: ServiceMapVC.self).first {
@@ -566,22 +567,22 @@ extension AppDelegate {
         }
     }
     
-
+    
     func loadManageDocumentVC(navigaionVC:UINavigationController? = nil) {
-
-           if let nc = navigaionVC as? NC {
-               if let targetVC: ManageDocumentVC =  nc.findVCs(ofType: ManageDocumentVC.self).first {
-                   _ = nc.popToViewController(targetVC, animated: true)
-               } else {
-                   let targetVC: ManageDocumentVC = ManageDocumentVC.fromNib()
-                   nc.pushViewController(targetVC, animated: true)
-               }
-           } else {
-               let targetVC: ManageDocumentVC = ManageDocumentVC.fromNib()
-               let nC: NC = NC(rootViewController: targetVC)
-               self.windowConfig(withRootVC: nC)
-           }
-       }
+        
+        if let nc = navigaionVC as? NC {
+            if let targetVC: ManageDocumentVC =  nc.findVCs(ofType: ManageDocumentVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+            } else {
+                let targetVC: ManageDocumentVC = ManageDocumentVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+            }
+        } else {
+            let targetVC: ManageDocumentVC = ManageDocumentVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
     
     func loadServiceDetailVC(navigaionVC:UINavigationController? = nil) -> ServiceDetailVC {
         if let nc = navigaionVC as? NC {
@@ -620,33 +621,33 @@ extension AppDelegate {
     }
     
     func loadBookingCompleteVC(navigaionVC:UINavigationController? = nil) {
-           if let nc = navigaionVC as? NC {
-               if let targetVC: BookingCompleteVC =  nc.findVCs(ofType: BookingCompleteVC.self).first {
-                   _ = nc.popToViewController(targetVC, animated: true)
-               } else {
-                   let targetVC: BookingCompleteVC = BookingCompleteVC.fromNib()
-                   nc.pushViewController(targetVC, animated: true)
-               }
-           } else {
-               let targetVC: BookingCompleteVC = BookingCompleteVC.fromNib()
-               let nC: NC = NC(rootViewController: targetVC)
-               self.windowConfig(withRootVC: nC)
-           }
+        if let nc = navigaionVC as? NC {
+            if let targetVC: BookingCompleteVC =  nc.findVCs(ofType: BookingCompleteVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+            } else {
+                let targetVC: BookingCompleteVC = BookingCompleteVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+            }
+        } else {
+            let targetVC: BookingCompleteVC = BookingCompleteVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
     }
     
     func loadReviewAndBookVC(navigaionVC:UINavigationController? = nil) {
-           if let nc = navigaionVC as? NC {
-               if let targetVC: ReviewAndBookVC =  nc.findVCs(ofType: ReviewAndBookVC.self).first {
-                   _ = nc.popToViewController(targetVC, animated: true)
-               } else {
-                   let targetVC: ReviewAndBookVC = ReviewAndBookVC.fromNib()
-                   nc.pushViewController(targetVC, animated: true)
-               }
-           } else {
-               let targetVC: ReviewAndBookVC = ReviewAndBookVC.fromNib()
-               let nC: NC = NC(rootViewController: targetVC)
-               self.windowConfig(withRootVC: nC)
-           }
+        if let nc = navigaionVC as? NC {
+            if let targetVC: ReviewAndBookVC =  nc.findVCs(ofType: ReviewAndBookVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+            } else {
+                let targetVC: ReviewAndBookVC = ReviewAndBookVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+            }
+        } else {
+            let targetVC: ReviewAndBookVC = ReviewAndBookVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
     }
     
     func loadPaymentReferenceVC(navigaionVC:UINavigationController? = nil) {
@@ -659,6 +660,21 @@ extension AppDelegate {
             }
         } else {
             let targetVC: PaymentPreferenceVC = PaymentPreferenceVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+    
+    func loadAddCardVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: AddCardVC =  nc.findVCs(ofType: AddCardVC.self).first {
+                _ = nc.popToViewController(targetVC, animated: true)
+            } else {
+                let targetVC: AddCardVC = AddCardVC.fromNib()
+                nc.pushViewController(targetVC, animated: true)
+            }
+        } else {
+            let targetVC: AddCardVC = AddCardVC.fromNib()
             let nC: NC = NC(rootViewController: targetVC)
             self.windowConfig(withRootVC: nC)
         }

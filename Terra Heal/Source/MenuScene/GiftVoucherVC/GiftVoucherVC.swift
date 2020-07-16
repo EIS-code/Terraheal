@@ -134,14 +134,16 @@ extension GiftVoucherVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
 
     func updateHeaderView() {
 
-        if self.scrVw.contentOffset.y < 0 {
+        if self.scrVw.contentOffset.y < -20 {
             let y = abs(self.scrVw.contentOffset.y)
             let transLation = y/kTableHeaderHeight
+            self.tableView.isScrollEnabled = false
             headerView.alpha = transLation
             headerView.transform = CGAffineTransform.init(scaleX: transLation, y: transLation)
 
         } else {
             headerView.alpha = 0.0
+            self.tableView.isScrollEnabled = true
         }
         
     }

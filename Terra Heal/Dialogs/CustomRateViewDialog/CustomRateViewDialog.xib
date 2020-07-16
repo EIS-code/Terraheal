@@ -25,10 +25,10 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
-                    <rect key="frame" x="0.0" y="373" width="414" height="523"/>
+                    <rect key="frame" x="0.0" y="419" width="414" height="477"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe">
-                            <rect key="frame" x="20" y="56" width="374" height="437"/>
+                            <rect key="frame" x="20" y="10" width="374" height="437"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gV0-dD-2TC">
                                     <rect key="frame" x="167" y="0.0" width="40" height="5"/>
@@ -113,7 +113,7 @@
                         <constraint firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" constant="20" id="1HJ-Xp-DOL"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="RrZ-kW-n5i"/>
                         <constraint firstAttribute="bottom" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="30" id="fhi-OD-EBT"/>
-                        <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="56" id="gm5-2t-GbH"/>
+                        <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="gm5-2t-GbH"/>
                     </constraints>
                 </view>
             </subviews>
@@ -135,6 +135,7 @@
                 <outlet property="dialogView" destination="Yaj-p7-IIT" id="Sjt-cS-gvV"/>
                 <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
                 <outlet property="ratingView" destination="6c6-zY-Fwc" id="0JI-us-3cV"/>
+                <outlet property="topBarSpace" destination="gm5-2t-GbH" id="rOO-2g-QPq"/>
                 <outlet property="txtDescription" destination="Qi1-qS-KMx" id="bhk-CN-T0M"/>
                 <outlet property="vwTopBar" destination="gV0-dD-2TC" id="jav-IB-OKx"/>
             </connections>

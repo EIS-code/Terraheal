@@ -14,6 +14,7 @@ struct ServiceCenterDetail {
     var serviceDetails: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget. Nullam eget felis eget nunc lobortis."
     var latitude: String = ""
     var longitude: String = ""
+    var isSelected: Bool = false
     func getCoordinatte() -> CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: self.latitude.toDouble, longitude: self.longitude.toDouble)
     }
@@ -150,6 +151,7 @@ extension ServiceMapVC {
             container.roundCorners(corners: [.topLeft, .topRight], radius: 40)
             
         })
+        
       }
     
     func openTextViewPicker() {
@@ -167,8 +169,8 @@ extension ServiceMapVC {
                guard let self = self else { return } ; print(self)
                alert?.dismiss()
                self.requestBooking.bookingNotes = description
-             self.requestBooking.serviceCenterDetail = self.arrForServices[self.currentIndex]
-               Common.appDelegate.loadReviewAndBookVC(navigaionVC: self.navigationController)
+                self.requestBooking.serviceCenterDetail = self.arrForServices[self.currentIndex]
+               Common.appDelegate.loadReviewAndBookVC()
            }
        }
 

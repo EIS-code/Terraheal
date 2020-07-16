@@ -11,17 +11,19 @@ import UIKit
 class CustomCountryPhoneCodePicker: ThemeBottomDialogView {
 
     @IBOutlet weak var lblTitle: ThemeLabel!
-    @IBOutlet weak var btnDone: ThemeButton!
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchVw: UIView!
     @IBOutlet weak var txtSearchBar: ThemeTextField!
-
     var onBtnDoneTapped: ((_ data: CountryPhone) -> Void)? = nil
     var selectedData: CountryPhone? = nil
-
     var arrForFilteredData: [CountryPhone] = CountryPhone.modelsFromDictionaryArray()
     var arrForForOriginalData: [CountryPhone] = CountryPhone.modelsFromDictionaryArray()
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
     func initialize(title:String,buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
         self.lblTitle.text = title
@@ -43,15 +45,10 @@ class CustomCountryPhoneCodePicker: ThemeBottomDialogView {
         self.selectedData = data
     }
 
-    func initialSetup() {
-        dialogView.clipsToBounds = true
-        self.backgroundColor = .clear
-        self.backgroundView.backgroundColor = UIColor.black
-        self.backgroundView.alpha = 0.0
-        self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
+    override func initialSetup() {
+        super.initialSetup()
         self.btnDone.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnDone.setHighlighted(isHighlighted: true)
-        self.btnCancel.setFont(name: FontName.Bold, size: FontSize.button_22)
         dialogView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
         self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
@@ -60,7 +57,6 @@ class CustomCountryPhoneCodePicker: ThemeBottomDialogView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        vwTopBar?.setRound(withBorderColor: .clear, andCornerRadious: 2.5, borderWidth: 1.0)
         self.btnDone?.layoutIfNeeded()
         self.btnDone?.setHighlighted(isHighlighted: true)
         self.reloadTableDateToFitHeight(tableView: self.tableView)
@@ -139,7 +135,7 @@ extension CustomCountryPhoneCodePicker : UITextFieldDelegate {
 
     private func setupSearchbar(searchBar: UITextField) {
         txtSearchBar.delegate = self
-        txtSearchBar.setFont(name: FontName.Regular, size: FontSize.label_14)
+        txtSearchBar.setFont(name: FontName.Regular, size: FontSize.textField_20)
         txtSearchBar.addTarget(self, action: #selector(searching(_:)), for: .editingChanged)
         txtSearchBar.changePlaceHolder(color: UIColor.themePrimary)
         txtSearchBar.placeholder = "PROFILE_TXT_SEARCH_COUNTRY".localized()

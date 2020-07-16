@@ -15,21 +15,23 @@ enum ServiceType: Int {
 class CustomLocationServiceDialog: ThemeBottomDialogView {
     
     @IBOutlet weak var lblTitle: ThemeLabel!
-    @IBOutlet weak var btnDone: ThemeButton!
     @IBOutlet weak var collectionVw: UICollectionView!
     @IBOutlet weak var vwServiceSelection: JDSegmentedControl!
     var selectedService: ServiceType = ServiceType.Massages
     var onBtnDoneTapped: (( ) -> Void)? = nil
-    
     var arrForData: [ServiceDetail] = ServiceDetail.getMassageArray()
     var arrForMassage: [ServiceDetail] = ServiceDetail.getMassageArray()
     var arrForTherapies: [ServiceDetail] = ServiceDetail.getTherapyArray()
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
     
     func initialize(title:String,buttonTitle:String,cancelButtonTitle:String) {
         
         self.initialSetup()
         self.lblTitle.text = title
-        self.btnDone.setTitle(buttonTitle, for: .normal)
         if cancelButtonTitle.isEmpty() {
             self.btnCancel.isHidden = true
         } else {
@@ -42,23 +44,12 @@ class CustomLocationServiceDialog: ThemeBottomDialogView {
             self.btnDone.setTitle(buttonTitle, for: .normal)
             self.btnDone.isHidden = false
         }
-        
+        self.setDataForStepUpAnimation()
     }
     
-    func initialSetup() {
-        dialogView.clipsToBounds = true
-        self.backgroundColor = .clear
-        
-        self.backgroundView.backgroundColor = UIColor.black
-        self.backgroundView.alpha = 0.0
-        self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
-        dialogView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
+    override func initialSetup() {
+        super.initialSetup()
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
-        self.addPanGesture(view: self)
-        self.btnDone.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnCancel.setFont(name: FontName.Bold, size: FontSize.button_22)
-        self.btnDone.setHighlighted(isHighlighted: true)
-        transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
         self.setupCollectionView(collectionView: self.collectionVw)
         self.vwServiceSelection.allowChangeThumbWidth = false
         self.vwServiceSelection.itemTitles = ["massages".localized(),"therapies".localized()]
@@ -78,8 +69,6 @@ class CustomLocationServiceDialog: ThemeBottomDialogView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.btnDone?.layoutIfNeeded()
-        self.btnDone?.setHighlighted(isHighlighted: true)
     }
     
     @IBAction func btnDoneTapped(_ sender: Any) {
@@ -171,6 +160,5 @@ extension CustomLocationServiceDialog:  UICollectionViewDelegate, UICollectionVi
         let size = collectionView.bounds.width / 2.0
         return CGSize(width: size , height: size)
     }
-    
-    
+
 }

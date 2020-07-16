@@ -12,7 +12,6 @@ import UIKit
 class CustomServiceSelectionDialog: ThemeBottomDialogView {
 
     @IBOutlet weak var lblTitle: ThemeLabel!
-    @IBOutlet weak var btnDone: ThemeButton!
     @IBOutlet weak var collectionVw: UICollectionView!
     @IBOutlet weak var vwServiceSelection: JDSegmentedControl!
     var selectedService: ServiceType = ServiceType.Massages
@@ -24,11 +23,15 @@ class CustomServiceSelectionDialog: ThemeBottomDialogView {
     var arrForMassage: [ServiceDetail] = ServiceDetail.getMassageArray()
     var arrForTherapies: [ServiceDetail] = ServiceDetail.getTherapyArray()
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    
     func initialize(title:String,buttonTitle:String) {
 
         self.initialSetup()
         self.lblTitle.text = title
-        self.btnDone.setTitle(buttonTitle, for: .normal)
         if buttonTitle.isEmpty() {
             self.btnDone.isHidden = true
         } else {
@@ -38,19 +41,11 @@ class CustomServiceSelectionDialog: ThemeBottomDialogView {
         
     }
 
-    func initialSetup() {
+    override func initialSetup() {
+        super.initialSetup()
         contentView.clipsToBounds = true
-        self.backgroundColor = .clear
-
-        self.backgroundView.backgroundColor = UIColor.black
-        self.backgroundView.alpha = 0.0
-        self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
         contentView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
-        self.addPanGesture(view: self)
-        self.btnDone.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnDone.setHighlighted(isHighlighted: true)
-        transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
         self.setupCollectionView(collectionView: self.collectionVw)
         self.vwServiceSelection.allowChangeThumbWidth = false
         self.vwServiceSelection.itemTitles = ["massages".localized(),"therapies".localized()]
@@ -70,8 +65,6 @@ class CustomServiceSelectionDialog: ThemeBottomDialogView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.btnDone?.layoutIfNeeded()
-        self.btnDone?.setHighlighted(isHighlighted: true)
         self.ivMassageCenter?.layoutIfNeeded()
         self.ivMassageCenter.setRound()
     }

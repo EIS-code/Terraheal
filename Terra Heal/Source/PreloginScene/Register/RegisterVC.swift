@@ -223,7 +223,7 @@ extension RegisterVC {
                 PreferenceHelper.shared.setUserId(user.id)
                 appSingleton.user = user
                 Singleton.saveInDb()
-                Common.appDelegate.loadContactVerificationVC()
+                Common.appDelegate.loadHomeVC()
             }
             Loader.hideLoading()
 

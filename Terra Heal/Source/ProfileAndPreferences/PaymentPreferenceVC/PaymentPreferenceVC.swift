@@ -118,42 +118,44 @@ class PaymentPreferenceVC: MainVC {
         self.openAddPaymentDialog()
     }
     func openAddPaymentDialog() {
-           let addPercentageDialog: AddPaymentPreferenceDialog  = AddPaymentPreferenceDialog.fromNib()
-           addPercentageDialog.initialize(title: "Add New", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
-           addPercentageDialog.show(animated: true)
-           addPercentageDialog.onBtnCancelTapped = {
-               [weak addPercentageDialog, weak self] in
-               guard let self = self else { return } ; print(self)
-               addPercentageDialog?.dismiss()
-           }
-           addPercentageDialog.onBtnDoneTapped = {
-               [weak addPercentageDialog, weak self]  (button) in
-               guard let self = self else { return } ; print(self)
+        let addPercentageDialog: AddPaymentPreferenceDialog  = AddPaymentPreferenceDialog.fromNib()
+        addPercentageDialog.initialize(title: "Add New", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        addPercentageDialog.show(animated: true)
+        addPercentageDialog.onBtnCancelTapped = {
+            [weak addPercentageDialog, weak self] in
+            guard let self = self else { return } ; print(self)
             addPercentageDialog?.dismiss()
-                if button.id == 1  {
-                    self.openTextFieldPicker()
-                }
-               
-           }
-       }
-      
+        }
+        addPercentageDialog.onBtnDoneTapped = {
+            [weak addPercentageDialog, weak self]  (button) in
+            guard let self = self else { return } ; print(self)
+            addPercentageDialog?.dismiss()
+            if button.id == 0  {
+                self.openTextFieldPicker()
+            } else {
+                Common.appDelegate.loadAddCardVC(navigaionVC: self.navigationController)
+            }
+            
+        }
+    }
+    
     func openTextFieldPicker() {
-           let alert: CustomTextFieldDialog = CustomTextFieldDialog.fromNib()
-           alert.initialize(title: "paypal email", data: "", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
-           alert.show(animated: true)
+        let alert: CustomTextFieldDialog = CustomTextFieldDialog.fromNib()
+        alert.initialize(title: "paypal email", data: "", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        alert.show(animated: true)
         alert.configTextField(data: InputTextFieldDetail.getEmailConfiguration())
-           alert.onBtnCancelTapped = {
-               [weak alert, weak self] in
-               guard let self = self else { return } ; print(self)
-               alert?.dismiss()
-           }
-           alert.onBtnDoneTapped = {
-               [weak alert, weak self] (description) in
-               guard let self = self else { return } ; print(self)
-               alert?.dismiss()
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            guard let self = self else { return } ; print(self)
+            alert?.dismiss()
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (description) in
+            guard let self = self else { return } ; print(self)
+            alert?.dismiss()
             self.lblPaypalEmailId.text = description
-           }
-       }
+        }
+    }
     
 }
 
@@ -162,10 +164,10 @@ extension PaymentPreferenceVC: UITableViewDelegate,UITableViewDataSource, UIScro
     
     private func reloadTableDataToFitHeight(tableView: UITableView, height:NSLayoutConstraint) {
         if tableView.isHidden == false {
-                DispatchQueue.main.async {
-                    tableView.reloadData(heightToFit:height) {
-                    }
+            DispatchQueue.main.async {
+                tableView.reloadData(heightToFit:height) {
                 }
+            }
         } else {
             height.constant = 0
         }

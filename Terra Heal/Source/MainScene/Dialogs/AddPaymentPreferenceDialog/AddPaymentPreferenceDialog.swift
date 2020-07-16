@@ -13,12 +13,13 @@ class AddPaymentPreferenceDialog: ThemeBottomDialogView {
     @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var btnDone: FloatingRoundButton!
-     @IBOutlet weak var btnNext: ThemeButton!
     var onBtnDoneTapped: ((_ data:CustomButtonDetail) -> Void)? = nil
     var selectedData:CustomButtonDetail = CustomButtonDetail.init()
     var arrForData: [CustomButtonDetail] = [CustomButtonDetail(isSelected: true, id: 0, title: "paypal", type: 0),CustomButtonDetail(isSelected: false, id: 1, title: "credit, debit & atm cards", type: 1)]
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
     
     func initialize(title:String,buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
@@ -30,7 +31,6 @@ class AddPaymentPreferenceDialog: ThemeBottomDialogView {
             self.btnCancel.isHidden = false
         }
         if buttonTitle.isEmpty() {
-            
             self.btnNext.isHidden = true
         } else {
             self.btnNext.setTitle(buttonTitle, for: .normal)
@@ -62,24 +62,13 @@ class AddPaymentPreferenceDialog: ThemeBottomDialogView {
         self.reloadTableDateToFitHeight(tableView: self.tableView)
         //self.select(data: self.selectedData)
     }
-    func initialSetup() {
-        dialogView.clipsToBounds = true
-        self.backgroundColor = .clear
-        self.backgroundView.backgroundColor = UIColor.black
-        self.backgroundView.alpha = 0.0
-        self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
-        self.btnNext.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnDone.setForwardButton()
-        self.btnCancel.setFont(name: FontName.Bold, size: FontSize.button_22)
-        dialogView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
+    override func initialSetup() {
+        super.initialSetup()
         self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.button_22)
-        transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
-        self.addPanGesture(view: dialogView)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        vwTopBar?.setRound(withBorderColor: .clear, andCornerRadious: 2.5, borderWidth: 1.0)
         self.reloadTableDateToFitHeight(tableView: self.tableView)
     }
     

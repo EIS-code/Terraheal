@@ -160,20 +160,40 @@ extension UITableView {
         }
     }
 
-    func reloadData(heightToFit cntrnt: NSLayoutConstraint?,
+    func reloadData(heightToFit cntrnt: NSLayoutConstraint?, maxHeight:CGFloat = 0,
                     _ completion: (() -> Void)?) {
         DispatchQueue.main.async {
-            self.contentOffset = CGPoint.zero
-            self.reloadData({
-                cntrnt?.constant = ceil(self.contentSize.height)
-                self.superview?.layoutIfNeeded()
-                if self.isHEqualToCH {
-                    completion?()
-                }
-                else {
-                    self.reloadData(heightToFit: cntrnt, completion)
-                }
-            })
+            if maxHeight == 0 {
+                    self.contentOffset = CGPoint.zero
+                    self.reloadData({
+                        cntrnt?.constant = ceil(self.contentSize.height)
+                        self.superview?.layoutIfNeeded()
+                        if self.isHEqualToCH {
+                            completion?()
+                        }
+                        else {
+                            self.reloadData(heightToFit: cntrnt, completion)
+                        }
+                    })
+            } else {
+                self.contentOffset = CGPoint.zero
+                self.reloadData({
+                    if ceil(self.contentSize.height) < maxHeight {
+                            cntrnt?.constant = ceil(self.contentSize.height)
+                    } else {
+                        cntrnt?.constant = ceil(maxHeight)
+                    }
+                    
+                    self.superview?.layoutIfNeeded()
+                    if self.isHEqualToCH(height: maxHeight) {
+                        completion?()
+                    }
+                    else {
+                        self.reloadData(heightToFit: cntrnt, completion)
+                    }
+                })
+            }
+            
         }
     }
 }
@@ -193,6 +213,9 @@ extension UIScrollView {
         }
     }
 
+    func isHEqualToCH(height:CGFloat)->Bool {
+        return abs(ceil(self.frame.height)-ceil(height)) <= 1.0
+    }
 }
 
 

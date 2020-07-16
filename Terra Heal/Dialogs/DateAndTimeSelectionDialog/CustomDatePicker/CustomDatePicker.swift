@@ -16,9 +16,8 @@ class CustomDatePicker: ThemeBottomDialogView {
     @IBOutlet weak var lblSelectedYear: ThemeLabel!
     @IBOutlet weak var lblSelectedDate: ThemeLabel!
     @IBOutlet weak var vwCalendar: FSCalendar!
-    @IBOutlet weak var btnDone: ThemeButton!
-    @IBOutlet weak var btnPrevious: ThemeButton!
-    @IBOutlet weak var btnNext: ThemeButton!
+    @IBOutlet weak var btnPreviousMonth: ThemeButton!
+    @IBOutlet weak var btnNextMonth: ThemeButton!
     @IBOutlet weak var vwMainCalender: UIView!
 
     var onBtnDoneTapped: ((_ date:Double) -> Void)? = nil
@@ -32,6 +31,11 @@ class CustomDatePicker: ThemeBottomDialogView {
 
     fileprivate let gregorian: NSCalendar! = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    
     func initialize(title:String, buttonTitle:String, cancelButtonTitle:String) {
 
         self.initialSetup()
@@ -52,35 +56,19 @@ class CustomDatePicker: ThemeBottomDialogView {
 
     }
 
-    func initialSetup() {
-        dialogView.clipsToBounds = true
-        self.backgroundColor = .clear
-        self.backgroundView.backgroundColor = UIColor.black
-        self.backgroundView.alpha = 0.0
-        self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
-
-        self.btnPrevious.setTitle(FontSymbol.back_arrow, for: .normal)
-        self.btnPrevious.setFont(name: FontName.SemiBold, size: FontSize.button_22)
-
-        self.btnNext.setTitle(FontSymbol.next_arrow, for: .normal)
-        self.btnNext.setFont(name: FontName.SemiBold, size: FontSize.button_22)
-
-        self.btnDone.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnDone.setHighlighted(isHighlighted: true)
-
-        self.btnCancel.setFont(name: FontName.Bold, size: FontSize.button_22)
-
-        dialogView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
+    override func initialSetup() {
+        super.initialSetup()
+        self.btnPreviousMonth.setTitle(FontSymbol.back_arrow, for: .normal)
+        self.btnPreviousMonth.setFont(name: FontName.SemiBold, size: FontSize.button_22)
+        self.btnNextMonth.setTitle(FontSymbol.next_arrow, for: .normal)
+        self.btnNextMonth.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.button_22)
-        transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
-        self.addPanGesture(view: dialogView)
         self.setupCalendarView(calendar: vwCalendar)
     }
     override func layoutSubviews() {
         super.layoutSubviews()
         //vwMainCalender?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
         vwMainCalender?.setShadow()
-        vwTopBar?.setRound(withBorderColor: .clear, andCornerRadious: 2.5, borderWidth: 1.0)
     }
 
 

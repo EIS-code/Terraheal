@@ -173,7 +173,7 @@ extension MapLocationVC : UITextFieldDelegate {
     }
     private func setupSearchbar(searchBar: UITextField) {
         txtSearchBar.delegate = self
-        txtSearchBar.setFont(name: FontName.Regular, size: FontSize.label_14)
+        txtSearchBar.setFont(name: FontName.Regular, size: FontSize.textField_20)
         txtSearchBar.addTarget(self, action: #selector(searching(_:)), for: .editingChanged)
         txtSearchBar.changePlaceHolder(color: UIColor.themePrimary)
         txtSearchBar.placeholder = "TXT_SEARCH_ADDRESS".localized()

@@ -32,11 +32,11 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kXe-MZ-CKX" userLabel="headerGradient">
-                    <rect key="frame" x="0.0" y="44" width="375" height="130"/>
+                    <rect key="frame" x="0.0" y="44.000000000000007" width="375" height="91.666666666666686"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vl3-GD-87f" userLabel="footerGradient">
-                    <rect key="frame" x="0.0" y="648" width="375" height="130"/>
+                    <rect key="frame" x="0.0" y="686.33333333333337" width="375" height="91.666666666666629"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
@@ -103,6 +103,7 @@
                 <constraint firstItem="dk0-AN-Hja" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="20" id="1iZ-Cw-RkL"/>
                 <constraint firstItem="YhJ-oo-h2F" firstAttribute="top" secondItem="ABs-WT-4wl" secondAttribute="bottom" constant="10" id="1uJ-H7-Abo"/>
                 <constraint firstItem="kXe-MZ-CKX" firstAttribute="height" secondItem="Vl3-GD-87f" secondAttribute="height" id="24e-85-FXX"/>
+                <constraint firstItem="Vl3-GD-87f" firstAttribute="height" secondItem="VLJ-uh-dxO" secondAttribute="height" multiplier="0.125" id="26A-ez-PPF"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="9ma-qC-KU9" secondAttribute="bottom" constant="20" id="3gc-dr-oxx"/>
                 <constraint firstItem="kXe-MZ-CKX" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="7aY-pm-3LF"/>
                 <constraint firstItem="kXe-MZ-CKX" firstAttribute="top" secondItem="aVT-f3-Mwd" secondAttribute="top" id="8pq-K6-idJ"/>
@@ -110,7 +111,6 @@
                 <constraint firstItem="N3u-tX-aNr" firstAttribute="centerX" secondItem="dk0-AN-Hja" secondAttribute="centerX" id="Dcz-PO-ml8"/>
                 <constraint firstItem="aVT-f3-Mwd" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="FOw-Mx-kMa"/>
                 <constraint firstItem="9ma-qC-KU9" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" id="Ios-hz-b0s"/>
-                <constraint firstItem="Vl3-GD-87f" firstAttribute="top" secondItem="9ma-qC-KU9" secondAttribute="top" constant="-50" id="KBp-ki-6vG"/>
                 <constraint firstItem="Vl3-GD-87f" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="NIW-WP-pdO"/>
                 <constraint firstItem="YhJ-oo-h2F" firstAttribute="trailing" secondItem="ABs-WT-4wl" secondAttribute="trailing" id="Ngl-uq-iID"/>
                 <constraint firstItem="dk0-AN-Hja" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="PCD-nQ-9GP"/>

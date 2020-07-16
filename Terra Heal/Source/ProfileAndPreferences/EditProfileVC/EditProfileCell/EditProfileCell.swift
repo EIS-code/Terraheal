@@ -43,7 +43,7 @@ class EditProfileCell: CollectionCell {
     var data: EditProfileTextFieldDetail!
     var parent: UIViewController? = nil
     
-    override class func awakeFromNib() {
+    override func awakeFromNib()  {
         super.awakeFromNib()
         
     }

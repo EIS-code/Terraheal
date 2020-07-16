@@ -11,23 +11,24 @@ import UIKit
 
 class DateTimeDialog: ThemeBottomDialogView {
     
-    @IBOutlet weak var btnDone: FloatingRoundButton!
     @IBOutlet weak var lblTitle: ThemeLabel!
-    @IBOutlet weak var btnNext: ThemeButton!
     var onBtnDoneTapped : ((_ millis:Double) -> Void)? = nil
-    
     @IBOutlet weak var vwForDateSelection: UIView!
     @IBOutlet weak var lblSelectDate: ThemeLabel!
     @IBOutlet weak var lblDateValue: ThemeLabel!
     @IBOutlet weak var btnSelectDate: ThemeButton!
-    
     @IBOutlet weak var vwForTimeSelection: UIView!
     @IBOutlet weak var lblSelectTime: ThemeLabel!
     @IBOutlet weak var lblTimeValue: ThemeLabel!
     @IBOutlet weak var btnSelectTime: ThemeButton!
     
+    
     var dateMilli: Double = 0
     var timeMilli: Double = 0
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
     func initialize(title:String,buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
         self.lblTitle.text = title
@@ -47,9 +48,8 @@ class DateTimeDialog: ThemeBottomDialogView {
         }
     }
     
-    func initialSetup() {
-        self.backgroundColor = .clear
-        dialogView.clipsToBounds = true
+    override func initialSetup() {
+        super.initialSetup()
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.lblSelectDate.text = "DATE_DIALOG_LBL_SELECT_DATE".localized()
         self.lblSelectTime.text = "DATE_DIALOG_LBL_SELECT_TIME".localized()
@@ -57,16 +57,8 @@ class DateTimeDialog: ThemeBottomDialogView {
         self.lblSelectTime.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.lblDateValue.setFont(name: FontName.Regular, size: FontSize.label_14)
         self.lblTimeValue.setFont(name: FontName.Regular, size: FontSize.label_14)
-        
-        self.backgroundView.backgroundColor = UIColor.black
-        self.backgroundView.alpha = 0.0
-        self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
-        self.addPanGesture(view: self)
-        transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
-        self.btnDone.setForwardButton()
-        self.btnNext.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        dialogView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
     }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         self.vwForDateSelection?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
@@ -84,12 +76,6 @@ class DateTimeDialog: ThemeBottomDialogView {
             if self.onBtnDoneTapped != nil {
                 self.onBtnDoneTapped!(mill);
             }
-        }
-    }
-    
-    @IBAction func btnCalcelTapped(_ sender: Any) {
-        if self.onBtnCancelTapped != nil {
-            self.onBtnCancelTapped!();
         }
     }
     

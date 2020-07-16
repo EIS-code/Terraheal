@@ -11,47 +11,43 @@ import UIKit
 class CustomTextViewDialog: ThemeBottomDialogView {
 
     @IBOutlet weak var lblTitle: ThemeLabel!
-    @IBOutlet weak var btnDone: ThemeButton!
     @IBOutlet weak var txtDescription: ThemeTextView!
     var strEnteredData: String = ""
     var onBtnDoneTapped: ((_ data:String) -> Void)? = nil
 
-
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
     func initialize(title:String,data: String , buttonTitle:String,cancelButtonTitle:String) {
         self.lblTitle.text = title
         self.txtDescription.text = data
-        self.btnDone.setTitle(buttonTitle, for: .normal)
         if cancelButtonTitle.isEmpty() {
             self.btnCancel.isHidden = true
         } else {
             self.btnCancel.setTitle(cancelButtonTitle, for: .normal)
             self.btnCancel.isHidden = false
         }
+        if buttonTitle.isEmpty() {
+            self.btnDone.isHidden = true
+        } else {
+            self.btnDone.setTitle(buttonTitle, for: .normal)
+            self.btnDone.isHidden = false
+        }
         self.initialSetup()
     }
 
-    func initialSetup() {
-        dialogView.clipsToBounds = true
-        self.backgroundColor = .clear
-        self.txtDescription.setFont(name: FontName.Regular, size: FontSize.label_14)
-        self.txtDescription.setPlaceholderFont(name: FontName.Regular, size: FontSize.label_14)
+    override func initialSetup() {
+        super.initialSetup()
+        self.txtDescription.setFont(name: FontName.Regular, size: FontSize.label_18)
+        self.txtDescription.setPlaceholderFont(name: FontName.Regular, size: FontSize.label_18)
         self.txtDescription.placeholder = "Lorem ipsum dolor"
-        self.backgroundView.backgroundColor = UIColor.black
-        self.backgroundView.alpha = 0.0
-        self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
-        dialogView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.txtDescription?.delegate = self
-        self.addPanGesture(view: self)
-        self.btnDone.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnCancel.setFont(name: FontName.Bold, size: FontSize.button_22)
-        self.btnDone.setHighlighted(isHighlighted: true)
-        transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.btnDone?.setHighlighted(isHighlighted: true)
     }
 
 

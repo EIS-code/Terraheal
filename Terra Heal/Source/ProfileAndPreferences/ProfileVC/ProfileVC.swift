@@ -107,13 +107,15 @@ class ProfileVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
+        self.headerView.layoutIfNeeded()
+       self.kTableHeaderHeight = self.headerView.frame.height
+       scrVw.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.headerView.layoutIfNeeded()
-        self.kTableHeaderHeight = self.headerView.frame.height
-        scrVw.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
+                
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -125,7 +127,7 @@ class ProfileVC: MainVC {
         super.viewDidLayoutSubviews()
 
         if self.isViewAvailable() {
-
+            
             //self.updateHeaderView()
             self.vwBg?.setRound(withBorderColor: UIColor.clear, andCornerRadious: 20.0, borderWidth: 1.0)
             self.vwBg?.setShadow()
@@ -147,8 +149,7 @@ class ProfileVC: MainVC {
 
     // MARK: - Action Methods
     @IBAction func btnMenuTapped(_ sender: Any) {
-        //SideVC.shared.show()
-        //self.openGenderPicker()
+    
     }
 
     @IBAction func btnProfileTapped(_ sender: Any) {
@@ -169,6 +170,7 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
         tableView.register(ProfileTblCell.nib()
             , forCellReuseIdentifier: ProfileTblCell.name)
         tableView.tableFooterView = UIView()
+        self.updateHeaderView()
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -176,15 +178,19 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
     }
 
     func updateHeaderView() {
-
-        if self.scrVw.contentOffset.y < 0 {
+        print("ScrollView ContetnSize: - \(scrVw.contentSize)")
+        print("ScrollView ContetnOffset: - \(scrVw.contentOffset)")
+        print("ScrollView Inset: - \(scrVw.contentInset)")
+        
+        if self.scrVw.contentOffset.y < -20{
             let y = abs(self.scrVw.contentOffset.y)
             let transLation = y/kTableHeaderHeight
-            headerView.alpha = transLation
-            headerView.transform = CGAffineTransform.init(scaleX: transLation, y: transLation)
-            
+            self.headerView.alpha = transLation
+            self.headerView.transform = CGAffineTransform.init(scaleX: transLation, y: transLation)
+            self.tableView.isScrollEnabled = false
         } else {
-            headerView.alpha = 0.0
+            self.headerView.alpha = 0.0
+            self.tableView.isScrollEnabled = true
         }
     }
 

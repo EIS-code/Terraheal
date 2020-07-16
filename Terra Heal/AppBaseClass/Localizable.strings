@@ -330,8 +330,6 @@
 "DOCUMENT_EMPTY_TITLE" = "no documents available";
 "DOCUMENT_EMPTY_MSG" = "add document to continue";
 "MANAGE_DOCUMENT_BTN_ADD_NEW" = "Add New";
-
-
 "MANAGE_ADDRESS_DIALOG_ADD_NEW_ADDRESS_TITLE" = "Add New Address";
 "MANAGE_ADDRESS_DIALOG_EDIT_ADDRESS_TITLE" = "Edit Address";
 "MANAGE_ADDRESS_TXT_ADDRESS_LINE_1" = "address line 1";
@@ -343,6 +341,33 @@
 "MANAGE_ADDRESS_TXT_ADDRESS_NAME" = "home / work / office";
 "MANAGE_ADDRESS_TXT_ADDRESS_LATITUDE" = "latitude";
 "MANAGE_ADDRESS_TXT_ADDRESS_LONGITUDE" = "longitude";
+
+//MARK: Add Card SCREEN
+"ADD_CARD_TITLE" = "credit, debit & atm card";
+"ADD_CARD_TITLE_MESSAGE" = "verify and secure your card";
+"ADD_CARD_LBL_NAME_OF_CARD" = "name on card";
+"ADD_CARD_TXT_NAME" = "name";
+"ADD_CARD_LBL_CARD_NUMBER" = "Card Number";
+"ADD_CARD_TXT_CARD_NUMBER" = "XXXX-XXXX-XXXX-XXXX";
+"ADD_CARD_LBL_EXPIRY" = "Expiry";
+"ADD_CARD_TXT_EXPIRY" = "mm/yy";
+"ADD_CARD_LBL_CARD_NICK_NAME" = "nickname for card";
+"ADD_CARD_TYPE_PERSONAL" = "personal";
+"ADD_CARD_TYPE_BUSINESS" = "business";
+"ADD_CARD_TYPE_OTHER" = "other";
+"ADD_CARD_SAVE_CARD_DETAILS" = "save your card details securely";
+"ADD_CARD_SAVE_CARD_DETAIL_MESSAGE" = "your card data is saved in a PCI DSS compliant secure vault.";
+"ADD_CARD_BTN_ADD_CARD" = "Add Card";
+
+
+
+
+
+"WELCOME_LBL_MESSAGE_2" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+"WELCOME_BTN_SIGN_UP" =  "Sign Up";
+"WELCOME_BTN_HOME" =  "Book Now";
+
+
 //MARK: Photo Dialog
 "PHOTO_DIALOG_FROM_TITLE" = "upload a photo ";
 "PHOTO_DIALOG_FROM_CAMERA" = "take a photo ";
@@ -368,6 +393,7 @@
 "BTN_NEXT" = "next";
 "BTN_SAVE" = "Save";
 "BTN_PROCEED" = "Proceed";
+"BTN_YES_PROCEED" = "yses proceed";
 "BTN_BACK" = "Back";
 "BTN_SEND" = "Send";
 "BTN_CANCEL" = "Cancel";

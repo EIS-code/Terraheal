@@ -35,6 +35,7 @@ public protocol UBottomSheetCoordinatorDataSource: class {
 ///Default data source implementation
 extension UBottomSheetCoordinatorDataSource{
     public func sheetPositions(_ availableHeight: CGFloat) -> [CGFloat]{
+        print([0.2, 0.9].map{$0*availableHeight})
         return [0.2, 0.7].map{$0*availableHeight}
     }
     

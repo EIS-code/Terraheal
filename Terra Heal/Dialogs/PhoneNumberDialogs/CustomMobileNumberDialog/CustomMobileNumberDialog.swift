@@ -11,20 +11,21 @@ import UIKit
 class CustomMobileNumberDialog: ThemeBottomDialogView {
 
     @IBOutlet weak var lblTitle: ThemeLabel!
-    @IBOutlet weak var btnDone: ThemeButton!
     @IBOutlet weak var txtMobileNumber: ACFloatingTextfield!
     @IBOutlet weak var txtCountryPhoneCode: ACFloatingTextfield!
 
     var onBtnDoneTapped: ((_ countryPhoneCode: String,_ phoneNumber: String) -> Void)? = nil
-
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
     func initialize(title:String, countryPhoneCode:String = "", phoneNumber:String = "", buttonTitle:String,cancelButtonTitle:String) {
 
         self.initialSetup()
         self.lblTitle.text = title
         self.txtCountryPhoneCode.text = countryPhoneCode
         self.txtMobileNumber.text = phoneNumber
-        self.btnDone.setTitle(buttonTitle, for: .normal)
-
         if cancelButtonTitle.isEmpty() {
             self.btnCancel.isHidden = true
         } else {
@@ -40,25 +41,15 @@ class CustomMobileNumberDialog: ThemeBottomDialogView {
 
     }
 
-    func initialSetup() {
-        dialogView.clipsToBounds = true
-        self.backgroundColor = .clear
+    override func initialSetup() {
+        super.initialSetup()
         self.txtMobileNumber?.placeholder = "".localized()
         self.txtMobileNumber?.delegate = self
         self.txtCountryPhoneCode?.placeholder = "".localized()
         self.txtCountryPhoneCode?.delegate = self
-
-        self.backgroundView.backgroundColor = UIColor.black
-        self.backgroundView.alpha = 0.0
-        self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
-        dialogView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
-        self.addPanGesture(view: self)
-        self.btnDone.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnCancel.setFont(name: FontName.Bold, size: FontSize.button_22)
-        self.btnDone.setHighlighted(isHighlighted: true)
-        transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
     }
+      
 
     override func layoutSubviews() {
         super.layoutSubviews()

@@ -103,13 +103,10 @@ class CustomAlert: ThemeDialogView {
         }
     }
 
-    @IBAction func btnCalcelTapped(_ sender: Any) {
-        if self.onBtnCancelTapped != nil
-        {
+    @IBAction func btnCancelTapped(_ sender: Any) {
+        if self.onBtnCancelTapped != nil {
             self.onBtnCancelTapped!();
-            
         }
-
     }
 
 }
@@ -199,8 +196,6 @@ extension  CustomAlert {
             print("No Animation")
 
         }
-
-
         transitionAnimator?.addCompletion({ (position) in
             self.removeFromSuperview()
         })

@@ -15,14 +15,11 @@ class MyPlaceVC: MainVC {
     @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var tableView: UITableView!
 
-    var arrForMyPlaces: [MyPlaceTblDetail] = [
-        MyPlaceTblDetail(title: "terra heal massage center 1", isSelected: true),
-        MyPlaceTblDetail(title: "terra heal massage center 2", isSelected: false),
-        MyPlaceTblDetail(title: "terra heal massage center 3", isSelected: false),
-        MyPlaceTblDetail(title: "terra heal massage center 4", isSelected: false),
-        MyPlaceTblDetail(title: "terra heal massage center 5", isSelected: false),
-        MyPlaceTblDetail(title: "terra heal massage center 6", isSelected: false),
-    ]
+    var arrForMyPlaces: [ServiceCenterDetail] = [
+        ServiceCenterDetail(name: "terra heal massage center", address: "Lorem ipsum dolor sit,lisbon, portugal -25412", numberOfServices: "25",latitude: "22.35",longitude: "70.90", servicesList: []),
+        ServiceCenterDetail(name: "terra heal massage center 2", address: "Lorem ipsum dolor sit,lisbon, portugal -25112", numberOfServices: "35",  latitude: "22.50",longitude: "70.50", servicesList: []),
+        ServiceCenterDetail(name: "terra heal massage center 3", address: "Lorem ipsum dolor sit,lisbon, portugal -25212", numberOfServices: "15", latitude: "22.70",longitude: "70.30", servicesList: [])]
+    
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -72,9 +69,9 @@ class MyPlaceVC: MainVC {
          self.btnBack.setBackButton()
     }
 
-    func openRateViewPicker(name: String) {
-        let alert: CustomRateViewDialog = CustomRateViewDialog.fromNib()
-        alert.initialize(title: name, data: "", buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_SKIP".localized())
+    func openPlaceDetailDialog(data: ServiceCenterDetail) {
+        let alert: ServiceCenterDetailDialog = ServiceCenterDetailDialog.fromNib()
+        alert.initialize(data: data, buttonTitle: "Service")
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
@@ -82,7 +79,7 @@ class MyPlaceVC: MainVC {
             alert?.dismiss()
         }
         alert.onBtnDoneTapped = {
-            [weak alert, weak self] (review,rating) in
+            [weak alert, weak self]  in
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
         }
@@ -131,7 +128,7 @@ extension MyPlaceVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        //self.openRateViewPicker(name: self.arrForMyPlaces[indexPath.row].title)
+        self.openPlaceDetailDialog(data: self.arrForMyPlaces[indexPath.row])
     }
     
 }
