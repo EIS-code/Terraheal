@@ -77,11 +77,4 @@ struct DateFormat {
     static let check = "✓"
 }
 
-struct ImageAsset {
-    static let upArrow = "asset-arrow-down"
-    static let downArrow = "asset-arrow-down"
-    static let rightArrow = "asset-arrow-right"
-    static let leftArrow = "asset-arrow-left"
-    
-    
-}
+

@@ -47,6 +47,7 @@ class CustomFaqDialog: ThemeBottomDialogView {
         super.initialSetup()
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.setupCollectionView(collectionView: self.collectionVw)
+        self.setDataForStepUpAnimation()
     }
 
     override func layoutSubviews() {
@@ -72,7 +73,6 @@ class CustomFaqDialog: ThemeBottomDialogView {
             [weak alert, weak self]  in
             guard let self = self else {return} ; print(self)
             alert?.dismiss()
-
         }
     }
 

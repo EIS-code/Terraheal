@@ -40,7 +40,6 @@ class ServiceMapVC: MainVC {
     var path: GMSPolyline =   GMSPolyline.init()
     var currentIndex: Int = 0
     var requestBooking: CurrentBooking = CurrentBooking.shared
-    var sheetCoordinator: UBottomSheetCoordinator!
     // MARK: Object lifecycle
     var arrForServices: [ServiceCenterDetail] = [
         ServiceCenterDetail(name: "terra heal massage center", address: "Lorem ipsum dolor sit,lisbon, portugal -25412", numberOfServices: "25",latitude: "22.35",longitude: "70.90", servicesList: []),
@@ -107,7 +106,7 @@ class ServiceMapVC: MainVC {
     }
     @IBAction func btnBookhereTapped(_ sender: Any) {
         self.openSessionSelectionDialog()
-
+        
     }
     @IBAction func btnCurrentLocationTapped(_ sender: Any) {
         var arrForCoordinate: [CLLocationCoordinate2D] = [self.currentMarker!.position]
@@ -127,53 +126,43 @@ extension ServiceMapVC {
     
     
     func openReciepentMassageDetailVCDialog() {
-        
-        let reciepentMassageDetailVC: ReciepentMassageDetailVC  = ReciepentMassageDetailVC.fromNib()
-        guard sheetCoordinator == nil else {return}
-        sheetCoordinator = UBottomSheetCoordinator(parent: self)
-        reciepentMassageDetailVC.sheetCoordinator = sheetCoordinator
-        reciepentMassageDetailVC.onBtnNextSelectedTapped = { [weak self,  weak reciepentMassageDetailVC] (arrForReceipents) in
-             guard let self = self else { return } ; print(self)
-            self.requestBooking.reciepentData = arrForReceipents
-            reciepentMassageDetailVC?.dismissAction()
-            reciepentMassageDetailVC?.removeFromParent()
-            self.sheetCoordinator = nil
-            self.openDateTimeSelectionDialog()
+        let alert: RecipentMassageManageDialog = RecipentMassageManageDialog.fromNib()
+        alert.initialize(title: "RECIEPENT_DETAIL_TITLE".localized(), buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            guard let self = self else {return}; print(self)
+            alert?.dismiss()
         }
-        reciepentMassageDetailVC.onBtnBackTapped = { [weak self, weak reciepentMassageDetailVC] in
-        guard let self = self else { return } ; print(self)
-            self.requestBooking.reciepentData = []
-            reciepentMassageDetailVC?.dismissAction()
-            reciepentMassageDetailVC?.removeFromParent()
-            self.sheetCoordinator = nil
+        alert.onBtnNextSelectedTapped = {
+            [weak alert, weak self] (description) in
+            guard let self = self else { return } ; print(self)
+            alert?.dismiss()
+            self.requestBooking.serviceCenterDetail = self.arrForServices[self.currentIndex]
+            Common.appDelegate.loadReviewAndBookVC()
         }
-        sheetCoordinator.addSheet(reciepentMassageDetailVC, to: self, didContainerCreate: { container in
-            container.roundCorners(corners: [.topLeft, .topRight], radius: 40)
-            
-        })
-        
-      }
+    }
     
     func openTextViewPicker() {
-           let alert: TextViewDialog = TextViewDialog.fromNib()
-           alert.initialize(title: "booking notes"
-               , data: self.requestBooking.bookingNotes, buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
-           alert.show(animated: true)
-           alert.onBtnCancelTapped = {
-               [weak alert, weak self] in
-               guard let self = self else {return}; print(self)
-               alert?.dismiss()
-           }
-           alert.onBtnDoneTapped = {
-               [weak alert, weak self] (description) in
-               guard let self = self else { return } ; print(self)
-               alert?.dismiss()
-               self.requestBooking.bookingNotes = description
-                self.requestBooking.serviceCenterDetail = self.arrForServices[self.currentIndex]
-               Common.appDelegate.loadReviewAndBookVC()
-           }
-       }
-
+        let alert: TextViewDialog = TextViewDialog.fromNib()
+        alert.initialize(title: "booking notes"
+            , data: self.requestBooking.bookingNotes, buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            guard let self = self else {return}; print(self)
+            alert?.dismiss()
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (description) in
+            guard let self = self else { return } ; print(self)
+            alert?.dismiss()
+            self.requestBooking.bookingNotes = description
+            self.requestBooking.serviceCenterDetail = self.arrForServices[self.currentIndex]
+            Common.appDelegate.loadReviewAndBookVC()
+        }
+    }
+    
     
     func openServiceSelectionDialog() {
         let serviceSelectionDialog: CustomServiceSelectionDialog  = CustomServiceSelectionDialog.fromNib()
@@ -230,7 +219,7 @@ extension ServiceMapVC {
         }
     }
     
-   
+    
 }
 
 

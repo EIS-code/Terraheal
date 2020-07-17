@@ -39,8 +39,8 @@ class ServiceCenterDetailDialog: ThemeBottomDialogView {
         self.lblName?.text = data.name
         self.lblAddress?.text = data.address
         self.btnNumberOfServices.setTitle(data.numberOfServices + "+", for: .normal)
+        self.scrVw.contentInset = UIEdgeInsets.init(top: 10, left: 0, bottom: 60, right: 0)
     }
-    
     
     override func initialSetup() {
         super.initialSetup()
@@ -53,6 +53,7 @@ class ServiceCenterDetailDialog: ThemeBottomDialogView {
         self.lblServices?.setFont(name: FontName.SemiBold, size: FontSize.label_14)
         self.btnNumberOfServices?.setFont(name: FontName.Regular, size: FontSize.label_14)
         self.btnNumberOfServices?.setRound()
+        self.setDataForStepUpAnimation()
     }
     
     override func layoutSubviews() {

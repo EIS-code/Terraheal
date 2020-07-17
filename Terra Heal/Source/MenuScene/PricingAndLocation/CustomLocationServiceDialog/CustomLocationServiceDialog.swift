@@ -44,7 +44,7 @@ class CustomLocationServiceDialog: ThemeBottomDialogView {
             self.btnDone.setTitle(buttonTitle, for: .normal)
             self.btnDone.isHidden = false
         }
-        self.setDataForStepUpAnimation()
+        
     }
     
     override func initialSetup() {
@@ -65,6 +65,7 @@ class CustomLocationServiceDialog: ThemeBottomDialogView {
                 self.therapiesTapped()
             }
         }
+        self.setDataForStepUpAnimation()
     }
     
     override func layoutSubviews() {
@@ -160,5 +161,5 @@ extension CustomLocationServiceDialog:  UICollectionViewDelegate, UICollectionVi
         let size = collectionView.bounds.width / 2.0
         return CGSize(width: size , height: size)
     }
-
+    
 }

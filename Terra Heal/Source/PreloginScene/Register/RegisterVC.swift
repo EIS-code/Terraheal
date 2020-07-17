@@ -9,6 +9,7 @@ import UIKit
 
 class RegisterVC: MainVC {
 
+    @IBOutlet weak var ivHeader: UIImageView!
     @IBOutlet weak var scrVw: UIScrollView!
     @IBOutlet weak var vwContent: UIView!
     @IBOutlet weak var hVwContent: NSLayoutConstraint!
@@ -65,6 +66,7 @@ class RegisterVC: MainVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
+            self.ivHeader.adjustHeight()
             self.btnSignUp?.layoutIfNeeded()
             self.btnSignUp?.setHighlighted(isHighlighted: true)
             btnGoogle?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
@@ -81,7 +83,7 @@ class RegisterVC: MainVC {
     private func initialViewSetup() {
         
         self.lblMessage?.text = "REGISTER_LBL_MESSAGE".localized()
-        self.lblMessage?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
+        self.lblMessage?.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.txtName?.placeholder = "REGISTER_TXT_NAME".localized()
         self.txtName?.delegate = self
         self.txtName?.configureTextField(InputTextFieldDetail.getNameConfiguration())

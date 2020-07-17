@@ -48,10 +48,6 @@ class WelcomeVC: MainVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
-            self.iv1.layoutIfNeeded()
-            self.iv1?.setRound()
-            self.iv2.layoutIfNeeded()
-            self.iv2?.setRound()
             self.btnSignUp?.superview?.layoutIfNeeded()
             self.btnSignUp?.setHighlighted(isHighlighted: true)
             self.btnHome?.setHighlighted(isHighlighted: false)
@@ -71,11 +67,8 @@ class WelcomeVC: MainVC {
         self.btnSignUp.setTitle("WELCOME_BTN_SIGN_UP".localized(), for: .normal)
         self.btnHome.setTitle("WELCOME_BTN_HOME".localized(), for: .normal)
         self.btnHome.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.iv1?.setRound()
-        self.iv2?.setRound()
-
-
-    }
+       
+}
 
 
     // MARK: Action Buttons

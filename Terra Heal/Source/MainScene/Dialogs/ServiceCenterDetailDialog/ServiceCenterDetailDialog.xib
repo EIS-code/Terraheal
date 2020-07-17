@@ -28,19 +28,19 @@
                     <rect key="frame" x="0.0" y="95.5" width="371" height="860.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
-                            <rect key="frame" x="0.0" y="31.5" width="371" height="829"/>
+                            <rect key="frame" x="0.0" y="21.5" width="371" height="839"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cnz-ZK-u39">
-                                    <rect key="frame" x="20" y="51.5" width="331" height="549"/>
+                                    <rect key="frame" x="20" y="41.5" width="331" height="341.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="I am a " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3n-RY-vOK" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="132.5" y="0.0" width="66.5" height="233"/>
+                                            <rect key="frame" x="132.5" y="0.0" width="66.5" height="26"/>
                                             <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="22"/>
                                             <color key="textColor" name="theme_primary"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8qN-AG-Drp">
-                                            <rect key="frame" x="104" y="248" width="123.5" height="48"/>
+                                            <rect key="frame" x="104" y="41" width="123.5" height="48"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2nj-1h-TkT" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
@@ -62,25 +62,25 @@
                                             </subviews>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="I am a " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsR-MN-qTz" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="132.5" y="311" width="66.5" height="26"/>
+                                            <rect key="frame" x="132.5" y="104" width="66.5" height="26"/>
                                             <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="22"/>
                                             <color key="textColor" name="theme_primary"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkh-d9-ezh" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="132.5" y="352" width="66.5" height="26"/>
+                                            <rect key="frame" x="132.5" y="145" width="66.5" height="26"/>
                                             <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="22"/>
                                             <color key="textColor" name="theme_primary"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo-map" translatesAutoresizingMaskIntoConstraints="NO" id="mF0-Oy-C1t">
-                                            <rect key="frame" x="49.5" y="393" width="232" height="93"/>
+                                            <rect key="frame" x="49.5" y="186" width="232" height="92.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="mF0-Oy-C1t" secondAttribute="height" multiplier="2.5:1" id="PJ9-Za-lBd"/>
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ocg-Mb-0dR">
-                                            <rect key="frame" x="54.5" y="501" width="222" height="48"/>
+                                            <rect key="frame" x="54.5" y="293.5" width="222" height="48"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUo-Q2-xKt" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
@@ -134,7 +134,7 @@
                                     </constraints>
                                 </stackView>
                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDB-Fs-X9g">
-                                    <rect key="frame" x="0.0" y="620.5" width="371" height="248.5"/>
+                                    <rect key="frame" x="0.0" y="403" width="371" height="436"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOn-3D-45e" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="20" y="20" width="331" height="20.5"/>
@@ -155,7 +155,7 @@
                                     <viewLayoutGuide key="frameLayoutGuide" id="fdX-Uq-7as"/>
                                 </scrollView>
                                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="119" y="769" width="133" height="40"/>
+                                    <rect key="frame" x="119" y="779" width="133" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                     <state key="normal" title="Sign In">
@@ -172,15 +172,14 @@
                                 <constraint firstItem="cnz-ZK-u39" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="5lm-dC-82n"/>
                                 <constraint firstAttribute="trailing" secondItem="cnz-ZK-u39" secondAttribute="trailing" constant="20" id="Dxe-Kn-Q7y"/>
                                 <constraint firstItem="oDB-Fs-X9g" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="LId-ue-aDK"/>
-                                <constraint firstAttribute="bottom" secondItem="oDB-Fs-X9g" secondAttribute="bottom" constant="-40" id="fTp-gY-uOh"/>
                                 <constraint firstAttribute="bottom" secondItem="W3s-UH-gbE" secondAttribute="bottom" constant="20" id="hVw-7t-eCG"/>
                                 <constraint firstItem="oDB-Fs-X9g" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" id="jrR-7p-Euv"/>
-                                <constraint firstItem="oDB-Fs-X9g" firstAttribute="height" secondItem="Yaj-p7-IIT" secondAttribute="height" multiplier="0.3" id="jya-AS-ldb"/>
                                 <constraint firstItem="W3s-UH-gbE" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="la7-5Y-5S1"/>
+                                <constraint firstAttribute="bottom" secondItem="oDB-Fs-X9g" secondAttribute="bottom" id="vRj-wC-pGs"/>
                             </constraints>
                         </view>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center-white" translatesAutoresizingMaskIntoConstraints="NO" id="az3-5n-QhJ" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="154" y="0.0" width="63" height="63"/>
+                            <rect key="frame" x="164" y="0.0" width="43" height="43"/>
                             <color key="backgroundColor" name="theme_primary"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="az3-5n-QhJ" secondAttribute="height" multiplier="1:1" priority="999" id="gTw-dh-Adp"/>
@@ -192,7 +191,7 @@
                             </userDefinedRuntimeAttributes>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="581-cI-fuY" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="309" y="10.5" width="42" height="42"/>
+                            <rect key="frame" x="309" y="0.5" width="42" height="42"/>
                             <color key="backgroundColor" name="theme_background"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="581-cI-fuY" secondAttribute="height" multiplier="1:1" id="JMg-tl-e7y"/>
@@ -210,6 +209,7 @@
                     <constraints>
                         <constraint firstItem="Yaj-p7-IIT" firstAttribute="centerX" secondItem="V39-84-TsB" secondAttribute="centerX" id="0Vo-2B-aLF"/>
                         <constraint firstItem="az3-5n-QhJ" firstAttribute="centerY" secondItem="Yaj-p7-IIT" secondAttribute="top" id="91X-Ow-Eb7"/>
+                        <constraint firstAttribute="height" constant="860.5" id="CkW-yM-gdH"/>
                         <constraint firstAttribute="bottom" secondItem="Yaj-p7-IIT" secondAttribute="bottom" id="Kzi-5I-qTc"/>
                         <constraint firstItem="Yaj-p7-IIT" firstAttribute="width" secondItem="V39-84-TsB" secondAttribute="width" id="MUD-su-Zve"/>
                         <constraint firstItem="az3-5n-QhJ" firstAttribute="top" secondItem="V39-84-TsB" secondAttribute="top" id="RTR-tp-f7u"/>
@@ -223,7 +223,6 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="6ZW-DU-hOd" secondAttribute="trailing" id="C4E-pP-AJq"/>
-                <constraint firstItem="V39-84-TsB" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" multiplier="0.9" id="MKv-ih-7Ls"/>
                 <constraint firstItem="6ZW-DU-hOd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O4e-FZ-uqZ"/>
                 <constraint firstItem="6ZW-DU-hOd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Q6J-jS-lz5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="V39-84-TsB" secondAttribute="trailing" id="dUH-Mq-8NY"/>
@@ -239,6 +238,7 @@
                 <outlet property="btnDone" destination="W3s-UH-gbE" id="4jk-wN-Zhb"/>
                 <outlet property="btnNumberOfServices" destination="2nj-1h-TkT" id="uC4-d5-nYS"/>
                 <outlet property="contentView" destination="Yaj-p7-IIT" id="stg-CV-AcH"/>
+                <outlet property="dialogHeight" destination="CkW-yM-gdH" id="kMD-wJ-y86"/>
                 <outlet property="dialogView" destination="V39-84-TsB" id="10y-q1-aod"/>
                 <outlet property="ivMap" destination="mF0-Oy-C1t" id="f4V-1p-ahR"/>
                 <outlet property="ivMassageCenter" destination="az3-5n-QhJ" id="B7p-eD-hDe"/>

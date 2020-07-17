@@ -14,22 +14,21 @@ struct ShareReferral {
     var image: UIImage = UIImage()
 }
 class CustomShareReferralDialog: ThemeBottomDialogView {
-
+    
     @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var lblHeader: ThemeLabel!
     @IBOutlet weak var lblDescription: ThemeLabel!
     @IBOutlet weak var scrVw: UIScrollView!
-
+    
     var onBtnDoneTapped: ((_ data: ShareReferral ) -> Void)? = nil
     var shareReferral: ShareReferral = ShareReferral()
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     
     func initialize(title:String, data:ShareReferral = ShareReferral(), buttonTitle:String,cancelButtonTitle:String) {
-
         self.initialSetup()
         self.lblTitle.text = title
         self.lblHeader.text = data.referralHeader
@@ -46,27 +45,27 @@ class CustomShareReferralDialog: ThemeBottomDialogView {
             self.btnDone.setTitle(buttonTitle, for: .normal)
             self.btnDone.isHidden = false
         }
-        
     }
-
+    
     override func initialSetup() {
         super.initialSetup()
         self.lblHeader.setFont(name: FontName.SemiBold, size: FontSize.label_22)
         self.lblDescription.setFont(name: FontName.Regular, size: FontSize.label_14)
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.setDataForStepUpAnimation()
     }
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         self.scrVw.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
     }
-
+    
     @IBAction func btnDoneTapped(_ sender: Any) {
-            if self.onBtnDoneTapped != nil {
-                self.onBtnDoneTapped!(shareReferral);
-            }
+        if self.onBtnDoneTapped != nil {
+            self.onBtnDoneTapped!(shareReferral);
+        }
     }
-
+    
 }
 
 

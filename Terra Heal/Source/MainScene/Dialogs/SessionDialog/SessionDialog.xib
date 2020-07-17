@@ -47,9 +47,6 @@
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tfg-GV-f0f">
                                     <rect key="frame" x="0.0" y="65.5" width="374" height="128"/>
                                     <color key="backgroundColor" name="theme_primary_light_background"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="128" id="YYE-9t-jcw"/>
-                                    </constraints>
                                 </tableView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
                                     <rect key="frame" x="120.5" y="213.5" width="133" height="40"/>
@@ -81,6 +78,7 @@
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="RrZ-kW-n5i"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="Zud-Qp-ll1"/>
                         <constraint firstAttribute="bottom" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="20" id="fhi-OD-EBT"/>
+                        <constraint firstAttribute="height" constant="333.5" id="wX9-c5-B7l"/>
                     </constraints>
                 </view>
             </subviews>
@@ -99,8 +97,8 @@
                 <outlet property="backgroundView" destination="6ZW-DU-hOd" id="BnY-1h-4oF"/>
                 <outlet property="btnCancel" destination="BVl-el-UJJ" id="mZE-lE-kWH"/>
                 <outlet property="btnDone" destination="W3s-UH-gbE" id="Cp0-qH-ylB"/>
+                <outlet property="dialogHeight" destination="wX9-c5-B7l" id="gQ9-Cf-KoS"/>
                 <outlet property="dialogView" destination="Yaj-p7-IIT" id="I5L-DG-Qv7"/>
-                <outlet property="hTblVw" destination="YYE-9t-jcw" id="TWI-WA-p54"/>
                 <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
                 <outlet property="tableView" destination="tfg-GV-f0f" id="Ira-PT-Aex"/>
                 <outlet property="topBarSpace" destination="Zud-Qp-ll1" id="xKJ-Ye-PNm"/>

@@ -93,6 +93,7 @@ class CustomPreferGenderPicker: ThemeBottomDialogView {
     override func initialSetup() {
         super.initialSetup()
         self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.button_22)
+        self.setDataForStepUpAnimation()
     }
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -115,9 +116,9 @@ class CustomPreferGenderPicker: ThemeBottomDialogView {
 extension CustomPreferGenderPicker : UITableViewDelegate,UITableViewDataSource {
 
     private func reloadTableDateToFitHeight(tableView: UITableView) {
-        tableView.reloadData(heightToFit: self.hTblVw) {
-
-        }
+        tableView.reloadData()
+        /*tableView.reloadData(heightToFit: self.hTblVw) {
+        }*/
     }
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self

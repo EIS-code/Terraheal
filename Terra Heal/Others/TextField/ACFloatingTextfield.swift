@@ -22,24 +22,24 @@ import UIKit
     let rightButton  = UIButton(type: .custom)
     @IBInspectable open var disableFloatingLabel : Bool = false
     @IBInspectable open var shakeLineWithError : Bool = true
-    @IBInspectable open var lineColor : UIColor = UIColor.themePrimaryLight {
+    @IBInspectable open var lineColor : UIColor = UIColor.themeHintText {
         didSet{
             self.floatTheLabel()
         }
     }
-    @IBInspectable open var selectedLineColor : UIColor = UIColor.themePrimary{
-        didSet{
-            self.floatTheLabel()
-        }
-    }
-    
-    @IBInspectable open var placeHolderColor : UIColor = UIColor.themePrimary {
+    @IBInspectable open var selectedLineColor : UIColor = UIColor.themeDarkText{
         didSet{
             self.floatTheLabel()
         }
     }
     
-    @IBInspectable open var selectedPlaceHolderColor : UIColor = UIColor.themePrimary {
+    @IBInspectable open var placeHolderColor : UIColor = UIColor.themeDarkText {
+        didSet{
+            self.floatTheLabel()
+        }
+    }
+    
+    @IBInspectable open var selectedPlaceHolderColor : UIColor = UIColor.themeDarkText {
         didSet{
             self.floatTheLabel()
         }
@@ -203,7 +203,7 @@ fileprivate extension ACFloatingTextfield {
     //MARK:- ACFLoating Initialzation.
     func initialize() -> Void {
         self.clipsToBounds = true
-        self.textColor = UIColor.themePrimary
+        self.textColor = UIColor.themeDarkText
         self.autocorrectionType = .no
         self.setFont(name:FontName.Regular,size:FontSize.textField_20)
         addBottomLine()

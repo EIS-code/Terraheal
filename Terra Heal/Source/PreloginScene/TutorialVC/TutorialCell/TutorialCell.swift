@@ -10,6 +10,7 @@ import Foundation
 struct TutorialDetail {
     var title:String = ""
     var description:String = ""
+    var image: String = "asset-tutorial-0"
 }
 
 class TutorialCell: CollectionCell {
@@ -29,7 +30,8 @@ class TutorialCell: CollectionCell {
         self.lblDescription?.setFont(name: FontName.Regular, size: FontSize.label_18)
         self.lblTitle?.text = tutorialDetail.title
         self.lblDescription?.text = tutorialDetail.description
-        self.ivTutorial?.setRound()
+        self.ivTutorial.image = UIImage.init(named: tutorialDetail.image)
+        //self.ivTutorial?.setRound()
     }
     override func layoutSubviews() {
         super.layoutSubviews()

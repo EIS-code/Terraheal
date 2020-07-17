@@ -85,6 +85,7 @@ class CustomAddNewAddressDialog: ThemeBottomDialogView {
         self.txtLongitude?.placeholder = "MANAGE_ADDRESS_TXT_ADDRESS_LONGITUDE".localized()
         self.txtLongitude.delegate = self
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.setDataForStepUpAnimation()
        
     }
     
@@ -182,6 +183,7 @@ class CustomAddNewAddressDialog: ThemeBottomDialogView {
             }
         }
     }
+   
     @IBAction func btnLocationTapped(_ sender: ThemeButton) {
         if locationVC == nil {
              locationVC = MapLocationVC.fromNib()
@@ -201,10 +203,7 @@ class CustomAddNewAddressDialog: ThemeBottomDialogView {
                 self.setAddressData(data: self.selectedAddress)
             }
             locationVC?.dismiss(animated: true, completion: {
-                       })
-            
-            
-            
+            })
         }
     }
     

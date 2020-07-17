@@ -15,7 +15,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomCountryPhoneCodePickerCell">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomCountryPhoneCodePickerCell" customModule="Terra_Heal" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -57,7 +57,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="countryFlag" destination="Beg-Dd-FOB" id="OgS-IF-X2j"/>
+                <outlet property="countryFlag" destination="Beg-Dd-FOB" id="CPL-Vf-89D"/>
                 <outlet property="lblCountryName" destination="ZX3-Dy-geN" id="APO-pK-OMc"/>
                 <outlet property="lblCountryPhoneCode" destination="Bpe-Md-szB" id="IbE-aO-eE8"/>
             </connections>

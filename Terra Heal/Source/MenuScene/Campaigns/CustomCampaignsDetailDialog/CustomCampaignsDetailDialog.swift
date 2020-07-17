@@ -52,6 +52,7 @@ class CustomCampaignsDetailDialog: ThemeBottomDialogView {
         self.lblHeader.setFont(name: FontName.SemiBold, size: FontSize.label_22)
         self.lblDescription.setFont(name: FontName.Regular, size: FontSize.label_14)
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.setDataForStepUpAnimation()
     }
 
     override func layoutSubviews() {

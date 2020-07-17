@@ -40,6 +40,7 @@ class CustomInformationDialog: ThemeBottomDialogView {
     override func initialSetup() {
         super.initialSetup()
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.setDataForStepUpAnimation()
     }
 
     override func layoutSubviews() {

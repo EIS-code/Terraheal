@@ -74,6 +74,7 @@ class DurationSelectionDialog: ThemeBottomDialogView {
         self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         self.lblMessage.setFont(name: FontName.SemiBold, size:
             FontSize.label_10)
+        self.setDataForStepUpAnimation()
     }
     
     override func layoutSubviews() {

@@ -14,22 +14,18 @@ import UIKit
 class CustomCityPicker: ThemeBottomDialogView {
 
     @IBOutlet weak var lblTitle: ThemeLabel!
-    @IBOutlet weak var hTblVw: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchVw: UIView!
-
     @IBOutlet weak var txtSearchBar: ThemeTextField!
 
     var onBtnDoneTapped: ((_ data: City) -> Void)? = nil
     var selectedData: City? = nil
-
     var arrForFilteredData: [City] = []//City.getDemoArray()
     var arrForForOriginalData: [City] = []//City.getDemoArray()
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
     
     func initialize(title:String,buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
@@ -49,7 +45,6 @@ class CustomCityPicker: ThemeBottomDialogView {
         self.select(data: self.selectedData)
         self.setupTableView(tableView: self.tableView)
         self.setupSearchbar(searchBar: self.txtSearchBar)
-        
     }
 
     func select(data:City?) {
@@ -59,6 +54,7 @@ class CustomCityPicker: ThemeBottomDialogView {
     override func initialSetup() {
         super.initialSetup()
         self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.button_22)
+        self.setDataForStepUpAnimation()
     }
 
     override func layoutSubviews() {
@@ -75,26 +71,18 @@ class CustomCityPicker: ThemeBottomDialogView {
                 self.onBtnDoneTapped!(selectedData!);
             }
         }
-
     }
-
-
 }
 
 extension CustomCityPicker : UITableViewDelegate,UITableViewDataSource {
 
     private func reloadTableDateToFitHeight(tableView: UITableView) {
         DispatchQueue.main.async {
-
             tableView.reloadData {
-
             }
-            /*tableView.reloadData(heightToFit: self.hTblVw) {
-
-            }*/
         }
-
     }
+    
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
@@ -164,9 +152,8 @@ extension CustomCityPicker : UITextFieldDelegate {
         }
         self.reloadTableDateToFitHeight(tableView: tableView)
     }
-
-
 }
+
 //MARK: Web Service Call
 extension CustomCityPicker {
 

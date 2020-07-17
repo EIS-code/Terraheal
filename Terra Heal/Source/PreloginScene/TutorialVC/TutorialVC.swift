@@ -54,7 +54,7 @@ class TutorialVC: MainVC {
         self.btnNext?.setTitle("TUTORIAL_BTN_NEXT".localized(), for: .normal)
         self.btnNext?.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         for i in 1...3{
-            let tutorial: TutorialDetail = TutorialDetail(title: "TUTORIAL_LBL_TITLE_\(i)".localized(), description: "TUTORIAL_LBL_MESSAGE_\(i)".localized())
+            let tutorial: TutorialDetail = TutorialDetail(title: "TUTORIAL_LBL_TITLE_\(i)".localized(), description: "TUTORIAL_LBL_MESSAGE_\(i)".localized(), image: "asset-tutorial-\(i)")
             arrForTutorials.append(tutorial)
         }
         self.btnBack.isHidden = true

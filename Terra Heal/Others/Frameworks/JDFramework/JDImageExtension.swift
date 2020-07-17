@@ -76,4 +76,35 @@ extension UIImageView {
             }
         }
     }
+    
+    func adjustHeight(){
+        if let image = self.image {
+            let ratio = image.size.width / image.size.height
+            let newHeight = self.frame.width / ratio
+            self.height(constant: newHeight)
+            self.superview?.layoutIfNeeded()
+        }
+    }
+}
+class FixedWidthAspectFitImageView: UIImageView
+{
+
+    override var intrinsicContentSize: CGSize
+    {
+        // VALIDATE ELSE RETURN
+        // frameSizeWidth
+        let frameSizeWidth = self.frame.size.width
+
+        // image
+        // ⓘ In testing on iOS 12.1.4 heights of 1.0 and 0.5 were respected, but 0.1 and 0.0 led intrinsicContentSize to be ignored.
+        guard let image = self.image else
+        {
+            return CGSize(width: frameSizeWidth, height: 1.0)
+        }
+
+        // MAIN
+        let returnHeight = ceil(image.size.height * (frameSizeWidth / image.size.width))
+        return CGSize(width: frameSizeWidth, height: returnHeight)
+    }
+
 }

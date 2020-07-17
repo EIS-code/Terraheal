@@ -41,6 +41,7 @@ class SettingTblCell: TableCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.vwBg.layoutIfNeeded()
         self.ivIcon?.setRound()
         self.imgSelected?.setRound()
     }

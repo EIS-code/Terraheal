@@ -137,7 +137,7 @@
             <connections>
                 <outlet property="backgroundView" destination="6ZW-DU-hOd" id="lFA-bQ-tdV"/>
                 <outlet property="btnCancel" destination="581-cI-fuY" id="Hnk-iZ-ihl"/>
-                <outlet property="btnDone" destination="sje-dg-cRN" id="K7v-vN-Pzx"/>
+                <outlet property="btnDoneFloating" destination="sje-dg-cRN" id="19J-PU-8Nr"/>
                 <outlet property="btnNext" destination="5Ey-Oz-2S3" id="BA8-RU-ECa"/>
                 <outlet property="dialogView" destination="Yaj-p7-IIT" id="Sjt-cS-gvV"/>
                 <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>

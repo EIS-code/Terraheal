@@ -61,6 +61,7 @@ class CustomServiceSelectionDialog: ThemeBottomDialogView {
                 self.therapiesTapped()
             }
         }
+        self.setDataForStepUpAnimation()
     }
 
     override func layoutSubviews() {

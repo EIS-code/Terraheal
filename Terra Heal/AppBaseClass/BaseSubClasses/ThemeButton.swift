@@ -105,6 +105,7 @@ class FloatingRoundButton: ThemeButton {
         self.setTitle(FontSymbol.next_arrow, for: .normal)
     }
     func setBackButton() {
+        self.backgroundColor = UIColor.themeSecondary
         self.height(constant: JDDeviceHelper().offseter(offset: 50))
         self.setFont(name: FontName.System, size: 37)
         self.setTitle(FontSymbol.back_arrow, for: .normal)
