@@ -79,11 +79,12 @@ class VerificationVC: MainVC {
     }
 
     @IBAction func btnBackTapped(_ sender: Any) {
-        _ = self.navigationController?.popViewController(animated: true)
+         _ = (self.navigationController as? NC)?.popVC()
     }
 
     @IBAction func btnVerifiedTapped(_ sender: Any) {
-        Common.appDelegate.loadManageDocumentVC(navigaionVC: self.navigationController)
+        Common.appDelegate.loadContactVerificationVC(navigaionVC: self.navigationController)
+        //Common.appDelegate.loadManageDocumentVC(navigaionVC: self.navigationController)
     }
 
 }

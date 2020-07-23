@@ -6,24 +6,6 @@
 import UIKit
 import Foundation
 
-enum TextFieldContentType: Int {
-    
-    case Name = 0
-    case Surname = 1
-    case Gender = 2
-    case DOB = 3
-    case Phone = 4
-    case EmergencyContact = 5
-    case Email = 6
-    case City = 7
-    case Country = 8
-    case Nif = 9
-    case IdPassport = 10
-    case Password = 13
-    case Number = 11
-    case Default = 12
-    
-}
 
 
 

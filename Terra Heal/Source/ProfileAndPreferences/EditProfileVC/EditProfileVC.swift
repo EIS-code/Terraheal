@@ -80,7 +80,7 @@ class EditProfileVC: MainVC {
     }
     
     @IBAction func btnBackTapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+         _ = (self.navigationController as? NC)?.popVC()
     }
     
     @IBAction func btnAddPictureTapped(_ sender: Any) {
@@ -454,7 +454,7 @@ extension EditProfileVC {
 extension EditProfileVC: UIImageCropperProtocol {
     func didCropImage(originalImage: UIImage?, croppedImage: UIImage?) {
         ivProfilePic.image = croppedImage
-        self.navigationController?.popViewController(animated: true)
+         _ = (self.navigationController as? NC)?.popVC()
         self.ivProfilePic.image = croppedImage
         self.selectedProfileDoc?.image = croppedImage
         self.wsUpdateProfile()
@@ -463,7 +463,7 @@ extension EditProfileVC: UIImageCropperProtocol {
     //optional
     func didCancel() {
         print("did cancel")
-        self.navigationController?.popViewController(animated: true)
+         _ = (self.navigationController as? NC)?.popVC()
         //self.wsUpdateProfile()
     }
 }

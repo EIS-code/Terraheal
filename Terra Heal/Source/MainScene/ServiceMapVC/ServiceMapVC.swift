@@ -98,7 +98,7 @@ class ServiceMapVC: MainVC {
     // MARK: Action Buttons
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
         super.btnLeftTapped(btn)
-        self.navigationController?.popViewController(animated: true)
+         _ = (self.navigationController as? NC)?.popVC()
     }
     @IBAction func btnCheckServiceTapped(_ sender: Any) {
         self.openServiceSelectionDialog()
@@ -215,7 +215,12 @@ extension ServiceMapVC {
             guard let self = self else { return } ; print(self)
             sessionSelectionDialog?.dismiss()
             self.requestBooking.session = session
-            self.openReciepentMassageDetailVCDialog()
+            if PreferenceHelper.shared.getUserId().isEmpty()  {
+                Common.appDelegate.loadWelcomeVC()
+            } else {
+                self.openReciepentMassageDetailVCDialog()
+            }
+            
         }
     }
     

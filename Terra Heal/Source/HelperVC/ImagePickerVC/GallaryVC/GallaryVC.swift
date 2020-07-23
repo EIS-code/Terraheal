@@ -88,7 +88,7 @@ class GallaryVC: MainVC {
     }
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
         super.btnLeftTapped(btn)
-        _ = self.navigationController?.popViewController(animated: true)
+         _ = (self.navigationController as? NC)?.popVC()
     }
 }
 

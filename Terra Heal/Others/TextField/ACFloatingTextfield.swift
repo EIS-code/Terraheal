@@ -33,7 +33,7 @@ import UIKit
         }
     }
     
-    @IBInspectable open var placeHolderColor : UIColor = UIColor.themeDarkText {
+    @IBInspectable open var placeHolderColor : UIColor = UIColor.themeHintText {
         didSet{
             self.floatTheLabel()
         }

@@ -29,8 +29,10 @@ class PaymentPreferenceVC: MainVC {
     @IBOutlet weak var lblCreditCard: ThemeLabel!
     @IBOutlet weak var lblCreditCardValue: ThemeLabel!
     @IBOutlet weak var btnExpandCreditCard: ThemeButton!
-    
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
+    @IBOutlet weak var btnAddPayment: ThemeButton!
+    
+    var isFromMenu: Bool = false
     var arrForData: [CreditCardDetail] = [CreditCardDetail.init(id: "1", name: "personal", value: "254xxxxxxxxx324841", isSeleced: false),CreditCardDetail.init(id: "2", name: "business", value: "254xxxxxxxxx324841", isSeleced: true)]
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -74,6 +76,7 @@ class PaymentPreferenceVC: MainVC {
             self.btnDefault.setRound(withBorderColor: .themePrimary, andCornerRadious: 5.0, borderWidth: 1.0)
             self.reloadTableDataToFitHeight(tableView: self.tableView, height: self.hTblVw)
             self.btnSubmit?.setHighlighted(isHighlighted: true)
+            self.btnAddPayment?.setHighlighted(isHighlighted: false)
         }
     }
     
@@ -95,8 +98,19 @@ class PaymentPreferenceVC: MainVC {
         self.btnSubmit?.setTitle("PAYMENT_BTN_ADD_NEW".localized(), for: .normal)
         self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnSubmit?.setHighlighted(isHighlighted: true)
+        self.btnAddPayment?.setTitle("PAYMENT_BTN_ADD_NEW_PAYMENT".localized(), for: .normal)
+        self.btnAddPayment?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
+        self.btnAddPayment?.setHighlighted(isHighlighted: false)
         self.setupTableView(tableView: self.tableView)
         self.btnBack.setBackButton()
+        self.btnAddPayment.addTarget(self, action: #selector(btnAddPaymentTapped(_:)), for: .touchUpInside)
+        if isFromMenu {
+            self.btnAddPayment.isHidden = true
+            self.btnSubmit.addTarget(self, action: #selector(btnAddPaymentTapped(_:)), for: .touchUpInside)
+        } else {
+            self.btnAddPayment.isHidden = false
+            self.btnSubmit.addTarget(self, action: #selector(btnSubmitTapped(_:)), for: .touchUpInside)
+        }
     }
     
     
@@ -111,12 +125,17 @@ class PaymentPreferenceVC: MainVC {
     }
     
     @IBAction func btnBackTapped(_ sender: Any) {
-        _ = self.navigationController?.popViewController(animated: true)
+         _ = (self.navigationController as? NC)?.popVC()
+    }
+    
+    @IBAction func btnAddPaymentTapped(_ sender: Any) {
+        self.openAddPaymentDialog()
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
-        self.openAddPaymentDialog()
+            _ = (self.navigationController as? NC)?.popVC()
     }
+    
     func openAddPaymentDialog() {
         let addPercentageDialog: AddPaymentPreferenceDialog  = AddPaymentPreferenceDialog.fromNib()
         addPercentageDialog.initialize(title: "Add New", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
@@ -135,7 +154,6 @@ class PaymentPreferenceVC: MainVC {
             } else {
                 Common.appDelegate.loadAddCardVC(navigaionVC: self.navigationController)
             }
-            
         }
     }
     
@@ -171,9 +189,6 @@ extension PaymentPreferenceVC: UITableViewDelegate,UITableViewDataSource, UIScro
         } else {
             height.constant = 0
         }
-        
-        
-        
     }
     
     private func setupTableView(tableView: UITableView) {

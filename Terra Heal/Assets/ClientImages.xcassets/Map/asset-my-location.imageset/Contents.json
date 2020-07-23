@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "Icon metro-my-location.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Icon metro-my-location@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "aim (1).png",
+      "filename" : "Icon metro-my-location@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

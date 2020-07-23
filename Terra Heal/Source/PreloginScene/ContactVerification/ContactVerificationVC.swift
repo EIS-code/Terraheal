@@ -132,7 +132,7 @@ class ContactVerificationVC: MainVC {
 
     // MARK: - Action Methods
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
-        self.navigationController?.popViewController(animated: true)
+         _ = (self.navigationController as? NC)?.popVC()
     }
 
 

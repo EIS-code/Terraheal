@@ -41,7 +41,7 @@ class ContactVerifiedVC: MainVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
-        self.vwBg?.setRound()
+       // self.vwBg?.setRound()
         }
     }
 
@@ -54,12 +54,12 @@ class ContactVerifiedVC: MainVC {
         self.btnHome?.setTitle("CONTACT_VERIFICATION_BTN_HOME".localized(), for: .normal)
         self.btnHome?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnHome?.setHighlighted(isHighlighted: false)
-        self.vwBg?.setRound()
+       // self.vwBg?.setRound()
     }
 
     // MARK: - Action Methods
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
-        self.navigationController?.popViewController(animated: true)
+         _ = (self.navigationController as? NC)?.popVC()
     }
 
     @IBAction func btnHomeTapped(_ sender: Any) {

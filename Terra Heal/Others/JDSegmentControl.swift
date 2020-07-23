@@ -17,13 +17,13 @@ open class JDSegmentedControl: UIView {
     //Configure the options to for a custom design
     @IBInspectable open var defaultTextFont: UIFont = FontHelper.font(name: FontName.SemiBold, size: FontSize.button_14)
     @IBInspectable open var selectedTextFont: UIFont = FontHelper.font(name: FontName.SemiBold, size: FontSize.button_14)
-    @IBInspectable open var defaultTextColor: UIColor = UIColor.themePrimary
+    @IBInspectable open var defaultTextColor: UIColor = UIColor.themeSecondary
     @IBInspectable open var selectedTextColor: UIColor = UIColor.themeLightTextColor
     @IBInspectable open var useGradient: Bool = true
 
     @IBInspectable open var containerBackgroundColor: UIColor = UIColor.themeLightTextColor
-    @IBInspectable open var thumbColor: UIColor = UIColor.themePrimary
-    @IBInspectable open var thumbGradientColors: [UIColor]? =  [UIColor.themePrimary]// [JDSegmentedControl.UIColorFromRGB(0xFFE900),JDSegmentedControl.UIColorFromRGB(0xFFB400)]
+    @IBInspectable open var thumbColor: UIColor = UIColor.themeSecondary
+    @IBInspectable open var thumbGradientColors: [UIColor]? =  [UIColor.themeSecondary]// [JDSegmentedControl.UIColorFromRGB(0xFFE900),JDSegmentedControl.UIColorFromRGB(0xFFB400)]
     @IBInspectable open var thumbShadowColor: UIColor = JDSegmentedControl.UIColorFromRGB(0x9B9B9B)
     @IBInspectable open var useShadow:Bool = true
 

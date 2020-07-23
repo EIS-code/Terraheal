@@ -38,10 +38,10 @@ extension AppDelegate {
     func loadTutoraiVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: TutorialVC =  nc.findVCs(ofType: TutorialVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: TutorialVC = TutorialVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: TutorialVC = TutorialVC.fromNib()
@@ -53,10 +53,10 @@ extension AppDelegate {
     func loadRegisterVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: RegisterVC =  nc.findVCs(ofType: RegisterVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: RegisterVC = RegisterVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: RegisterVC = RegisterVC.fromNib()
@@ -69,10 +69,10 @@ extension AppDelegate {
     func loadLoginVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: LoginVC =  nc.findVCs(ofType: LoginVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: LoginVC = LoginVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: LoginVC = LoginVC.fromNib()
@@ -84,10 +84,10 @@ extension AppDelegate {
     fileprivate func loadHomeVC(_ navigaionVC: UINavigationController?) {
         if let nc = navigaionVC as? NC {
             if let targetVC: HomeVC =  nc.findVCs(ofType: HomeVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: HomeVC = HomeVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: HomeVC = HomeVC.fromNib()
@@ -124,10 +124,10 @@ extension AppDelegate {
     func loadTouchIdVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: TouchIdVC =  nc.findVCs(ofType: TouchIdVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: TouchIdVC = TouchIdVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: TouchIdVC = TouchIdVC.fromNib()
@@ -142,10 +142,10 @@ extension AppDelegate {
         } else  {
             if let nc = navigaionVC as? NC {
                 if let targetVC: VerifyContactVC =  nc.findVCs(ofType: VerifyContactVC.self).first {
-                    _ = nc.popToViewController(targetVC, animated: true)
+                    _ = nc.popToVc(targetVC)
                 } else {
                     let targetVC: VerifyContactVC = VerifyContactVC.fromNib()
-                    nc.pushViewController(targetVC, animated: true)
+                    nc.pushVC(targetVC)
                 }
             } else {
                 let targetVC: VerifyContactVC = VerifyContactVC.fromNib()
@@ -160,10 +160,10 @@ extension AppDelegate {
         
         if let nc = navigaionVC as? NC {
             if let targetVC: ContactVerifiedVC =  nc.findVCs(ofType: ContactVerifiedVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: ContactVerifiedVC = ContactVerifiedVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: ContactVerifiedVC = ContactVerifiedVC.fromNib()
@@ -176,10 +176,10 @@ extension AppDelegate {
         
         if let nc = navigaionVC as? NC {
             if let targetVC: VerificationVC =  nc.findVCs(ofType: VerificationVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: VerificationVC = VerificationVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: VerificationVC = VerificationVC.fromNib()
@@ -192,11 +192,11 @@ extension AppDelegate {
     func loadMapLocationVC(navigaionVC:UINavigationController? = nil) -> MapLocationVC {
         if let nc = navigaionVC as? NC {
             if let targetVC: MapLocationVC =  nc.findVCs(ofType: MapLocationVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
                 return targetVC
             } else {
                 let targetVC: MapLocationVC = MapLocationVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
                 return targetVC
             }
         } else {
@@ -214,11 +214,11 @@ extension AppDelegate {
         
         if let nc = navigaionVC as? NC {
             if let targetVC: GallaryVC =  nc.findVCs(ofType: GallaryVC.self).first {
-                _ =  nc.popToViewController(targetVC, animated: true)
+                _ =  nc.popToViewController
                 return targetVC
             } else {
                 let targetVC: GallaryVC = GallaryVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
                 return targetVC
             }
         } else {
@@ -234,11 +234,11 @@ extension AppDelegate {
         
         if let nc = navigaionVC as? NC {
             if let targetVC: CameraVC =  nc.findVCs(ofType: CameraVC.self).first {
-                _ =  nc.popToViewController(targetVC, animated: true)
+                _ =  nc.popToViewController
                 return targetVC
             } else {
                 let targetVC: CameraVC = CameraVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
                 return targetVC
             }
         } else {
@@ -253,10 +253,10 @@ extension AppDelegate {
         
         if let nc = navigaionVC as? NC {
             if let targetVC: ProfileVC =  nc.findVCs(ofType: ProfileVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: ProfileVC = ProfileVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: ProfileVC = ProfileVC.fromNib()
@@ -269,10 +269,10 @@ extension AppDelegate {
         
         if let nc = navigaionVC as? NC {
             if let targetVC: MyBookingVC =  nc.findVCs(ofType: MyBookingVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: MyBookingVC = MyBookingVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: MyBookingVC = MyBookingVC.fromNib()
@@ -285,10 +285,10 @@ extension AppDelegate {
         
         if let nc = navigaionVC as? NC {
             if let targetVC: EditProfileVC =  nc.findVCs(ofType: EditProfileVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: EditProfileVC = EditProfileVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: EditProfileVC = EditProfileVC.fromNib()
@@ -301,10 +301,10 @@ extension AppDelegate {
     func loadMassagePreferenceVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: MassagePreferenceVC =  nc.findVCs(ofType: MassagePreferenceVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: MassagePreferenceVC = MassagePreferenceVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: MassagePreferenceVC = MassagePreferenceVC.fromNib()
@@ -316,10 +316,10 @@ extension AppDelegate {
     func loadMyTherapistVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: MyTherapistVC =  nc.findVCs(ofType: MyTherapistVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: MyTherapistVC = MyTherapistVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: MyTherapistVC = MyTherapistVC.fromNib()
@@ -331,10 +331,10 @@ extension AppDelegate {
     func loadSettingVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: SettingVC =  nc.findVCs(ofType: SettingVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: SettingVC = SettingVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: SettingVC = SettingVC.fromNib()
@@ -346,10 +346,10 @@ extension AppDelegate {
     func loadNotificationVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: NotificationVC =  nc.findVCs(ofType: NotificationVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: NotificationVC = NotificationVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: NotificationVC = NotificationVC.fromNib()
@@ -361,10 +361,10 @@ extension AppDelegate {
     func loadMyPlacesVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: MyPlaceVC =  nc.findVCs(ofType: MyPlaceVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: MyPlaceVC = MyPlaceVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: MyPlaceVC = MyPlaceVC.fromNib()
@@ -376,10 +376,10 @@ extension AppDelegate {
     func loadTherapistQuestionaryVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: TherapistQuestionariesVC =  nc.findVCs(ofType: TherapistQuestionariesVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: TherapistQuestionariesVC = TherapistQuestionariesVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: TherapistQuestionariesVC = TherapistQuestionariesVC.fromNib()
@@ -391,10 +391,10 @@ extension AppDelegate {
     func loadManageAddressVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: MyAddressVC =  nc.findVCs(ofType: MyAddressVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: MyAddressVC = MyAddressVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: MyAddressVC = MyAddressVC.fromNib()
@@ -407,10 +407,10 @@ extension AppDelegate {
     func loadManagePeopleVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: ManagePeopleVC =  nc.findVCs(ofType: ManagePeopleVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: ManagePeopleVC = ManagePeopleVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: ManagePeopleVC = ManagePeopleVC.fromNib()
@@ -422,10 +422,10 @@ extension AppDelegate {
     func loadHowItWorkVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: HowItWorkVC =  nc.findVCs(ofType: HowItWorkVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: HowItWorkVC = HowItWorkVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: HowItWorkVC = HowItWorkVC.fromNib()
@@ -437,10 +437,10 @@ extension AppDelegate {
     func loadPriceLocationVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: PriceLocationVC =  nc.findVCs(ofType: PriceLocationVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: PriceLocationVC = PriceLocationVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: PriceLocationVC = PriceLocationVC.fromNib()
@@ -452,10 +452,10 @@ extension AppDelegate {
     func loadPromocodeVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: PromoCodeVC =  nc.findVCs(ofType: PromoCodeVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: PromoCodeVC = PromoCodeVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: PromoCodeVC = PromoCodeVC.fromNib()
@@ -466,10 +466,10 @@ extension AppDelegate {
     func loadPackVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: PackVC =  nc.findVCs(ofType: PackVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: PackVC = PackVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: PackVC = PackVC.fromNib()
@@ -480,10 +480,10 @@ extension AppDelegate {
     func loadReferAndEarnVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: ReferAndEarnVC =  nc.findVCs(ofType: ReferAndEarnVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: ReferAndEarnVC = ReferAndEarnVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: ReferAndEarnVC = ReferAndEarnVC.fromNib()
@@ -495,10 +495,10 @@ extension AppDelegate {
     func loadCampaignsVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: CampaignsVC =  nc.findVCs(ofType: CampaignsVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: CampaignsVC = CampaignsVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: CampaignsVC = CampaignsVC.fromNib()
@@ -510,10 +510,10 @@ extension AppDelegate {
     func loadHelpVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: HelpVC =  nc.findVCs(ofType: HelpVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: HelpVC = HelpVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: HelpVC = HelpVC.fromNib()
@@ -525,10 +525,10 @@ extension AppDelegate {
     func loadGiftVoucherVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: GiftVoucherVC =  nc.findVCs(ofType: GiftVoucherVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: GiftVoucherVC = GiftVoucherVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: GiftVoucherVC = GiftVoucherVC.fromNib()
@@ -540,10 +540,10 @@ extension AppDelegate {
     func loadEventBookingCompleteVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: EventBookCompleteVC =  nc.findVCs(ofType: EventBookCompleteVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: EventBookCompleteVC = EventBookCompleteVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: EventBookCompleteVC = EventBookCompleteVC.fromNib()
@@ -555,10 +555,10 @@ extension AppDelegate {
     func loadServiceMapVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: ServiceMapVC =  nc.findVCs(ofType: ServiceMapVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: ServiceMapVC = ServiceMapVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: ServiceMapVC = ServiceMapVC.fromNib()
@@ -572,10 +572,10 @@ extension AppDelegate {
         
         if let nc = navigaionVC as? NC {
             if let targetVC: ManageDocumentVC =  nc.findVCs(ofType: ManageDocumentVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: ManageDocumentVC = ManageDocumentVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: ManageDocumentVC = ManageDocumentVC.fromNib()
@@ -587,11 +587,11 @@ extension AppDelegate {
     func loadServiceDetailVC(navigaionVC:UINavigationController? = nil) -> ServiceDetailVC {
         if let nc = navigaionVC as? NC {
             if let targetVC: ServiceDetailVC =  nc.findVCs(ofType: ServiceDetailVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
                 return targetVC
             } else {
                 let targetVC: ServiceDetailVC = ServiceDetailVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
                 return targetVC
             }
         } else {
@@ -605,11 +605,11 @@ extension AppDelegate {
     func loadServiceSelectionVC(navigaionVC:UINavigationController? = nil) -> ServiceSelectionVC {
         if let nc = navigaionVC as? NC {
             if let targetVC: ServiceSelectionVC =  nc.findVCs(ofType: ServiceSelectionVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
                 return targetVC
             } else {
                 let targetVC: ServiceSelectionVC = ServiceSelectionVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
                 return targetVC
             }
         } else {
@@ -623,10 +623,10 @@ extension AppDelegate {
     func loadBookingCompleteVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: BookingCompleteVC =  nc.findVCs(ofType: BookingCompleteVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: BookingCompleteVC = BookingCompleteVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: BookingCompleteVC = BookingCompleteVC.fromNib()
@@ -638,10 +638,10 @@ extension AppDelegate {
     func loadReviewAndBookVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: ReviewAndBookVC =  nc.findVCs(ofType: ReviewAndBookVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: ReviewAndBookVC = ReviewAndBookVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: ReviewAndBookVC = ReviewAndBookVC.fromNib()
@@ -653,10 +653,11 @@ extension AppDelegate {
     func loadPaymentReferenceVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: PaymentPreferenceVC =  nc.findVCs(ofType: PaymentPreferenceVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: PaymentPreferenceVC = PaymentPreferenceVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                targetVC.isFromMenu = true
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: PaymentPreferenceVC = PaymentPreferenceVC.fromNib()
@@ -668,10 +669,10 @@ extension AppDelegate {
     func loadAddCardVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: AddCardVC =  nc.findVCs(ofType: AddCardVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
+                _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: AddCardVC = AddCardVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+                nc.pushVC(targetVC)
             }
         } else {
             let targetVC: AddCardVC = AddCardVC.fromNib()
@@ -679,5 +680,95 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
+    
+    func loadReservationVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: ReservationVC =  nc.findVCs(ofType: ReservationVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: ReservationVC = ReservationVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: ReservationVC = ReservationVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+    
+    func loadKycInfoVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: KycInfoVC =  nc.findVCs(ofType: KycInfoVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: KycInfoVC = KycInfoVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: KycInfoVC = KycInfoVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+    
+    func loadScanPassportVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: ScanPassportVC =  nc.findVCs(ofType: ScanPassportVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: ScanPassportVC = ScanPassportVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: ScanPassportVC = ScanPassportVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+    
+    func loadScanSelfieVC(navigaionVC:UINavigationController? = nil) {
+           if let nc = navigaionVC as? NC {
+               if let targetVC: ScanSelfieVC =  nc.findVCs(ofType: ScanSelfieVC.self).first {
+                   _ = nc.popToVc(targetVC)
+               } else {
+                   let targetVC: ScanSelfieVC = ScanSelfieVC.fromNib()
+                   nc.pushVC(targetVC)
+               }
+           } else {
+               let targetVC: ScanSelfieVC = ScanSelfieVC.fromNib()
+               let nC: NC = NC(rootViewController: targetVC)
+               self.windowConfig(withRootVC: nC)
+           }
+       }
+    func loadScanSelfieInstructionVC(navigaionVC:UINavigationController? = nil) {
+           if let nc = navigaionVC as? NC {
+               if let targetVC: ScanSelfieInstructionVC =  nc.findVCs(ofType: ScanSelfieInstructionVC.self).first {
+                   _ = nc.popToVc(targetVC)
+               } else {
+                   let targetVC: ScanSelfieInstructionVC = ScanSelfieInstructionVC.fromNib()
+                   nc.pushVC(targetVC)
+               }
+           } else {
+               let targetVC: ScanSelfieInstructionVC = ScanSelfieInstructionVC.fromNib()
+               let nC: NC = NC(rootViewController: targetVC)
+               self.windowConfig(withRootVC: nC)
+           }
+       }
+    func loadScanPassportInstructionVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: ScanPassportInstructionVC =  nc.findVCs(ofType: ScanPassportInstructionVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: ScanPassportInstructionVC = ScanPassportInstructionVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: ScanPassportInstructionVC = ScanPassportInstructionVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+    
+    
 }
 

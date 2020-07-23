@@ -74,7 +74,7 @@
 "CONTACT_VERIFICATION_BTN_VERIFY" = "Verify";
 //MARK: CONTACT VERIFIED  SCREEN
 "CONTACT_VERIFICATION_BTN_HOME" = "Home";
-"CONTACT_VERIFIED_LBL_TITLE" = "Thank you";
+"CONTACT_VERIFIED_LBL_TITLE" = "verified";
 "CONTACT_VERIFIED_LBL_MESSAGE" = "Your identity is verified successfully.";
 //MARK: Verification Dialog
 "CONTACT_VERIFICATION_BTN_PROCEED" = "Proceed";
@@ -88,7 +88,7 @@
 "VERIFICATION_EMAIL_TITLE" = "Verify Your Email Id";
 "VERIFICATION_MSG_DETAIL" = "Please enter the 4 digit code that is\nsent to ";
 "VERIFICATION_BTN_VERIFY" = "Verify";
-"VERIFICATION_BTN_RESEND" = "Resend";
+"VERIFICATION_BTN_RESEND" = "resend";
 //MARK: HOME SHOP SCREEN
 "HOME_LBL_TITLE" = "Location";
 "HOME_LBL_MENU" = "menu";
@@ -274,33 +274,21 @@
 "EVENT_BOOKING_MESSAGE" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut";
 "EVENT_BOOKING_BTN_HOME" = "Home";
 "HOME_ITEM_TYPE_INFO" = "info";
-
 "MY_BOOKING_TITLE" = "my bookings";
-
-
 "HOME_ITEM_TYPE_HOTEL_OR_ROOM" = "Our closest centers to you send therapist for home / hotel visits. Check the menu to make your choice as each center offer different massages and therapies. You will pay the same price + mobile service fee extra.";
-
-
 //MARK:  Reciepent Detail VC
 "RECIEPENT_DETAIL_TITLE" = "add reciepent";
 "RECIEPENT_BTN_ADD_RECIEPENT" = "Add Reciepent";
 "RECIEPENT_BTN_ADD_SERVICE" = "Add Service";
 "RECIEPENT_LBL_TOTAL" = "total";
-
-
-
-
 //MARK:  Service Map VC
 "BOOKING_COMPLETE_TITLE" = "booking successful";
 "BOOKING_COMPLETE_MESSAGE" = "thanks for choosing our services! we have received your booking and will confirm it as soon as possible";
 "BOOKING_COMPLETE_BTN_HOME" = "Home";
-
-
 //MARK:  Service Map VC
 "BTN_BOOK_HERE" = "Book Here";
 "BTN_CHECK_SERVICE" = "Check Service";
 "SESSION_TYPE_TITLE" = "Session Type";
-
 //MARK:  Review And Book VC
 "REVIEW_AND_BOOK_TITLE" = "review and book";
 "REVIEW_AND_BOOK_TITLE_DETAIL" = "confirm details before payment";
@@ -315,8 +303,6 @@
 "REVIEW_AND_BOOK_BTN_APPLY" = "apply";
 "REVIEW_AND_BOOK_BTN_PREPAYMENT" = "prepayment";
 "REVIEW_AND_BOOK_BTN_WITHOUT_PAYMENT" = "without prepayment";
-
-
 //MARK: Payment Screen
 "PAYMENT_PREFERENCE_TITLE" = "payment preference";
 "PAYMENT_LBL_PAYPAL" = "Paypal";
@@ -324,6 +310,13 @@
 "PAYMENT_LBL_DEFAULT" = "Default";
 "PAYMENT_LBL_CARDS" = "credit, debit & ATM cards";
 "PAYMENT_BTN_ADD_NEW" = "Add New";
+"PAYMENT_BTN_ADD_NEW_PAYMENT" =  "Add New payment method";
+
+//MARK:  Reservation VC
+"RESERVATION_TITLE" = "your reservation is pending";
+"RESERVATION_MESSAGE" = "For the protection of our therapists, we kindly ask you to verify your account in 4 steps before you finalize your booking: Selfie and ID or passport verification Do you want to complete this step?";
+"RESERVATION_BTN_PROCEED2" = "no, i prefer to come to your location";
+
 
 //MARK: Manage Document Screen
 "MANAGE_DOCUMENT_TITLE" = "Id / Passport";
@@ -341,7 +334,6 @@
 "MANAGE_ADDRESS_TXT_ADDRESS_NAME" = "home / work / office";
 "MANAGE_ADDRESS_TXT_ADDRESS_LATITUDE" = "latitude";
 "MANAGE_ADDRESS_TXT_ADDRESS_LONGITUDE" = "longitude";
-
 //MARK: Add Card SCREEN
 "ADD_CARD_TITLE" = "credit, debit & atm card";
 "ADD_CARD_TITLE_MESSAGE" = "verify and secure your card";
@@ -358,16 +350,38 @@
 "ADD_CARD_SAVE_CARD_DETAILS" = "save your card details securely";
 "ADD_CARD_SAVE_CARD_DETAIL_MESSAGE" = "your card data is saved in a PCI DSS compliant secure vault.";
 "ADD_CARD_BTN_ADD_CARD" = "Add Card";
-
-
-
-
-
 "WELCOME_LBL_MESSAGE_2" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 "WELCOME_BTN_SIGN_UP" =  "Sign Up";
 "WELCOME_BTN_HOME" =  "Book Now";
 
+//MARK: Accessory Dialog
+"ACCESSORY_TITLE" = "do we need to bring a table?";
+"ACCESSORY_BTN_YES" = "yes";
+"ACCESSORY_BTN_NO" = "no";
+"ACCESSORY_TXT_NUMBER_OF_TABLES" = "number of tables";
 
+"SELFIE_LBL_TITLE" = "take selfie";
+"SELFIE_LBL_MESSAGE" = "we use your selfie to compare with your passport photo";
+"SELFIE_BTN_OPEN_CAMERA" = "Open Camera";
+"SELFIE_LBL_INFO_1_TITLE" = "good lighting";
+"SELFIE_LBL_INFO_1_MESSAGE" = "make sure you are in a well lit area and both ears are uncovered";
+"SELFIE_LBL_INFO_2_TITLE" = "look straight";
+"SELFIE_LBL_INFO_2_MESSAGE" = "hold your phone at eye level and look straight to the camera";
+
+//KYC Form
+"KYC_INFO_LBL_TITLE" = "let's get started";
+"KYC_INFO_LBL_MESSAGE" = "for identity variation we will follow 3 simple steps.";
+"KYC_INFO_LBL_SCAN_PASSPORT" = "scan passport / id";
+"KYC_INFO_LBL_TAKE_SELFIE" = "take selfie";
+"KYC_INFO_LBL_ADD_CREDIT_CARD" = "add credit card";
+
+"SCAN_PASSPORT_LBL_TITLE" = "scan passport / id";
+"SCAN_PASSPORT_LBL_MESSAGE" = "please scan your passport as per given instruction";
+"SCAN_PASSPORT_BTN_SCAN_NOW" = "Scan Now";
+
+"SCAN_PASSPORT_LBL_FRONT_SIDE" = "scan front Side";
+"SCAN_PASSPORT_LBL_BACK_SIDE" = "scan back Side";
+"SELFIE_SCAN_LBL_INFO" =  "Hold your phone at eye level so that your selfie is similar to your passport photo";
 //MARK: Photo Dialog
 "PHOTO_DIALOG_FROM_TITLE" = "upload a photo ";
 "PHOTO_DIALOG_FROM_CAMERA" = "take a photo ";
@@ -393,7 +407,7 @@
 "BTN_NEXT" = "next";
 "BTN_SAVE" = "Save";
 "BTN_PROCEED" = "Proceed";
-"BTN_YES_PROCEED" = "yses proceed";
+"BTN_YES_PROCEED" = "yes proceed";
 "BTN_BACK" = "Back";
 "BTN_SEND" = "Send";
 "BTN_CANCEL" = "Cancel";

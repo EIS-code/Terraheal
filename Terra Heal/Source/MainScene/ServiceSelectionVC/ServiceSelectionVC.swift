@@ -85,7 +85,7 @@ class ServiceSelectionVC: MainVC {
     
     @IBAction func btnBackTapped(_ sender: Any) {
         self.dismiss(animated: true) {
-                _ = self.navigationController?.popViewController(animated: true)
+                 _ = (self.navigationController as? NC)?.popVC()
         }
     }
     

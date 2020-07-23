@@ -218,7 +218,7 @@ extension RecipentMassageManageDialog: UITableViewDelegate, UITableViewDataSourc
                 self.tableView.reloadData()
             }
             
-            //_ = self.navigationController?.popViewController(animated: true)
+            // _ = (self.navigationController as? NC)?.popVC()
             
         }
     }

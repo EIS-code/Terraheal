@@ -83,8 +83,8 @@ class CameraVC: MainVC {
     }
     // MARK: - Action Methods
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
-        if let nc = self.navigationController {
-                nc.popViewController(animated: true)
+        if let nc = self.navigationController as? NC {
+                _ = nc.popVC()
         } else {
             self.dismiss(animated: true) {
                 

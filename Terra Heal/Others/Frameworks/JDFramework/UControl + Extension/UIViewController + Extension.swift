@@ -43,7 +43,5 @@ public extension UIViewController {
         let type = self.self
         return type.init(nibName: type.name, bundle: nil) as! T
     }
-
-    
-
 }
+

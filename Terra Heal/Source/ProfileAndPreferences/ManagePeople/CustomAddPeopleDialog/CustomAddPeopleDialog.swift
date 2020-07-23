@@ -286,7 +286,7 @@ extension CustomAddPeopleDialog: UIImageCropperProtocol {
     //optional
     func didCancel() {
         print("did cancel")
-        (Common.appDelegate.getTopViewController() as? UINavigationController)?.popViewController(animated: true)
+        _ = (Common.appDelegate.getTopViewController() as? NC)?.popVC()
         //self.wsUpdateProfile()
     }
 }

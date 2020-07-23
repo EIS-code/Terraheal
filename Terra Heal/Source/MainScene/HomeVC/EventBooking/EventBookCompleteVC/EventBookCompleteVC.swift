@@ -61,7 +61,8 @@ class EventBookCompleteVC: MainVC {
 
     // MARK: - Action Methods
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
-        self.navigationController?.popViewController(animated: true)
+        _ = (self.navigationController as? NC)?.popVC()
+        
     }
 
     @IBAction func btnHomeTapped(_ sender: Any) {

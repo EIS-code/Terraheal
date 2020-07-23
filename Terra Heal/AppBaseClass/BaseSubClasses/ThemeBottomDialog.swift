@@ -42,6 +42,7 @@ class ThemeBottomDialogView: ThemeView {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setupTopBar()
+        vwTopBar?.backgroundColor = UIColor.themeDarkText
         self.dialogView.clipsToBounds = true
     }
     
@@ -64,6 +65,7 @@ class ThemeBottomDialogView: ThemeView {
     
     func initialSetup() {
         self.btnCancel?.setFont(name: FontName.Bold, size: FontSize.button_18)
+        self.btnCancel?.setTitleColor(UIColor.themePrimary, for: .normal)
         self.backgroundColor = .clear
         self.backgroundView?.backgroundColor = UIColor.black
         self.backgroundView?.alpha = 0.0

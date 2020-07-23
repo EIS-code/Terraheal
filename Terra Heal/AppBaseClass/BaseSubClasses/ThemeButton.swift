@@ -100,81 +100,14 @@ class FloatingRoundButton: ThemeButton {
         self.layer.cornerRadius = self.bounds.height/2.0
     }
     func setForwardButton() {
-        self.height(constant: JDDeviceHelper().offseter(offset: 60))
-        self.setFont(name: FontName.System, size: 45)
+        self.backgroundColor = .themePrimary
+        self.height(constant: JDDeviceHelper().offseter(offset: 50))
+        self.setFont(name: FontName.System, size: 37)
         self.setTitle(FontSymbol.next_arrow, for: .normal)
     }
     func setBackButton() {
         self.backgroundColor = UIColor.themeSecondary
-        self.height(constant: JDDeviceHelper().offseter(offset: 50))
-        self.setFont(name: FontName.System, size: 37)
-        self.setTitle(FontSymbol.back_arrow, for: .normal)
-    }
-    
-}
-
-//MARK: FloatingRound Button
-class FloatingView: UIView {
-    
-    var radius: CGFloat = 10
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.setUpFloatingView()
-    }
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        self.setUpFloatingView()
-    }
-    
-    func setUpFloatingView() {
-        self.layer.cornerRadius = self.bounds.height/2.0
-        self.clipsToBounds = true
-        self.layer.masksToBounds = false
-        self.layer.shadowRadius = 5.0
-        self.layer.shadowOpacity = 0.8
-        self.layer.shadowOffset = CGSize(width: 1.0, height: 2.0)
-        self.layer.shadowColor = UIColor.gray.cgColor
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.layer.cornerRadius = self.bounds.height/2.0
-    }
-    
-    
-}
-
-//MARK: FloatingRoundRadius Button
-class FloatingRoundRadiusButton: ThemeButton {
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.setUpFloatingButton()
-    }
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        self.setUpFloatingButton()
-    }
-    
-    func setUpFloatingButton() {
-        self.clipsToBounds = true
-        self.layer.masksToBounds = false
-        self.layer.shadowRadius = 5.0
-        self.layer.shadowOpacity = 0.8
-        self.layer.shadowOffset = CGSize(width: 1.0, height: 2.0)
-        self.layer.shadowColor = UIColor.gray.cgColor
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.layer.cornerRadius = self.bounds.height/2.0
-    }
-    func setForwardButton() {
-        self.height(constant: JDDeviceHelper().offseter(offset: 60))
-        self.setFont(name: FontName.System, size: 45)
-        self.setTitle(FontSymbol.next_arrow, for: .normal)
-    }
-    func setBackButton() {
+        self.setImage(nil, for: .normal)
         self.height(constant: JDDeviceHelper().offseter(offset: 50))
         self.setFont(name: FontName.System, size: 37)
         self.setTitle(FontSymbol.back_arrow, for: .normal)
@@ -317,6 +250,45 @@ public class JDRadioButton: UIButton {
     }
 }
 
+
+//MARK: FloatingRoundCheckbox Button
+@IBDesignable
+public class JDCheckboxButton: UIButton {
+    
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setImages()
+    }
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.setImages()
+    }
+    
+    let checkedImage = UIImage(named: "asset-checked")
+    let uncheckedImage = UIImage(named: "asset-unchecked")
+    
+    func setImages() {
+        self.setImage(uncheckedImage, for: .normal)
+        self.setImage(checkedImage, for: .selected)
+    }
+    func checkboxAnimation(closure: @escaping () -> Void){
+        guard let image = self.imageView else {return}
+        
+        UIView.animate(withDuration: 0.1, delay: 0.1, options: .curveLinear, animations: {
+            image.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            
+        }) { (success) in
+            UIView.animate(withDuration: 0.1, delay: 0, options: .curveLinear, animations: {
+                self.isSelected = !self.isSelected
+                //to-do
+                closure()
+                image.transform = .identity
+            }, completion: nil)
+        }
+        
+    }
+}
 //MARK: Underlined Button
 class UnderlineTextButton: ThemeButton {
     

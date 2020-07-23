@@ -26,7 +26,7 @@ class RegisterVC: MainVC {
     @IBOutlet weak var vwTermsCondition: UIView!
     @IBOutlet weak var btnTermsCondition: UnderlineTextButton!
     @IBOutlet weak var lblAccept: ThemeLabel!
-    @IBOutlet weak var btnCheckBox: ThemeButton!
+    @IBOutlet weak var btnCheckBox: JDCheckboxButton!
 
     @IBOutlet weak var lblConnect: ThemeLabel!
 
@@ -71,7 +71,7 @@ class RegisterVC: MainVC {
             self.btnSignUp?.setHighlighted(isHighlighted: true)
             btnGoogle?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
             btnLogin?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
-            self.vwDashed?.createDashedLine(from: CGPoint(x: vwDashed.bounds.minX, y: vwDashed.bounds.midY), to: CGPoint(x: vwDashed.bounds.maxX, y: vwDashed.bounds.midY), color: UIColor.themePrimary, strokeLength: 10, gapLength: 10, width: 2.0)
+            self.vwDashed?.createDashedLine(from: CGPoint(x: vwDashed.bounds.minX, y: vwDashed.bounds.midY), to: CGPoint(x: vwDashed.bounds.maxX, y: vwDashed.bounds.midY), color: UIColor.themeSecondary, strokeLength: 10, gapLength: 10, width: 2.0)
         }
     }
 
@@ -133,19 +133,22 @@ class RegisterVC: MainVC {
         self.lblAlreadyMember?.text = "REGISTER_LBL_ALREADY_A_MEMBER".localized()
         self.lblAlreadyMember?.setFont(name: FontName.Regular, size: FontSize.label_18)
 
-        self.btnCheckBox.setHighlighted(isHighlighted: false)
 
     }
 
 
-    @IBAction func btnCheckBoxTapped(_ sender: Any) {
-        self.btnCheckBox.isSelected.toggle()
-        self.btnCheckBox.setHighlighted(isHighlighted: self.btnCheckBox.isSelected)
+    @IBAction func btnCheckBoxTapped(_ sender: JDCheckboxButton) {
+        
+        self.btnCheckBox.checkboxAnimation {
+            
+        }
+        
+        //self.btnCheckBox.setHighlighted(isHighlighted: self.btnCheckBox.isSelected)
 
     }
     // MARK: - Action Methods
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
-        self.navigationController?.popViewController(animated: true)
+         _ = (self.navigationController as? NC)?.popVC()
     }
 
     @IBAction func btnLoginTapped(_ sender: UIButton) {

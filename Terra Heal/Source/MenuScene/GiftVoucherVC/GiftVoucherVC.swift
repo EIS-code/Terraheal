@@ -108,7 +108,7 @@ class GiftVoucherVC: MainVC {
     // MARK: - Action Methods
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
         super.btnLeftTapped()
-        self.navigationController?.popViewController(animated: true)
+         _ = (self.navigationController as? NC)?.popVC()
     }
 }
 

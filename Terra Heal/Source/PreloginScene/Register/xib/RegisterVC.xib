@@ -12,9 +12,6 @@
         <array key="GRANDDUKE.ttf">
             <string>GRANDDUKERegular</string>
         </array>
-        <array key="Nunito-Bold.ttf">
-            <string>Nunito-Bold</string>
-        </array>
         <array key="Ovo-Regular.ttf">
             <string>Ovo</string>
         </array>
@@ -54,13 +51,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-register-top" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gf0-PD-r8o" userLabel="ivHeader">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="159"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agl-Wb-btm" userLabel="scrVw">
-                    <rect key="frame" x="37.666666666666657" y="159" width="300" height="619"/>
+                    <rect key="frame" x="37.666666666666657" y="53" width="300" height="725"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hp5-yH-riX" userLabel="vwContent">
-                            <rect key="frame" x="0.0" y="0.0" width="300" height="766.66666666666663"/>
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="743.66666666666663"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jV-sf-aUO" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                     <rect key="frame" x="20" y="0.0" width="260" height="37.333333333333336"/>
@@ -82,7 +79,7 @@ to sign back in</string>
                                             <textInputTraits key="textInputTraits" textContentType="name"/>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Yb-4K-vhh" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="53.333333333333343" width="270" height="48"/>
+                                            <rect key="frame" x="0.0" y="53.333333333333329" width="270" height="48"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="0Yb-4K-vhh" secondAttribute="height" multiplier="28:5" id="V7V-r1-Ili"/>
                                             </constraints>
@@ -109,7 +106,7 @@ to sign back in</string>
                                             </constraints>
                                         </stackView>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8iT-7M-aZg" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="159.66666666666666" width="270" height="48.333333333333343"/>
+                                            <rect key="frame" x="0.0" y="159.66666666666669" width="270" height="48.333333333333343"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="8iT-7M-aZg" secondAttribute="height" multiplier="28:5" id="rq0-M8-5eZ"/>
                                             </constraints>
@@ -117,7 +114,7 @@ to sign back in</string>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n6s-st-fuG" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="212.99999999999997" width="270" height="48.000000000000028"/>
+                                            <rect key="frame" x="0.0" y="213" width="270" height="48"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="n6s-st-fuG" secondAttribute="height" multiplier="28:5" id="gj4-v6-yZc"/>
                                             </constraints>
@@ -142,16 +139,24 @@ to sign back in</string>
                                     </constraints>
                                 </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0k-nb-0QI" userLabel="vwTerms&amp;Condition">
-                                    <rect key="frame" x="15" y="401.66666666666663" width="270" height="50"/>
+                                    <rect key="frame" x="15" y="401.66666666666669" width="270" height="50"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lEP-zT-14l">
                                             <rect key="frame" x="66.666666666666643" y="8" width="136.33333333333337" height="34"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHb-W4-jT3" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHb-W4-jT3" customClass="JDCheckboxButton" customModule="Terra_Heal" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="uHb-W4-jT3" secondAttribute="height" multiplier="15:15" id="xIz-Zc-jcS"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
+                                                            <color key="value" name="theme_primary"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
+                                                            <color key="value" name="theme_primary_light"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="btnCheckBoxTapped:" destination="-1" eventType="touchUpInside" id="PPr-0S-W2h"/>
                                                     </connections>
@@ -179,9 +184,9 @@ to sign back in</string>
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCc-Ig-liE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="83.333333333333343" y="471.66666666666663" width="133" height="60"/>
+                                    <rect key="frame" x="83.333333333333343" y="471.66666666666663" width="133" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
-                                    <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                    <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                     <state key="normal" title="Sign In">
                                         <color key="titleColor" name="theme_primary"/>
                                     </state>
@@ -190,49 +195,47 @@ to sign back in</string>
                                     </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uVN-0T-0Am" userLabel="vwConnectWith">
-                                    <rect key="frame" x="15" y="551.66666666666663" width="270" height="50"/>
+                                    <rect key="frame" x="15" y="531.66666666666663" width="270" height="50"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="EOf-au-irk"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect With" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUJ-Um-wtc" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="97.666666666666686" y="566.33333333333337" width="104.66666666666669" height="20.333333333333371"/>
+                                    <rect key="frame" x="97.666666666666686" y="546.33333333333337" width="104.66666666666669" height="20.333333333333371"/>
                                     <color key="backgroundColor" name="theme_background"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" name="theme_primary"/>
+                                    <color key="textColor" name="theme_secondary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="y0g-7U-NI6" userLabel="Stack View - Social Register">
-                                    <rect key="frame" x="98" y="631.66666666666663" width="104" height="53"/>
+                                    <rect key="frame" x="90.333333333333343" y="611.66666666666663" width="119.33333333333334" height="50"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktD-fk-8iz" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="42" height="53"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktD-fk-8iz" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="49.666666666666664" height="50"/>
                                             <color key="backgroundColor" name="theme_background"/>
-                                            <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="28"/>
                                             <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                            <state key="normal" title="F">
+                                            <state key="normal" image="asset-social-login-fb">
                                                 <color key="titleColor" name="theme_primary"/>
                                             </state>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3V-Pd-aAv" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="62" y="0.0" width="42" height="53"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3V-Pd-aAv" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="69.666666666666657" y="0.0" width="49.666666666666657" height="50"/>
                                             <color key="backgroundColor" name="theme_background"/>
-                                            <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="28"/>
                                             <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                            <state key="normal" title="G">
+                                            <state key="normal" image="asset-social-login-google">
                                                 <color key="titleColor" name="theme_primary"/>
                                             </state>
                                         </button>
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Y84-jM-cel" userLabel="Stack View - Already Have Memberi">
-                                    <rect key="frame" x="41.666666666666671" y="714.66666666666663" width="216.33333333333331" height="32"/>
+                                    <rect key="frame" x="41.666666666666671" y="691.66666666666663" width="216.33333333333331" height="32"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already a member?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEl-P4-Xko" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="5.6666666666667425" width="148.33333333333334" height="20.333333333333332"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" name="theme_primary"/>
+                                            <color key="textColor" name="theme_secondary"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVN-Hj-vhs" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
@@ -300,15 +303,23 @@ to sign back in</string>
         </view>
     </objects>
     <resources>
-        <image name="asset-register-top" width="375" height="159"/>
+        <image name="asset-register-top" width="125" height="53"/>
+        <image name="asset-social-login-fb" width="16.333333969116211" height="30"/>
+        <image name="asset-social-login-google" width="29.666666030883789" height="30"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_dark_text">
-            <color red="0.42745098039215684" green="0.43137254901960786" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary">
-            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary_light">
+            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_secondary">
+            <color red="0.97299998998641968" green="0.60000002384185791" blue="0.11800000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

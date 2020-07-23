@@ -23,23 +23,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="229" height="383"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mj4-Vg-zDh">
-                        <rect key="frame" x="28.5" y="64" width="172" height="172"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-tutorial-1" translatesAutoresizingMaskIntoConstraints="NO" id="mj4-Vg-zDh">
+                        <rect key="frame" x="28.5" y="64" width="172" height="227.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="mj4-Vg-zDh" secondAttribute="height" multiplier="1:1" id="9Qi-Lg-4pS"/>
-                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wN0-af-H7V" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                        <rect key="frame" x="23" y="256" width="183" height="19"/>
+                        <rect key="frame" x="23" y="311.5" width="183" height="19"/>
                         <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="16"/>
-                        <color key="textColor" name="theme_primary"/>
+                        <color key="textColor" name="theme_dark_text"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPH-zQ-6LJ" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                        <rect key="frame" x="23" y="295" width="183" height="26"/>
+                        <rect key="frame" x="23" y="350.5" width="183" height="26"/>
                         <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="22"/>
-                        <color key="textColor" name="theme_primary"/>
+                        <color key="textColor" name="theme_hint_text"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -66,8 +63,12 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <namedColor name="theme_primary">
-            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="asset-tutorial-1" width="310" height="227.5"/>
+        <namedColor name="theme_dark_text">
+            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_hint_text">
+            <color red="0.69800001382827759" green="0.70200002193450928" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -93,8 +93,8 @@ class MapLocationVC: MainVC {
     
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
         super.btnLeftTapped(btn)
-        if let nc = self.navigationController {
-            _ = nc.popViewController(animated: true)
+        if let nc = self.navigationController as? NC {
+            _ = nc.popVC()
         } else  {
             self.dismiss(animated: true) {
             }

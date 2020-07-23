@@ -56,21 +56,21 @@ class LoginVC: MainVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
-            self.btnLogin.layoutIfNeeded()
-            self.btnLogin.setHighlighted(isHighlighted: true)
-            self.vwDashed?.createDashedLine(from: CGPoint(x: vwDashed.bounds.minX, y: vwDashed.bounds.midY), to: CGPoint(x: vwDashed.bounds.maxX, y: vwDashed.bounds.midY), color: UIColor.themePrimary, strokeLength: 10, gapLength: 10, width: 2.0)
+            self.btnLogin?.layoutIfNeeded()
+            self.btnLogin?.setHighlighted(isHighlighted: true)
+            self.vwDashed?.createDashedLine(from: CGPoint(x: vwDashed.bounds.minX, y: vwDashed.bounds.midY), to: CGPoint(x: vwDashed.bounds.maxX, y: vwDashed.bounds.midY), color: UIColor.themeSecondary, strokeLength: 10, gapLength: 10, width: 2.0)
         }
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        _ = self.txtEmail?.becomeFirstResponder()
+      //  _ = self.txtEmail?.becomeFirstResponder()
     }
 
     private func initialViewSetup() {
         
         self.lblLoginTitle?.text = "LOGIN_LBL_TITLE".localized()
-        self.lblLoginTitle?.setFont(name: FontName.SemiBold, size: FontSize.label_26)
+        self.lblLoginTitle?.setFont(name: FontName.Bold, size: FontSize.label_36)
         self.lblMessage?.text = "LOGIN_LBL_MESSAGE".localized()
         self.lblMessage?.setFont(name: FontName.Regular, size: FontSize.label_18)
         self.txtEmail?.placeholder = "LOGIN_TXT_EMAIL".localized()
@@ -99,7 +99,7 @@ class LoginVC: MainVC {
 
     // MARK: - Action Methods
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
-        self.navigationController?.popViewController(animated: true)
+         _ = (self.navigationController as? NC)?.popVC()
     }
 
     @IBAction func btnLoginTapped(_ sender: UIButton) {

@@ -42,14 +42,13 @@ class VerifyContactVC: MainVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         //self.btnHome?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-        self.vwBg?.setRound()
+        
     }
 
     private func initialViewSetup() {
 
-        
         self.lblHeader?.text = "CONTACT_VERIFICATION_LBL_TITLE".localized()
-        self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.label_36)
         self.lblMessage?.text = "CONTACT_VERIFICATION_LBL_MESSAGE".localized()
         self.lblMessage?.setFont(name: FontName.Regular, size: FontSize.label_18)
         self.btnHome?.setTitle("CONTACT_VERIFICATION_BTN_VERIFY".localized(), for: .normal)
@@ -61,15 +60,15 @@ class VerifyContactVC: MainVC {
 
     // MARK: - Action Methods
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
-        self.navigationController?.popViewController(animated: true)
+         _ = (self.navigationController as? NC)?.popVC()
     }
     @IBAction func btnBackTapped(_ sender: Any) {
         Common.appDelegate.loadHomeVC()
     }
 
     @IBAction func btnHomeTapped(_ sender: Any) {
-        //Common.appDelegate.loadVerifiedContactVC()
         self.openVerification()
+        // Common.appDelegate.loadVerifiedContactVC()
     }
 
 

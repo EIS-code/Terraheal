@@ -64,7 +64,7 @@ class TouchIdVC: MainVC {
 
     // MARK: - Action Methods
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
-        self.navigationController?.popViewController(animated: true)
+         _ = (self.navigationController as? NC)?.popVC()
     }
 
     @IBAction func btnUsePasswordTapped(_ sender: UIButton) {

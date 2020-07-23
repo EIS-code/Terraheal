@@ -25,14 +25,14 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKj-5u-Rts" userLabel="contetnView">
-                    <rect key="frame" x="0.0" y="396" width="414" height="500"/>
+                    <rect key="frame" x="0.0" y="376" width="414" height="520"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eZ8-bR-g2k" userLabel="Stack View - main">
-                            <rect key="frame" x="10" y="10" width="394" height="476"/>
+                            <rect key="frame" x="10" y="10" width="394" height="456"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pqV-cH-EHE">
                                     <rect key="frame" x="177" y="0.0" width="40" height="5"/>
-                                    <color key="backgroundColor" name="theme_primary"/>
+                                    <color key="backgroundColor" name="theme_dark_text"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="5" id="0kc-Ua-Ejj"/>
                                         <constraint firstAttribute="width" constant="40" id="pTm-vy-sow"/>
@@ -60,16 +60,16 @@
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </tableView>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="EM0-vU-uuh" userLabel="Stack View - Total">
-                                    <rect key="frame" x="0.0" y="311.5" width="394" height="44.5"/>
+                                    <rect key="frame" x="0.0" y="311.5" width="394" height="24.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add reciepent" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hac-fW-5Vn" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="24" width="197" height="20.5"/>
+                                            <rect key="frame" x="0.0" y="4" width="197" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="theme_primary"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add reciepent" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qo9-kf-Xim" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="197" y="24" width="197" height="20.5"/>
+                                            <rect key="frame" x="197" y="4" width="197" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="theme_primary"/>
                                             <nil key="highlightedColor"/>
@@ -77,7 +77,7 @@
                                     </subviews>
                                 </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I91-bj-CxN" userLabel="vwOkButton">
-                                    <rect key="frame" x="0.0" y="376" width="394" height="50"/>
+                                    <rect key="frame" x="0.0" y="356" width="394" height="50"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Dpk-z4-75R" userLabel="Stack View - Next">
                                             <rect key="frame" x="277" y="5" width="117" height="40"/>
@@ -117,8 +117,13 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4H-Au-tRK" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="174" y="446" width="46" height="30"/>
-                                    <state key="normal" title="Button"/>
+                                    <rect key="frame" x="174" y="426" width="46" height="30"/>
+                                    <state key="normal" title="Button">
+                                        <color key="titleColor" name="theme_primary"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnCancelTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="2sB-U1-eTo"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
@@ -130,7 +135,7 @@
                     </subviews>
                     <color key="backgroundColor" name="theme_primary_light_background"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="500" id="1UT-or-Md4"/>
+                        <constraint firstAttribute="height" constant="520" id="1UT-or-Md4"/>
                         <constraint firstItem="eZ8-bR-g2k" firstAttribute="top" secondItem="NKj-5u-Rts" secondAttribute="top" constant="10" id="CXY-Ba-5ef"/>
                         <constraint firstAttribute="trailing" secondItem="eZ8-bR-g2k" secondAttribute="trailing" constant="10" id="VKz-NQ-AC8"/>
                         <constraint firstItem="eZ8-bR-g2k" firstAttribute="leading" secondItem="NKj-5u-Rts" secondAttribute="leading" constant="10" id="sOX-Q5-aHD"/>
@@ -146,7 +151,7 @@
                 <constraint firstItem="NKj-5u-Rts" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" id="Waa-ED-dwo"/>
                 <constraint firstItem="NKj-5u-Rts" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="iik-dG-agH"/>
                 <constraint firstAttribute="bottom" secondItem="6ZW-DU-hOd" secondAttribute="bottom" id="xcn-ZA-5s5"/>
-                <constraint firstItem="eZ8-bR-g2k" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="20" id="yia-Af-FE7"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="eZ8-bR-g2k" secondAttribute="bottom" constant="20" id="yia-Af-FE7"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
@@ -168,11 +173,14 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="theme_dark_text">
+            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="theme_light_text_color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary">
-            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light">
             <color red="0.49803921568627452" green="0.7686274509803922" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

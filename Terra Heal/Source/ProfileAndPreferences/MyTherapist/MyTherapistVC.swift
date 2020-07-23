@@ -91,7 +91,7 @@ class MyTherapistVC: MainVC {
     }
 
     @IBAction func btnBackTapped(_ sender: Any) {
-        _ = self.navigationController?.popViewController(animated: true)
+         _ = (self.navigationController as? NC)?.popVC()
     }
 
     @IBAction func btnSubmitTapped(_ sender: Any) {

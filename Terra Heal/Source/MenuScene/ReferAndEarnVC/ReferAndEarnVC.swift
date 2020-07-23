@@ -157,7 +157,7 @@ class ReferAndEarnVC: MainVC {
     }
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
         super.btnLeftTapped()
-        self.navigationController?.popViewController(animated: true)
+        _ = (self.navigationController as? NC)?.popVC()
     }
     func openShareReferralCode() {
         let alert: CustomShareReferralDialog = CustomShareReferralDialog.fromNib()
