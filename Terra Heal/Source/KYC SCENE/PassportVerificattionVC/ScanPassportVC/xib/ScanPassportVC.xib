@@ -57,6 +57,9 @@
                     <constraints>
                         <constraint firstAttribute="width" secondItem="E65-Md-Oec" secondAttribute="height" multiplier="1:1" id="zBE-Tg-qP3"/>
                     </constraints>
+                    <state key="normal">
+                        <color key="titleColor" name="theme_light_text_color"/>
+                    </state>
                     <connections>
                         <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="uuI-x2-O08"/>
                     </connections>
@@ -83,6 +86,9 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="theme_light_text_color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

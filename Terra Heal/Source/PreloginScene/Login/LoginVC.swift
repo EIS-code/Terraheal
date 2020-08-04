@@ -4,8 +4,6 @@
 //
 
 import UIKit
-import LocalAuthentication
-
 
 class LoginVC: MainVC {
 
@@ -104,7 +102,7 @@ class LoginVC: MainVC {
 
     @IBAction func btnLoginTapped(_ sender: UIButton) {
         if checkValidation() {
-            self.wsLogin()
+            self.wsLogin(username: txtEmail.text!.trim(), password: txtPassword.text!)
         }
     }
     @IBAction func btnSignUpTapped(_ sender: Any) {
@@ -116,7 +114,9 @@ class LoginVC: MainVC {
     }
 
     @IBAction func btnFingerPrintTapped(_ sender: UIButton) {
-        authenticateUser(self)
+        //authenticateUser(self)
+         self.checkFignerPrintData()
+        
     }
 
 }
@@ -134,11 +134,11 @@ extension LoginVC: UITextFieldDelegate {
 // MARK: - Web API Methods
 extension LoginVC {
 
-    func wsLogin() {
+    func wsLogin(username:String, password:String) {
         Loader.showLoading()
         var request: User.RequestLogin = User.RequestLogin()
-        request.email = txtEmail.text?.trim() ?? ""
-        request.password = txtPassword.text!
+        request.email = username
+        request.password = password
         AppWebApi.login(params: request) { (response) in
             let model: ResponseModel = ResponseModel.init(fromDictionary: response.toDictionary())
             Loader.hideLoading()
@@ -149,11 +149,19 @@ extension LoginVC {
                 //PreferenceHelper.shared.setSessionToken(user.token)
                 appSingleton.user = user
                 Singleton.saveInDb()
-                Common.appDelegate.loadHomeVC()
+                if let person = CoreDataManager.sharedManager.retrive(username: request.email) {
+                    print(person.username ?? "")
+                    CoreDataManager.sharedManager.update(username: request.email, password: request.password)
+                    Common.appDelegate.loadHomeVC()
+                } else {
+                    self.openRegisterFingerPrintDialog()
+                }
             }
         }
     }
 
+    
+    
     func checkValidation() -> Bool {
 
         if !txtEmail.validate().isValid {
@@ -182,91 +190,92 @@ extension LoginVC {
     }
 
 }
+//MARK: - FingerPrintAuthentication
 
-// MARK: - Touch API Methods
 extension LoginVC {
-
-
-    func authenticateUser(_ sender: Any) {
-
-        let context = LAContext()
-
-        var error: NSError?
-
-        if context.canEvaluatePolicy(
-            LAPolicy.deviceOwnerAuthenticationWithBiometrics,
-            error: &error) {
-
-            // Device can use biometric authentication
-            context.evaluatePolicy(
-                LAPolicy.deviceOwnerAuthenticationWithBiometrics,
-                localizedReason: "Access requires authentication",
-                reply: {(success, error) in
-                    DispatchQueue.main.async {
-
-                        if let err = error {
-
-                            switch err._code {
-
-                            case LAError.Code.systemCancel.rawValue:
-                                self.notifyUser("Session cancelled",
-                                                err: err.localizedDescription)
-
-                            case LAError.Code.userCancel.rawValue:
-                                self.notifyUser("Please try again",
-                                                err: err.localizedDescription)
-
-                            case LAError.Code.userFallback.rawValue:
-                                self.notifyUser("Authentication",
-                                                err: "Password option selected")
-                                // Custom code to obtain password here
-
-                            default:
-                                self.notifyUser("Authentication failed",
-                                                err: err.localizedDescription)
-                            }
-
-                        } else {
-                            self.imgChecked?.isHidden = false
-                        }
-                    }
-            })
-
-        } else {
-            // Device cannot use biometric authentication
-            if let err = error {
-                switch err.code {
-
-                case LAError.Code.biometryNotEnrolled.rawValue:
-                    notifyUser("User is not enrolled",
-                               err: err.localizedDescription)
-
-                case LAError.Code.passcodeNotSet.rawValue:
-                    notifyUser("A passcode has not been set",
-                               err: err.localizedDescription)
-
-
-                case LAError.Code.biometryNotAvailable.rawValue:
-                    notifyUser("Biometric authentication not available",
-                               err: err.localizedDescription)
-                default:
-                    notifyUser("Unknown error",
-                               err: err.localizedDescription)
-                }
-            }
-        }
-    }
-
-
-    func notifyUser(_ msg: String, err: String?) {
-
-        let alert: CustomAlert = CustomAlert.fromNib()
-        alert.initialize(message: msg.localized())
+    
+    func openPersonePickerDialog() {
+        let alert: PersonPickerDialog = PersonPickerDialog.fromNib()
+        alert.initialize(title: "Pick User To Login", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (person) in
+            guard let self = self else { return } ; print(self)
+            alert?.dismiss()
+            self.wsLogin(username: person.username , password: person.password)
+        }
+    }
+    func openPasswordDialog() {
+        let alert: CustomTextFieldDialog = CustomTextFieldDialog.fromNib()
+        alert.initialize(title: "FINGER_PRINT_DIALOG_PASSWORD_TITLE", data: "", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        alert.show(animated: true)
+        alert.configTextField(data: InputTextFieldDetail.getPassowordConfiguration())
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            guard let self = self else { return } ; print(self)
+            alert?.dismiss()
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (description) in
+            guard let self = self else { return } ; print(self)
+            alert?.dismiss()
+        }
+    }
+    
+    func openRegisterFingerPrintDialog() {
+        let alertFingerPrint: FingerPrintDialog = FingerPrintDialog.fromNib()
+        alertFingerPrint.initialize(title: "FINGER_PRINT_DIALOG_REGISTER_TITLE".localized(), buttonTitle: "BTN_YES_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        alertFingerPrint.show(animated: true)
+        alertFingerPrint.onBtnCancelTapped = {
+            [weak alertFingerPrint, weak self] in
+            guard let self = self else {return}; print(self)
+            alertFingerPrint?.dismiss();
+            Common.appDelegate.loadHomeVC()
+        }
+        alertFingerPrint.onBtnDoneTapped = {
+            [weak alertFingerPrint, weak self] in
+            guard let self = self else {return}; print(self)
+            alertFingerPrint?.dismiss();
+            CoreDataManager.sharedManager.create(username: self.txtEmail.text!, password: self.txtPassword.text!)
+            Common.appDelegate.loadHomeVC()
+        }
+    }
+    
+    func checkFignerPrintData() {
+        let count = CoreDataManager.sharedManager.fetchPersons().count
+        if count == 0  {
+            Common.showAlert(message: "You need to do manual login first")
+        }  else  {
+            self.openLoginFingerPrintDialog()
+        }
+    }
+    
+    func openLoginFingerPrintDialog() {
+        let alertFingerPrint: FingerPrintDialog = FingerPrintDialog.fromNib()
+        alertFingerPrint.initialize(title: "FINGER_PRINT_DIALOG_LOGIN_TITLE".localized(), buttonTitle: "BTN_YES_PROCEED".localized(), cancelButtonTitle: "FINGER_PRINT_DIALOG_BTN_PASSWORD".localized())
+        alertFingerPrint.show(animated: true)
+        alertFingerPrint.onBtnCancelTapped = {
+            [weak alertFingerPrint, weak self] in
+            guard let self = self else {return}; print(self)
+            alertFingerPrint?.dismiss();
+            self.openPasswordDialog()
+        }
+        alertFingerPrint.onBtnDoneTapped = {
+            [weak alertFingerPrint, weak self] in
+            guard let self = self else {return}; print(self)
+            alertFingerPrint?.dismiss();
+            if CoreDataManager.sharedManager.fetchPersons().count == 1 {
+                if let person: Person = CoreDataManager.sharedManager.fetchPersons().first {
+                    self.wsLogin(username: person.username ?? "", password: person.password ?? "")
+                }
+            } else {
+                self.openPersonePickerDialog()
+            }
         }
     }
 }

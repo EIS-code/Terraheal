@@ -10,7 +10,6 @@ import UIKit
 
 class AccessorySelectionDialog: ThemeBottomDialogView {
     
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     var onBtnDoneTapped: ((_ data:Int) -> Void)? = nil

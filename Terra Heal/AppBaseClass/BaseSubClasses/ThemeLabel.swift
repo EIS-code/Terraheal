@@ -8,7 +8,8 @@ import UIKit
 
 
 class ThemeLabel: UILabel {
-
+    var previousFrame: CGRect?
+    
     func setFont(name:String,size:CGFloat){
         let finalSize = JDDeviceHelper().fontCalculator(size: size)
         self.font = FontHelper.font(name: name, size: finalSize)
@@ -44,3 +45,4 @@ class ThemeLabel: UILabel {
         layer.add(animation, forKey: CATransitionType.fade.rawValue)
     }
 }
+

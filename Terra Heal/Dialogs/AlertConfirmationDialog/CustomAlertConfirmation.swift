@@ -11,7 +11,6 @@ import UIKit
 class CustomAlertConfirmation: ThemeBottomDialogView {
 
     @IBOutlet weak var lblMessage: ThemeLabel!
-    @IBOutlet weak var lblTitle: ThemeLabel!
     
     var onBtnDoneTapped : (() -> Void)? = nil
 

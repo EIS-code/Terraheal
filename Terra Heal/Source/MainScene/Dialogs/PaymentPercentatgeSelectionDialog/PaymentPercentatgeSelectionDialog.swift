@@ -10,7 +10,6 @@ import UIKit
 
 class PaymentPercentatgeSelectionDialog: ThemeBottomDialogView {
     
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     var onBtnDoneTapped: ((_ data:CustomButtonDetail) -> Void)? = nil

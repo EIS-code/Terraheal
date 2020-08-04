@@ -196,6 +196,9 @@
                     <state key="normal">
                         <color key="titleColor" name="theme_light_text_color"/>
                     </state>
+                    <connections>
+                        <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="RFE-2b-NB7"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYV-It-LzA" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="60" y="35" width="200" height="0.0"/>

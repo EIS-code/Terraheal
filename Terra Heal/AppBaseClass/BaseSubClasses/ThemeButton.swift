@@ -77,13 +77,20 @@ class ThemeButton: UIButton {
 //MARK: FloatingRound Button
 class FloatingRoundButton: ThemeButton {
     
+    @IBInspectable open var enableFloating: Bool = true
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.setUpFloatingButton()
+        if enableFloating {
+            self.setUpFloatingButton()
+        }
+        
     }
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        if enableFloating {
         self.setUpFloatingButton()
+        }
     }
     
     func setUpFloatingButton() {
@@ -97,7 +104,9 @@ class FloatingRoundButton: ThemeButton {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.layer.cornerRadius = self.bounds.height/2.0
+        if enableFloating {
+            self.layer.cornerRadius = self.bounds.height/2.0
+        }
     }
     func setForwardButton() {
         self.backgroundColor = .themePrimary
@@ -129,7 +138,7 @@ public class JDRadioButton: UIButton {
             outerCircleLayer.strokeColor = outerCircleColor.cgColor
         }
     }
-    @IBInspectable public var innerCircleCircleColor: UIColor = UIColor.themePrimary {
+    @IBInspectable public var innerCircleCircleColor: UIColor = UIColor.themeSecondary {
         didSet {
             setFillState()
         }
@@ -230,9 +239,9 @@ public class JDRadioButton: UIButton {
     // MARK: Custom
     private func setFillState() {
         if self.isSelected {
-            innerCircleLayer.fillColor = UIColor.themePrimary.cgColor
+            innerCircleLayer.fillColor = UIColor.themeSecondary.cgColor
         } else {
-            innerCircleLayer.fillColor = UIColor.themePrimaryLight.cgColor
+            innerCircleLayer.fillColor = UIColor.themePrimaryLightBackground.cgColor
         }
     }
     // Overriden methods.

@@ -87,37 +87,14 @@ class PackVC: MainVC {
 
     @IBAction func btnSubmitTapped(_ sender: Any) {
         btnSubmit.isEnabled = false
-        self.openTextFieldPicker()
+        self.openBuyPackDialog()
     }
 
     @IBAction func btnBackTapped(_ sender: Any) {
          _ = (self.navigationController as? NC)?.popVC()
     }
 
-    func openTextFieldPicker() {
-        let alert: CustomTextFieldDialog = CustomTextFieldDialog.fromNib()
-        alert.initialize(title: "PROMOCODE_TITLE".localized(), data:"", buttonTitle: "PROMOCODE_BTN_ADD_NEW".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
-        alert.txtData.placeholder = "code"
-        alert.show(animated: true)
-        alert.onBtnCancelTapped = {
-            [weak alert, weak self] in
-            alert?.dismiss()
-             guard let self = self else { return } ; print(self)
-            self.btnSubmit.isEnabled = true
-        }
-        alert.onBtnDoneTapped = {
-            [weak alert, weak self] (description) in
-            alert?.dismiss()
-             guard let self = self else { return } ; print(self)
-
-            self.arrForData.append(PackDetail.init(code:description,name: "TESt", description: "FLAT 50 % OFF"))
-            self.tableView.reloadData()
-            self.btnSubmit.isEnabled = true
-        }
-    }
-
-
-
+    
 }
 
 
@@ -149,7 +126,51 @@ extension PackVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
+    }
+    
+    
+    
+    func openBuyPackForSelfDialog() {
+           
+           let alert: AddPackDialog = AddPackDialog.fromNib()
+           alert.initialize(title: "Add pack", buttonTitle: "Proceed To Buy", cancelButtonTitle: "BTN_CANCEL".localized())
+           alert.show(animated: true)
+           alert.onBtnCancelTapped = {
+               [weak alert, weak self] in
+               alert?.dismiss()
+               guard let self = self else { return } ; print(self)
+           
+           }
+           alert.onBtnDoneTapped = {
+               [weak alert, weak self] (data) in
+               alert?.dismiss()
+                guard let self = self else { return } ; print(self)
+               self.tableView.reloadData()
+           }
+           
+           
+       }
+    func openBuyPackDialog() {
+        
+        let alert: BuyPackageDialog = BuyPackageDialog.fromNib()
+        alert.initialize(title: "Buy a pack", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+            self.btnSubmit.isEnabled = true
+        
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (data) in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+            self.btnSubmit.isEnabled = true
+            self.openBuyPackForSelfDialog()
+        }
+        
+        
     }
     
 }

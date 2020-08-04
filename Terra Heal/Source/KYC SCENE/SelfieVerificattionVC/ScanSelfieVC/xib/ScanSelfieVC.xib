@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScanSelfieVC" customModule="Terra_Heal" customModuleProvider="target">
             <connections>
+                <outlet property="btnLeft" destination="rck-R5-H9l" id="5di-RL-WwF"/>
                 <outlet property="btnScanNow" destination="phD-1A-sjB" id="WMx-LZ-vi1"/>
                 <outlet property="lblHeader" destination="xOG-OI-OfF" id="hde-C2-8N6"/>
                 <outlet property="previewView" destination="x2x-t5-uLr" id="C7c-85-xpc"/>
@@ -46,12 +47,27 @@
                         <action selector="btnScanTapped:" destination="-1" eventType="touchUpInside" id="GS7-Ux-bQM"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rck-R5-H9l" userLabel="btnBack" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="20" y="20" width="30" height="30"/>
+                    <color key="backgroundColor" name="theme_primary"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="rck-R5-H9l" secondAttribute="height" multiplier="1:1" id="hwp-IH-oea"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleColor" name="theme_light_text_color"/>
+                    </state>
+                    <connections>
+                        <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="B6C-iu-jop"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="x2x-t5-uLr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="083-w7-gdO"/>
                 <constraint firstItem="x2x-t5-uLr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="1Sc-Zj-1jW"/>
+                <constraint firstItem="rck-R5-H9l" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="5Jy-Q8-348"/>
                 <constraint firstItem="qbS-uh-3lP" firstAttribute="bottom" secondItem="x2x-t5-uLr" secondAttribute="bottom" id="ARc-dm-pE0"/>
+                <constraint firstItem="rck-R5-H9l" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="ClC-y2-Mqh"/>
                 <constraint firstItem="phD-1A-sjB" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="CuN-uD-NgF"/>
                 <constraint firstItem="qbS-uh-3lP" firstAttribute="leading" secondItem="x2x-t5-uLr" secondAttribute="leading" id="LZw-62-dFo"/>
                 <constraint firstItem="qbS-uh-3lP" firstAttribute="top" secondItem="x2x-t5-uLr" secondAttribute="top" id="N93-vG-g6i"/>
@@ -69,6 +85,9 @@
     </objects>
     <resources>
         <image name="asset-face" width="533.33331298828125" height="533.33331298828125"/>
+        <namedColor name="theme_light_text_color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

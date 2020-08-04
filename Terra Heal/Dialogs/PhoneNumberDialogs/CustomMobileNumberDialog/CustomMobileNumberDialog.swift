@@ -10,7 +10,7 @@ import UIKit
 
 class CustomMobileNumberDialog: ThemeBottomDialogView {
 
-    @IBOutlet weak var lblTitle: ThemeLabel!
+    
     @IBOutlet weak var txtMobileNumber: ACFloatingTextfield!
     @IBOutlet weak var txtCountryPhoneCode: ACFloatingTextfield!
 

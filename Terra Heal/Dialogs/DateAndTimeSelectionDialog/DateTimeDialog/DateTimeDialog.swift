@@ -11,7 +11,6 @@ import UIKit
 
 class DateTimeDialog: ThemeBottomDialogView {
     
-    @IBOutlet weak var lblTitle: ThemeLabel!
     var onBtnDoneTapped : ((_ millis:Double) -> Void)? = nil
     @IBOutlet weak var vwForDateSelection: UIView!
     @IBOutlet weak var lblSelectDate: ThemeLabel!

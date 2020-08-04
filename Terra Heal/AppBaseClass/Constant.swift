@@ -37,6 +37,19 @@ enum Gender: String {
     }
 }
 
+enum BookingType: String {
+    case MassageCenter  = "2"
+    case Therapist  = "1"
+    func name()-> String {
+        switch self {
+        // Use Internationalization, as appropriate.
+        case .MassageCenter: return "GENDER_MALE".localized()
+        case .Therapist: return "GENDER_FEMALE".localized()
+        }
+    }
+}
+
+
 enum Pressure: String {
     case Soft  = "soft"
     case Medium  = "medium"

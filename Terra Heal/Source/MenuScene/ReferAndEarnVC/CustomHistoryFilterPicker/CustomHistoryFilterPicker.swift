@@ -17,7 +17,6 @@ struct HistoryFilter {
 
 class CustomHistoryFilterPicker: ThemeBottomDialogView {
     
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var tableView: UITableView!
     
     

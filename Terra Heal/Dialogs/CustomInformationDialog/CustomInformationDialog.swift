@@ -10,7 +10,6 @@ import UIKit
 
 class CustomInformationDialog: ThemeBottomDialogView {
 
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var lblMessage: ThemeLabel!
     var onBtnDoneTapped: (() -> Void)? = nil
 

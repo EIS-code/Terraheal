@@ -8,12 +8,8 @@
 
 import UIKit
 
-
-
-
 class CustomCityPicker: ThemeBottomDialogView {
 
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchVw: UIView!
     @IBOutlet weak var txtSearchBar: ThemeTextField!
@@ -172,7 +168,5 @@ extension CustomCityPicker {
             }
         }
     }
-
-
 }
 

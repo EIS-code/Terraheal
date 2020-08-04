@@ -10,7 +10,6 @@ import UIKit
 
 class TextViewDialog: ThemeBottomDialogView {
     
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var txtDescription: ThemeTextView!
     var strEnteredData: String = ""
     var onBtnDoneTapped: ((_ data:String) -> Void)? = nil
@@ -25,6 +24,7 @@ class TextViewDialog: ThemeBottomDialogView {
     
     
     func initialize(title:String,data: String , buttonTitle:String,cancelButtonTitle:String) {
+         self.initialSetup()
         self.lblTitle.text = title
         self.txtDescription.text = data
         if cancelButtonTitle.isEmpty() {
@@ -39,7 +39,7 @@ class TextViewDialog: ThemeBottomDialogView {
             self.btnNext.setTitle(buttonTitle, for: .normal)
             self.btnNext.isHidden = false
         }
-        self.initialSetup()
+       
     }
     
     override func initialSetup() {

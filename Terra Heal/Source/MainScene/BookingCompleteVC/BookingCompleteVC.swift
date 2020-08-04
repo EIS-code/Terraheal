@@ -6,7 +6,12 @@
 import UIKit
 
 
-
+struct CompletionData {
+    var strHeader: String = ""
+    var strMessage: String = ""
+    var strImg: String = ""
+    var strButtonTitle: String = "BTN_HOME".localized()
+}
 class BookingCompleteVC: MainVC {
 
 
@@ -14,7 +19,7 @@ class BookingCompleteVC: MainVC {
     @IBOutlet weak var lblHeader: ThemeLabel!
     @IBOutlet weak var lblMessage: ThemeLabel!
     @IBOutlet var vwBg: UIView!
-
+    var completionData: CompletionData = CompletionData.init()
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
@@ -23,6 +28,7 @@ class BookingCompleteVC: MainVC {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
+        
     }
 
     // MARK: Setup
@@ -38,6 +44,11 @@ class BookingCompleteVC: MainVC {
         self.initialViewSetup()
     }
 
+    func setData(completionData: CompletionData) {
+        self.lblHeader.text = completionData.strHeader
+        self.lblMessage.text = completionData.strMessage
+        self.btnHome.setTitle(completionData.strButtonTitle, for: .normal)
+    }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
@@ -47,12 +58,10 @@ class BookingCompleteVC: MainVC {
     }
 
     private func initialViewSetup() {
-        self.lblHeader?.text = "BOOKING_COMPLETE_TITLE".localized()
         self.lblHeader?.setFont(name: FontName.SemiBold, size: FontSize.label_26)
-        self.lblMessage?.text = "BOOKING_COMPLETE_MESSAGE".localized()
         self.lblMessage?.setFont(name: FontName.Regular, size: FontSize.label_18)
-        self.btnHome?.setTitle("BOOKING_COMPLETE_BTN_HOME".localized(), for: .normal)
         self.btnHome?.setFont(name: FontName.Regular, size: FontSize.button_18)
+        self.setData(completionData: completionData)
     }
     
     

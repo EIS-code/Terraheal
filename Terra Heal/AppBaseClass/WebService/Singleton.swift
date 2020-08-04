@@ -7,16 +7,38 @@
 //
 
 import Foundation
+import CoreLocation
 let appSingleton = Singleton.shared
 
 public class Singleton :NSObject {
     static let shared = Singleton()
     var user:User.UserData = User.UserData.init(fromDictionary: [:])
     var myMassagePreference: MyMassagePreference = MyMassagePreference.init()
-    //var settting:Setting.Response = Setting.Response.init(fromDictionary: [:])
     var myLatitude: String = ""
     var myLongitude: String = ""
     var myAddress: String = ""
+    var massagePrefrenceDetail:[MassagePreferenceDetail] = []
+    var myBookingData: MyBookingData = MyBookingData.init()
+    
+    
+    func getPressureDetail() -> MassagePreferenceDetail? {
+        for data in massagePrefrenceDetail {
+            if data.id == MassagePreferenceMenu.Pressure.rawValue {
+                return data
+            }
+        }
+        return nil
+    }
+    
+    func getPreferedGender() -> MassagePreferenceDetail? {
+        for data in massagePrefrenceDetail {
+            if data.id == MassagePreferenceMenu.GenderPreference.rawValue {
+                return data
+            }
+        }
+        return nil
+    }
+    
     private override init() {
 
     }
@@ -24,6 +46,9 @@ public class Singleton :NSObject {
 
     }
 
+    func getCurrentCoordinate()-> CLLocationCoordinate2D {
+        return CLLocationCoordinate2D.init(latitude: self.myLatitude.toDouble, longitude: self.myLongitude.toDouble)
+    }
     class func saveInDb() {
         if let encoded = try? JSONEncoder().encode(appSingleton.user) {
             UserDefaults.standard.set(encoded, forKey: "kUser")
@@ -48,4 +73,6 @@ class MyMassagePreference: NSObject {
     var pastSurgeryDescription: String = ""
     var allergiesDescription: String = ""
     var healthConditionDescription: String = ""
+    
 }
+

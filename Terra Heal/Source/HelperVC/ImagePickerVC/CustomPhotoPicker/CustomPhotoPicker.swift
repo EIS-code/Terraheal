@@ -13,9 +13,6 @@ import MobileCoreServices
 
 class CustomPhotoPicker: ThemeBottomDialogView {
 
-
-    @IBOutlet weak var lblTitle: ThemeLabel!
-
     @IBOutlet weak var vwCamera: UIView!
     @IBOutlet weak var btnCamera: UIButton!
     @IBOutlet weak var lblCamera: ThemeLabel!

@@ -10,7 +10,6 @@ import UIKit
 
 class CustomGenderPicker: ThemeBottomDialogView {
 
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var vwMainGender: UIView!
     @IBOutlet weak var vwMale: UIView!
     @IBOutlet weak var btnMale: UIButton!
@@ -60,8 +59,8 @@ class CustomGenderPicker: ThemeBottomDialogView {
         ivMaleSelected.isHidden = (gender == Gender.Male) ? false : true
         ivFemaleSelected.isHidden = (gender == Gender.Male) ? true : false
         btnFemale.setRound(withBorderColor: (gender == Gender.Male) ? UIColor.clear : UIColor.themePrimary, andCornerRadious: 10.0, borderWidth: 1.5)
-        btnFemale?.setShadow()
-        btnMale?.setShadow()
+       // btnFemale?.setShadow()
+       // btnMale?.setShadow()
         ivMaleSelected?.setRound()
         ivFemaleSelected?.setRound()
     }

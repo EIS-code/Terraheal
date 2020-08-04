@@ -22,32 +22,32 @@
                         <rect key="frame" x="2" y="2" width="293" height="248"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ucr-ck-QBL">
-                                <rect key="frame" x="112.5" y="100.5" width="68.5" height="47"/>
+                                <rect key="frame" x="116.5" y="101" width="60.5" height="46"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DN9-jh-Ww8" userLabel="lblAmount" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="0.0" width="28.5" height="20.5"/>
+                                        <rect key="frame" x="16" y="0.0" width="28.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="theme_primary"/>
+                                        <color key="textColor" name="theme_dark_text"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Mpj-3O-BoU">
-                                        <rect key="frame" x="0.0" y="25.5" width="68.5" height="21.5"/>
+                                        <rect key="frame" x="0.0" y="25.5" width="60.5" height="20.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-time" translatesAutoresizingMaskIntoConstraints="NO" id="nDQ-gn-qpX">
-                                                <rect key="frame" x="0.0" y="0.0" width="21.5" height="21.5"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-time-small" translatesAutoresizingMaskIntoConstraints="NO" id="nDQ-gn-qpX">
+                                                <rect key="frame" x="0.0" y="0.0" width="13.5" height="20.5"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjm-Ie-XOl" userLabel="lblDuration" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                                <rect key="frame" x="26.5" y="0.0" width="42" height="21.5"/>
+                                                <rect key="frame" x="18.5" y="0.0" width="42" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" name="theme_primary"/>
+                                                <color key="textColor" name="theme_hint_text"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Hs-kl-xdE" userLabel="lblCurrencySign" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                        <rect key="frame" x="4" y="0.0" width="11" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="11" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="theme_primary"/>
+                                        <color key="textColor" name="theme_dark_text"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -106,10 +106,16 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="asset-check" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="asset-time" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="asset-check" width="32" height="32"/>
+        <image name="asset-time-small" width="13.5" height="13.5"/>
+        <namedColor name="theme_dark_text">
+            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_hint_text">
+            <color red="0.69800001382827759" green="0.70200002193450928" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="theme_primary">
-            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -13,15 +13,13 @@ import UIKit
 
 class CustomServiceHourSelectionDialog: ThemeBottomDialogView {
 
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     
     var onBtnDoneTapped: ((_ data: HoursDetails) -> Void)? = nil
     var selectedData: HoursDetails? = nil
 
-    var arrForFilteredData: [HoursDetails] = HoursDetails().getDemoArray()
-    var arrForForOriginalData: [HoursDetails] = HoursDetails().getDemoArray()
+    var arrForData: [HoursDetails] = HoursDetails().getDemoArray()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -53,7 +51,16 @@ class CustomServiceHourSelectionDialog: ThemeBottomDialogView {
     func select(data:HoursDetails?) {
         self.selectedData = data
     }
-
+    func setDataSource(data: [HoursDetails]) {
+        self.arrForData.removeAll()
+        for value in data {
+            self.arrForData.append(value)
+            if value.isSelected {
+                self.selectedData = value
+            }
+        }
+        self.tableView.reloadData()
+    }
     override func initialSetup() {
         super.initialSetup()
         self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.button_22)
@@ -99,21 +106,21 @@ extension CustomServiceHourSelectionDialog : UITableViewDelegate,UITableViewData
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrForFilteredData.count
+        return arrForData.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomServiceHourSelectionCell.name, for: indexPath) as?  CustomServiceHourSelectionCell
         cell?.layoutIfNeeded()
-        cell?.setData(data: arrForFilteredData[indexPath.row])
+        cell?.setData(data: arrForData[indexPath.row])
         cell?.layoutIfNeeded()
         return cell!
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.selectedData = self.arrForFilteredData[indexPath.row]
+        self.selectedData = self.arrForData[indexPath.row]
         if selectedData == nil {
             Common.showAlert(message: "VALIDATION_MSG_PLEASE_SELECT_DATA".localized())
         } else {

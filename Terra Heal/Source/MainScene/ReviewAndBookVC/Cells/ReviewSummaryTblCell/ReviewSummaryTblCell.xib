@@ -28,19 +28,19 @@ loadTherapistKycInfoVC
 Account Created
 loadTherapistKycInfoVC</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="theme_primary"/>
+                                <color key="textColor" name="theme_hint_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="1110 min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wDT-im-YtE" userLabel="lblDuration" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                 <rect key="frame" x="310" y="40.5" width="65.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="theme_primary"/>
+                                <color key="textColor" name="theme_hint_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="1110 min" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ByG-wy-uAm" userLabel="lblValue" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                 <rect key="frame" x="385.5" y="40.5" width="65.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="theme_primary"/>
+                                <color key="textColor" name="theme_hint_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -78,8 +78,8 @@ loadTherapistKycInfoVC</string>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="theme_primary">
-            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="theme_hint_text">
+            <color red="0.69800001382827759" green="0.70200002193450928" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

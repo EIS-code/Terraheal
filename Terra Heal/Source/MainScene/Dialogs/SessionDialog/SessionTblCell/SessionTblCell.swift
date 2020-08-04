@@ -15,7 +15,7 @@ class SessionTblCell: TableCell {
     @IBOutlet weak var vwBg: UIView!
     @IBOutlet weak var ivSelected: UIImageView!
     @IBOutlet weak var ivPicture: UIImageView!
-    
+    var data: SessionDetail = SessionDetail.init(fromDictionary: [:])
     override func awakeFromNib() {
         super.awakeFromNib()
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
@@ -25,6 +25,7 @@ class SessionTblCell: TableCell {
     }
 
     func setData(data: SessionDetail ) {
+        self.data = data
         self.lblName.text = data.name
         self.lblDetail.text = data.detail
         if data.isSelected {
@@ -40,6 +41,11 @@ class SessionTblCell: TableCell {
         super.layoutSubviews()
         self.ivPicture?.setRound()
         self.ivSelected?.setRound()
+        if data.isSelected {
+            self.vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)
+        } else {
+            self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+        }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

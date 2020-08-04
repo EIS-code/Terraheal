@@ -8,61 +8,87 @@
 
 import Foundation
 
-//MARK: Request Models
-struct ServiceDetail {
-    var id:  String = ""
-    var name:  String = ""
-    var details:  String = ""
-    var duration:  [ServiceDurationDetail] = []
-    var selectedDuration:ServiceDurationDetail = ServiceDurationDetail.init()
-    var isSelected:  Bool = false
-    static func getMassageArray() ->  [ServiceDetail] {
-        let serviceDetail1 = ServiceDetail(id: "1", name: "head, neck and shoulders massage", details: ServiceDetail.getServiceDetail(),duration: ServiceDurationDetail.getDemoArray())
-        let serviceDetail2 = ServiceDetail(id: "2", name: "hand or foot massage", details: ServiceDetail.getServiceDetail(),duration: ServiceDurationDetail.getDemoArray())
-        let serviceDetail3 = ServiceDetail(id: "3", name: "tok sen - thai massage", details: ServiceDetail.getServiceDetail(),duration: ServiceDurationDetail.getDemoArray())
-        let serviceDetail4 = ServiceDetail(id: "4", name: "thai yoga massage", details: ServiceDetail.getServiceDetail(),duration: ServiceDurationDetail.getDemoArray())
-        let serviceDetail5 = ServiceDetail(id: "5", name: "tok sen - thai massage", details: ServiceDetail.getServiceDetail(),duration: ServiceDurationDetail.getDemoArray())
-        let serviceDetail6 = ServiceDetail(id: "6", name: "thai yoga massage", details: ServiceDetail.getServiceDetail(),duration: ServiceDurationDetail.getDemoArray())
-        return[serviceDetail1,serviceDetail2,serviceDetail3,serviceDetail4,serviceDetail5,serviceDetail6]
+
+
+class MyBookingData: NSObject {
+    var booking_type: String = ""
+    var session_id: String = ""
+    var special_notes:  String = ""
+    var date: String = ""
+    var booking_info: [BookingInfo] = []
+    var user_id: String = PreferenceHelper.shared.getUserId()
+    var shop_id: String = ""
+    //Data Not In Web Call
+    var serviceCenterDetail: ServiceCenterDetail = ServiceCenterDetail.init(fromDictionary: [:])
+    override init() {
+        super.init()
     }
-    static func getTherapyArray() ->  [ServiceDetail] {
-        let serviceDetail1 = ServiceDetail(id: "1", name: "head, neck and shoulders therapy", details: ServiceDetail.getServiceDetail(),duration: ServiceDurationDetail.getDemoArray())
-        let serviceDetail2 = ServiceDetail(id: "2", name: "hand or foot therapy", details: ServiceDetail.getServiceDetail(),duration: ServiceDurationDetail.getDemoArray())
-        let serviceDetail3 = ServiceDetail(id: "3", name: "tok sen - thai therapy", details: ServiceDetail.getServiceDetail(),duration: ServiceDurationDetail.getDemoArray())
-        let serviceDetail4 = ServiceDetail(id: "4", name: "thai yoga therapy", details: ServiceDetail.getServiceDetail(),duration: ServiceDurationDetail.getDemoArray())
-        let serviceDetail5 = ServiceDetail(id: "5", name: "tok sen - thai therapy", details: ServiceDetail.getServiceDetail(),duration: ServiceDurationDetail.getDemoArray())
-        let serviceDetail6 = ServiceDetail(id: "6", name: "thai yoga therapy", details: ServiceDetail.getServiceDetail(),duration: ServiceDurationDetail.getDemoArray())
-        return[serviceDetail1,serviceDetail2,serviceDetail3,serviceDetail4,serviceDetail5,serviceDetail6]
+    func toDictionary() ->  [String:Any] {
+        var dictionary = [String:Any]()
+        dictionary["session_id"] = session_id
+        dictionary["date"] = date
+        dictionary["booking_type"] = booking_type
+        dictionary["special_notes"] = special_notes
+        dictionary["user_id"] = user_id
+        dictionary["shop_id"] = shop_id
+        var dictionaryElements = [[String:Any]]()
+        for dataElement in booking_info {
+            dictionaryElements.append(dataElement.toDictionary())
+        }
+        dictionary["booking_info"] = dictionaryElements
+        return dictionary
     }
-    static func getServiceDetail() -> String {
-        return "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget. Nullam eget felis eget nunc lobortis."
+    
+}
+
+class BookingInfo: NSObject {
+    var user_people_id: String = ""
+    var location: String = ""
+    var notes_of_injuries: String = ""
+    var imc_type: String = ""
+    var therapist_id: String = ""
+    var room_id: String = ""
+    var massage_info: [MyMassageInfo] = []
+    //Data Not In Web Call
+    var reciepent:People = People.init(fromDictionary: [:])
+    var services: [ServiceDetail] = []
+    
+    override init() {
+        super.init()
+    }
+    func toDictionary() ->  [String:Any] {
+        var dictionary = [String:Any]()
+        dictionary["user_people_id"] = user_people_id
+        dictionary["location"] = location
+        dictionary["notes_of_injuries"] = notes_of_injuries
+        dictionary["imc_type"] = imc_type
+        dictionary["therapist_id"] = therapist_id
+        dictionary["room_id"] = room_id
+        var dictionaryElements = [[String:Any]]()
+        for dataElement in massage_info {
+            dictionaryElements.append(dataElement.toDictionary())
+        }
+        dictionary["massage_info"] = dictionaryElements
+        return dictionary
     }
 }
 
-class CurrentBooking {
+class MyMassageInfo: NSObject {
     
-    var id: String = PreferenceHelper.shared.getUserId()
-    var session: SessionDetail = SessionDetail.init(fromDictionary: [:])
-    var serviceType: ServiceType = ServiceType.Massages
-    var serviceCenterDetail: ServiceCenterDetail = ServiceCenterDetail.init(servicesList: [])
-    var reciepentData: [ReciepentMassageData] = []
-    var date: Double = 0.0
-    var bookingNotes: String = ""
+    var massage_prices_id: String = ""
+    var notes: String = ""
+    var preference: String = ""
+    var massage_preference_option_id: String = ""
     
-    static let shared: CurrentBooking = {
-        let instance: CurrentBooking = CurrentBooking.init()
-        return instance
-    }()
-    private init() {
-        
+    override init() {
+        super.init()
     }
-    func clear()  {
-        self.session = SessionDetail.init(fromDictionary: [:])
-        self.serviceType = ServiceType.Massages
-        self.serviceCenterDetail = ServiceCenterDetail.init(servicesList: [])
-        self.reciepentData = []
-        self.date = 0.0
-        self.bookingNotes = ""
+    func toDictionary() ->  [String:Any] {
+        var dictionary = [String:Any]()
+        dictionary["massage_prices_id"] = massage_prices_id
+        dictionary["preference"] = preference
+        dictionary["massage_preference_option_id"] = massage_preference_option_id
+        dictionary["notes"] = notes
+        return dictionary
     }
-    
 }

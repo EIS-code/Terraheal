@@ -23,8 +23,7 @@ class PressureSelectionTblCell: TableCell {
 
     func setData(data: PreferenceOption ) {
         self.lblName.text = data.name
-        self.btnAction.isSelected = data.isSelected
-
+        self.btnAction.isSelected =  data.isSelected
     }
 
     override func layoutSubviews() {

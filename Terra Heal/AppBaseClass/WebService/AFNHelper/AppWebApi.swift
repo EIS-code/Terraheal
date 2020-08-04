@@ -35,6 +35,8 @@ class AppWebApi: NSObject {
             
         }
         
+        
+        
         private  static let Domain = Domains.Production
         
         
@@ -103,11 +105,20 @@ class AppWebApi: NSObject {
         static var SaveMassagePreferenceList: String {
             return  Domain + Routes.Massage + "/preference/save"
         }
+        static var MassageCenterList: String {
+            return  Domain + Routes.Massage + "/center/get"
+        }
+        static var MassageCenerDetail: String {
+            return Domain + Routes.Massage + "/get"
+        }
         static var TherapistQuesionaryList: String {
             return  Domain + Routes.Therapy + "/questionnaire"
         }
         static var SaveTherapistQuesionaryList: String {
             return  Domain + Routes.Therapy + "/questionnaire/save"
+        }
+        static var FetchSessionlist: String {
+                   return  Domain + Routes.Massage + "/session/get"
         }
         //Address APIs
         static var GetAddressList: String {
@@ -232,12 +243,36 @@ extension AppWebApi {
         }
     }
     
+    class func fetchSessionList(params:[String:String], completionHandler: @escaping ((Session.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.FetchSessionlist, methodName: AlamofireHelper.GET_METHOD, paramData:[:]) { (data, dictionary, error) in
+            let response = Session.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    
+    
     class func countryList(params:Countries.RequestCountrylist = Countries.RequestCountrylist(), completionHandler: @escaping ((Countries.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetCountryList, methodName: AlamofireHelper.GET_METHOD, paramData: [:]) { (data, dictionary, error) in
             let response = Countries.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }
+    
+    
+    class func massageCenterList(params:ServiceCenter.RequestServiceCenterlist = ServiceCenter.RequestServiceCenterlist(), completionHandler: @escaping ((ServiceCenter.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.MassageCenterList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = ServiceCenter.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    
+    class func massageCenterDetail(params:ServiceCenter.RequestServiceCenterDetail = ServiceCenter.RequestServiceCenterDetail(), completionHandler: @escaping ((ServiceCenter.ServiceCenterDetailResponse) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.MassageCenerDetail, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = ServiceCenter.ServiceCenterDetailResponse.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    
     
     class func locationList(params:PriceAndLocation.RequestLocationlist = PriceAndLocation.RequestLocationlist(), completionHandler: @escaping ((PriceAndLocation.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetLocationList, methodName: AlamofireHelper.GET_METHOD, paramData: [:]) { (data, dictionary, error) in

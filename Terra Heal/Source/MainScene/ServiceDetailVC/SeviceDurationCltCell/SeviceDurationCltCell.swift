@@ -6,25 +6,10 @@
 import UIKit
 import Foundation
 
-struct ServiceDurationDetail {
-    var id:String = ""
-    var amount:String = ""
-    var duration:String = ""
-    var isSelected: Bool = false
-    static func getDemoArray() ->  [ServiceDurationDetail] {
-        let serviceDurationDetail1 = ServiceDurationDetail(id: "1", amount: "100", duration: "120", isSelected: false)
-        let serviceDurationDetail2 = ServiceDurationDetail(id: "2", amount: "120", duration: "140", isSelected: false)
-        let serviceDurationDetail3 = ServiceDurationDetail(id: "3", amount: "140", duration: "160", isSelected: false)
-        let serviceDurationDetail4 = ServiceDurationDetail(id: "4", amount: "200", duration: "80", isSelected: false)
-        return[serviceDurationDetail1,serviceDurationDetail2,serviceDurationDetail3,serviceDurationDetail4]
-    }
-}
 
 class SeviceDurationCltCell: CollectionCell {
     
     var data: ServiceDurationDetail!
-    
-    
     @IBOutlet weak var vwBg: UIView!
     @IBOutlet weak var lblDuration: ThemeLabel!
     @IBOutlet weak var lblAmount: ThemeLabel!
@@ -39,13 +24,14 @@ class SeviceDurationCltCell: CollectionCell {
     
     func setData(data:ServiceDurationDetail) {
         self.data = data
-        self.lblDuration.text = data.duration
-        self.lblAmount.text = data.amount
+        self.lblDuration.text = data.time + " " + "TIME_UNIT_MIN".localized()
+        self.lblAmount.text = data.pricing.price
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
+        vwBg?.setRound(withBorderColor: .themeHintText, andCornerRadious: 5.0, borderWidth: 1.0)
+        vwBg?.setShadow()
     }
  
 }

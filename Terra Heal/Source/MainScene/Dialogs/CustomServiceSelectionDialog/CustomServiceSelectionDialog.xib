@@ -28,23 +28,23 @@
                     <rect key="frame" x="0.0" y="268" width="320" height="300"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
-                            <rect key="frame" x="0.0" y="31.5" width="320" height="268.5"/>
+                            <rect key="frame" x="0.0" y="35.5" width="320" height="264.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label fsadf dsaf dsafjkdsljfdskajfklsdjaklfjkslad" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-4J-xGz" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="32" y="51.5" width="256" height="41"/>
+                                    <rect key="frame" x="32" y="55.5" width="256" height="41"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" name="theme_primary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLP-3J-98a" userLabel="vwContent" customClass="JDSegmentedControl" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="96" y="112.5" width="128" height="40"/>
+                                    <rect key="frame" x="96" y="116.5" width="128" height="40"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="Oe6-gz-a6P"/>
                                     </constraints>
                                 </view>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="252" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ps3-Js-7Iq">
-                                    <rect key="frame" x="32" y="172.5" width="256" height="96"/>
+                                    <rect key="frame" x="32" y="176.5" width="256" height="88"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="z33-qW-ZLm">
                                         <size key="itemSize" width="128" height="128"/>
@@ -54,7 +54,7 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="93.5" y="208.5" width="133" height="40"/>
+                                    <rect key="frame" x="93.5" y="204.5" width="133" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                     <state key="normal" title="Sign In">
@@ -80,20 +80,19 @@
                                 <constraint firstItem="eho-4J-xGz" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.8" id="ydI-AK-c6q"/>
                             </constraints>
                         </view>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center-white" translatesAutoresizingMaskIntoConstraints="NO" id="az3-5n-QhJ" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="128.5" y="0.0" width="63" height="63"/>
-                            <color key="backgroundColor" name="theme_primary"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center" translatesAutoresizingMaskIntoConstraints="NO" id="az3-5n-QhJ" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="124.5" y="0.0" width="71" height="71"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="az3-5n-QhJ" secondAttribute="height" multiplier="1:1" priority="999" id="gTw-dh-Adp"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="padding">
-                                    <real key="value" value="10"/>
+                                    <real key="value" value="0.0"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="581-cI-fuY" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="258" y="10.5" width="42" height="42"/>
+                            <rect key="frame" x="258" y="14.5" width="42" height="42"/>
                             <color key="backgroundColor" name="theme_background"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="581-cI-fuY" secondAttribute="height" multiplier="1:1" id="JMg-tl-e7y"/>
@@ -149,13 +148,13 @@
         </view>
     </objects>
     <resources>
-        <image name="asset-arrow-down" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="asset-center-white" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="asset-arrow-down" width="10.5" height="6"/>
+        <image name="asset-center" width="71" height="71"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary">
-            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light_background">
             <color red="0.94509803921568625" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

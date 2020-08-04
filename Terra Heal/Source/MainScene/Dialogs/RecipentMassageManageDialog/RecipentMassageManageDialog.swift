@@ -8,32 +8,16 @@
 
 import UIKit
 
-struct ReciepentMassageData {
-    var reciepent:People = People.init(fromDictionary: [:])
-    var services: [ServiceDetail] = []
-    static func getDemoArray() -> [ReciepentMassageData] {
-        var recData1 = ReciepentMassageData.init()
-        let people: People = People.init(fromDictionary: [:])
-        people.age = "21"
-        people.name = "Sauravsingh Tomar"
-        people.id = "1"
-        people.gender = "m"
-        recData1.reciepent = people
-        recData1.services = ServiceDetail.getMassageArray()
-        return [recData1]
-        
-    }
-}
 
 class RecipentMassageManageDialog: ThemeBottomDialogView {
     @IBOutlet weak var btnAddReciepent: ThemeButton!
     @IBOutlet weak var lblTotal: ThemeLabel!
     @IBOutlet weak var lblTotalValue: ThemeLabel!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var lblTitle: ThemeLabel!
-    var arrForData: [ReciepentMassageData] = []//ReciepentMassageData.getDemoArray()
+
+    var arrForData: [BookingInfo] = appSingleton.myBookingData.booking_info
     var sheetCoordinator: UBottomSheetCoordinator?
-    var onBtnNextSelectedTapped: ((_ data: [ReciepentMassageData]) -> Void)? = nil
+    var onBtnNextSelectedTapped: ((_ data: [BookingInfo]) -> Void)? = nil
     
     
     override func awakeFromNib() {
@@ -92,7 +76,7 @@ class RecipentMassageManageDialog: ThemeBottomDialogView {
         var total: Double = 0.0
         for  data in arrForData {
             for service in data.services {
-                total = total + service.selectedDuration.amount.toDouble
+                total = total + (service.selectedDuration.pricing.price).toDouble
             }
         }
         self.lblTotalValue.text = total.toString()
@@ -114,7 +98,11 @@ class RecipentMassageManageDialog: ThemeBottomDialogView {
             guard let self = self else { return } ; print(self)
             recipientSelectionDialog?.dismiss()
             self.btnAddReciepent.isEnabled = true
-            self.arrForData.append(ReciepentMassageData.init(reciepent: people, services: []))
+            let bookingData: BookingInfo = BookingInfo.init()
+            bookingData.reciepent = people
+            bookingData.user_people_id = people.id
+            bookingData.services = []
+            self.arrForData.append(bookingData)
             self.tableView.reloadData()
         }
     }
@@ -205,6 +193,7 @@ extension RecipentMassageManageDialog: UITableViewDelegate, UITableViewDataSourc
     
     @objc func addService(sender: UIButton) {
         let serviceDetailVC:  ServiceSelectionVC =  ServiceSelectionVC.fromNib()
+        serviceDetailVC.bookingDetail = self.arrForData[sender.tag]
         DispatchQueue.main.async {
             // self.navigationController?.pushViewController(serviceDetailVC, animated: true)
             Common.appDelegate.getTopViewController()?.present(serviceDetailVC, animated: true, completion: nil)
@@ -213,7 +202,8 @@ extension RecipentMassageManageDialog: UITableViewDelegate, UITableViewDataSourc
             guard let self = self else { return } ; print(self)
             
             serviceDetailVC.dismiss(animated: true) {
-                self.arrForData[sender.tag].services.append(service)
+                
+                self.arrForData[sender.tag] = service
                 self.calculateTotal()
                 self.tableView.reloadData()
             }

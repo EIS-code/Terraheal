@@ -10,7 +10,7 @@ import UIKit
 
 class CustomChangePasswordDialog: ThemeBottomDialogView {
 
-    @IBOutlet weak var lblTitle: ThemeLabel!
+    
     @IBOutlet weak var txtOldPassword: ACFloatingTextfield!
     @IBOutlet weak var txtPassword: ACFloatingTextfield!
     @IBOutlet weak var txtConfirmPassword: ACFloatingTextfield!

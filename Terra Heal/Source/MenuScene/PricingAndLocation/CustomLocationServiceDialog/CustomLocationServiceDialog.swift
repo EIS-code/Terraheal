@@ -14,14 +14,13 @@ enum ServiceType: Int {
 }
 class CustomLocationServiceDialog: ThemeBottomDialogView {
     
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var collectionVw: UICollectionView!
     @IBOutlet weak var vwServiceSelection: JDSegmentedControl!
     var selectedService: ServiceType = ServiceType.Massages
     var onBtnDoneTapped: (( ) -> Void)? = nil
-    var arrForData: [ServiceDetail] = ServiceDetail.getMassageArray()
-    var arrForMassage: [ServiceDetail] = ServiceDetail.getMassageArray()
-    var arrForTherapies: [ServiceDetail] = ServiceDetail.getTherapyArray()
+    var arrForData: [ServiceDetail] = []
+    var arrForMassage: [ServiceDetail] = []
+    var arrForTherapies: [ServiceDetail] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()

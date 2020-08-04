@@ -11,7 +11,6 @@ import UIKit
 
 class TimeDialog: ThemeBottomDialogView {
     
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var timePicker: UIDatePicker!
     var onBtnDoneTapped : ((_ time: Double) -> Void)? = nil
       

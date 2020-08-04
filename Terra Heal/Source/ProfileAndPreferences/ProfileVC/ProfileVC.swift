@@ -20,6 +20,7 @@ enum ProfileMenu: String {
     case MangagePeople = "9"
     case PaymentPreference = "10"
     case Settings = "11"
+    case KycVerification = "12"
     func name() -> String {
         switch self {
         case .MyProfile:
@@ -44,6 +45,8 @@ enum ProfileMenu: String {
             return  "PROFILE_MENU_PAYMENT_PREFERENCE".localized()
         case .Settings:
             return  "PROFILE_MENU_SETTING".localized()
+        case .KycVerification:
+            return "kyc verification"
         }
     }
 }
@@ -85,6 +88,7 @@ class ProfileVC: MainVC {
         ProfileItemDetail(type: ProfileMenu.MangagePeople, image: ""),
         ProfileItemDetail(type: ProfileMenu.PaymentPreference, image: ""),
         ProfileItemDetail(type: ProfileMenu.Settings,  image: ""),
+        ProfileItemDetail(type: ProfileMenu.KycVerification,  image: ""),
     ]
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -165,8 +169,8 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
         tableView.dataSource = self
         self.scrVw.delegate = self
         tableView.showsVerticalScrollIndicator = false
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.rowHeight = 60
+        tableView.estimatedRowHeight = 60
         tableView.register(ProfileTblCell.nib()
             , forCellReuseIdentifier: ProfileTblCell.name)
         tableView.tableFooterView = UIView()
@@ -178,10 +182,7 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
     }
 
     func updateHeaderView() {
-        print("ScrollView ContetnSize: - \(scrVw.contentSize)")
-        print("ScrollView ContetnOffset: - \(scrVw.contentOffset)")
-        print("ScrollView Inset: - \(scrVw.contentInset)")
-        
+  
         if self.scrVw.contentOffset.y < -20{
             let y = abs(self.scrVw.contentOffset.y)
             let transLation = y/kTableHeaderHeight
@@ -234,6 +235,8 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
             Common.appDelegate.loadPaymentReferenceVC(navigaionVC: self.navigationController)
         case .Settings:
             Common.appDelegate.loadSettingVC(navigaionVC: self.navigationController)
+        case .KycVerification:
+            Common.appDelegate.loadKycInfoVC(navigaionVC: self.navigationController)
         }
     }
 }

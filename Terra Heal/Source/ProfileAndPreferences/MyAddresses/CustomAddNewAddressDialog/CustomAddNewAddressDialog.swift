@@ -11,7 +11,6 @@ import UIKit
 
 class CustomAddNewAddressDialog: ThemeBottomDialogView {
     
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var txtAddressLine1: ACFloatingTextfield!
     @IBOutlet weak var txtAddressLine2: ACFloatingTextfield!
     @IBOutlet weak var txtLandmark: ACFloatingTextfield!

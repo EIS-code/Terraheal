@@ -16,13 +16,11 @@ extension ServiceMapVC :GMSMapViewDelegate {
         mapView.delegate = self;
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.settings.allowScrollGesturesDuringRotateOrZoom = false;
-        mapView.padding = UIEdgeInsets.init(top: 20, left: 20, bottom: 60, right: 20)
-        mapView.animate(toLocation: CLLocationCoordinate2D.init(latitude: 22.30, longitude: 70.80))
+        mapView.padding = UIEdgeInsets.init(top: 20, left: 20, bottom: vwService.frame.height, right: 20)
+        mapView.animate(toLocation: appSingleton.getCurrentCoordinate())
         mapView.animate(toZoom: 15)
-        self.mapView.setCurrentMarker(marker: self.currentMarker!, location: CLLocationCoordinate2D.init(latitude: 22.30, longitude: 70.80))
-        self.setMassageCenterMarker()
+        self.mapView.setCurrentMarker(marker: self.currentMarker!, location: appSingleton.getCurrentCoordinate())
         self.mapView.applyStyle()
-        self.mapView.focusMap(locations: [self.currentMarker!.position,arrForServices[self.currentIndex].getCoordinatte()])
     }
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition){
@@ -33,9 +31,31 @@ extension ServiceMapVC :GMSMapViewDelegate {
         mapView.updateLine(polyline: path)
     }
     
-    func setMassageCenterMarker() {
-        for center in arrForServices {
-            self.mapView.setMassageCenterMarker(marker: GMSMarker.init(), image: UIImage.init(named: "asset-center")!, location: center.getCoordinatte())
+    func createNewCenterMarkers() {
+        self.removeAllCenterMarker()
+        for i  in 0..<arrForServices.count {
+            let center: ServiceCenterDetail = self.arrForServices[i]
+            let marker:GMSMarker = GMSMarker.init(position: center.getCoordinatte())
+            marker.title  = center.name
+            marker.map = self.mapView
+            marker.userData = i
+            self.arrForServicesMarker.append(GMSMarker.init(position: center.getCoordinatte()))
+            self.mapView.setMassageCenterMarker(marker: marker, image: UIImage.init(named: "asset-center-maker")!, location: center.getCoordinatte())
         }
+    }
+    
+    func removeAllCenterMarker() {
+        for marker in self.arrForServicesMarker {
+            marker.map = nil
+        }
+        self.arrForServicesMarker.removeAll()
+    }
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        if let index = marker.userData as? Int {
+            self.currentIndex = index
+            self.setCenterDataFor(index: self.currentIndex)
+        }
+            
+        return true
     }
 }

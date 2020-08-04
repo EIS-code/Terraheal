@@ -29,13 +29,20 @@ class DurationCltCell: CollectionCell {
     
     func setData(data:ServiceDurationDetail) {
         self.data = data
-        self.lblDuration.text = data.duration
-        self.lblAmount.text = data.amount
-        
+        self.lblDuration.text = data.time + " " + "TIME_UNIT_MIN".localized()
+        self.lblAmount.text = data.pricing.price
+        if data.isSelected {
+            self.ivSelected?.isHidden = false
+            vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 5.0, borderWidth: 1.0)
+        } else  {
+            self.ivSelected?.isHidden = true
+            vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
+        }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.layoutIfNeeded()
         self.ivSelected?.setRound()
         if data.isSelected {
             self.ivSelected?.isHidden = false
@@ -44,7 +51,7 @@ class DurationCltCell: CollectionCell {
             self.ivSelected?.isHidden = true
             vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
         }
-        
+        vwBg.setShadow()
     }
     
 }

@@ -13,7 +13,7 @@ import UIKit
 extension ServiceMapVC:  UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
     // MARK: UICollectionViewDataSource
     
-     func setupCollectionView(collectionView:  UICollectionView) {
+    func setupCollectionView() {
         collectionView.backgroundColor = UIColor.clear
         collectionView.isUserInteractionEnabled = true
         collectionView.showsVerticalScrollIndicator = false
@@ -24,6 +24,15 @@ extension ServiceMapVC:  UICollectionViewDelegate, UICollectionViewDataSource, U
         collectionView.register(ServiceCell.nib()
             , forCellWithReuseIdentifier: ServiceCell.name)
         
+        cltForCollapseView.backgroundColor = UIColor.themePrimaryLightBackground
+        cltForCollapseView.isUserInteractionEnabled = true
+        cltForCollapseView.showsVerticalScrollIndicator = false
+        cltForCollapseView.showsHorizontalScrollIndicator = false
+        cltForCollapseView.isPagingEnabled = true
+        cltForCollapseView.delegate = self
+        cltForCollapseView.dataSource = self
+        cltForCollapseView.register(ServiceCollapseCell.nib()
+            , forCellWithReuseIdentifier: ServiceCollapseCell.name)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -35,30 +44,41 @@ extension ServiceMapVC:  UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ServiceCell.name, for: indexPath) as! ServiceCell
-        cell.layoutIfNeeded()
-        cell.setData(data: self.arrForServices[indexPath.row])
-        cell.layoutIfNeeded()
-        return cell
+        if collectionView == cltForCollapseView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ServiceCollapseCell.name, for: indexPath) as! ServiceCollapseCell
+            cell.layoutIfNeeded()
+            cell.setData(data: self.arrForServices[indexPath.row])
+            cell.layoutIfNeeded()
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ServiceCell.name, for: indexPath) as! ServiceCell
+            cell.layoutIfNeeded()
+            cell.setData(data: self.arrForServices[indexPath.row])
+            cell.layoutIfNeeded()
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        if collectionView == cltForCollapseView {
+            self.upDialogAnimation()
+            self.transitionAnimator?.startAnimation()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = collectionView.bounds.width
-        return CGSize(width: size - 10, height: collectionView.bounds.height)
+        return CGSize(width: size, height: collectionView.bounds.height)
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         let center = CGPoint(x: scrollView.contentOffset.x + (scrollView.frame.width / 2), y: (scrollView.frame.height / 2))
-        if let ip = collectionView.indexPathForItem(at: center) {
-            self.currentIndex = ip.row
-            
-            self.mapView.focusMap(locations: [self.currentMarker!.position,arrForServices[self.currentIndex].getCoordinatte()])
-            self.mapView.drawPolyline(polyline: path, source: self.currentMarker!.position, destination: arrForServices[self.currentIndex].getCoordinatte())
-        }
+                if let ip = collectionView.indexPathForItem(at: center) {
+                   self.currentIndex = ip.row
+                   self.setCenterDataFor(index: self.currentIndex)
+                }
     }
+    
     
 }

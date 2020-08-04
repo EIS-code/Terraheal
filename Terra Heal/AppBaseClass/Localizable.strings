@@ -285,9 +285,11 @@
 "BOOKING_COMPLETE_TITLE" = "booking successful";
 "BOOKING_COMPLETE_MESSAGE" = "thanks for choosing our services! we have received your booking and will confirm it as soon as possible";
 "BOOKING_COMPLETE_BTN_HOME" = "Home";
+"BOOKING_OPENING_HOURS"  = " opening hours";
 //MARK:  Service Map VC
 "BTN_BOOK_HERE" = "Book Here";
 "BTN_CHECK_SERVICE" = "Check Service";
+"BOOKING_SERVICES" = "services";
 "SESSION_TYPE_TITLE" = "Session Type";
 //MARK:  Review And Book VC
 "REVIEW_AND_BOOK_TITLE" = "review and book";
@@ -398,6 +400,12 @@
 "DATE_DIALOG_LBL_SELECT_DATE" = "select date";
 "DATE_DIALOG_LBL_SELECT_TIME" = "select time";
 
+//MARK: FingerPrint Dialog
+"FINGER_PRINT_DIALOG_REGISTER_TITLE" = "register your fingerprint";
+"FINGER_PRINT_DIALOG_VALIDATION" = "please verify your bio-matric authentication";
+"FINGER_PRINT_DIALOG_LOGIN_TITLE" = "login with fingerprint";
+"FINGER_PRINT_DIALOG_PASSWORD_TITLE" = "login with password";
+"FINGER_PRINT_DIALOG_BTN_PASSWORD" = "password";
 //MARK: -
 //MARK: Common Strings
 //MARK: -
@@ -408,12 +416,13 @@
 "BTN_SAVE" = "Save";
 "BTN_PROCEED" = "Proceed";
 "BTN_YES_PROCEED" = "yes proceed";
-"BTN_BACK" = "Back";
+"BTN_BACK" = "back";
 "BTN_SEND" = "Send";
 "BTN_CANCEL" = "Cancel";
 "BTN_SKIP" = "skip";
 "BTN_APPLY" =  "Apply";
 "LBL_MENU" =  "menu";
+"TIME_UNIT_MIN" = "min";
 "FAQ_CONTENT" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget. Nullam eget felis eget nunc lobortis. Faucibus ornare suspendisse sed nisi. Sagittis eu volutpat odio facilisis mauris sit amet massa. Erat velit scelerisque in dictum non consectetur a erat. Amet nulla facilisi morbi tempus iaculis urna.";
 //MARK: -
 //MARK: VALIDATION TOAST MESSAGES

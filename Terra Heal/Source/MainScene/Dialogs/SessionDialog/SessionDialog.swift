@@ -8,44 +8,9 @@
 
 import UIKit
 
-class SessionDetail: ResponseModel {
-    var id: String = ""
-    var name: String = ""
-    var detail: String = ""
-    var image: String = ""
-    var isSelected: Bool = false
-    override init(fromDictionary dictionary: [String : Any]) {
-        super.init(fromDictionary: dictionary)
-        self.id = (dictionary["id"] as? String) ?? ""
-        self.name = (dictionary["name"] as? String) ?? ""
-        self.detail = (dictionary["detail"] as? String) ?? ""
-        self.image = (dictionary["image"] as? String) ?? ""
-    }
-    
-    class func getDemoArray() -> [SessionDetail] {
-        var arrForSession: [SessionDetail] = []
-        var session:  SessionDetail = SessionDetail.init(fromDictionary: [:])
-        session.id = "1"
-        session.name = "Single"
-        session.detail = "give the gift of self-love"
-        session.isSelected = true
-        arrForSession.append(session)
-        session = SessionDetail.init(fromDictionary: [:])
-        session.id = "2"
-        session.name = "Couple"
-        session.detail = "relax side by side with your preferred companion"
-        arrForSession.append(session)
-        session = SessionDetail.init(fromDictionary: [:])
-        session.id = "3"
-        session.name = "groups"
-        session.detail = "a special moment with your friends or family"
-        arrForSession.append(session)
-        return  arrForSession
-    }
-}
+
 class SessionDialog: ThemeBottomDialogView {
     
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     
@@ -119,7 +84,10 @@ class SessionDialog: ThemeBottomDialogView {
             }
         }
     }
-    
+    override func show(animated: Bool) {
+        super.show(animated: animated)
+        self.fetchSessionList()
+    }
 }
 
 extension SessionDialog : UITableViewDelegate,UITableViewDataSource {
@@ -160,9 +128,6 @@ extension SessionDialog : UITableViewDelegate,UITableViewDataSource {
         self.arrForData[indexPath.row].isSelected = true
         self.selectedData = self.arrForData[indexPath.row]
         tableView.reloadData()
-        if self.onBtnDoneTapped != nil {
-            self.onBtnDoneTapped!(selectedData);
-        }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
@@ -171,3 +136,13 @@ extension SessionDialog : UITableViewDelegate,UITableViewDataSource {
 
 
 
+extension SessionDialog {
+    
+    func fetchSessionList() {
+        AppWebApi.fetchSessionList(params: [:]) { (response) in
+            if ResponseModel.isSuccess(response: response) {
+                self.setDataSource(data: response.sessionList)
+            }
+        }
+    }
+}

@@ -6,22 +6,6 @@
 import UIKit
 import GoogleMaps
 
-
-struct ServiceCenterDetail {
-    var name:String = ""
-    var address:String = ""
-    var numberOfServices: String = ""
-    var serviceDetails: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget. Nullam eget felis eget nunc lobortis."
-    var latitude: String = ""
-    var longitude: String = ""
-    var isSelected: Bool = false
-    func getCoordinatte() -> CLLocationCoordinate2D {
-        return CLLocationCoordinate2D(latitude: self.latitude.toDouble, longitude: self.longitude.toDouble)
-    }
-    var servicesList: [ServiceDetail]
-    
-}
-
 class ServiceMapVC: MainVC {
     
     
@@ -31,22 +15,32 @@ class ServiceMapVC: MainVC {
     @IBOutlet weak var lblAddress: ThemeLabel!
     @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var mapView: GMSMapView!
-    @IBOutlet weak var vwService: UIView!
+    @IBOutlet weak var vwServiceDialog: UIView!
     @IBOutlet weak var ivService: PaddedImageView!
     @IBOutlet weak var btnKm: ThemeButton!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var btnMyLocation: UIButton!
+    @IBOutlet weak var vwService: UIView!
+    @IBOutlet weak var hCltVw: NSLayoutConstraint!
+    @IBOutlet weak var vwForCollapseView: UIView!
+    @IBOutlet weak var cltForCollapseView: UICollectionView!
+    @IBOutlet weak var vwBottomButtons: UIView!
+    @IBOutlet weak var hCltCollapseView: NSLayoutConstraint!
+    
+    
+    var arrForServices: [ServiceCenterDetail] = []
+    var arrForServicesMarker: [GMSMarker] = []
     var currentMarker: GMSMarker? = nil
     var path: GMSPolyline =   GMSPolyline.init()
     var currentIndex: Int = 0
-    var requestBooking: CurrentBooking = CurrentBooking.shared
-    // MARK: Object lifecycle
-    var arrForServices: [ServiceCenterDetail] = [
-        ServiceCenterDetail(name: "terra heal massage center", address: "Lorem ipsum dolor sit,lisbon, portugal -25412", numberOfServices: "25",latitude: "22.35",longitude: "70.90", servicesList: []),
-        ServiceCenterDetail(name: "terra heal massage center 2", address: "Lorem ipsum dolor sit,lisbon, portugal -25112", numberOfServices: "35",  latitude: "22.50",longitude: "70.50", servicesList: []),
-        ServiceCenterDetail(name: "terra heal massage center 3", address: "Lorem ipsum dolor sit,lisbon, portugal -25212", numberOfServices: "15", latitude: "22.70",longitude: "70.30", servicesList: [])]
     
-    
+    //Animation Properties
+    var animationDirection: AnimationDirection = .undefined
+    var transitionAnimator: UIViewPropertyAnimator? = nil
+    var animationProgress: CGFloat = 0
+    var yPostion: CGFloat = 0.0
+    var animatingCell: ServiceCell!
+    var targetAnimatingCell: ServiceCollapseCell!
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
@@ -65,19 +59,31 @@ class ServiceMapVC: MainVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.wsGetMassagePreferenceList()
         self.initialViewSetup()
         self.currentMarker = GMSMarker.init()
         self.setupMapView(mapView: self.mapView)
+        self.addExpandAnimationPanGesture(view: self.vwService)
+        self.addCollapseAnimationPanGesture(view: self.vwForCollapseView)
+        self.transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
+        self.getMassageCenter()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
+            self.collectionView.reloadData {
+                
+            }
+            self.cltForCollapseView.reloadData { }
             self.btnBook?.setHighlighted(isHighlighted: false)
             self.btnCheckService?.setHighlighted(isHighlighted: true)
             self.mapView.roundCorners(corners:[.topLeft,.topRight], radius: 40.0)
-            self.vwService.roundCorners(corners:[.topLeft,.topRight], radius: 40.0)
-            self.btnKm.setHighlighted(isHighlighted: true)
+            self.vwServiceDialog.roundCorners(corners:[.topLeft,.topRight], radius: 40.0)
+            self.vwForCollapseView.roundCorners(corners: [.topLeft,.topRight] , radius: 40.0)
+            
+            self.btnKm.setRound(withBorderColor: UIColor.clear, andCornerRadious: self.btnKm.frame.height/2.0, borderWidth: 1.0)
+           // self.btnKm.setHighlighted(isHighlighted: true)
             self.ivService.setRound()
         }
     }
@@ -91,14 +97,13 @@ class ServiceMapVC: MainVC {
         self.btnBook.setTitle("BTN_BOOK_HERE".localized(), for: .normal)
         self.btnCheckService.setTitle("BTN_CHECK_SERVICE".localized(), for: .normal)
         self.btnCheckService.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.setupCollectionView(collectionView: self.collectionView)
+        self.setupCollectionView()
     }
-    
     
     // MARK: Action Buttons
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
         super.btnLeftTapped(btn)
-         _ = (self.navigationController as? NC)?.popVC()
+        _ = (self.navigationController as? NC)?.popVC()
     }
     @IBAction func btnCheckServiceTapped(_ sender: Any) {
         self.openServiceSelectionDialog()
@@ -117,17 +122,14 @@ class ServiceMapVC: MainVC {
     }
     
     
-    
 }
 
 // MARK: Dialogs
 extension ServiceMapVC {
     
-    
-    
     func openReciepentMassageDetailVCDialog() {
         let alert: RecipentMassageManageDialog = RecipentMassageManageDialog.fromNib()
-        alert.initialize(title: "RECIEPENT_DETAIL_TITLE".localized(), buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+        alert.initialize(title: "RECIEPENT_DETAIL_TITLE".localized(), buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
@@ -135,18 +137,20 @@ extension ServiceMapVC {
             alert?.dismiss()
         }
         alert.onBtnNextSelectedTapped = {
-            [weak alert, weak self] (description) in
+            [weak alert, weak self] (data) in
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
-            self.requestBooking.serviceCenterDetail = self.arrForServices[self.currentIndex]
-            Common.appDelegate.loadReviewAndBookVC()
+            
+            appSingleton.myBookingData.serviceCenterDetail = self.arrForServices[self.currentIndex]
+            appSingleton.myBookingData.booking_info = data
+            self.openDateTimeSelectionDialog()
+            
         }
     }
     
     func openTextViewPicker() {
         let alert: TextViewDialog = TextViewDialog.fromNib()
-        alert.initialize(title: "booking notes"
-            , data: self.requestBooking.bookingNotes, buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        alert.initialize(title: "booking notes", data:appSingleton.myBookingData.special_notes, buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
@@ -157,12 +161,13 @@ extension ServiceMapVC {
             [weak alert, weak self] (description) in
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
-            self.requestBooking.bookingNotes = description
-            self.requestBooking.serviceCenterDetail = self.arrForServices[self.currentIndex]
+            appSingleton.myBookingData.special_notes = description
+            
+            appSingleton.myBookingData.serviceCenterDetail = self.arrForServices[self.currentIndex]
+            appSingleton.myBookingData.shop_id = self.arrForServices[self.currentIndex].id
             Common.appDelegate.loadReviewAndBookVC()
         }
     }
-    
     
     func openServiceSelectionDialog() {
         let serviceSelectionDialog: CustomServiceSelectionDialog  = CustomServiceSelectionDialog.fromNib()
@@ -195,15 +200,14 @@ extension ServiceMapVC {
             guard let self = self else { return } ; print(self)
             dateTimeSelectionDialog?.dismiss()
             print(Date.milliSecToDate(milliseconds: millis, format: "dd-MM-yyyy HH:mm"))
-            self.requestBooking.date = millis
+            appSingleton.myBookingData.date = millis.toString()
             self.openTextViewPicker()
         }
     }
     
     func openSessionSelectionDialog() {
         let sessionSelectionDialog: SessionDialog  = SessionDialog.fromNib()
-        sessionSelectionDialog.initialize(title: "SESSION_TYPE_TITLE".localized(), buttonTitle: "".localized(), cancelButtonTitle: "BTN_BACK".localized())
-        sessionSelectionDialog.setDataSource(data: SessionDetail.getDemoArray())
+        sessionSelectionDialog.initialize(title: "SESSION_TYPE_TITLE".localized(), buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
         sessionSelectionDialog.show(animated: true)
         sessionSelectionDialog.onBtnCancelTapped = {
             [weak sessionSelectionDialog, weak self] in
@@ -214,7 +218,7 @@ extension ServiceMapVC {
             [weak sessionSelectionDialog, weak self] (session) in
             guard let self = self else { return } ; print(self)
             sessionSelectionDialog?.dismiss()
-            self.requestBooking.session = session
+            appSingleton.myBookingData.session_id = session.id
             if PreferenceHelper.shared.getUserId().isEmpty()  {
                 Common.appDelegate.loadWelcomeVC()
             } else {
@@ -223,9 +227,54 @@ extension ServiceMapVC {
             
         }
     }
-    
-    
+      
 }
 
 
 
+extension ServiceMapVC {
+    
+    func getMassageCenter() {
+        AppWebApi.massageCenterList(params: ServiceCenter.RequestServiceCenterlist()) { (response) in
+            self.arrForServices.removeAll()
+            self.removeAllCenterMarker()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
+                for i  in 0..<response.serviceCenterList.count {
+                    let data = response.serviceCenterList[i]
+                    self.arrForServices.append(data)
+                    
+                }
+                self.createNewCenterMarkers()
+                self.setData()
+            }
+        }
+    }
+    func wsGetMassagePreferenceList() {
+        
+        Loader.showLoading()
+        AppWebApi.massagePreferencceList { (response) in
+            appSingleton.massagePrefrenceDetail.removeAll()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
+                for data in response.massagePreferenceList {
+                    appSingleton.massagePrefrenceDetail.append(data)
+                }
+                
+            }
+            Loader.hideLoading()
+        }
+    }
+    
+    func setData() {
+        self.collectionView.reloadData()
+        self.cltForCollapseView.reloadData {
+        }
+        self.setCenterDataFor(index: 0)
+    }
+    
+    func setCenterDataFor(index:Int) {
+        self.collectionView.scrollToItem(at: IndexPath.init(row: index, section: 0), at: .centeredHorizontally, animated: true)
+        self.cltForCollapseView.scrollToItem(at: IndexPath.init(row: index, section: 0), at: .centeredHorizontally, animated: true)
+        self.mapView.focusMap(locations: [self.currentMarker!.position,self.arrForServicesMarker[index].position])
+        self.mapView.drawPolyline(polyline: path, source: self.currentMarker!.position, destination: arrForServices[index].getCoordinatte())
+    }
+}

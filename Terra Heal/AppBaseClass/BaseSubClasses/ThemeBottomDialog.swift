@@ -21,6 +21,7 @@ class ThemeDialogView: ThemeView {
 class ThemeBottomDialogView: ThemeView {
     @IBOutlet weak var btnCancel: UnderlineTextButton!
     @IBOutlet weak var btnDone: ThemeButton!
+    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var btnDoneFloating: FloatingRoundButton!
     @IBOutlet weak var btnNext: ThemeButton!
     @IBOutlet weak var vwTopBar: UIView!
@@ -64,8 +65,9 @@ class ThemeBottomDialogView: ThemeView {
     }
     
     func initialSetup() {
+        self.lblTitle?.textColor = UIColor.themeDarkText
         self.btnCancel?.setFont(name: FontName.Bold, size: FontSize.button_18)
-        self.btnCancel?.setTitleColor(UIColor.themePrimary, for: .normal)
+        self.btnCancel?.setTitleColor(UIColor.themeSecondary, for: .normal)
         self.backgroundColor = .clear
         self.backgroundView?.backgroundColor = UIColor.black
         self.backgroundView?.alpha = 0.0
@@ -97,13 +99,15 @@ class ThemeBottomDialogView: ThemeView {
 //MARK: -Animation to Show/Hide Dialog
 
 extension ThemeBottomDialogView {
-    func show(animated:Bool){
+    @objc func show(animated:Bool){
         self.isAnimated = animated
         self.backgroundView.alpha = 0
         self.frame = UIScreen.main.bounds
-        if let topController = Common.appDelegate.getTopViewController() {
+        
+        if let topController = Common.appDelegate.getCurrentViewController() {
             topController.view.endEditing(true)
-            topController.view.addSubview(self)
+            Common.appDelegate.window?.addSubview(self)
+            //topController.view.addSubview(self)
         }
         
         if animated {
@@ -195,9 +199,8 @@ extension  ThemeBottomDialogView {
             } else {
                 transitionAnimator?.stopAnimation(true)
                 self.upDownAnimation(direction: AnimationDirection.down)
-                /*
-                 if fractionComplete < 0.1 {
-                 self.upDownAnimation(direction: AnimationDirection.up)
+                /* if fractionComplete < 0.1 {
+                    self.upDownAnimation(direction: AnimationDirection.up)
                  } else {
                  self.upDownAnimation(direction: AnimationDirection.down)
                  }*/

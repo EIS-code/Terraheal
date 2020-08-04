@@ -52,7 +52,6 @@ struct LanguageDetail {
 }
 class CustomLanguagePicker: ThemeBottomDialogView {
 
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
 

@@ -66,7 +66,8 @@ extension GMSMapView {
         }
         marker.position = location
         if marker.icon == nil {
-            marker.icon = self.drawImageWithMassageCenterPic(pp: image, image: UIImage.init(named: "asset-center-maker"))
+            marker.icon  = UIImage.init(named: "asset-center-maker")
+           // marker.icon = self.drawImageWithMassageCenterPic(pp: image, image: UIImage.init(named: "asset-center-maker"))
         }
         marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
     }

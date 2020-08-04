@@ -8,13 +8,27 @@ import Foundation
 
 class ServiceCell: CollectionCell {
 
+    @IBOutlet weak var vwExpandedView: UIView!
     @IBOutlet weak var lblName: ThemeLabel!
     @IBOutlet weak var lblAddress: ThemeLabel!
     @IBOutlet weak var ivMap: UIImageView!
     @IBOutlet weak var btnHours: UnderlineTextButton!
+    @IBOutlet weak var stkNumberOfService: UIStackView!
     @IBOutlet weak var lblServices: ThemeLabel!
     @IBOutlet weak var btnNumberOfServices: ThemeButton!
+  
     
+    
+    var vwExpandedViewRect: CGRect = CGRect.init()
+    var lblNameRect: CGRect = CGRect.init()
+    var lblAddressRect: CGRect = CGRect.init()
+    var ivMapRect: CGRect = CGRect.init()
+    var btnHoursRect: CGRect = CGRect.init()
+    var stkNumberOfServiceRect: CGRect = CGRect.init()
+    var lblServicesRect: CGRect = CGRect.init()
+    var btnNumberOfServicesRect: CGRect = CGRect.init()
+    
+    var data: ServiceCenterDetail = ServiceCenterDetail.init(fromDictionary: [:])
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,17 +37,21 @@ class ServiceCell: CollectionCell {
         self.lblServices?.setFont(name: FontName.SemiBold, size: FontSize.label_14)
         self.btnNumberOfServices?.setFont(name: FontName.Regular, size: FontSize.label_14)
         self.btnNumberOfServices?.setRound()
-        self.btnHours.setTitle(" hours", for: .normal)
+        self.lblServices.text = "BOOKING_SERVICES".localized()
+        self.btnHours.setTitle("BOOKING_OPENING_HOURS".localized(), for: .normal)
     }
 
     func setData(data:ServiceCenterDetail) {
+        self.data = data
         self.lblName?.text = data.name
         self.lblAddress?.text = data.address
-        self.btnNumberOfServices.setTitle(data.numberOfServices + "+", for: .normal)
+        self.btnNumberOfServices.setTitle(data.totalServices + "+", for: .normal)
+    
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.layoutIfNeeded()
         self.btnNumberOfServices?.setRound()
         self.ivMap?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
     }
@@ -44,7 +62,8 @@ class ServiceCell: CollectionCell {
     
     func openHourSelection() {
         let hourSelectionDialog: CustomServiceHourSelectionDialog = CustomServiceHourSelectionDialog.fromNib()
-        hourSelectionDialog.initialize(title: "centers hours", buttonTitle: "", cancelButtonTitle: "")
+        hourSelectionDialog.initialize(title: "BOOKING_OPENING_HOURS".localized(), buttonTitle: "", cancelButtonTitle: "")
+        hourSelectionDialog.setDataSource(data: self.data.hours)
         hourSelectionDialog.show(animated: true)
         hourSelectionDialog.onBtnDoneTapped = { [weak self, weak hourSelectionDialog] (hours) in
             guard let self = self else { return } ; print(self)

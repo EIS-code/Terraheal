@@ -11,7 +11,6 @@ import UIKit
 
 class MonthYearDialog: ThemeBottomDialogView {
     
-    @IBOutlet weak var lblTitle: ThemeLabel!
     var onBtnDoneTapped : ((_ month: Int,_ year: Int) -> Void)? = nil
     
     @IBOutlet weak var monthPicker: MonthYearPickerView!

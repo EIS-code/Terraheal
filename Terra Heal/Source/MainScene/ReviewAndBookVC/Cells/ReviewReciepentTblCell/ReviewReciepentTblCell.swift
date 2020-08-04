@@ -21,7 +21,7 @@ class ReviewReciepentTblCell: TableCell {
     
     func setData(data: ServiceDetail ) {
         self.lblName.text = data.name
-        self.lblDuration.text = data.selectedDuration.duration + " " + "min"
+        self.lblDuration.text = data.selectedDuration.time + " " + "min"
     }
     
     override func layoutSubviews() {

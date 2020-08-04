@@ -16,7 +16,7 @@ class ServiceDetailVC: MainVC {
     @IBOutlet weak var lblServiceName: ThemeLabel!
     @IBOutlet weak var lblServiceDetail: ThemeLabel!
     @IBOutlet weak var collectionVw: UICollectionView!
-    var serviceDetail: ServiceDetail = ServiceDetail.init()
+    var serviceDetail: ServiceDetail = ServiceDetail.init(fromDictionary: [:])
     var arrForData: [ServiceDurationDetail] = []
     @IBOutlet weak var hCltVw: NSLayoutConstraint!
     // MARK: Object lifecycle
@@ -42,6 +42,7 @@ class ServiceDetailVC: MainVC {
         self.initialViewSetup()
         self.setCollectionData()
         self.setupCollectionView(collectionView: collectionVw)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,7 +89,7 @@ class ServiceDetailVC: MainVC {
     
     func setCollectionData() {
         
-        self.ivPicture.downloadedFrom(link: appSingleton.user.profilePhoto)
+       // self.ivPicture.downloadedFrom(link: appSingleton.user.profilePhoto)
         self.arrForData = self.serviceDetail.duration
         self.collectionVw.reloadData(heightToFit: self.hCltVw) {
             

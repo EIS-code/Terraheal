@@ -27,10 +27,12 @@ class CustomButtonTblCell: TableCell {
     @IBOutlet weak var btnDetail: ThemeButton!
     @IBOutlet weak var vwBg: UIView!
     @IBOutlet weak var ivSelected: UIImageView!
+    @IBOutlet weak var btnDetailLarge: ThemeButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.btnDetail?.setFont(name: FontName.Bold, size: FontSize.label_18)
+        self.btnDetailLarge?.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.ivSelected?.setRound()
 
     }
@@ -39,16 +41,21 @@ class CustomButtonTblCell: TableCell {
         self.btnDetail.setTitle(data.title, for: .normal)
         if data.isSelected {
             self.ivSelected.isHidden = false
-            self.btnDetail?.setRound(withBorderColor: .themePrimary, andCornerRadious: btnDetail.bounds.height/2.0, borderWidth: 1.0)
+            self.btnDetailLarge.isHidden = true
+            self.btnDetail.isHidden = false
         } else {
             self.ivSelected.isHidden = true
-            self.btnDetail?.setRound(withBorderColor: .clear, andCornerRadious: btnDetail.bounds.height/2.0, borderWidth: 1.0)
+            self.btnDetailLarge.isHidden = false
+            self.btnDetail.isHidden = true
+           
         }
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
         self.ivSelected?.setRound()
+        self.btnDetail?.setRound(withBorderColor: .themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)
+        self.btnDetailLarge?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

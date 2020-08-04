@@ -11,6 +11,7 @@ extension UIColor {
     static var themePrimary:UIColor = UIColor.init(named: "theme_primary") ?? UIColor.init(hex: "#9A4026")
     static var themeDarkText:UIColor = UIColor.init(named: "theme_dark_text") ?? UIColor.init(hex: "#6D6E71")
     static var themeHintText:UIColor = UIColor.init(named: "theme_hint_text") ?? UIColor.init(hex: "#B2B3B5")
+    static var themeGreen:UIColor = UIColor.init(named: "theme_green") ?? UIColor.init(hex: "#B2B3B5")
     
     
     

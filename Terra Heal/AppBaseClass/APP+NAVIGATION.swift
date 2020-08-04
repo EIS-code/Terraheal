@@ -97,8 +97,6 @@ extension AppDelegate {
     }
     
     func loadHomeVC(navigaionVC:UINavigationController? = nil) {
-        CurrentBooking.shared.clear()
-        
         if !PreferenceHelper.shared.getUserId().isEmpty() {
             AppWebApi.getUserDetail { (response) in
                 Loader.hideLoading()
@@ -537,16 +535,21 @@ extension AppDelegate {
         }
     }
     
-    func loadEventBookingCompleteVC(navigaionVC:UINavigationController? = nil) {
+    func loadCompleteVC(navigaionVC:UINavigationController? = nil, data:CompletionData) {
         if let nc = navigaionVC as? NC {
-            if let targetVC: EventBookCompleteVC =  nc.findVCs(ofType: EventBookCompleteVC.self).first {
+            if let targetVC: BookingCompleteVC =  nc.findVCs(ofType: BookingCompleteVC.self).first {
+                targetVC.completionData = data
                 _ = nc.popToVc(targetVC)
+                
             } else {
-                let targetVC: EventBookCompleteVC = EventBookCompleteVC.fromNib()
+                let targetVC: BookingCompleteVC = BookingCompleteVC.fromNib()
+                targetVC.completionData = data
                 nc.pushVC(targetVC)
+                
             }
         } else {
-            let targetVC: EventBookCompleteVC = EventBookCompleteVC.fromNib()
+            let targetVC: BookingCompleteVC = BookingCompleteVC.fromNib()
+            targetVC.completionData = data
             let nC: NC = NC(rootViewController: targetVC)
             self.windowConfig(withRootVC: nC)
         }
@@ -617,21 +620,6 @@ extension AppDelegate {
             let nC: NC = NC(rootViewController: targetVC)
             self.windowConfig(withRootVC: nC)
             return targetVC
-        }
-    }
-    
-    func loadBookingCompleteVC(navigaionVC:UINavigationController? = nil) {
-        if let nc = navigaionVC as? NC {
-            if let targetVC: BookingCompleteVC =  nc.findVCs(ofType: BookingCompleteVC.self).first {
-                _ = nc.popToVc(targetVC)
-            } else {
-                let targetVC: BookingCompleteVC = BookingCompleteVC.fromNib()
-                nc.pushVC(targetVC)
-            }
-        } else {
-            let targetVC: BookingCompleteVC = BookingCompleteVC.fromNib()
-            let nC: NC = NC(rootViewController: targetVC)
-            self.windowConfig(withRootVC: nC)
         }
     }
     

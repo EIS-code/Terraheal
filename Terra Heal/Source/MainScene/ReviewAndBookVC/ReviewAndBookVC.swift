@@ -60,7 +60,7 @@ class ReviewAndBookVC: MainVC {
     @IBOutlet weak var btnPrepayment: ThemeButton!
     
     
-    var arrForData: [ReciepentMassageData] = CurrentBooking.shared.reciepentData
+    var arrForData: [BookingInfo] = appSingleton.myBookingData.booking_info
     var arrForSummaryData: [SummaryValueDetail] = SummaryValueDetail.getDemoArray()
     
     // MARK: LifeCycle
@@ -83,8 +83,8 @@ class ReviewAndBookVC: MainVC {
             self.btnWithoutPayment?.layoutIfNeeded()
             self.btnPrepayment?.setHighlighted(isHighlighted: true)
             self.btnWithoutPayment?.setHighlighted(isHighlighted: false)
-            vwBookingDetailFooter?.createDashedLine(from: CGPoint.zero, to: CGPoint(x: vwBookingDetailFooter.bounds.maxX, y: 0), color: UIColor.themePrimary, strokeLength: 10, gapLength: 5, width: 1.0)
-            vwSessionDetailFooter?.createDashedLine(from: CGPoint.zero, to: CGPoint(x: vwSessionDetailFooter.bounds.maxX, y: 0), color: UIColor.themePrimary, strokeLength: 10, gapLength: 5, width: 1.0)
+            vwBookingDetailFooter?.createDashedLine(from: CGPoint.zero, to: CGPoint(x: vwBookingDetailFooter.bounds.maxX, y: 0), color: UIColor.themeDarkText, strokeLength: 10, gapLength: 5, width: 1.0)
+            vwSessionDetailFooter?.createDashedLine(from: CGPoint.zero, to: CGPoint(x: vwSessionDetailFooter.bounds.maxX, y: 0), color: UIColor.themeDarkText, strokeLength: 10, gapLength: 5, width: 1.0)
             self.reloadTableDataToFitHeight(tableView: self.tblVwForSessions, height:self.hTblSession)
             self.reloadTableDataToFitHeight(tableView: self.tblVwForSummary, height:self.hTblSummary)
         }
@@ -168,12 +168,15 @@ class ReviewAndBookVC: MainVC {
     
     @IBAction func onBtnWithoutPaymentTapped(_ sender: Any) {
         if checkValidation() {
-            Common.appDelegate.loadBookingCompleteVC()
+            
+            print(appSingleton.myBookingData.toDictionary())
+            //Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "BOOKING_COMPLETE_TITLE".localized(), strMessage: "BOOKING_COMPLETE_MESSAGE".localized(), strImg: "", strButtonTitle: "BOOKING_COMPLETE_BTN_HOME".localized()))
         }
     }
     
     @IBAction func onBtnPrePaymentTapped(_ sender: Any) {
         if checkValidation() {
+            print(appSingleton.myBookingData.toDictionary())
             self.openPartialPaymentBookingDialog()
         }
     }
@@ -214,13 +217,14 @@ class ReviewAndBookVC: MainVC {
             Common.appDelegate.loadHomeVC()
         }
     }
+    
     func setData() {
         self.setServiceCenterDetail()
     }
-    func setServiceCenterDetail(serviceCenter: ServiceCenterDetail = CurrentBooking.shared.serviceCenterDetail){
+    func setServiceCenterDetail(serviceCenter: ServiceCenterDetail = appSingleton.myBookingData.serviceCenterDetail){
         self.lblServiceCenterName.text = serviceCenter.name
         self.lblServiceCenterAddress.text = serviceCenter.address
-        self.lblBookingDate.text = Date.milliSecToDate(milliseconds: CurrentBooking.shared.date, format: DateFormat.ReviewBookingDateDisplay)
+        self.lblBookingDate.text = Date.milliSecToDate(milliseconds: appSingleton.myBookingData.date.toDouble, format: DateFormat.ReviewBookingDateDisplay)
     }
     func checkValidation() -> Bool {
         if !btnCheckBox.isSelected {
@@ -240,7 +244,7 @@ class ReviewAndBookVC: MainVC {
         var total: Double = 0.0
         for  data in arrForData {
             for service in data.services {
-                total = total + service.selectedDuration.amount.toDouble
+                total = total + (service.selectedDuration.pricing.price).toDouble
             }
         }
         self.lblTotalValue.text = total.toString()
@@ -399,9 +403,3 @@ extension ReviewAndBookVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
-
-
-
-
-
-

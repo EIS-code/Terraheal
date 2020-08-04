@@ -34,7 +34,6 @@ enum Currency: String {
 class CustomCurrencyPicker: ThemeBottomDialogView {
     
     
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var vwMainSelection: UIView!
     @IBOutlet weak var vwDollar: UIView!
     @IBOutlet weak var btnDollar: UIButton!

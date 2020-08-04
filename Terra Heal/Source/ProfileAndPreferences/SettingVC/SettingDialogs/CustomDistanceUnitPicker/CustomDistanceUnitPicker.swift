@@ -33,7 +33,6 @@ enum DistanceUnit: String {
 }
 class CustomDistanceUnitPicker: ThemeBottomDialogView {
 
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var vwMainSelection: UIView!
     @IBOutlet weak var vwOption1: UIView!
     @IBOutlet weak var btnOption1: UIButton!

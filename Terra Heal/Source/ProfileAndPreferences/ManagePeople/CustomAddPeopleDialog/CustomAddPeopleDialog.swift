@@ -11,7 +11,6 @@ import UIKit
 class CustomAddPeopleDialog: ThemeBottomDialogView {
 
 
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var vwMainGender: UIView!
     @IBOutlet weak var vwMale: UIView!
     @IBOutlet weak var btnMale: UIButton!
@@ -28,6 +27,7 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
     @IBOutlet weak var btnTherapistGender: ThemeButton!
     @IBOutlet weak var scrVw: UIScrollView!
     @IBOutlet weak var btnDelete: FloatingRoundButton!
+    
     var onBtnDoneTapped: ((_ people:People,_ doc:UploadDocumentDetail?) -> Void)? = nil
     var onBtnDeleteTapped: (() -> Void)? = nil
     var selectedPeople:People = People.init(fromDictionary: [:])
@@ -114,7 +114,7 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
         self.imgProfilePic?.layoutIfNeeded()
         self.btnFemale?.setShadow()
         self.btnMale?.setShadow()
-        self.btnTherapistGender?.setHighlighted(isHighlighted: false)
+        self.btnTherapistGender?.setRound(withBorderColor: UIColor.themeDarkText, andCornerRadious: (self.btnTherapistGender?.frame.height ?? 1.0)/2.0 , borderWidth: 1.0)
         self.imgProfilePic?.setRound()
         self.btnAddPicture?.setRound()
         self.ivMaleSelected?.setRound()

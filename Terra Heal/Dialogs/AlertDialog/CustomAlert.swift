@@ -50,7 +50,9 @@ class CustomAlert: ThemeDialogView {
         self.backgroundView.alpha = 0
         self.frame = UIScreen.main.bounds
         if let topController = Common.appDelegate.getTopViewController() {
-            topController.view.addSubview(self)
+            topController.view.endEditing(true)
+            Common.appDelegate.window?.addSubview(self)
+            //topController.view.addSubview(self)
         }
 
         if animated {
@@ -64,9 +66,6 @@ class CustomAlert: ThemeDialogView {
                 self.backgroundView.alpha = 0.66
                 self.animationVw.alpha = 1.0
             }) { (completion) in
-
-
-
                 //self.animationVw.shake()
                 self.isUserInteractionEnabled = true
             }
@@ -74,7 +73,6 @@ class CustomAlert: ThemeDialogView {
         else {
             self.backgroundView.alpha = 0.66
         }
-
     }
 
     func dismiss(){
@@ -87,14 +85,12 @@ class CustomAlert: ThemeDialogView {
                 self.animationVw.transform = translation.rotated(by: 6.0)
                 self.backgroundView.alpha = 0.0
                 self.animationVw.alpha = 0.1
-
             }) { (completion) in
                 self.removeFromSuperview()
             }
         }else{
             self.removeFromSuperview()
         }
-
     }
 
     @objc func didTappedOnBackgroundView(){

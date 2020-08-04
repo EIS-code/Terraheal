@@ -56,12 +56,13 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pV3-L5-Xfu">
                                                             <rect key="frame" x="10" y="10" width="129.5" height="160"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdM-hr-aM0">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdM-hr-aM0">
                                                                     <rect key="frame" x="0.0" y="0.0" width="129.5" height="129.5"/>
                                                                     <color key="backgroundColor" name="theme_background"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="NdM-hr-aM0" secondAttribute="height" multiplier="1:1" id="KwJ-Is-697"/>
                                                                     </constraints>
+                                                                    <state key="normal" image="asset-male"/>
                                                                     <connections>
                                                                         <action selector="btnMaleTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="B5K-Zb-uWz"/>
                                                                     </connections>
@@ -98,12 +99,13 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3Ns-Ch-5fX">
                                                             <rect key="frame" x="10" y="10" width="129.5" height="160"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVs-rC-Mje">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVs-rC-Mje">
                                                                     <rect key="frame" x="0.0" y="0.0" width="129.5" height="129.5"/>
                                                                     <color key="backgroundColor" name="theme_background"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="NVs-rC-Mje" secondAttribute="height" multiplier="1:1" id="ksk-Sq-FrQ"/>
                                                                     </constraints>
+                                                                    <state key="normal" image="asset-female"/>
                                                                     <connections>
                                                                         <action selector="btnFemaleTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="w80-sh-O4p"/>
                                                                     </connections>
@@ -211,12 +213,14 @@
         </view>
     </objects>
     <resources>
-        <image name="asset-check" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="asset-check" width="32" height="32"/>
+        <image name="asset-female" width="40" height="40"/>
+        <image name="asset-male" width="40" height="40"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary">
-            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light_background">
             <color red="0.94509803921568625" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -82,7 +82,7 @@ class ScanSelfieVC: MainVC, AVCapturePhotoCaptureDelegate {
 
         if capturedFrontImage == nil {
             self.capturedFrontImage = UIImage()
-            Common.appDelegate.loadWelcomeVC()
+            Common.appDelegate.loadHomeVC()
         }
     }
 
@@ -122,6 +122,7 @@ class ScanSelfieVC: MainVC, AVCapturePhotoCaptureDelegate {
                 alert.show(animated: true)
                 alert.onBtnCancelTapped = {
                     [weak alert, weak self] in
+                    guard let self = self else { return } ; print(self)
                     alert?.dismiss()
                 }
                 return
@@ -141,6 +142,7 @@ class ScanSelfieVC: MainVC, AVCapturePhotoCaptureDelegate {
             alert.show(animated: true)
             alert.onBtnCancelTapped = {
                 [weak alert, weak self] in
+                guard let self = self else { return } ; print(self)
                 alert?.dismiss()
             }
             return

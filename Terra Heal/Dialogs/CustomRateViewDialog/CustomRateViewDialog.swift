@@ -10,7 +10,7 @@ import UIKit
 
 class CustomRateViewDialog: ThemeBottomDialogView {
 
-    @IBOutlet weak var lblTitle: ThemeLabel!
+    
     @IBOutlet weak var txtDescription: ThemeTextView!
     @IBOutlet weak var ratingView: RatingView!
     var rate:Float = 0.0

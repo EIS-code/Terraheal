@@ -12,7 +12,6 @@ import FSCalendar
 class CustomDatePicker: ThemeBottomDialogView {
 
 
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var lblSelectedYear: ThemeLabel!
     @IBOutlet weak var lblSelectedDate: ThemeLabel!
     @IBOutlet weak var vwCalendar: FSCalendar!
@@ -117,13 +116,24 @@ extension CustomDatePicker: FSCalendarDataSource, FSCalendarDelegate {
 
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print("calendar did select date \(self.formatter.string(from: date))")
-
-        self.selectDate(date: date)
-        if monthPosition == .previous || monthPosition == .next {
-            calendar.setCurrentPage(date, animated: true)
+        if date < Date.init() {
+            return;
+        } else {
+            self.selectDate(date: date)
+            if monthPosition == .previous || monthPosition == .next {
+                calendar.setCurrentPage(date, animated: true)
+            }
         }
+        
     }
-
+    func minimumDate(for calendar: FSCalendar) -> Date {
+        return Date.init()
+    }
+    
+    func maximumDate(for calendar: FSCalendar) -> Date {
+        return Date.init().addingTimeInterval(TimeInterval.init(Date.millisecondsOfDay(day: 3)))
+    }
+    
     func selectDate(date:Date) {
         self.lblSelectedDate.text = date.toString(format: "EEE, MMM dd")
         self.lblSelectedYear.text = date.toString(format: "yyyy")

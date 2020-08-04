@@ -11,7 +11,7 @@ struct HoursDetails {
     var day: String = ""
     var startHour: String = ""
     var endHour: String = ""
-    
+    var isSelected: Bool = false
     func getDemoArray() -> [HoursDetails] {
         let hourDetail1: HoursDetails = HoursDetails.init(day: "mon", startHour: "9am", endHour: "5pm")
         let hourDetail2: HoursDetails = HoursDetails.init(day: "tue", startHour: "9am", endHour: "5pm")
@@ -31,6 +31,7 @@ struct HoursDetails {
         arrFortime.append(hourDetail7)
         return arrFortime
     }
+    
 }
 class CustomServiceHourSelectionCell: TableCell {
 
@@ -55,7 +56,12 @@ class CustomServiceHourSelectionCell: TableCell {
             self.ivTime.isHidden  = true
         }
         self.lblDay.text = data.day
-        self.lblHours.text = data.startHour + " to " + data.endHour
+        if data.startHour.isEmpty() && data.endHour.isEmpty() {
+            self.lblHours.text = "off"
+        }  else {
+            self.lblHours.text = data.startHour + " to " + data.endHour
+        }
+        
     }
 
     override func layoutSubviews() {

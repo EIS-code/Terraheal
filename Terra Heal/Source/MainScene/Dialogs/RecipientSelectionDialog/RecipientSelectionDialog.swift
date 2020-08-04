@@ -12,7 +12,6 @@ import UIKit
 
 class RecipientSelectionDialog: ThemeBottomDialogView {
     
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
     

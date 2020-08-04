@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "Icon feather-clock.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Icon feather-clock@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "clock.png",
+      "filename" : "Icon feather-clock@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

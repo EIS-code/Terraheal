@@ -11,7 +11,6 @@ import UIKit
 
 class CustomServiceSelectionDialog: ThemeBottomDialogView {
 
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var collectionVw: UICollectionView!
     @IBOutlet weak var vwServiceSelection: JDSegmentedControl!
     var selectedService: ServiceType = ServiceType.Massages
@@ -19,9 +18,9 @@ class CustomServiceSelectionDialog: ThemeBottomDialogView {
     @IBOutlet weak var ivMassageCenter: PaddedImageView!
     
     @IBOutlet weak var contentView: UIView!
-    var arrForData: [ServiceDetail] = ServiceDetail.getMassageArray()
-    var arrForMassage: [ServiceDetail] = ServiceDetail.getMassageArray()
-    var arrForTherapies: [ServiceDetail] = ServiceDetail.getTherapyArray()
+    var arrForData: [ServiceDetail] = []
+    var arrForMassage: [ServiceDetail] = []
+    var arrForTherapies: [ServiceDetail] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -62,6 +61,7 @@ class CustomServiceSelectionDialog: ThemeBottomDialogView {
             }
         }
         self.setDataForStepUpAnimation()
+        self.getServiceCenterDetail()
     }
 
     override func layoutSubviews() {
@@ -149,4 +149,19 @@ extension CustomServiceSelectionDialog:  UICollectionViewDelegate, UICollectionV
     }
 
 
+}
+
+extension CustomServiceSelectionDialog {
+        func getServiceCenterDetail() {
+            AppWebApi.massageCenterDetail { (response) in
+                if ResponseModel.isSuccess(response: response) {
+                    for data in response.serviceList {
+                        self.arrForData.append(data)
+                        self.arrForMassage.append(data)
+                        self.arrForTherapies.append(data)
+                        self.collectionVw.reloadData()
+                    }
+                }
+            }
+        }
 }

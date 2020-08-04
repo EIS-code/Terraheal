@@ -32,9 +32,7 @@ class HomeTblCell: TableCell {
         
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
-        self.ivHome?.setRound()
-        self.ivHome?.backgroundColor = UIColor.themePrimary.withAlphaComponent(0.3)
-        self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+        // self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
         self.btnAction?.setHighlighted(isHighlighted: true)
     }
     
@@ -42,14 +40,14 @@ class HomeTblCell: TableCell {
         self.lblName.text = data.title
         self.data = data
         self.btnAction.setTitle(data.buttonTitle, for: .normal)
-        
+        self.ivHome?.image = UIImage.init(named: data.image)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.ivHome?.setRound()
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-        self.btnAction?.setHighlighted(isHighlighted: true)
+        self.vwBg?.setShadow()
+        self.btnAction?.setHighlighted(isHighlighted: false)
         
         
     }
@@ -82,8 +80,12 @@ class HomeTblCell: TableCell {
             [weak alert, weak self] (event) in
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
-            Common.appDelegate.loadEventBookingCompleteVC()
+            Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "EVENT_BOOKING_TITLE".localized(), strMessage: "EVENT_BOOKING_MESSAGE".localized(), strImg: "", strButtonTitle: "EVENT_BOOKING_BTN_HOME".localized()))
         }
+        
+        
+        
+        
     }
     
     func openInfoDialog() {

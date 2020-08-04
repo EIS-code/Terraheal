@@ -11,7 +11,6 @@ import UIKit
 
 class CustomCampaignsDetailDialog: ThemeBottomDialogView {
 
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var lblHeader: ThemeLabel!
     @IBOutlet weak var lblDescription: ThemeLabel!
     @IBOutlet weak var scrVw: UIScrollView!

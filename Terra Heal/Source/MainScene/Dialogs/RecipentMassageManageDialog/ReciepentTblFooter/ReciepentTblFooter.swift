@@ -27,7 +27,7 @@ class ReciepentTblFooter: UITableViewHeaderFooterView {
         super.layoutSubviews()
         self.btnAddService?.layoutIfNeeded()
         self.btnAddService?.setRound(withBorderColor: UIColor.themePrimary, andCornerRadious: self.btnAddService.frame.height/2.0, borderWidth: 1.0)
-        vwDashed?.createDashedLine(from: CGPoint.zero, to: CGPoint(x: vwDashed.bounds.maxX, y: 0), color: UIColor.themePrimary, strokeLength: 10, gapLength: 5, width: 1.0)
+        vwDashed?.createDashedLine(from: CGPoint.zero, to: CGPoint(x: vwDashed.bounds.maxX, y: 0), color: UIColor.themeDarkText, strokeLength: 10, gapLength: 5, width: 1.0)
     }
     
    

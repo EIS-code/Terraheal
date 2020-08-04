@@ -10,7 +10,6 @@ import UIKit
 
 class CustomTextFieldDialog: ThemeBottomDialogView {
 
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var txtData: ACFloatingTextfield!
 
 

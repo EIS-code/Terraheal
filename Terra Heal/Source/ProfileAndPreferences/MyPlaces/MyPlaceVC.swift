@@ -15,10 +15,7 @@ class MyPlaceVC: MainVC {
     @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var tableView: UITableView!
 
-    var arrForMyPlaces: [ServiceCenterDetail] = [
-        ServiceCenterDetail(name: "terra heal massage center", address: "Lorem ipsum dolor sit,lisbon, portugal -25412", numberOfServices: "25",latitude: "22.35",longitude: "70.90", servicesList: []),
-        ServiceCenterDetail(name: "terra heal massage center 2", address: "Lorem ipsum dolor sit,lisbon, portugal -25112", numberOfServices: "35",  latitude: "22.50",longitude: "70.50", servicesList: []),
-        ServiceCenterDetail(name: "terra heal massage center 3", address: "Lorem ipsum dolor sit,lisbon, portugal -25212", numberOfServices: "15", latitude: "22.70",longitude: "70.30", servicesList: [])]
+    var arrForMyPlaces: [ServiceCenterDetail] = []
     
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -42,6 +39,7 @@ class MyPlaceVC: MainVC {
         self.initialViewSetup()
         self.addBottomFade()
         self.addTopFade()
+        self.getPlacesList()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -133,3 +131,23 @@ extension MyPlaceVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
     
 }
 
+
+extension MyPlaceVC {
+    
+    func getPlacesList() {
+        AppWebApi.massageCenterList(params: ServiceCenter.RequestServiceCenterlist()) { (response) in
+            self.arrForMyPlaces.removeAll()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
+                for data in response.serviceCenterList {
+                    self.arrForMyPlaces.append(data)
+                }
+                self.setData()
+            }
+        }
+    }
+    
+    func setData() {
+        self.tableView.reloadData()
+    }
+    
+}

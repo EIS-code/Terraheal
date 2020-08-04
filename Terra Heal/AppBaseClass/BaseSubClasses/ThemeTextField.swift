@@ -69,7 +69,7 @@ class ThemeTextView: UITextView {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.setRound(withBorderColor: .themePrimary, andCornerRadious: 25.0, borderWidth: 1.0)
+        self.setRound(withBorderColor: .themeDarkText, andCornerRadious: 25.0, borderWidth: 1.0)
         textContainerInset = padding
     }
 }
@@ -86,7 +86,7 @@ extension UITextView: NSTextStorageDelegate {
         } else {
             let label = PlaceholderLabel(frame: .zero)
             label.setFont(name: FontName.Regular, size: FontSize.label_22)
-            label.textColor = UIColor.themePrimary
+            label.textColor = UIColor.themeDarkText
             addSubview(label)
             return label
         }

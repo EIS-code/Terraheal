@@ -11,7 +11,6 @@ import UIKit
 
 class CustomFaqDialog: ThemeBottomDialogView {
 
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var collectionVw: UICollectionView!
 
     var onBtnDoneTapped: (( ) -> Void)? = nil

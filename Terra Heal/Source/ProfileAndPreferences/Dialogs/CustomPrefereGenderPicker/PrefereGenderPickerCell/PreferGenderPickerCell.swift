@@ -12,7 +12,8 @@ class PreferGenderPickerCell: TableCell {
 
     @IBOutlet weak var lblName: ThemeLabel!
     @IBOutlet weak var vwBg: UIView!
-
+    @IBOutlet weak var imgSelection: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
@@ -25,8 +26,10 @@ class PreferGenderPickerCell: TableCell {
     func setData(data: PreferenceOption ) {
         self.lblName.text = data.name
         if data.isSelected {
+            self.imgSelection.isHidden = false
             self.vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)
         } else {
+            self.imgSelection.isHidden = true
             self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
         }
 

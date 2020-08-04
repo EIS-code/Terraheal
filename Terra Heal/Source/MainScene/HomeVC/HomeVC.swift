@@ -17,10 +17,10 @@ class HomeVC: MainVC {
     @IBOutlet weak var vwFloatingBottom: JDSegmentedControl!
     
     var arrForHomeDetails: [HomeItemDetail] = [
-        HomeItemDetail(title:appSingleton.user.name, buttonTitle: "HOME_ITEM_ACTION_1".localized(), image: ""),
-        HomeItemDetail(title: "HOME_ITEM_1".localized(), buttonTitle: "HOME_ITEM_ACTION_1".localized(), image: "", homeItemtype: .MassageCenter),
-        HomeItemDetail(title: "HOME_ITEM_2".localized(), buttonTitle: "HOME_ITEM_ACTION_2".localized(), image: "", homeItemtype: .HotelOrRoom),
-        HomeItemDetail(title: "HOME_ITEM_3".localized(), buttonTitle: "HOME_ITEM_ACTION_3".localized(), image: "", homeItemtype: .EventAndCorporate)
+        HomeItemDetail(title:appSingleton.user.name, buttonTitle: "HOME_ITEM_ACTION_1".localized(), image: ImageAsset.HomeItem.header),
+        HomeItemDetail(title: "HOME_ITEM_1".localized(), buttonTitle: "HOME_ITEM_ACTION_1".localized(), image: ImageAsset.HomeItem.sub1, homeItemtype: .MassageCenter),
+        HomeItemDetail(title: "HOME_ITEM_2".localized(), buttonTitle: "HOME_ITEM_ACTION_2".localized(), image: ImageAsset.HomeItem.sub2, homeItemtype: .HotelOrRoom),
+        HomeItemDetail(title: "HOME_ITEM_3".localized(), buttonTitle: "HOME_ITEM_ACTION_3".localized(), image: ImageAsset.HomeItem.sub3, homeItemtype: .EventAndCorporate)
     ]
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -53,15 +53,15 @@ class HomeVC: MainVC {
             Common.appDelegate.loadServiceMapVC(navigaionVC: self.navigationController)
             
         }
-        //self.addLocationObserver()
+        self.addLocationObserver()
         self.addBottomFade()
         self.addTopFade()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        /* let lc = LocationCenter.init()
-         lc.requestLocationOnce()*/
+        let lc = LocationCenter.init()
+         lc.requestLocationOnce()
         
     }
     
@@ -112,8 +112,8 @@ class HomeVC: MainVC {
     //MARK: Action Methods
     
     @IBAction func btnMenuTapped(_ sender: Any) {
-        // SideVC.shared.show()
-        Common.appDelegate.loadKycInfoVC(navigaionVC: self.navigationController)
+        SideVC.shared.show()
+        
     }
     
     @IBAction func btnProfileTapped(_ sender: Any) {

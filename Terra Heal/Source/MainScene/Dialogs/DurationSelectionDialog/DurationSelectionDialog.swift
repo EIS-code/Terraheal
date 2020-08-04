@@ -13,11 +13,10 @@ import UIKit
 class DurationSelectionDialog: ThemeBottomDialogView {
     
     
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var lblMessage: ThemeLabel!
     @IBOutlet weak var collectionVw: UICollectionView!
     var onBtnDoneTapped: ((_ data:ServiceDurationDetail) -> Void)? = nil
-    var selectedData:ServiceDurationDetail = ServiceDurationDetail.init()
+    var selectedData:ServiceDurationDetail = ServiceDurationDetail.init(fromDictionary: [:])
     var arrForData: [ServiceDurationDetail] =  []
     override func awakeFromNib() {
         super.awakeFromNib()

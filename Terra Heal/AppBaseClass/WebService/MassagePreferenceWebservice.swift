@@ -99,3 +99,44 @@ class PreferenceOption{
     }
 
 }
+
+enum Session {
+
+    struct RequestList: Codable {
+        var user_id: String = PreferenceHelper.shared.getUserId()
+       // var token: String = PreferenceHelper.shared.getSessionToken()
+    }
+    //MARK: Response
+       class Response: ResponseModel {
+           var sessionList: [SessionDetail] = []
+           override init(fromDictionary dictionary: [String:Any]) {
+               super.init(fromDictionary: dictionary)
+               sessionList.removeAll()
+               if let dataArray = dictionary["data"] as? [[String:Any]] {
+                   for data in dataArray {
+                       sessionList.append(SessionDetail.init(fromDictionary: data))
+                   }
+               }
+           }
+       }
+    
+
+}
+
+class SessionDetail: ResponseModel {
+    
+    var id: String = ""
+    var name: String = ""
+    var detail: String = ""
+    var image: String = ""
+    var isSelected: Bool = false
+    override init(fromDictionary dictionary: [String : Any]) {
+        super.init(fromDictionary: dictionary)
+        self.id = (dictionary["id"] as? String) ?? ""
+        self.name = (dictionary["type"] as? String) ?? ""
+        self.detail = (dictionary["descriptions"] as? String) ?? ""
+        self.image = (dictionary["image"] as? String) ?? ""
+    }
+    
+   
+}

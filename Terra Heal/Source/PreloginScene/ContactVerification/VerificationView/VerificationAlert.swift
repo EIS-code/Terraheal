@@ -10,7 +10,6 @@ import UIKit
 
 class VerificationAlert: ThemeBottomDialogView {
     
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var lblMessage: ThemeLabel!
     @IBOutlet weak var lblMessageDetail: ThemeLabel!
     @IBOutlet weak var btnVerify: ThemeButton!

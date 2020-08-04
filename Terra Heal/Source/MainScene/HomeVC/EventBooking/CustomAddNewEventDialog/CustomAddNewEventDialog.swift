@@ -17,7 +17,6 @@ struct EventBookingDetail {
 
 class CustomAddNewEventDialog: ThemeBottomDialogView {
 
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var txtName: ACFloatingTextfield!
     @IBOutlet weak var txtMobile: ACFloatingTextfield!
     @IBOutlet weak var txtEmail: ACFloatingTextfield!

@@ -46,6 +46,7 @@ class ScanPassportVC: MainVC, AVCapturePhotoCaptureDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
+        self.updateuiForFrontImage()
     }
 
     override func viewDidLayoutSubviews() {
@@ -67,7 +68,7 @@ class ScanPassportVC: MainVC, AVCapturePhotoCaptureDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.updateuiForFrontImage()
+      //  self.updateuiForFrontImage()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -176,7 +177,7 @@ class ScanPassportVC: MainVC, AVCapturePhotoCaptureDelegate {
     }
 
     func updateUiForBackImage() {
-        self.captureSession.stopRunning()
+        self.captureSession?.stopRunning()
         self.startCamera()
         self.lblHeader?.setTextWithAnimation(text: "SCAN_PASSPORT_LBL_BACK_SIDE".localized()) 
         self.lblHeader?.setFont(name: FontName.SemiBold, size: FontSize.label_26)

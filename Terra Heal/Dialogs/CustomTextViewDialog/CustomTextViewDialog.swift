@@ -10,7 +10,6 @@ import UIKit
 
 class CustomTextViewDialog: ThemeBottomDialogView {
 
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var txtDescription: ThemeTextView!
     var strEnteredData: String = ""
     var onBtnDoneTapped: ((_ data:String) -> Void)? = nil

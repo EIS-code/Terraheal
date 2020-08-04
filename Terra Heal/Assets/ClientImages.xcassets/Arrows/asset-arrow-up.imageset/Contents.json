@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "Icon ionic-ios-arrow-back.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Icon ionic-ios-arrow-back@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "arrow-up.png",
+      "filename" : "Icon ionic-ios-arrow-back@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
