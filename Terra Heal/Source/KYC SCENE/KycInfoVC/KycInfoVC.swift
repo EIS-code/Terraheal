@@ -62,7 +62,7 @@ class KycInfoVC: MainVC {
         
 
         self.lblHeader?.text = "KYC_INFO_LBL_TITLE".localized()
-        self.lblHeader?.setFont(name: FontName.SemiBold, size: FontSize.label_26)
+        self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.label_26)
 
         self.lblMessage?.text = "KYC_INFO_LBL_MESSAGE".localized()
         self.lblMessage?.setFont(name: FontName.Regular, size: FontSize.label_18)

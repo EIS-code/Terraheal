@@ -38,19 +38,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOG-OI-OfF" userLabel="lblTitle" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="32" y="56" width="256" height="20.5"/>
+                    <rect key="frame" x="32" y="60" width="256" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" name="theme_primary"/>
+                    <color key="textColor" name="theme_dark_text"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goJ-bu-BWb" userLabel="lblMessage" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="32" y="96.5" width="256" height="20.5"/>
+                    <rect key="frame" x="32" y="100.5" width="256" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" name="theme_primary"/>
+                    <color key="textColor" name="theme_hint_text"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmV-AP-sC2" userLabel="vwBg">
-                    <rect key="frame" x="32" y="177" width="256" height="215"/>
+                    <rect key="frame" x="32" y="181" width="256" height="215"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="v1Y-ht-RFZ">
                             <rect key="frame" x="10" y="10" width="236" height="195"/>
@@ -61,17 +61,18 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lYV-wR-LZ3">
                                             <rect key="frame" x="10" y="10" width="216" height="38.5"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p93-bk-3ML" userLabel="btnScanPassport" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p93-bk-3ML" userLabel="btnScanPassport" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="38.5" height="38.5"/>
-                                                    <color key="backgroundColor" name="theme_primary_border"/>
+                                                    <color key="backgroundColor" name="theme_primary"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="p93-bk-3ML" secondAttribute="height" multiplier="1:1" id="VJx-Ed-ZTM"/>
                                                     </constraints>
+                                                    <state key="normal" image="asset-id"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Passport" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZ0-ek-38k" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                                     <rect key="frame" x="48.5" y="0.0" width="167.5" height="38.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" name="theme_primary"/>
+                                                    <color key="textColor" name="theme_dark_text"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -101,17 +102,18 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4fW-or-01u">
                                             <rect key="frame" x="10" y="10" width="216" height="38.5"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ami-o3-5gr" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ami-o3-5gr" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="38.5" height="38.5"/>
-                                                    <color key="backgroundColor" name="theme_primary_border"/>
+                                                    <color key="backgroundColor" name="theme_primary"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Ami-o3-5gr" secondAttribute="height" multiplier="1:1" id="03K-Yf-YrJ"/>
                                                     </constraints>
+                                                    <state key="normal" image="asset-take-selfie"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take Selfie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IF0-sr-T34" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                                     <rect key="frame" x="48.5" y="9" width="167.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" name="theme_primary"/>
+                                                    <color key="textColor" name="theme_dark_text"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -141,17 +143,18 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H70-IW-NM8">
                                             <rect key="frame" x="10" y="10" width="216" height="38"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0O-Q1-aGq" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0O-Q1-aGq" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="38.5" height="38"/>
-                                                    <color key="backgroundColor" name="theme_primary_border"/>
+                                                    <color key="backgroundColor" name="theme_primary"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="h0O-Q1-aGq" secondAttribute="height" multiplier="1:1" id="B6T-cP-yCS"/>
                                                     </constraints>
+                                                    <state key="normal" image="asset-add-card"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Credit Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hol-Dc-kdz" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                                     <rect key="frame" x="48.5" y="9" width="167.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" name="theme_primary"/>
+                                                    <color key="textColor" name="theme_dark_text"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -207,7 +210,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fjQ-k9-NAp" userLabel="Stack View - Next">
-                    <rect key="frame" x="183" y="422" width="117" height="38"/>
+                    <rect key="frame" x="183" y="426" width="117" height="38"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPT-lV-vrF" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="6" width="64" height="32"/>
@@ -242,6 +245,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fjQ-k9-NAp" secondAttribute="trailing" constant="20" id="17n-QU-oIh"/>
                 <constraint firstItem="cmV-AP-sC2" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="4gs-gm-ku2"/>
                 <constraint firstItem="CYV-It-LzA" firstAttribute="centerY" secondItem="KlQ-Q4-3aF" secondAttribute="centerY" id="82R-eG-FRu"/>
+                <constraint firstItem="xOG-OI-OfF" firstAttribute="top" secondItem="KlQ-Q4-3aF" secondAttribute="bottom" constant="10" id="97z-w2-0tU"/>
                 <constraint firstItem="fjQ-k9-NAp" firstAttribute="top" secondItem="cmV-AP-sC2" secondAttribute="bottom" constant="30" id="FuQ-A2-Rce"/>
                 <constraint firstItem="cmV-AP-sC2" firstAttribute="top" secondItem="goJ-bu-BWb" secondAttribute="bottom" constant="60" id="Hdh-89-s5A"/>
                 <constraint firstItem="goJ-bu-BWb" firstAttribute="top" secondItem="xOG-OI-OfF" secondAttribute="bottom" constant="20" id="IzD-sd-xk5"/>
@@ -254,15 +258,23 @@
                 <constraint firstItem="KlQ-Q4-3aF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="o7d-LN-Pn5"/>
                 <constraint firstItem="xOG-OI-OfF" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="q8z-Di-y6i"/>
                 <constraint firstItem="KlQ-Q4-3aF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="wfS-4c-3xu"/>
-                <constraint firstItem="xOG-OI-OfF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="56" id="z6P-yM-Dw3"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="131" y="154"/>
         </view>
     </objects>
     <resources>
+        <image name="asset-add-card" width="32" height="32"/>
+        <image name="asset-id" width="32" height="32"/>
+        <image name="asset-take-selfie" width="32" height="32"/>
         <namedColor name="theme_button_text">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_dark_text">
+            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_hint_text">
+            <color red="0.69800001382827759" green="0.70200002193450928" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_light_text_color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -270,14 +282,11 @@
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="theme_primary_border">
-            <color red="0.73725490196078436" green="0.8784313725490196" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="theme_primary_light">
             <color red="0.49803921568627452" green="0.7686274509803922" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light_background">
-            <color red="0.94509803921568625" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

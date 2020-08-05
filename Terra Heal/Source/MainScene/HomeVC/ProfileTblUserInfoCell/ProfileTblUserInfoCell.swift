@@ -15,7 +15,7 @@ class ProfileTblUserInfoCell: TableCell {
     @IBOutlet weak var lblDescription: ThemeLabel!
 
     @IBOutlet weak var vwBg: UIView!
-
+   @IBOutlet weak var btnAction: ThemeButton!
 
 
     override func awakeFromNib() {
@@ -23,7 +23,8 @@ class ProfileTblUserInfoCell: TableCell {
         self.lblName?.setFont(name: FontName.SemiBold, size: FontSize.label_14)
         self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.label_26)
          self.lblDescription?.setFont(name: FontName.Regular, size: FontSize.label_14)
-
+        self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
+        self.btnAction?.setHighlighted(isHighlighted: false)
 
 
     }
@@ -34,18 +35,18 @@ class ProfileTblUserInfoCell: TableCell {
         }  else {
             self.lblName.text = "HOME_LBL_HI".localized() + data.title
         }
-
+        self.btnAction.setTitle(data.buttonTitle, for: .normal)
         self.lblHeader.text = "HOME_INFO_LBL_1".localized()
         self.lblDescription.text = "HOME_INFO_LBL_2".localized()
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-
+        self.btnAction?.setHighlighted(isHighlighted: false)
     }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 }

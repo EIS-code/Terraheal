@@ -48,13 +48,15 @@ class GiftVoucherVC: MainVC {
         singleTap.cancelsTouchesInView = false
         singleTap.numberOfTapsRequired = 1
         scrVw.addGestureRecognizer(singleTap)
+        self.headerView.layoutIfNeeded()
+        self.kTableHeaderHeight = self.headerView.frame.height
+               scrVw.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.headerView.layoutIfNeeded()
-        self.kTableHeaderHeight = self.headerView.frame.height
-        scrVw.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
+       
+       
 
     }
 

@@ -775,9 +775,9 @@ extension JDSegmentedControl {
     }
 
     open func changeThumbColor(_ color: UIColor) {
-        if !isConfigurated {
+       /* if !isConfigurated {
             return
-        }
+        }*/
         thumbColor = color
         thumbView.backgroundColor = color
     }

@@ -55,9 +55,9 @@ class AddCardVC: MainVC {
         if self.isViewAvailable() {
             self.btnAddCard.setHighlighted(isHighlighted: true)
             self.btnCheckBox.setHighlighted(isHighlighted: true)
-            self.btnPersonal.setRound(withBorderColor: .themePrimary, andCornerRadious: 5.0, borderWidth: 1.0)
-            self.btnBusiness.setRound(withBorderColor: .themePrimary, andCornerRadious: 5.0, borderWidth: 1.0)
-            self.btnOther.setRound(withBorderColor: .themePrimary, andCornerRadious: 5.0, borderWidth: 1.0)
+            self.btnPersonal.setRound(withBorderColor: .themeDarkText, andCornerRadious: 5.0, borderWidth: 1.0)
+            self.btnBusiness.setRound(withBorderColor: .themeDarkText, andCornerRadious: 5.0, borderWidth: 1.0)
+            self.btnOther.setRound(withBorderColor: .themeDarkText, andCornerRadious: 5.0, borderWidth: 1.0)
         }
     }
     

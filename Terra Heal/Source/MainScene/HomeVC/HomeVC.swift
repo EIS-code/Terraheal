@@ -43,10 +43,15 @@ class HomeVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
+        
+        
+        
+        
         vwFloatingBottom.allowChangeThumbWidth = false
-        vwFloatingBottom.itemTitles = ["Home","Explore","My Fav"]
-        vwFloatingBottom.itemImages =  [UIImage.init(named: "asset-home")!, UIImage.init(named: "asset-home")!, UIImage.init(named: "asset-home")!]
+        vwFloatingBottom.itemTitles = ["HOME_BTN_HOME".localized(),"HOME_BTN_EXPLORE".localized(),"HOME_BTN_MY_FAV".localized()]
+        vwFloatingBottom.itemImages =  [UIImage.init(named: "asset-home")!, UIImage.init(named: "asset-explore")!, UIImage.init(named: "asset-fav")!]
         vwFloatingBottom.itemSelectedImages = [UIImage.init(named: "asset-home-selected")!, UIImage.init(named: "asset-home-selected")!, UIImage.init(named: "asset-home-selected")!]
+        vwFloatingBottom.changeThumbColor(UIColor.themePrimary)
         vwFloatingBottom.changeBackgroundColor(UIColor.themeLightTextColor)
         vwFloatingBottom.didSelectItemWith = { [weak self] (index,title) in
             guard let self = self else { return } ; print(self)
@@ -147,7 +152,7 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource {
         
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 160
         tableView.register(HomeTblCell.nib()
             , forCellReuseIdentifier: HomeTblCell.name)
         tableView.register(ProfileTblUserInfoCell.nib()
@@ -158,7 +163,9 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrForHomeDetails.count
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {

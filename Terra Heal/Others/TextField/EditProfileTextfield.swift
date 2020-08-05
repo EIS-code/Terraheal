@@ -15,7 +15,7 @@ import UIKit
     fileprivate var placeholderLabelHeight : NSLayoutConstraint?
     fileprivate var placeholderLabelLeading : NSLayoutConstraint?
 
-    let leftImage: UIImage? = UIImage()
+    var leftImage: UIImage? = UIImage()
     let rightButton  = UIButton(type: .custom)
 
     @IBInspectable open var disableFloatingLabel : Bool = false
@@ -30,7 +30,7 @@ import UIKit
             self.floatTheLabel()
         }
     }
-    @IBInspectable open var leftViewColor : UIColor = UIColor.themePrimaryBorder {
+    @IBInspectable open var leftViewColor : UIColor = UIColor.themePrimary {
         didSet{
             self.floatTheLabel()
         }
@@ -336,13 +336,13 @@ extension EditProfileTextfield {
         if let image = leftImage {
             leftViewMode = UITextField.ViewMode.always
 
-            let paddingView : UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.getPaddingHeight() + 10, height: self.getPaddingHeight()))
-            let imageView = UIImageView(frame: CGRect.init(x: 0, y: 0, width:  self.getPaddingHeight(), height:  self.getPaddingHeight()))
+            let paddingView : UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.getPaddingHeight() + 10, height: self.getPaddingHeight() + 10))
+            let imageView = UIImageView(frame: CGRect.init(x: 5, y: 5, width:  self.getPaddingHeight(), height:  self.getPaddingHeight() ))
             imageView.contentMode = .scaleAspectFit
-            imageView.backgroundColor = self.leftViewColor
+            paddingView.backgroundColor = self.leftViewColor
             imageView.image = image
             paddingView.addSubview(imageView)
-            imageView.setRound()
+            paddingView.setRound()
             leftView = paddingView
 
         } else {
@@ -351,7 +351,6 @@ extension EditProfileTextfield {
         }
     }
 }
-
 
 
 

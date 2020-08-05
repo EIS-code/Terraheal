@@ -129,7 +129,8 @@ class CoreDataManager {
             } else {
                 return nil
             }
-        } catch let _ as NSError {
+        } catch let error as NSError {
+             print("Could not fetch. \(error), \(error.userInfo)")
             return nil
         }
         

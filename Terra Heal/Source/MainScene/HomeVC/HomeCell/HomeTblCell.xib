@@ -38,9 +38,9 @@ loadTherapistKycInfoVC</string>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6GD-a7-jdb" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="69" y="372.5" width="163" height="37.5"/>
+                                <rect key="frame" x="79" y="372.5" width="143" height="37.5"/>
                                 <color key="backgroundColor" name="theme_primary"/>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <inset key="contentEdgeInsets" minX="30" minY="10" maxX="30" maxY="10"/>
                                 <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="Book Now"/>
                                 <connections>

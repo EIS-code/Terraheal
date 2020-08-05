@@ -14,7 +14,8 @@ class ProfileTblCell: TableCell {
     @IBOutlet weak var ivHome: UIImageView!
     @IBOutlet weak var btnAction: ThemeButton!
     @IBOutlet weak var vwBg: UIView!
-
+    @IBOutlet weak var vwImgBg: UIView!
+    
 
 
     override func awakeFromNib() {
@@ -22,18 +23,20 @@ class ProfileTblCell: TableCell {
         selectionStyle = .none
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_14)
         self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
-        self.btnAction?.setTitle(FontSymbol.next_arrow, for: .normal)
-        self.ivHome?.setRound()
+        //self.btnAction?.setTitle(FontSymbol.next_arrow, for: .normal)
+        self.vwImgBg?.setRound()
 
     }
 
     func setData(data: ProfileItemDetail ) {
         self.lblName.text = data.type.name()
+        self.ivHome.image = UIImage.init(named: data.image)
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.ivHome?.setRound()
+        self.vwBg?.layoutIfNeeded()
+        self.vwImgBg?.setRound()
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
     }
     override func setSelected(_ selected: Bool, animated: Bool) {

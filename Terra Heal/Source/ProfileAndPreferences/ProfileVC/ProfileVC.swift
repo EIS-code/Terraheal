@@ -77,19 +77,30 @@ class ProfileVC: MainVC {
 
 
     var arrForMenu: [ProfileItemDetail] = [
-        ProfileItemDetail(type: ProfileMenu.MyProfile,  image: ""),
-        ProfileItemDetail(type: ProfileMenu.Varification, image: ""),
-        ProfileItemDetail(type: ProfileMenu.MyBookings, image: ""),
-        ProfileItemDetail(type: ProfileMenu.MyPlaces, image: ""),
-        ProfileItemDetail(type: ProfileMenu.MyMassagePreference, image: ""),
-        ProfileItemDetail(type: ProfileMenu.MyTherapist, image: ""),
-        ProfileItemDetail(type: ProfileMenu.TherapistQuestionaries, image: ""),
-        ProfileItemDetail(type: ProfileMenu.ManageAddress, image: ""),
-        ProfileItemDetail(type: ProfileMenu.MangagePeople, image: ""),
-        ProfileItemDetail(type: ProfileMenu.PaymentPreference, image: ""),
-        ProfileItemDetail(type: ProfileMenu.Settings,  image: ""),
+        ProfileItemDetail(type: ProfileMenu.MyProfile,  image: ImageAsset.ProfileMenu.myProfile),
+        ProfileItemDetail(type: ProfileMenu.Varification, image: ImageAsset.ProfileMenu.varification),
+        ProfileItemDetail(type: ProfileMenu.MyBookings, image:  ImageAsset.ProfileMenu.myBookings),
+        ProfileItemDetail(type: ProfileMenu.MyPlaces, image: ImageAsset.ProfileMenu.myPlaces),
+        ProfileItemDetail(type: ProfileMenu.MyMassagePreference, image: ImageAsset.ProfileMenu.myMassagePreference),
+        ProfileItemDetail(type: ProfileMenu.MyTherapist, image: ImageAsset.ProfileMenu.myTherapy),
+        ProfileItemDetail(type: ProfileMenu.TherapistQuestionaries, image: ImageAsset.ProfileMenu.therapyQuastionary),
+        ProfileItemDetail(type: ProfileMenu.ManageAddress, image: ImageAsset.ProfileMenu.manageAddress),
+        ProfileItemDetail(type: ProfileMenu.MangagePeople, image: ImageAsset.ProfileMenu.managePeople),
+        ProfileItemDetail(type: ProfileMenu.PaymentPreference, image: ImageAsset.ProfileMenu.paymentPreference),
+        ProfileItemDetail(type: ProfileMenu.Settings,  image: ImageAsset.ProfileMenu.setting),
         ProfileItemDetail(type: ProfileMenu.KycVerification,  image: ""),
     ]
+    
+     
+   
+    
+    
+    
+    
+    
+    
+    
+    
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -119,7 +130,6 @@ class ProfileVC: MainVC {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-                
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -182,18 +192,21 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
     }
 
     func updateHeaderView() {
-  
-        if self.scrVw.contentOffset.y < -20{
+
+        if self.scrVw.contentOffset.y < -20 {
             let y = abs(self.scrVw.contentOffset.y)
             let transLation = y/kTableHeaderHeight
-            self.headerView.alpha = transLation
-            self.headerView.transform = CGAffineTransform.init(scaleX: transLation, y: transLation)
             self.tableView.isScrollEnabled = false
+            headerView.alpha = transLation
+            headerView.transform = CGAffineTransform.init(scaleX: transLation, y: transLation)
+
         } else {
-            self.headerView.alpha = 0.0
+            headerView.alpha = 0.0
             self.tableView.isScrollEnabled = true
         }
+        
     }
+
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrForMenu.count

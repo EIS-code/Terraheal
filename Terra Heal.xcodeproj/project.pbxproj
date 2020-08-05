@@ -152,8 +152,6 @@
 		0348781824B2EF64006774AB /* TherapistQuestionariesTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0348770824B2EF62006774AB /* TherapistQuestionariesTblCell.swift */; };
 		0348781924B2EF64006774AB /* TherapistQuestionariesTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0348770924B2EF62006774AB /* TherapistQuestionariesTblCell.xib */; };
 		0348781A24B2EF64006774AB /* EditProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0348770C24B2EF62006774AB /* EditProfileVC.xib */; };
-		0348781B24B2EF64006774AB /* EditProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0348770E24B2EF62006774AB /* EditProfileCell.swift */; };
-		0348781C24B2EF64006774AB /* EditProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0348770F24B2EF62006774AB /* EditProfileCell.xib */; };
 		0348781D24B2EF64006774AB /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0348771024B2EF62006774AB /* EditProfileVC.swift */; };
 		0348781E24B2EF64006774AB /* MyTherapistVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0348771324B2EF62006774AB /* MyTherapistVC.xib */; };
 		0348781F24B2EF64006774AB /* MyTherapistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0348771424B2EF62006774AB /* MyTherapistVC.swift */; };
@@ -353,6 +351,8 @@
 		03AA725F24B6E3EA00F3B002 /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AA725424B6E3EA00F3B002 /* Animatable.swift */; };
 		03AA726024B6E3EA00F3B002 /* Draggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AA725524B6E3EA00F3B002 /* Draggable.swift */; };
 		03AA726124B6E3EA00F3B002 /* DefaultSheetAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AA725624B6E3EA00F3B002 /* DefaultSheetAnimator.swift */; };
+		03C72FF824DAE90700EA55D2 /* EditProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C72FF624DAE90700EA55D2 /* EditProfileCell.swift */; };
+		03C72FF924DAE90700EA55D2 /* EditProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C72FF724DAE90700EA55D2 /* EditProfileCell.xib */; };
 		03D77F3D24AB2FAF0098DD01 /* JDImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D77F3C24AB2FAF0098DD01 /* JDImageExtension.swift */; };
 		03F5255824AB546F008E1493 /* MassagePreferenceWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5255724AB546F008E1493 /* MassagePreferenceWebservice.swift */; };
 		55164A22FACE35DC8CBD8350 /* Pods_Terra_Heal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897AF53337FB6FB8116C0500 /* Pods_Terra_Heal.framework */; };
@@ -552,8 +552,6 @@
 		0348770824B2EF62006774AB /* TherapistQuestionariesTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TherapistQuestionariesTblCell.swift; sourceTree = "<group>"; };
 		0348770924B2EF62006774AB /* TherapistQuestionariesTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TherapistQuestionariesTblCell.xib; sourceTree = "<group>"; };
 		0348770C24B2EF62006774AB /* EditProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileVC.xib; sourceTree = "<group>"; };
-		0348770E24B2EF62006774AB /* EditProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileCell.swift; sourceTree = "<group>"; };
-		0348770F24B2EF62006774AB /* EditProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileCell.xib; sourceTree = "<group>"; };
 		0348771024B2EF62006774AB /* EditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		0348771324B2EF62006774AB /* MyTherapistVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTherapistVC.xib; sourceTree = "<group>"; };
 		0348771424B2EF62006774AB /* MyTherapistVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTherapistVC.swift; sourceTree = "<group>"; };
@@ -753,6 +751,8 @@
 		03AA725424B6E3EA00F3B002 /* Animatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animatable.swift; sourceTree = "<group>"; };
 		03AA725524B6E3EA00F3B002 /* Draggable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Draggable.swift; sourceTree = "<group>"; };
 		03AA725624B6E3EA00F3B002 /* DefaultSheetAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSheetAnimator.swift; sourceTree = "<group>"; };
+		03C72FF624DAE90700EA55D2 /* EditProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileCell.swift; sourceTree = "<group>"; };
+		03C72FF724DAE90700EA55D2 /* EditProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileCell.xib; sourceTree = "<group>"; };
 		03D77F3C24AB2FAF0098DD01 /* JDImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDImageExtension.swift; sourceTree = "<group>"; };
 		03F5255724AB546F008E1493 /* MassagePreferenceWebservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MassagePreferenceWebservice.swift; sourceTree = "<group>"; };
 		168AB6908BA3531B68A95E2E /* Pods-Terra Heal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Terra Heal.debug.xcconfig"; path = "Target Support Files/Pods-Terra Heal/Pods-Terra Heal.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1697,8 +1697,8 @@
 		0348770A24B2EF62006774AB /* EditProfileVC */ = {
 			isa = PBXGroup;
 			children = (
+				03C72FF524DAE90700EA55D2 /* EditProfileCell */,
 				0348770B24B2EF62006774AB /* xib */,
-				0348770D24B2EF62006774AB /* EditProfileCell */,
 				0348771024B2EF62006774AB /* EditProfileVC.swift */,
 			);
 			path = EditProfileVC;
@@ -1710,15 +1710,6 @@
 				0348770C24B2EF62006774AB /* EditProfileVC.xib */,
 			);
 			path = xib;
-			sourceTree = "<group>";
-		};
-		0348770D24B2EF62006774AB /* EditProfileCell */ = {
-			isa = PBXGroup;
-			children = (
-				0348770E24B2EF62006774AB /* EditProfileCell.swift */,
-				0348770F24B2EF62006774AB /* EditProfileCell.xib */,
-			);
-			path = EditProfileCell;
 			sourceTree = "<group>";
 		};
 		0348771124B2EF62006774AB /* MyTherapist */ = {
@@ -2952,6 +2943,15 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		03C72FF524DAE90700EA55D2 /* EditProfileCell */ = {
+			isa = PBXGroup;
+			children = (
+				03C72FF624DAE90700EA55D2 /* EditProfileCell.swift */,
+				03C72FF724DAE90700EA55D2 /* EditProfileCell.xib */,
+			);
+			path = EditProfileCell;
+			sourceTree = "<group>";
+		};
 		632DB07D248FA5CC00B65B46 /* Others */ = {
 			isa = PBXGroup;
 			children = (
@@ -3294,6 +3294,7 @@
 				034CD81024BC594700BFD6E1 /* CreditCardTblCell.xib in Resources */,
 				0348784824B2EF64006774AB /* TouchIdVC.xib in Resources */,
 				0344495B24B6045F00C8B763 /* CustomCountryPhoneCodePicker.xib in Resources */,
+				03C72FF924DAE90700EA55D2 /* EditProfileCell.xib in Resources */,
 				0348783A24B2EF64006774AB /* VerifyContactVC.xib in Resources */,
 				6348E20424723B2B00C15975 /* Nunito-Regular.ttf in Resources */,
 				03A1B54B24B5C946008BAC3A /* ServiceSelectionVC.xib in Resources */,
@@ -3355,7 +3356,6 @@
 				0348780824B2EF64006774AB /* MyPlaceVC.xib in Resources */,
 				0348789924B2EF64006774AB /* CustomFaqDialog.xib in Resources */,
 				0348780224B2EF64006774AB /* SettingVC.xib in Resources */,
-				0348781C24B2EF64006774AB /* EditProfileCell.xib in Resources */,
 				0348784624B2EF64006774AB /* RegisterVC.xib in Resources */,
 				0348780424B2EF64006774AB /* SettingTblCell.xib in Resources */,
 				0348784424B2EF64006774AB /* WelcomeVC.xib in Resources */,
@@ -3563,6 +3563,7 @@
 				0348785224B2EF64006774AB /* CustomAddNewEventDialog.swift in Sources */,
 				0345C69A24C9D11F00873FD1 /* ServiceMap + Animation.swift in Sources */,
 				0348788724B2EF64006774AB /* PromoCodeVC.swift in Sources */,
+				03C72FF824DAE90700EA55D2 /* EditProfileCell.swift in Sources */,
 				0348786F24B2EF64006774AB /* CustomShareReferralDialog.swift in Sources */,
 				0348784524B2EF64006774AB /* WelcomeVC.swift in Sources */,
 				0348780024B2EF64006774AB /* ManagePeopleTblCell.swift in Sources */,
@@ -3610,7 +3611,6 @@
 				0382B5BC24D3F63F002B6BF5 /* PersonData.xcdatamodeld in Sources */,
 				0347835D24BDDB2D00E3D4EC /* ServiceCenterDetailDialog.swift in Sources */,
 				034878B324B30DC4006774AB /* GoogleMapHelper.swift in Sources */,
-				0348781B24B2EF64006774AB /* EditProfileCell.swift in Sources */,
 				0382B5B924D3F63F002B6BF5 /* CoreDataManager.swift in Sources */,
 				0348787424B2EF64006774AB /* PackTblCell.swift in Sources */,
 				632DB0A1248FA5CC00B65B46 /* LocationHelper.swift in Sources */,

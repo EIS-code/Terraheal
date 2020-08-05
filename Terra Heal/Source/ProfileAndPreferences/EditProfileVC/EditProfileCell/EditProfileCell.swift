@@ -14,6 +14,7 @@ struct EditProfileTextFieldDetail {
     var value:String = ""
     var contentType: TextFieldContentType = .Name
     var inputConfiguration = InputTextFieldDetail.init()
+    var image = ""
 }
 
 class EditProfileCell: CollectionCell {
@@ -34,6 +35,8 @@ class EditProfileCell: CollectionCell {
         self.data = data
         self.tfForContent.placeholder = data.placeholder
         self.tfForContent.text = data.value
+        self.tfForContent.leftImage = UIImage.init(named: data.image)
+        self.tfForContent.addLeftView()
         if data.contentType == TextFieldContentType.Email  {
             self.btnVerify.isHidden = appSingleton.user.isEmailVerified.toBool
             self.imgVerified.isHidden = !appSingleton.user.isEmailVerified.toBool

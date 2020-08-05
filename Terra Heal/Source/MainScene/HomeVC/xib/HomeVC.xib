@@ -39,38 +39,40 @@
                     <rect key="frame" x="0.0" y="686.33333333333337" width="375" height="91.666666666666629"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="19.999999999999996" y="64" width="52.666666666666657" height="52.666666666666657"/>
-                    <color key="backgroundColor" name="theme_primary_light_background"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" userLabel="btnMenu" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="20" y="64" width="75" height="75"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="dk0-AN-Hja" secondAttribute="height" multiplier="1:1" id="UQN-iw-RUR"/>
                     </constraints>
-                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                    <state key="normal" image="asset-menu"/>
+                    <state key="normal" image="asset-center" backgroundImage="aesset-button-background"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableFloating" value="NO"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="btnMenuTapped:" destination="-1" eventType="touchUpInside" id="33P-8Q-amw"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3u-tX-aNr" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="19.999999999999996" y="126.66666666666667" width="52.666666666666657" height="20.333333333333329"/>
+                    <rect key="frame" x="20" y="149" width="75" height="20.333333333333343"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="theme_primary"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABs-WT-4wl" userLabel="btnProfile" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="302.33333333333331" y="64" width="52.666666666666686" height="52.666666666666657"/>
-                    <color key="backgroundColor" name="theme_primary_light_background"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABs-WT-4wl" userLabel="btnProfile" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="280" y="64" width="75" height="75"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="ABs-WT-4wl" secondAttribute="height" multiplier="1:1" id="rbh-eT-iAL"/>
                     </constraints>
-                    <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                    <state key="normal" image="asset-user"/>
+                    <state key="normal" image="assetuser" backgroundImage="aesset-button-background"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableFloating" value="NO"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="btnProfileTapped:" destination="-1" eventType="touchUpInside" id="BB9-uY-RSI"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YhJ-oo-h2F" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="269.33333333333331" y="126.66666666666667" width="85.666666666666686" height="20.333333333333329"/>
+                    <rect key="frame" x="269.33333333333331" y="149" width="85.666666666666686" height="20.333333333333343"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="theme_primary"/>
                     <nil key="highlightedColor"/>
@@ -114,6 +116,7 @@
                 <constraint firstItem="Vl3-GD-87f" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="NIW-WP-pdO"/>
                 <constraint firstItem="YhJ-oo-h2F" firstAttribute="trailing" secondItem="ABs-WT-4wl" secondAttribute="trailing" id="Ngl-uq-iID"/>
                 <constraint firstItem="dk0-AN-Hja" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="PCD-nQ-9GP"/>
+                <constraint firstItem="dk0-AN-Hja" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" multiplier="0.2" id="TvW-Po-00V"/>
                 <constraint firstItem="N3u-tX-aNr" firstAttribute="top" secondItem="dk0-AN-Hja" secondAttribute="bottom" constant="10" id="XFJ-hK-Smd"/>
                 <constraint firstItem="9ma-qC-KU9" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="Ysm-98-fJc"/>
                 <constraint firstItem="Vl3-GD-87f" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="bze-5P-CPg"/>
@@ -130,16 +133,14 @@
         </view>
     </objects>
     <resources>
-        <image name="asset-menu" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="asset-user" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="aesset-button-background" width="104" height="104"/>
+        <image name="asset-center" width="71" height="71"/>
+        <image name="assetuser" width="104" height="104"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="theme_primary_light_background">
-            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
