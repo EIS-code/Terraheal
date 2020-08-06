@@ -65,7 +65,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phD-1A-sjB" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="64" y="488" width="192" height="50"/>
+                    <rect key="frame" x="97" y="488" width="126" height="50"/>
                     <color key="backgroundColor" name="theme_primary_light_background"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="pTM-iA-vtr"/>
@@ -82,7 +82,6 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="cmV-AP-sC2" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.6" id="0if-CK-egp"/>
-                <constraint firstItem="phD-1A-sjB" firstAttribute="width" secondItem="cmV-AP-sC2" secondAttribute="width" id="1EW-FO-jdL"/>
                 <constraint firstItem="mPv-qd-RaX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="2sm-2j-Y2h"/>
                 <constraint firstItem="cmV-AP-sC2" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="4gs-gm-ku2"/>
                 <constraint firstItem="xOG-OI-OfF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cmV-AP-sC2" secondAttribute="bottom" constant="30" id="5Dh-iF-nC5"/>
@@ -117,10 +116,10 @@
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light">
-            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.49803921568627452" green="0.7686274509803922" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light_background">
-            <color red="0.94509803921568625" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

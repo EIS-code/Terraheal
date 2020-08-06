@@ -48,6 +48,9 @@
                                 <inset key="contentEdgeInsets" minX="30" minY="10" maxX="30" maxY="10"/>
                                 <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="Book Now"/>
+                                <connections>
+                                    <action selector="btnHomeTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vKw-Q8-KCR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>

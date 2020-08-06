@@ -45,7 +45,7 @@
                                     <constraint firstAttribute="width" secondItem="OfO-kb-EpN" secondAttribute="height" multiplier="1:1" id="YES-n3-jiz"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f8n-re-7Hm" userLabel="imgSessionType">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-edit-profile-name" translatesAutoresizingMaskIntoConstraints="NO" id="f8n-re-7Hm" userLabel="imgSessionType">
                                 <rect key="frame" x="389" y="27" width="72" height="72"/>
                                 <color key="backgroundColor" name="theme_primary"/>
                                 <constraints>
@@ -100,6 +100,7 @@
     </objects>
     <resources>
         <image name="asset-check-secondary" width="16.5" height="16.5"/>
+        <image name="asset-edit-profile-name" width="17" height="19"/>
         <image name="asset-info" width="24" height="24"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -28,7 +28,8 @@ class LaunchVC: MainVC {
     
     override func viewDidAppear(_ animated: Bool) {
         super .viewDidAppear(animated)
-        self.loadNextScreen()
+        //self.loadNextScreen()
+         Common.appDelegate.loadContactVerificationVC()
     }
     // MARK: - StatusBar
     override var prefersStatusBarHidden: Bool {

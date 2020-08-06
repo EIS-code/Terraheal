@@ -14,9 +14,7 @@ class MyPlaceTblCell: TableCell {
     @IBOutlet weak var vwBg: UIView!
     @IBOutlet weak var btnAction: ThemeButton!
     @IBOutlet weak var imgSelected: UIImageView!
-    @IBOutlet weak var ivForplace: UIImageView!
-
-
+    @IBOutlet weak var ivForplace: PaddedImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,8 +30,7 @@ class MyPlaceTblCell: TableCell {
     func setData(data: ServiceCenterDetail ) {
         self.lblName.text = data.name
         self.imgSelected.isHidden = !data.isSelected
-
-    }
+  }
 
     override func layoutSubviews() {
         super.layoutSubviews()

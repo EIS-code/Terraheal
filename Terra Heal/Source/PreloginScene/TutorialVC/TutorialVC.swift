@@ -16,7 +16,7 @@ class TutorialVC: MainVC {
     @IBOutlet weak var btnDone: FloatingRoundButton!
     @IBOutlet weak var cvForTutorial: UICollectionView!
     var arrForTutorials: [TutorialDetail] = []
-    var currentIndex: IndexPath = IndexPath.init(row: 0, section: 0)
+    var currentIndex: Int = 0
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -67,18 +67,16 @@ class TutorialVC: MainVC {
     }
 
     @IBAction func btnBackTapped(_ sender: Any) {
-        currentIndex.row = currentIndex.row - 1
+        currentIndex = currentIndex - 1
         snapToNearestCell(indexPath: currentIndex)
-        if currentIndex.row == 0 {
-            btnBack.isHidden = true
-        }
+        
 
     }
 
     @IBAction func btnNextTapped(_ sender: Any) {
         self.btnBack.isHidden = false
-        currentIndex.row = currentIndex.row + 1
-        if currentIndex.row == (arrForTutorials.count) {
+        currentIndex = currentIndex + 1
+        if currentIndex == (arrForTutorials.count) {
             PreferenceHelper.shared.setIsTutorialShow(false)
             Common.appDelegate.loadWelcomeVC()
         }
@@ -97,8 +95,15 @@ class TutorialVC: MainVC {
             , forCellWithReuseIdentifier: TutorialCell.name)
     }
 
-    func snapToNearestCell(indexPath: IndexPath) {
-            self.cvForTutorial.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    func snapToNearestCell(indexPath: Int) {
+        
+        let index  =  IndexPath.init(row: indexPath, section: 0)
+        self.cvForTutorial.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+        if indexPath == 0 {
+            btnBack.isHidden = true
+        } else {
+            btnBack.isHidden = false
+        }
     }
 }
 
@@ -130,27 +135,28 @@ extension TutorialVC:  UICollectionViewDelegate, UICollectionViewDataSource, UIC
         return CGSize(width: size - 10, height: collectionView.bounds.height)
     }
 
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+         print("\(#function)")
+    }
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-
-        if scrollView == cvForTutorial {
-
-            /*let middlePoint = Int(scrollView.contentOffset.x + UIScreen.main.bounds.width / 2)
-            if let indexPath = self.cvForTutorial.indexPathForItem(at: CGPoint(x: middlePoint, y: Int(self.cvForTutorial.center.y))) {
-                self.currentIndex = indexPath
-                self.snapToNearestCell(indexPath: indexPath)
-            }*/
-
-        }
-
+        
     }
-
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        /*if scrollView == cvForTutorial {
-            let middlePoint = Int(scrollView.contentOffset.x + UIScreen.main.bounds.width / 2)
-            if let indexPath = self.cvForTutorial.indexPathForItem(at: CGPoint(x: middlePoint, y: Int(self.cvForTutorial.center.y))) {
-                self.currentIndex = indexPath
-                self.snapToNearestCell(indexPath: indexPath)
+        let center = CGPoint(x: scrollView.contentOffset.x + (scrollView.frame.width / 2), y: (scrollView.frame.height / 2))
+        if let ip = cvForTutorial.indexPathForItem(at: center) {
+            self.currentIndex = ip.row
+            print("\(#function) \(self.currentIndex)")
+            if self.currentIndex == 0 {
+                btnBack.isHidden = true
+            } else {
+                btnBack.isHidden = false
             }
-        }*/
+            if currentIndex == (arrForTutorials.count - 1) {
+                PreferenceHelper.shared.setIsTutorialShow(false)
+                Common.appDelegate.loadWelcomeVC()
+            }
+        }
+        
     }
+    
 }

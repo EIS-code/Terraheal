@@ -68,7 +68,7 @@ class RecipientSelectionDialog: ThemeBottomDialogView {
     }
     override func initialSetup() {
         super.initialSetup()
-        self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.button_22)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.setDataForStepUpAnimation()
     }
     

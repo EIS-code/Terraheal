@@ -59,7 +59,7 @@ class VerificationAlert: ThemeBottomDialogView {
     
     override func initialSetup() {
         super.initialSetup()
-        self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.button_22)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.lblMessage.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         self.lblMessageDetail.setFont(name: FontName.Regular, size: FontSize.label_14)
         self.setupOtpView()

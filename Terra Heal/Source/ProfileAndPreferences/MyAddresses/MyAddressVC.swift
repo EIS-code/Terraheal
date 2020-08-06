@@ -10,7 +10,6 @@ class MyAddressVC: MainVC {
     @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var vwForEmpty: UIView!
-    @IBOutlet weak var vwBg: UIView!
     @IBOutlet weak var lblEmptyTitle: ThemeLabel!
     @IBOutlet weak var lblEmptyMsg: ThemeLabel!
     @IBOutlet weak var btnSubmit: ThemeButton!
@@ -36,8 +35,6 @@ class MyAddressVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
-        self.addBottomFade()
-        self.addTopFade()
         self.wsGetAddress()
     }
     
@@ -52,17 +49,14 @@ class MyAddressVC: MainVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
-            self.vwBg?.layoutIfNeeded()
-            self.vwBg?.setRound()
             self.tableView?.reloadData({
             })
             self.btnSubmit?.setHighlighted(isHighlighted: true)
-            self.tableView?.contentInset = UIEdgeInsets(top: headerGradient.frame.height, left: 0, bottom: footerGradient.frame.height, right: 0)
         }
     }
     
     private func initialViewSetup() {
-        
+        self.view.backgroundColor = UIColor.themePrimaryLightBackground
         self.setupTableView(tableView: self.tableView)
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.setTitle(title: "MANAGE_ADDRESS_TITLE".localized())
@@ -153,6 +147,7 @@ class MyAddressVC: MainVC {
 extension MyAddressVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegate {
     
     private func setupTableView(tableView: UITableView) {
+        tableView.backgroundColor = UIColor.clear
         tableView.delegate = self
         tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false

@@ -24,7 +24,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-J2-KSJ" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                 <rect key="frame" x="80" y="10" width="166" height="77"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="theme_primary"/>
+                                <color key="textColor" name="theme_dark_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YiN-jg-Jzo" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
@@ -37,13 +37,18 @@
                                     <color key="titleColor" name="theme_primary"/>
                                 </state>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LzM-Rc-egA">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center-white" translatesAutoresizingMaskIntoConstraints="NO" id="LzM-Rc-egA" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
                                 <rect key="frame" x="20" y="28.5" width="40" height="40"/>
                                 <color key="backgroundColor" name="theme_primary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="6Va-LV-dZv"/>
                                     <constraint firstAttribute="width" secondItem="LzM-Rc-egA" secondAttribute="height" multiplier="1:1" id="eTE-MF-YRA"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KqP-gv-G9w">
                                 <rect key="frame" x="296" y="10" width="10" height="10"/>
@@ -54,7 +59,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" name="theme_primary_light_background"/>
+                        <color key="backgroundColor" name="theme_background"/>
                         <constraints>
                             <constraint firstItem="LzM-Rc-egA" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="20" id="1CA-ed-v2W"/>
                             <constraint firstItem="KqP-gv-G9w" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" constant="10" id="DFH-qZ-2GN"/>
@@ -69,6 +74,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" name="theme_primary_light_background"/>
                 <constraints>
                     <constraint firstItem="fTr-D4-KiU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="2jg-EE-YxG"/>
                     <constraint firstAttribute="trailing" secondItem="fTr-D4-KiU" secondAttribute="trailing" constant="5" id="AWN-UN-JV4"/>
@@ -88,11 +94,18 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="asset-center-white" width="42.666667938232422" height="42.666667938232422"/>
+        <namedColor name="theme_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_dark_text">
+            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="theme_primary">
-            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light_background">
-            <color red="0.94509803921568625" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

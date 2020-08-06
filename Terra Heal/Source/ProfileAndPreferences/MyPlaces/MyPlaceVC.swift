@@ -36,9 +36,10 @@ class MyPlaceVC: MainVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.themePrimaryLightBackground
         self.initialViewSetup()
-        self.addBottomFade()
-        self.addTopFade()
+        //self.addBottomFade()
+        //self.addTopFade()
         self.getPlacesList()
     }
 
@@ -55,7 +56,7 @@ class MyPlaceVC: MainVC {
         if self.isViewAvailable() {
            self.tableView?.reloadData({
             })
-           self.tableView?.contentInset = UIEdgeInsets(top: headerGradient.frame.height, left: 0, bottom: footerGradient.frame.height, right: 0)
+          
         }
     }
 

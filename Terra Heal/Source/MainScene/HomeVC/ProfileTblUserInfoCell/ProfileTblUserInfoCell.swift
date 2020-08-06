@@ -44,6 +44,9 @@ class ProfileTblUserInfoCell: TableCell {
         super.layoutSubviews()
         self.btnAction?.setHighlighted(isHighlighted: false)
     }
+    @IBAction func btnHomeTapped(_ sender: Any) {
+        Common.appDelegate.loadReservationVC()
+    }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

@@ -52,4 +52,9 @@ struct ImageAsset {
         static let nif = "asset-edit-profile-nif"
         static let dob = "asset-edit-profile-dob"
     }
+    struct Completion {
+        static let contactVarification = "asset-contact-verification-completion"
+        static let bookingCompletion  =  "asset-booking-completion"
+        static let requestBookingCompletion = "asset-request-booking-completion"
+    }
 }

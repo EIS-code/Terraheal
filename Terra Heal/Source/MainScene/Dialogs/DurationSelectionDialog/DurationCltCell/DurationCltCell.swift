@@ -33,10 +33,10 @@ class DurationCltCell: CollectionCell {
         self.lblAmount.text = data.pricing.price
         if data.isSelected {
             self.ivSelected?.isHidden = false
-            vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 5.0, borderWidth: 1.0)
+            vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)
         } else  {
             self.ivSelected?.isHidden = true
-            vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
+            vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
         }
     }
     
@@ -46,10 +46,10 @@ class DurationCltCell: CollectionCell {
         self.ivSelected?.setRound()
         if data.isSelected {
             self.ivSelected?.isHidden = false
-            vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 5.0, borderWidth: 1.0)
+            vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)
         } else  {
             self.ivSelected?.isHidden = true
-            vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
+            vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
         }
         vwBg.setShadow()
     }

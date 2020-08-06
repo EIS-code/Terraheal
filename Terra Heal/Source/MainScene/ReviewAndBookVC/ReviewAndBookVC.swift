@@ -53,7 +53,7 @@ class ReviewAndBookVC: MainVC {
     @IBOutlet weak var vwTermsAndCondition: UIView!
     @IBOutlet weak var btnTermsCondition: UnderlineTextButton!
     @IBOutlet weak var lblAccept: ThemeLabel!
-    @IBOutlet weak var btnCheckBox: ThemeButton!
+    @IBOutlet weak var btnCheckBox: JDCheckboxButton!
     
     @IBOutlet weak var vwPayment: UIView!
     @IBOutlet weak var btnWithoutPayment: ThemeButton!
@@ -128,15 +128,14 @@ class ReviewAndBookVC: MainVC {
         self.lblAccept?.setFont(name: FontName.SemiBold, size: FontSize.label_14)
         self.btnTermsCondition?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnTermsCondition?.setTitle("REGISTR_BTN_TERMS_AND_CONDITION".localized(), for: .normal)
-        self.btnCheckBox.setHighlighted(isHighlighted: false)
         self.txtPromoCode?.placeholder = "REVIEW_AND_BOOK_TXT_PROMO_PLACEHOLDER".localized()
         self.txtPromoCode?.delegate = self
         self.txtPromoCode?.configureTextField(InputTextFieldDetail.getNameConfiguration())
     }
     
     @IBAction func btnCheckBoxTapped(_ sender: Any) {
-        self.btnCheckBox.isSelected.toggle()
-        self.btnCheckBox.setHighlighted(isHighlighted: self.btnCheckBox.isSelected)
+        self.btnCheckBox.checkboxAnimation {
+        }
     }
     
     @IBAction func btnCloseTapped(_ sender: Any) {
@@ -170,7 +169,7 @@ class ReviewAndBookVC: MainVC {
         if checkValidation() {
             
             print(appSingleton.myBookingData.toDictionary())
-            //Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "BOOKING_COMPLETE_TITLE".localized(), strMessage: "BOOKING_COMPLETE_MESSAGE".localized(), strImg: "", strButtonTitle: "BOOKING_COMPLETE_BTN_HOME".localized()))
+            Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "BOOKING_COMPLETE_TITLE".localized(), strMessage: "BOOKING_COMPLETE_MESSAGE".localized(), strImg: "", strButtonTitle: "BOOKING_COMPLETE_BTN_HOME".localized()))
         }
     }
     
@@ -184,7 +183,7 @@ class ReviewAndBookVC: MainVC {
     func openPartialPaymentBookingDialog() {
         let paymentPercentageDialog: PaymentPercentatgeSelectionDialog  = PaymentPercentatgeSelectionDialog.fromNib()
         
-        paymentPercentageDialog.initialize(title: "Book with", buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        paymentPercentageDialog.initialize(title: "Payment", buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
         paymentPercentageDialog.show(animated: true)
         paymentPercentageDialog.onBtnCancelTapped = {
             [weak paymentPercentageDialog, weak self] in
@@ -196,7 +195,7 @@ class ReviewAndBookVC: MainVC {
             [weak paymentPercentageDialog, weak self]  (button) in
             guard let self = self else { return } ; print(self)
             paymentPercentageDialog?.dismiss()
-            Common.appDelegate.loadHomeVC()
+            Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "BOOKING_COMPLETE_TITLE".localized(), strMessage: "BOOKING_COMPLETE_MESSAGE".localized(), strImg: ImageAsset.Completion.bookingCompletion, strButtonTitle: "BOOKING_COMPLETE_BTN_HOME".localized()))
         }
     }
     

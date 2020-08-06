@@ -32,9 +32,18 @@
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmV-AP-sC2" userLabel="vwBg">
                     <rect key="frame" x="32" y="176.5" width="256" height="215"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-back-side-id" translatesAutoresizingMaskIntoConstraints="NO" id="bst-yb-q3n">
+                            <rect key="frame" x="0.0" y="0.0" width="256" height="215"/>
+                        </imageView>
+                    </subviews>
                     <color key="backgroundColor" name="theme_primary_light_background"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="bst-yb-q3n" secondAttribute="bottom" id="3I5-Pu-9VE"/>
+                        <constraint firstItem="bst-yb-q3n" firstAttribute="top" secondItem="cmV-AP-sC2" secondAttribute="top" id="O5W-iN-Hfm"/>
                         <constraint firstAttribute="width" secondItem="cmV-AP-sC2" secondAttribute="height" multiplier="256:215" id="c7H-0N-v7e"/>
+                        <constraint firstItem="bst-yb-q3n" firstAttribute="leading" secondItem="cmV-AP-sC2" secondAttribute="leading" id="eSV-Mh-dGL"/>
+                        <constraint firstAttribute="trailing" secondItem="bst-yb-q3n" secondAttribute="trailing" id="r4L-Ve-efH"/>
                     </constraints>
                 </view>
                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CFs-8l-IGN">
@@ -64,13 +73,19 @@
                         <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="uuI-x2-O08"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-camera-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="4qF-KL-sdI">
+                    <rect key="frame" x="152.5" y="548" width="15" height="20"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="cmV-AP-sC2" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="0if-CK-egp"/>
                 <constraint firstItem="E65-Md-Oec" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="3VF-H1-otu"/>
                 <constraint firstItem="cmV-AP-sC2" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="4gs-gm-ku2"/>
+                <constraint firstAttribute="bottom" secondItem="4qF-KL-sdI" secondAttribute="bottom" id="8i6-gU-ym6"/>
                 <constraint firstItem="phD-1A-sjB" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="CuN-uD-NgF"/>
+                <constraint firstItem="4qF-KL-sdI" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="KKn-ma-ie3"/>
+                <constraint firstItem="4qF-KL-sdI" firstAttribute="top" secondItem="phD-1A-sjB" secondAttribute="bottom" constant="10" id="Kn5-wP-g5b"/>
                 <constraint firstItem="CFs-8l-IGN" firstAttribute="top" secondItem="cmV-AP-sC2" secondAttribute="bottom" constant="30" id="N25-S5-XKr"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="phD-1A-sjB" secondAttribute="bottom" constant="30" id="QZR-M5-j5n"/>
                 <constraint firstItem="CFs-8l-IGN" firstAttribute="leading" secondItem="cmV-AP-sC2" secondAttribute="leading" id="VoF-q5-0gf"/>
@@ -86,6 +101,8 @@
         </view>
     </objects>
     <resources>
+        <image name="asset-back-side-id" width="319" height="226"/>
+        <image name="asset-camera-arrow" width="15" height="53.5"/>
         <namedColor name="theme_dark_text">
             <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

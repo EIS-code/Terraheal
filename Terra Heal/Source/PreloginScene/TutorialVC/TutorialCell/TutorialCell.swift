@@ -17,7 +17,7 @@ class TutorialCell: CollectionCell {
 
     @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var lblDescription: ThemeLabel!
-    @IBOutlet weak var ivTutorial: UIImageView!
+    @IBOutlet weak var ivTutorial: FixedWidthAspectFitImageView!
 
     override func awakeFromNib()  {
         super.awakeFromNib()
@@ -31,7 +31,7 @@ class TutorialCell: CollectionCell {
         self.lblTitle?.text = tutorialDetail.title
         self.lblDescription?.text = tutorialDetail.description
         self.ivTutorial.image = UIImage.init(named: tutorialDetail.image)
-        //self.ivTutorial?.setRound()
+        
     }
     override func layoutSubviews() {
         super.layoutSubviews()

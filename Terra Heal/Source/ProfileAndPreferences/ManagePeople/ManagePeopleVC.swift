@@ -12,7 +12,6 @@ class ManagePeopleVC: MainVC {
     @IBOutlet weak var btnAddNewPeople: ThemeButton!
 
     @IBOutlet weak var vwForEmpty: UIView!
-    @IBOutlet weak var vwBg: UIView!
     @IBOutlet weak var lblEmptyTitle: ThemeLabel!
     @IBOutlet weak var lblEmptyMsg: ThemeLabel!
     
@@ -38,8 +37,7 @@ class ManagePeopleVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
-        self.addBottomFade()
-        self.addTopFade()
+       
         self.wsGetPeoples()
     }
 
@@ -54,14 +52,11 @@ class ManagePeopleVC: MainVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
-            self.vwBg?.layoutIfNeeded()
-            self.vwBg?.setRound()
             self.btnAddNewPeople.layoutIfNeeded()
             self.btnAddNewPeople.setHighlighted(isHighlighted: true)
             self.tableView?.reloadData({
                 
             })
-            self.tableView?.contentInset = UIEdgeInsets(top: headerGradient.frame.height, left: 0, bottom: footerGradient.frame.height, right: 0)
         }
     }
 
@@ -76,11 +71,10 @@ class ManagePeopleVC: MainVC {
         self.btnAddNewPeople?.setHighlighted(isHighlighted: true)
         self.lblEmptyTitle.text = "NO_PEOPLE_TITLE".localized()
         self.lblEmptyMsg.text = "NO_PEOPLE_MSG".localized()
-        
+        self.view.backgroundColor  = UIColor.themePrimaryLightBackground
     }
 
     func openAddPeopleDialog(index: Int = -1) {
-
         let alert: CustomAddPeopleDialog = CustomAddPeopleDialog.fromNib()
         if index == -1 {
             alert.initialize(title: "MANAGE_PEOPLE_BTN_ADD_NEW".localized(), data: nil, genderPreference: arrForGenderPreference, buttonTitle: "BTN_SAVE".localized(),cancelButtonTitle: "BTN_SKIP".localized())
@@ -137,15 +131,13 @@ class ManagePeopleVC: MainVC {
         }
         self.tableView.reloadData()
     }
-
-
-    
 }
 
 
 extension ManagePeopleVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegate {
 
     private func setupTableView(tableView: UITableView) {
+        tableView.backgroundColor = UIColor.themePrimaryLightBackground
         tableView.delegate = self
         tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false
@@ -157,7 +149,6 @@ extension ManagePeopleVC: UITableViewDelegate,UITableViewDataSource, UIScrollVie
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return arrForData.count
     }
 
@@ -167,7 +158,6 @@ extension ManagePeopleVC: UITableViewDelegate,UITableViewDataSource, UIScrollVie
         cell?.setData(data: arrForData[indexPath.row])
         cell?.layoutIfNeeded()
         return cell!
-
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

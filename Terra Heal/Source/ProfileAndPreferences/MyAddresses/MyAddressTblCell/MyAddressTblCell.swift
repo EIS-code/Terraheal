@@ -23,7 +23,7 @@ class MyAddressTblCell: TableCell {
         selectionStyle = .none
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_22)
           self.lblAddress?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
-        self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+        self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
 
 
     }
@@ -36,7 +36,7 @@ class MyAddressTblCell: TableCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+        self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
 
     }
 

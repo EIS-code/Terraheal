@@ -14,7 +14,7 @@ extension ServiceMapVC:  UICollectionViewDelegate, UICollectionViewDataSource, U
     // MARK: UICollectionViewDataSource
     
     func setupCollectionView() {
-        collectionView.backgroundColor = UIColor.clear
+        collectionView.backgroundColor = UIColor.themeBackground
         collectionView.isUserInteractionEnabled = true
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
@@ -24,7 +24,7 @@ extension ServiceMapVC:  UICollectionViewDelegate, UICollectionViewDataSource, U
         collectionView.register(ServiceCell.nib()
             , forCellWithReuseIdentifier: ServiceCell.name)
         
-        cltForCollapseView.backgroundColor = UIColor.themePrimaryLightBackground
+        cltForCollapseView.backgroundColor = UIColor.themeBackground
         cltForCollapseView.isUserInteractionEnabled = true
         cltForCollapseView.showsVerticalScrollIndicator = false
         cltForCollapseView.showsHorizontalScrollIndicator = false

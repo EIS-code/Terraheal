@@ -13,8 +13,7 @@ class ContactVerifiedVC: MainVC {
     @IBOutlet weak var btnHome: ThemeButton!
     @IBOutlet weak var lblHeader: ThemeLabel!
     @IBOutlet weak var lblMessage: ThemeLabel!
-    @IBOutlet var vwBg: UIView!
-
+  
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
@@ -41,7 +40,7 @@ class ContactVerifiedVC: MainVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
-       // self.vwBg?.setRound()
+            self.btnHome?.setRound(withBorderColor: UIColor.clear, andCornerRadious: self.btnHome.frame.height/2.0, borderWidth: 1.0)
         }
     }
 
@@ -53,8 +52,6 @@ class ContactVerifiedVC: MainVC {
         self.lblMessage?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
         self.btnHome?.setTitle("CONTACT_VERIFICATION_BTN_HOME".localized(), for: .normal)
         self.btnHome?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnHome?.setHighlighted(isHighlighted: false)
-       // self.vwBg?.setRound()
     }
 
     // MARK: - Action Methods

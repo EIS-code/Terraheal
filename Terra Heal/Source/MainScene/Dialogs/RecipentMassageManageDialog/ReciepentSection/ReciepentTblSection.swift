@@ -15,9 +15,9 @@ class ReciepentTblSection: UITableViewHeaderFooterView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblName.setFont(name: FontName.SemiBold, size: FontSize.label_18)
-        self.lblAge.setFont(name: FontName.SemiBold, size: FontSize.label_18)
-        self.lblGender.setFont(name: FontName.SemiBold, size: FontSize.label_18)
+        self.lblName.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblAge.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblGender.setFont(name: FontName.Bold, size: FontSize.label_22)
     }
     
     func setData(data: People ) {

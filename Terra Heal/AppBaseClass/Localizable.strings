@@ -306,7 +306,7 @@
 "REVIEW_AND_BOOK_BTN_PREPAYMENT" = "prepayment";
 "REVIEW_AND_BOOK_BTN_WITHOUT_PAYMENT" = "without prepayment";
 //MARK: Payment Screen
-"PAYMENT_PREFERENCE_TITLE" = "payment preference";
+"PAYMENT_PREFERENCE_TITLE" = "payments";
 "PAYMENT_LBL_PAYPAL" = "Paypal";
 "PAYMENT_PAYPAL_EMAIL_ID" = "Paypal email id";
 "PAYMENT_LBL_DEFAULT" = "Default";
@@ -319,6 +319,9 @@
 "RESERVATION_MESSAGE" = "For the protection of our therapists, we kindly ask you to verify your account in 4 steps before you finalize your booking: Selfie and ID or passport verification Do you want to complete this step?";
 "RESERVATION_BTN_PROCEED2" = "no, i prefer to come to your location";
 
+"REQUEST_BOOKING_COMPLETE_TITLE" = "request sent";
+"REQUEST_BOOKING_COMPLETE_MESSAGE" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut";
+"REQUEST_BOOKING_COMPLETE_BTN_HOME" = "Home";
 
 //MARK: Manage Document Screen
 "MANAGE_DOCUMENT_TITLE" = "Id / Passport";
@@ -372,7 +375,7 @@
 
 //KYC Form
 "KYC_INFO_LBL_TITLE" = "let's get started";
-"KYC_INFO_LBL_MESSAGE" = "for identity variation we will follow 3 simple steps.";
+"KYC_INFO_LBL_MESSAGE" = "to verify your identity, we kindly ask you to follow the 3 steps underneath.";
 "KYC_INFO_LBL_SCAN_PASSPORT" = "scan passport / id";
 "KYC_INFO_LBL_TAKE_SELFIE" = "take selfie";
 "KYC_INFO_LBL_ADD_CREDIT_CARD" = "add credit card";

@@ -66,7 +66,7 @@ class AccessorySelectionDialog: ThemeBottomDialogView {
     }
     override func initialSetup() {
         super.initialSetup()
-        self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.button_22)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.txtData.placeholder = "ACCESSORY_TXT_NUMBER_OF_TABLES".localized()
         self.txtData?.delegate = self
         self.txtData.configureTextField(InputTextFieldDetail.getNumberConfiguration())

@@ -61,7 +61,7 @@ class CustomDatePicker: ThemeBottomDialogView {
         self.btnPreviousMonth.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         self.btnNextMonth.setTitle(FontSymbol.next_arrow, for: .normal)
         self.btnNextMonth.setFont(name: FontName.SemiBold, size: FontSize.button_22)
-        self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.button_22)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.setupCalendarView(calendar: vwCalendar)
     }
     override func layoutSubviews() {

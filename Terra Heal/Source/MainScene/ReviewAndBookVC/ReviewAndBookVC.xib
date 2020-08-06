@@ -404,7 +404,7 @@ lisbon, portugal -25412</string>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dv4-1I-ohg">
                                                     <rect key="frame" x="0.0" y="8" width="136.5" height="34"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOx-OC-pna" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOx-OC-pna" customClass="JDCheckboxButton" customModule="Terra_Heal" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="eOx-OC-pna" secondAttribute="height" multiplier="15:15" id="2LJ-z8-yNw"/>
@@ -516,7 +516,7 @@ lisbon, portugal -25412</string>
     </objects>
     <resources>
         <image name="asset-arrow-down" width="10.5" height="6"/>
-        <image name="asset-arrow-up" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="asset-arrow-up" width="13.5" height="7.5"/>
         <image name="asset-cross" width="44" height="44"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

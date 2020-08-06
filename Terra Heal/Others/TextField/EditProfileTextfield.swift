@@ -337,12 +337,21 @@ extension EditProfileTextfield {
             leftViewMode = UITextField.ViewMode.always
 
             let paddingView : UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.getPaddingHeight() + 10, height: self.getPaddingHeight() + 10))
-            let imageView = UIImageView(frame: CGRect.init(x: 5, y: 5, width:  self.getPaddingHeight(), height:  self.getPaddingHeight() ))
+            paddingView.backgroundColor = .clear
+            
+            
+            let vwImageBg : UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.getPaddingHeight(), height: self.getPaddingHeight()))
+        
+            vwImageBg.backgroundColor = self.leftViewColor
+            
+            let imageView = UIImageView(frame: CGRect.init(x: 0, y: 0, width:  self.getPaddingHeight() * 0.5, height:  self.getPaddingHeight() * 0.5))
+            imageView.center = vwImageBg.center
             imageView.contentMode = .scaleAspectFit
-            paddingView.backgroundColor = self.leftViewColor
             imageView.image = image
-            paddingView.addSubview(imageView)
-            paddingView.setRound()
+            vwImageBg.addSubview(imageView)
+            vwImageBg.setRound()
+            vwImageBg.center = paddingView.center
+            paddingView.addSubview(vwImageBg)
             leftView = paddingView
 
         } else {

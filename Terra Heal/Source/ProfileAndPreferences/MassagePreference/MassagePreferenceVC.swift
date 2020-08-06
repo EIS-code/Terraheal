@@ -65,8 +65,7 @@ class MassagePreferenceVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
-        self.addBottomFade()
-        self.addTopFade()
+        self.view.backgroundColor = UIColor.themePrimaryLightBackground
         self.wsGetMassagePreferenceList()
 
     }
@@ -86,7 +85,7 @@ class MassagePreferenceVC: MainVC {
             self.tableView?.reloadData({
 
             })
-            self.tableView?.contentInset = UIEdgeInsets(top: headerGradient.frame.height, left: 0, bottom: footerGradient.frame.height, right: 0)
+           
             self.btnSubmit?.setHighlighted(isHighlighted: true)
         }
 
@@ -188,6 +187,7 @@ class MassagePreferenceVC: MainVC {
 extension MassagePreferenceVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegate {
 
     private func setupTableView(tableView: UITableView) {
+        tableView.backgroundColor = .clear
         tableView.delegate = self
         tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false

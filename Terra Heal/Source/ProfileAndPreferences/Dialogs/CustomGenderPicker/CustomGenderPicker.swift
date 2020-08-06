@@ -71,7 +71,7 @@ class CustomGenderPicker: ThemeBottomDialogView {
         self.lblMale.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.lblFemale.text = "GENDER_FEMALE".localized()
         self.lblFemale.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.button_22)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
     }
     
     override func layoutSubviews() {

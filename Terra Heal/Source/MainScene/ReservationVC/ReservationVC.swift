@@ -60,7 +60,7 @@ class ReservationVC: MainVC {
         self.btnProceed2?.setTitle("RESERVATION_BTN_PROCEED2".localized(), for: .normal)
         self.btnProceed2.titleLabel?.numberOfLines = 0
         self.btnBack.setFont(name: FontName.Bold, size: FontSize.button_22)
-        self.btnBack.setTitle("BTN_BACK".localized(), for: .normal)
+        self.btnBack.setTitle("BTN_CANCEL".localized(), for: .normal)
         self.btnProceedDone.setForwardButton()
         self.btnProceed2Done.setForwardButton()
         self.btnProceed2?.setFont(name: FontName.SemiBold, size: FontSize.button_22)
@@ -72,10 +72,34 @@ class ReservationVC: MainVC {
     }
     
     @IBAction func btnProceedDoneTapped(_ sender: Any) {
+        Common.appDelegate.loadKycInfoVC(navigaionVC: self.navigationController)
     }
     
     @IBAction func btnProceed2DoneTapped(_ sender: Any) {
+        Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "REQUEST_BOOKING_COMPLETE_TITLE".localized(), strMessage: "REQUEST_BOOKING_COMPLETE_MESSAGE".localized(), strImg: ImageAsset.Completion.requestBookingCompletion, strButtonTitle: "REQUEST_BOOKING_COMPLETE_BTN_HOME".localized()))
     }
+    
+    @IBAction func btnCancelTapped(_ sender: Any) {
+        self.openCancelBookingDialog()
+    }
+    
+    func openCancelBookingDialog() {
+           let cancelBookingDialog: CustomAlertConfirmation  = CustomAlertConfirmation.fromNib()
+           cancelBookingDialog.initialize(title: "cancel", message: "are you sure you want to cancel it?", buttonTitle: "yes cancel".localized(),cancelButtonTitle: "BTN_BACK".localized())
+           cancelBookingDialog.show(animated: true)
+           cancelBookingDialog.onBtnCancelTapped = {
+               [weak cancelBookingDialog, weak self] in
+               guard let self = self else { return } ; print(self)
+               cancelBookingDialog?.dismiss()
+               self.btnBack.isEnabled = true
+           }
+           cancelBookingDialog.onBtnDoneTapped = {
+               [weak cancelBookingDialog, weak self]  in
+               guard let self = self else { return } ; print(self)
+               cancelBookingDialog?.dismiss()
+               Common.appDelegate.loadHomeVC()
+           }
+       }
     
 }
 
