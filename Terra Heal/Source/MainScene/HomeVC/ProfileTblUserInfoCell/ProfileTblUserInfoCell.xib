@@ -53,6 +53,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <color key="backgroundColor" name="theme_primary_light_background"/>
                         <constraints>
                             <constraint firstItem="eWe-fo-Zfx" firstAttribute="top" secondItem="gph-dA-JOW" secondAttribute="bottom" constant="10" id="1NA-9E-xlG"/>
                             <constraint firstItem="zbl-J2-KSJ" firstAttribute="centerX" secondItem="fTr-D4-KiU" secondAttribute="centerX" id="6v3-ni-ZDp"/>
@@ -71,6 +72,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" name="theme_primary_light_background"/>
                 <constraints>
                     <constraint firstItem="fTr-D4-KiU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="2jg-EE-YxG"/>
                     <constraint firstAttribute="trailing" secondItem="fTr-D4-KiU" secondAttribute="trailing" constant="20" id="AWN-UN-JV4"/>
@@ -99,6 +101,9 @@
         </namedColor>
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary_light_background">
+            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

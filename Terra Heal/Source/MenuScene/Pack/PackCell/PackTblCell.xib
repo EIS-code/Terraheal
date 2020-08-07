@@ -60,7 +60,7 @@
                                         </subviews>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-copy" translatesAutoresizingMaskIntoConstraints="NO" id="oVt-jG-IgM">
-                                        <rect key="frame" x="343.5" y="27" width="21.5" height="21.5"/>
+                                        <rect key="frame" x="341" y="25.5" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="oVt-jG-IgM" secondAttribute="height" multiplier="1:1" id="Bwp-DU-nGb"/>
                                         </constraints>
@@ -76,7 +76,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" name="theme_primary_light_background"/>
+                        <color key="backgroundColor" name="theme_background"/>
                         <constraints>
                             <constraint firstItem="LmY-i0-0xA" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="40" id="0wZ-Bo-BST"/>
                             <constraint firstItem="LmY-i0-0xA" firstAttribute="top" secondItem="vkL-On-Gbz" secondAttribute="bottom" priority="999" constant="10" id="4ZU-1S-pnm"/>
@@ -92,14 +92,14 @@
                             <constraint firstItem="vkL-On-Gbz" firstAttribute="top" secondItem="DvS-ga-ouT" secondAttribute="bottom" priority="998" constant="20" id="ofo-l0-uaT"/>
                         </constraints>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center-white" translatesAutoresizingMaskIntoConstraints="NO" id="HQO-Oy-Hm5">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center" translatesAutoresizingMaskIntoConstraints="NO" id="HQO-Oy-Hm5">
                         <rect key="frame" x="191" y="5" width="93" height="93"/>
-                        <color key="backgroundColor" name="theme_primary"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="HQO-Oy-Hm5" secondAttribute="height" multiplier="1:1" priority="999" id="aVg-Hg-fWX"/>
                         </constraints>
                     </imageView>
                 </subviews>
+                <color key="backgroundColor" name="theme_primary_light_background"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="fTr-D4-KiU" secondAttribute="trailing" constant="5" id="AWN-UN-JV4"/>
                     <constraint firstItem="HQO-Oy-Hm5" firstAttribute="width" secondItem="fTr-D4-KiU" secondAttribute="width" multiplier="0.2" id="dJM-RM-ea6"/>
@@ -127,13 +127,16 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="asset-center-white" width="42.666667938232422" height="42.666667938232422"/>
-        <image name="asset-copy" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="asset-center" width="71" height="71"/>
+        <image name="asset-copy" width="21" height="24"/>
+        <namedColor name="theme_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="theme_primary">
-            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light_background">
-            <color red="0.94509803921568625" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

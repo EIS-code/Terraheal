@@ -40,7 +40,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ux-6h-A7d" userLabel="vwMap" customClass="GMSMapView">
-                    <rect key="frame" x="0.0" y="148" width="375" height="664"/>
+                    <rect key="frame" x="0.0" y="192" width="375" height="620"/>
                     <color key="backgroundColor" name="theme_primary_border"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEK-Cr-eQL" userLabel="ViewService">
@@ -163,10 +163,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RkY-uq-l4w" userLabel="vwBar">
-                    <rect key="frame" x="0.0" y="44" width="375" height="104"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="192"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IND-Az-SGv" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="291" y="20" width="64" height="64"/>
+                            <rect key="frame" x="291" y="64" width="64" height="64"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="IND-Az-SGv" secondAttribute="height" multiplier="1:1" id="1zD-Jl-dP8"/>
                             </constraints>
@@ -180,19 +180,19 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xk9-ZP-J9T" userLabel="lblAddressTitle" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="55" y="20" width="43" height="20.333333333333329"/>
+                            <rect key="frame" x="55" y="64" width="43" height="20.333333333333329"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" name="theme_dark_text"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xC-vK-VPV" userLabel="lblAddress" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="55" y="50.333333333333329" width="43" height="33.666666666666671"/>
+                            <rect key="frame" x="55" y="94.333333333333314" width="43" height="77.666666666666686"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" name="theme_hint_text"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-location" translatesAutoresizingMaskIntoConstraints="NO" id="m6T-4o-idN">
-                            <rect key="frame" x="20" y="20" width="25" height="25"/>
+                            <rect key="frame" x="20" y="64" width="25" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="m6T-4o-idN" secondAttribute="height" multiplier="1:1" id="Kys-A8-8eK"/>
                                 <constraint firstAttribute="height" constant="25" id="Udw-1L-zek"/>
@@ -201,6 +201,7 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
+                        <constraint firstItem="m6T-4o-idN" firstAttribute="top" secondItem="IND-Az-SGv" secondAttribute="top" id="2Pb-g1-EQo"/>
                         <constraint firstAttribute="trailing" secondItem="IND-Az-SGv" secondAttribute="trailing" constant="20" id="4Yl-M3-HUK"/>
                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="IND-Az-SGv" secondAttribute="bottom" constant="20" id="56A-rL-hLm"/>
                         <constraint firstItem="2xC-vK-VPV" firstAttribute="top" secondItem="xk9-ZP-J9T" secondAttribute="bottom" constant="10" id="7jI-d2-hK5"/>
@@ -208,14 +209,12 @@
                         <constraint firstItem="2xC-vK-VPV" firstAttribute="leading" secondItem="xk9-ZP-J9T" secondAttribute="leading" id="GKe-Nx-ss5"/>
                         <constraint firstItem="m6T-4o-idN" firstAttribute="leading" secondItem="RkY-uq-l4w" secondAttribute="leading" constant="20" id="M1I-va-qos"/>
                         <constraint firstItem="IND-Az-SGv" firstAttribute="centerY" secondItem="RkY-uq-l4w" secondAttribute="centerY" id="SBr-ma-Tof"/>
-                        <constraint firstItem="IND-Az-SGv" firstAttribute="top" secondItem="RkY-uq-l4w" secondAttribute="top" constant="20" id="Uzl-6u-hFn"/>
-                        <constraint firstItem="m6T-4o-idN" firstAttribute="top" secondItem="RkY-uq-l4w" secondAttribute="top" constant="20" id="V99-F2-0ev"/>
-                        <constraint firstItem="xk9-ZP-J9T" firstAttribute="top" secondItem="RkY-uq-l4w" secondAttribute="top" constant="20" id="ujh-YJ-2ow"/>
+                        <constraint firstItem="xk9-ZP-J9T" firstAttribute="top" secondItem="m6T-4o-idN" secondAttribute="top" id="roF-Pr-HHf"/>
                         <constraint firstItem="xk9-ZP-J9T" firstAttribute="leading" secondItem="m6T-4o-idN" secondAttribute="trailing" constant="10" id="zVR-wy-Y1K"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ts-YA-ha4" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="20" y="168" width="89" height="38"/>
+                    <rect key="frame" x="20" y="212" width="89" height="38"/>
                     <color key="backgroundColor" name="theme_secondary"/>
                     <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
                     <state key="normal" title="2.9 Km">
@@ -223,7 +222,7 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bD-XR-1BI">
-                    <rect key="frame" x="295" y="168" width="60" height="60"/>
+                    <rect key="frame" x="295" y="212" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="4bD-XR-1BI" secondAttribute="height" multiplier="1:1" id="EGY-3z-GcC"/>
                         <constraint firstAttribute="height" constant="60" id="dZd-Fn-q11"/>
@@ -246,6 +245,7 @@
                 <constraint firstItem="5ts-YA-ha4" firstAttribute="top" secondItem="0ux-6h-A7d" secondAttribute="top" constant="20" id="K44-m2-yJC"/>
                 <constraint firstItem="RkY-uq-l4w" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" id="Kw4-hb-7lG"/>
                 <constraint firstItem="0ux-6h-A7d" firstAttribute="top" secondItem="RkY-uq-l4w" secondAttribute="bottom" id="Mbb-AO-ukf"/>
+                <constraint firstItem="IND-Az-SGv" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="20" id="PYL-OS-hgi"/>
                 <constraint firstItem="cP1-hm-j0m" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" id="eIr-ou-iAW"/>
                 <constraint firstItem="gpz-MM-woQ" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" id="g9W-RV-I7o"/>
                 <constraint firstItem="BEK-Cr-eQL" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="gDX-nb-O7M"/>
@@ -256,7 +256,7 @@
                 <constraint firstItem="4bD-XR-1BI" firstAttribute="top" secondItem="0ux-6h-A7d" secondAttribute="top" constant="20" id="qQo-O6-7AZ"/>
                 <constraint firstItem="cP1-hm-j0m" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sDb-kH-Swd"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="RkY-uq-l4w" secondAttribute="trailing" id="st1-ED-qLy"/>
-                <constraint firstItem="RkY-uq-l4w" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" id="vCT-LJ-Nhl"/>
+                <constraint firstItem="RkY-uq-l4w" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vCT-LJ-Nhl"/>
                 <constraint firstAttribute="bottom" secondItem="BEK-Cr-eQL" secondAttribute="bottom" id="wlA-KJ-dFm"/>
                 <constraint firstItem="BEK-Cr-eQL" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="zIk-1b-aUF"/>
             </constraints>

@@ -13,7 +13,7 @@ class PriceLocationTblCell: TableCell {
     @IBOutlet weak var lblName: ThemeLabel!
     @IBOutlet weak var vwBg: UIView!
     @IBOutlet weak var ivSelected: UIImageView!
-
+    var data: PricingLocation = PricingLocation.init(fromDictionary: [:])
     override func awakeFromNib() {
         super.awakeFromNib()
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
@@ -22,6 +22,7 @@ class PriceLocationTblCell: TableCell {
     }
 
     func setData(data: PricingLocation ) {
+        self.data = data
         self.lblName.text = data.name
         if data.isSelected {
             self.ivSelected.isHidden = false
@@ -37,8 +38,12 @@ class PriceLocationTblCell: TableCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.ivSelected?.setRound()
-       // self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+        /*if data.isSelected {
+           self.vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)
+        } else {
+            self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+        }*/
+        
 
     }
     override func setSelected(_ selected: Bool, animated: Bool) {

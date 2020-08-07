@@ -23,12 +23,11 @@ class MenuCellHorizontal: CollectionCell {
     func setData(menuDetail:MenuItem) {
         self.lblTitle?.setFont(name: FontName.Regular, size: FontSize.label_14)
         self.lblTitle.text = menuDetail.id.name()
-
+        self.ivMenu.image = UIImage.init(named: menuDetail.id.image())
     }
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        self.ivMenu?.setRound()
         self.ivBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 20.0, borderWidth: 1.0)
 
 

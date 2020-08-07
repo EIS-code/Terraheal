@@ -121,6 +121,7 @@ extension GiftVoucherVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
+tableView.backgroundColor = .clear
         self.scrVw.delegate = self
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension

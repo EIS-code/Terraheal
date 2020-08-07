@@ -263,6 +263,7 @@ extension ReferAndEarnVC: UITableViewDelegate,UITableViewDataSource, UIScrollVie
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
+tableView.backgroundColor = .clear
         self.scrVw.delegate = self
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension

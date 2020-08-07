@@ -43,6 +43,7 @@ struct SettingPreferenceDetail {
     var type: SettingMenu = SettingMenu.Logout
     var strDetail: String = ""
     var isSelected: Bool = false
+    var image:String = ""
 }
 
 class SettingVC: MainVC {
@@ -51,15 +52,14 @@ class SettingVC: MainVC {
     @IBOutlet weak var tableView: UITableView!
     var settingDetail:Setting = Setting.init(fromDictionary: [:])
     var arrForData: [SettingPreferenceDetail] = [
-        SettingPreferenceDetail(type: SettingMenu.PreferredLanguage, strDetail: "", isSelected: false),
-        SettingPreferenceDetail(type: SettingMenu.ChangePassword, strDetail: "", isSelected: false),
-        SettingPreferenceDetail(type: SettingMenu.Currency, strDetail: "", isSelected: false),
-        SettingPreferenceDetail(type: SettingMenu.DistanceUnit, strDetail: "", isSelected: false),
-        SettingPreferenceDetail(type: SettingMenu.Notification, strDetail: "", isSelected: false),
-        SettingPreferenceDetail(type: SettingMenu.TermsAndCondition, strDetail: "", isSelected: false),
-        SettingPreferenceDetail(type: SettingMenu.Privacy, strDetail: "", isSelected: false),
-        SettingPreferenceDetail(type: SettingMenu.Logout, strDetail: "",  isSelected: false)
-
+        SettingPreferenceDetail(type: SettingMenu.PreferredLanguage, strDetail: "", isSelected: false, image: ImageAsset.Setting.language),
+        SettingPreferenceDetail(type: SettingMenu.ChangePassword, strDetail: "", isSelected: false, image: ImageAsset.Setting.changePassword),
+        SettingPreferenceDetail(type: SettingMenu.Currency, strDetail: "", isSelected: false, image: ImageAsset.Setting.currency),
+        SettingPreferenceDetail(type: SettingMenu.DistanceUnit, strDetail: "", isSelected: false, image: ImageAsset.Setting.distanceUnit),
+        SettingPreferenceDetail(type: SettingMenu.Notification, strDetail: "", isSelected: false, image: ImageAsset.Setting.notification),
+        SettingPreferenceDetail(type: SettingMenu.TermsAndCondition, strDetail: "", isSelected: false, image: ImageAsset.Setting.termsAndCondition),
+        SettingPreferenceDetail(type: SettingMenu.Privacy, strDetail: "", isSelected: false, image: ImageAsset.Setting.managePrivacy),
+        SettingPreferenceDetail(type: SettingMenu.Logout, strDetail: "",  isSelected: false, image: ImageAsset.Setting.logout)
     ]
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -82,7 +82,6 @@ class SettingVC: MainVC {
         super.viewDidLoad()
         self.initialViewSetup()
         self.addBottomFade()
-        self.addTopFade()
         self.wsGetSettingDetail()
     }
 
@@ -98,12 +97,12 @@ class SettingVC: MainVC {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
             self.tableView?.reloadData({})
-            self.tableView?.contentInset = UIEdgeInsets(top: headerGradient.frame.height, left: 0, bottom: footerGradient.frame.height, right: 0)
+            self.tableView?.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: footerGradient.frame.height, right: 0)
         }
     }
 
     private func initialViewSetup() {
-        
+        self.view.backgroundColor = UIColor.themePrimaryLightBackground
         self.setupTableView(tableView: self.tableView)
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.setTitle(title: "SETTING_MENU_TITTLE".localized())
@@ -277,9 +276,10 @@ extension SettingVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
+tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 200
+        tableView.estimatedRowHeight = 70
         tableView.register(SettingTblCell.nib()
             , forCellReuseIdentifier: SettingTblCell.name)
         tableView.register(SettingSwitchTblCell.nib()
@@ -291,7 +291,8 @@ extension SettingVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
         return arrForData.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 70
+        
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 

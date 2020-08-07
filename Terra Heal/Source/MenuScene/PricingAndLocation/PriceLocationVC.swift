@@ -41,7 +41,7 @@ class PriceLocationVC: MainVC {
         super.viewDidLoad()
         self.initialViewSetup()
         self.addBottomFade()
-        self.addTopFade()
+     
         self.wsGetLocationList()
     }
 
@@ -62,7 +62,7 @@ class PriceLocationVC: MainVC {
            })
             self.searchVw.setRound(withBorderColor: .clear, andCornerRadious: self.searchVw.bounds.height/2.0, borderWidth: 1.0)
            self.btnSubmit?.setHighlighted(isHighlighted: true)
-           self.tableView?.contentInset = UIEdgeInsets(top: headerGradient.frame.height, left: 0, bottom: footerGradient.frame.height, right: 0)
+           self.tableView?.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: footerGradient.frame.height, right: 0)
         }
     }
 
@@ -146,6 +146,7 @@ extension PriceLocationVC: UITableViewDelegate,UITableViewDataSource, UIScrollVi
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
+tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
@@ -190,7 +191,8 @@ extension PriceLocationVC : UITextFieldDelegate {
         txtSearchBar.delegate = self
         txtSearchBar.setFont(name: FontName.Regular, size: FontSize.textField_20)
         txtSearchBar.addTarget(self, action: #selector(searching(_:)), for: .editingChanged)
-        txtSearchBar.changePlaceHolder(color: UIColor.themePrimary)
+        txtSearchBar.textColor = UIColor.themeDarkText
+        txtSearchBar.changePlaceHolder(color: UIColor.themeDarkText)
         txtSearchBar.placeholder = "PRICE_AND_LOCATION_TXT_SEARCH_LOCATION".localized()
 
     }

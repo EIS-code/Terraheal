@@ -11,6 +11,10 @@
 		030B2D4224B4A65E0072C564 /* ServiceDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D3D24B4A65E0072C564 /* ServiceDetailVC.swift */; };
 		030B2D4324B4A65E0072C564 /* SeviceDurationCltCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030B2D3F24B4A65E0072C564 /* SeviceDurationCltCell.xib */; };
 		030B2D4424B4A65E0072C564 /* SeviceDurationCltCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D4024B4A65E0072C564 /* SeviceDurationCltCell.swift */; };
+		031F894A24DD5A1E0001FD58 /* AccessoryTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031F894824DD5A1E0001FD58 /* AccessoryTblCell.xib */; };
+		031F894B24DD5A1E0001FD58 /* AccessoryTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031F894924DD5A1E0001FD58 /* AccessoryTblCell.swift */; };
+		031F894F24DD7B600001FD58 /* CustomDistancePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031F894D24DD7B600001FD58 /* CustomDistancePickerCell.swift */; };
+		031F895024DD7B600001FD58 /* CustomDistancePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031F894E24DD7B600001FD58 /* CustomDistancePickerCell.xib */; };
 		03280D8C24D03F7300EF06E5 /* ServiceCollapseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03280D8A24D03F7300EF06E5 /* ServiceCollapseCell.xib */; };
 		03280D8D24D03F7300EF06E5 /* ServiceCollapseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280D8B24D03F7300EF06E5 /* ServiceCollapseCell.swift */; };
 		03429B0624B49565000059A2 /* CustomServiceSelectionDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03429B0424B49565000059A2 /* CustomServiceSelectionDialog.swift */; };
@@ -411,6 +415,10 @@
 		030B2D3D24B4A65E0072C564 /* ServiceDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceDetailVC.swift; sourceTree = "<group>"; };
 		030B2D3F24B4A65E0072C564 /* SeviceDurationCltCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeviceDurationCltCell.xib; sourceTree = "<group>"; };
 		030B2D4024B4A65E0072C564 /* SeviceDurationCltCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeviceDurationCltCell.swift; sourceTree = "<group>"; };
+		031F894824DD5A1E0001FD58 /* AccessoryTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccessoryTblCell.xib; sourceTree = "<group>"; };
+		031F894924DD5A1E0001FD58 /* AccessoryTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessoryTblCell.swift; sourceTree = "<group>"; };
+		031F894D24DD7B600001FD58 /* CustomDistancePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDistancePickerCell.swift; sourceTree = "<group>"; };
+		031F894E24DD7B600001FD58 /* CustomDistancePickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomDistancePickerCell.xib; sourceTree = "<group>"; };
 		03280D8A24D03F7300EF06E5 /* ServiceCollapseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceCollapseCell.xib; sourceTree = "<group>"; };
 		03280D8B24D03F7300EF06E5 /* ServiceCollapseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCollapseCell.swift; sourceTree = "<group>"; };
 		03429B0424B49565000059A2 /* CustomServiceSelectionDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomServiceSelectionDialog.swift; sourceTree = "<group>"; };
@@ -853,6 +861,24 @@
 			path = SeviceDurationCltCell;
 			sourceTree = "<group>";
 		};
+		031F894724DD5A1E0001FD58 /* AccessoryTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				031F894824DD5A1E0001FD58 /* AccessoryTblCell.xib */,
+				031F894924DD5A1E0001FD58 /* AccessoryTblCell.swift */,
+			);
+			path = AccessoryTblCell;
+			sourceTree = "<group>";
+		};
+		031F894C24DD7B600001FD58 /* CustomDistancePickerCell */ = {
+			isa = PBXGroup;
+			children = (
+				031F894D24DD7B600001FD58 /* CustomDistancePickerCell.swift */,
+				031F894E24DD7B600001FD58 /* CustomDistancePickerCell.xib */,
+			);
+			path = CustomDistancePickerCell;
+			sourceTree = "<group>";
+		};
 		03280D8924D03F7300EF06E5 /* ServiceCollapseCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1208,6 +1234,7 @@
 		034449A524B604C000C8B763 /* CustomDistanceUnitPicker */ = {
 			isa = PBXGroup;
 			children = (
+				031F894C24DD7B600001FD58 /* CustomDistancePickerCell */,
 				034449A624B604C000C8B763 /* CustomDistanceUnitPicker.xib */,
 				034449A724B604C000C8B763 /* CustomDistanceUnitPicker.swift */,
 			);
@@ -2705,6 +2732,7 @@
 			children = (
 				0365CDAD24C995AA00E1361B /* AccessorySelectionDialog.xib */,
 				0365CDAE24C995AA00E1361B /* AccessorySelectionDialog.swift */,
+				031F894724DD5A1E0001FD58 /* AccessoryTblCell */,
 			);
 			path = AccessorySelectionDialog;
 			sourceTree = "<group>";
@@ -3314,6 +3342,7 @@
 				0345C69524C9B21800873FD1 /* ScanSelfieVC.xib in Resources */,
 				0348785424B2EF64006774AB /* HomeTblCell.xib in Resources */,
 				0348784C24B2EF64006774AB /* LaunchVC.xib in Resources */,
+				031F895024DD7B600001FD58 /* CustomDistancePickerCell.xib in Resources */,
 				03A1B54624B5A804008BAC3A /* RecipientSelectionDialog.xib in Resources */,
 				0348786924B2EF64006774AB /* CustomHistoryFilterPickerCell.xib in Resources */,
 				0344491324B6035800C8B763 /* CustomAddNewAddressDialog.xib in Resources */,
@@ -3330,6 +3359,7 @@
 				0344499A24B604A000C8B763 /* CustomCountryPicker.xib in Resources */,
 				0344499024B604A000C8B763 /* CustomCityPicker.xib in Resources */,
 				0348783224B2EF64006774AB /* CustomPhotoPicker.xib in Resources */,
+				031F894A24DD5A1E0001FD58 /* AccessoryTblCell.xib in Resources */,
 				0382B5AB24D3F465002B6BF5 /* PersonPickerDialog.xib in Resources */,
 				0348786724B2EF64006774AB /* ReferAndEarnVC.xib in Resources */,
 				0344496C24B6045F00C8B763 /* CustomInformationDialog.xib in Resources */,
@@ -3523,6 +3553,7 @@
 				03A1B55624B5D7BE008BAC3A /* DurationSelectionDialog.swift in Sources */,
 				034877FB24B2EF64006774AB /* MassagePreferenceVC.swift in Sources */,
 				0382B5AC24D3F465002B6BF5 /* PersonPickerCell.swift in Sources */,
+				031F894F24DD7B600001FD58 /* CustomDistancePickerCell.swift in Sources */,
 				632DB09D248FA5CC00B65B46 /* JDDeviceHelper.swift in Sources */,
 				0382B5AE24D3F465002B6BF5 /* PersonPickerDialog.swift in Sources */,
 				0348784724B2EF64006774AB /* RegisterVC.swift in Sources */,
@@ -3607,6 +3638,7 @@
 				63435B4E24769C4900AF7100 /* AlamofireHelper.swift in Sources */,
 				034449B024B604C000C8B763 /* CustomLanguagePickerCell.swift in Sources */,
 				632DB099248FA5CC00B65B46 /* String + TypeCasting.swift in Sources */,
+				031F894B24DD5A1E0001FD58 /* AccessoryTblCell.swift in Sources */,
 				0344496A24B6045F00C8B763 /* CustomRateViewDialog.swift in Sources */,
 				0382B5BC24D3F63F002B6BF5 /* PersonData.xcdatamodeld in Sources */,
 				0347835D24BDDB2D00E3D4EC /* ServiceCenterDetailDialog.swift in Sources */,

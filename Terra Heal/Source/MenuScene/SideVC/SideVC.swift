@@ -73,7 +73,28 @@ enum Menu: String {
         }
     }
 
-
+    func image() -> String {
+           switch self {
+           case .HowItWork:
+            return ImageAsset.SideMenu.howItWork
+           case .ReferAndEarn:
+               return ImageAsset.SideMenu.referAndEarn
+           case .PricingAndLocation:
+               return ImageAsset.SideMenu.pricingAndLocation
+           case .PromoCode:
+               return ImageAsset.SideMenu.promocode
+           case .Notifications:
+               return ImageAsset.SideMenu.notifications
+           case .Packs:
+               return ImageAsset.SideMenu.packs
+           case .Help:
+               return ImageAsset.SideMenu.help
+           case .Campaigns:
+               return ImageAsset.SideMenu.campaigns
+           case .GiftVoucher:
+               return ImageAsset.SideMenu.giftvoucher
+           }
+       }
 }
 class SideVC: MainVC {
 

@@ -25,10 +25,10 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
-                    <rect key="frame" x="0.0" y="514" width="414" height="382"/>
+                    <rect key="frame" x="0.0" y="462" width="414" height="434"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe" userLabel="Stack View - main">
-                            <rect key="frame" x="20" y="10" width="374" height="352"/>
+                            <rect key="frame" x="20" y="10" width="374" height="404"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OsI-uf-Fb8">
                                     <rect key="frame" x="167" y="0.0" width="40" height="5"/>
@@ -51,16 +51,47 @@
                                         <constraint firstAttribute="height" constant="128" id="YYE-9t-jcw"/>
                                     </constraints>
                                 </tableView>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="InJ-JF-0qH" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="135" y="213.5" width="104" height="18.5"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="InJ-JF-0qH" secondAttribute="height" multiplier="28:5" id="VIU-se-tdD"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </textField>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="how many ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALp-lW-whf" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="142" y="213.5" width="90.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="theme_dark_text"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="se5-ve-fmi">
+                                    <rect key="frame" x="137" y="254" width="100" height="30"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZj-3v-ltq" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="hZj-3v-ltq" secondAttribute="height" multiplier="1:1" id="ucE-vK-IUV"/>
+                                            </constraints>
+                                            <state key="normal" title="-">
+                                                <color key="titleColor" name="theme_secondary"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="btnDecrementTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="lPl-NZ-PNN"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KfT-TY-CAk" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="35" y="0.0" width="30" height="30"/>
+                                            <color key="backgroundColor" name="theme_background"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="theme_primary"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ArB-Ga-11x" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="70" y="0.0" width="30" height="30"/>
+                                            <state key="normal" title="+">
+                                                <color key="titleColor" name="theme_secondary"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="btnIncrementTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="pjp-KA-Woi"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wIn-ih-b3C" userLabel="vwOkButton">
-                                    <rect key="frame" x="0.0" y="252" width="374" height="50"/>
+                                    <rect key="frame" x="0.0" y="304" width="374" height="50"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7CA-Q7-Txn" userLabel="Stack View - Next">
                                             <rect key="frame" x="257" y="5" width="117" height="40"/>
@@ -100,7 +131,7 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVl-el-UJJ" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="164" y="322" width="46" height="30"/>
+                                    <rect key="frame" x="164" y="374" width="46" height="30"/>
                                     <state key="normal" title="Button"/>
                                     <connections>
                                         <action selector="btnCancelTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="EhO-GW-jUf"/>
@@ -110,8 +141,6 @@
                             <constraints>
                                 <constraint firstItem="tfg-GV-f0f" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" id="6Op-Ym-9rR"/>
                                 <constraint firstItem="wIn-ih-b3C" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" id="EbV-LP-wWj"/>
-                                <constraint firstItem="InJ-JF-0qH" firstAttribute="width" secondItem="InJ-JF-0qH" secondAttribute="height" multiplier="28:5" id="IUd-ff-vb6"/>
-                                <constraint firstItem="InJ-JF-0qH" firstAttribute="width" secondItem="tfg-GV-f0f" secondAttribute="width" multiplier="0.278075" id="tG7-UM-NQf"/>
                             </constraints>
                         </stackView>
                     </subviews>
@@ -138,14 +167,17 @@
             <connections>
                 <outlet property="backgroundView" destination="6ZW-DU-hOd" id="BnY-1h-4oF"/>
                 <outlet property="btnCancel" destination="BVl-el-UJJ" id="mZE-lE-kWH"/>
+                <outlet property="btnDecrement" destination="hZj-3v-ltq" id="EjS-bl-MTb"/>
                 <outlet property="btnDoneFloating" destination="UWR-CU-Wge" id="itM-FB-Djr"/>
+                <outlet property="btnIncrement" destination="ArB-Ga-11x" id="Bdk-C4-rzJ"/>
                 <outlet property="btnNext" destination="5dt-lL-rSp" id="dOr-VC-MPU"/>
                 <outlet property="dialogView" destination="Yaj-p7-IIT" id="I5L-DG-Qv7"/>
                 <outlet property="hTblVw" destination="YYE-9t-jcw" id="TWI-WA-p54"/>
+                <outlet property="lblHowMany" destination="ALp-lW-whf" id="F2h-cV-QKo"/>
+                <outlet property="lblQuatity" destination="KfT-TY-CAk" id="jnU-UI-MMW"/>
                 <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
                 <outlet property="tableView" destination="tfg-GV-f0f" id="Ira-PT-Aex"/>
                 <outlet property="topBarSpace" destination="Zud-Qp-ll1" id="CT5-c9-5N0"/>
-                <outlet property="txtData" destination="InJ-JF-0qH" id="r3z-TD-hVl"/>
                 <outlet property="vwProceed" destination="wIn-ih-b3C" id="3SN-zO-1o4"/>
                 <outlet property="vwTopBar" destination="OsI-uf-Fb8" id="VT3-o0-WSd"/>
             </connections>
@@ -153,6 +185,12 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="theme_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_dark_text">
+            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="theme_light_text_color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -163,7 +201,10 @@
             <color red="0.49803921568627452" green="0.7686274509803922" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light_background">
-            <color red="0.94509803921568625" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_secondary">
+            <color red="0.97299998998641968" green="0.60000002384185791" blue="0.11800000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

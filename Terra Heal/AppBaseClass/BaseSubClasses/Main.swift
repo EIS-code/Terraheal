@@ -15,7 +15,7 @@ class MainVC: UIViewController {
     @IBOutlet weak var headerGradient: UIView!
     @IBOutlet weak var footerGradient: UIView!
 
-
+    @IBOutlet weak var vwNavigationBar: ThemeView!
     var topGradientLayer: CAGradientLayer? = nil
     var bottomGradientLayer: CAGradientLayer? = nil
 
@@ -32,6 +32,7 @@ class MainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .themePrimaryLightBackground
         self.btnLeft?.setBackButton()
         self.lblTitle?.textColor = UIColor.themeDarkText
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)

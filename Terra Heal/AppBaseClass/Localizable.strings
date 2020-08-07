@@ -225,8 +225,8 @@
 "PACK_BTN_BUY_NEW" = "Buy New pack";
 
 //MARK: Help
-"HELP_TITLE" = "Help";
-"CHAT_DIALOG_TITLE" = "Chat";
+"HELP_TITLE" = "help";
+"CHAT_DIALOG_TITLE" = "chat";
 "CHAT_DIALOG_MSG" = "there are no pending issues to fix";
 "CHAT_DIALOG_BTN_CHAT_NOW" = "Have Doubts? Chat Now";
 //MARK: Faq

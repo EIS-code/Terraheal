@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "Icon awesome-copy.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Icon awesome-copy@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "portable-document-format.png",
+      "filename" : "Icon awesome-copy@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

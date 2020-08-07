@@ -67,9 +67,8 @@ class VerifyContactVC: MainVC {
     }
 
     @IBAction func btnHomeTapped(_ sender: Any) {
-        //self.openVerification()
-         Common.appDelegate.loadVerifiedContactVC()
-       // Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "CONTACT_VERIFIED_LBL_TITLE".localized(), strMessage: "CONTACT_VERIFIED_LBL_MESSAGE".localized(), strImg: ImageAsset.Completion.contactVarification, strButtonTitle: "CONTACT_VERIFICATION_BTN_HOME".localized()))
+        self.openVerification()
+        // Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "CONTACT_VERIFIED_LBL_TITLE".localized(), strMessage: "CONTACT_VERIFIED_LBL_MESSAGE".localized(), strImg: ImageAsset.Completion.contactVarification, strButtonTitle: "CONTACT_VERIFICATION_BTN_HOME".localized()))
 
     }
 

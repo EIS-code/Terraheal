@@ -54,7 +54,6 @@
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" name="theme_primary_light_background"/>
                         <constraints>
                             <constraint firstItem="4DP-9l-fOa" firstAttribute="leading" secondItem="jVt-KG-059" secondAttribute="leading" constant="20" id="0zf-r4-ZFp"/>
                             <constraint firstItem="c9B-uy-PV7" firstAttribute="centerY" secondItem="jVt-KG-059" secondAttribute="centerY" id="1tf-aW-Eqy"/>
@@ -96,9 +95,6 @@
         </namedColor>
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="theme_primary_light_background">
-            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -82,6 +82,7 @@ extension CustomCityPicker : UITableViewDelegate,UITableViewDataSource {
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
+tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 70
@@ -124,7 +125,8 @@ extension CustomCityPicker : UITextFieldDelegate {
         txtSearchBar.delegate = self
         txtSearchBar.setFont(name: FontName.Regular, size: FontSize.textField_20)
         txtSearchBar.addTarget(self, action: #selector(searching(_:)), for: .editingChanged)
-        txtSearchBar.changePlaceHolder(color: UIColor.themePrimary)
+        txtSearchBar.textColor = UIColor.themeDarkText
+        txtSearchBar.changePlaceHolder(color: UIColor.themeDarkText)
         txtSearchBar.placeholder = "PROFILE_TXT_SEARCH_CITY".localized()
         
     }

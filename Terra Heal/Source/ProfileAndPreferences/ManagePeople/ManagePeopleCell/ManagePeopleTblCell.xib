@@ -54,15 +54,14 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LzM-Rc-egA">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo-people" translatesAutoresizingMaskIntoConstraints="NO" id="LzM-Rc-egA">
                                 <rect key="frame" x="20" y="28.5" width="40" height="40"/>
-                                <color key="backgroundColor" name="theme_primary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="6Va-LV-dZv"/>
                                     <constraint firstAttribute="width" secondItem="LzM-Rc-egA" secondAttribute="height" multiplier="1:1" id="eTE-MF-YRA"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check" translatesAutoresizingMaskIntoConstraints="NO" id="v5s-R8-l0R">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check-secondary" translatesAutoresizingMaskIntoConstraints="NO" id="v5s-R8-l0R">
                                 <rect key="frame" x="296" y="10" width="10" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="10" id="djx-HV-2YK"/>
@@ -70,7 +69,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" name="theme_primary_light_background"/>
+                        <color key="backgroundColor" name="theme_background"/>
                         <constraints>
                             <constraint firstItem="LzM-Rc-egA" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="20" id="1CA-ed-v2W"/>
                             <constraint firstItem="eYl-Y1-zbm" firstAttribute="centerY" secondItem="fTr-D4-KiU" secondAttribute="centerY" id="7ab-2D-r2J"/>
@@ -83,6 +82,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" name="theme_primary_light_background"/>
                 <constraints>
                     <constraint firstItem="fTr-D4-KiU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="2jg-EE-YxG"/>
                     <constraint firstAttribute="trailing" secondItem="fTr-D4-KiU" secondAttribute="trailing" constant="5" id="AWN-UN-JV4"/>
@@ -104,7 +104,11 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="asset-check" width="32" height="32"/>
+        <image name="asset-check-secondary" width="16.5" height="16.5"/>
+        <image name="demo-people" width="32" height="32"/>
+        <namedColor name="theme_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="theme_dark_text">
             <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -115,7 +119,7 @@
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light_background">
-            <color red="0.94509803921568625" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -16,13 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         self.window = UIWindow(frame:UIScreen.main.bounds)
-        self.loadLaunchVC()
+        
         IQKeyboardManager.shared().isEnabled = true
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true
         IQKeyboardManager.shared().isEnableAutoToolbar = true
         
         GMSServices.provideAPIKey("AIzaSyBuupL4pg_TJS76EVkKrrquH3gCgFs--u4")
         GMSPlacesClient.provideAPIKey("AIzaSyBuupL4pg_TJS76EVkKrrquH3gCgFs--u4")
+        self.loadLaunchVC()
         //self.setupFireBaseConfiguration()
         //self.loadWelcomeVC()
         return true

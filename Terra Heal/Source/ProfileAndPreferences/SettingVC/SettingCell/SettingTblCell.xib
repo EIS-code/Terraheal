@@ -21,18 +21,25 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTr-D4-KiU" userLabel="vwForBackground">
                         <rect key="frame" x="5" y="5" width="316" height="97"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OLN-id-FPO" userLabel="vwImgBg">
+                                <rect key="frame" x="20" y="9.5" width="77.5" height="78"/>
+                                <color key="backgroundColor" name="theme_primary"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OLN-id-FPO" secondAttribute="height" multiplier="1:1" id="WIv-1o-kxq"/>
+                                </constraints>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="evN-os-n1y">
-                                <rect key="frame" x="20" y="20" width="57" height="57"/>
+                                <rect key="frame" x="39.5" y="29" width="38.5" height="39"/>
                                 <color key="backgroundColor" name="theme_primary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="999" constant="40" id="8m8-2X-43B"/>
                                     <constraint firstAttribute="width" secondItem="evN-os-n1y" secondAttribute="height" multiplier="1:1" id="xED-4H-sBI"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-J2-KSJ" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="97" y="10" width="149" height="77"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-J2-KSJ" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <rect key="frame" x="98" y="10" width="148" height="77"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="theme_primary"/>
+                                <color key="textColor" name="theme_dark_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YiN-jg-Jzo" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
@@ -54,23 +61,26 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" name="theme_primary_light_background"/>
+                        <color key="backgroundColor" name="theme_background"/>
                         <constraints>
+                            <constraint firstItem="OLN-id-FPO" firstAttribute="height" secondItem="fTr-D4-KiU" secondAttribute="height" multiplier="0.8" id="9a1-3S-zwi"/>
+                            <constraint firstItem="evN-os-n1y" firstAttribute="centerX" secondItem="OLN-id-FPO" secondAttribute="centerX" id="I4K-Aj-rIZ"/>
                             <constraint firstItem="zbl-J2-KSJ" firstAttribute="leading" secondItem="evN-os-n1y" secondAttribute="trailing" constant="20" id="O5Y-tD-qIO"/>
                             <constraint firstAttribute="trailing" secondItem="LzM-Rc-egA" secondAttribute="trailing" constant="10" id="OQX-HH-mgv"/>
+                            <constraint firstItem="OLN-id-FPO" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="20" id="Pgv-r8-2P6"/>
                             <constraint firstAttribute="trailing" secondItem="YiN-jg-Jzo" secondAttribute="trailing" constant="20" id="QJK-Xf-Rdl"/>
-                            <constraint firstItem="evN-os-n1y" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" constant="20" id="XXB-SD-RdP"/>
-                            <constraint firstItem="evN-os-n1y" firstAttribute="centerY" secondItem="fTr-D4-KiU" secondAttribute="centerY" id="bck-H7-M2i"/>
+                            <constraint firstItem="OLN-id-FPO" firstAttribute="centerY" secondItem="fTr-D4-KiU" secondAttribute="centerY" id="Tb7-fR-k7a"/>
+                            <constraint firstItem="evN-os-n1y" firstAttribute="centerY" secondItem="OLN-id-FPO" secondAttribute="centerY" id="Zue-kN-yoU"/>
+                            <constraint firstItem="evN-os-n1y" firstAttribute="height" secondItem="OLN-id-FPO" secondAttribute="height" multiplier="0.5" id="fZi-FV-FGq"/>
                             <constraint firstItem="YiN-jg-Jzo" firstAttribute="leading" secondItem="zbl-J2-KSJ" secondAttribute="trailing" constant="20" id="kkG-JB-wRa"/>
-                            <constraint firstItem="evN-os-n1y" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="20" id="rxs-pa-aby"/>
                             <constraint firstItem="LzM-Rc-egA" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" constant="10" id="uca-kM-6fX"/>
-                            <constraint firstItem="evN-os-n1y" firstAttribute="width" secondItem="evN-os-n1y" secondAttribute="height" multiplier="1:1" id="wwV-PB-pJO"/>
                             <constraint firstItem="YiN-jg-Jzo" firstAttribute="centerY" secondItem="fTr-D4-KiU" secondAttribute="centerY" id="xEC-Dg-nRu"/>
                             <constraint firstItem="zbl-J2-KSJ" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" constant="10" id="zaC-hb-cUq"/>
                             <constraint firstItem="zbl-J2-KSJ" firstAttribute="centerY" secondItem="fTr-D4-KiU" secondAttribute="centerY" id="zvc-6d-X95"/>
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" name="theme_primary_light_background"/>
                 <constraints>
                     <constraint firstItem="fTr-D4-KiU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="2jg-EE-YxG"/>
                     <constraint firstAttribute="trailing" secondItem="fTr-D4-KiU" secondAttribute="trailing" constant="5" id="AWN-UN-JV4"/>
@@ -85,11 +95,18 @@
                 <outlet property="ivIcon" destination="evN-os-n1y" id="jPb-MN-uw7"/>
                 <outlet property="lblName" destination="zbl-J2-KSJ" id="uPE-In-SOw"/>
                 <outlet property="vwBg" destination="fTr-D4-KiU" id="gMF-14-1KR"/>
+                <outlet property="vwImgBg" destination="OLN-id-FPO" id="0PO-UA-mHY"/>
             </connections>
             <point key="canvasLocation" x="136.23188405797103" y="151.67410714285714"/>
         </tableViewCell>
     </objects>
     <resources>
+        <namedColor name="theme_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_dark_text">
+            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

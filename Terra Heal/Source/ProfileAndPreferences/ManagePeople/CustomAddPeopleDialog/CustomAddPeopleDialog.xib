@@ -62,7 +62,7 @@
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FaB-xJ-eDC">
                                                             <rect key="frame" x="179.5" y="54" width="30" height="30"/>
-                                                            <color key="backgroundColor" name="theme_primary_border"/>
+                                                            <color key="backgroundColor" name="theme_background"/>
                                                             <state key="normal" title="+"/>
                                                             <connections>
                                                                 <action selector="btnAddPictureTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="MbM-Vu-8I2"/>
@@ -126,9 +126,8 @@
                                                                                 </label>
                                                                             </subviews>
                                                                         </stackView>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check" translatesAutoresizingMaskIntoConstraints="NO" id="0Gj-VT-xex">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check-secondary" translatesAutoresizingMaskIntoConstraints="NO" id="0Gj-VT-xex">
                                                                             <rect key="frame" x="58.5" y="10" width="12" height="12.5"/>
-                                                                            <color key="backgroundColor" name="theme_primary"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" secondItem="0Gj-VT-xex" secondAttribute="height" multiplier="1:1" id="Mo9-WX-Cbi"/>
                                                                             </constraints>
@@ -169,9 +168,8 @@
                                                                                 </label>
                                                                             </subviews>
                                                                         </stackView>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check" translatesAutoresizingMaskIntoConstraints="NO" id="KDS-9J-oFM">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check-secondary" translatesAutoresizingMaskIntoConstraints="NO" id="KDS-9J-oFM">
                                                                             <rect key="frame" x="58.5" y="10" width="12" height="12.5"/>
-                                                                            <color key="backgroundColor" name="theme_primary"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" secondItem="KDS-9J-oFM" secondAttribute="height" multiplier="1:1" id="ACv-eC-1t6"/>
                                                                             </constraints>
@@ -320,7 +318,7 @@
     </objects>
     <resources>
         <image name="asset-arrow-down" width="10.5" height="6"/>
-        <image name="asset-check" width="32" height="32"/>
+        <image name="asset-check-secondary" width="16.5" height="16.5"/>
         <image name="asset-delete" width="18" height="18"/>
         <image name="asset-female" width="40" height="40"/>
         <image name="asset-male" width="40" height="40"/>
@@ -332,9 +330,6 @@
         </namedColor>
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="theme_primary_border">
-            <color red="0.73725490196078436" green="0.8784313725490196" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light_background">
             <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

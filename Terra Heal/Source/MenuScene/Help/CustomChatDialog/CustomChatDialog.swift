@@ -41,7 +41,7 @@ class CustomChatDialog: ThemeBottomDialogView {
             self.btnDone.setTitle(buttonTitle, for: .normal)
             self.btnDone.isHidden = false
         }
-        
+         self.setDataForStepUpAnimation()
     }
     
     override func initialSetup() {

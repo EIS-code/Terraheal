@@ -140,6 +140,7 @@ extension ManagePeopleVC: UITableViewDelegate,UITableViewDataSource, UIScrollVie
         tableView.backgroundColor = UIColor.themePrimaryLightBackground
         tableView.delegate = self
         tableView.dataSource = self
+tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension

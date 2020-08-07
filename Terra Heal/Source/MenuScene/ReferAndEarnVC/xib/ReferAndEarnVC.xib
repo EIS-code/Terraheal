@@ -36,6 +36,7 @@
                 <outlet property="vwEarningPoints" destination="U6w-Xw-zbe" id="Oa1-Ng-CWS"/>
                 <outlet property="vwEmptyHistoryView" destination="6kH-4g-V0g" id="IJz-GG-s6o"/>
                 <outlet property="vwInviteFriend" destination="ric-AS-nmi" id="6ne-ae-tj4"/>
+                <outlet property="vwNavigationBar" destination="61W-uk-1J7" id="Mk0-zW-cy1"/>
                 <outlet property="vwReferredFrinds" destination="kzD-YQ-jT4" id="hoP-Aw-OVQ"/>
             </connections>
         </placeholder>
@@ -118,7 +119,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="bCj-dR-0PF" firstAttribute="leading" secondItem="U6w-Xw-zbe" secondAttribute="leading" id="0lu-OR-Yjw"/>
                                         <constraint firstAttribute="bottom" secondItem="HID-JL-FdE" secondAttribute="bottom" constant="20" id="6FE-L9-BKe"/>
@@ -150,7 +151,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="752" text="refer and earn terra points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmu-ck-7EW" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="20" y="9.9999999999999982" width="260" height="20.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" name="theme_primary"/>
+                                            <color key="textColor" name="theme_dark_text"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hLJ-8P-KjM">
@@ -163,7 +164,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFj-Wo-meN" userLabel="lblInviteFriendMsg" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="20" y="44.666666666666686" width="150" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" name="theme_primary"/>
+                                            <color key="textColor" name="theme_dark_text"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UE9-aD-Vxk" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
@@ -178,7 +179,7 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" name="theme_primary_light_background"/>
+                                    <color key="backgroundColor" name="theme_background"/>
                                     <constraints>
                                         <constraint firstItem="pFj-Wo-meN" firstAttribute="leading" secondItem="rmu-ck-7EW" secondAttribute="leading" id="2i4-b0-FPK"/>
                                         <constraint firstItem="hLJ-8P-KjM" firstAttribute="centerY" secondItem="ric-AS-nmi" secondAttribute="centerY" id="4rk-lL-8hM"/>
@@ -201,7 +202,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="refer and earn terra points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ak-JV-xGQ" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="9.9999999999999982" width="300" height="20.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" name="theme_primary"/>
+                                            <color key="textColor" name="theme_dark_text"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0LX-jI-WKt">
@@ -218,7 +219,7 @@
                                             </collectionViewFlowLayout>
                                         </collectionView>
                                     </subviews>
-                                    <color key="backgroundColor" name="theme_background"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="0LX-jI-WKt" firstAttribute="width" secondItem="kzD-YQ-jT4" secondAttribute="width" id="56N-9d-xTB"/>
                                         <constraint firstAttribute="trailing" secondItem="9ak-JV-xGQ" secondAttribute="trailing" id="6kL-nJ-sWK"/>
@@ -235,7 +236,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="history" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKl-0s-VWs" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="10" width="52.333333333333336" height="38"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" name="theme_primary"/>
+                                            <color key="textColor" name="theme_dark_text"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27Z-Kz-VlO" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
@@ -271,7 +272,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="INR-7Z-hy0" secondAttribute="bottom" constant="20" id="AlZ-6C-FvD"/>
                                                 <constraint firstItem="INR-7Z-hy0" firstAttribute="centerX" secondItem="6kH-4g-V0g" secondAttribute="centerX" id="UnQ-3B-3sG"/>
@@ -282,7 +283,7 @@
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="aVT-f3-Mwd" firstAttribute="width" secondItem="6QA-3N-Vjp" secondAttribute="width" id="9xA-uY-4bh"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6kH-4g-V0g" secondAttribute="bottom" constant="20" id="EEM-CB-FZa"/>
@@ -330,6 +331,10 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="d4a-C9-GI4"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="YtE-P3-Xvk"/>
                 </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61W-uk-1J7" userLabel="vwNavigationBar" customClass="ThemeView" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="144"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uad-Jv-517" userLabel="btnLeft" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="20" y="64" width="60" height="60"/>
                     <color key="backgroundColor" name="theme_primary_light"/>
@@ -351,16 +356,19 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="61W-uk-1J7" firstAttribute="bottom" secondItem="Uad-Jv-517" secondAttribute="bottom" constant="20" id="7VE-cb-zdA"/>
                 <constraint firstItem="Msw-Lg-la4" firstAttribute="top" secondItem="Uad-Jv-517" secondAttribute="bottom" constant="20" id="BT1-pC-EsX"/>
+                <constraint firstItem="61W-uk-1J7" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="Iuo-2t-iKM"/>
                 <constraint firstItem="Uad-Jv-517" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="JHQ-zD-buw"/>
                 <constraint firstItem="Msw-Lg-la4" firstAttribute="bottom" secondItem="VLJ-uh-dxO" secondAttribute="bottom" id="SYC-Bw-jXs"/>
+                <constraint firstItem="61W-uk-1J7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UqH-8X-EVQ"/>
                 <constraint firstItem="GqG-Ga-6Yt" firstAttribute="centerY" secondItem="Uad-Jv-517" secondAttribute="centerY" id="WYJ-vP-Qxo"/>
                 <constraint firstItem="Msw-Lg-la4" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" multiplier="0.8" id="cx4-tP-rTI"/>
                 <constraint firstItem="GqG-Ga-6Yt" firstAttribute="leading" secondItem="Uad-Jv-517" secondAttribute="trailing" constant="20" id="iNW-Lm-WKv"/>
-                <constraint firstItem="Uad-Jv-517" firstAttribute="width" secondItem="Uad-Jv-517" secondAttribute="height" multiplier="1:1" id="oqg-Sg-NQI"/>
                 <constraint firstItem="GqG-Ga-6Yt" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="s0Y-tp-G4y"/>
                 <constraint firstItem="Msw-Lg-la4" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="tIO-G9-3Wh"/>
                 <constraint firstItem="Uad-Jv-517" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="20" id="xLJ-i6-C7z"/>
+                <constraint firstItem="61W-uk-1J7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xpc-Yl-OBN"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
             <point key="canvasLocation" x="131" y="154"/>
@@ -371,14 +379,17 @@
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="theme_dark_text">
+            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="theme_primary">
-            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light">
             <color red="0.49803921568627452" green="0.7686274509803922" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light_background">
-            <color red="0.94509803921568625" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

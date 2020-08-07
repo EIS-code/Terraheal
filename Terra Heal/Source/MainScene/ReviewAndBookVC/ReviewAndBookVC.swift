@@ -266,6 +266,7 @@ extension ReviewAndBookVC: UITableViewDelegate, UITableViewDataSource {
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         
         tableView.backgroundColor = .themeBackground
@@ -334,7 +335,7 @@ extension ReviewAndBookVC: UITableViewDelegate, UITableViewDataSource {
             cell?.layoutIfNeeded()
             cell?.setData(data: arrForData[indexPath.section].services[indexPath.row])
             cell?.btnDelete.addTarget(self
-                    , action: #selector(removeService(sender:)), for: .touchUpInside)
+                , action: #selector(removeService(sender:)), for: .touchUpInside)
             cell?.btnEdit.addTarget(self, action: #selector(editService(sender:)), for: .touchUpInside)
             cell?.layoutIfNeeded()
             return cell!

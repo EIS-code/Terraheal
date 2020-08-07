@@ -149,7 +149,7 @@ class ProfileVC: MainVC {
     }
 
     private func initialViewSetup() {
-        
+        self.view.backgroundColor = UIColor.themeBackground
         self.lblEmail?.text = appSingleton.user.email
         self.lblEmail?.setFont(name: FontName.Regular, size: FontSize.label_14)
         self.lblMobile?.text = appSingleton.user.telNumber
@@ -177,6 +177,7 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
+tableView.backgroundColor = .clear
         self.scrVw.delegate = self
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = 60

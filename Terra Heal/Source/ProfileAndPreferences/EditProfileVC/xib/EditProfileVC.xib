@@ -67,7 +67,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" name="theme_background"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="1vj-Dw-czR" secondAttribute="height" multiplier="5:2" id="UVc-9U-UhN"/>
                         <constraint firstItem="XqS-Co-4qV" firstAttribute="trailing" secondItem="ioG-BP-L40" secondAttribute="trailing" id="bOW-4L-OZJ"/>
@@ -121,7 +121,7 @@
                     <viewLayoutGuide key="frameLayoutGuide" id="YtE-P3-Xvk"/>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="theme_background"/>
             <constraints>
                 <constraint firstItem="Msw-Lg-la4" firstAttribute="top" secondItem="1vj-Dw-czR" secondAttribute="top" constant="20" id="61r-8k-P5V"/>
                 <constraint firstItem="Gr9-kt-5QC" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" constant="44" id="68p-Iu-wDx"/>

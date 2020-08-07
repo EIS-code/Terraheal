@@ -57,4 +57,27 @@ struct ImageAsset {
         static let bookingCompletion  =  "asset-booking-completion"
         static let requestBookingCompletion = "asset-request-booking-completion"
     }
+    struct Setting {
+        static let language = "asset-menu-setting-language"
+        static let changePassword = "asset-menu-setting-change-password"
+        static let currency = "asset-menu-setting-currency"
+        static let distanceUnit = "asset-menu-setting-distance-unit"
+        static let notification = "asset-menu-setting-notification"
+        static let termsAndCondition = "asset-menu-setting-termsAndCondition"
+        static let managePrivacy = "asset-menu-setting-manage-privacy"
+        static let logout = "asset-menu-setting-logout"
+    }
+    struct SideMenu {
+        
+        static let howItWork = "asset-side-menu-how-it-work.imageset"
+        static let referAndEarn = "asset-side-menu-refer-and-earn.imageset"
+        static let pricingAndLocation = "asset-side-menu-pricing-and-location.imageset"
+        static let promocode = "asset-side-menu-promo-code.imageset"
+        static let notifications = "asset-side-menu-notifications.imageset"
+        static let packs = "asset-side-menu-packs.imageset"
+        static let help = "asset-side-menu-help.imageset"
+        static let campaigns = "asset-side-menu-campaigns.imageset"
+        static let giftvoucher = "asset-side-menu-giftvoucher.imageset"
+        
+    }
 }

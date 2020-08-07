@@ -15,6 +15,7 @@ class SettingSwitchTblCell: TableCell {
     @IBOutlet weak var imgSelected: UIImageView!
     @IBOutlet weak var ivIcon: UIImageView!
     @IBOutlet weak var vwSwitch: JDSegmentedControl!
+    @IBOutlet weak var vwImgBg: UIView!
     
     
     override func awakeFromNib() {
@@ -36,7 +37,7 @@ class SettingSwitchTblCell: TableCell {
             (self.parentVC as? SettingVC)?.wsUpdateSettingDetail(request: request)
         }
         self.imgSelected?.setRound()
-        self.ivIcon?.setRound()
+        self.vwImgBg?.setRound()
         
         
     }
@@ -44,6 +45,7 @@ class SettingSwitchTblCell: TableCell {
     func setData(data: SettingPreferenceDetail ) {
         self.lblName.text = data.type.name()
         self.imgSelected.isHidden = !data.isSelected
+        self.ivIcon.image = UIImage.init(named: data.image)
         if data.strDetail.toBool {
             vwSwitch.selectItemAt(index: 0)
             self.vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)
@@ -58,7 +60,7 @@ class SettingSwitchTblCell: TableCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.ivIcon?.setRound()
+        self.vwImgBg?.setRound()
         self.imgSelected?.setRound()
         vwSwitch.setRound(withBorderColor: .themePrimary, andCornerRadious: self.vwSwitch.bounds.height/2.0, borderWidth: 0.1)
     }

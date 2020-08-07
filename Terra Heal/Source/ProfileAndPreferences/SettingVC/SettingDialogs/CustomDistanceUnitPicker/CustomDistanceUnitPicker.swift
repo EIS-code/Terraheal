@@ -31,22 +31,18 @@ enum DistanceUnit: String {
         }
     }
 }
+
+struct DistanceDetail {
+    var type: DistanceUnit = DistanceUnit.Kilometre
+    var isSelected: Bool = false
+}
 class CustomDistanceUnitPicker: ThemeBottomDialogView {
 
-    @IBOutlet weak var vwMainSelection: UIView!
-    @IBOutlet weak var vwOption1: UIView!
-    @IBOutlet weak var btnOption1: UIButton!
-    @IBOutlet weak var lblOption1: ThemeLabel!
-    @IBOutlet weak var ivOption1Selected: PaddedImageView!
-    @IBOutlet weak var vwOption2: UIView!
-    @IBOutlet weak var btnOption2: UIButton!
-    @IBOutlet weak var lblOption2: ThemeLabel!
-    @IBOutlet weak var ivOption2Selected: PaddedImageView!
-
-
+    @IBOutlet weak var hTblVw: NSLayoutConstraint!
+    @IBOutlet weak var tableView: UITableView!
     var onBtnDoneTapped: ((_ data:DistanceUnit) -> Void)? = nil
     var selectedData:DistanceUnit = DistanceUnit.Kilometre
-
+    var arrForData: [DistanceDetail] = [DistanceDetail.init(type: DistanceUnit.Kilometre, isSelected: false),DistanceDetail.init(type: DistanceUnit.Mile, isSelected: false)]
 
 
     //Animation Properties
@@ -68,43 +64,32 @@ class CustomDistanceUnitPicker: ThemeBottomDialogView {
             self.btnDone.isHidden = false
         }
 
+        self.setupTableView(tableView: self.tableView)
         self.select(data: self.selectedData)
     }
 
-    func select(data:DistanceUnit) {
-        self.selectedData = data
-
-        btnOption1.setRound(withBorderColor: (data == DistanceUnit.Kilometre) ? UIColor.themePrimary : UIColor.clear, andCornerRadious: 10.0, borderWidth: 1.5)
-        ivOption1Selected.isHidden = (data == DistanceUnit.Kilometre) ? false : true
-        ivOption2Selected.isHidden = (data == DistanceUnit.Kilometre) ? true : false
-        btnOption2.setRound(withBorderColor: (data == DistanceUnit.Kilometre) ? UIColor.clear : UIColor.themePrimary, andCornerRadious: 10.0, borderWidth: 1.5)
-        btnOption2?.setShadow()
-        btnOption1?.setShadow()
-        ivOption1Selected?.setRound()
-        ivOption2Selected?.setRound()
-    }
+    
 
     override func initialSetup() {
         super.initialSetup()
-        self.lblOption1.text = Currency.Dollar.name()
-        self.lblOption1.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblOption2.text = Currency.Euro.name()
-        self.lblOption2.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
     }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-        btnOption2?.setShadow()
-        btnOption1?.setShadow()
-        ivOption1Selected?.setRound()
-        ivOption2Selected?.setRound()
+        self.reloadTableDateToFitHeight(tableView: self.tableView)
     }
 
-    @IBAction func btnOption1Tapped(_ sender: Any) {
-        self.select(data: DistanceUnit.Kilometre)
-    }
-    @IBAction func btnOption2Tapped(_ sender: Any) {
-        self.select(data: DistanceUnit.Mile)
+    
+    func select(data:DistanceUnit) {
+        self.selectedData = data
+        for i in 0..<arrForData.count {
+            arrForData[i].isSelected = false
+            if arrForData[i].type == data {
+              arrForData[i].isSelected = true
+            }
+        }
+        self.tableView.reloadData()
     }
 
     @IBAction func btnDoneTapped(_ sender: Any) {
@@ -115,4 +100,54 @@ class CustomDistanceUnitPicker: ThemeBottomDialogView {
 
 
 }
+
+
+extension CustomDistanceUnitPicker : UITableViewDelegate,UITableViewDataSource {
+
+    private func reloadTableDateToFitHeight(tableView: UITableView) {
+        tableView.reloadData(heightToFit: self.hTblVw) {
+
+        }
+    }
+    private func setupTableView(tableView: UITableView) {
+        tableView.delegate = self
+        tableView.dataSource = self
+tableView.backgroundColor = .clear
+        tableView.showsVerticalScrollIndicator = false
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 60
+        tableView.register(CustomDistancePickerCell.nib()
+            , forCellReuseIdentifier: CustomDistancePickerCell.name)
+        tableView.tableFooterView = UIView()
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrForData.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: CustomDistancePickerCell.name, for: indexPath) as?  CustomDistancePickerCell
+        cell?.layoutIfNeeded()
+        cell?.setData(data: arrForData[indexPath.row])
+        cell?.layoutIfNeeded()
+        return cell!
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        for i in 0..<arrForData.count {
+            arrForData[i].isSelected = false
+        }
+        self.arrForData[indexPath.row].isSelected = true
+        self.selectedData = self.arrForData[indexPath.row].type
+        tableView.reloadData()
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+}
+
+
 

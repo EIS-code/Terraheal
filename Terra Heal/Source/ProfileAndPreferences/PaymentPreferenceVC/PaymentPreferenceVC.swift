@@ -73,7 +73,7 @@ class PaymentPreferenceVC: MainVC {
             self.ivCreditCard?.setRound()
             self.vwPaypalDetail?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
             self.vwCreditCardDetail?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-            self.btnDefault.setRound(withBorderColor: .themePrimary, andCornerRadious: 5.0, borderWidth: 1.0)
+            self.btnDefault.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
             self.reloadTableDataToFitHeight(tableView: self.tableView, height: self.hTblVw)
             self.btnSubmit?.setHighlighted(isHighlighted: true)
             self.btnAddPayment?.setHighlighted(isHighlighted: false)
@@ -194,6 +194,7 @@ extension PaymentPreferenceVC: UITableViewDelegate,UITableViewDataSource, UIScro
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
+tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 200

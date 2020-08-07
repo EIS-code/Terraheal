@@ -74,6 +74,7 @@ class EditProfileVC: MainVC {
     }
     
     private func initialViewSetup() {
+        self.view.backgroundColor = UIColor.themeBackground
         self.lblTitle?.text = "edit profile"//appSingleton.user.name
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.btnBack.setBackButton()

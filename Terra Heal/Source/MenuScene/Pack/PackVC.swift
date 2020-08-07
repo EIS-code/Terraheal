@@ -44,8 +44,7 @@ class PackVC: MainVC {
         super.viewDidLoad()
         self.initialViewSetup()
         self.addBottomFade()
-        self.addTopFade()
-
+      
 
     }
 
@@ -64,7 +63,7 @@ class PackVC: MainVC {
             self.tableView?.reloadData({
 
             })
-            self.tableView?.contentInset = UIEdgeInsets(top: headerGradient.frame.height, left: 0, bottom: footerGradient.frame.height, right: 0)
+            self.tableView?.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: footerGradient.frame.height, right: 0)
 
         }
 
@@ -103,6 +102,7 @@ extension PackVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
+tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 250

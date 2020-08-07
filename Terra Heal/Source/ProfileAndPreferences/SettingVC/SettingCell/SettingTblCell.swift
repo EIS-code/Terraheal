@@ -15,6 +15,7 @@ class SettingTblCell: TableCell {
     @IBOutlet weak var vwBg: UIView!
     @IBOutlet weak var btnAction: ThemeButton!
     @IBOutlet weak var imgSelected: UIImageView!
+    @IBOutlet weak var vwImgBg: UIView!
     @IBOutlet weak var ivIcon: UIImageView!
 
     override func awakeFromNib() {
@@ -25,12 +26,13 @@ class SettingTblCell: TableCell {
         self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
         self.btnAction?.setTitle(FontSymbol.next_arrow, for: .normal)
         self.imgSelected?.setRound()
-        self.ivIcon?.setRound()
+        self.vwImgBg?.setRound()
     }
 
     func setData(data: SettingPreferenceDetail ) {
         self.lblName.text = data.type.name()
         self.imgSelected.isHidden = !data.isSelected
+        self.ivIcon.image = UIImage.init(named: data.image)
         if data.isSelected {
             self.vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)
         } else {
@@ -42,7 +44,7 @@ class SettingTblCell: TableCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.vwBg.layoutIfNeeded()
-        self.ivIcon?.setRound()
+        self.vwImgBg?.setRound()
         self.imgSelected?.setRound()
     }
     override func setSelected(_ selected: Bool, animated: Bool) {

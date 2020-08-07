@@ -118,7 +118,7 @@ class HomeVC: MainVC {
     
     @IBAction func btnMenuTapped(_ sender: Any) {
         SideVC.shared.show()
-        
+        //self.openAccessoryDialog()
     }
     
     @IBAction func btnProfileTapped(_ sender: Any) {
@@ -149,7 +149,7 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource {
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-        
+tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 160

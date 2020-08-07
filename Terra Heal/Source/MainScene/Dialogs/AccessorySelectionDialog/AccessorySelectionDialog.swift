@@ -13,17 +13,21 @@ class AccessorySelectionDialog: ThemeBottomDialogView {
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     var onBtnDoneTapped: ((_ data:Int) -> Void)? = nil
-    var arrForData: [CustomButtonDetail] = [CustomButtonDetail(isSelected: false, id: 0, title: "ACCESSORY_BTN_YES".localized(), type: 0),CustomButtonDetail(isSelected: false, id: 1, title: "ACCESSORY_BTN_NO".localized(), type: 1)]
+    var arrForData: [AccessoryDetail] = [AccessoryDetail(isSelected: false, id: 0, title: "table".localized()),AccessoryDetail(isSelected: false, id: 1, title: "tatami/futon".localized())]
     
     @IBOutlet weak var vwProceed: UIView!
-    @IBOutlet weak var txtData: ACFloatingTextfield!
-    
+    @IBOutlet weak var btnDecrement: ThemeButton!
+    @IBOutlet weak var lblQuatity: ThemeLabel!
+    @IBOutlet weak var btnIncrement: ThemeButton!
+    @IBOutlet weak var lblHowMany: ThemeLabel!
+    var quatity:Int = 0
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.lblQuatity?.setRound(withBorderColor: .clear, andCornerRadious: 3.0, borderWidth: 1.0)
         self.reloadTableDateToFitHeight(tableView: self.tableView)
     }
     
@@ -42,8 +46,8 @@ class AccessorySelectionDialog: ThemeBottomDialogView {
             self.btnNext.setTitle(buttonTitle, for: .normal)
             self.btnNext.isHidden = false
         }
+        self.lblQuatity.text =  quatity.toString()
         self.setupTableView(tableView: self.tableView)
-        self.updateAccessory(isYesSelected: false)
     }
     
     func select(data:CustomButtonDetail) {
@@ -56,7 +60,7 @@ class AccessorySelectionDialog: ThemeBottomDialogView {
         self.tableView.reloadData()
     }
     
-    func setDataSource(data: [CustomButtonDetail]) {
+    func setDataSource(data: [AccessoryDetail]) {
         self.arrForData.removeAll()
         for value in data {
             self.arrForData.append(value)
@@ -66,28 +70,31 @@ class AccessorySelectionDialog: ThemeBottomDialogView {
     }
     override func initialSetup() {
         super.initialSetup()
+        self.lblHowMany.setFont(name: FontName.Bold, size: FontSize.label_18)
+        self.lblQuatity.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
-        self.txtData.placeholder = "ACCESSORY_TXT_NUMBER_OF_TABLES".localized()
-        self.txtData?.delegate = self
-        self.txtData.configureTextField(InputTextFieldDetail.getNumberConfiguration())
+        self.btnDecrement.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.btnIncrement.setFont(name: FontName.Bold, size: FontSize.label_22)
     }
     
     @IBAction func btnDoneTapped(_ sender: Any) {
-        if txtData.validate().isValid {
+        if quatity != 0 {
                 if self.onBtnDoneTapped != nil {
-                    self.onBtnDoneTapped!(txtData.text!.toInt);
+                    self.onBtnDoneTapped!(quatity);
                 }
         }
     }
-    
-    func updateAccessory(isYesSelected:Bool) {
-        if isYesSelected {
-            txtData.isHidden = false
-            vwProceed.isHidden = false
-        } else  {
-            txtData.isHidden = true
-            vwProceed.isHidden = true
+    @IBAction func btnDecrementTapped(_ sender: Any) {
+        if quatity != 0 {
+            quatity = quatity - 1
+            lblQuatity.setTextWithAnimation(text: quatity.toString())
         }
+        
+    }
+    
+    @IBAction func btnIncrementTapped(_ sender: Any) {
+        quatity = quatity + 1
+        lblQuatity.setTextWithAnimation(text: quatity.toString())
     }
     
 }
@@ -102,11 +109,12 @@ extension AccessorySelectionDialog : UITableViewDelegate,UITableViewDataSource {
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
+tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 60
-        tableView.register(CustomButtonTblCell.nib()
-            , forCellReuseIdentifier: CustomButtonTblCell.name)
+        tableView.register(AccessoryTblCell.nib()
+            , forCellReuseIdentifier: AccessoryTblCell.name)
         tableView.tableFooterView = UIView()
     }
     
@@ -115,7 +123,7 @@ extension AccessorySelectionDialog : UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CustomButtonTblCell.name, for: indexPath) as?  CustomButtonTblCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: AccessoryTblCell.name, for: indexPath) as?  AccessoryTblCell
         cell?.layoutIfNeeded()
         cell?.setData(data: arrForData[indexPath.row])
         cell?.layoutIfNeeded()
@@ -128,11 +136,6 @@ extension AccessorySelectionDialog : UITableViewDelegate,UITableViewDataSource {
             arrForData[i].isSelected = false
         }
         self.arrForData[indexPath.row].isSelected = true
-        if indexPath.row == 0 {
-            self.updateAccessory(isYesSelected: true)
-        } else {
-            self.updateAccessory(isYesSelected: false)
-        }
         tableView.reloadData()
     }
     

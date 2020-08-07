@@ -89,6 +89,7 @@ class ServiceMapVC: MainVC {
     }
     
     private func initialViewSetup() {
+        self.view.backgroundColor = .themeBackground
         self.lblAddressTitle?.text = "Home".localized()
         self.lblAddressTitle?.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.lblAddress?.text = "Lorem Ipsum, Lisbon, portugal 12451.".localized()

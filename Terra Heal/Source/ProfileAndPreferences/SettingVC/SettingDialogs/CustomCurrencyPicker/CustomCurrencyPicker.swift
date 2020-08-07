@@ -9,25 +9,25 @@
 import UIKit
 
 enum Currency: String {
-    case Euro = "Euro"
-    case Dollar = "Dollar"
+    case Euro = "euro"
+    case Dollar = "dollar"
     
     func name() -> String {
         switch self
         {
         case .Euro:
-            return "Euro"
+            return "euro"
         case .Dollar:
-            return "Dollar"
+            return "dollar"
         }
     }
     func symbol() -> String {
         switch self
         {
         case .Euro:
-            return "Euro"
+            return "euro"
         case .Dollar:
-            return "Dollar"
+            return "dollar"
         }
     }
 }

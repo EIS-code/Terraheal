@@ -28,6 +28,7 @@
                 <outlet property="tableView" destination="wLl-A4-C91" id="rD7-7W-yly"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="vwCreditCardDetail" destination="wuh-ix-EPd" id="ElI-tu-pSr"/>
+                <outlet property="vwNavigationBar" destination="Tfo-nB-kcI" id="cJd-y9-29g"/>
                 <outlet property="vwPaypalDetail" destination="Fu0-FU-QJw" id="Ht1-3S-yMv"/>
             </connections>
         </placeholder>
@@ -36,23 +37,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="20" y="64" width="42" height="42"/>
-                    <color key="backgroundColor" name="theme_primary_light"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="dk0-AN-Hja" secondAttribute="height" multiplier="1:1" id="UQN-iw-RUR"/>
-                    </constraints>
-                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                    <connections>
-                        <action selector="btnBackTapped:" destination="-1" eventType="touchUpInside" id="Paq-Ih-WlD"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXO-ds-8JK" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="82" y="75" width="211" height="20.333333333333329"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" name="theme_primary"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQ8-uj-MSo">
                     <rect key="frame" x="0.0" y="126" width="375" height="652"/>
                     <subviews>
@@ -110,7 +94,7 @@
                                             <state key="selected" image="asset-arrow-up"/>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" name="theme_primary_light_background"/>
+                                    <color key="backgroundColor" name="theme_background"/>
                                     <constraints>
                                         <constraint firstItem="uB7-gC-yKh" firstAttribute="centerY" secondItem="Fu0-FU-QJw" secondAttribute="centerY" id="DXO-U9-Wbf"/>
                                         <constraint firstItem="QTR-97-DKF" firstAttribute="centerY" secondItem="Fu0-FU-QJw" secondAttribute="centerY" id="Hmc-Zx-oC2"/>
@@ -169,7 +153,6 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" name="theme_primary_light_background"/>
                                             <constraints>
                                                 <constraint firstItem="7dv-59-V3e" firstAttribute="leading" secondItem="h0i-lW-HeC" secondAttribute="leading" constant="20" id="FgA-qe-rwh"/>
                                                 <constraint firstItem="8kN-hy-Ipd" firstAttribute="leading" secondItem="7dv-59-V3e" secondAttribute="trailing" constant="20" id="IyO-yq-dpT"/>
@@ -189,7 +172,7 @@
                                             </constraints>
                                         </tableView>
                                     </subviews>
-                                    <color key="backgroundColor" name="theme_primary_light_background"/>
+                                    <color key="backgroundColor" name="theme_background"/>
                                     <constraints>
                                         <constraint firstItem="h0i-lW-HeC" firstAttribute="leading" secondItem="wuh-ix-EPd" secondAttribute="leading" id="0k2-3C-iet"/>
                                         <constraint firstItem="h0i-lW-HeC" firstAttribute="top" secondItem="wuh-ix-EPd" secondAttribute="top" id="0kf-vh-gB1"/>
@@ -201,7 +184,6 @@
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" name="theme_background"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="Fu0-FU-QJw" secondAttribute="trailing" constant="20" id="AN3-Hj-sgS"/>
                                 <constraint firstItem="Fu0-FU-QJw" firstAttribute="leading" secondItem="eYk-dg-cbQ" secondAttribute="leading" constant="20" id="IrW-wY-kYq"/>
@@ -235,9 +217,6 @@
                             <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                             <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                             <state key="normal" title="Book Now"/>
-                            <connections>
-                                <action selector="btnSubmitTapped:" destination="-1" eventType="touchUpInside" id="kzi-uR-Z5x"/>
-                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -247,11 +226,33 @@
                         <constraint firstItem="9Fi-Zv-LG2" firstAttribute="centerY" secondItem="sf3-Jo-ZLg" secondAttribute="centerY" id="rUR-RZ-4d9"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tfo-nB-kcI" userLabel="vwNavigationBar" customClass="ThemeView" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="126"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="20" y="64" width="42" height="42"/>
+                    <color key="backgroundColor" name="theme_primary_light"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="dk0-AN-Hja" secondAttribute="height" multiplier="1:1" id="UQN-iw-RUR"/>
+                    </constraints>
+                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                    <connections>
+                        <action selector="btnBackTapped:" destination="-1" eventType="touchUpInside" id="Paq-Ih-WlD"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXO-ds-8JK" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="82" y="75" width="211" height="20.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="theme_dark_text"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="dk0-AN-Hja" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="20" id="1iZ-Cw-RkL"/>
                 <constraint firstItem="MQ8-uj-MSo" firstAttribute="trailing" secondItem="VLJ-uh-dxO" secondAttribute="trailing" id="2Cb-fU-cVg"/>
+                <constraint firstItem="Tfo-nB-kcI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5dJ-EA-iNO"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="sf3-Jo-ZLg" secondAttribute="bottom" id="7nr-oy-KuE"/>
                 <constraint firstItem="qXO-ds-8JK" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="FaD-U6-LRB"/>
                 <constraint firstItem="MQ8-uj-MSo" firstAttribute="top" secondItem="dk0-AN-Hja" secondAttribute="bottom" constant="20" id="HiZ-LZ-7PE"/>
@@ -261,7 +262,10 @@
                 <constraint firstItem="sf3-Jo-ZLg" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" id="dNc-t6-VEc"/>
                 <constraint firstItem="qXO-ds-8JK" firstAttribute="leading" secondItem="dk0-AN-Hja" secondAttribute="trailing" constant="20" id="f8b-Jd-FPJ"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="MQ8-uj-MSo" secondAttribute="bottom" id="lxF-ye-btS"/>
+                <constraint firstItem="Tfo-nB-kcI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vo3-br-SXe"/>
+                <constraint firstItem="Tfo-nB-kcI" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="waA-6y-Rci"/>
                 <constraint firstItem="sf3-Jo-ZLg" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="xic-CQ-FY3"/>
+                <constraint firstItem="Tfo-nB-kcI" firstAttribute="bottom" secondItem="dk0-AN-Hja" secondAttribute="bottom" constant="20" id="xtw-ZR-Q12"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
             <point key="canvasLocation" x="130.40000000000001" y="153.69458128078819"/>

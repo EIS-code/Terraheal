@@ -1,21 +1,23 @@
 {
   "images" : [
     {
+      "filename" : "Icon metro-dollar2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Icon metro-dollar2@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Icon metro-dollar2@3x.png",
       "idiom" : "universal",
-      "filename" : "dollar-sign.png",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

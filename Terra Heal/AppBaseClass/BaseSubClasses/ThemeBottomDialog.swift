@@ -106,8 +106,8 @@ extension ThemeBottomDialogView {
         
         if let topController = Common.appDelegate.getCurrentViewController() {
             topController.view.endEditing(true)
-            Common.appDelegate.window?.addSubview(self)
-            //topController.view.addSubview(self)
+           // Common.appDelegate.window?.addSubview(self)
+            topController.view.addSubview(self)
         }
         
         if animated {

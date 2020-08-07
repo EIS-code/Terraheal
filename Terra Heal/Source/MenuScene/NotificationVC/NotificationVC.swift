@@ -20,11 +20,6 @@ class NotificationVC: MainVC {
     var arrForNotification: [NotificationDetail] = [
         NotificationDetail(),
         NotificationDetail(),
-        NotificationDetail(),
-        NotificationDetail(),
-        NotificationDetail(),
-        NotificationDetail(),
-        NotificationDetail(),
         NotificationDetail()
     ]
     // MARK: Object lifecycle
@@ -74,6 +69,7 @@ class NotificationVC: MainVC {
 
     private func initialViewSetup() {
         
+        self.view.backgroundColor = UIColor.themePrimaryLightBackground
         self.setupTableView(tableView: self.tableView)
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.setTitle(title: "NOTIFICATION_TITLE".localized())
@@ -91,7 +87,7 @@ extension NotificationVC: UITableViewDelegate,UITableViewDataSource, UIScrollVie
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-        
+tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension

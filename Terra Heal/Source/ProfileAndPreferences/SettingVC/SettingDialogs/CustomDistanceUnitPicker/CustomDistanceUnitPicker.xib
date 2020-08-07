@@ -25,10 +25,10 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
-                    <rect key="frame" x="0.0" y="490.5" width="414" height="405.5"/>
+                    <rect key="frame" x="0.0" y="542.5" width="414" height="353.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe" userLabel="Stack View - main">
-                            <rect key="frame" x="20" y="10" width="374" height="375.5"/>
+                            <rect key="frame" x="20" y="10" width="374" height="323.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OsI-uf-Fb8">
                                     <rect key="frame" x="167" y="0.0" width="40" height="5"/>
@@ -44,123 +44,15 @@
                                     <color key="textColor" name="theme_primary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybQ-MH-AIg" userLabel="vwMainSelection">
-                                    <rect key="frame" x="37.5" y="65.5" width="299" height="180"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FH3-4N-FNi">
-                                            <rect key="frame" x="0.0" y="0.0" width="299" height="180"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HPt-2p-CpU" userLabel="vwMale">
-                                                    <rect key="frame" x="0.0" y="0.0" width="149.5" height="180"/>
-                                                    <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pV3-L5-Xfu">
-                                                            <rect key="frame" x="10" y="10" width="129.5" height="160"/>
-                                                            <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdM-hr-aM0">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="129.5" height="129.5"/>
-                                                                    <color key="backgroundColor" name="theme_background"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" secondItem="NdM-hr-aM0" secondAttribute="height" multiplier="1:1" id="KwJ-Is-697"/>
-                                                                    </constraints>
-                                                                    <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
-                                                                    <state key="normal" image="asset-distance-unit-km"/>
-                                                                    <connections>
-                                                                        <action selector="btnOption1Tapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="WKw-HA-jxi"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obW-hg-MDN" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="139.5" width="129.5" height="20.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" name="theme_primary"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check" translatesAutoresizingMaskIntoConstraints="NO" id="KDS-9J-oFM" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
-                                                            <rect key="frame" x="103.5" y="20" width="26" height="26"/>
-                                                            <color key="backgroundColor" name="theme_primary"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="KDS-9J-oFM" secondAttribute="height" multiplier="1:1" id="ACv-eC-1t6"/>
-                                                            </constraints>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="padding">
-                                                                    <real key="value" value="10"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </imageView>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="KDS-9J-oFM" firstAttribute="top" secondItem="pV3-L5-Xfu" secondAttribute="top" constant="10" id="ELZ-3B-Bob"/>
-                                                        <constraint firstItem="pV3-L5-Xfu" firstAttribute="top" secondItem="HPt-2p-CpU" secondAttribute="top" constant="10" id="SUb-zq-sVL"/>
-                                                        <constraint firstAttribute="bottom" secondItem="pV3-L5-Xfu" secondAttribute="bottom" constant="10" id="TwX-gb-8Y3"/>
-                                                        <constraint firstAttribute="trailing" secondItem="pV3-L5-Xfu" secondAttribute="trailing" constant="10" id="fY2-ab-8ze"/>
-                                                        <constraint firstItem="pV3-L5-Xfu" firstAttribute="trailing" secondItem="KDS-9J-oFM" secondAttribute="trailing" constant="10" id="ghj-yg-NKw"/>
-                                                        <constraint firstItem="pV3-L5-Xfu" firstAttribute="leading" secondItem="HPt-2p-CpU" secondAttribute="leading" constant="10" id="hKh-gz-eql"/>
-                                                        <constraint firstItem="KDS-9J-oFM" firstAttribute="width" secondItem="NdM-hr-aM0" secondAttribute="width" multiplier="0.2" id="lV6-BD-Y78"/>
-                                                    </constraints>
-                                                </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WKJ-ju-eCS" userLabel="vwEuro">
-                                                    <rect key="frame" x="149.5" y="0.0" width="149.5" height="180"/>
-                                                    <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3Ns-Ch-5fX">
-                                                            <rect key="frame" x="10" y="10" width="129.5" height="160"/>
-                                                            <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVs-rC-Mje">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="129.5" height="129.5"/>
-                                                                    <color key="backgroundColor" name="theme_background"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" secondItem="NVs-rC-Mje" secondAttribute="height" multiplier="1:1" id="ksk-Sq-FrQ"/>
-                                                                    </constraints>
-                                                                    <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
-                                                                    <state key="normal" image="asset-distance-unit-mile"/>
-                                                                    <connections>
-                                                                        <action selector="btnOption2Tapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="NNJ-6H-8vm"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvB-L7-sgV" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="139.5" width="129.5" height="20.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" name="theme_primary"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check" translatesAutoresizingMaskIntoConstraints="NO" id="0Gj-VT-xex" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
-                                                            <rect key="frame" x="103.5" y="20" width="26" height="26"/>
-                                                            <color key="backgroundColor" name="theme_primary"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="0Gj-VT-xex" secondAttribute="height" multiplier="1:1" id="Mo9-WX-Cbi"/>
-                                                            </constraints>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="padding">
-                                                                    <real key="value" value="10"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </imageView>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="3Ns-Ch-5fX" secondAttribute="bottom" constant="10" id="1RC-B9-AHl"/>
-                                                        <constraint firstItem="3Ns-Ch-5fX" firstAttribute="leading" secondItem="WKJ-ju-eCS" secondAttribute="leading" constant="10" id="7rg-iQ-gKl"/>
-                                                        <constraint firstAttribute="trailing" secondItem="3Ns-Ch-5fX" secondAttribute="trailing" constant="10" id="8hJ-uh-YxE"/>
-                                                        <constraint firstItem="0Gj-VT-xex" firstAttribute="top" secondItem="3Ns-Ch-5fX" secondAttribute="top" constant="10" id="AY3-UU-KdW"/>
-                                                        <constraint firstItem="3Ns-Ch-5fX" firstAttribute="trailing" secondItem="0Gj-VT-xex" secondAttribute="trailing" constant="10" id="FYK-AO-DVh"/>
-                                                        <constraint firstItem="0Gj-VT-xex" firstAttribute="width" secondItem="NVs-rC-Mje" secondAttribute="width" multiplier="0.2" id="dG0-75-lrq"/>
-                                                        <constraint firstItem="3Ns-Ch-5fX" firstAttribute="top" secondItem="WKJ-ju-eCS" secondAttribute="top" constant="10" id="q65-JB-LU1"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UMC-sp-tY4">
+                                    <rect key="frame" x="18.5" y="65.5" width="337" height="128"/>
                                     <color key="backgroundColor" name="theme_primary_light_background"/>
                                     <constraints>
-                                        <constraint firstItem="FH3-4N-FNi" firstAttribute="width" secondItem="ybQ-MH-AIg" secondAttribute="width" id="XSu-9J-SYb"/>
-                                        <constraint firstItem="FH3-4N-FNi" firstAttribute="top" secondItem="ybQ-MH-AIg" secondAttribute="top" id="fiC-uA-DYL"/>
-                                        <constraint firstItem="FH3-4N-FNi" firstAttribute="centerX" secondItem="ybQ-MH-AIg" secondAttribute="centerX" id="kOG-Rs-3I8"/>
-                                        <constraint firstItem="FH3-4N-FNi" firstAttribute="centerY" secondItem="ybQ-MH-AIg" secondAttribute="centerY" id="saJ-Vh-ntt"/>
+                                        <constraint firstAttribute="height" constant="128" id="Xev-F7-T3B"/>
                                     </constraints>
-                                </view>
+                                </tableView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="120.5" y="265.5" width="133" height="60"/>
+                                    <rect key="frame" x="120.5" y="213.5" width="133" height="60"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                     <state key="normal" title="Sign In">
@@ -171,7 +63,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVl-el-UJJ" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="164" y="345.5" width="46" height="30"/>
+                                    <rect key="frame" x="164" y="293.5" width="46" height="30"/>
                                     <state key="normal" title="Button"/>
                                     <connections>
                                         <action selector="btnCancelTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="EhO-GW-jUf"/>
@@ -179,7 +71,7 @@
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="ybQ-MH-AIg" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" multiplier="0.8" id="RnE-Ph-Uak"/>
+                                <constraint firstItem="UMC-sp-tY4" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" multiplier="0.9" id="A3y-s0-Mp5"/>
                             </constraints>
                         </stackView>
                     </subviews>
@@ -207,35 +99,22 @@
                 <outlet property="backgroundView" destination="6ZW-DU-hOd" id="lFA-bQ-tdV"/>
                 <outlet property="btnCancel" destination="BVl-el-UJJ" id="mZE-lE-kWH"/>
                 <outlet property="btnDone" destination="W3s-UH-gbE" id="Cp0-qH-ylB"/>
-                <outlet property="btnOption1" destination="NdM-hr-aM0" id="zSF-BM-qq4"/>
-                <outlet property="btnOption2" destination="NVs-rC-Mje" id="BG5-aw-Q0X"/>
                 <outlet property="dialogView" destination="Yaj-p7-IIT" id="Sjt-cS-gvV"/>
-                <outlet property="ivOption1Selected" destination="KDS-9J-oFM" id="TvH-kl-XS4"/>
-                <outlet property="ivOption2Selected" destination="0Gj-VT-xex" id="th7-QT-cIi"/>
-                <outlet property="lblOption1" destination="obW-hg-MDN" id="HFv-eh-UEu"/>
-                <outlet property="lblOption2" destination="IvB-L7-sgV" id="baa-0d-E7d"/>
+                <outlet property="hTblVw" destination="Xev-F7-T3B" id="NYJ-y2-8Yz"/>
                 <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
+                <outlet property="tableView" destination="UMC-sp-tY4" id="Rlg-rQ-9xm"/>
                 <outlet property="topBarSpace" destination="Zud-Qp-ll1" id="82K-6q-9PJ"/>
-                <outlet property="vwMainSelection" destination="ybQ-MH-AIg" id="KNZ-eF-5AP"/>
-                <outlet property="vwOption1" destination="HPt-2p-CpU" id="NCZ-Cc-Ccc"/>
-                <outlet property="vwOption2" destination="WKJ-ju-eCS" id="A6c-Md-GPu"/>
                 <outlet property="vwTopBar" destination="OsI-uf-Fb8" id="VT3-o0-WSd"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="130.58035714285714"/>
         </view>
     </objects>
     <resources>
-        <image name="asset-check" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="asset-distance-unit-km" width="42.666667938232422" height="42.666667938232422"/>
-        <image name="asset-distance-unit-mile" width="42.666667938232422" height="42.666667938232422"/>
-        <namedColor name="theme_background">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="theme_primary">
-            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light_background">
-            <color red="0.94509803921568625" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
