@@ -86,7 +86,7 @@ extension AddPackDialog : UITableViewDelegate,UITableViewDataSource {
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-tableView.backgroundColor = .clear
+        tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 60
@@ -115,11 +115,20 @@ tableView.backgroundColor = .clear
         self.arrForData[indexPath.row].isSelected = true
         self.selectedData = self.arrForData[indexPath.row]
         tableView.reloadData()
-        self.openPackSelectionDialog()
-       /* if self.onBtnDoneTapped != nil {
-            self.onBtnDoneTapped!(selectedData);
-        }*/
-        
+        switch indexPath.row {
+        case 0:
+            self.openCenterSelectionDialog()
+        case 1:
+            self.openPackSelectionDialog()
+        case 2:
+            self.openRecipientDetailDialog()
+        case 3:
+            self.openGiverDetailDialog()
+        case 4:
+            self.openSendingPreferenceDialog()
+        default:
+            self.openPackSelectionDialog()
+        }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
@@ -127,7 +136,6 @@ tableView.backgroundColor = .clear
     }
     
     func openPackSelectionDialog() {
-        
         let alert: SelectPackDialog = SelectPackDialog.fromNib()
         alert.initialize(title: "select a pack", buttonTitle: "Get This Pack", cancelButtonTitle: "BTN_CANCEL".localized())
         alert.show(animated: true)
@@ -135,18 +143,88 @@ tableView.backgroundColor = .clear
             [weak alert, weak self] in
             alert?.dismiss()
             guard let self = self else { return } ; print(self)
-            
-        
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (data) in
             alert?.dismiss()
-             guard let self = self else { return } ; print(self)
+            guard let self = self else { return } ; print(self)
             self.tableView.reloadData()
         }
-        
-        
     }
+    
+    
+    
+    func openGiverDetailDialog() {
+        let alert: CustomGiverDetailDialog = CustomGiverDetailDialog.fromNib()
+        alert.initialize(title: "giver details", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (data) in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+            self.tableView.reloadData()
+        }
+    }
+    func openSendingPreferenceDialog() {
+        let alert: CustomSendingPreferenceDialog = CustomSendingPreferenceDialog.fromNib()
+        alert.initialize(title: "sending preference", data: "email", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (data) in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+            self.tableView.reloadData()
+        }
+    }
+    
+    func openRecipientDetailDialog() {
+        let alert: CustomRecipientDetailDialog = CustomRecipientDetailDialog.fromNib()
+        alert.initialize(title: "recipients details", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (data) in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+            self.tableView.reloadData()
+        }
+    }
+    
+    func openCenterSelectionDialog() {
+          
+          let alert: CustomServiceCenterSelectionDialog = CustomServiceCenterSelectionDialog.fromNib()
+          alert.initialize(title: "select center", buttonTitle: "select")
+          alert.show(animated: true)
+          alert.onBtnCancelTapped = {
+              [weak alert, weak self] in
+              alert?.dismiss()
+              guard let self = self else { return } ; print(self)
+              
+              
+          }
+          alert.onBtnDoneTapped = {
+              [weak alert, weak self] in
+              alert?.dismiss()
+              guard let self = self else { return } ; print(self)
+             
+          }
+          
+          
+      }
 }
 
 

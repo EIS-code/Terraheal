@@ -22,10 +22,10 @@ class ProfileTblUserInfoCell: TableCell {
         super.awakeFromNib()
         self.lblName?.setFont(name: FontName.SemiBold, size: FontSize.label_14)
         self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.label_26)
-         self.lblDescription?.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblDescription?.setFont(name: FontName.Regular, size: FontSize.label_14)
         self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
         self.btnAction?.setHighlighted(isHighlighted: false)
-
+        
 
     }
 

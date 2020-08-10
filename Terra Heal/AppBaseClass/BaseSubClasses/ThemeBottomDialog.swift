@@ -68,6 +68,7 @@ class ThemeBottomDialogView: ThemeView {
         self.lblTitle?.textColor = UIColor.themeDarkText
         self.btnCancel?.setFont(name: FontName.Bold, size: FontSize.button_18)
         self.btnCancel?.setTitleColor(UIColor.themeSecondary, for: .normal)
+        self.dialogView.backgroundColor = UIColor.themeDialogBackground
         self.backgroundColor = .clear
         self.backgroundView?.backgroundColor = UIColor.black
         self.backgroundView?.alpha = 0.0

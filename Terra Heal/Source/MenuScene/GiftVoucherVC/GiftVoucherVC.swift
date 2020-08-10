@@ -167,7 +167,14 @@ tableView.backgroundColor = .clear
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
+        completeVoucher()
+    }
+    
+    
+    
+    
+    func completeVoucher() {
+        Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "BUY_GIFT_VOUCHER_COMPLETE_TITLE".localized(), strMessage: "BUY_GIFT_VOUCHER_COMPLETE_MESSAGE".localized(), strImg: ImageAsset.Completion.requestBookingCompletion, strButtonTitle: "HOME_BTN_HOME".localized()))
     }
 }
 

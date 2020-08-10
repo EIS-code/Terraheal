@@ -14,7 +14,6 @@ class MainVC: UIViewController {
     @IBOutlet weak var btnRight: ThemeButton?
     @IBOutlet weak var headerGradient: UIView!
     @IBOutlet weak var footerGradient: UIView!
-
     @IBOutlet weak var vwNavigationBar: ThemeView!
     var topGradientLayer: CAGradientLayer? = nil
     var bottomGradientLayer: CAGradientLayer? = nil
@@ -32,6 +31,7 @@ class MainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setBackground(color: .themePrimaryLightBackground)
         self.view.backgroundColor = .themePrimaryLightBackground
         self.btnLeft?.setBackButton()
         self.lblTitle?.textColor = UIColor.themeDarkText
@@ -69,6 +69,9 @@ class MainVC: UIViewController {
     func setTitle(title: String) {
         lblTitle?.text = title
         lblTitle?.textAlignment = .center
+    }
+    func setBackground(color: UIColor) {
+        self.view?.backgroundColor = color
     }
     func isViewAvailable() -> Bool {
         return self.view.subviews.count >  0

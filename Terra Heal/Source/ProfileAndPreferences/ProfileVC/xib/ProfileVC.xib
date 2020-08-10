@@ -13,7 +13,7 @@
             <connections>
                 <outlet property="btnMenu" destination="dk0-AN-Hja" id="WOd-ft-33V"/>
                 <outlet property="btnProfile" destination="ABs-WT-4wl" id="LaB-7n-cf4"/>
-                <outlet property="hVwContent" destination="nV0-2J-z42" id="8Ps-Cz-zMt"/>
+                <outlet property="hVwContent" destination="W7U-9Q-vcJ" id="ldP-cU-ECM"/>
                 <outlet property="headerView" destination="1vj-Dw-czR" id="cSC-pd-oOA"/>
                 <outlet property="ivQrCode" destination="ioG-BP-L40" id="RFY-Ru-KiI"/>
                 <outlet property="lblDescription" destination="qvY-GW-ybO" id="sP1-Br-qUt"/>
@@ -115,10 +115,10 @@
                     <rect key="frame" x="0.0" y="159" width="375" height="619"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rbu-l6-xha" userLabel="contentView">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="707"/>
+                            <rect key="frame" x="0.0" y="20" width="375" height="619"/>
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="D1e-fd-tDd">
-                                    <rect key="frame" x="20" y="20" width="335" height="687"/>
+                                    <rect key="frame" x="20" y="20" width="335" height="579"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <connections>
                                         <outlet property="dataSource" destination="-1" id="Ukn-GI-ddU"/>
@@ -128,10 +128,10 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="D1e-fd-tDd" secondAttribute="bottom" id="Dno-Li-08U"/>
+                                <constraint firstAttribute="bottom" secondItem="D1e-fd-tDd" secondAttribute="bottom" constant="20" id="Dno-Li-08U"/>
                                 <constraint firstAttribute="trailing" secondItem="D1e-fd-tDd" secondAttribute="trailing" constant="20" id="HwJ-Jb-N1r"/>
+                                <constraint firstAttribute="height" constant="619" id="W7U-9Q-vcJ"/>
                                 <constraint firstItem="D1e-fd-tDd" firstAttribute="leading" secondItem="rbu-l6-xha" secondAttribute="leading" constant="20" id="cHs-Bw-dmg"/>
-                                <constraint firstAttribute="height" constant="707" id="nV0-2J-z42"/>
                                 <constraint firstItem="D1e-fd-tDd" firstAttribute="top" secondItem="rbu-l6-xha" secondAttribute="top" constant="20" id="uzK-bg-zM9"/>
                             </constraints>
                         </view>
@@ -143,6 +143,7 @@
                         <constraint firstItem="rbu-l6-xha" firstAttribute="centerX" secondItem="qf1-Ci-CxJ" secondAttribute="centerX" id="B5x-uy-9uf"/>
                         <constraint firstItem="rbu-l6-xha" firstAttribute="leading" secondItem="qf1-Ci-CxJ" secondAttribute="leading" id="d9g-dM-2VI"/>
                         <constraint firstItem="rbu-l6-xha" firstAttribute="width" secondItem="qf1-Ci-CxJ" secondAttribute="width" id="jme-wD-yXy"/>
+                        <constraint firstItem="rbu-l6-xha" firstAttribute="height" secondItem="qf1-Ci-CxJ" secondAttribute="height" id="m25-xQ-7cq"/>
                         <constraint firstAttribute="bottom" secondItem="rbu-l6-xha" secondAttribute="bottom" id="pO3-AG-EaJ"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="AcJ-5b-GUN"/>

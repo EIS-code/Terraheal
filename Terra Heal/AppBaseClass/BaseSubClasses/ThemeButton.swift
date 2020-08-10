@@ -110,15 +110,15 @@ class FloatingRoundButton: ThemeButton {
     }
     func setForwardButton() {
         self.backgroundColor = .themePrimary
-        self.height(constant: JDDeviceHelper().offseter(offset: 50))
-        self.setFont(name: FontName.System, size: 37)
+        self.height(constant: JDDeviceHelper().offseter(offset: 40))
+        self.setFont(name: FontName.System, size: 30)
         self.setTitle(FontSymbol.next_arrow, for: .normal)
     }
     func setBackButton() {
         self.backgroundColor = UIColor.themeSecondary
         self.setImage(nil, for: .normal)
-        self.height(constant: JDDeviceHelper().offseter(offset: 50))
-        self.setFont(name: FontName.System, size: 37)
+        self.height(constant: JDDeviceHelper().offseter(offset: 30))
+        self.setFont(name: FontName.System, size: 24)
         self.setTitle(FontSymbol.back_arrow, for: .normal)
     }
     

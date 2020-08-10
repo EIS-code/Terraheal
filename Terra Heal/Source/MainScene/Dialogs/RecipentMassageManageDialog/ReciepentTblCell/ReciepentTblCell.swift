@@ -12,18 +12,25 @@ class ReciepentTblCell: TableCell {
     @IBOutlet weak var lblName: ThemeLabel!
     @IBOutlet weak var lblDuration: ThemeLabel!
     @IBOutlet weak var btnDelete: UIButton!
-  
+    @IBOutlet weak var lblPrice: ThemeLabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        btnDelete.backgroundColor = UIColor.white
+        self.lblName.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblDuration.setFont(name: FontName.Regular, size: FontSize.label_14)
+         self.lblPrice.setFont(name: FontName.Regular, size: FontSize.label_14)
     }
     
     func setData(data: ServiceDetail ) {
         self.lblName.text = data.name
         self.lblDuration.text = data.selectedDuration.time + " " + "min"
+        self.lblPrice.text = data.selectedDuration.pricing.price
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        btnDelete.setRound()
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

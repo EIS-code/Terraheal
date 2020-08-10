@@ -36,7 +36,7 @@ class MyPlaceVC: MainVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.themePrimaryLightBackground
+        
         self.initialViewSetup()
         //self.addBottomFade()
         //self.addTopFade()

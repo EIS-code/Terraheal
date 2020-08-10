@@ -223,7 +223,8 @@
 "PACK_TITLE" = "pack";
 "PACK_CODE" = "Pack code";
 "PACK_BTN_BUY_NEW" = "Buy New pack";
-
+"PACK_PURCHASE_COMPLETE_TITLE" = "purchase successful";
+"PACK_PURCHASE_COMPLETE_MESSAGE" = "thanks for choosing our services! we have received your booking and will confirm it as soon as possible";
 //MARK: Help
 "HELP_TITLE" = "help";
 "CHAT_DIALOG_TITLE" = "chat";
@@ -290,7 +291,7 @@
 "BTN_BOOK_HERE" = "Book Here";
 "BTN_CHECK_SERVICE" = "Check Service";
 "BOOKING_SERVICES" = "services";
-"SESSION_TYPE_TITLE" = "Session Type";
+"SESSION_TYPE_TITLE" = "session type";
 //MARK:  Review And Book VC
 "REVIEW_AND_BOOK_TITLE" = "review and book";
 "REVIEW_AND_BOOK_TITLE_DETAIL" = "confirm details before payment";
@@ -306,6 +307,7 @@
 "REVIEW_AND_BOOK_BTN_PREPAYMENT" = "prepayment";
 "REVIEW_AND_BOOK_BTN_WITHOUT_PAYMENT" = "without prepayment";
 //MARK: Payment Screen
+"PAYMENT_DIALOG_TITLE" = "payment";
 "PAYMENT_PREFERENCE_TITLE" = "payments";
 "PAYMENT_LBL_PAYPAL" = "Paypal";
 "PAYMENT_PAYPAL_EMAIL_ID" = "Paypal email id";
@@ -322,6 +324,10 @@
 "REQUEST_BOOKING_COMPLETE_TITLE" = "request sent";
 "REQUEST_BOOKING_COMPLETE_MESSAGE" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut";
 "REQUEST_BOOKING_COMPLETE_BTN_HOME" = "Home";
+
+
+"BUY_GIFT_VOUCHER_COMPLETE_TITLE" = "buy gift voucher Successful";
+"BUY_GIFT_VOUCHER_COMPLETE_MESSAGE" = "thanks for choosing our services! we have received your booking and will confirm it as soon as possible";
 
 //MARK: Manage Document Screen
 "MANAGE_DOCUMENT_TITLE" = "Id / Passport";

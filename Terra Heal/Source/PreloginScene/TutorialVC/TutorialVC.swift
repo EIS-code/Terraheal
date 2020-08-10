@@ -17,8 +17,8 @@ class TutorialVC: MainVC {
     @IBOutlet weak var cvForTutorial: UICollectionView!
     var arrForTutorials: [TutorialDetail] = []
     var currentIndex: Int = 0
+    
     // MARK: Object lifecycle
-
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
@@ -30,13 +30,10 @@ class TutorialVC: MainVC {
     }
 
     // MARK: Setup
-
     private func setup() {
-
     }
 
     // MARK: View lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
@@ -47,10 +44,9 @@ class TutorialVC: MainVC {
     }
 
     private func initialViewSetup() {
-        
+        self.setBackground(color: UIColor.themeBackground)
         self.btnDone.setForwardButton()
         self.btnBack.setBackButton()
-
         self.btnNext?.setTitle("TUTORIAL_BTN_NEXT".localized(), for: .normal)
         self.btnNext?.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         for i in 1...3{
@@ -69,8 +65,6 @@ class TutorialVC: MainVC {
     @IBAction func btnBackTapped(_ sender: Any) {
         currentIndex = currentIndex - 1
         snapToNearestCell(indexPath: currentIndex)
-        
-
     }
 
     @IBAction func btnNextTapped(_ sender: Any) {
@@ -85,7 +79,13 @@ class TutorialVC: MainVC {
         }
     }
 
-    private func setupCollectionView() {
+    
+}
+
+// MARK: - CollectionView Methods
+extension TutorialVC:  UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
+    
+    func setupCollectionView() {
         cvForTutorial?.backgroundColor = UIColor.white
         cvForTutorial?.isUserInteractionEnabled = true
         cvForTutorial?.isPagingEnabled = true
@@ -94,9 +94,8 @@ class TutorialVC: MainVC {
         cvForTutorial?.register(TutorialCell.nib()
             , forCellWithReuseIdentifier: TutorialCell.name)
     }
-
+    
     func snapToNearestCell(indexPath: Int) {
-        
         let index  =  IndexPath.init(row: indexPath, section: 0)
         self.cvForTutorial.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
         if indexPath == 0 {
@@ -105,10 +104,7 @@ class TutorialVC: MainVC {
             btnBack.isHidden = false
         }
     }
-}
-
-// MARK: - CollectionView Methods
-extension TutorialVC:  UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
+    
     // MARK: UICollectionViewDataSource
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1

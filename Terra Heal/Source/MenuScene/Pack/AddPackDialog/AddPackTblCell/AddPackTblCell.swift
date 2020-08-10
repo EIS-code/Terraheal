@@ -17,10 +17,11 @@ struct AddPackageDetail {
         let packDetail2: AddPackageDetail = AddPackageDetail.init(id: "1",name: "select pack", isSelected: false)
         let packDetail3: AddPackageDetail = AddPackageDetail.init(id: "2",name: "recipients detail", isSelected: false)
         let packDetail4: AddPackageDetail = AddPackageDetail.init(id: "3",name: "giver details", isSelected: false)
-        let packDetail5: AddPackageDetail = AddPackageDetail.init(id: "sending preference",name: "giver details", isSelected: false)
+        let packDetail5: AddPackageDetail = AddPackageDetail.init(id: "4",name: "sending preference", isSelected: false)
         return [packDetail1,packDetail2,packDetail3,packDetail4,packDetail5]
     }
 }
+
 class AddPackTblCell: TableCell {
 
     @IBOutlet weak var lblName: ThemeLabel!

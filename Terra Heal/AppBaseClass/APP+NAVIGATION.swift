@@ -15,7 +15,6 @@ extension AppDelegate {
             SideVC.remove()
             self.window?.clean()
             self.window?.rootViewController?.clean()
-            
             self.window?.rootViewController = rootVC
             self.window?.makeKeyAndVisible()
         }
@@ -638,13 +637,13 @@ extension AppDelegate {
         }
     }
     
-    func loadPaymentReferenceVC(navigaionVC:UINavigationController? = nil) {
+    func loadPaymentReferenceVC(navigaionVC:UINavigationController? = nil, isFromMenu: Bool = true) {
         if let nc = navigaionVC as? NC {
             if let targetVC: PaymentPreferenceVC =  nc.findVCs(ofType: PaymentPreferenceVC.self).first {
                 _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: PaymentPreferenceVC = PaymentPreferenceVC.fromNib()
-                targetVC.isFromMenu = true
+                targetVC.isFromMenu = isFromMenu
                 nc.pushVC(targetVC)
             }
         } else {

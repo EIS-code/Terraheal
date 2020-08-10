@@ -42,6 +42,7 @@ class CustomServiceSelectionDialog: ThemeBottomDialogView {
 
     override func initialSetup() {
         super.initialSetup()
+        self.dialogView.backgroundColor = .clear
         contentView.clipsToBounds = true
         contentView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)

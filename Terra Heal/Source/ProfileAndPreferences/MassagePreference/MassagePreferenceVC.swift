@@ -65,7 +65,7 @@ class MassagePreferenceVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
-        self.view.backgroundColor = UIColor.themePrimaryLightBackground
+        
         self.wsGetMassagePreferenceList()
 
     }

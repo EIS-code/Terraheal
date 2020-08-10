@@ -81,7 +81,8 @@ class RegisterVC: MainVC {
         //  _ = self.txtName?.becomeFirstResponder()
     }
     private func initialViewSetup() {
-        
+        self.setBackground(color: UIColor.themeBackground)
+        self.lblConnect.backgroundColor = UIColor.themeBackground
         self.lblMessage?.text = "REGISTER_LBL_MESSAGE".localized()
         self.lblMessage?.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.txtName?.placeholder = "REGISTER_TXT_NAME".localized()

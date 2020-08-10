@@ -45,7 +45,7 @@ class ContactVerifiedVC: MainVC {
     }
 
     private func initialViewSetup() {
-        
+        self.setBackground(color: UIColor.themeBackground)
         self.lblHeader?.text = "CONTACT_VERIFIED_LBL_TITLE".localized()
         self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.lblMessage?.text = "CONTACT_VERIFIED_LBL_MESSAGE".localized()

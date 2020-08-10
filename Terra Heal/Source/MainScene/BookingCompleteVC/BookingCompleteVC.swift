@@ -58,16 +58,13 @@ class BookingCompleteVC: MainVC {
     }
 
     private func initialViewSetup() {
+        self.setBackground(color: UIColor.themeBackground)
         self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.label_36)
         self.lblMessage?.setFont(name: FontName.Regular, size: FontSize.label_18)
-        
         self.btnHome?.setFont(name: FontName.Regular, size: FontSize.button_18)
         self.setData(completionData: completionData)
     }
     
-    
-    
-
     // MARK: - Action Methods
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
          _ = (self.navigationController as? NC)?.popVC()

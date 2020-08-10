@@ -41,9 +41,8 @@ massages</string>
                                 <color key="textColor" name="theme_green"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OfO-kb-EpN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check-secondary" translatesAutoresizingMaskIntoConstraints="NO" id="OfO-kb-EpN">
                                 <rect key="frame" x="456" y="5" width="20" height="20"/>
-                                <color key="backgroundColor" name="theme_primary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="TC4-tc-4Tu"/>
                                     <constraint firstAttribute="width" secondItem="OfO-kb-EpN" secondAttribute="height" multiplier="1:1" id="YES-n3-jiz"/>
@@ -86,6 +85,7 @@ massages</string>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="asset-check-secondary" width="16.5" height="16.5"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

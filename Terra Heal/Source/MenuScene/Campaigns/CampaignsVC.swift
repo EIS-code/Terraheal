@@ -72,7 +72,7 @@ class CampaignsVC: MainVC {
 
     }
     private func initialViewSetup() {
-        self.view.backgroundColor = UIColor.themePrimaryLightBackground
+        
         self.setupTableView(tableView: self.tableView)
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.setTitle(title: "CAMPAIGNS_TITLE".localized())

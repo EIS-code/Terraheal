@@ -9,19 +9,22 @@ extension UIColor {
 
     //Custom TextFieldColors
     static var themePrimary:UIColor = UIColor.init(named: "theme_primary") ?? UIColor.init(hex: "#9A4026")
-    static var themeDarkText:UIColor = UIColor.init(named: "theme_dark_text") ?? UIColor.init(hex: "#6D6E71")
-    static var themeHintText:UIColor = UIColor.init(named: "theme_hint_text") ?? UIColor.init(hex: "#B2B3B5")
-    static var themeGreen:UIColor = UIColor.init(named: "theme_green") ?? UIColor.init(hex: "#B2B3B5")
-    
-    
-    
-    static var themeSecondary:UIColor = UIColor.init(named: "theme_secondary") ?? UIColor.init(hex: "##F8991E")
     static var themePrimaryLight:UIColor = UIColor.init(named: "theme_primary_light") ?? UIColor.init(hex: "#000000")
     static var themePrimaryBorder:UIColor = UIColor.init(named: "theme_primary_border") ?? UIColor.init(hex: "#000000")
     static var themePrimaryLightBackground:UIColor = UIColor.init(named: "theme_primary_light_background") ?? UIColor.init(hex: "#000000")
 
-     static var themeBackground:UIColor = UIColor.init(named: "theme_background") ?? UIColor.init(hex: "#000000")
-     static var themeLightTextColor:UIColor = UIColor.init(named: "theme_light_text_color") ?? UIColor.init(hex: "#000000")
+    
+    static var themeGreen:UIColor = UIColor.init(named: "theme_green") ?? UIColor.init(hex: "#B2B3B5")
+    static var themeSecondary:UIColor = UIColor.init(named: "theme_secondary") ?? UIColor.init(hex: "##F8991E")
+    
+    static var themeBackground:UIColor = UIColor.init(named: "theme_background") ?? UIColor.init(hex: "#000000") //white color
+    static var themeLightBackground: UIColor = UIColor.init(named: "theme_light_background") ?? UIColor.init(hex: "#F6F6F4") // light background
+    static var themeDialogBackground: UIColor = UIColor.init(named: "theme_dialog_background") ?? UIColor.init(hex: "#F6F6F4") // light background
+    static var themeLightTextColor:UIColor = UIColor.init(named: "theme_light_text_color") ?? UIColor.init(hex: "#000000") // white text
+    static var themeDarkText:UIColor = UIColor.init(named: "theme_dark_text") ?? UIColor.init(hex: "#6D6E71") //dark text color
+    static var themeHintText:UIColor = UIColor.init(named: "theme_hint_text") ?? UIColor.init(hex: "#B2B3B5") // place holder text color
+    
+    
 
 
 }

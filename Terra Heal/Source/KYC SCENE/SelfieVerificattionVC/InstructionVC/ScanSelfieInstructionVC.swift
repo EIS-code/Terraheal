@@ -57,6 +57,7 @@ class ScanSelfieInstructionVC: MainVC {
     }
 
     private func initialViewSetup() {
+        self.setBackground(color: UIColor.themeBackground)
         self.lblHeader?.text = "SELFIE_LBL_TITLE".localized()
         self.lblHeader?.setFont(name: FontName.SemiBold, size: FontSize.label_26)
 

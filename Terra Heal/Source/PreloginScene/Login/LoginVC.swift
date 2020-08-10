@@ -66,7 +66,9 @@ class LoginVC: MainVC {
     }
 
     private func initialViewSetup() {
-        
+         
+        self.setBackground(color: UIColor.themeBackground)
+        self.lblConnect.backgroundColor = UIColor.themeBackground
         self.lblLoginTitle?.text = "LOGIN_LBL_TITLE".localized()
         self.lblLoginTitle?.setFont(name: FontName.Bold, size: FontSize.label_36)
         self.lblMessage?.text = "LOGIN_LBL_MESSAGE".localized()
@@ -229,7 +231,7 @@ extension LoginVC {
     
     func openRegisterFingerPrintDialog() {
         let alertFingerPrint: FingerPrintDialog = FingerPrintDialog.fromNib()
-        alertFingerPrint.initialize(title: "FINGER_PRINT_DIALOG_REGISTER_TITLE".localized(), buttonTitle: "BTN_YES_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        alertFingerPrint.initialize(title: "FINGER_PRINT_DIALOG_REGISTER_TITLE".localized(), buttonTitle: "BTN_YES_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
         alertFingerPrint.show(animated: true)
         alertFingerPrint.onBtnCancelTapped = {
             [weak alertFingerPrint, weak self] in

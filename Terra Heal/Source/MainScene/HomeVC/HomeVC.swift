@@ -43,10 +43,6 @@ class HomeVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
-        
-        
-        
-        
         vwFloatingBottom.allowChangeThumbWidth = false
         vwFloatingBottom.itemTitles = ["HOME_BTN_HOME".localized(),"HOME_BTN_EXPLORE".localized(),"HOME_BTN_MY_FAV".localized()]
         vwFloatingBottom.itemImages =  [UIImage.init(named: "asset-home")!, UIImage.init(named: "asset-explore")!, UIImage.init(named: "asset-fav")!]
@@ -88,16 +84,17 @@ class HomeVC: MainVC {
     }
     
     private func initialViewSetup() {
-        
-        self.lblMenu.text = "HOME_LBL_MENU".localized()
-        self.lblMenu.setFont(name: FontName.SemiBold, size: FontSize.label_14)
-        if appSingleton.user.name.isEmpty() {
-            self.lblUserName.text = "HOME_LBL_USER".localized()
-        } else {
-            self.lblUserName.text = appSingleton.user.name
-        }
-        self.lblUserName.setFont(name: FontName.SemiBold, size: FontSize.label_14)
+        self.setBackground(color: UIColor.themeBackground)
         self.setupTableView(tableView: self.tableView)
+        /* self.lblMenu?.text = "HOME_LBL_MENU".localized()
+         self.lblMenu?.setFont(name: FontName.SemiBold, size: FontSize.label_14)
+         if appSingleton.user.name.isEmpty() {
+             self.lblUserName?.text = "HOME_LBL_USER".localized()
+         } else {
+             self.lblUserName?.text = appSingleton.user.name
+         }
+         self.lblUserName?.setFont(name: FontName.SemiBold, size: FontSize.label_14)*/
+        
         
     }
     
@@ -117,8 +114,27 @@ class HomeVC: MainVC {
     //MARK: Action Methods
     
     @IBAction func btnMenuTapped(_ sender: Any) {
-        SideVC.shared.show()
-        //self.openAccessoryDialog()
+        //SideVC.shared.show()
+        self.openAccessoryDialog()
+    }
+    
+    func openPartialPaymentBookingDialog() {
+        let paymentPercentageDialog: PaymentPercentatgeSelectionDialog  = PaymentPercentatgeSelectionDialog.fromNib()
+        
+        paymentPercentageDialog.initialize(title: "Payment", buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        paymentPercentageDialog.show(animated: true)
+        paymentPercentageDialog.onBtnCancelTapped = {
+            [weak paymentPercentageDialog, weak self] in
+            guard let self = self else { return } ; print(self)
+            paymentPercentageDialog?.dismiss()
+           
+        }
+        paymentPercentageDialog.onBtnDoneTapped = {
+            [weak paymentPercentageDialog, weak self]  (button) in
+            guard let self = self else { return } ; print(self)
+            paymentPercentageDialog?.dismiss()
+            Common.appDelegate.loadPaymentReferenceVC(navigaionVC: self.navigationController,isFromMenu: false)
+        }
     }
     
     @IBAction func btnProfileTapped(_ sender: Any) {

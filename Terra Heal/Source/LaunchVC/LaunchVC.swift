@@ -29,6 +29,7 @@ class LaunchVC: MainVC {
     override func viewDidAppear(_ animated: Bool) {
         super .viewDidAppear(animated)
         self.loadNextScreen()
+        
     }
     // MARK: - StatusBar
     override var prefersStatusBarHidden: Bool {
@@ -37,6 +38,7 @@ class LaunchVC: MainVC {
     // MARK: - Other Functions
     fileprivate func loadNextScreen() {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
+            
             if !PreferenceHelper.shared.getUserId().isEmpty() {
                 Common.appDelegate.loadHomeVC()
             }

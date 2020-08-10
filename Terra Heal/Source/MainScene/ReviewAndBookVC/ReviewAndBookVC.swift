@@ -92,7 +92,7 @@ class ReviewAndBookVC: MainVC {
     }
     
     func initialViewSetup() {
-        
+        self.setBackground(color: UIColor.themeBackground)
         self.lblTitle?.text = "REVIEW_AND_BOOK_TITLE".localized()
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.lblTitleDetail?.text = "REVIEW_AND_BOOK_TITLE_DETAIL".localized()
@@ -183,7 +183,7 @@ class ReviewAndBookVC: MainVC {
     func openPartialPaymentBookingDialog() {
         let paymentPercentageDialog: PaymentPercentatgeSelectionDialog  = PaymentPercentatgeSelectionDialog.fromNib()
         
-        paymentPercentageDialog.initialize(title: "Payment", buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        paymentPercentageDialog.initialize(title: "PAYMENT_DIALOG_TITLE".localized(), buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
         paymentPercentageDialog.show(animated: true)
         paymentPercentageDialog.onBtnCancelTapped = {
             [weak paymentPercentageDialog, weak self] in
@@ -195,7 +195,7 @@ class ReviewAndBookVC: MainVC {
             [weak paymentPercentageDialog, weak self]  (button) in
             guard let self = self else { return } ; print(self)
             paymentPercentageDialog?.dismiss()
-            Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "BOOKING_COMPLETE_TITLE".localized(), strMessage: "BOOKING_COMPLETE_MESSAGE".localized(), strImg: ImageAsset.Completion.bookingCompletion, strButtonTitle: "BOOKING_COMPLETE_BTN_HOME".localized()))
+            Common.appDelegate.loadPaymentReferenceVC(navigaionVC: self.navigationController)
         }
     }
     
