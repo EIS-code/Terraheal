@@ -75,7 +75,6 @@ class HomeVC: MainVC {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
             self.tableView?.reloadData({
-                
             })
             vwFloatingBottom.setRound(withBorderColor: .themePrimary, andCornerRadious: self.vwFloatingBottom.bounds.height/2.0, borderWidth: 0.1)
             vwFloatingBottom.setShadow()
@@ -86,14 +85,15 @@ class HomeVC: MainVC {
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeBackground)
         self.setupTableView(tableView: self.tableView)
-        /* self.lblMenu?.text = "HOME_LBL_MENU".localized()
-         self.lblMenu?.setFont(name: FontName.SemiBold, size: FontSize.label_14)
+        /*
+         self.lblMenu?.text = "HOME_LBL_MENU".localized()
+         self.lblMenu?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
          if appSingleton.user.name.isEmpty() {
              self.lblUserName?.text = "HOME_LBL_USER".localized()
          } else {
              self.lblUserName?.text = appSingleton.user.name
          }
-         self.lblUserName?.setFont(name: FontName.SemiBold, size: FontSize.label_14)*/
+         self.lblUserName?.setFont(name: FontName.SemiBold, size: FontSize.label_12)*/
         
         
     }
@@ -114,9 +114,9 @@ class HomeVC: MainVC {
     //MARK: Action Methods
     
     @IBAction func btnMenuTapped(_ sender: Any) {
-        //SideVC.shared.show()
-        self.openAccessoryDialog()
+        SideVC.shared.show()
     }
+    
     
     func openPartialPaymentBookingDialog() {
         let paymentPercentageDialog: PaymentPercentatgeSelectionDialog  = PaymentPercentatgeSelectionDialog.fromNib()

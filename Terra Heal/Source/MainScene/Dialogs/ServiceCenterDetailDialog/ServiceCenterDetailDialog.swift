@@ -50,8 +50,8 @@ class ServiceCenterDetailDialog: ThemeBottomDialogView {
         scrVw.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.lblAddress?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
-        self.lblServices?.setFont(name: FontName.SemiBold, size: FontSize.label_14)
-        self.btnNumberOfServices?.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblServices?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
+        self.btnNumberOfServices?.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.btnNumberOfServices?.setRound()
         self.setDataForStepUpAnimation(data: [0.75,0.9])
     }

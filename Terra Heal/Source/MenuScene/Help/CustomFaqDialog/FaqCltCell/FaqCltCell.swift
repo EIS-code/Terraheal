@@ -16,7 +16,7 @@ class FaqCltCell: CollectionCell {
         self.ivUser?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
     }
     func setData(data:String) {
-        self.lblName?.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblName?.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.lblName.text = data
     }
     override func layoutSubviews() {

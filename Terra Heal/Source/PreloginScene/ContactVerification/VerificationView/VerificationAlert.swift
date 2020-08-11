@@ -61,7 +61,7 @@ class VerificationAlert: ThemeBottomDialogView {
         super.initialSetup()
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.lblMessage.setFont(name: FontName.SemiBold, size: FontSize.button_22)
-        self.lblMessageDetail.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblMessageDetail.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.setupOtpView()
         self.vwSwitch.allowChangeThumbWidth = false
         self.vwSwitch.itemTitles = ["VERIFICATION_BTN_MOBILE".localized(),"VERIFICATION_BTN_EMAIL".localized()]

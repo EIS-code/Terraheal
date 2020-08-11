@@ -22,7 +22,10 @@ struct FontSize {
     static let button_22: CGFloat = 22
     static let button_20: CGFloat = 20
     static let button_14: CGFloat = 14
-    static let label_14: CGFloat = 12
+    
+    static let label_12: CGFloat = 12
+    static let label_14: CGFloat = 14
+    static let label_16: CGFloat = 16
     static let label_20: CGFloat = 20
     static let label_22: CGFloat = 22
     static let label_18: CGFloat = 18

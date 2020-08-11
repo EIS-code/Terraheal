@@ -37,7 +37,7 @@ class AutocompleteLocationCell: TableCell
         lblTitle.textColor = UIColor.themePrimary
         lblSubTitle.textColor = UIColor.themePrimaryLight
         /*Set Font*/
-        lblTitle.setFont(name: FontName.SemiBold, size: FontSize.label_14)
+        lblTitle.setFont(name: FontName.SemiBold, size: FontSize.label_12)
         lblSubTitle.setFont(name: FontName.Regular, size: FontSize.label_10)
         
     }

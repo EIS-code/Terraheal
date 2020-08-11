@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GRANDDUKE.ttf">
+            <string>GRANDDUKERegular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DesignSelectionDialog" customModule="Terra_Heal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ZW-DU-hOd">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V39-84-TsB">
+                    <rect key="frame" x="0.0" y="268" width="320" height="300"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
+                            <rect key="frame" x="0.0" y="35.5" width="320" height="264.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label fsadf dsaf dsafjkdsljfdskajfklsdjaklfjkslad" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-4J-xGz" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="32" y="55.5" width="256" height="41"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="theme_primary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLP-3J-98a" userLabel="vwContent" customClass="JDSegmentedControl" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="96" y="116.5" width="128" height="40"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="Oe6-gz-a6P"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="thumbColor">
+                                            <color key="value" name="theme_secondary"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="252" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ps3-Js-7Iq">
+                                    <rect key="frame" x="32" y="176.5" width="256" height="88"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="z33-qW-ZLm">
+                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="93.5" y="204.5" width="133" height="40"/>
+                                    <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
+                                    <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
+                                    <state key="normal" title="Sign In">
+                                        <color key="titleColor" name="theme_primary"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnDoneTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="wh8-Sw-Wux"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" name="theme_primary_light_background"/>
+                            <constraints>
+                                <constraint firstItem="eho-4J-xGz" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="0af-1m-p6W"/>
+                                <constraint firstItem="ps3-Js-7Iq" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.8" id="8fa-E8-LxJ"/>
+                                <constraint firstItem="qLP-3J-98a" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="Nqr-5k-jFD"/>
+                                <constraint firstItem="ps3-Js-7Iq" firstAttribute="top" secondItem="qLP-3J-98a" secondAttribute="bottom" constant="20" id="PVm-a7-oW5"/>
+                                <constraint firstItem="qLP-3J-98a" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.4" id="PuD-0H-uQ9"/>
+                                <constraint firstAttribute="bottom" secondItem="W3s-UH-gbE" secondAttribute="bottom" constant="20" id="c3a-nN-Bx0"/>
+                                <constraint firstItem="ps3-Js-7Iq" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="e3K-nR-VPz"/>
+                                <constraint firstAttribute="bottom" secondItem="ps3-Js-7Iq" secondAttribute="bottom" id="iKl-Bx-2td"/>
+                                <constraint firstItem="W3s-UH-gbE" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="la7-5Y-5S1"/>
+                                <constraint firstItem="qLP-3J-98a" firstAttribute="top" secondItem="eho-4J-xGz" secondAttribute="bottom" constant="20" id="qH6-2W-y1l"/>
+                                <constraint firstItem="eho-4J-xGz" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.8" id="ydI-AK-c6q"/>
+                            </constraints>
+                        </view>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center" translatesAutoresizingMaskIntoConstraints="NO" id="az3-5n-QhJ" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="124.5" y="0.0" width="71" height="71"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="az3-5n-QhJ" secondAttribute="height" multiplier="1:1" priority="999" id="gTw-dh-Adp"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Yaj-p7-IIT" firstAttribute="centerX" secondItem="V39-84-TsB" secondAttribute="centerX" id="0Vo-2B-aLF"/>
+                        <constraint firstItem="az3-5n-QhJ" firstAttribute="centerY" secondItem="Yaj-p7-IIT" secondAttribute="top" id="91X-Ow-Eb7"/>
+                        <constraint firstAttribute="height" constant="300" id="BAW-Ip-K82"/>
+                        <constraint firstItem="eho-4J-xGz" firstAttribute="top" secondItem="az3-5n-QhJ" secondAttribute="bottom" constant="20" id="Jzz-tT-W9e"/>
+                        <constraint firstAttribute="bottom" secondItem="Yaj-p7-IIT" secondAttribute="bottom" id="Kzi-5I-qTc"/>
+                        <constraint firstItem="Yaj-p7-IIT" firstAttribute="width" secondItem="V39-84-TsB" secondAttribute="width" id="MUD-su-Zve"/>
+                        <constraint firstItem="az3-5n-QhJ" firstAttribute="top" secondItem="V39-84-TsB" secondAttribute="top" id="RTR-tp-f7u"/>
+                        <constraint firstItem="az3-5n-QhJ" firstAttribute="centerX" secondItem="V39-84-TsB" secondAttribute="centerX" id="zM4-ht-nd9"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="6ZW-DU-hOd" secondAttribute="trailing" id="C4E-pP-AJq"/>
+                <constraint firstItem="6ZW-DU-hOd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O4e-FZ-uqZ"/>
+                <constraint firstItem="6ZW-DU-hOd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Q6J-jS-lz5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="V39-84-TsB" secondAttribute="trailing" id="dUH-Mq-8NY"/>
+                <constraint firstItem="V39-84-TsB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kCB-jR-Feo"/>
+                <constraint firstItem="V39-84-TsB" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="pVs-FU-SqG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="V39-84-TsB" secondAttribute="bottom" id="rX8-mU-2eq"/>
+                <constraint firstAttribute="bottom" secondItem="6ZW-DU-hOd" secondAttribute="bottom" id="xcn-ZA-5s5"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="backgroundView" destination="6ZW-DU-hOd" id="lFA-bQ-tdV"/>
+                <outlet property="btnDone" destination="W3s-UH-gbE" id="4jk-wN-Zhb"/>
+                <outlet property="collectionVw" destination="ps3-Js-7Iq" id="Z3t-vo-tQ7"/>
+                <outlet property="contentView" destination="Yaj-p7-IIT" id="zmD-Kv-bDE"/>
+                <outlet property="dialogHeight" destination="BAW-Ip-K82" id="OFe-Uf-nbU"/>
+                <outlet property="dialogView" destination="V39-84-TsB" id="10y-q1-aod"/>
+                <outlet property="ivMassageCenter" destination="az3-5n-QhJ" id="B7p-eD-hDe"/>
+                <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
+                <outlet property="vwServiceSelection" destination="qLP-3J-98a" id="k4J-Gd-PBA"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="131"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="asset-center" width="71" height="71"/>
+        <namedColor name="theme_primary">
+            <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary_light_background">
+            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_secondary">
+            <color red="0.97299998998641968" green="0.60000002384185791" blue="0.11800000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

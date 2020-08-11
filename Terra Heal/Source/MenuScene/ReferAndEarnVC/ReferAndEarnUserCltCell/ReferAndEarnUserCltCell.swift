@@ -16,7 +16,7 @@ class ReferAndEarnUserCltCell: CollectionCell {
         self.ivUser.setRound()
     }
     func setData(data:String) {
-        self.lblName?.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblName?.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.lblName.text = data
 
 

@@ -316,6 +316,30 @@
 "PAYMENT_BTN_ADD_NEW" = "Add New";
 "PAYMENT_BTN_ADD_NEW_PAYMENT" =  "Add New payment method";
 
+//MAKR: Gift Voucher Screen
+"GIFT_VOUCHER_TITLE" = "my gift voucher";
+"GIFT_VOUCHER_HEADER" = "offer a special moment of relax to somebody you love";
+"GIFT_VOUCHER_SUB_HEADER" = "please read this info before you buy a gift voucher:";
+"GIFT_VOUCHER_BODY" = "1. each voucher can be used from one person only in one time only, so don't buy a voucher to offer for 2 or more people.\n2. choose the amount you want to offer (can be 15, 20, 25, 30, 35, 40, 50, 60, 75, 80, 100€) , the person who received the voucher will choose the type of massage when she/he calls to book\n3. write the name and tel number of the person who will receive the voucher\n4. type the email on which you would like to receive the voucher and the invoice\n5. fill in your fiscal number and country (optional) for the invoice\n6. once you finish the payment you will receive an email with the electronic voucher and the invoice\n7. the voucher can be used in a period max of 12 months";
+"GIFT_VOUCHER_EMPTY_TITLE" = "you have no gift voucher";
+"GIFT_VOUCHER_EMPTY_MESSAGE" = "";
+"BUY_GIFT_VOUCHER_COMPLETE_TITLE" = "buy gift voucher Successful";
+"BUY_GIFT_VOUCHER_COMPLETE_MESSAGE" = "thanks for choosing our services! we have received your booking and will confirm it as soon as possible";
+
+//MARK: Add Gift Voucher Screen
+"ADD_GIFT_VOUCHER_LOCATION_DETAIL" = "location";
+"ADD_GIFT_VOUCHER_LOCATION_DETAIL_PLACEHOLDER" = "no location select";
+"ADD_GIFT_VOUCHER_SERVICE_DETAIL" = "service";
+"ADD_GIFT_VOUCHER_SERVICE_DETAIL_PLACEHOLDER" = "no service select";
+"ADD_GIFT_VOUCHER_DESIGN_DETAIL" = "choose a design";
+"ADD_GIFT_VOUCHER_DESIGN_DETAIL_PLACEHOLDER" = "no design select";
+"ADD_GIFT_VOUCHER_RECIPIENT_DETAIL" = "recipients details";
+"ADD_GIFT_VOUCHER_RECIPIENT_DETAIL_PLACEHOLDER" = "no details fill";
+"ADD_GIFT_VOUCHER_GIVER_DETAIL" = "giver details";
+"ADD_GIFT_VOUCHER_GIVER_DETAIL_PLACEHOLDER" = "no details fill";
+"ADD_GIFT_VOUCHER_SENDING_PREFERENCE_DETAIL" = "sending preference";
+"ADD_GIFT_VOUCHER_SENDING_PREFERENCE_DETAIL_PLACEHOLDER" = "no send";
+"ADD_GIFT_VOUCHER_SUBTOTAL" = "subtotal";
 //MARK:  Reservation VC
 "RESERVATION_TITLE" = "your reservation is pending";
 "RESERVATION_MESSAGE" = "For the protection of our therapists, we kindly ask you to verify your account in 4 steps before you finalize your booking: Selfie and ID or passport verification Do you want to complete this step?";
@@ -324,11 +348,6 @@
 "REQUEST_BOOKING_COMPLETE_TITLE" = "request sent";
 "REQUEST_BOOKING_COMPLETE_MESSAGE" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut";
 "REQUEST_BOOKING_COMPLETE_BTN_HOME" = "Home";
-
-
-"BUY_GIFT_VOUCHER_COMPLETE_TITLE" = "buy gift voucher Successful";
-"BUY_GIFT_VOUCHER_COMPLETE_MESSAGE" = "thanks for choosing our services! we have received your booking and will confirm it as soon as possible";
-
 //MARK: Manage Document Screen
 "MANAGE_DOCUMENT_TITLE" = "Id / Passport";
 "DOCUMENT_EMPTY_TITLE" = "no documents available";

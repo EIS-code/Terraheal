@@ -26,9 +26,9 @@ class PackTblCell: TableCell {
         self.lblVoucherCode.text = "PACK_CODE".localized()
         self.lblname?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
         self.lblShortDescription?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
-        self.lblVoucherCode?.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblVoucherCode?.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.lblCode?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
-        self.lblPackDetail?.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblPackDetail?.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
         self.ivPack?.setRound()
        

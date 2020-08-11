@@ -186,6 +186,8 @@ import UIKit
                        return(true,"VALIDATION_MSG_INVALID_NIF".localized())
                    case .IdPassport:
                        return(true,"VALIDATION_MSG_INVALID_ID".localized())
+                   case .Currency:
+                        return(true,"")
                    case .Number:
                        return(self.text!.isNumber(),"VALIDATION_MSG_NUMBER_ONLY".localized())
                    case .Default:

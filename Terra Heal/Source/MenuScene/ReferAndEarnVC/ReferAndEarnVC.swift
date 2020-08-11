@@ -103,17 +103,17 @@ class ReferAndEarnVC: MainVC {
         self.setTitle(title: "REFER_AND_EARN_TITLE".localized())
 
         self.lblTotalBalance.text = "REFER_AND_EARN_LBL_TOTAL_BALANCE".localized()
-        self.lblTotalBalance.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblTotalBalance.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.lblTotalBalanceValue.text = "--".localized()
         self.lblTotalBalanceValue.setFont(name: FontName.Bold, size: FontSize.label_22)
 
         self.lblLifeTimeEarning.text = "REFER_AND_EARN_LBL_LIFETIME_EARNING".localized()
-        self.lblLifeTimeEarning.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblLifeTimeEarning.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.lblLifeTimeEarningValue.text = "--".localized()
         self.lblLifeTimeEarningValue.setFont(name: FontName.Bold, size: FontSize.label_22)
 
         self.lblLifeTimeBurning.text = "REFER_AND_EARN_LBL_LIFETIME_BURNING".localized()
-        self.lblLifeTimeBurning.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblLifeTimeBurning.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.lblLifeTimeBurningValue.text = "--".localized()
         self.lblLifeTimeBurningValue.setFont(name: FontName.Bold, size: FontSize.label_22)
 
@@ -122,7 +122,7 @@ class ReferAndEarnVC: MainVC {
         self.lblReferAndEarn.setFont(name: FontName.SemiBold, size: FontSize.label_18)
 
         self.lblInviteFriendMsg.text = "REFER_AND_EARN_LBL_INVITE_FRIEND_MSG".localized()
-        self.lblInviteFriendMsg.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblInviteFriendMsg.setFont(name: FontName.Regular, size: FontSize.label_12)
 
 
         self.btnReferNow.setTitle("REFER_AND_EARN_BTN_REFER_NOW".localized(), for: .normal)
@@ -136,7 +136,7 @@ class ReferAndEarnVC: MainVC {
         self.lblHistory.setFont(name: FontName.SemiBold, size: FontSize.label_18)
 
         self.lblNoHistory.text = "REFER_AND_EARN_LBL_NO_HISTORY".localized()
-        self.lblNoHistory.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblNoHistory.setFont(name: FontName.Regular, size: FontSize.label_12)
 
         self.btnFilter.setTitle("last month".localized(), for: .normal)
         self.btnFilter.setFont(name: FontName.SemiBold, size: FontSize.button_14)

@@ -69,7 +69,7 @@ class MapLocationVC: MainVC {
         self.btnDone.setTitle("BTN_PROCEED".localized(), for: .normal)
         self.btnDone.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         
-        self.lblAddressValue.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblAddressValue.setFont(name: FontName.Regular, size: FontSize.label_12)
         
         
     }

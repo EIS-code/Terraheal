@@ -73,7 +73,7 @@ class HelpVC: MainVC {
         self.setupTableView(tableView: self.tableView)
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.setTitle(title: "HELP_TITLE".localized())
-        self.lblDetails.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblDetails.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.btnBack.setBackButton()
     }
     

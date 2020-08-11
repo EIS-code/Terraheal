@@ -74,7 +74,7 @@ class VerificationVC: MainVC {
         self.lblIdPassport.text = "VERIFICATION_LBL_ID_PASSPORT".localized()
         self.lblIdBackSide.setFont(name: FontName.Bold, size: FontSize.label_10)
         self.lblIdFrontSide.setFont(name: FontName.Bold, size: FontSize.label_10)
-        self.lblIdPassport.setFont(name: FontName.SemiBold, size: FontSize.label_14)
+        self.lblIdPassport.setFont(name: FontName.SemiBold, size: FontSize.label_12)
         self.btnVerified.setTitle("VERIFICATION_BTN_VERIFIED".localized(), for: .normal)
     }
 

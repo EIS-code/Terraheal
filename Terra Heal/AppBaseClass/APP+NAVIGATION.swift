@@ -756,6 +756,22 @@ extension AppDelegate {
         }
     }
     
+    func loadAddGiftVoucherVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: AddGiftVoucherVC =  nc.findVCs(ofType: AddGiftVoucherVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: AddGiftVoucherVC = AddGiftVoucherVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: AddGiftVoucherVC = AddGiftVoucherVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+    
+    
     
 }
 

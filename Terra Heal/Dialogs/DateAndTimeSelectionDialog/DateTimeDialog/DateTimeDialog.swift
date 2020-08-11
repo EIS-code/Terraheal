@@ -54,8 +54,8 @@ class DateTimeDialog: ThemeBottomDialogView {
         self.lblSelectTime.text = "DATE_DIALOG_LBL_SELECT_TIME".localized()
         self.lblSelectDate.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.lblSelectTime.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblDateValue.setFont(name: FontName.Regular, size: FontSize.label_14)
-        self.lblTimeValue.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblDateValue.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblTimeValue.setFont(name: FontName.Regular, size: FontSize.label_12)
     }
     
     override func layoutSubviews() {

@@ -93,7 +93,7 @@ class ServiceMapVC: MainVC {
         self.lblAddressTitle?.text = "Home".localized()
         self.lblAddressTitle?.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.lblAddress?.text = "Lorem Ipsum, Lisbon, portugal 12451.".localized()
-        self.lblAddress?.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblAddress?.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.btnBook.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnBook.setTitle("BTN_BOOK_HERE".localized(), for: .normal)
         self.btnCheckService.setTitle("BTN_CHECK_SERVICE".localized(), for: .normal)

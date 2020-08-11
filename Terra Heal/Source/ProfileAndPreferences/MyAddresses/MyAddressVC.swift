@@ -66,11 +66,11 @@ class MyAddressVC: MainVC {
         self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnSubmit?.setHighlighted(isHighlighted: true)
         self.btnBack.setBackButton()
-
+        
     }
     
     @IBAction func btnBackTapped(_ sender: Any) {
-         _ = (self.navigationController as? NC)?.popVC()
+        _ = (self.navigationController as? NC)?.popVC()
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
@@ -103,7 +103,7 @@ class MyAddressVC: MainVC {
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (address) in
-             guard let self = self else { return } ; print(self)
+            guard let self = self else { return } ; print(self)
             alert?.dismiss()
             if index == -1 {
                 self.wsSaveAddress(request: address.toAddRequest())
@@ -149,7 +149,7 @@ extension MyAddressVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDe
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-tableView.backgroundColor = .clear
+        tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
@@ -164,8 +164,7 @@ tableView.backgroundColor = .clear
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
+       
         let cell = tableView.dequeueReusableCell(withIdentifier: MyAddressTblCell.name, for: indexPath) as?  MyAddressTblCell
         cell?.layoutIfNeeded()
         cell?.setData(data: arrForData[indexPath.row])
@@ -207,40 +206,40 @@ extension MyAddressVC {
     
     func wsSaveAddress(request:Addresses.RequestAddAddress) {
         AppWebApi.addAddress(params: request, completionHandler: { (response) in
-                if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
-                    self.arrForData.append(response.address)
-                    self.tableView.reloadData()
-                    self.updateUI()
-                }
-                Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
+                self.arrForData.append(response.address)
+                self.tableView.reloadData()
+                self.updateUI()
+            }
+            Loader.hideLoading()
         })
     }
     func wsUpdateAddress(request:Addresses.RequestUpdateAddress) {
         AppWebApi.updateAddress(params: request, completionHandler: { (response) in
-                if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
-                    if let index = (self.arrForData.firstIndex { (address) -> Bool in
-                        address.id == request.id
-                        }) {
-                        self.arrForData[index]  = response.address
-                    }
-                    self.tableView.reloadData()
-                    self.updateUI()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
+                if let index = (self.arrForData.firstIndex { (address) -> Bool in
+                    address.id == request.id
+                }) {
+                    self.arrForData[index]  = response.address
                 }
-                Loader.hideLoading()
+                self.tableView.reloadData()
+                self.updateUI()
+            }
+            Loader.hideLoading()
         })
     }
     func wsRemoveAddress(request:Addresses.RequestDeleteAddress) {
         AppWebApi.removeAddress(params: request, completionHandler: { (response) in
-                if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
-                    if let index = (self.arrForData.firstIndex { (address) -> Bool in
-                        address.id == request.id
-                        }) {
-                        self.arrForData.remove(at: index)
-                    }
-                    self.tableView.reloadData()
-                    self.updateUI()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
+                if let index = (self.arrForData.firstIndex { (address) -> Bool in
+                    address.id == request.id
+                }) {
+                    self.arrForData.remove(at: index)
                 }
-                Loader.hideLoading()
+                self.tableView.reloadData()
+                self.updateUI()
+            }
+            Loader.hideLoading()
         })
     }
 }

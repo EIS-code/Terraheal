@@ -20,9 +20,9 @@ class ProfileTblUserInfoCell: TableCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblName?.setFont(name: FontName.SemiBold, size: FontSize.label_14)
+        self.lblName?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
         self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.label_26)
-        self.lblDescription?.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblDescription?.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
         self.btnAction?.setHighlighted(isHighlighted: false)
         

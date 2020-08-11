@@ -151,13 +151,13 @@ class ProfileVC: MainVC {
     private func initialViewSetup() {
         self.view.backgroundColor = UIColor.themeBackground
         self.lblEmail?.text = appSingleton.user.email
-        self.lblEmail?.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblEmail?.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.lblMobile?.text = appSingleton.user.telNumber
-        self.lblMobile?.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblMobile?.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.lblUserName?.text = appSingleton.user.name
-        self.lblUserName?.setFont(name: FontName.SemiBold, size: FontSize.label_14)
+        self.lblUserName?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
         self.lblDescription?.text = "description goes here."//appSingleton.user.name
-        self.lblDescription?.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblDescription?.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.setupTableView(tableView: self.tableView)
     }
 

@@ -71,7 +71,7 @@ class AddCardVC: MainVC {
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_22)
         
         self.lblTitleMessage?.text = "ADD_CARD_TITLE_MESSAGE".localized()
-        self.lblTitleMessage?.setFont(name: FontName.SemiBold, size: FontSize.label_14)
+        self.lblTitleMessage?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
         
         self.lblCardNumber?.text = "ADD_CARD_LBL_CARD_NUMBER".localized()
         self.lblCardNumber?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
@@ -89,13 +89,13 @@ class AddCardVC: MainVC {
         
         
         self.btnOther.setTitle("ADD_CARD_TYPE_OTHER".localized(), for: .normal)
-        self.btnOther.setFont(name: FontName.SemiBold, size: FontSize.label_14)
+        self.btnOther.setFont(name: FontName.SemiBold, size: FontSize.label_12)
         
         self.btnPersonal.setTitle("ADD_CARD_TYPE_PERSONAL".localized(), for: .normal)
-        self.btnPersonal.setFont(name: FontName.SemiBold, size: FontSize.label_14)
+        self.btnPersonal.setFont(name: FontName.SemiBold, size: FontSize.label_12)
         
         self.btnBusiness.setTitle("ADD_CARD_TYPE_BUSINESS".localized(), for: .normal)
-        self.btnBusiness.setFont(name: FontName.SemiBold, size: FontSize.label_14)
+        self.btnBusiness.setFont(name: FontName.SemiBold, size: FontSize.label_12)
         
         self.txtCardName?.placeholder = "ADD_CARD_TXT_NAME".localized()
         self.txtCardName?.delegate = self
@@ -115,10 +115,10 @@ class AddCardVC: MainVC {
        
         
         self.lblAccept?.text = "ADD_CARD_SAVE_CARD_DETAILS".localized()
-        self.lblAccept?.setFont(name: FontName.SemiBold, size: FontSize.label_14)
+        self.lblAccept?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
         
         self.lblSaveDetailMsg?.text = "ADD_CARD_SAVE_CARD_DETAIL_MESSAGE".localized()
-        self.lblSaveDetailMsg?.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblSaveDetailMsg?.setFont(name: FontName.Regular, size: FontSize.label_12)
     }
     
     // MARK: - Action Methods

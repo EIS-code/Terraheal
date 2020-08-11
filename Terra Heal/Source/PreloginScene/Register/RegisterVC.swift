@@ -119,7 +119,7 @@ class RegisterVC: MainVC {
         self.lblConnect?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
 
         self.lblAccept?.text = "REGISTR_LBL_ACCEPT".localized()
-        self.lblAccept?.setFont(name: FontName.SemiBold, size: FontSize.label_14)
+        self.lblAccept?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
 
         self.btnTermsCondition?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
 

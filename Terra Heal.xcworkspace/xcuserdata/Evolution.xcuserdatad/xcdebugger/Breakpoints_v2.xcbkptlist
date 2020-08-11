@@ -55,16 +55,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F2312100-4CE3-4EBB-A04F-CB7746EB9763"
+            uuid = "373A10CE-5361-4863-92B0-2968577F1740"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Terra Heal/Source/MainScene/HomeVC/HomeVC.swift"
+            filePath = "Terra Heal/Others/TextField/ACFloatingTextfield.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "validate()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

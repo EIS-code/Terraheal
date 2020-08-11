@@ -71,13 +71,13 @@ class ScanSelfieInstructionVC: MainVC {
         self.lblInfo1Title?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
 
         self.lblInfo1Detail?.text = "SELFIE_LBL_INFO_1_MESSAGE".localized()
-        self.lblInfo1Detail?.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblInfo1Detail?.setFont(name: FontName.Regular, size: FontSize.label_12)
 
         self.lblInfo2Title?.text = "SELFIE_LBL_INFO_2_TITLE".localized()
         self.lblInfo2Title?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
 
         self.lblInfo2Detail?.text = "SELFIE_LBL_INFO_2_MESSAGE".localized()
-        self.lblInfo2Detail?.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblInfo2Detail?.setFont(name: FontName.Regular, size: FontSize.label_12)
 
     }
 

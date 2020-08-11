@@ -20,7 +20,7 @@ class NotificationTblCell: TableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.lblMessage?.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblDate?.setFont(name: FontName.Bold, size: FontSize.label_14)
+        self.lblDate?.setFont(name: FontName.Bold, size: FontSize.label_12)
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
         self.imgSelected?.setRound()
         self.ivIcon?.setRound()

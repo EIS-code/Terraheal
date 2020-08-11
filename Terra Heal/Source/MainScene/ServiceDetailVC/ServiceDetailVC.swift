@@ -73,7 +73,7 @@ class ServiceDetailVC: MainVC {
         self.lblServiceName?.text = serviceDetail.name
         self.lblServiceName?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.lblServiceDetail?.text = serviceDetail.details
-        self.lblServiceDetail?.setFont(name: FontName.Regular, size: FontSize.label_14)
+        self.lblServiceDetail?.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.btnBack.setBackButton()
     }
     
