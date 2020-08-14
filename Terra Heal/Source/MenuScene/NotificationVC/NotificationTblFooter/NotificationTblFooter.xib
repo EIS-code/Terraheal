@@ -18,10 +18,10 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="252" text="--" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B84-s2-NEK" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="20" width="546" height="38.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" name="theme_primary"/>
+                    <color key="textColor" name="theme_dark_text"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-no-address" translatesAutoresizingMaskIntoConstraints="NO" id="d25-X0-5ZG">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-no-notification" translatesAutoresizingMaskIntoConstraints="NO" id="d25-X0-5ZG">
                     <rect key="frame" x="109" y="78.5" width="328" height="327.5"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="d25-X0-5ZG" secondAttribute="height" multiplier="1:1" id="gfe-eC-umj"/>
@@ -48,9 +48,9 @@
         </view>
     </objects>
     <resources>
-        <image name="asset-no-address" width="193.5" height="213.5"/>
-        <namedColor name="theme_primary">
-            <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="asset-no-notification" width="296.5" height="227.5"/>
+        <namedColor name="theme_dark_text">
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

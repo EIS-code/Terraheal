@@ -83,7 +83,7 @@ class CustomAddNewAddressDialog: ThemeBottomDialogView {
         self.txtLatitude.delegate = self
         self.txtLongitude?.placeholder = "MANAGE_ADDRESS_TXT_ADDRESS_LONGITUDE".localized()
         self.txtLongitude.delegate = self
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.setDataForStepUpAnimation()
        
     }
@@ -187,6 +187,7 @@ class CustomAddNewAddressDialog: ThemeBottomDialogView {
         if locationVC == nil {
              locationVC = MapLocationVC.fromNib()
         }
+        locationVC?.modalPresentationStyle = .fullScreen
         Common.appDelegate.getTopViewController()?.present(locationVC!, animated: true, completion: {
             
         })

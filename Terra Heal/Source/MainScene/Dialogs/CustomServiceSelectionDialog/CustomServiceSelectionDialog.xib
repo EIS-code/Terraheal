@@ -28,7 +28,7 @@
                     <rect key="frame" x="0.0" y="268" width="320" height="300"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
-                            <rect key="frame" x="0.0" y="35.5" width="320" height="264.5"/>
+                            <rect key="frame" x="0.0" y="35.5" width="320" height="304.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label fsadf dsaf dsafjkdsljfdskajfklsdjaklfjkslad" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-4J-xGz" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                     <rect key="frame" x="32" y="55.5" width="256" height="41"/>
@@ -44,7 +44,7 @@
                                     </constraints>
                                 </view>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="252" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ps3-Js-7Iq">
-                                    <rect key="frame" x="32" y="176.5" width="256" height="88"/>
+                                    <rect key="frame" x="32" y="176.5" width="256" height="168"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="z33-qW-ZLm">
                                         <size key="itemSize" width="128" height="128"/>
@@ -72,9 +72,8 @@
                                 <constraint firstItem="qLP-3J-98a" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="Nqr-5k-jFD"/>
                                 <constraint firstItem="ps3-Js-7Iq" firstAttribute="top" secondItem="qLP-3J-98a" secondAttribute="bottom" constant="20" id="PVm-a7-oW5"/>
                                 <constraint firstItem="qLP-3J-98a" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.4" id="PuD-0H-uQ9"/>
-                                <constraint firstAttribute="bottom" secondItem="W3s-UH-gbE" secondAttribute="bottom" constant="20" id="c3a-nN-Bx0"/>
                                 <constraint firstItem="ps3-Js-7Iq" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="e3K-nR-VPz"/>
-                                <constraint firstAttribute="bottom" secondItem="ps3-Js-7Iq" secondAttribute="bottom" id="iKl-Bx-2td"/>
+                                <constraint firstAttribute="bottom" secondItem="ps3-Js-7Iq" secondAttribute="bottom" constant="-40" id="iKl-Bx-2td"/>
                                 <constraint firstItem="W3s-UH-gbE" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="la7-5Y-5S1"/>
                                 <constraint firstItem="qLP-3J-98a" firstAttribute="top" secondItem="eho-4J-xGz" secondAttribute="bottom" constant="20" id="qH6-2W-y1l"/>
                                 <constraint firstItem="eho-4J-xGz" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.8" id="ydI-AK-c6q"/>
@@ -91,7 +90,7 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="581-cI-fuY" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="581-cI-fuY" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
                             <rect key="frame" x="258" y="14.5" width="42" height="42"/>
                             <color key="backgroundColor" name="theme_background"/>
                             <constraints>
@@ -112,7 +111,7 @@
                         <constraint firstItem="az3-5n-QhJ" firstAttribute="centerY" secondItem="Yaj-p7-IIT" secondAttribute="top" id="91X-Ow-Eb7"/>
                         <constraint firstAttribute="height" constant="300" id="BAW-Ip-K82"/>
                         <constraint firstItem="eho-4J-xGz" firstAttribute="top" secondItem="az3-5n-QhJ" secondAttribute="bottom" constant="20" id="Jzz-tT-W9e"/>
-                        <constraint firstAttribute="bottom" secondItem="Yaj-p7-IIT" secondAttribute="bottom" id="Kzi-5I-qTc"/>
+                        <constraint firstAttribute="bottom" secondItem="Yaj-p7-IIT" secondAttribute="bottom" constant="-40" id="Kzi-5I-qTc"/>
                         <constraint firstItem="Yaj-p7-IIT" firstAttribute="width" secondItem="V39-84-TsB" secondAttribute="width" id="MUD-su-Zve"/>
                         <constraint firstItem="az3-5n-QhJ" firstAttribute="top" secondItem="V39-84-TsB" secondAttribute="top" id="RTR-tp-f7u"/>
                         <constraint firstItem="581-cI-fuY" firstAttribute="centerY" secondItem="Yaj-p7-IIT" secondAttribute="top" id="ewQ-BA-x2V"/>
@@ -127,6 +126,7 @@
                 <constraint firstItem="6ZW-DU-hOd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O4e-FZ-uqZ"/>
                 <constraint firstItem="6ZW-DU-hOd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Q6J-jS-lz5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="V39-84-TsB" secondAttribute="trailing" id="dUH-Mq-8NY"/>
+                <constraint firstItem="W3s-UH-gbE" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="-20" id="jGt-ld-4bt"/>
                 <constraint firstItem="V39-84-TsB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kCB-jR-Feo"/>
                 <constraint firstItem="V39-84-TsB" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="pVs-FU-SqG"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="V39-84-TsB" secondAttribute="bottom" id="rX8-mU-2eq"/>

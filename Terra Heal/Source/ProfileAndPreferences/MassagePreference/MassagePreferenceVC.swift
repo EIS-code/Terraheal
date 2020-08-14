@@ -94,7 +94,6 @@ class MassagePreferenceVC: MainVC {
     private func initialViewSetup() {
         
         self.setupTableView(tableView: self.tableView)
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.setTitle(title: "MASSAGE_PREFERENCE_TITLE".localized())
         self.btnSubmit.setTitle("BTN_SUBMIT".localized(), for: .normal)
         self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)

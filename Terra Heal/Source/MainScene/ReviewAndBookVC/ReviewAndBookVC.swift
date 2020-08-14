@@ -59,6 +59,7 @@ class ReviewAndBookVC: MainVC {
     @IBOutlet weak var btnWithoutPayment: ThemeButton!
     @IBOutlet weak var btnPrepayment: ThemeButton!
     
+    @IBOutlet weak var vwTotalBg: UIView!
     
     var arrForData: [BookingInfo] = appSingleton.myBookingData.booking_info
     var arrForSummaryData: [SummaryValueDetail] = SummaryValueDetail.getDemoArray()
@@ -87,6 +88,7 @@ class ReviewAndBookVC: MainVC {
             vwSessionDetailFooter?.createDashedLine(from: CGPoint.zero, to: CGPoint(x: vwSessionDetailFooter.bounds.maxX, y: 0), color: UIColor.themeDarkText, strokeLength: 10, gapLength: 5, width: 1.0)
             self.reloadTableDataToFitHeight(tableView: self.tblVwForSessions, height:self.hTblSession)
             self.reloadTableDataToFitHeight(tableView: self.tblVwForSummary, height:self.hTblSummary)
+            vwTotalBg.setRound(withBorderColor: .themePrimary, andCornerRadious: 5.0, borderWidth: 1.0)
         }
         
     }
@@ -94,7 +96,7 @@ class ReviewAndBookVC: MainVC {
     func initialViewSetup() {
         self.setBackground(color: UIColor.themeBackground)
         self.lblTitle?.text = "REVIEW_AND_BOOK_TITLE".localized()
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
+      
         self.lblTitleDetail?.text = "REVIEW_AND_BOOK_TITLE_DETAIL".localized()
         self.lblTitleDetail?.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.lblBookingDetail?.text = "REVIEW_AND_BOOK_LBL_BOOKING_DETAIL".localized()
@@ -169,7 +171,8 @@ class ReviewAndBookVC: MainVC {
         if checkValidation() {
             
             print(appSingleton.myBookingData.toDictionary())
-            Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "BOOKING_COMPLETE_TITLE".localized(), strMessage: "BOOKING_COMPLETE_MESSAGE".localized(), strImg: "", strButtonTitle: "BOOKING_COMPLETE_BTN_HOME".localized()))
+            Common.appDelegate.loadReservationVC()
+            
         }
     }
     
@@ -195,7 +198,7 @@ class ReviewAndBookVC: MainVC {
             [weak paymentPercentageDialog, weak self]  (button) in
             guard let self = self else { return } ; print(self)
             paymentPercentageDialog?.dismiss()
-            Common.appDelegate.loadPaymentReferenceVC(navigaionVC: self.navigationController)
+            Common.appDelegate.loadPaymentReferenceVC(navigaionVC: self.navigationController, isFromMenu: false)
         }
     }
     
@@ -322,10 +325,10 @@ extension ReviewAndBookVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if tableView == tblVwForSessions {
-            return  UITableView.automaticDimension
+            return  40
         }
         else {
-            return 0
+            return 1
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -356,7 +359,6 @@ extension ReviewAndBookVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40//UITableView.automaticDimension
     }
-    
     
     @objc func editService(sender: UIButton) {
         let buttonPostion = sender.convert(sender.bounds.origin, to: tblVwForSessions)

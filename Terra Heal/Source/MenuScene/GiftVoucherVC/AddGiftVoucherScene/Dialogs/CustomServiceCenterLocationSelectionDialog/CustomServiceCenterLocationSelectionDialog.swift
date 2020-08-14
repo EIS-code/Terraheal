@@ -23,7 +23,7 @@ class CustomServiceCenterLocationSelectionDialog: ThemeBottomDialogView {
     @IBOutlet weak var btnChange: ThemeButton!
     @IBOutlet weak var lblLocationValue: ThemeLabel!
     
-     var onBtnDoneTapped: (() -> Void)? = nil
+    var onBtnDoneTapped: ((_ data: ServiceCenterDetail) -> Void)? = nil
        var arrForServices: [ServiceCenterDetail] = []
        var arrForServicesMarker: [GMSMarker] = []
        var currentMarker: GMSMarker? = nil
@@ -54,7 +54,7 @@ class CustomServiceCenterLocationSelectionDialog: ThemeBottomDialogView {
         self.lblLocationValue.setFont(name: FontName.SemiBold, size: FontSize.label_14)
         self.currentMarker = GMSMarker.init()
         self.setupMapView(mapView: self.mapView)
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.setupCollectionView()
         self.setDataForStepUpAnimation(data: [0.95])
         self.getMassageCenter()
@@ -72,7 +72,7 @@ class CustomServiceCenterLocationSelectionDialog: ThemeBottomDialogView {
 
     @IBAction func btnDoneTapped(_ sender: Any) {
             if self.onBtnDoneTapped != nil {
-               // self.onBtnDoneTapped!();
+                self.onBtnDoneTapped!(self.arrForServices[self.currentIndex]);
             }
     }
     func getMassageCenter() {

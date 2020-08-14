@@ -13,7 +13,8 @@ class CustomSendingPreferenceDialog: ThemeBottomDialogView {
     @IBOutlet weak var txtData: ACFloatingTextfield!
     @IBOutlet weak var vwSwitch: JDSegmentedControl!
     var onBtnDoneTapped: ((_ data: String) -> Void)? = nil
-
+    var date: Double = 0.0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -49,12 +50,12 @@ class CustomSendingPreferenceDialog: ThemeBottomDialogView {
                    if index == 0 {
                        
                    } else {
-                       
+                    self.openDatePicker()
                    }
                }
         self.txtData?.placeholder = "".localized()
         self.txtData?.delegate = self
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
     }
 
     override func layoutSubviews() {
@@ -91,6 +92,26 @@ class CustomSendingPreferenceDialog: ThemeBottomDialogView {
         
     }
 
+    func openDatePicker() {
+        let datePickerAlert: CustomDatePicker = CustomDatePicker.fromNib()
+        datePickerAlert.initialize(title: "DATE_DIALOG_LBL_SELECT_DATE".localized(), buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized())
+        datePickerAlert.show(animated: true)
+        datePickerAlert.onBtnCancelTapped = {
+            [weak datePickerAlert, weak self] in
+            guard let self = self else { return } ; print(self)
+            datePickerAlert?.dismiss()
+        }
+        datePickerAlert.onBtnDoneTapped = {
+            [weak datePickerAlert, weak self] (date) in
+            guard let self = self else { return } ; print(self)
+            datePickerAlert?.dismiss()
+            self.date = date
+            print(date)
+            
+        }
+    }
+    
+    
 }
 
 extension CustomSendingPreferenceDialog: UITextFieldDelegate {

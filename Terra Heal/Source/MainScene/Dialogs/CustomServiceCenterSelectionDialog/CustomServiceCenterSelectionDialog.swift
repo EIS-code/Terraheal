@@ -22,7 +22,7 @@ class CustomServiceCenterSelectionDialog: ThemeBottomDialogView {
       @IBOutlet weak var vwService: UIView!
       @IBOutlet weak var hCltVw: NSLayoutConstraint!
      
-     var onBtnDoneTapped: (() -> Void)? = nil
+    var onBtnDoneTapped: ((_ data:ServiceCenterDetail) -> Void)? = nil
        var arrForServices: [ServiceCenterDetail] = []
        var arrForServicesMarker: [GMSMarker] = []
        var currentMarker: GMSMarker? = nil
@@ -51,7 +51,7 @@ class CustomServiceCenterSelectionDialog: ThemeBottomDialogView {
         super.initialSetup()
         self.currentMarker = GMSMarker.init()
         self.setupMapView(mapView: self.mapView)
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.setupCollectionView()
         self.setDataForStepUpAnimation(data: [0.95])
         self.getMassageCenter()
@@ -68,7 +68,7 @@ class CustomServiceCenterSelectionDialog: ThemeBottomDialogView {
 
     @IBAction func btnDoneTapped(_ sender: Any) {
             if self.onBtnDoneTapped != nil {
-               // self.onBtnDoneTapped!();
+                self.onBtnDoneTapped!(self.arrForServices[currentIndex]);
             }
     }
     func getMassageCenter() {
@@ -130,11 +130,6 @@ extension CustomServiceCenterSelectionDialog:  UICollectionViewDelegate, UIColle
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-      /*  if collectionView == cltForCollapseView {
-            self.upDialogAnimation()
-            self.transitionAnimator?.startAnimation()
-        }*/
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

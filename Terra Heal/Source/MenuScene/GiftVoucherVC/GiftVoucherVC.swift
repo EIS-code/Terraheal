@@ -21,6 +21,7 @@ class GiftVoucherVC: MainVC {
     @IBOutlet weak var lblHeader: ThemeLabel!
     var arrForData: [String] = [ "terra heal massage center","terra heal massage center","terra heal massage center","terra heal massage center","terra heal massage center","terra heal massage center"]
     
+    @IBOutlet weak var btnGetStarted: ThemeButton!
     
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -43,6 +44,7 @@ class GiftVoucherVC: MainVC {
         self.initialViewSetup()
         self.arrForData.removeAll()
         self.updateUI()
+        self.btnGetStarted.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,14 +75,18 @@ class GiftVoucherVC: MainVC {
     }
     
     @IBAction func btnBuyGiftVoucherTapped(_ sender: Any) {
-         //updateUIForInformation()
-        Common.appDelegate.loadAddGiftVoucherVC(navigaionVC: self.navigationController)
+         updateUIForInformation()
+        
     }
     
+    @IBAction func btnGetStartedTapped(_ sender: Any) {
+        Common.appDelegate.loadAddGiftVoucherVC(navigaionVC: self.navigationController)
+    }
     func updateUIForInformation() {
         vwForEmpty.gone()
         tableView.gone()
         vwForBuyGiftInfo.visible()
+        btnGetStarted.visible()
         
     }
     private func initialViewSetup() {
@@ -95,13 +101,15 @@ class GiftVoucherVC: MainVC {
         self.lblEmptyTitle.text = "GIFT_VOUCHER_EMPTY_TITLE".localized()
         self.lblEmptyTitle.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.lblEmptyMessage.setFont(name: FontName.Regular, size: FontSize.label_12)
-        self.btnBuyGiftVoucher?.setTitle("Buy Gift Voucher".localized(), for: .normal)
+        self.btnBuyGiftVoucher?.setTitle("GIFT_VOUCHER_BTN_BUY_GIFT_VOUCHER".localized(), for: .normal)
         self.btnBuyGiftVoucher?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnBuyGiftVoucher?.setHighlighted(isHighlighted: true)
-        self.btnBuyNow?.setTitle("Buy Now".localized(), for: .normal)
+        self.btnBuyNow?.setTitle("GIFT_VOUCHER_BTN_BUY_NOW".localized(), for: .normal)
         self.btnBuyNow?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnBuyNow?.setHighlighted(isHighlighted: true)
-        
+        self.btnGetStarted?.setTitle("GIFT_VOUCHER_BTN_GET_STARTED".localized(), for: .normal)
+        self.btnGetStarted?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
+        self.btnGetStarted?.setHighlighted(isHighlighted: true)
     }
     // MARK: - Action Methods
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {

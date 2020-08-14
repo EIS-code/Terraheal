@@ -18,9 +18,9 @@ class CustomLocationServiceDialog: ThemeBottomDialogView {
     @IBOutlet weak var vwServiceSelection: JDSegmentedControl!
     var selectedService: ServiceType = ServiceType.Massages
     var onBtnDoneTapped: (( ) -> Void)? = nil
-    var arrForData: [ServiceDetail] = []
-    var arrForMassage: [ServiceDetail] = []
-    var arrForTherapies: [ServiceDetail] = []
+    var arrForData: [ServiceDetail] = ServiceDetail.getDemoArray()
+    var arrForMassage: [ServiceDetail] = ServiceDetail.getDemoArray()
+    var arrForTherapies: [ServiceDetail] = ServiceDetail.getDemoArray()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -48,7 +48,7 @@ class CustomLocationServiceDialog: ThemeBottomDialogView {
     
     override func initialSetup() {
         super.initialSetup()
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.setupCollectionView(collectionView: self.collectionVw)
         self.vwServiceSelection.allowChangeThumbWidth = false
         self.vwServiceSelection.itemTitles = ["massages".localized(),"therapies".localized()]
@@ -102,8 +102,8 @@ class CustomLocationServiceDialog: ThemeBottomDialogView {
     
     
     func openFAQdetailsDialog(index: Int) {
-        let alert: CustomInformationDialog = CustomInformationDialog.fromNib()
-        alert.initialize(title: arrForData[index].name, data: "FAQ_CONTENT".localized(), buttonTitle: "".localized(), cancelButtonTitle: "".localized())
+        let alert: PricingDurationSelectionDialog = PricingDurationSelectionDialog.fromNib()
+        alert.initialize(title: arrForData[index].name, message: "abcd".localized(), buttonTitle: "proceed".localized(), cancelButtonTitle: "back".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
@@ -111,7 +111,7 @@ class CustomLocationServiceDialog: ThemeBottomDialogView {
             alert?.dismiss()
         }
         alert.onBtnDoneTapped = {
-            [weak alert, weak self]  in
+            [weak alert, weak self] (data) in
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
             

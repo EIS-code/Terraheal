@@ -50,6 +50,9 @@ extension  ServiceMapVC {
             if transitionAnimator?.isRunning ?? true {
                 transitionAnimator?.stopAnimation(true)
             }
+            if direction == .down {
+                setInitialAnimationProperty()
+            }
             animationProgress = transitionAnimator?.fractionComplete ??  0
             self.upDownAnimation(direction: direction)
             transitionAnimator?.pauseAnimation()
@@ -99,12 +102,14 @@ extension  ServiceMapVC {
 
         if let visibleCell = self.collectionView.visibleCells.first as? ServiceCell {
                     self.animatingCell = visibleCell
+            
                     self.animatingCell.lblNameRect = self.animatingCell.lblName.frame
                     self.animatingCell.lblAddressRect = self.animatingCell.lblAddress.frame
                     self.animatingCell.ivMapRect = self.animatingCell.ivMap.frame
                     self.animatingCell.btnHoursRect = self.animatingCell.btnHours.frame
                     self.animatingCell.stkNumberOfServiceRect = self.animatingCell.stkNumberOfService.frame
                     self.animatingCell.lblServicesRect = self.animatingCell.lblServices.frame
+                print(self.animatingCell.stkNumberOfServiceRect)
         }
         if let visibleCell = self.cltForCollapseView.visibleCells.first as? ServiceCollapseCell {
                     self.targetAnimatingCell = visibleCell
@@ -113,14 +118,11 @@ extension  ServiceMapVC {
     
     func downDialogAnimation() {
         print("DownAnimation")
-        self.setInitialAnimationProperty()
         self.transitionAnimator?.stopAnimation(true)
         self.transitionAnimator?.addAnimations {
             self.animatingCell.lblName.frame = self.targetAnimatingCell.lblName.frame
-            self.animatingCell.stkNumberOfService.frame = self.targetAnimatingCell.stkNumberOfService.frame
-            //self.animatingCell.lblAddress.frame = self.targetAnimatingCell.lblAddress.frame
-           // self.animatingCell.btnHours.frame = self.targetAnimatingCell.btnHours.frame
-           // self.animatingCell.ivMap.frame = self.targetAnimatingCell.ivMap.frame
+            self.animatingCell.stkNumberOfService.frame =
+            self.targetAnimatingCell.stkNumberOfService.frame
             self.ivService.alpha = 0.0
             self.vwService.transform = CGAffineTransform(translationX:0, y: self.vwServiceDialog.frame.height  - self.vwForCollapseView.frame.height)
             self.vwBottomButtons.alpha = 0.5
@@ -151,9 +153,6 @@ extension  ServiceMapVC {
         transitionAnimator?.addAnimations {
             self.animatingCell.lblName.frame = self.animatingCell.lblNameRect
             self.animatingCell.stkNumberOfService.frame = self.animatingCell.stkNumberOfServiceRect
-            //self.animatingCell.lblAddress.frame = self.animatingCell.lblAddressRect
-            //self.animatingCell.ivMap.frame =  self.animatingCell.ivMapRect
-            //self.animatingCell.btnHours.frame = self.animatingCell.btnHoursRect
             self.ivService.alpha = 1.0
             self.vwBottomButtons.alpha = 1.0
             self.vwService.transform = CGAffineTransform.identity

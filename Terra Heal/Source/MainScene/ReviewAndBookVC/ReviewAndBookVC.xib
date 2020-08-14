@@ -59,6 +59,7 @@
                 <outlet property="vwSummaryDetailFooter" destination="PHN-ec-f6L" id="6IK-qS-r70"/>
                 <outlet property="vwSummaryDetailHeader" destination="yGo-FM-auI" id="EST-2a-KCZ"/>
                 <outlet property="vwTermsAndCondition" destination="a4E-aE-Kjz" id="F3Q-Q6-Cy1"/>
+                <outlet property="vwTotalBg" destination="UTP-wq-q7w" id="MsC-qJ-9ui"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -108,7 +109,7 @@
                         <constraint firstItem="E7G-Iw-5HM" firstAttribute="centerY" secondItem="56A-4g-TbH" secondAttribute="centerY" id="hvW-hT-Uc1"/>
                     </constraints>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKR-Sa-aNZ">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="eKR-Sa-aNZ">
                     <rect key="frame" x="0.0" y="125.5" width="414" height="736.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C96-8T-JWm" userLabel="contetnView">
@@ -228,7 +229,7 @@ lisbon, portugal -25412</string>
                                                 <constraint firstItem="3ce-jX-FlA" firstAttribute="leading" secondItem="dDZ-Kz-jh9" secondAttribute="trailing" constant="10" id="uhH-Gn-ZE2"/>
                                             </constraints>
                                         </view>
-                                        <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="oyR-6n-iqC">
+                                        <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="oyR-6n-iqC">
                                             <rect key="frame" x="0.0" y="121" width="373" height="10"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
@@ -260,7 +261,7 @@ lisbon, portugal -25412</string>
                                                 <constraint firstItem="abc-tL-6KL" firstAttribute="centerY" secondItem="yGo-FM-auI" secondAttribute="centerY" id="xTi-Lq-ELQ"/>
                                             </constraints>
                                         </view>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gHm-PQ-rT5">
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="gHm-PQ-rT5">
                                             <rect key="frame" x="0.0" y="182.5" width="373" height="426.5"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
@@ -311,13 +312,13 @@ lisbon, portugal -25412</string>
                                                             <rect key="frame" x="0.0" y="61" width="373" height="100"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="add reciepent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acZ-T0-BmQ" userLabel="lbltotal" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                                                    <rect key="frame" x="20" y="10" width="237" height="80"/>
+                                                                    <rect key="frame" x="20" y="10" width="217" height="80"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" name="theme_dark_text"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add reciepent" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afg-nL-fH4" userLabel="lblTotalValue" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                                                    <rect key="frame" x="267" y="39.5" width="106" height="20.5"/>
+                                                                    <rect key="frame" x="247" y="39.5" width="106" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" name="theme_dark_text"/>
                                                                     <nil key="highlightedColor"/>
@@ -325,7 +326,7 @@ lisbon, portugal -25412</string>
                                                             </subviews>
                                                             <color key="backgroundColor" name="theme_primary_light_background"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="afg-nL-fH4" secondAttribute="trailing" id="Uke-nw-ZBa"/>
+                                                                <constraint firstAttribute="trailing" secondItem="afg-nL-fH4" secondAttribute="trailing" constant="20" id="Uke-nw-ZBa"/>
                                                                 <constraint firstItem="acZ-T0-BmQ" firstAttribute="leading" secondItem="UTP-wq-q7w" secondAttribute="leading" constant="20" id="Zjg-C8-64v"/>
                                                                 <constraint firstAttribute="bottom" secondItem="acZ-T0-BmQ" secondAttribute="bottom" constant="10" id="dRk-VI-2Fg"/>
                                                                 <constraint firstItem="acZ-T0-BmQ" firstAttribute="centerY" secondItem="UTP-wq-q7w" secondAttribute="centerY" id="hT6-h6-EAQ"/>
@@ -355,7 +356,7 @@ lisbon, portugal -25412</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6oB-aP-iL7" userLabel="txtPromoCode" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="40.5" width="373" height="18.5"/>
+                                                    <rect key="frame" x="0.0" y="40.5" width="373" height="49"/>
                                                     <color key="textColor" name="theme_light_text_color"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -377,9 +378,8 @@ lisbon, portugal -25412</string>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pez-OY-fE2">
-                                                    <rect key="frame" x="324" y="10" width="38" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pez-OY-fE2">
+                                                    <rect key="frame" x="325" y="10" width="38" height="30"/>
                                                     <state key="normal" title="apply">
                                                         <color key="titleColor" name="theme_primary"/>
                                                     </state>
@@ -390,12 +390,14 @@ lisbon, portugal -25412</string>
                                             </subviews>
                                             <color key="backgroundColor" name="theme_background"/>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Pez-OY-fE2" secondAttribute="trailing" constant="10" id="2Hi-Nt-vnC"/>
                                                 <constraint firstItem="vXP-BN-6i7" firstAttribute="leading" secondItem="6Ap-Us-82k" secondAttribute="leading" id="77B-2H-gHd"/>
                                                 <constraint firstItem="6oB-aP-iL7" firstAttribute="leading" secondItem="6Ap-Us-82k" secondAttribute="leading" id="Bkh-4f-tep"/>
                                                 <constraint firstItem="6oB-aP-iL7" firstAttribute="width" secondItem="6Ap-Us-82k" secondAttribute="width" id="E98-jD-u3X"/>
+                                                <constraint firstItem="6oB-aP-iL7" firstAttribute="top" secondItem="vXP-BN-6i7" secondAttribute="bottom" constant="10" id="EWx-Au-Hat"/>
                                                 <constraint firstItem="vXP-BN-6i7" firstAttribute="top" secondItem="6Ap-Us-82k" secondAttribute="top" constant="10" id="KhR-Jj-MUW"/>
-                                                <constraint firstItem="6oB-aP-iL7" firstAttribute="centerY" secondItem="6Ap-Us-82k" secondAttribute="centerY" id="cQw-75-42j"/>
-                                                <constraint firstItem="6oB-aP-iL7" firstAttribute="top" secondItem="vXP-BN-6i7" secondAttribute="bottom" constant="10" id="hgN-t8-e8g"/>
+                                                <constraint firstAttribute="bottom" secondItem="6oB-aP-iL7" secondAttribute="bottom" constant="10" id="hfj-3b-sPt"/>
+                                                <constraint firstItem="Pez-OY-fE2" firstAttribute="top" secondItem="vXP-BN-6i7" secondAttribute="top" id="zrV-QC-4VP"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a4E-aE-Kjz" userLabel="vwTerms&amp;Condition">

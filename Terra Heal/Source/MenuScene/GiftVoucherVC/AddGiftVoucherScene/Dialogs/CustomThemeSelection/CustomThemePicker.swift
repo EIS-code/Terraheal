@@ -11,25 +11,25 @@ struct Theme {
     var name: String = ""
     var isSelected: Bool = false
     static func getDemoArray() -> [Theme] {
-        return [Theme(name:"friendship", isSelected: false),
+        return [
+        Theme(name:"friendship", isSelected: false),
         Theme(name:"love and care", isSelected: false),
         Theme(name:"birthday", isSelected: false),
         Theme(name:"mother's day", isSelected: false),
         Theme(name:"father's day", isSelected: false),
         Theme(name:"valentine's day", isSelected: false),
         Theme(name:"christmas", isSelected: false),
-        Theme(name:"engagement", isSelected: false)]
+        Theme(name:"engagement", isSelected: false)
+        ]
     }
 }
 class CustomThemePicker: ThemeBottomDialogView {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchVw: UIView!
-    @IBOutlet weak var txtSearchBar: ThemeTextField!
-
+ 
     var onBtnDoneTapped: ((_ data: Theme) -> Void)? = nil
     var selectedData: Theme? = nil
-    var arrForFilteredData: [Theme] = Theme.getDemoArray()
+    var arrForData: [Theme] = Theme.getDemoArray()
  
     
     override func awakeFromNib() {
@@ -68,7 +68,7 @@ class CustomThemePicker: ThemeBottomDialogView {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.reloadTableDateToFitHeight(tableView: self.tableView)
-        self.searchVw.setRound(withBorderColor: .clear, andCornerRadious: self.searchVw.bounds.height/2.0, borderWidth: 1.0)
+       
     }
 
     @IBAction func btnDoneTapped(_ sender: Any) {
@@ -94,7 +94,7 @@ extension CustomThemePicker : UITableViewDelegate,UITableViewDataSource {
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-tableView.backgroundColor = .clear
+        tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 70
@@ -104,25 +104,25 @@ tableView.backgroundColor = .clear
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrForFilteredData.count
+        return arrForData.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomThemePickerCell.name, for: indexPath) as?  CustomThemePickerCell
         cell?.layoutIfNeeded()
-        cell?.setData(data: arrForFilteredData[indexPath.row])
+        cell?.setData(data: arrForData[indexPath.row])
         cell?.layoutIfNeeded()
         return cell!
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        for i in 0..<arrForFilteredData.count {
-            arrForFilteredData[i].isSelected = false
+        for i in 0..<arrForData.count {
+            arrForData[i].isSelected = false
         }
-        self.arrForFilteredData[indexPath.row].isSelected = true
-        self.selectedData = self.arrForFilteredData[indexPath.row]
+        self.arrForData[indexPath.row].isSelected = true
+        self.selectedData = self.arrForData[indexPath.row]
         tableView.reloadData()
     }
 

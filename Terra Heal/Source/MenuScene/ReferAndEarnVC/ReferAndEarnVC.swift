@@ -173,9 +173,19 @@ class ReferAndEarnVC: MainVC {
             [weak alert, weak self] (description) in
             alert?.dismiss()
              guard let self = self else { return } ; print(self)
-
-
             self.btnReferNow.isEnabled = true
+            self.shareOnWhatsApp(message: description.description)
+        }
+    }
+    
+    func shareOnWhatsApp(message:String) {
+        let newMessage = message.addingPercentEncoding(withAllowedCharacters: (NSCharacterSet.urlQueryAllowed))!
+        let whatsappURL = NSURL(string: "whatsapp://send?text=\(newMessage)")
+
+        if UIApplication.shared.canOpenURL(whatsappURL! as URL) {
+            UIApplication.shared.openURL(whatsappURL! as URL)
+        } else {
+            Common.showAlert(message:"Whatsapp is not installed on this device. Please install Whatsapp and try again.")
         }
     }
     func openHistoryFilterDialog() {

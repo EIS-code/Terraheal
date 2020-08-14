@@ -17,7 +17,8 @@ class PromoCodeTblCell: TableCell {
     @IBOutlet weak var vwBg: UIView!
     @IBOutlet weak var ivMenu: UIImageView!
     @IBOutlet weak var vwPromoCode: DashedLineView!
-
+    @IBOutlet weak var btnCopy: UIButton!
+    var data: PromocodeDetail = PromocodeDetail.init()
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
@@ -31,11 +32,17 @@ class PromoCodeTblCell: TableCell {
     }
 
     func setData(data: PromocodeDetail ) {
+        self.data = data
         self.lblCode.text = data.code
         self.lblShortDescription.text = data.description
         self.lblExpiry.text = data.expiry
     }
 
+    @IBAction func btnCopyTapped(_ sender: Any) {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = data.description
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)

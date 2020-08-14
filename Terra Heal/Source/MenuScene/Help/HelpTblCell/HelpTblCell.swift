@@ -17,12 +17,12 @@ class HelpTblCell: TableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        txtQuestion.textColor = .themePrimary
+        /*txtQuestion.textColor = .themePrimary
         txtQuestion.selectedPlaceHolderColor = .themePrimary
         txtQuestion.placeHolderColor = .themePrimary
         txtQuestion.leftViewColor = .themePrimary
         txtQuestion.lineColor = .themePrimary
-        txtQuestion.selectedLineColor = .themePrimary
+        txtQuestion.selectedLineColor = .themePrimary*/
 
     }
 

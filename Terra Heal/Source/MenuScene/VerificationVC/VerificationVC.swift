@@ -64,9 +64,8 @@ class VerificationVC: MainVC {
 
     }
     private func initialViewSetup() {
-        
+        self.setBackground(color: UIColor.themeBackground)
         self.setupTableView(tableView: self.tableView)
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.btnBack.setBackButton()
         self.setTitle(title: "VERIFICATION_TITLE".localized())
         self.lblIdBackSide.text = "VERIFICATION_LBL_BACK_SIDE".localized()
@@ -83,8 +82,7 @@ class VerificationVC: MainVC {
     }
 
     @IBAction func btnVerifiedTapped(_ sender: Any) {
-        Common.appDelegate.loadContactVerificationVC(navigaionVC: self.navigationController)
-        //Common.appDelegate.loadManageDocumentVC(navigaionVC: self.navigationController)
+        Common.appDelegate.loadManageDocumentVC(navigaionVC: self.navigationController)
     }
 
 }

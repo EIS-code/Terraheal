@@ -102,6 +102,7 @@ extension CustomDatePicker: FSCalendarDataSource, FSCalendarDelegate {
         calendar.delegate = self
         calendar.dataSource = self
         calendar.allowsMultipleSelection = false
+        calendar.appearance.todayColor = UIColor.themeSecondary
         calendar.appearance.caseOptions = .weekdayUsesSingleUpperCase
         calendar.appearance.weekdayFont = FontHelper.font(name: FontName.Regular, size: FontSize.button_14)
         calendar.appearance.weekdayTextColor = UIColor.lightGray
@@ -116,18 +117,14 @@ extension CustomDatePicker: FSCalendarDataSource, FSCalendarDelegate {
 
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print("calendar did select date \(self.formatter.string(from: date))")
-        if date < Date.init() {
-            return;
-        } else {
             self.selectDate(date: date)
             if monthPosition == .previous || monthPosition == .next {
                 calendar.setCurrentPage(date, animated: true)
             }
-        }
         
     }
     func minimumDate(for calendar: FSCalendar) -> Date {
-        return Date.init()
+        return Date.init().addingTimeInterval(-TimeInterval.init(Date.millisecondsOfDay(day: 1)))
     }
     
     func maximumDate(for calendar: FSCalendar) -> Date {

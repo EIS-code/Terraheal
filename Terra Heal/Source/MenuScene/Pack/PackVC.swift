@@ -72,7 +72,6 @@ class PackVC: MainVC {
     private func initialViewSetup() {
         
         self.setupTableView(tableView: self.tableView)
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.setTitle(title: "PACK_TITLE".localized())
         self.btnSubmit?.setTitle("PACK_BTN_BUY_NEW".localized(), for: .normal)
         self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
@@ -131,9 +130,27 @@ extension PackVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
     
     
     func openBuyPackForSelfDialog() {
-        
         let alert: AddPackDialog = AddPackDialog.fromNib()
-        alert.initialize(title: "Add pack", buttonTitle: "Proceed To Buy", cancelButtonTitle: "BTN_CANCEL".localized())
+        alert.initialize(title: "ADD_PACK_DIALOG_TITLE".localized(), buttonTitle: "PACK_BTN_PROCEED_TO_BUY".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+        alert.setDataSource(data: AddPackageDetail.getDemoArrayForSelf())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (data) in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+            Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "PACK_PURCHASE_COMPLETE_TITLE".localized(), strMessage: "PACK_PURCHASE_COMPLETE_MESSAGE".localized(), strImg: ImageAsset.Completion.bookingCompletion, strButtonTitle: "EVENT_BOOKING_BTN_HOME".localized()))
+        }
+    }
+    
+    func openBuyPackForGiftDialog() {
+        let alert: AddPackDialog = AddPackDialog.fromNib()
+        alert.initialize(title: "ADD_PACK_DIALOG_TITLE".localized(), buttonTitle: "PACK_BTN_PROCEED_TO_BUY".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+        alert.setDataSource(data: AddPackageDetail.getDemoArrayForGift())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
@@ -147,32 +164,30 @@ extension PackVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
             guard let self = self else { return } ; print(self)
             Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "PACK_PURCHASE_COMPLETE_TITLE".localized(), strMessage: "PACK_PURCHASE_COMPLETE_MESSAGE".localized(), strImg: ImageAsset.Completion.bookingCompletion, strButtonTitle: "EVENT_BOOKING_BTN_HOME".localized()))
         }
-        
-        
-        
     }
+    
     func openBuyPackDialog() {
         
         let alert: BuyPackageDialog = BuyPackageDialog.fromNib()
-        alert.initialize(title: "Buy a pack", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+        alert.initialize(title: "BUY_PACK_DIALOG_TITLE".localized(), buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
             alert?.dismiss()
             guard let self = self else { return } ; print(self)
             self.btnSubmit.isEnabled = true
-            
         }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (data) in
             alert?.dismiss()
             guard let self = self else { return } ; print(self)
             self.btnSubmit.isEnabled = true
-            self.openBuyPackForSelfDialog()
+            if (data.id == 0) {
+                self.openBuyPackForSelfDialog()
+            } else {
+                self.openBuyPackForGiftDialog()
+            }
         }
-        
-        
     }
-    
 }
 

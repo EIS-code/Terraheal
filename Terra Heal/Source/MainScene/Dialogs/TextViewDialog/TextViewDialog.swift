@@ -13,7 +13,7 @@ class TextViewDialog: ThemeBottomDialogView {
     @IBOutlet weak var txtDescription: ThemeTextView!
     var strEnteredData: String = ""
     var onBtnDoneTapped: ((_ data:String) -> Void)? = nil
-    
+    var isMandatory: Bool = true
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,8 +23,9 @@ class TextViewDialog: ThemeBottomDialogView {
     }
     
     
-    func initialize(title:String,data: String , buttonTitle:String,cancelButtonTitle:String) {
-         self.initialSetup()
+    func initialize(title:String,data: String , buttonTitle:String,cancelButtonTitle:String, isMandatory:Bool = true) {
+        self.initialSetup()
+        self.isMandatory = isMandatory
         self.lblTitle.text = title
         self.txtDescription.text = data
         if cancelButtonTitle.isEmpty() {
@@ -39,7 +40,7 @@ class TextViewDialog: ThemeBottomDialogView {
             self.btnNext.setTitle(buttonTitle, for: .normal)
             self.btnNext.isHidden = false
         }
-       
+        
     }
     
     override func initialSetup() {
@@ -47,14 +48,20 @@ class TextViewDialog: ThemeBottomDialogView {
         self.txtDescription.setFont(name: FontName.Regular, size: FontSize.label_18)
         self.txtDescription.setPlaceholderFont(name: FontName.Regular, size: FontSize.label_18)
         self.txtDescription.placeholder = "Lorem ipsum dolor"
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.txtDescription?.delegate = self
     }
     
     @IBAction func btnDoneTapped(_ sender: Any) {
-        strEnteredData = txtDescription.text?.trim() ?? ""
-        if strEnteredData.isEmpty() {
-            Common.showAlert(message: "VALIDATION_MSG_INVALID_DATA".localized())
+        if isMandatory {
+            strEnteredData = txtDescription.text?.trim() ?? ""
+            if strEnteredData.isEmpty() {
+                Common.showAlert(message: "VALIDATION_MSG_INVALID_DATA".localized())
+            } else {
+                if self.onBtnDoneTapped != nil {
+                    self.onBtnDoneTapped!(strEnteredData);
+                }
+            }
         } else {
             if self.onBtnDoneTapped != nil {
                 self.onBtnDoneTapped!(strEnteredData);

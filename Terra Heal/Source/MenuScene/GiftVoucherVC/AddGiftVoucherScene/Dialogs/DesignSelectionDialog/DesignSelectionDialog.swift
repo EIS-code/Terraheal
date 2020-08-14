@@ -12,23 +12,16 @@ import UIKit
 class DesignSelectionDialog: ThemeBottomDialogView {
 
     @IBOutlet weak var collectionVw: UICollectionView!
-    @IBOutlet weak var vwServiceSelection: JDSegmentedControl!
-    var selectedService: ServiceType = ServiceType.Massages
     var onBtnDoneTapped: (( ) -> Void)? = nil
-    @IBOutlet weak var ivMassageCenter: PaddedImageView!
-    
-    @IBOutlet weak var contentView: UIView!
-    var arrForData: [ServiceDetail] = []
-    var arrForMassage: [ServiceDetail] = []
-    var arrForTherapies: [ServiceDetail] = []
+    var arrForData: [String] = ["","","","","","","","","","","",""]
+    @IBOutlet weak var btnThemeType: ThemeButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     
-    func initialize(title:String,buttonTitle:String) {
-
+    func initialize(title:String,buttonTitle:String, cancelButtonTitle:String) {
         self.initialSetup()
         self.lblTitle.text = title
         if buttonTitle.isEmpty() {
@@ -37,37 +30,25 @@ class DesignSelectionDialog: ThemeBottomDialogView {
             self.btnDone.setTitle(buttonTitle, for: .normal)
             self.btnDone.isHidden = false
         }
-        
+        if cancelButtonTitle.isEmpty() {
+            self.btnCancel.isHidden = true
+        } else {
+            self.btnCancel.setTitle(cancelButtonTitle, for: .normal)
+            self.btnCancel.isHidden = false
+        }
     }
 
     override func initialSetup() {
         super.initialSetup()
-        self.dialogView.backgroundColor = .clear
-        contentView.clipsToBounds = true
-        contentView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.setupCollectionView(collectionView: self.collectionVw)
-        self.vwServiceSelection.allowChangeThumbWidth = false
-        self.vwServiceSelection.itemTitles = ["massages".localized(),"therapies".localized()]
-        self.vwServiceSelection.changeBackgroundColor(UIColor.themeLightTextColor)
-        self.vwServiceSelection.didSelectItemWith = { [weak self] (index,title) in
-            guard let self = self else {
-                return
-            }
-            if index == 0 {
-                self.massagesTapped()
-            } else {
-                self.therapiesTapped()
-            }
-        }
         self.setDataForStepUpAnimation()
-        self.getServiceCenterDetail()
+        
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.ivMassageCenter?.layoutIfNeeded()
-        self.ivMassageCenter.setRound()
+        self.btnThemeType.setHighlighted(isHighlighted: true)
     }
 
     @IBAction func btnDoneTapped(_ sender: Any) {
@@ -75,29 +56,28 @@ class DesignSelectionDialog: ThemeBottomDialogView {
                 self.onBtnDoneTapped!();
             }
     }
-
-    func setServicesFor(type:ServiceType) {
-        if type == .Massages {
-            self.massagesTapped()
-        } else {
-            self.therapiesTapped()
+    
+    @IBAction func btnFilterTapped(_ sender: Any) {
+        self.openThemeDialog()
+    }
+    
+  
+    func openThemeDialog() {
+        let alert: CustomThemePicker = CustomThemePicker.fromNib()
+        alert.initialize(title: "choose a theme", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (data) in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+            self.btnThemeType.setTitle(data.name, for: .normal)
         }
     }
-    
-    func massagesTapped(){
-        self.arrForData = self.arrForMassage
-        self.vwServiceSelection.selectItemAt(index: 0)
-        self.selectedService = ServiceType.Massages
-        collectionVw.reloadData()
-    }
-    
-    func therapiesTapped(){
-        self.arrForData = self.arrForTherapies
-        self.vwServiceSelection.selectItemAt(index: 1)
-        self.selectedService = ServiceType.Therapies
-        collectionVw.reloadData()
-    }
-
 }
 
 
@@ -111,9 +91,8 @@ extension DesignSelectionDialog:  UICollectionViewDelegate, UICollectionViewData
         collectionView.isPagingEnabled = false
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(LocationServiceCltCell.nib()
-            , forCellWithReuseIdentifier: LocationServiceCltCell.name)
-
+        collectionView.register(DesignCltCell.nib()
+            , forCellWithReuseIdentifier: DesignCltCell.name)
     }
 
     // MARK: UICollectionViewDataSource
@@ -126,7 +105,7 @@ extension DesignSelectionDialog:  UICollectionViewDelegate, UICollectionViewData
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LocationServiceCltCell.name, for: indexPath) as! LocationServiceCltCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DesignCltCell.name, for: indexPath) as! DesignCltCell
         cell.setData(data: self.arrForData[indexPath.row])
         return cell
     }
@@ -143,17 +122,3 @@ extension DesignSelectionDialog:  UICollectionViewDelegate, UICollectionViewData
 
 }
 
-extension DesignSelectionDialog {
-        func getServiceCenterDetail() {
-            AppWebApi.massageCenterDetail { (response) in
-                if ResponseModel.isSuccess(response: response) {
-                    for data in response.serviceList {
-                        self.arrForData.append(data)
-                        self.arrForMassage.append(data)
-                        self.arrForTherapies.append(data)
-                        self.collectionVw.reloadData()
-                    }
-                }
-            }
-        }
-}

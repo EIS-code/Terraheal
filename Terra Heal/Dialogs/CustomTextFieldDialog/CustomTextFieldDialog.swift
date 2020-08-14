@@ -45,7 +45,7 @@ class CustomTextFieldDialog: ThemeBottomDialogView {
         super.initialSetup()
         self.txtData?.placeholder = "".localized()
         self.txtData?.delegate = self
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
     }
 
     override func layoutSubviews() {

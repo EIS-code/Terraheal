@@ -28,10 +28,10 @@
                     <rect key="frame" x="0.0" y="95.5" width="371" height="860.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
-                            <rect key="frame" x="0.0" y="31.5" width="371" height="829"/>
+                            <rect key="frame" x="0.0" y="45.5" width="371" height="855"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cnz-ZK-u39">
-                                    <rect key="frame" x="20" y="51.5" width="331" height="341.5"/>
+                                    <rect key="frame" x="20" y="65.5" width="331" height="369"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="I am a " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3n-RY-vOK" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="132.5" y="0.0" width="66.5" height="26"/>
@@ -80,49 +80,45 @@
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ocg-Mb-0dR">
-                                            <rect key="frame" x="54.5" y="293.5" width="222" height="48"/>
+                                            <rect key="frame" x="0.0" y="293.5" width="331" height="75.5"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUo-Q2-xKt" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
-                                                    <color key="backgroundColor" name="theme_primary"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUo-Q2-xKt" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="75.5" height="75.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="cUo-Q2-xKt" secondAttribute="height" multiplier="1:1" id="d7Z-nK-M3w"/>
                                                     </constraints>
                                                     <inset key="contentEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
-                                                    <state key="normal" title="X">
+                                                    <state key="normal" image="asset-call">
                                                         <color key="titleColor" name="theme_light_text_color"/>
                                                     </state>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmV-wr-ony" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                                    <rect key="frame" x="58" y="0.0" width="48" height="48"/>
-                                                    <color key="backgroundColor" name="theme_primary"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmV-wr-ony" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                                    <rect key="frame" x="85.5" y="0.0" width="75" height="75.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="zmV-wr-ony" secondAttribute="height" multiplier="1:1" id="Qkc-zc-EXo"/>
                                                     </constraints>
                                                     <inset key="contentEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
-                                                    <state key="normal" title="X">
+                                                    <state key="normal" image="asset-message">
                                                         <color key="titleColor" name="theme_light_text_color"/>
                                                     </state>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5V-2P-chW" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                                    <rect key="frame" x="116" y="0.0" width="48" height="48"/>
-                                                    <color key="backgroundColor" name="theme_primary"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5V-2P-chW" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                                    <rect key="frame" x="170.5" y="0.0" width="75.5" height="75.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="z5V-2P-chW" secondAttribute="height" multiplier="1:1" id="cwz-Td-VN9"/>
                                                     </constraints>
                                                     <inset key="contentEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
-                                                    <state key="normal" title="X">
+                                                    <state key="normal" image="asset-whats-app">
                                                         <color key="titleColor" name="theme_light_text_color"/>
                                                     </state>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6EX-41-NZ8" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                                    <rect key="frame" x="174" y="0.0" width="48" height="48"/>
-                                                    <color key="backgroundColor" name="theme_primary"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6EX-41-NZ8" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                                    <rect key="frame" x="256" y="0.0" width="75" height="75.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="6EX-41-NZ8" secondAttribute="height" multiplier="1:1" id="RZC-vR-TUZ"/>
                                                     </constraints>
                                                     <inset key="contentEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
-                                                    <state key="normal" title="X">
+                                                    <state key="normal" image="asset-email">
                                                         <color key="titleColor" name="theme_light_text_color"/>
                                                     </state>
                                                 </button>
@@ -134,16 +130,17 @@
                                     </constraints>
                                 </stackView>
                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDB-Fs-X9g">
-                                    <rect key="frame" x="0.0" y="413" width="371" height="416"/>
+                                    <rect key="frame" x="0.0" y="454.5" width="371" height="440.5"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOn-3D-45e" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="20" y="20" width="331" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOn-3D-45e" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="20" width="331" height="284.5"/>
+                                            <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget.</mutableString>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" name="theme_primary"/>
+                                            <color key="textColor" name="theme_dark_text"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" name="theme_primary_border"/>
+                                    <color key="backgroundColor" name="theme_background"/>
                                     <constraints>
                                         <constraint firstItem="QOn-3D-45e" firstAttribute="centerX" secondItem="oDB-Fs-X9g" secondAttribute="centerX" id="9YO-hf-vOR"/>
                                         <constraint firstItem="QOn-3D-45e" firstAttribute="top" secondItem="oDB-Fs-X9g" secondAttribute="top" constant="20" id="Cbj-63-1SK"/>
@@ -155,7 +152,7 @@
                                     <viewLayoutGuide key="frameLayoutGuide" id="fdX-Uq-7as"/>
                                 </scrollView>
                                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="119" y="769" width="133" height="40"/>
+                                    <rect key="frame" x="119" y="755" width="133" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                     <state key="normal" title="Sign In">
@@ -172,15 +169,13 @@
                                 <constraint firstItem="cnz-ZK-u39" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="5lm-dC-82n"/>
                                 <constraint firstAttribute="trailing" secondItem="cnz-ZK-u39" secondAttribute="trailing" constant="20" id="Dxe-Kn-Q7y"/>
                                 <constraint firstItem="oDB-Fs-X9g" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="LId-ue-aDK"/>
-                                <constraint firstAttribute="bottom" secondItem="W3s-UH-gbE" secondAttribute="bottom" constant="20" id="hVw-7t-eCG"/>
                                 <constraint firstItem="oDB-Fs-X9g" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" id="jrR-7p-Euv"/>
                                 <constraint firstItem="W3s-UH-gbE" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="la7-5Y-5S1"/>
-                                <constraint firstAttribute="bottom" secondItem="oDB-Fs-X9g" secondAttribute="bottom" id="vRj-wC-pGs"/>
+                                <constraint firstItem="oDB-Fs-X9g" firstAttribute="bottom" secondItem="Yaj-p7-IIT" secondAttribute="bottom" constant="40" id="vRj-wC-pGs"/>
                             </constraints>
                         </view>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center-white" translatesAutoresizingMaskIntoConstraints="NO" id="az3-5n-QhJ" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="154" y="0.0" width="63" height="63"/>
-                            <color key="backgroundColor" name="theme_primary"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center" translatesAutoresizingMaskIntoConstraints="NO" id="az3-5n-QhJ" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="140" y="0.0" width="91" height="91"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="az3-5n-QhJ" secondAttribute="height" multiplier="1:1" priority="999" id="gTw-dh-Adp"/>
                             </constraints>
@@ -191,7 +186,7 @@
                             </userDefinedRuntimeAttributes>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="581-cI-fuY" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="309" y="10.5" width="42" height="42"/>
+                            <rect key="frame" x="309" y="24.5" width="42" height="42"/>
                             <color key="backgroundColor" name="theme_background"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="581-cI-fuY" secondAttribute="height" multiplier="1:1" id="JMg-tl-e7y"/>
@@ -210,7 +205,7 @@
                         <constraint firstItem="Yaj-p7-IIT" firstAttribute="centerX" secondItem="V39-84-TsB" secondAttribute="centerX" id="0Vo-2B-aLF"/>
                         <constraint firstItem="az3-5n-QhJ" firstAttribute="centerY" secondItem="Yaj-p7-IIT" secondAttribute="top" id="91X-Ow-Eb7"/>
                         <constraint firstAttribute="height" constant="860.5" id="CkW-yM-gdH"/>
-                        <constraint firstAttribute="bottom" secondItem="Yaj-p7-IIT" secondAttribute="bottom" id="Kzi-5I-qTc"/>
+                        <constraint firstItem="Yaj-p7-IIT" firstAttribute="bottom" secondItem="V39-84-TsB" secondAttribute="bottom" constant="40" id="Kzi-5I-qTc"/>
                         <constraint firstItem="Yaj-p7-IIT" firstAttribute="width" secondItem="V39-84-TsB" secondAttribute="width" id="MUD-su-Zve"/>
                         <constraint firstItem="az3-5n-QhJ" firstAttribute="top" secondItem="V39-84-TsB" secondAttribute="top" id="RTR-tp-f7u"/>
                         <constraint firstItem="581-cI-fuY" firstAttribute="centerY" secondItem="Yaj-p7-IIT" secondAttribute="top" id="ewQ-BA-x2V"/>
@@ -226,6 +221,7 @@
                 <constraint firstItem="6ZW-DU-hOd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O4e-FZ-uqZ"/>
                 <constraint firstItem="6ZW-DU-hOd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Q6J-jS-lz5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="V39-84-TsB" secondAttribute="trailing" id="dUH-Mq-8NY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="W3s-UH-gbE" secondAttribute="bottom" constant="20" id="fea-WA-6HL"/>
                 <constraint firstItem="V39-84-TsB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kCB-jR-Feo"/>
                 <constraint firstItem="V39-84-TsB" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="pVs-FU-SqG"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="V39-84-TsB" secondAttribute="bottom" id="rX8-mU-2eq"/>
@@ -253,22 +249,23 @@
     </objects>
     <resources>
         <image name="asset-arrow-down" width="10.5" height="6"/>
-        <image name="asset-center-white" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="asset-call" width="48" height="48"/>
+        <image name="asset-center" width="71" height="71"/>
+        <image name="asset-email" width="48" height="48"/>
+        <image name="asset-message" width="48" height="48"/>
+        <image name="asset-whats-app" width="48" height="48"/>
         <image name="demo-map" width="49" height="49.666667938232422"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_dark_text">
-            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_light_text_color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="theme_primary_border">
-            <color red="0.73725490196078436" green="0.8784313725490196" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light_background">
             <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

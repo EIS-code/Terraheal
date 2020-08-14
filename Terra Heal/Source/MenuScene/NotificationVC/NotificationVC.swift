@@ -42,7 +42,7 @@ class NotificationVC: MainVC {
         super.viewDidLoad()
         self.initialViewSetup()
         self.addBottomFade()
-        self.addTopFade()
+      
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -51,7 +51,7 @@ class NotificationVC: MainVC {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        tableView.setContentOffset(CGPoint.init(x: 0, y: -tableView.contentInset.top), animated: true)
+        tableView.setContentOffset(CGPoint.init(x: 0, y: 0), animated: true)
 
     }
 
@@ -62,7 +62,7 @@ class NotificationVC: MainVC {
 
             self.tableView?.reloadData({
             })
-            self.tableView?.contentInset = UIEdgeInsets(top: headerGradient.frame.height, left: 0, bottom: footerGradient.frame.height, right: 0)
+            self.tableView?.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: footerGradient.frame.height, right: 0)
 
         }
     }
@@ -71,8 +71,7 @@ class NotificationVC: MainVC {
         
         
         self.setupTableView(tableView: self.tableView)
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
-        self.setTitle(title: "NOTIFICATION_TITLE".localized())
+     self.setTitle(title: "NOTIFICATION_TITLE".localized())
         self.btnBack.setBackButton()
     }
 

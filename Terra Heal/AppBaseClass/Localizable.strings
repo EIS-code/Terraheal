@@ -223,6 +223,12 @@
 "PACK_TITLE" = "pack";
 "PACK_CODE" = "Pack code";
 "PACK_BTN_BUY_NEW" = "Buy New pack";
+"BUY_PACK_DIALOG_TITLE"= "buy a pack";
+"ADD_PACK_DIALOG_TITLE"= "add pack";
+"PACK_BTN_BUY_A_PACK" = "buy a pack";
+"PACK_BTN_PROCEED_TO_BUY" = "Proceed to Buy";
+"PACK_BTN_GET_THIS_PACK" = "Get This Pack";
+"PACK_BTN_BUY_NEW" = "Buy New pack";
 "PACK_PURCHASE_COMPLETE_TITLE" = "purchase successful";
 "PACK_PURCHASE_COMPLETE_MESSAGE" = "thanks for choosing our services! we have received your booking and will confirm it as soon as possible";
 //MARK: Help
@@ -271,7 +277,7 @@
 
 //MARK: Event Booking Success
 
-"EVENT_BOOKING_TITLE" = "request Successful";
+"EVENT_BOOKING_TITLE" = "request sent";
 "EVENT_BOOKING_MESSAGE" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut";
 "EVENT_BOOKING_BTN_HOME" = "Home";
 "HOME_ITEM_TYPE_INFO" = "info";
@@ -301,7 +307,7 @@
 "REVIEW_AND_BOOK_LBL_SUB_TOTAL" = "subtotal";
 "REVIEW_AND_BOOK_LBL_OTHER" = "other";
 "REVIEW_AND_BOOK_LBL_TOTAL" = "total";
-"REVIEW_AND_BOOK_LBL_HAVE_A_COUPEN" = "Have a Coupon?";
+"REVIEW_AND_BOOK_LBL_HAVE_A_COUPEN" = "have a coupon?";
 "REVIEW_AND_BOOK_TXT_PROMO_PLACEHOLDER" = "enter coupon code";
 "REVIEW_AND_BOOK_BTN_APPLY" = "apply";
 "REVIEW_AND_BOOK_BTN_PREPAYMENT" = "prepayment";
@@ -323,10 +329,17 @@
 "GIFT_VOUCHER_BODY" = "1. each voucher can be used from one person only in one time only, so don't buy a voucher to offer for 2 or more people.\n2. choose the amount you want to offer (can be 15, 20, 25, 30, 35, 40, 50, 60, 75, 80, 100€) , the person who received the voucher will choose the type of massage when she/he calls to book\n3. write the name and tel number of the person who will receive the voucher\n4. type the email on which you would like to receive the voucher and the invoice\n5. fill in your fiscal number and country (optional) for the invoice\n6. once you finish the payment you will receive an email with the electronic voucher and the invoice\n7. the voucher can be used in a period max of 12 months";
 "GIFT_VOUCHER_EMPTY_TITLE" = "you have no gift voucher";
 "GIFT_VOUCHER_EMPTY_MESSAGE" = "";
+"GIFT_VOUCHER_BTN_BUY_NOW" = "Buy Now";
+"GIFT_VOUCHER_BTN_GET_STARTED" = "Get Started";
+"GIFT_VOUCHER_BTN_BUY_GIFT_VOUCHER" = "Buy Gift Voucher";
+"GIFT_VOUCHER_BTN_PROCEED_TO_BUY" = "Proceed to Buy";
+"GIFT_VOUCHER_BTN_MAKE_CHAGES" = "make changes";
+"GIFT_VOUCHER_BTN_PREVIEW" = "preview";
 "BUY_GIFT_VOUCHER_COMPLETE_TITLE" = "buy gift voucher Successful";
 "BUY_GIFT_VOUCHER_COMPLETE_MESSAGE" = "thanks for choosing our services! we have received your booking and will confirm it as soon as possible";
 
 //MARK: Add Gift Voucher Screen
+"ADD_GIFT_VOUCHER_TITLE" = "add gift voucher";
 "ADD_GIFT_VOUCHER_LOCATION_DETAIL" = "location";
 "ADD_GIFT_VOUCHER_LOCATION_DETAIL_PLACEHOLDER" = "no location select";
 "ADD_GIFT_VOUCHER_SERVICE_DETAIL" = "service";
@@ -365,24 +378,17 @@
 "MANAGE_ADDRESS_TXT_ADDRESS_LATITUDE" = "latitude";
 "MANAGE_ADDRESS_TXT_ADDRESS_LONGITUDE" = "longitude";
 //MARK: Add Card SCREEN
-"ADD_CARD_TITLE" = "credit, debit & atm card";
+
+
+"ADD_CARD_TITLE" = "add credit card";
 "ADD_CARD_TITLE_MESSAGE" = "verify and secure your card";
-"ADD_CARD_LBL_NAME_OF_CARD" = "name on card";
-"ADD_CARD_TXT_NAME" = "name";
-"ADD_CARD_LBL_CARD_NUMBER" = "Card Number";
+"ADD_CARD_TXT_NAME" = "card holder name";
+"ADD_CARD_TXT_CVV_NUMBER" = "cvv";
 "ADD_CARD_TXT_CARD_NUMBER" = "XXXX-XXXX-XXXX-XXXX";
-"ADD_CARD_LBL_EXPIRY" = "Expiry";
 "ADD_CARD_TXT_EXPIRY" = "mm/yy";
-"ADD_CARD_LBL_CARD_NICK_NAME" = "nickname for card";
-"ADD_CARD_TYPE_PERSONAL" = "personal";
-"ADD_CARD_TYPE_BUSINESS" = "business";
-"ADD_CARD_TYPE_OTHER" = "other";
 "ADD_CARD_SAVE_CARD_DETAILS" = "save your card details securely";
 "ADD_CARD_SAVE_CARD_DETAIL_MESSAGE" = "your card data is saved in a PCI DSS compliant secure vault.";
 "ADD_CARD_BTN_ADD_CARD" = "Add Card";
-"WELCOME_LBL_MESSAGE_2" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-"WELCOME_BTN_SIGN_UP" =  "Sign Up";
-"WELCOME_BTN_HOME" =  "Book Now";
 
 //MARK: Accessory Dialog
 "ACCESSORY_TITLE" = "do we need to bring a table?";
@@ -406,7 +412,7 @@
 "KYC_INFO_LBL_ADD_CREDIT_CARD" = "add credit card";
 
 "SCAN_PASSPORT_LBL_TITLE" = "scan passport / id";
-"SCAN_PASSPORT_LBL_MESSAGE" = "please scan your passport as per given instruction";
+"SCAN_PASSPORT_LBL_MESSAGE" = "Please scan your ID / Passport as shown below. \"Place your camera in a way that your document fit in the box.\"";
 "SCAN_PASSPORT_BTN_SCAN_NOW" = "Scan Now";
 
 "SCAN_PASSPORT_LBL_FRONT_SIDE" = "scan front Side";
@@ -437,18 +443,18 @@
 //MARK: -
 //MARK: Common Strings
 //MARK: -
-"BTN_CONNECT" = "Connect";
-"LBL_UPLOAD" = "Upload";
-"BTN_SUBMIT" = "Submit";
+"BTN_CONNECT" = "connect";
+"LBL_UPLOAD" = "upload";
+"BTN_SUBMIT" = "submit";
 "BTN_NEXT" = "next";
-"BTN_SAVE" = "Save";
+"BTN_SAVE" = "save";
 "BTN_PROCEED" = "Proceed";
 "BTN_YES_PROCEED" = "yes proceed";
 "BTN_BACK" = "back";
 "BTN_SEND" = "Send";
-"BTN_CANCEL" = "Cancel";
+"BTN_CANCEL" = "cancel";
 "BTN_SKIP" = "skip";
-"BTN_APPLY" =  "Apply";
+"BTN_APPLY" =  "apply";
 "LBL_MENU" =  "menu";
 "TIME_UNIT_MIN" = "min";
 "FAQ_CONTENT" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget. Nullam eget felis eget nunc lobortis. Faucibus ornare suspendisse sed nisi. Sagittis eu volutpat odio facilisis mauris sit amet massa. Erat velit scelerisque in dictum non consectetur a erat. Amet nulla facilisi morbi tempus iaculis urna.";

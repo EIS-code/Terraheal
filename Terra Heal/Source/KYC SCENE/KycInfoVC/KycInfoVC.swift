@@ -60,7 +60,7 @@ class KycInfoVC: MainVC {
 
     private func initialViewSetup() {
         
-
+        self.setBackground(color: UIColor.themeBackground)
         self.lblHeader?.text = "KYC_INFO_LBL_TITLE".localized()
         self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.label_26)
 

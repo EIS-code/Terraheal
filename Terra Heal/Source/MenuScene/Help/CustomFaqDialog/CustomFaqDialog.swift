@@ -44,7 +44,7 @@ class CustomFaqDialog: ThemeBottomDialogView {
 
     override func initialSetup() {
         super.initialSetup()
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.setupCollectionView(collectionView: self.collectionVw)
         self.setDataForStepUpAnimation()
     }

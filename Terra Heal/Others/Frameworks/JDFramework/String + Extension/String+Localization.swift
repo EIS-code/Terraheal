@@ -12,22 +12,6 @@ public extension String
         return NSLocalizedString(self, comment: comment)
     }
 
-    var localized: String {
-        
-        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
-    }
-    var localizedCapitalized: String {
-        
-        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "").capitalized
-    }
-    var localizedUppercase: String {
-        
-        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "").uppercased()
-    }
-    var localizedLowercase: String {
-        
-        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "").lowercased()
-    }
     func localizedCompare(string:String) -> Bool {
         
         let str1 = NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")

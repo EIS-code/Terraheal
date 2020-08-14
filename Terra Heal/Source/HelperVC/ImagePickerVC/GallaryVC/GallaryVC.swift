@@ -66,9 +66,7 @@ class GallaryVC: MainVC {
     private func initialViewSetup() {
         self.vwBg.backgroundColor = UIColor.white
         self.lblTitle?.text = "Gallary"
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
-        
-    }
+     }
 
     func setupLayout() {
 

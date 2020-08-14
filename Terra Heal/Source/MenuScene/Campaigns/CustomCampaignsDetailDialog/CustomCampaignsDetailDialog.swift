@@ -50,7 +50,7 @@ class CustomCampaignsDetailDialog: ThemeBottomDialogView {
         super.initialSetup()
         self.lblHeader.setFont(name: FontName.SemiBold, size: FontSize.label_22)
         self.lblDescription.setFont(name: FontName.Regular, size: FontSize.label_12)
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.setDataForStepUpAnimation()
     }
 

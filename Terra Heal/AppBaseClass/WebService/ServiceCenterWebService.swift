@@ -197,6 +197,24 @@ class ServiceDetail : ResponseModel {
         return dictionary
     }
     
+    class func getDemoArray() -> [ServiceDetail] {
+        var servicesArray:[ServiceDetail] = []
+        for i in 1...10 {
+            let serviceDeatil: ServiceDetail =  ServiceDetail.init(fromDictionary: [:])
+            serviceDeatil.createdAt = "01-01-11"
+            serviceDeatil.details = "HOME_INFO_LBL_2".localized()
+            serviceDeatil.id = i.toString()
+            serviceDeatil.image = ""
+            serviceDeatil.name = i.toString() + "Massage"
+            serviceDeatil.duration = ServiceDurationDetail.getDemoArray()
+            serviceDeatil.updatedAt = "01-01-11"
+            serviceDeatil.isSelected = false
+            serviceDeatil.selectedDuration = ServiceDurationDetail.init(fromDictionary: [:])
+            servicesArray.append(serviceDeatil)
+        }
+        return servicesArray
+        
+    }
     
 }
 
@@ -235,6 +253,20 @@ class ServiceDurationDetail: ResponseModel {
         dictionary["updated_at"] = updatedAt
         return dictionary
     }
+    
+    class func getDemoArray() -> [ServiceDurationDetail] {
+        var durationArray:[ServiceDurationDetail] = []
+        for i in 1...6 {
+            let durationDetail: ServiceDurationDetail = ServiceDurationDetail.init(fromDictionary: [:])
+            durationDetail.id = i.toString()
+            durationDetail.massageId = i.toString()
+            durationDetail.pricing = Pricing.getDemoArray().first!
+            durationDetail.time = i.toString()
+            durationDetail.updatedAt = i.toString()
+            durationArray.append(durationDetail)
+        }
+        return durationArray
+    }
 }
 
 class Pricing : ResponseModel {
@@ -269,5 +301,19 @@ class Pricing : ResponseModel {
         dictionary["updated_at"] = updatedAt
         return dictionary
     }
-    
+    class func getDemoArray() -> [Pricing] {
+        var pricingArray:[Pricing] = []
+        for i in 1...4 {
+            let pricing: Pricing = Pricing.init(fromDictionary: [:])
+            pricing.cost =  (i * 42).toString()
+            pricing.createdAt =  i.toString()
+            pricing.id =  i.toString()
+            pricing.massageId =  i.toString()
+            pricing.massageTimingId =  i.toString()
+            pricing.price =  (i*22).toString()
+            pricing.updatedAt =  i.toString()
+            pricingArray.append(pricing)
+        }
+        return pricingArray
+    }
 }

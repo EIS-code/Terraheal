@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="btnBuyGiftVoucher" destination="Kl7-Lb-JtZ" id="wTP-se-vgK"/>
                 <outlet property="btnBuyNow" destination="avA-7k-aok" id="J6y-me-ijZ"/>
+                <outlet property="btnGetStarted" destination="yDp-RN-c1t" id="tMK-ZN-yWz"/>
                 <outlet property="btnLeft" destination="Tzt-ie-DPd" id="VKx-VJ-RAx"/>
                 <outlet property="lblBody" destination="kZR-1z-GSn" id="mgE-L6-Gj0"/>
                 <outlet property="lblEmptyMessage" destination="GGl-fl-jXh" id="CY8-oM-KQr"/>
@@ -117,6 +118,14 @@
                         <action selector="btnBuyNowTapped:" destination="-1" eventType="touchUpInside" id="MqI-RI-eFG"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDp-RN-c1t" userLabel="btnGetStarted" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="124.66666666666669" y="720" width="126" height="38"/>
+                    <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="btnGetStartedTapped:" destination="-1" eventType="touchUpInside" id="diS-lG-GqJ"/>
+                    </connections>
+                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gr9-kt-5QC" userLabel="vwNavigationBar" customClass="ThemeView" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="197"/>
                     <color key="backgroundColor" name="theme_background"/>
@@ -152,6 +161,7 @@
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="Kl7-Lb-JtZ" secondAttribute="bottom" constant="20" id="I9O-SP-oM9"/>
                 <constraint firstItem="Tzt-ie-DPd" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="20" id="MOB-Xx-Jg6"/>
                 <constraint firstItem="Tzt-ie-DPd" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="Nzj-40-dlD"/>
+                <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="yDp-RN-c1t" secondAttribute="bottom" constant="20" id="OP0-KJ-7Ba"/>
                 <constraint firstItem="olb-ep-jGH" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="Pqt-lU-42T"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="6Jr-V8-4vu" secondAttribute="trailing" id="Tda-h7-IP9"/>
                 <constraint firstItem="6Jr-V8-4vu" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="XjW-vf-5ee"/>
@@ -168,6 +178,7 @@
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="aVT-f3-Mwd" secondAttribute="bottom" id="r1C-dt-Yb0"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="Gr9-kt-5QC" secondAttribute="trailing" id="roy-zg-A68"/>
                 <constraint firstItem="olb-ep-jGH" firstAttribute="top" secondItem="Gr9-kt-5QC" secondAttribute="bottom" id="sdr-sG-DAw"/>
+                <constraint firstItem="yDp-RN-c1t" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="wyh-KV-pWf"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
             <point key="canvasLocation" x="131" y="154"/>
@@ -179,7 +190,7 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_dark_text">
-            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_hint_text">
             <color red="0.69800001382827759" green="0.70200002193450928" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

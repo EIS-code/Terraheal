@@ -56,10 +56,11 @@ class MyAddressVC: MainVC {
     }
     
     private func initialViewSetup() {
-        
+        self.setBackground(color: UIColor.themeBackground)
         self.setupTableView(tableView: self.tableView)
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.setTitle(title: "MANAGE_ADDRESS_TITLE".localized())
+        self.lblEmptyTitle.setFont(name: FontName.Bold, size: FontSize.label_18)
+        self.lblEmptyMsg.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.lblEmptyTitle.text = "NO_ADDRESS_TITLE".localized()
         self.lblEmptyMsg.text = "NO_ADDRESS_MSG".localized()
         self.btnSubmit?.setTitle("MANAGE_ADDRESS_BTN_ADD_NEW_ADDRESS".localized(), for: .normal)
@@ -79,14 +80,17 @@ class MyAddressVC: MainVC {
     
     func updateUI()  {
         if arrForData.isEmpty {
+            self.setBackground(color: UIColor.themeBackground)
             self.vwForEmpty.isHidden = false
             self.tableView.isHidden = true
         } else {
+            self.setBackground(color: UIColor.themeLightBackground)
             self.vwForEmpty.isHidden = true
             self.tableView.isHidden = false
         }
         self.tableView.reloadData()
     }
+    
     func openNewAddressDialog(index:Int = -1) {
         
         let alert: CustomAddNewAddressDialog = CustomAddNewAddressDialog.fromNib()

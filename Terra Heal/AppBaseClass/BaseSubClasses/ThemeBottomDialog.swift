@@ -50,7 +50,7 @@ class ThemeBottomDialogView: ThemeView {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.vwTopBar?.setRound(withBorderColor: .clear, andCornerRadious: 2.5, borderWidth: 1.0)
-        self.dialogView?.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
+        self.dialogView?.roundCorners(corners: [.topLeft,.topRight], radius: 40.0)
         self.btnDone?.layoutIfNeeded()
         self.btnDone?.setHighlighted(isHighlighted: true)
     }
@@ -78,7 +78,7 @@ class ThemeBottomDialogView: ThemeView {
         self.btnDoneFloating?.setForwardButton()
         self.btnNext?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnDone?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        dialogView?.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
+        self.dialogView?.roundCorners(corners: [.topLeft,.topRight], radius: 40.0)
     }
     
     func setDialogHeight(height:CGFloat){

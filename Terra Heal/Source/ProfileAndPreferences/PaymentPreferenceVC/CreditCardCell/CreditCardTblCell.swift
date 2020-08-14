@@ -14,11 +14,12 @@ class CreditCardTblCell: TableCell {
     @IBOutlet weak var btnDefult: ThemeButton!
     @IBOutlet weak var ivCard: UIImageView!
     @IBOutlet weak var lblCardValue: ThemeLabel!
+    @IBOutlet weak var vwImgBg: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_22)
-        self.ivCard.setRound()
+        self.vwImgBg.setRound()
     }
 
     func setData(data: CreditCardDetail ) {
@@ -29,7 +30,8 @@ class CreditCardTblCell: TableCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.ivCard?.setRound()
+        self.layoutIfNeeded()
+        self.vwImgBg?.setRound()
         self.btnDefult.setRound(withBorderColor: .clear, andCornerRadious: 3.0, borderWidth: 1.0)
     }
 

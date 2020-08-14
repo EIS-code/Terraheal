@@ -104,7 +104,6 @@ class SettingVC: MainVC {
     private func initialViewSetup() {
         
         self.setupTableView(tableView: self.tableView)
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.setTitle(title: "SETTING_MENU_TITTLE".localized())
         self.btnBack.setBackButton()
     }
@@ -386,7 +385,7 @@ extension SettingVC {
         Loader.showLoading()
         AppWebApi.updateSetting(params: request, completionHandler: { (response) in
             Loader.hideLoading()
-            if ResponseModel.isSuccess(response: response,withSuccessToast: true,andErrorToast: true) {
+            if ResponseModel.isSuccess(response: response,withSuccessToast: false,andErrorToast: true) {
                 self.settingDetail = response.settingDetail
                 self.setData()
             }

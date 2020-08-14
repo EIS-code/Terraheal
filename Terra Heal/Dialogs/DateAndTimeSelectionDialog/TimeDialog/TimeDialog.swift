@@ -35,7 +35,7 @@ class TimeDialog: ThemeBottomDialogView {
         if buttonTitle.isEmpty() {
             self.btnNext.isHidden = true
         } else {
-            self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+            self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
             self.btnNext.setTitle(buttonTitle, for: .normal)
             self.btnNext.isHidden = false
         }
@@ -43,7 +43,7 @@ class TimeDialog: ThemeBottomDialogView {
     
     override func initialSetup() {
         super.initialSetup()
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.timePicker.backgroundColor = UIColor.clear
         self.timePicker.setValue(UIColor.themePrimary, forKeyPath: "textColor")
     }

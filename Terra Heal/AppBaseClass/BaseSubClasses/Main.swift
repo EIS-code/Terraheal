@@ -32,10 +32,10 @@ class MainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setBackground(color: .themePrimaryLightBackground)
-        self.view.backgroundColor = .themePrimaryLightBackground
+        self.lblTitle?.textColor = UIColor.themeNavigationTitle
         self.btnLeft?.setBackButton()
         self.lblTitle?.textColor = UIColor.themeDarkText
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_22)
     }
     
     override func viewDidLayoutSubviews() {

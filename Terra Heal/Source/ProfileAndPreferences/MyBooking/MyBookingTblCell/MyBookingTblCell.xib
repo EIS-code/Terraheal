@@ -33,11 +33,11 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28 Oct 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lff-xv-HA0" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                         <rect key="frame" x="20" y="15" width="98" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="theme_primary"/>
+                                        <color key="textColor" name="theme_dark_text"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" name="theme_background"/>
+                                <color key="backgroundColor" name="theme_dialog_background"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Lff-xv-HA0" secondAttribute="trailing" constant="20" id="MW2-u9-qsl"/>
                                     <constraint firstItem="Lff-xv-HA0" firstAttribute="centerX" secondItem="xm7-6v-Cmx" secondAttribute="centerX" id="eN0-WH-Rp7"/>
@@ -47,7 +47,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" name="theme_primary_light_background"/>
+                        <color key="backgroundColor" name="theme_background"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="250" id="3GH-oJ-ObL"/>
                             <constraint firstAttribute="bottom" secondItem="FQU-DD-2WP" secondAttribute="bottom" constant="20" id="3rX-xa-GRQ"/>
@@ -91,7 +91,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" name="theme_primary_light_background"/>
+                        <color key="backgroundColor" name="theme_background"/>
                         <constraints>
                             <constraint firstItem="LzM-Rc-egA" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="20" id="1CA-ed-v2W"/>
                             <constraint firstAttribute="height" constant="60" id="2un-g0-Lw1"/>
@@ -108,6 +108,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" name="theme_light_background"/>
                 <constraints>
                     <constraint firstItem="fTr-D4-KiU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="2jg-EE-YxG"/>
                     <constraint firstAttribute="trailing" secondItem="fTr-D4-KiU" secondAttribute="trailing" constant="10" id="AWN-UN-JV4"/>
@@ -141,13 +142,16 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_dark_text">
-            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_dialog_background">
+            <color red="0.9649999737739563" green="0.9649999737739563" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_light_background">
+            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="theme_primary_light_background">
-            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

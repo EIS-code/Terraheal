@@ -71,7 +71,6 @@ class GiftServiceDetailVC: MainVC {
     
     private func initialViewSetup() {
         self.lblTitle?.text = ""//appSingleton.user.name
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.lblServiceName?.text = serviceDetail.name
         self.lblServiceName?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.lblServiceDetail?.text = serviceDetail.details

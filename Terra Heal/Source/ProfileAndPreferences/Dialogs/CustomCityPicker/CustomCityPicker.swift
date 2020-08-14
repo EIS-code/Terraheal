@@ -23,7 +23,7 @@ class CustomCityPicker: ThemeBottomDialogView {
         super.awakeFromNib()
     }
     
-    func initialize(title:String,buttonTitle:String,cancelButtonTitle:String) {
+    func initialize(title:String,buttonTitle:String,cancelButtonTitle:String, countryId: String) {
         self.initialSetup()
         self.lblTitle.text = title
         if cancelButtonTitle.isEmpty() {
@@ -41,6 +41,7 @@ class CustomCityPicker: ThemeBottomDialogView {
         self.select(data: self.selectedData)
         self.setupTableView(tableView: self.tableView)
         self.setupSearchbar(searchBar: self.txtSearchBar)
+        self.getCityList(countryId: countryId)
     }
 
     func select(data:City?) {

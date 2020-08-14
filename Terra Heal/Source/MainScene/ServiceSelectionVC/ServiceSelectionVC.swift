@@ -62,8 +62,6 @@ class ServiceSelectionVC: MainVC {
         
     }
     private func initialViewSetup() {
-        
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.setTitle(title: "SELECT_SERIVICE_TITLE".localized())
         self.setupCollectionView(collectionView: self.collectionVw)
         self.vwServiceSelection.allowChangeThumbWidth = false
@@ -177,7 +175,7 @@ class ServiceSelectionVC: MainVC {
     }
     func openTextViewPicker() {
         let alert: TextViewDialog = TextViewDialog.fromNib()
-        alert.initialize(title: "booking notes", data: self.bookingDetail?.massage_info.last?.notes ?? "" , buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        alert.initialize(title: "booking notes", data: self.bookingDetail?.massage_info.last?.notes ?? "" , buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized(), isMandatory: false)
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in

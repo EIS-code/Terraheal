@@ -14,7 +14,7 @@ class ServiceSelectionDialog: ThemeBottomDialogView {
     @IBOutlet weak var collectionVw: UICollectionView!
     @IBOutlet weak var vwServiceSelection: JDSegmentedControl!
     var selectedService: ServiceType = ServiceType.Massages
-    var onBtnDoneTapped: (( ) -> Void)? = nil
+    var onBtnDoneTapped: ((_ data: ServiceDetail ) -> Void)? = nil
     @IBOutlet weak var ivMassageCenter: PaddedImageView!
     
     @IBOutlet weak var contentView: UIView!
@@ -45,7 +45,7 @@ class ServiceSelectionDialog: ThemeBottomDialogView {
         self.dialogView.backgroundColor = .clear
         contentView.clipsToBounds = true
         contentView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.setupCollectionView(collectionView: self.collectionVw)
         self.vwServiceSelection.allowChangeThumbWidth = false
         self.vwServiceSelection.itemTitles = ["massages".localized(),"therapies".localized()]
@@ -72,7 +72,7 @@ class ServiceSelectionDialog: ThemeBottomDialogView {
 
     @IBAction func btnDoneTapped(_ sender: Any) {
             if self.onBtnDoneTapped != nil {
-                self.onBtnDoneTapped!();
+              //  self.onBtnDoneTapped!();
             }
     }
 
@@ -135,14 +135,18 @@ extension ServiceSelectionDialog:  UICollectionViewDelegate, UICollectionViewDat
         collectionView.deselectItem(at: indexPath, animated: true)
 
         let serviceDetailVC:  GiftServiceDetailVC =  GiftServiceDetailVC.fromNib()
+        serviceDetailVC.modalPresentationStyle = .fullScreen
         serviceDetailVC.serviceDetail = self.arrForData[indexPath.row]
         DispatchQueue.main.async {
                Common.appDelegate.getTopViewController()?.present(serviceDetailVC, animated: true, completion: nil)
             serviceDetailVC.onBtnDoneTapped = { [weak serviceDetailVC, weak self] (data) in
+                
+                
             guard let self = self else { return } ; print(self)
+                self.arrForData[indexPath.row].selectedDuration = data
                 serviceDetailVC?.dismiss(animated: true) {
                     if self.onBtnDoneTapped != nil {
-                        self.onBtnDoneTapped!();
+                        self.onBtnDoneTapped!(self.arrForData[indexPath.row]);
                     }
                 }
                 

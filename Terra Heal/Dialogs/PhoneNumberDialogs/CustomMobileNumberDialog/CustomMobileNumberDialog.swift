@@ -47,7 +47,7 @@ class CustomMobileNumberDialog: ThemeBottomDialogView {
         self.txtMobileNumber?.delegate = self
         self.txtCountryPhoneCode?.placeholder = "".localized()
         self.txtCountryPhoneCode?.delegate = self
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
     }
       
 

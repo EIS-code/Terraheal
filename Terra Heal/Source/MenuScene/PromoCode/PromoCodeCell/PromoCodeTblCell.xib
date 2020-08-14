@@ -54,7 +54,7 @@
                                         </subviews>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-copy" translatesAutoresizingMaskIntoConstraints="NO" id="oVt-jG-IgM">
-                                        <rect key="frame" x="312" y="23" width="24" height="24"/>
+                                        <rect key="frame" x="306" y="20" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="oVt-jG-IgM" secondAttribute="height" multiplier="1:1" id="Bwp-DU-nGb"/>
                                         </constraints>
@@ -69,6 +69,12 @@
                                     <constraint firstItem="6NS-8s-eHt" firstAttribute="leading" secondItem="LmY-i0-0xA" secondAttribute="leading" constant="20" id="uCY-et-iSO"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zT6-eB-8yK">
+                                <rect key="frame" x="346" y="180" width="30" height="30"/>
+                                <connections>
+                                    <action selector="btnCopyTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="MAD-5a-I12"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="theme_background"/>
                         <constraints>
@@ -76,11 +82,15 @@
                             <constraint firstItem="LmY-i0-0xA" firstAttribute="top" secondItem="vkL-On-Gbz" secondAttribute="bottom" priority="999" constant="10" id="4ZU-1S-pnm"/>
                             <constraint firstItem="zbl-J2-KSJ" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="40" id="6mP-6o-QSq"/>
                             <constraint firstItem="zbl-J2-KSJ" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" constant="40" id="FUn-cI-VuC"/>
+                            <constraint firstItem="zT6-eB-8yK" firstAttribute="trailing" secondItem="oVt-jG-IgM" secondAttribute="trailing" id="GPt-Ua-fl9"/>
                             <constraint firstAttribute="trailing" secondItem="LmY-i0-0xA" secondAttribute="trailing" constant="40" id="SFl-rX-HT4"/>
                             <constraint firstAttribute="bottom" secondItem="LmY-i0-0xA" secondAttribute="bottom" constant="40" id="Ta4-sd-wtI"/>
                             <constraint firstAttribute="trailing" secondItem="vkL-On-Gbz" secondAttribute="trailing" constant="40" id="bq1-p7-Gzk"/>
+                            <constraint firstItem="zT6-eB-8yK" firstAttribute="bottom" secondItem="oVt-jG-IgM" secondAttribute="bottom" id="cF2-QT-Jbu"/>
                             <constraint firstItem="vkL-On-Gbz" firstAttribute="leading" secondItem="zbl-J2-KSJ" secondAttribute="leading" id="ejy-yo-Mzi"/>
+                            <constraint firstItem="zT6-eB-8yK" firstAttribute="top" secondItem="oVt-jG-IgM" secondAttribute="top" id="i2g-Lq-1WG"/>
                             <constraint firstItem="vkL-On-Gbz" firstAttribute="top" secondItem="zbl-J2-KSJ" secondAttribute="bottom" priority="998" constant="20" id="ofo-l0-uaT"/>
+                            <constraint firstItem="zT6-eB-8yK" firstAttribute="leading" secondItem="oVt-jG-IgM" secondAttribute="leading" id="yDZ-SB-1ew"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -94,6 +104,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="btnCopy" destination="zT6-eB-8yK" id="h3E-Zw-tLp"/>
                 <outlet property="ivMenu" destination="oVt-jG-IgM" id="2RY-9I-W9V"/>
                 <outlet property="lblCode" destination="2Jl-IF-mcx" id="XYb-1j-sIZ"/>
                 <outlet property="lblExpiry" destination="zbl-J2-KSJ" id="Ond-VQ-6kj"/>
@@ -111,7 +122,7 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_dark_text">
-            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light_background">
             <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -14,8 +14,8 @@
             filePath = "Terra Heal/Source/ProfileAndPreferences/PaymentPreferenceVC/PaymentPreferenceVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "openAddPaymentDialog()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "Terra Heal/Source/ProfileAndPreferences/PaymentPreferenceVC/PaymentPreferenceVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "openAddPaymentDialog()"
             landmarkType = "7">
          </BreakpointContent>
@@ -55,16 +55,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "373A10CE-5361-4863-92B0-2968577F1740"
+            uuid = "089373A7-1B3A-474B-9D78-EE9F2FDD206B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Terra Heal/Others/TextField/ACFloatingTextfield.swift"
+            filePath = "Terra Heal/Source/MenuScene/PromoCode/PromoCodeCell/PromoCodeTblCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "validate()"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "btnCopyTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

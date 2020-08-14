@@ -71,7 +71,7 @@
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                 <state key="normal" title="  hours" image="asset-time">
-                                    <color key="titleColor" name="theme_primary"/>
+                                    <color key="titleColor" name="theme_dark_text"/>
                                 </state>
                                 <connections>
                                     <action selector="btnHourTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="nAN-9M-Dkl"/>

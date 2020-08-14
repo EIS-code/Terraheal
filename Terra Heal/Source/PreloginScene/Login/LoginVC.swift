@@ -7,15 +7,11 @@ import UIKit
 
 class LoginVC: MainVC {
 
+    @IBOutlet weak var btnFigerPrint: UIButton!
     @IBOutlet weak var scrVw: UIScrollView!
     @IBOutlet weak var vwContent: UIView!
-
-
-
     @IBOutlet weak var lblLoginTitle: ThemeLabel!
     @IBOutlet weak var lblMessage: ThemeLabel!
-    
-
     @IBOutlet weak var txtEmail: ACFloatingTextfield!
     @IBOutlet weak var txtPassword: ACFloatingTextfield!
     @IBOutlet weak var btnForgotPassword: ThemeButton!
@@ -39,13 +35,10 @@ class LoginVC: MainVC {
     }
 
     // MARK: Setup
-
     private func setup() {
-
     }
 
     // MARK: View lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
@@ -66,7 +59,6 @@ class LoginVC: MainVC {
     }
 
     private func initialViewSetup() {
-         
         self.setBackground(color: UIColor.themeBackground)
         self.lblConnect.backgroundColor = UIColor.themeBackground
         self.lblLoginTitle?.text = "LOGIN_LBL_TITLE".localized()
@@ -92,10 +84,7 @@ class LoginVC: MainVC {
         self.lblConnect?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
         self.lblDontHaveAccount?.text = "LOGIN_LBL_DO_NOT_HAVE_ACCOUNT".localized()
         self.lblDontHaveAccount?.setFont(name: FontName.Regular, size: FontSize.label_18)
-
-
     }
-
 
     // MARK: - Action Methods
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
@@ -103,6 +92,7 @@ class LoginVC: MainVC {
     }
 
     @IBAction func btnLoginTapped(_ sender: UIButton) {
+        self.btnLogin.isEnabled = false
         if checkValidation() {
             self.wsLogin(username: txtEmail.text!.trim(), password: txtPassword.text!)
         }
@@ -116,11 +106,9 @@ class LoginVC: MainVC {
     }
 
     @IBAction func btnFingerPrintTapped(_ sender: UIButton) {
-        //authenticateUser(self)
-         self.checkFignerPrintData()
-        
+        self.btnFigerPrint.isEnabled = false
+        self.checkFignerPrintData()
     }
-
 }
 
 extension LoginVC: UITextFieldDelegate {
@@ -162,19 +150,19 @@ extension LoginVC {
         }
     }
 
-    
-    
     func checkValidation() -> Bool {
-
         if !txtEmail.validate().isValid {
             let alert: CustomAlert = CustomAlert.fromNib()
             alert.initialize(message: txtEmail.validate().message)
             alert.show(animated: true)
             alert.onBtnCancelTapped = {
                 [weak alert, weak self] in
+                 guard let self = self else { return } ; print(self)
                 alert?.dismiss();
-                _ = self?.txtEmail.becomeFirstResponder()
+                _ = self.txtEmail.becomeFirstResponder()
+                self.btnLogin.isEnabled = true
             }
+            
             return false
         }
         else if !txtPassword.validate().isValid {
@@ -183,8 +171,10 @@ extension LoginVC {
             alert.show(animated: true)
             alert.onBtnCancelTapped = {
                 [weak alert, weak self] in
+                 guard let self = self else { return } ; print(self)
                 alert?.dismiss()
-                _ = self?.txtPassword.becomeFirstResponder()
+                self.btnLogin.isEnabled = true
+                _ = self.txtPassword.becomeFirstResponder()
             }
             return false
         }
@@ -212,6 +202,7 @@ extension LoginVC {
             self.wsLogin(username: person.username , password: person.password)
         }
     }
+
     func openPasswordDialog() {
         let alert: CustomTextFieldDialog = CustomTextFieldDialog.fromNib()
         alert.initialize(title: "FINGER_PRINT_DIALOG_PASSWORD_TITLE", data: "", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
@@ -252,6 +243,7 @@ extension LoginVC {
         let count = CoreDataManager.sharedManager.fetchPersons().count
         if count == 0  {
             Common.showAlert(message: "You need to do manual login first")
+            self.btnFigerPrint.isEnabled = true
         }  else  {
             self.openLoginFingerPrintDialog()
         }
@@ -265,12 +257,14 @@ extension LoginVC {
             [weak alertFingerPrint, weak self] in
             guard let self = self else {return}; print(self)
             alertFingerPrint?.dismiss();
+            self.btnFigerPrint.isEnabled = true
             self.openPasswordDialog()
         }
         alertFingerPrint.onBtnDoneTapped = {
             [weak alertFingerPrint, weak self] in
             guard let self = self else {return}; print(self)
             alertFingerPrint?.dismiss();
+            self.btnFigerPrint.isEnabled = true
             if CoreDataManager.sharedManager.fetchPersons().count == 1 {
                 if let person: Person = CoreDataManager.sharedManager.fetchPersons().first {
                     self.wsLogin(username: person.username ?? "", password: person.password ?? "")

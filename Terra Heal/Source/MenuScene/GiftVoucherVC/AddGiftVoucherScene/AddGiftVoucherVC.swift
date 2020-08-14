@@ -66,6 +66,7 @@ class AddGiftVoucherVC: MainVC {
     @IBOutlet weak var btnPreview: ThemeButton!
     @IBOutlet weak var lblSubTotal: ThemeLabel!
     @IBOutlet weak var lblSubtotalValue: ThemeLabel!
+    @IBOutlet weak var stkSubTotal: UIStackView!
     
     var arrForData: [AddVouncherMenuDetail] = [
         AddVouncherMenuDetail(type: .Location, value: "".localized(),  isSelected: true),
@@ -88,7 +89,7 @@ class AddGiftVoucherVC: MainVC {
     
     private func setup() {
     }
-   
+    
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,19 +118,20 @@ class AddGiftVoucherVC: MainVC {
         self.setupTableView(tableView: self.tableView)
         self.lblSubTotal.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.lblSubtotalValue.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.lblSubTotal.text  = "ADD_GIFT_VOUCHER_SUBTOTAL".localized()
-        self.setTitle(title: "HOW_IT_WORK_TITLE".localized())
+        self.setTitle(title: "ADD_GIFT_VOUCHER_TITLE".localized())
+        self.btnPreview.setTitle("GIFT_VOUCHER_BTN_PREVIEW".localized(), for: .normal)
         self.btnBack.setBackButton()
     }
-    
     
     @IBAction func btnBackTapped(_ sender: Any) {
         _ = (self.navigationController as? NC)?.popVC()
     }
-    @IBAction func btnPreviewTapped(_ sender: Any) {
-    }
     
+    @IBAction func btnPreviewTapped(_ sender: Any) {
+        self.openPreviewDialog()
+    }
+
 }
 
 
@@ -168,102 +170,143 @@ extension AddGiftVoucherVC: UITableViewDelegate,UITableViewDataSource, UIScrollV
         tableView.reloadData()
         switch type{
         case .Location:
-            self.openCenterSelectionDialog()
+            self.openCenterSelectionDialog(index: indexPath.row)
         case .Service:
-            self.openServiceSelectionDialog()
-            //self.openPackSelectionDialog()
+            self.openServiceSelectionDialog(index: indexPath.row)
         case .Design:
-            self.openCenterSelectionDialog()
+            self.openDesignDialog(index: indexPath.row)
         case .RecipientDetail:
-            self.openRecipientDetailDialog()
-            
+            self.openRecipientDetailDialog(index: indexPath.row)
         case .GiverDetail:
-            self.openGiverDetailDialog()
-            
+            self.openGiverDetailDialog(index: indexPath.row)
         case .SendingPreference:
-            self.openSendingPreferenceDialog()
-        default:
-            self.openGiverDetailDialog()
+            self.openSendingPreferenceDialog(index: indexPath.row)
         }
     }
     
 }
 
 extension AddGiftVoucherVC {
-    func openGiverDetailDialog() {
-           let alert: CustomGiverDetailDialog = CustomGiverDetailDialog.fromNib()
-           alert.initialize(title: "giver details", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
-           alert.show(animated: true)
-           alert.onBtnCancelTapped = {
-               [weak alert, weak self] in
-               alert?.dismiss()
-               guard let self = self else { return } ; print(self)
-           }
-           alert.onBtnDoneTapped = {
-               [weak alert, weak self] (data) in
-               alert?.dismiss()
-               guard let self = self else { return } ; print(self)
-               self.tableView.reloadData()
-           }
-       }
-       func openSendingPreferenceDialog() {
-           let alert: CustomSendingPreferenceDialog = CustomSendingPreferenceDialog.fromNib()
-           alert.initialize(title: "sending preference", data: "email", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
-           alert.show(animated: true)
-           alert.onBtnCancelTapped = {
-               [weak alert, weak self] in
-               alert?.dismiss()
-               guard let self = self else { return } ; print(self)
-           }
-           alert.onBtnDoneTapped = {
-               [weak alert, weak self] (data) in
-               alert?.dismiss()
-               guard let self = self else { return } ; print(self)
-               self.tableView.reloadData()
-           }
-       }
-       
-       func openRecipientDetailDialog() {
-           let alert: CustomRecipientDetailDialog = CustomRecipientDetailDialog.fromNib()
-           alert.initialize(title: "recipients details", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
-           alert.show(animated: true)
-           alert.onBtnCancelTapped = {
-               [weak alert, weak self] in
-               alert?.dismiss()
-               guard let self = self else { return } ; print(self)
-           }
-           alert.onBtnDoneTapped = {
-               [weak alert, weak self] (data) in
-               alert?.dismiss()
-               guard let self = self else { return } ; print(self)
-               self.tableView.reloadData()
-           }
-       }
-    func openCenterSelectionDialog() {
-             
-             let alert: CustomServiceCenterLocationSelectionDialog = CustomServiceCenterLocationSelectionDialog.fromNib()
-             alert.initialize(title: "location", buttonTitle: "select")
-             alert.show(animated: true)
-             alert.onBtnCancelTapped = {
-                 [weak alert, weak self] in
-                 alert?.dismiss()
-                 guard let self = self else { return } ; print(self)
-                 
-                 
-             }
-             alert.onBtnDoneTapped = {
-                 [weak alert, weak self] in
-                 alert?.dismiss()
-                 guard let self = self else { return } ; print(self)
-                self.arrForData[0].value = "Terre Heal"
-                self.tableView.reloadData()
-                
-             }
-             
-             
-         }
+    func openPreviewDialog() {
+        let alert: PreviewGiftVoucherDialog = PreviewGiftVoucherDialog.fromNib()
+        alert.initialize(title: "Preview your gift voucher", buttonTitle: "GIFT_VOUCHER_BTN_PROCEED_TO_BUY".localized(), cancelButtonTitle: "GIFT_VOUCHER_BTN_MAKE_CHAGES".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (data) in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+            Common.appDelegate.loadPaymentReferenceVC(navigaionVC: self.navigationController, isFromMenu: false)
+        }
+    }
     
-    func openServiceSelectionDialog() {
+    func openGiverDetailDialog(index: Int) {
+        let alert: CustomGiverDetailDialog = CustomGiverDetailDialog.fromNib()
+        alert.initialize(title: "giver details", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (data) in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+            self.arrForData[index].isSelected = true
+            self.arrForData[index].value = "details filled"
+            self.tableView.reloadData()
+        }
+    }
+    
+    func openDesignDialog(index: Int) {
+        let alert: DesignSelectionDialog = DesignSelectionDialog.fromNib()
+        alert.initialize(title: "choose a design", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self]  in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+            
+            self.arrForData[index].isSelected = true
+            self.arrForData[index].value = "details filled"
+            self.tableView.reloadData()
+        }
+    }
+    
+    func openSendingPreferenceDialog(index: Int) {
+        let alert: CustomSendingPreferenceDialog = CustomSendingPreferenceDialog.fromNib()
+        alert.initialize(title: "sending preference", data: "email", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (data) in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+            
+            self.arrForData[index].isSelected = true
+            self.arrForData[index].value = "details filled"
+            self.tableView.reloadData()
+        }
+    }
+    
+    func openRecipientDetailDialog(index: Int) {
+        let alert: CustomRecipientDetailDialog = CustomRecipientDetailDialog.fromNib()
+        alert.initialize(title: "recipients details", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (data) in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+            
+            self.arrForData[index].isSelected = true
+            self.arrForData[index].value = "details filled"
+            self.tableView.reloadData()
+        }
+    }
+    func openCenterSelectionDialog(index: Int) {
+        
+        let alert: CustomServiceCenterLocationSelectionDialog = CustomServiceCenterLocationSelectionDialog.fromNib()
+        alert.initialize(title: "location", buttonTitle: "select")
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+            
+            
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (data) in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+            self.arrForData[index].isSelected = true
+            self.arrForData[index].value = data.name
+            self.tableView.reloadData()
+            
+            
+        }
+    }
+    
+    func openServiceSelectionDialog(index: Int) {
         let serviceSelectionDialog: ServiceSelectionDialog  = ServiceSelectionDialog.fromNib()
         serviceSelectionDialog.initialize(title: arrForData[0].value, buttonTitle: "BTN_BOOK_HERE".localized())
         serviceSelectionDialog.show(animated: true)
@@ -273,10 +316,17 @@ extension AddGiftVoucherVC {
             serviceSelectionDialog?.dismiss()
         }
         serviceSelectionDialog.onBtnDoneTapped = {
-            [weak serviceSelectionDialog, weak self]  in
+            [weak serviceSelectionDialog, weak self] (data) in
             guard let self = self else { return } ; print(self)
             serviceSelectionDialog?.dismiss()
-           
+            self.updateSubTotalView()
+            self.arrForData[index].isSelected = true
+            self.arrForData[index].value = data.name
+            self.tableView.reloadData()
         }
+    }
+    
+    func updateSubTotalView() {
+        self.stkSubTotal.visible()
     }
 }

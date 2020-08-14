@@ -83,7 +83,6 @@ class PaymentPreferenceVC: MainVC {
     private func initialViewSetup() {
         
         self.setupTableView(tableView: self.tableView)
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.setTitle(title: "PAYMENT_PREFERENCE_TITLE".localized())
         self.lblPaypal.text = "PAYMENT_LBL_PAYPAL".localized()
         self.lblPaypal.setFont(name: FontName.Bold, size: FontSize.label_18)

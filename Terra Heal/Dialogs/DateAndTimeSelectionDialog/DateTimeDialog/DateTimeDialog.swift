@@ -41,7 +41,7 @@ class DateTimeDialog: ThemeBottomDialogView {
         if buttonTitle.isEmpty() {
             self.btnNext.isHidden = true
         } else {
-            self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+            self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
             self.btnNext.setTitle(buttonTitle, for: .normal)
             self.btnNext.isHidden = false
         }
@@ -49,7 +49,7 @@ class DateTimeDialog: ThemeBottomDialogView {
     
     override func initialSetup() {
         super.initialSetup()
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.lblSelectDate.text = "DATE_DIALOG_LBL_SELECT_DATE".localized()
         self.lblSelectTime.text = "DATE_DIALOG_LBL_SELECT_TIME".localized()
         self.lblSelectDate.setFont(name: FontName.Bold, size: FontSize.label_18)

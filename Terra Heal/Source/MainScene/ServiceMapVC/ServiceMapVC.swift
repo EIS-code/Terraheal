@@ -166,7 +166,22 @@ extension ServiceMapVC {
             
             appSingleton.myBookingData.serviceCenterDetail = self.arrForServices[self.currentIndex]
             appSingleton.myBookingData.shop_id = self.arrForServices[self.currentIndex].id
+            self.openAccessoryDialog()
+        }
+    }
+    
+    func openAccessoryDialog() {
+        let dialogForAccessory: AccessorySelectionDialog = AccessorySelectionDialog.fromNib()
+        dialogForAccessory.initialize(title: "ACCESSORY_TITLE".localized(), buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        dialogForAccessory.show(animated: true)
+        dialogForAccessory.onBtnDoneTapped = {[weak self, weak dialogForAccessory] (data) in
+            guard let self = self else { return } ; print(self)
+            dialogForAccessory?.dismiss()
             Common.appDelegate.loadReviewAndBookVC()
+        }
+        dialogForAccessory.onBtnCancelTapped = { [weak self, weak dialogForAccessory]  in
+            guard let self = self else { return } ; print(self)
+            dialogForAccessory?.dismiss()
         }
     }
     

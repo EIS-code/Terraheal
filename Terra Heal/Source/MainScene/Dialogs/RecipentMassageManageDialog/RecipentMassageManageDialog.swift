@@ -48,7 +48,7 @@ class RecipentMassageManageDialog: ThemeBottomDialogView {
     override func initialSetup() {
         super.initialSetup()
         self.lblTitle?.text = "RECIEPENT_DETAIL_TITLE".localized()
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.btnAddReciepent.setTitle("RECIEPENT_BTN_ADD_RECIEPENT".localized(), for: .normal)
         self.btnNext.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.lblTotal?.setFont(name: FontName.Bold, size: FontSize.label_22)
@@ -194,6 +194,7 @@ tableView.backgroundColor = .clear
     
     @objc func addService(sender: UIButton) {
         let serviceDetailVC:  ServiceSelectionVC =  ServiceSelectionVC.fromNib()
+        serviceDetailVC.modalPresentationStyle = .fullScreen
         serviceDetailVC.bookingDetail = self.arrForData[sender.tag]
         DispatchQueue.main.async {
             // self.navigationController?.pushViewController(serviceDetailVC, animated: true)

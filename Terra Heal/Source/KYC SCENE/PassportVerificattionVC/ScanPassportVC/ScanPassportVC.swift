@@ -57,7 +57,7 @@ class ScanPassportVC: MainVC, AVCapturePhotoCaptureDelegate {
 
     private func initialViewSetup() {
         
-
+        self.setBackground(color: UIColor.themeBackground)
         self.lblHeader?.text = "SCAN_PASSPORT_LBL_TITLE".localized()
         self.lblHeader?.setFont(name: FontName.SemiBold, size: FontSize.label_26)
         self.btnScanNow?.setTitle("SCAN_PASSPORT_BTN_SCAN_NOW".localized(), for: .normal)
@@ -92,7 +92,7 @@ class ScanPassportVC: MainVC, AVCapturePhotoCaptureDelegate {
         } else {
             self.capturedBackImage = UIImage()
             self.progressBar.progress = 1.0
-            //Common.appDelegate.loadScanSelfieInstructionVC()
+            Common.appDelegate.loadKycInfoVC(navigaionVC: self.navigationController)
         }
     }
 

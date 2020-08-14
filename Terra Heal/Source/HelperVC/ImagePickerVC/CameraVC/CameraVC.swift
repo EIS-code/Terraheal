@@ -70,6 +70,7 @@ class CameraVC: MainVC {
         self.vwHintLayer.isHidden = true
     }
     private func initialViewSetup() {
+        self.setBackground(color: UIColor.themeBackground)
         self.lblMsg?.setFont(name: FontName.SemiBold, size: FontSize.label_26)
         self.showHint(messae: "CAMERA_LBL_MESSAGE".localized(), image: "asset-face")
     }

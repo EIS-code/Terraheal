@@ -44,7 +44,7 @@ class CustomRateViewDialog: ThemeBottomDialogView {
         self.ratingView.delegate = self
         self.txtDescription.setFont(name: FontName.Regular, size: FontSize.label_22)
         self.txtDescription.placeholder = "Lorem ipsum dolor sit amet,"
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.txtDescription?.delegate = self
     }
 

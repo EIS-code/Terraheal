@@ -75,8 +75,7 @@ class EditProfileVC: MainVC {
     
     private func initialViewSetup() {
         self.view.backgroundColor = UIColor.themeBackground
-        self.lblTitle?.text = "edit profile"//appSingleton.user.name
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.setTitle(title: "edit profile")
         self.btnBack.setBackButton()
     }
     
@@ -155,8 +154,7 @@ class EditProfileVC: MainVC {
             return
         }
         let cityPickerAlert: CustomCityPicker = CustomCityPicker.fromNib()
-        cityPickerAlert.getCityList(countryId: selectedCountry!.id)
-        cityPickerAlert.initialize(title: arrForProfile[index].placeholder, buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized())
+        cityPickerAlert.initialize(title: arrForProfile[index].placeholder, buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized(), countryId: selectedCountry!.id)
         cityPickerAlert.show(animated: true)
         cityPickerAlert.onBtnCancelTapped = {
             [weak cityPickerAlert, weak self] in
@@ -403,12 +401,11 @@ extension EditProfileVC:  UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = collectionView.bounds.width
-        
         let data = arrForProfile[indexPath.row]
         if data.contentType == .Country || data.contentType == .City  {
-            return CGSize(width: (size / 2.0) - 10, height: size * 0.2)
+            return CGSize(width: (size / 2.0) - 10, height: size * 0.175)
         }
-        return CGSize(width: size , height: size * 0.2)
+        return CGSize(width: size , height: size * 0.175)
     }
     
     

@@ -39,15 +39,20 @@ massages</string>
                                     <constraint firstAttribute="height" constant="1" id="HI1-BT-ZmN"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check-secondary" translatesAutoresizingMaskIntoConstraints="NO" id="IeW-rg-GqN">
+                                <rect key="frame" x="459.5" y="5" width="16.5" height="16.5"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pEL-Tl-04Y" firstAttribute="centerY" secondItem="mwl-TA-aZ6" secondAttribute="centerY" id="84f-jV-KYr"/>
                             <constraint firstAttribute="trailing" secondItem="pEL-Tl-04Y" secondAttribute="trailing" constant="20" id="P3u-bM-DeR"/>
+                            <constraint firstItem="IeW-rg-GqN" firstAttribute="top" secondItem="mwl-TA-aZ6" secondAttribute="top" constant="5" id="XBv-up-6rK"/>
                             <constraint firstItem="pEL-Tl-04Y" firstAttribute="leading" secondItem="mwl-TA-aZ6" secondAttribute="leading" constant="20" id="bTg-Ws-XaK"/>
                             <constraint firstItem="pEL-Tl-04Y" firstAttribute="top" secondItem="mwl-TA-aZ6" secondAttribute="top" constant="20" id="fDk-Uc-dVE"/>
                             <constraint firstItem="CXU-D4-8e2" firstAttribute="width" secondItem="mwl-TA-aZ6" secondAttribute="width" id="hwt-Az-eiH"/>
                             <constraint firstAttribute="bottom" secondItem="CXU-D4-8e2" secondAttribute="bottom" constant="-1" id="jqc-RL-0gj"/>
+                            <constraint firstAttribute="trailing" secondItem="IeW-rg-GqN" secondAttribute="trailing" constant="5" id="mgv-UW-dBY"/>
                             <constraint firstAttribute="trailing" secondItem="hxB-W7-ll3" secondAttribute="trailing" constant="20" id="nHn-T1-vsB"/>
                             <constraint firstItem="CXU-D4-8e2" firstAttribute="centerX" secondItem="mwl-TA-aZ6" secondAttribute="centerX" id="pV1-9j-CyI"/>
                             <constraint firstItem="hxB-W7-ll3" firstAttribute="centerY" secondItem="mwl-TA-aZ6" secondAttribute="centerY" id="vbQ-UY-aOd"/>
@@ -65,6 +70,7 @@ massages</string>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="imgSelected" destination="IeW-rg-GqN" id="8aj-GG-mgt"/>
                 <outlet property="lblName" destination="pEL-Tl-04Y" id="coy-XH-ucB"/>
                 <outlet property="vwDashed" destination="CXU-D4-8e2" id="IFT-kb-HBv"/>
             </connections>
@@ -73,8 +79,9 @@ massages</string>
     </objects>
     <resources>
         <image name="asset-arrow-down" width="10.5" height="6"/>
+        <image name="asset-check-secondary" width="16.5" height="16.5"/>
         <namedColor name="theme_dark_text">
-            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

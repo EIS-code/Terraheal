@@ -12,21 +12,15 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddCardVC" customModule="Terra_Heal" customModuleProvider="target">
             <connections>
                 <outlet property="btnAddCard" destination="Rvk-lS-msT" id="bs9-BV-8tD"/>
-                <outlet property="btnBusiness" destination="KWW-dj-smw" id="MFU-hE-6Xc"/>
                 <outlet property="btnCheckBox" destination="VHu-bC-x3D" id="kr7-Hw-CRh"/>
                 <outlet property="btnLeft" destination="3SF-7Z-2TP" id="mtL-8W-BdH"/>
-                <outlet property="btnOther" destination="bTu-BW-Rid" id="1pZ-Lk-2yp"/>
-                <outlet property="btnPersonal" destination="jWw-RA-HgR" id="0Ll-5a-Hpr"/>
                 <outlet property="lblAccept" destination="iEj-mm-tga" id="n85-4C-AL4"/>
-                <outlet property="lblCardNumber" destination="3vv-wg-biF" id="ulM-cS-xsy"/>
-                <outlet property="lblExpiryDate" destination="28E-tI-Dp0" id="h56-RY-cJA"/>
-                <outlet property="lblNameOfCard" destination="VRI-qP-q5b" id="8e1-2f-3WL"/>
-                <outlet property="lblNickNameOfCard" destination="NXe-4a-cxg" id="RLq-Iy-5g5"/>
                 <outlet property="lblSaveDetailMsg" destination="YY9-pR-ePc" id="Ntg-Az-IBj"/>
                 <outlet property="lblTitle" destination="1tb-db-H1r" id="373-Hd-Rxf"/>
                 <outlet property="lblTitleMessage" destination="j8d-Xr-oPG" id="Nti-Ve-pX0"/>
                 <outlet property="txtCardName" destination="EnU-5E-Jr6" id="Klv-XX-HDH"/>
                 <outlet property="txtCardNumber" destination="rMz-88-9Ib" id="Zqg-Wq-O4m"/>
+                <outlet property="txtCvv" destination="Okc-Yb-j3m" id="cuO-AN-LZw"/>
                 <outlet property="txtExpiryDate" destination="IJS-5M-Hel" id="smU-3B-7oy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -40,21 +34,15 @@
                     <rect key="frame" x="0.0" y="130.5" width="340" height="686.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQc-C6-2jQ" userLabel="vwContent">
-                            <rect key="frame" x="0.0" y="0.0" width="340" height="357.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="340" height="381.5"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jLy-nt-QGy">
-                                    <rect key="frame" x="20" y="20" width="300" height="317.5"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jLy-nt-QGy">
+                                    <rect key="frame" x="20" y="20" width="300" height="341.5"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRI-qP-q5b" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" name="theme_dark_text"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CARD NUMBER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EnU-5E-Jr6" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="25.5" width="300" height="30"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CARD NUMBER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EnU-5E-Jr6" userLabel="card holder name" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="EnU-5E-Jr6" secondAttribute="height" multiplier="30:3" id="Bng-dh-A2J"/>
+                                                <constraint firstAttribute="width" secondItem="EnU-5E-Jr6" secondAttribute="height" multiplier="30:5" id="Bng-dh-A2J"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="cc-number"/>
@@ -62,16 +50,10 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="disableFloatingLabel" value="NO"/>
                                             </userDefinedRuntimeAttributes>
                                         </textField>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vv-wg-biF" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="60.5" width="300" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" name="theme_dark_text"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CARD NUMBER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rMz-88-9Ib" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="86" width="300" height="30"/>
+                                            <rect key="frame" x="0.0" y="70" width="300" height="50"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="rMz-88-9Ib" secondAttribute="height" multiplier="30:3" id="D36-Lz-2CX"/>
+                                                <constraint firstAttribute="width" secondItem="rMz-88-9Ib" secondAttribute="height" multiplier="30:5" id="D36-Lz-2CX"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="cc-number"/>
@@ -79,59 +61,37 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="disableFloatingLabel" value="NO"/>
                                             </userDefinedRuntimeAttributes>
                                         </textField>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28E-tI-Dp0" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="121" width="300" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" name="theme_dark_text"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="EXPIRY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IJS-5M-Hel" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="146.5" width="300" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="IJS-5M-Hel" secondAttribute="height" multiplier="30:3" id="Hi7-fd-gpA"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" textContentType="cc-number"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="disableFloatingLabel" value="NO"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </textField>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXe-4a-cxg" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="181.5" width="300" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" name="theme_dark_text"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cEk-8N-3Ef">
-                                            <rect key="frame" x="0.0" y="207" width="300" height="30"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xRo-9q-zdB">
+                                            <rect key="frame" x="0.0" y="140" width="300" height="50"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWw-RA-HgR" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
-                                                    <state key="normal" title="Button">
-                                                        <color key="titleColor" name="theme_dark_text"/>
-                                                    </state>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWW-dj-smw" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                                    <rect key="frame" x="105" y="0.0" width="90" height="30"/>
-                                                    <state key="normal" title="Button">
-                                                        <color key="titleColor" name="theme_dark_text"/>
-                                                    </state>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTu-BW-Rid" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                                    <rect key="frame" x="210" y="0.0" width="90" height="30"/>
-                                                    <state key="normal" title="Button">
-                                                        <color key="titleColor" name="theme_dark_text"/>
-                                                    </state>
-                                                </button>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="EXPIRY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IJS-5M-Hel" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" textContentType="cc-number"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="disableFloatingLabel" value="NO"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CARD NUMBER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Okc-Yb-j3m" userLabel="cvv" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                                    <rect key="frame" x="160" y="0.0" width="140" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="cc-number"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="disableFloatingLabel" value="NO"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="xRo-9q-zdB" secondAttribute="height" multiplier="30:5" id="Xpz-za-CQa"/>
+                                            </constraints>
                                         </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4V-YV-bqv" userLabel="vwTerms&amp;Condition">
-                                            <rect key="frame" x="0.0" y="242" width="300" height="50"/>
+                                            <rect key="frame" x="0.0" y="210" width="300" height="50"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IBg-aa-Rok">
                                                     <rect key="frame" x="0.0" y="8" width="300" height="34"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHu-bC-x3D" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHu-bC-x3D" customClass="JDCheckboxButton" customModule="Terra_Heal" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="VHu-bC-x3D" secondAttribute="height" multiplier="15:15" id="7Pw-HZ-edE"/>
@@ -158,11 +118,14 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YY9-pR-ePc" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="297" width="300" height="20.5"/>
+                                            <rect key="frame" x="0.0" y="280" width="300" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="theme_dark_text"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-card-list" translatesAutoresizingMaskIntoConstraints="NO" id="q4a-Vd-gAf">
+                                            <rect key="frame" x="0.0" y="320.5" width="300" height="21"/>
+                                        </imageView>
                                     </subviews>
                                 </stackView>
                             </subviews>
@@ -206,13 +169,13 @@
                         <constraint firstAttribute="width" secondItem="ewm-RK-wjj" secondAttribute="height" multiplier="375:60" id="F49-oB-pgj"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tb-db-H1r" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tb-db-H1r" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="149" y="64.5" width="42" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="theme_dark_text"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8d-Xr-oPG" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8d-Xr-oPG" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="149" y="90" width="42" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="theme_hint_text"/>
@@ -254,11 +217,12 @@
         </view>
     </objects>
     <resources>
+        <image name="asset-card-list" width="343" height="21"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_dark_text">
-            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_hint_text">
             <color red="0.69800001382827759" green="0.70200002193450928" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

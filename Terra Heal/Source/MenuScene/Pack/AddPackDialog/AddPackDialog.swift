@@ -15,7 +15,7 @@ class AddPackDialog: ThemeBottomDialogView {
     
     var onBtnDoneTapped: ((_ data:AddPackageDetail) -> Void)? = nil
     var selectedData:AddPackageDetail = AddPackageDetail.init()
-    var arrForData: [AddPackageDetail] = AddPackageDetail.getDemoArray()
+    var arrForData: [AddPackageDetail] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,7 +40,10 @@ class AddPackDialog: ThemeBottomDialogView {
         self.setupTableView(tableView: self.tableView)
         
     }
-    
+    func setDataSource(data:[AddPackageDetail]) {
+        self.arrForData = data
+        self.reloadTableDateToFitHeight(tableView: self.tableView)
+    }
     func select(data:AddPackageDetail) {
         self.selectedData = data
         for i in 0..<arrForData.count {
@@ -50,7 +53,6 @@ class AddPackDialog: ThemeBottomDialogView {
             }
         }
         self.reloadTableDateToFitHeight(tableView: self.tableView)
-        
     }
     
     override func initialSetup() {
@@ -65,7 +67,14 @@ class AddPackDialog: ThemeBottomDialogView {
     }
     
     @IBAction func btnDoneTapped(_ sender: Any) {
-        if selectedData.id == "" {
+        var isDataSelected:Bool = true
+        for data in arrForData {
+            if !data.isSelected {
+                isDataSelected = false
+                break
+            }
+        }
+        if isDataSelected == false {
             Common.showAlert(message: "VALIDATION_MSG_PLEASE_SELECT_DATA".localized())
         } else {
             if self.onBtnDoneTapped != nil {
@@ -109,33 +118,26 @@ extension AddPackDialog : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        for i in 0..<arrForData.count {
-            arrForData[i].isSelected = false
-        }
-        self.arrForData[indexPath.row].isSelected = true
-        self.selectedData = self.arrForData[indexPath.row]
-        tableView.reloadData()
         switch indexPath.row {
         case 0:
-            self.openCenterSelectionDialog()
+            self.openCenterSelectionDialog(index: indexPath.row)
         case 1:
-            self.openPackSelectionDialog()
+            self.openPackSelectionDialog(index: indexPath.row)
         case 2:
-            self.openRecipientDetailDialog()
+            self.openRecipientDetailDialog(index: indexPath.row)
         case 3:
-            self.openGiverDetailDialog()
+            self.openGiverDetailDialog(index: indexPath.row)
         case 4:
-            self.openSendingPreferenceDialog()
+            self.openSendingPreferenceDialog(index: indexPath.row)
         default:
-            self.openPackSelectionDialog()
+            self.openPackSelectionDialog(index: indexPath.row)
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
-        
     }
     
-    func openPackSelectionDialog() {
+    func openPackSelectionDialog(index:Int) {
         let alert: SelectPackDialog = SelectPackDialog.fromNib()
         alert.initialize(title: "select a pack", buttonTitle: "Get This Pack", cancelButtonTitle: "BTN_CANCEL".localized())
         alert.show(animated: true)
@@ -148,13 +150,14 @@ extension AddPackDialog : UITableViewDelegate,UITableViewDataSource {
             [weak alert, weak self] (data) in
             alert?.dismiss()
             guard let self = self else { return } ; print(self)
+            self.arrForData[index].isSelected = true
             self.tableView.reloadData()
         }
     }
     
     
     
-    func openGiverDetailDialog() {
+    func openGiverDetailDialog(index:Int) {
         let alert: CustomGiverDetailDialog = CustomGiverDetailDialog.fromNib()
         alert.initialize(title: "giver details", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
         alert.show(animated: true)
@@ -167,10 +170,11 @@ extension AddPackDialog : UITableViewDelegate,UITableViewDataSource {
             [weak alert, weak self] (data) in
             alert?.dismiss()
             guard let self = self else { return } ; print(self)
+            self.arrForData[index].isSelected = true
             self.tableView.reloadData()
         }
     }
-    func openSendingPreferenceDialog() {
+    func openSendingPreferenceDialog(index:Int) {
         let alert: CustomSendingPreferenceDialog = CustomSendingPreferenceDialog.fromNib()
         alert.initialize(title: "sending preference", data: "email", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
         alert.show(animated: true)
@@ -183,11 +187,12 @@ extension AddPackDialog : UITableViewDelegate,UITableViewDataSource {
             [weak alert, weak self] (data) in
             alert?.dismiss()
             guard let self = self else { return } ; print(self)
+            self.arrForData[index].isSelected = true
             self.tableView.reloadData()
         }
     }
     
-    func openRecipientDetailDialog() {
+    func openRecipientDetailDialog(index:Int) {
         let alert: CustomRecipientDetailDialog = CustomRecipientDetailDialog.fromNib()
         alert.initialize(title: "recipients details", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
         alert.show(animated: true)
@@ -200,11 +205,12 @@ extension AddPackDialog : UITableViewDelegate,UITableViewDataSource {
             [weak alert, weak self] (data) in
             alert?.dismiss()
             guard let self = self else { return } ; print(self)
+            self.arrForData[index].isSelected = true
             self.tableView.reloadData()
         }
     }
     
-    func openCenterSelectionDialog() {
+    func openCenterSelectionDialog(index:Int) {
           
           let alert: CustomServiceCenterSelectionDialog = CustomServiceCenterSelectionDialog.fromNib()
           alert.initialize(title: "select center", buttonTitle: "select")
@@ -217,10 +223,11 @@ extension AddPackDialog : UITableViewDelegate,UITableViewDataSource {
               
           }
           alert.onBtnDoneTapped = {
-              [weak alert, weak self] in
+              [weak alert, weak self] (data) in
               alert?.dismiss()
               guard let self = self else { return } ; print(self)
-             
+               self.arrForData[index].isSelected = true
+                self.tableView.reloadData()
           }
           
           

@@ -21,24 +21,31 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVt-KG-059" userLabel="vwCard">
                         <rect key="frame" x="0.0" y="0.0" width="396" height="89"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yxB-Gg-czY" userLabel="vwImgBg">
+                                <rect key="frame" x="20" y="15" width="59.5" height="59"/>
+                                <color key="backgroundColor" name="theme_primary"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yxB-Gg-czY" secondAttribute="height" multiplier="1:1" id="rQP-yr-0Vn"/>
+                                </constraints>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-payment-card" translatesAutoresizingMaskIntoConstraints="NO" id="4DP-9l-fOa">
-                                <rect key="frame" x="20" y="20" width="49.5" height="49.5"/>
+                                <rect key="frame" x="35" y="29.5" width="29.5" height="30"/>
                                 <color key="backgroundColor" name="theme_primary"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4DP-9l-fOa" secondAttribute="height" multiplier="1:1" id="rkO-To-iVb"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="c9B-uy-PV7">
-                                <rect key="frame" x="89.5" y="20" width="196.5" height="49"/>
+                                <rect key="frame" x="94.5" y="20" width="191.5" height="49"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udg-85-RGu" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="196.5" height="24.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="191.5" height="24.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="theme_primary"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcz-Gd-NAR" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="196.5" height="24.5"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="191.5" height="24.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="theme_primary"/>
                                         <nil key="highlightedColor"/>
@@ -55,15 +62,18 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="4DP-9l-fOa" firstAttribute="leading" secondItem="jVt-KG-059" secondAttribute="leading" constant="20" id="0zf-r4-ZFp"/>
                             <constraint firstItem="c9B-uy-PV7" firstAttribute="centerY" secondItem="jVt-KG-059" secondAttribute="centerY" id="1tf-aW-Eqy"/>
                             <constraint firstItem="eAg-ST-CEy" firstAttribute="centerY" secondItem="jVt-KG-059" secondAttribute="centerY" id="337-cA-y1u"/>
-                            <constraint firstItem="4DP-9l-fOa" firstAttribute="top" secondItem="jVt-KG-059" secondAttribute="top" constant="20" id="5WC-SN-J0r"/>
                             <constraint firstItem="eAg-ST-CEy" firstAttribute="leading" secondItem="c9B-uy-PV7" secondAttribute="trailing" constant="20" id="Idy-as-Y6f"/>
-                            <constraint firstItem="c9B-uy-PV7" firstAttribute="leading" secondItem="4DP-9l-fOa" secondAttribute="trailing" constant="20" id="O8d-kN-88a"/>
-                            <constraint firstItem="4DP-9l-fOa" firstAttribute="width" secondItem="jVt-KG-059" secondAttribute="width" multiplier="0.125" id="T4e-IX-KXa"/>
+                            <constraint firstItem="yxB-Gg-czY" firstAttribute="width" secondItem="jVt-KG-059" secondAttribute="width" multiplier="0.15" id="JpN-jT-Gf1"/>
+                            <constraint firstItem="yxB-Gg-czY" firstAttribute="centerY" secondItem="jVt-KG-059" secondAttribute="centerY" id="KGY-tr-DAi"/>
+                            <constraint firstItem="c9B-uy-PV7" firstAttribute="leading" secondItem="yxB-Gg-czY" secondAttribute="trailing" constant="15" id="O8d-kN-88a"/>
+                            <constraint firstItem="4DP-9l-fOa" firstAttribute="centerX" secondItem="yxB-Gg-czY" secondAttribute="centerX" id="ORy-2V-fs0"/>
                             <constraint firstAttribute="trailing" secondItem="eAg-ST-CEy" secondAttribute="trailing" constant="20" id="Yev-nv-l1Q"/>
+                            <constraint firstItem="yxB-Gg-czY" firstAttribute="leading" secondItem="jVt-KG-059" secondAttribute="leading" constant="20" id="cAL-Sa-fgD"/>
+                            <constraint firstItem="4DP-9l-fOa" firstAttribute="width" secondItem="yxB-Gg-czY" secondAttribute="width" multiplier="0.5" id="ccb-l3-Bgb"/>
                             <constraint firstAttribute="bottom" secondItem="c9B-uy-PV7" secondAttribute="bottom" constant="20" id="iXT-rR-UTy"/>
+                            <constraint firstItem="4DP-9l-fOa" firstAttribute="centerY" secondItem="yxB-Gg-czY" secondAttribute="centerY" id="mJA-HN-cCz"/>
                             <constraint firstItem="c9B-uy-PV7" firstAttribute="top" secondItem="jVt-KG-059" secondAttribute="top" constant="20" id="wa8-Wh-596"/>
                         </constraints>
                     </view>
@@ -81,6 +91,7 @@
                 <outlet property="ivCard" destination="4DP-9l-fOa" id="VsF-9r-rDs"/>
                 <outlet property="lblCardValue" destination="qcz-Gd-NAR" id="2ve-d6-3JT"/>
                 <outlet property="lblName" destination="udg-85-RGu" id="tyh-gL-zqZ"/>
+                <outlet property="vwImgBg" destination="yxB-Gg-czY" id="Hob-lE-UOt"/>
             </connections>
             <point key="canvasLocation" x="-33.333333333333336" y="59.933035714285708"/>
         </tableViewCell>

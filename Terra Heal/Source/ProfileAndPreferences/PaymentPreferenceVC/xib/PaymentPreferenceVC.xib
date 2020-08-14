@@ -115,12 +115,17 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0i-lW-HeC" userLabel="vwCreditDetailHeader">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="60"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-payment-creditcard" translatesAutoresizingMaskIntoConstraints="NO" id="7dv-59-V3e">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-payment-creditcard" translatesAutoresizingMaskIntoConstraints="NO" id="7dv-59-V3e" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="20" width="42" height="42"/>
                                                     <color key="backgroundColor" name="theme_primary"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="7dv-59-V3e" secondAttribute="height" multiplier="1:1" id="ijo-oX-1CP"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8kN-hy-Ipd">
                                                     <rect key="frame" x="82" y="20.666666666666625" width="41.666666666666657" height="40.666666666666657"/>

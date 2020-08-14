@@ -87,8 +87,8 @@ class ProfileVC: MainVC {
         ProfileItemDetail(type: ProfileMenu.ManageAddress, image: ImageAsset.ProfileMenu.manageAddress),
         ProfileItemDetail(type: ProfileMenu.MangagePeople, image: ImageAsset.ProfileMenu.managePeople),
         ProfileItemDetail(type: ProfileMenu.PaymentPreference, image: ImageAsset.ProfileMenu.paymentPreference),
-        ProfileItemDetail(type: ProfileMenu.Settings,  image: ImageAsset.ProfileMenu.setting),
-        ProfileItemDetail(type: ProfileMenu.KycVerification,  image: ""),
+        ProfileItemDetail(type: ProfileMenu.Settings,  image: ImageAsset.ProfileMenu.setting)
+        //,ProfileItemDetail(type: ProfileMenu.KycVerification,  image: ""),
     ]
     
      

@@ -254,7 +254,9 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
         cropper.image = image
         cropper.cancelButtonText = "Cancel"
         cropper.view.layoutIfNeeded()
+        cropper.modalPresentationStyle = .fullScreen
         DispatchQueue.main.async {
+            
             Common.appDelegate.getTopViewController()?.present(cropper, animated: true, completion: nil)
         }
     }

@@ -46,8 +46,9 @@ class ServiceCenterDetailDialog: ThemeBottomDialogView {
         super.initialSetup()
         self.contentView.clipsToBounds = true
         self.scrVw.clipsToBounds = true
-        contentView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
-        scrVw.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
+        self.dialogView.backgroundColor = .clear
+        contentView.setRound(withBorderColor: .clear, andCornerRadious: 40.0, borderWidth: 1.0)
+        scrVw.setRound(withBorderColor: .clear, andCornerRadious: 40.0, borderWidth: 1.0)
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.lblAddress?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
         self.lblServices?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
@@ -60,8 +61,8 @@ class ServiceCenterDetailDialog: ThemeBottomDialogView {
         super.layoutSubviews()
         self.ivMassageCenter?.layoutIfNeeded()
         self.ivMassageCenter?.setRound()
-        self.contentView?.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
-        self.scrVw?.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
+        self.contentView?.setRound(withBorderColor: .clear, andCornerRadious: 40.0, borderWidth: 1.0)
+        self.scrVw?.setRound(withBorderColor: .clear, andCornerRadious: 40.0, borderWidth: 1.0)
     }
     
     @IBAction func btnDoneTapped(_ sender: Any) {

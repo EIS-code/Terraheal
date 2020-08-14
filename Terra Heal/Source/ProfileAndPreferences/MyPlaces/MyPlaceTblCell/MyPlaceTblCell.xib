@@ -37,9 +37,8 @@
                                     <color key="titleColor" name="theme_primary"/>
                                 </state>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center-white" translatesAutoresizingMaskIntoConstraints="NO" id="LzM-Rc-egA" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-place-demo" translatesAutoresizingMaskIntoConstraints="NO" id="LzM-Rc-egA" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
                                 <rect key="frame" x="20" y="28.5" width="40" height="40"/>
-                                <color key="backgroundColor" name="theme_primary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="6Va-LV-dZv"/>
                                     <constraint firstAttribute="width" secondItem="LzM-Rc-egA" secondAttribute="height" multiplier="1:1" id="eTE-MF-YRA"/>
@@ -50,9 +49,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KqP-gv-G9w">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check-secondary" translatesAutoresizingMaskIntoConstraints="NO" id="KqP-gv-G9w">
                                 <rect key="frame" x="296" y="10" width="10" height="10"/>
-                                <color key="backgroundColor" name="theme_primary"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="KqP-gv-G9w" secondAttribute="height" multiplier="1:1" id="3kU-eK-2B9"/>
                                     <constraint firstAttribute="height" constant="10" id="TgP-VZ-KDJ"/>
@@ -94,12 +92,13 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="asset-center-white" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="asset-check-secondary" width="16.5" height="16.5"/>
+        <image name="asset-place-demo" width="32" height="32"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_dark_text">
-            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -70,8 +70,9 @@ class PriceLocationVC: MainVC {
         
         self.setupTableView(tableView: self.tableView)
         self.setupSearchbar(searchBar: self.txtSearchBar)
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.setTitle(title: "PRICE_AND_LOCATION_TITLE".localized())
+        self.lblEmptyTitle.setFont(name: FontName.Bold, size: FontSize.label_18)
+        self.lblEmptyMsg.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.lblEmptyTitle.text = "NO_LOCATION_TITLE".localized()
         self.lblEmptyMsg.text = "NO_LOCATION_MSG".localized()
         self.btnSubmit?.setTitle("BTN_PROCEED".localized(), for: .normal)

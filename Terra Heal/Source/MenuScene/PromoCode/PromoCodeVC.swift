@@ -73,7 +73,6 @@ class PromoCodeVC: MainVC {
     private func initialViewSetup() {
         
         self.setupTableView(tableView: self.tableView)
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.setTitle(title: "PROMOCODE_TITLE".localized())
         self.btnSubmit?.setTitle("PROMOCODE_BTN_ADD_NEW".localized(), for: .normal)
         self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)

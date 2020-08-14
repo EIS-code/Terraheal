@@ -39,6 +39,7 @@ class CustomButtonTblCell: TableCell {
 
     func setData(data: CustomButtonDetail ) {
         self.btnDetail.setTitle(data.title, for: .normal)
+        self.btnDetailLarge.setTitle(data.title, for: .normal)
         if data.isSelected {
             self.ivSelected.isHidden = false
             self.btnDetailLarge.isHidden = true

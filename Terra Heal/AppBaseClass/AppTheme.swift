@@ -13,6 +13,7 @@ extension UIColor {
     static var themePrimaryBorder:UIColor = UIColor.init(named: "theme_primary_border") ?? UIColor.init(hex: "#000000")
     static var themePrimaryLightBackground:UIColor = UIColor.init(named: "theme_primary_light_background") ?? UIColor.init(hex: "#000000")
 
+    static var themeNavigationTitle: UIColor = UIColor.init(named: "theme_navigtion_title") ?? UIColor.init(hex: "#6D6E71") //dark text color
     
     static var themeGreen:UIColor = UIColor.init(named: "theme_green") ?? UIColor.init(hex: "#B2B3B5")
     static var themeSecondary:UIColor = UIColor.init(named: "theme_secondary") ?? UIColor.init(hex: "##F8991E")

@@ -46,7 +46,7 @@ class ScanPassportInstructionVC: MainVC {
 
     private func initialViewSetup() {
         
-
+        self.setBackground(color: UIColor.themeBackground)
         self.lblHeader?.text = "SCAN_PASSPORT_LBL_TITLE".localized()
         self.lblHeader?.setFont(name: FontName.SemiBold, size: FontSize.label_26)
 

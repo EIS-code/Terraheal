@@ -74,7 +74,7 @@ class CampaignsVC: MainVC {
     private func initialViewSetup() {
         
         self.setupTableView(tableView: self.tableView)
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
+       
         self.setTitle(title: "CAMPAIGNS_TITLE".localized())
        self.btnBack.setBackButton()
     }

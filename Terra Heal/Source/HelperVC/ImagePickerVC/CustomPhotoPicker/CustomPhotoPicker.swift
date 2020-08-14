@@ -84,6 +84,7 @@ class CustomPhotoPicker: ThemeBottomDialogView {
 extension CustomPhotoPicker:  UIImagePickerControllerDelegate {
     
      func photoFromGallary() {
+        picker.modalPresentationStyle = .fullScreen
             picker.delegate = self
             picker.allowsEditing = false
             picker.sourceType = .savedPhotosAlbum
@@ -94,6 +95,7 @@ extension CustomPhotoPicker:  UIImagePickerControllerDelegate {
     }
     func photoFromCamera() {
         let cameraVC:CameraVC =  CameraVC.fromNib()
+        cameraVC.modalPresentationStyle = .fullScreen
         DispatchQueue.main.async {
                 Common.appDelegate.getTopViewController()?.present(cameraVC, animated: true, completion: nil)
         }

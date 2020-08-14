@@ -44,8 +44,7 @@ class CustomServiceSelectionDialog: ThemeBottomDialogView {
         super.initialSetup()
         self.dialogView.backgroundColor = .clear
         contentView.clipsToBounds = true
-        contentView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.setupCollectionView(collectionView: self.collectionVw)
         self.vwServiceSelection.allowChangeThumbWidth = false
         self.vwServiceSelection.itemTitles = ["massages".localized(),"therapies".localized()]
@@ -69,6 +68,8 @@ class CustomServiceSelectionDialog: ThemeBottomDialogView {
         super.layoutSubviews()
         self.ivMassageCenter?.layoutIfNeeded()
         self.ivMassageCenter.setRound()
+        self.contentView?.setRound(withBorderColor: .clear, andCornerRadious: 40.0, borderWidth: 1.0)
+        
     }
 
     @IBAction func btnDoneTapped(_ sender: Any) {
@@ -136,7 +137,9 @@ extension CustomServiceSelectionDialog:  UICollectionViewDelegate, UICollectionV
         collectionView.deselectItem(at: indexPath, animated: true)
 
         let serviceDetailVC:  ServiceDetailVC =  ServiceDetailVC.fromNib()
+        serviceDetailVC.modalPresentationStyle = .fullScreen
         serviceDetailVC.serviceDetail = self.arrForData[indexPath.row]
+        
         DispatchQueue.main.async {
                Common.appDelegate.getTopViewController()?.present(serviceDetailVC, animated: true, completion: nil)
         }

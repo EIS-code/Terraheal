@@ -68,9 +68,8 @@ class MyBookingVC: MainVC {
     }
 
     private func initialViewSetup() {
-        
+        self.setBackground(color: UIColor.themeBackground)
         self.setupTableView(tableView: self.tableView)
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.setTitle(title: "MY_BOOKING_TITLE".localized())
         self.btnBack.setBackButton()
         self.vwTab.allowChangeThumbWidth = false

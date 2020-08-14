@@ -172,6 +172,9 @@ to sign back in</string>
                                                     <state key="normal">
                                                         <color key="titleColor" name="theme_primary"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="btnTermsTapped:" destination="-1" eventType="touchUpInside" id="fAF-k4-DLK"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>

@@ -19,6 +19,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginVC" customModule="Terra_Heal" customModuleProvider="target">
             <connections>
+                <outlet property="btnFigerPrint" destination="iSh-UG-VZm" id="5CN-3P-m8R"/>
                 <outlet property="btnForgotPassword" destination="QtW-ja-aCe" id="DPb-nR-20B"/>
                 <outlet property="btnLogin" destination="KCc-Ig-liE" id="vgx-en-juJ"/>
                 <outlet property="btnSignUp" destination="fzv-54-Rfu" id="AvW-1e-NFN"/>

@@ -36,7 +36,7 @@ class MonthYearDialog: ThemeBottomDialogView {
         if buttonTitle.isEmpty() {
             self.btnNext.isHidden = true
         } else {
-            self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+            self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
             self.btnNext.setTitle(buttonTitle, for: .normal)
             self.btnNext.isHidden = false
         }
@@ -44,7 +44,7 @@ class MonthYearDialog: ThemeBottomDialogView {
     
     override func initialSetup() {
         super.initialSetup()
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.monthPicker.backgroundColor = UIColor.clear
         self.monthPicker.setValue(UIColor.themePrimary, forKeyPath: "textColor")
         monthPicker.onDateSelected = { (month: Int, year: Int) in

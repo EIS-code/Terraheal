@@ -12,20 +12,15 @@ class AddCardVC: MainVC {
     
     @IBOutlet weak var lblTitleMessage: ThemeLabel!
     @IBOutlet weak var btnAddCard: ThemeButton!
-    @IBOutlet weak var lblNameOfCard: ThemeLabel!
     @IBOutlet weak var txtCardName: ACFloatingTextfield!
-    @IBOutlet weak var lblCardNumber: ThemeLabel!
     @IBOutlet weak var txtCardNumber: ACFloatingTextfield!
-    @IBOutlet weak var lblExpiryDate: ThemeLabel!
     @IBOutlet weak var txtExpiryDate: ACFloatingTextfield!
-    @IBOutlet weak var lblNickNameOfCard: ThemeLabel!
-    @IBOutlet weak var btnPersonal: ThemeButton!
-    @IBOutlet weak var btnBusiness: ThemeButton!
-    @IBOutlet weak var btnOther: ThemeButton!
+    @IBOutlet weak var txtCvv: ACFloatingTextfield!
     @IBOutlet weak var lblAccept: ThemeLabel!
-    @IBOutlet weak var btnCheckBox: ThemeButton!
+    @IBOutlet weak var btnCheckBox: JDCheckboxButton!
     @IBOutlet weak var lblSaveDetailMsg: ThemeLabel!
     // MARK: Object lifecycle
+    
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -54,60 +49,30 @@ class AddCardVC: MainVC {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
             self.btnAddCard.setHighlighted(isHighlighted: true)
-            self.btnCheckBox.setHighlighted(isHighlighted: true)
-            self.btnPersonal.setRound(withBorderColor: .themeDarkText, andCornerRadious: 5.0, borderWidth: 1.0)
-            self.btnBusiness.setRound(withBorderColor: .themeDarkText, andCornerRadious: 5.0, borderWidth: 1.0)
-            self.btnOther.setRound(withBorderColor: .themeDarkText, andCornerRadious: 5.0, borderWidth: 1.0)
+           
         }
     }
     
     private func initialViewSetup() {
         
-        
+        self.setBackground(color: UIColor.themeBackground)
         self.btnAddCard?.setTitle("ADD_CARD_BTN_ADD_CARD".localized(), for: .normal)
         self.btnAddCard?.setFont(name: FontName.SemiBold, size: FontSize.button_22)
-        
-        self.lblTitle?.text = "ADD_CARD_TITLE".localized()
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_22)
-        
+        self.setTitle(title: "ADD_CARD_TITLE".localized())
         self.lblTitleMessage?.text = "ADD_CARD_TITLE_MESSAGE".localized()
         self.lblTitleMessage?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
         
-        self.lblCardNumber?.text = "ADD_CARD_LBL_CARD_NUMBER".localized()
-        self.lblCardNumber?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
-        
-        self.lblExpiryDate?.text = "ADD_CARD_LBL_EXPIRY".localized()
-        self.lblExpiryDate?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
-        
-        self.lblNameOfCard?.text = "ADD_CARD_LBL_NAME_OF_CARD".localized()
-        self.lblNameOfCard?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
-        
-        self.lblNickNameOfCard?.text = "ADD_CARD_LBL_CARD_NICK_NAME".localized()
-        self.lblNickNameOfCard?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
-        
-        
-        
-        
-        self.btnOther.setTitle("ADD_CARD_TYPE_OTHER".localized(), for: .normal)
-        self.btnOther.setFont(name: FontName.SemiBold, size: FontSize.label_12)
-        
-        self.btnPersonal.setTitle("ADD_CARD_TYPE_PERSONAL".localized(), for: .normal)
-        self.btnPersonal.setFont(name: FontName.SemiBold, size: FontSize.label_12)
-        
-        self.btnBusiness.setTitle("ADD_CARD_TYPE_BUSINESS".localized(), for: .normal)
-        self.btnBusiness.setFont(name: FontName.SemiBold, size: FontSize.label_12)
-        
         self.txtCardName?.placeholder = "ADD_CARD_TXT_NAME".localized()
         self.txtCardName?.delegate = self
-        self.txtCardName?.disableFloatingLabel = true
         
         self.txtCardNumber?.placeholder = "ADD_CARD_TXT_CARD_NUMBER".localized()
         self.txtCardNumber?.delegate = self
-        self.txtCardNumber?.disableFloatingLabel = true
         
         self.txtExpiryDate?.placeholder = "ADD_CARD_TXT_EXPIRY".localized()
         self.txtExpiryDate?.delegate = self
-        self.txtExpiryDate?.disableFloatingLabel = true
+        
+        self.txtCvv?.placeholder = "ADD_CARD_TXT_CVV_NUMBER".localized()
+        self.txtCvv?.delegate = self
         
         self.btnAddCard?.setTitle("ADD_CARD_BTN_ADD_CARD".localized(), for: .normal)
         self.btnAddCard?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
@@ -127,12 +92,13 @@ class AddCardVC: MainVC {
     }
     
     @IBAction func btnCheckBoxTapped(_ sender: Any) {
-        self.btnCheckBox.isSelected.toggle()
-        self.btnCheckBox.setHighlighted(isHighlighted: self.btnCheckBox.isSelected)
+        self.btnCheckBox.checkboxAnimation {
+            
+        }
     }
 
     @IBAction func btnAddCardTapped(_ sender: Any) {
-    
+        Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "CONTACT_VERIFIED_LBL_TITLE".localized(), strMessage: "CONTACT_VERIFIED_LBL_MESSAGE".localized(), strImg: ImageAsset.Completion.contactVarification, strButtonTitle: "CONTACT_VERIFICATION_BTN_HOME".localized()))
     }
     func openMonthYearDialog() {
         

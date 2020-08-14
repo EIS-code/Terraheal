@@ -76,7 +76,7 @@ class ReservationVC: MainVC {
     }
     
     @IBAction func btnProceed2DoneTapped(_ sender: Any) {
-        Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "REQUEST_BOOKING_COMPLETE_TITLE".localized(), strMessage: "REQUEST_BOOKING_COMPLETE_MESSAGE".localized(), strImg: ImageAsset.Completion.requestBookingCompletion, strButtonTitle: "REQUEST_BOOKING_COMPLETE_BTN_HOME".localized()))
+        Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "REQUEST_BOOKING_COMPLETE_TITLE".localized(), strMessage: "REQUEST_BOOKING_COMPLETE_MESSAGE".localized(), strImg: ImageAsset.Completion.bookingCompletion, strButtonTitle: "REQUEST_BOOKING_COMPLETE_BTN_HOME".localized()))
     }
     
     @IBAction func btnCancelTapped(_ sender: Any) {

@@ -12,8 +12,13 @@ struct AddPackageDetail {
     var id: String = ""
     var name: String = ""
     var isSelected: Bool = false
-    static func getDemoArray() -> [AddPackageDetail] {
+    static func getDemoArrayForSelf() -> [AddPackageDetail] {
         let packDetail1: AddPackageDetail = AddPackageDetail.init(id: "0", name: "select center", isSelected: true)
+        let packDetail2: AddPackageDetail = AddPackageDetail.init(id: "1",name: "select pack", isSelected: false)
+        return [packDetail1,packDetail2]
+    }
+    static func getDemoArrayForGift() -> [AddPackageDetail] {
+        let packDetail1: AddPackageDetail = AddPackageDetail.init(id: "0", name: "select center", isSelected: false)
         let packDetail2: AddPackageDetail = AddPackageDetail.init(id: "1",name: "select pack", isSelected: false)
         let packDetail3: AddPackageDetail = AddPackageDetail.init(id: "2",name: "recipients detail", isSelected: false)
         let packDetail4: AddPackageDetail = AddPackageDetail.init(id: "3",name: "giver details", isSelected: false)
@@ -26,7 +31,8 @@ class AddPackTblCell: TableCell {
 
     @IBOutlet weak var lblName: ThemeLabel!
     @IBOutlet weak var vwDashed: UIView!
-   
+    @IBOutlet weak var imgSelected: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.lblName?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
@@ -34,6 +40,7 @@ class AddPackTblCell: TableCell {
 
     func setData(data: AddPackageDetail ) {
         self.lblName.text = data.name
+        self.imgSelected.isHidden = !data.isSelected
     }
 
     override func layoutSubviews() {

@@ -80,7 +80,7 @@ class HomeTblCell: TableCell {
             [weak alert, weak self] (event) in
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
-            Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "EVENT_BOOKING_TITLE".localized(), strMessage: "EVENT_BOOKING_MESSAGE".localized(), strImg: "", strButtonTitle: "EVENT_BOOKING_BTN_HOME".localized()))
+            Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "EVENT_BOOKING_TITLE".localized(), strMessage: "EVENT_BOOKING_MESSAGE".localized(), strImg: ImageAsset.Completion.requestBookingCompletion, strButtonTitle: "EVENT_BOOKING_BTN_HOME".localized()))
         }
         
         

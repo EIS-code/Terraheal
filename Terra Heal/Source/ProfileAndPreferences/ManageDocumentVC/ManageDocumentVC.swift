@@ -24,7 +24,7 @@ class ManageDocumentVC: MainVC {
     @IBOutlet weak var lblEmptyMsg: ThemeLabel!
     @IBOutlet weak var btnSubmit: ThemeButton!
     
-    var arrForData: [UploadDocumentDetail] = [UploadDocumentDetail.init(id: "599905", name:"Front Side", image: nil, data: nil, isCompleted: true),UploadDocumentDetail.init(id: "599905", name:"Back Side", image: nil, data: nil, isCompleted: false)]
+    var arrForData: [UploadDocumentDetail] = []
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -71,10 +71,11 @@ class ManageDocumentVC: MainVC {
     }
     
     private func initialViewSetup() {
-        
+        self.setBackground(color: UIColor.themeBackground)
         self.setupTableView(tableView: self.tableView)
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.setTitle(title: "MANAGE_DOCUMENT_TITLE".localized())
+        self.lblEmptyTitle.setFont(name: FontName.Bold, size: FontSize.label_18)
+        self.lblEmptyMsg.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.lblEmptyTitle.text = "DOCUMENT_EMPTY_TITLE".localized()
         self.lblEmptyMsg.text = "DOCUMENT_EMPTY_MSG".localized()
         self.btnSubmit?.setTitle("MANAGE_DOCUMENT_BTN_ADD_NEW".localized(), for: .normal)
@@ -87,7 +88,8 @@ class ManageDocumentVC: MainVC {
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
-        self.openNewAddressDialog()
+        self.arrForData = [UploadDocumentDetail.init(id: "599905", name:"Front Side", image: nil, data: nil, isCompleted: true),UploadDocumentDetail.init(id: "599905", name:"Back Side", image: nil, data: nil, isCompleted: false)]
+        self.updateUI()
     }
     
     func updateUI()  {
@@ -100,11 +102,7 @@ class ManageDocumentVC: MainVC {
         }
         self.tableView.reloadData()
     }
-    func openNewAddressDialog(index:Int = -1) {
-        
-       
-    }
-    
+  
     func openConfirmationDialog(index:Int) {
         
         let alert: CustomAlertConfirmation = CustomAlertConfirmation.fromNib()
@@ -136,7 +134,7 @@ extension ManageDocumentVC: UITableViewDelegate,UITableViewDataSource, UIScrollV
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-tableView.backgroundColor = .clear
+        tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 200
