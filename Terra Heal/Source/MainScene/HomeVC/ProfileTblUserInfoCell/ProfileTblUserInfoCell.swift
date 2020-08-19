@@ -24,7 +24,7 @@ class ProfileTblUserInfoCell: TableCell {
         self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.lblDescription?.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
-        self.btnAction?.setHighlighted(isHighlighted: false)
+        self.btnAction?.setupBorderedButton()
         
 
     }
@@ -42,7 +42,7 @@ class ProfileTblUserInfoCell: TableCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.btnAction?.setHighlighted(isHighlighted: false)
+        self.btnAction?.setupBorderedButton()
     }
     @IBAction func btnHomeTapped(_ sender: Any) {
         Common.appDelegate.loadReservationVC()

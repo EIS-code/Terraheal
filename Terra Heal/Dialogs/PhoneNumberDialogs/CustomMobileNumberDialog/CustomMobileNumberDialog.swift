@@ -48,12 +48,13 @@ class CustomMobileNumberDialog: ThemeBottomDialogView {
         self.txtCountryPhoneCode?.placeholder = "".localized()
         self.txtCountryPhoneCode?.delegate = self
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.txtMobileNumber.configureTextField(InputTextFieldDetail.getMobileConfiguration())
     }
       
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.btnDone?.setHighlighted(isHighlighted: true)
+        self.btnDone?.setupFilledButton()
     }
 
 

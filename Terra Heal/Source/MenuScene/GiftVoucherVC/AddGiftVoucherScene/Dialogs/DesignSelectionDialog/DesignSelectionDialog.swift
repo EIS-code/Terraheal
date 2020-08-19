@@ -48,7 +48,7 @@ class DesignSelectionDialog: ThemeBottomDialogView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.btnThemeType.setHighlighted(isHighlighted: true)
+        self.btnThemeType?.setupFilledButton()
     }
 
     @IBAction func btnDoneTapped(_ sender: Any) {

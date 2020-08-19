@@ -12,7 +12,6 @@ import UIKit
 class CustomChatDialog: ThemeBottomDialogView {
     
     @IBOutlet weak var lblDescription: ThemeLabel!
-    @IBOutlet weak var scrVw: UIScrollView!
     @IBOutlet weak var imgChatVw: UIImageView!
     
     var onBtnDoneTapped: (( ) -> Void)? = nil
@@ -52,7 +51,7 @@ class CustomChatDialog: ThemeBottomDialogView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.scrVw.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
+        //self.scrVw.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
         self.imgChatVw.layoutIfNeeded()
         self.imgChatVw?.setRound()
     }

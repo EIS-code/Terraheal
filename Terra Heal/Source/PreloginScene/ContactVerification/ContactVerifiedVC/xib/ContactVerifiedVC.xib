@@ -12,8 +12,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactVerifiedVC" customModule="Terra_Heal" customModuleProvider="target">
             <connections>
                 <outlet property="btnHome" destination="phD-1A-sjB" id="V5d-R3-AAY"/>
+                <outlet property="footerGradient" destination="kGw-Xv-pQe" id="yXT-Xt-6K1"/>
+                <outlet property="headerGradient" destination="O1g-hQ-muN" id="myL-Ic-m6X"/>
                 <outlet property="lblHeader" destination="S1g-S5-xlS" id="2bY-R9-nM5"/>
                 <outlet property="lblMessage" destination="rbc-06-x2M" id="fxL-cP-7Lc"/>
+                <outlet property="mainScrollView" destination="FYA-Fj-kEq" id="RwS-gd-aPb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -84,6 +87,35 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="rMq-20-dDi"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="j91-Ue-Kaa"/>
                 </scrollView>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AuB-EI-Yyj" userLabel="GradientView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O1g-hQ-muN" userLabel="TopGradient" customClass="ThemeTopGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGw-Xv-pQe" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="488" width="320" height="80"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="kGw-Xv-pQe" firstAttribute="width" secondItem="AuB-EI-Yyj" secondAttribute="width" id="4Hs-0f-kJj"/>
+                        <constraint firstItem="O1g-hQ-muN" firstAttribute="centerX" secondItem="AuB-EI-Yyj" secondAttribute="centerX" id="6bx-Uh-qia"/>
+                        <constraint firstItem="kGw-Xv-pQe" firstAttribute="height" secondItem="O1g-hQ-muN" secondAttribute="height" priority="250" id="DN2-ex-q2m"/>
+                        <constraint firstItem="kGw-Xv-pQe" firstAttribute="centerX" secondItem="AuB-EI-Yyj" secondAttribute="centerX" id="Qmv-H5-hqB"/>
+                        <constraint firstItem="O1g-hQ-muN" firstAttribute="width" secondItem="AuB-EI-Yyj" secondAttribute="width" id="dKR-0t-D7E"/>
+                        <constraint firstAttribute="bottom" secondItem="kGw-Xv-pQe" secondAttribute="bottom" id="oh0-TA-jNd"/>
+                        <constraint firstItem="O1g-hQ-muN" firstAttribute="top" secondItem="AuB-EI-Yyj" secondAttribute="top" id="x9r-9P-H7Z"/>
+                    </constraints>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phD-1A-sjB" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="97" y="488" width="126" height="50"/>
                     <color key="backgroundColor" name="theme_secondary"/>
@@ -101,11 +133,16 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="AuB-EI-Yyj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0yL-Lb-Qdf"/>
+                <constraint firstAttribute="bottom" secondItem="AuB-EI-Yyj" secondAttribute="bottom" id="BGa-LP-azk"/>
                 <constraint firstItem="phD-1A-sjB" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="CuN-uD-NgF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="phD-1A-sjB" secondAttribute="bottom" constant="30" id="Jiv-pt-gS6"/>
+                <constraint firstItem="kGw-Xv-pQe" firstAttribute="top" secondItem="phD-1A-sjB" secondAttribute="top" id="QLw-KJ-SiR"/>
                 <constraint firstItem="FYA-Fj-kEq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="djn-hp-QRB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FYA-Fj-kEq" secondAttribute="bottom" id="gJH-q1-Adn"/>
+                <constraint firstAttribute="trailing" secondItem="AuB-EI-Yyj" secondAttribute="trailing" id="uPz-gi-lmI"/>
                 <constraint firstItem="FYA-Fj-kEq" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="wXt-Tu-SHW"/>
+                <constraint firstItem="AuB-EI-Yyj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xUU-zc-Lex"/>
                 <constraint firstItem="FYA-Fj-kEq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="xkO-Yo-EGY"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -115,7 +152,7 @@
     <resources>
         <image name="asset-contact-verification-completion" width="341.5" height="323"/>
         <namedColor name="theme_dark_text">
-            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_hint_text">
             <color red="0.69800001382827759" green="0.70200002193450928" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

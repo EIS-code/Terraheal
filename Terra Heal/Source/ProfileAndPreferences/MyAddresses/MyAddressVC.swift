@@ -51,7 +51,8 @@ class MyAddressVC: MainVC {
         if self.isViewAvailable() {
             self.tableView?.reloadData({
             })
-            self.btnSubmit?.setHighlighted(isHighlighted: true)
+            self.tableView?.contentInset = self.getGradientInset()
+            self.btnSubmit?.setupFilledButton()
         }
     }
     
@@ -65,7 +66,7 @@ class MyAddressVC: MainVC {
         self.lblEmptyMsg.text = "NO_ADDRESS_MSG".localized()
         self.btnSubmit?.setTitle("MANAGE_ADDRESS_BTN_ADD_NEW_ADDRESS".localized(), for: .normal)
         self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnSubmit?.setHighlighted(isHighlighted: true)
+        self.btnSubmit?.setupFilledButton()
         self.btnBack.setBackButton()
         
     }

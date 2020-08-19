@@ -33,7 +33,7 @@ class HomeTblCell: TableCell {
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
         self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
-        self.btnAction?.setHighlighted(isHighlighted: false)
+        self.btnAction?.setupBorderedButton()
     }
     
     func setData(data: HomeItemDetail ) {
@@ -47,7 +47,7 @@ class HomeTblCell: TableCell {
         super.layoutSubviews()
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
         self.vwBg?.setShadow()
-        self.btnAction?.setHighlighted(isHighlighted: false)
+        self.btnAction?.setupBorderedButton()
         
         
     }

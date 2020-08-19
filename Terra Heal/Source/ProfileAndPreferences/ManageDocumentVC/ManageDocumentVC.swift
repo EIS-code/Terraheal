@@ -46,8 +46,6 @@ class ManageDocumentVC: MainVC {
         super.viewDidLoad()
         self.initialViewSetup()
         self.updateUI()
-        self.addBottomFade()
-        self.addTopFade()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,11 +63,11 @@ class ManageDocumentVC: MainVC {
             self.vwBg?.setRound()
             self.tableView?.reloadData({
             })
-            self.btnSubmit?.setHighlighted(isHighlighted: true)
-            self.tableView?.contentInset = UIEdgeInsets(top: headerGradient.frame.height, left: 0, bottom: footerGradient.frame.height, right: 0)
+            self.btnSubmit?.setupFilledButton()
+           self.tableView?.contentInset = self.getGradientInset()
         }
     }
-    
+        
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeBackground)
         self.setupTableView(tableView: self.tableView)
@@ -80,7 +78,7 @@ class ManageDocumentVC: MainVC {
         self.lblEmptyMsg.text = "DOCUMENT_EMPTY_MSG".localized()
         self.btnSubmit?.setTitle("MANAGE_DOCUMENT_BTN_ADD_NEW".localized(), for: .normal)
         self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnSubmit?.setHighlighted(isHighlighted: true)
+        self.btnSubmit?.setupFilledButton()
     }
     
     @IBAction func btnBackTapped(_ sender: Any) {

@@ -43,8 +43,9 @@ class PromoCodeVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
-        self.addBottomFade()
-        self.addTopFade()
+        /*self.addBottomFade()
+        self.addTopFade()*/
+        
 
 
     }
@@ -64,7 +65,7 @@ class PromoCodeVC: MainVC {
             self.tableView?.reloadData({
 
             })
-            self.tableView?.contentInset = UIEdgeInsets(top: headerGradient.frame.height, left: 0, bottom: footerGradient.frame.height, right: 0)
+            self.tableView?.contentInset = self.getGradientInset()
 
         }
 
@@ -76,7 +77,7 @@ class PromoCodeVC: MainVC {
         self.setTitle(title: "PROMOCODE_TITLE".localized())
         self.btnSubmit?.setTitle("PROMOCODE_BTN_ADD_NEW".localized(), for: .normal)
         self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnSubmit?.setHighlighted(isHighlighted: true)
+        self.btnSubmit?.setupFilledButton()
         self.btnBack.setBackButton()
     }
 

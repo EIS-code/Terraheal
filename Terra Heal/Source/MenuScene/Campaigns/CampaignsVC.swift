@@ -44,10 +44,6 @@ class CampaignsVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
-        self.addBottomFade()
-        self.addTopFade()
-
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -65,7 +61,7 @@ class CampaignsVC: MainVC {
             self.tableView?.reloadData({
 
             })
-            self.tableView?.contentInset = UIEdgeInsets(top: headerGradient.frame.height, left: 0, bottom: footerGradient.frame.height, right: 0)
+           self.tableView?.contentInset = self.getGradientInset()
 
         }
 

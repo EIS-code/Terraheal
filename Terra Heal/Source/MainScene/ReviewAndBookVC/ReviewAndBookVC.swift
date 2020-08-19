@@ -82,8 +82,8 @@ class ReviewAndBookVC: MainVC {
         if self.isViewAvailable() {
             self.btnPrepayment?.layoutIfNeeded()
             self.btnWithoutPayment?.layoutIfNeeded()
-            self.btnPrepayment?.setHighlighted(isHighlighted: true)
-            self.btnWithoutPayment?.setHighlighted(isHighlighted: false)
+            self.btnPrepayment?.setupFilledButton()
+            self.btnWithoutPayment?.setupBorderedButton()
             vwBookingDetailFooter?.createDashedLine(from: CGPoint.zero, to: CGPoint(x: vwBookingDetailFooter.bounds.maxX, y: 0), color: UIColor.themeDarkText, strokeLength: 10, gapLength: 5, width: 1.0)
             vwSessionDetailFooter?.createDashedLine(from: CGPoint.zero, to: CGPoint(x: vwSessionDetailFooter.bounds.maxX, y: 0), color: UIColor.themeDarkText, strokeLength: 10, gapLength: 5, width: 1.0)
             self.reloadTableDataToFitHeight(tableView: self.tblVwForSessions, height:self.hTblSession)

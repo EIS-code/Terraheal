@@ -173,7 +173,7 @@ class EditProfileVC: MainVC {
     }
     func openTextFieldPicker(index:Int = 0) {
         let alert: CustomTextFieldDialog = CustomTextFieldDialog.fromNib()
-        alert.initialize(title: arrForProfile[index].placeholder, data: arrForProfile[index].value, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+        alert.initialize(title: arrForProfile[index].placeholder, data: arrForProfile[index].value, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized(), isMandatory: false)
         alert.show(animated: true)
         let data =  self.arrForProfile[index]
         alert.configTextField(data: data.inputConfiguration)
@@ -244,7 +244,8 @@ class EditProfileVC: MainVC {
     
     func openDatePicker(index:Int = 0) {
         let datePickerAlert: CustomDatePicker = CustomDatePicker.fromNib()
-        datePickerAlert.initialize(title: arrForProfile[index].placeholder, buttonTitle: "Proceed",cancelButtonTitle: "Back")
+        datePickerAlert.initialize(title: arrForProfile[index].placeholder, buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized())
+         datePickerAlert.setDate(minDate:Date().addingTimeInterval(-Date.millisecondsOfDay(day: 3)) , maxDate: Date())
         datePickerAlert.show(animated: true)
         datePickerAlert.onBtnCancelTapped = {
             [weak datePickerAlert, weak self] in
@@ -287,7 +288,7 @@ class EditProfileVC: MainVC {
         self.ivProfilePic.downloadedFrom(link: appSingleton.user.profilePhoto)
         self.arrForProfile = [
             EditProfileTextFieldDetail(placeholder: "PROFILE_NAME".localized(), value: appSingleton.user.name,  contentType:TextFieldContentType.Name, inputConfiguration: InputTextFieldDetail.getNameConfiguration(), image: ImageAsset.EditProfile.name),
-            EditProfileTextFieldDetail(placeholder: "PROFILE_SURNAME".localized(), value: appSingleton.user.surname, contentType:TextFieldContentType.Surname, inputConfiguration: InputTextFieldDetail.getNameConfiguration(), image: ImageAsset.EditProfile.name),
+            EditProfileTextFieldDetail(placeholder: "PROFILE_SURNAME".localized(), value: ""/*appSingleton.user.surname*/, contentType:TextFieldContentType.Surname, inputConfiguration: InputTextFieldDetail.getNameConfiguration(), image: ImageAsset.EditProfile.name),
             EditProfileTextFieldDetail(placeholder: "PROFILE_GENDER".localized(), value: appSingleton.user.getGenderName(), contentType: TextFieldContentType.Gender, image: ImageAsset.EditProfile.gender),
             EditProfileTextFieldDetail(placeholder: "PROFILE_DOB".localized(), value: appSingleton.user.getDob(), contentType: TextFieldContentType.DOB, image: ImageAsset.EditProfile.dob),
             EditProfileTextFieldDetail(placeholder: "PROFILE_MOBILE".localized(), value: appSingleton.user.telNumberCode + " " + appSingleton.user.telNumber, contentType: TextFieldContentType.Phone, inputConfiguration: InputTextFieldDetail.getMobileConfiguration(), image: ImageAsset.EditProfile.mobile),
@@ -403,9 +404,9 @@ extension EditProfileVC:  UICollectionViewDelegate, UICollectionViewDataSource, 
         let size = collectionView.bounds.width
         let data = arrForProfile[indexPath.row]
         if data.contentType == .Country || data.contentType == .City  {
-            return CGSize(width: (size / 2.0) - 10, height: size * 0.175)
+            return CGSize(width: (size / 2.0) - 10, height: size * 0.1)
         }
-        return CGSize(width: size , height: size * 0.175)
+        return CGSize(width: size , height: size * 0.1)
     }
     
     

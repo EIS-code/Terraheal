@@ -25,7 +25,6 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
     @IBOutlet weak var txtName: ACFloatingTextfield!
     @IBOutlet weak var txtAge: ACFloatingTextfield!
     @IBOutlet weak var btnTherapistGender: ThemeButton!
-    @IBOutlet weak var scrVw: UIScrollView!
     @IBOutlet weak var btnDelete: FloatingRoundButton!
     
     var onBtnDoneTapped: ((_ people:People,_ doc:UploadDocumentDetail?) -> Void)? = nil

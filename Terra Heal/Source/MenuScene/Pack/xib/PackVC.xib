@@ -13,7 +13,8 @@
             <connections>
                 <outlet property="btnBack" destination="dk0-AN-Hja" id="g3C-po-hKO"/>
                 <outlet property="btnSubmit" destination="soq-FQ-jLw" id="tzj-Ii-8z9"/>
-                <outlet property="footerGradient" destination="Vl3-GD-87f" id="gty-cx-JMA"/>
+                <outlet property="footerGradient" destination="6xE-5U-lSh" id="Vcr-fB-xgU"/>
+                <outlet property="headerGradient" destination="ru9-l3-Yej" id="y6s-8U-KfO"/>
                 <outlet property="lblTitle" destination="qXO-ds-8JK" id="CeN-Oc-tng"/>
                 <outlet property="tableView" destination="aVT-f3-Mwd" id="nhg-gV-smz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -25,16 +26,41 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-f3-Mwd">
-                    <rect key="frame" x="20" y="210.66666666666669" width="335" height="567.33333333333326"/>
+                    <rect key="frame" x="20" y="44" width="335" height="734"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
-                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vl3-GD-87f" userLabel="footerGradient">
-                    <rect key="frame" x="0.0" y="648" width="375" height="130"/>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gi9-Bm-4uc" userLabel="GradientView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <subviews>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ru9-l3-Yej" userLabel="TopGradient" customClass="ThemeTopGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="210.66666666666666"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6xE-5U-lSh" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="698" width="375" height="114"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="ru9-l3-Yej" firstAttribute="top" secondItem="gi9-Bm-4uc" secondAttribute="top" id="8dL-na-vyF"/>
+                        <constraint firstItem="6xE-5U-lSh" firstAttribute="centerX" secondItem="gi9-Bm-4uc" secondAttribute="centerX" id="FGo-K4-G47"/>
+                        <constraint firstItem="6xE-5U-lSh" firstAttribute="height" secondItem="ru9-l3-Yej" secondAttribute="height" priority="250" id="HzL-SH-V2z"/>
+                        <constraint firstItem="ru9-l3-Yej" firstAttribute="width" secondItem="gi9-Bm-4uc" secondAttribute="width" id="TVY-M2-MAB"/>
+                        <constraint firstAttribute="bottom" secondItem="6xE-5U-lSh" secondAttribute="bottom" id="Tta-p4-gWr"/>
+                        <constraint firstItem="ru9-l3-Yej" firstAttribute="centerX" secondItem="gi9-Bm-4uc" secondAttribute="centerX" id="ahm-pW-h4c"/>
+                        <constraint firstItem="6xE-5U-lSh" firstAttribute="width" secondItem="gi9-Bm-4uc" secondAttribute="width" id="hbr-Ll-Vat"/>
+                    </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99t-kz-Pw7" userLabel="vwNavigationBar" customClass="ThemeView" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="210.66666666666666"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="20.000000000000007" y="64" width="126.66666666666669" height="126.66666666666669"/>
@@ -81,22 +107,24 @@
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="9ma-qC-KU9" secondAttribute="bottom" constant="20" id="3gc-dr-oxx"/>
                 <constraint firstItem="qXO-ds-8JK" firstAttribute="leading" secondItem="dk0-AN-Hja" secondAttribute="trailing" constant="20" id="5qF-se-3uE"/>
                 <constraint firstItem="99t-kz-Pw7" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="7M6-Ue-b6D"/>
-                <constraint firstItem="aVT-f3-Mwd" firstAttribute="top" secondItem="dk0-AN-Hja" secondAttribute="bottom" constant="20" id="DOw-xP-Ji2"/>
+                <constraint firstAttribute="bottom" secondItem="gi9-Bm-4uc" secondAttribute="bottom" id="7kg-ql-x7K"/>
+                <constraint firstItem="aVT-f3-Mwd" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" id="DOw-xP-Ji2"/>
                 <constraint firstItem="aVT-f3-Mwd" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="FOw-Mx-kMa"/>
                 <constraint firstItem="qXO-ds-8JK" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="FaD-U6-LRB"/>
                 <constraint firstItem="99t-kz-Pw7" firstAttribute="bottom" secondItem="dk0-AN-Hja" secondAttribute="bottom" constant="20" id="G3l-PJ-UZk"/>
+                <constraint firstItem="gi9-Bm-4uc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Gb8-QA-7ys"/>
                 <constraint firstItem="9ma-qC-KU9" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" id="Ios-hz-b0s"/>
-                <constraint firstItem="Vl3-GD-87f" firstAttribute="top" secondItem="9ma-qC-KU9" secondAttribute="top" constant="-50" id="KBp-ki-6vG"/>
-                <constraint firstItem="Vl3-GD-87f" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="NIW-WP-pdO"/>
+                <constraint firstItem="ru9-l3-Yej" firstAttribute="bottom" secondItem="99t-kz-Pw7" secondAttribute="bottom" id="L7l-AI-FtZ"/>
                 <constraint firstItem="dk0-AN-Hja" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="PCD-nQ-9GP"/>
                 <constraint firstItem="qXO-ds-8JK" firstAttribute="centerY" secondItem="dk0-AN-Hja" secondAttribute="centerY" id="Qb0-xD-7vO"/>
+                <constraint firstItem="gi9-Bm-4uc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SHf-AD-DgD"/>
                 <constraint firstItem="99t-kz-Pw7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SIw-dZ-hy6"/>
                 <constraint firstItem="9ma-qC-KU9" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="Ysm-98-fJc"/>
-                <constraint firstItem="Vl3-GD-87f" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="bze-5P-CPg"/>
+                <constraint firstItem="gi9-Bm-4uc" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="aWV-oc-5pK"/>
                 <constraint firstItem="99t-kz-Pw7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ha1-U9-Ufx"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="aVT-f3-Mwd" secondAttribute="trailing" constant="20" id="jaq-Pv-ANN"/>
+                <constraint firstItem="6xE-5U-lSh" firstAttribute="top" secondItem="9ma-qC-KU9" secondAttribute="top" id="nvT-BX-DFK"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="aVT-f3-Mwd" secondAttribute="bottom" id="xL1-kH-6pc"/>
-                <constraint firstItem="Vl3-GD-87f" firstAttribute="bottom" secondItem="aVT-f3-Mwd" secondAttribute="bottom" id="zZF-5G-0if"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
             <point key="canvasLocation" x="131" y="154"/>

@@ -78,7 +78,6 @@ class CustomGiverDetailDialog: ThemeBottomDialogView {
         super.layoutSubviews()
     }
 
-
     func checkValidation() -> Bool {
         if txtName.text!.isEmpty {
             let alert: CustomAlert = CustomAlert.fromNib()

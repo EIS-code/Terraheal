@@ -55,8 +55,8 @@ class MyPlaceVC: MainVC {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
            self.tableView?.reloadData({
-            })
-          
+           })
+            self.tableView?.contentInset = self.getGradientInset()
         }
     }
 

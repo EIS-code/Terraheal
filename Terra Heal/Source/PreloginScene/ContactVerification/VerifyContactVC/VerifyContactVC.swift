@@ -53,7 +53,7 @@ class VerifyContactVC: MainVC {
         self.lblMessage?.setFont(name: FontName.Regular, size: FontSize.label_18)
         self.btnHome?.setTitle("CONTACT_VERIFICATION_BTN_VERIFY".localized(), for: .normal)
         self.btnHome?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnHome.setHighlighted(isHighlighted: true)
+        self.btnHome?.setupFilledButton()
         self.btnBack.setBackButton()
 
     }

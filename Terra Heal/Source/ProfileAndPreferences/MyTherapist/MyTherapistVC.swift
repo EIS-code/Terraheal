@@ -54,6 +54,7 @@ class MyTherapistVC: MainVC {
         if self.isViewAvailable() {
             self.tableView?.reloadData({
             })
+            self.tableView?.contentInset = self.getGradientInset()
         }
     }
     private func initialViewSetup() {

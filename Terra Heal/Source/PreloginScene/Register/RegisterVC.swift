@@ -10,7 +10,6 @@ import UIKit
 class RegisterVC: MainVC {
     
     @IBOutlet weak var ivHeader: UIImageView!
-    @IBOutlet weak var scrVw: UIScrollView!
     @IBOutlet weak var vwContent: UIView!
     @IBOutlet weak var hVwContent: NSLayoutConstraint!
     @IBOutlet weak var lblMessage: ThemeLabel!
@@ -57,7 +56,7 @@ class RegisterVC: MainVC {
         if self.isViewAvailable() {
             self.ivHeader.adjustHeight()
             self.btnSignUp?.layoutIfNeeded()
-            self.btnSignUp?.setHighlighted(isHighlighted: true)
+            self.btnSignUp?.setupFilledButton()
             btnGoogle?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
             btnLogin?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
             self.vwDashed?.createDashedLine(from: CGPoint(x: vwDashed.bounds.minX, y: vwDashed.bounds.midY), to: CGPoint(x: vwDashed.bounds.maxX, y: vwDashed.bounds.midY), color: UIColor.themeSecondary, strokeLength: 10, gapLength: 10, width: 2.0)
@@ -106,7 +105,7 @@ class RegisterVC: MainVC {
         self.btnLogin?.setTitle("REGISTER_BTN_SIGN_IN".localized(), for: .normal)
         self.btnSignUp?.setTitle("REGISTER_BTN_SIGN_UP".localized(), for: .normal)
         self.btnSignUp?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnSignUp.setHighlighted(isHighlighted: true)
+        self.btnSignUp?.setupFilledButton()
         self.lblAlreadyMember?.text = "REGISTER_LBL_ALREADY_A_MEMBER".localized()
         self.lblAlreadyMember?.setFont(name: FontName.Regular, size: FontSize.label_18)
     }

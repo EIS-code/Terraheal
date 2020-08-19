@@ -107,10 +107,13 @@ class AddGiftVoucherVC: MainVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
+            self.tableView.contentInset = self.getGradientInset()
             self.tableView?.reloadData({
+                
             })
+            print(self.tableView.contentInset)
             btnPreview.layoutIfNeeded()
-            btnPreview.setHighlighted(isHighlighted: true)
+            btnPreview?.setupFilledButton()
         }
     }
     

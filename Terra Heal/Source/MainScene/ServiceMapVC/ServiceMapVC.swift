@@ -41,6 +41,11 @@ class ServiceMapVC: MainVC {
     var yPostion: CGFloat = 0.0
     var animatingCell: ServiceCell!
     var targetAnimatingCell: ServiceCollapseCell!
+    var sessionSelectionDialog: SessionDialog!
+    var recipentMassageManageDialog: RecipentMassageManageDialog!
+    var dialogForAccessory: AccessorySelectionDialog!
+    var dateTimeSelectionDialog: DateTimeDialog!
+    var textViewDialog: TextViewDialog!
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
@@ -76,14 +81,14 @@ class ServiceMapVC: MainVC {
                 
             }
             self.cltForCollapseView.reloadData { }
-            self.btnBook?.setHighlighted(isHighlighted: false)
-            self.btnCheckService?.setHighlighted(isHighlighted: true)
+            self.btnBook?.setupBorderedButton()
+            self.btnCheckService?.setupFilledButton()
             self.mapView.roundCorners(corners:[.topLeft,.topRight], radius: 40.0)
             self.vwServiceDialog.roundCorners(corners:[.topLeft,.topRight], radius: 40.0)
             self.vwForCollapseView.roundCorners(corners: [.topLeft,.topRight] , radius: 40.0)
             
             self.btnKm.setRound(withBorderColor: UIColor.clear, andCornerRadious: self.btnKm.frame.height/2.0, borderWidth: 1.0)
-           // self.btnKm.setHighlighted(isHighlighted: true)
+           // self.btnKmsetupFilledButton()
             self.ivService.setRound()
         }
     }
@@ -129,39 +134,35 @@ class ServiceMapVC: MainVC {
 extension ServiceMapVC {
     
     func openReciepentMassageDetailVCDialog() {
-        let alert: RecipentMassageManageDialog = RecipentMassageManageDialog.fromNib()
-        alert.initialize(title: "RECIEPENT_DETAIL_TITLE".localized(), buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
-        alert.show(animated: true)
-        alert.onBtnCancelTapped = {
-            [weak alert, weak self] in
+        recipentMassageManageDialog = RecipentMassageManageDialog.fromNib()
+        recipentMassageManageDialog.initialize(title: "RECIEPENT_DETAIL_TITLE".localized(), buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        recipentMassageManageDialog.show(animated: true)
+        recipentMassageManageDialog.onBtnCancelTapped = {
+            [weak recipentMassageManageDialog, weak self] in
             guard let self = self else {return}; print(self)
-            alert?.dismiss()
+            recipentMassageManageDialog?.dismiss()
         }
-        alert.onBtnNextSelectedTapped = {
-            [weak alert, weak self] (data) in
+        recipentMassageManageDialog.onBtnNextSelectedTapped = {
+            [ weak self] (data) in
             guard let self = self else { return } ; print(self)
-            alert?.dismiss()
-            
             appSingleton.myBookingData.serviceCenterDetail = self.arrForServices[self.currentIndex]
             appSingleton.myBookingData.booking_info = data
             self.openDateTimeSelectionDialog()
-            
         }
     }
     
     func openTextViewPicker() {
-        let alert: TextViewDialog = TextViewDialog.fromNib()
-        alert.initialize(title: "booking notes", data:appSingleton.myBookingData.special_notes, buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
-        alert.show(animated: true)
-        alert.onBtnCancelTapped = {
-            [weak alert, weak self] in
+        textViewDialog = TextViewDialog.fromNib()
+        textViewDialog.initialize(title: "booking notes", data:appSingleton.myBookingData.special_notes, buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        textViewDialog.show(animated: true)
+        textViewDialog.onBtnCancelTapped = {
+            [weak textViewDialog, weak self] in
             guard let self = self else {return}; print(self)
-            alert?.dismiss()
+            textViewDialog?.dismiss()
         }
-        alert.onBtnDoneTapped = {
-            [weak alert, weak self] (description) in
+        textViewDialog.onBtnDoneTapped = {
+            [ weak self] (description) in
             guard let self = self else { return } ; print(self)
-            alert?.dismiss()
             appSingleton.myBookingData.special_notes = description
             
             appSingleton.myBookingData.serviceCenterDetail = self.arrForServices[self.currentIndex]
@@ -170,19 +171,28 @@ extension ServiceMapVC {
         }
     }
     
+    func dismissAllDialog() {
+        self.recipentMassageManageDialog?.dismiss()
+        self.sessionSelectionDialog?.dismiss()
+        self.dialogForAccessory?.dismiss()
+        self.textViewDialog?.dismiss()
+        self.dateTimeSelectionDialog?.dismiss()
+    }
+    
     func openAccessoryDialog() {
-        let dialogForAccessory: AccessorySelectionDialog = AccessorySelectionDialog.fromNib()
+        dialogForAccessory = AccessorySelectionDialog.fromNib()
         dialogForAccessory.initialize(title: "ACCESSORY_TITLE".localized(), buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
         dialogForAccessory.show(animated: true)
-        dialogForAccessory.onBtnDoneTapped = {[weak self, weak dialogForAccessory] (data) in
-            guard let self = self else { return } ; print(self)
-            dialogForAccessory?.dismiss()
-            Common.appDelegate.loadReviewAndBookVC()
-        }
         dialogForAccessory.onBtnCancelTapped = { [weak self, weak dialogForAccessory]  in
             guard let self = self else { return } ; print(self)
             dialogForAccessory?.dismiss()
         }
+        dialogForAccessory.onBtnDoneTapped = {[weak self] (data) in
+            guard let self = self else { return } ; print(self)
+            self.dismissAllDialog()
+            Common.appDelegate.loadReviewAndBookVC()
+        }
+        
     }
     
     func openServiceSelectionDialog() {
@@ -203,7 +213,7 @@ extension ServiceMapVC {
     }
     
     func openDateTimeSelectionDialog() {
-        let dateTimeSelectionDialog: DateTimeDialog  = DateTimeDialog.fromNib()
+        dateTimeSelectionDialog =  DateTimeDialog.fromNib()
         dateTimeSelectionDialog.initialize(title: "DATE_DIALOG_TITLE".localized(), buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
         dateTimeSelectionDialog.show(animated: true)
         dateTimeSelectionDialog.onBtnCancelTapped = {
@@ -212,17 +222,15 @@ extension ServiceMapVC {
             dateTimeSelectionDialog?.dismiss()
         }
         dateTimeSelectionDialog.onBtnDoneTapped = {
-            [weak dateTimeSelectionDialog, weak self]  (millis)in
+            [weak self]  (millis)in
             guard let self = self else { return } ; print(self)
-            dateTimeSelectionDialog?.dismiss()
-            print(Date.milliSecToDate(milliseconds: millis, format: "dd-MM-yyyy HH:mm"))
             appSingleton.myBookingData.date = millis.toString()
             self.openTextViewPicker()
         }
     }
     
     func openSessionSelectionDialog() {
-        let sessionSelectionDialog: SessionDialog  = SessionDialog.fromNib()
+        sessionSelectionDialog  = SessionDialog.fromNib()
         sessionSelectionDialog.initialize(title: "SESSION_TYPE_TITLE".localized(), buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
         sessionSelectionDialog.show(animated: true)
         sessionSelectionDialog.onBtnCancelTapped = {
@@ -231,11 +239,12 @@ extension ServiceMapVC {
             sessionSelectionDialog?.dismiss()
         }
         sessionSelectionDialog.onBtnDoneTapped = {
-            [weak sessionSelectionDialog, weak self] (session) in
+            [ weak self] (session) in
             guard let self = self else { return } ; print(self)
-            sessionSelectionDialog?.dismiss()
+            
             appSingleton.myBookingData.session_id = session.id
             if PreferenceHelper.shared.getUserId().isEmpty()  {
+                self.dismissAllDialog()
                 Common.appDelegate.loadWelcomeVC()
             } else {
                 self.openReciepentMassageDetailVCDialog()
@@ -288,9 +297,10 @@ extension ServiceMapVC {
     }
     
     func setCenterDataFor(index:Int) {
-        self.collectionView.scrollToItem(at: IndexPath.init(row: index, section: 0), at: .centeredHorizontally, animated: true)
-        self.cltForCollapseView.scrollToItem(at: IndexPath.init(row: index, section: 0), at: .centeredHorizontally, animated: true)
-        self.mapView.focusMap(locations: [self.currentMarker!.position,self.arrForServicesMarker[index].position])
-        self.mapView.drawPolyline(polyline: path, source: self.currentMarker!.position, destination: arrForServices[index].getCoordinatte())
+        DispatchQueue.main.async {
+            self.scrollToItem(index: index)
+            self.mapView.focusMap(locations: [self.currentMarker!.position,self.arrForServicesMarker[index].position])
+            self.mapView.drawPolyline(polyline: self.path, source: self.currentMarker!.position, destination: self.arrForServices[index].getCoordinatte())
+        }
     }
 }

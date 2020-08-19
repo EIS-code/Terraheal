@@ -15,12 +15,15 @@
                 <outlet property="btnBuyNow" destination="avA-7k-aok" id="J6y-me-ijZ"/>
                 <outlet property="btnGetStarted" destination="yDp-RN-c1t" id="tMK-ZN-yWz"/>
                 <outlet property="btnLeft" destination="Tzt-ie-DPd" id="VKx-VJ-RAx"/>
+                <outlet property="footerGradient" destination="UwS-bh-hGJ" id="gr7-2r-Cla"/>
+                <outlet property="headerGradient" destination="GN8-uW-tD3" id="lLh-HA-Vqu"/>
                 <outlet property="lblBody" destination="kZR-1z-GSn" id="mgE-L6-Gj0"/>
                 <outlet property="lblEmptyMessage" destination="GGl-fl-jXh" id="CY8-oM-KQr"/>
                 <outlet property="lblEmptyTitle" destination="fZD-kN-XWc" id="nmU-3G-lII"/>
                 <outlet property="lblHeader" destination="WFa-0q-znZ" id="Wql-qJ-1qv"/>
                 <outlet property="lblSubHeader" destination="tug-sY-0vK" id="dSF-IG-oJZ"/>
                 <outlet property="lblTitle" destination="JnC-z0-4Np" id="lUq-nq-zmY"/>
+                <outlet property="mainScrollView" destination="aVT-f3-Mwd" id="fXf-DJ-MVR"/>
                 <outlet property="tableView" destination="aVT-f3-Mwd" id="nhg-gV-smz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="vwForBuyGiftInfo" destination="olb-ep-jGH" id="o0h-Q5-AsV"/>
@@ -33,6 +36,39 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-f3-Mwd">
+                    <rect key="frame" x="18.666666666666657" y="44" width="337.66666666666674" height="734"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lrN-jM-qTW" userLabel="GradientView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <subviews>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GN8-uW-tD3" userLabel="TopGradient" customClass="ThemeTopGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="197"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UwS-bh-hGJ" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="615.33333333333337" width="375" height="196.66666666666663"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="UwS-bh-hGJ" firstAttribute="width" secondItem="lrN-jM-qTW" secondAttribute="width" id="1VQ-ZO-Dvn"/>
+                        <constraint firstItem="GN8-uW-tD3" firstAttribute="width" secondItem="lrN-jM-qTW" secondAttribute="width" id="jc6-fM-ELe"/>
+                        <constraint firstItem="GN8-uW-tD3" firstAttribute="centerX" secondItem="lrN-jM-qTW" secondAttribute="centerX" id="l8a-yC-kkI"/>
+                        <constraint firstItem="UwS-bh-hGJ" firstAttribute="centerX" secondItem="lrN-jM-qTW" secondAttribute="centerX" id="m9s-gX-1CV"/>
+                        <constraint firstItem="UwS-bh-hGJ" firstAttribute="height" secondItem="GN8-uW-tD3" secondAttribute="height" priority="250" id="mhz-aO-jhL"/>
+                        <constraint firstAttribute="bottom" secondItem="UwS-bh-hGJ" secondAttribute="bottom" id="rHm-OC-b9O"/>
+                        <constraint firstItem="GN8-uW-tD3" firstAttribute="top" secondItem="lrN-jM-qTW" secondAttribute="top" id="x5d-Ia-6AL"/>
+                    </constraints>
+                </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="olb-ep-jGH" userLabel="buyGiftInfo">
                     <rect key="frame" x="0.0" y="197" width="375" height="581"/>
                     <subviews>
@@ -67,10 +103,6 @@
                         <constraint firstItem="itN-8t-6Yw" firstAttribute="top" secondItem="olb-ep-jGH" secondAttribute="top" constant="20" id="kQ2-5p-WRE"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-f3-Mwd">
-                    <rect key="frame" x="18.666666666666657" y="197" width="337.66666666666674" height="581"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Jr-V8-4vu" userLabel="emptyView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                     <subviews>
@@ -152,24 +184,29 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="lrN-jM-qTW" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="6Dd-9c-FSu"/>
                 <constraint firstItem="olb-ep-jGH" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" id="6VP-2p-pyW"/>
                 <constraint firstItem="6Jr-V8-4vu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7re-UP-dFv"/>
                 <constraint firstItem="aVT-f3-Mwd" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" multiplier="0.9" id="7v8-6n-CMw"/>
                 <constraint firstItem="Kl7-Lb-JtZ" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="8dM-xe-7Mw"/>
+                <constraint firstAttribute="leading" secondItem="lrN-jM-qTW" secondAttribute="leading" id="9yL-kx-Qpi"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="avA-7k-aok" secondAttribute="bottom" constant="20" id="B3I-mQ-ccx"/>
                 <constraint firstItem="Gr9-kt-5QC" firstAttribute="bottom" secondItem="Tzt-ie-DPd" secondAttribute="bottom" constant="20" id="DiL-Ug-A2d"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="Kl7-Lb-JtZ" secondAttribute="bottom" constant="20" id="I9O-SP-oM9"/>
+                <constraint firstItem="GN8-uW-tD3" firstAttribute="bottom" secondItem="Gr9-kt-5QC" secondAttribute="bottom" id="KDE-Ng-hC2"/>
                 <constraint firstItem="Tzt-ie-DPd" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="20" id="MOB-Xx-Jg6"/>
                 <constraint firstItem="Tzt-ie-DPd" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="Nzj-40-dlD"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="yDp-RN-c1t" secondAttribute="bottom" constant="20" id="OP0-KJ-7Ba"/>
+                <constraint firstAttribute="top" secondItem="lrN-jM-qTW" secondAttribute="top" id="Oct-WL-7tL"/>
                 <constraint firstItem="olb-ep-jGH" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="Pqt-lU-42T"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="6Jr-V8-4vu" secondAttribute="trailing" id="Tda-h7-IP9"/>
                 <constraint firstItem="6Jr-V8-4vu" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="XjW-vf-5ee"/>
                 <constraint firstItem="JnC-z0-4Np" firstAttribute="centerY" secondItem="Tzt-ie-DPd" secondAttribute="centerY" id="Xw6-sF-hMg"/>
                 <constraint firstItem="aVT-f3-Mwd" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="YFh-hn-S5B"/>
-                <constraint firstItem="aVT-f3-Mwd" firstAttribute="top" secondItem="Gr9-kt-5QC" secondAttribute="bottom" id="YcX-S1-Ntc"/>
+                <constraint firstItem="aVT-f3-Mwd" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" id="YcX-S1-Ntc"/>
                 <constraint firstItem="JnC-z0-4Np" firstAttribute="leading" secondItem="Tzt-ie-DPd" secondAttribute="trailing" constant="20" id="aWW-62-l3W"/>
                 <constraint firstItem="Gr9-kt-5QC" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" id="avJ-AN-aTP"/>
+                <constraint firstItem="lrN-jM-qTW" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="gWd-mC-7UI"/>
                 <constraint firstItem="JnC-z0-4Np" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="i3Y-zT-9Ah"/>
                 <constraint firstItem="olb-ep-jGH" firstAttribute="bottom" secondItem="VLJ-uh-dxO" secondAttribute="bottom" id="jAc-T5-lC9"/>
                 <constraint firstItem="Gr9-kt-5QC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mBL-cx-W2J"/>

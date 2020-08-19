@@ -62,7 +62,7 @@ class HowItWorkVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
-        self.addBottomFade()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,7 +78,7 @@ class HowItWorkVC: MainVC {
         if self.isViewAvailable() {
             self.tableView?.reloadData({
             })
-            self.tableView?.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: footerGradient.frame.height, right: 0)
+            
         }
     }
     
@@ -121,11 +121,9 @@ extension HowItWorkVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDe
         cell?.layoutIfNeeded()
         return cell!
     }
-    
+ 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
     }
-    
 }
 

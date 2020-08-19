@@ -16,6 +16,7 @@
                 <outlet property="hVwContent" destination="W7U-9Q-vcJ" id="ldP-cU-ECM"/>
                 <outlet property="headerView" destination="1vj-Dw-czR" id="cSC-pd-oOA"/>
                 <outlet property="ivQrCode" destination="ioG-BP-L40" id="RFY-Ru-KiI"/>
+                <outlet property="ivUser" destination="AqQ-4O-Wf7" id="6fA-Hf-IGb"/>
                 <outlet property="lblDescription" destination="qvY-GW-ybO" id="sP1-Br-qUt"/>
                 <outlet property="lblEmail" destination="NZx-ty-sOI" id="mIB-41-s95"/>
                 <outlet property="lblMobile" destination="N3u-tX-aNr" id="cgh-dp-rxo"/>
@@ -33,15 +34,19 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" userLabel="BtnUploadImage" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="20" y="64" width="75" height="75"/>
-                    <color key="backgroundColor" name="theme_primary_border"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="dk0-AN-Hja" secondAttribute="height" multiplier="1:1" id="UQN-iw-RUR"/>
                     </constraints>
-                    <state key="normal" image="asset-user"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableFloating" value="NO"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="btnMenuTapped:" destination="-1" eventType="touchUpInside" id="33P-8Q-amw"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AqQ-4O-Wf7" customClass="RoundedImageView" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="20" y="64" width="75" height="75"/>
+                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABs-WT-4wl" userLabel="btnClose" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="291" y="69.666666666666671" width="64" height="64.000000000000014"/>
                     <constraints>
@@ -111,7 +116,7 @@
                     <rect key="frame" x="0.0" y="159" width="375" height="697"/>
                     <color key="backgroundColor" name="theme_primary_light_background"/>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qf1-Ci-CxJ" userLabel="scrView">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qf1-Ci-CxJ" userLabel="scrView">
                     <rect key="frame" x="0.0" y="159" width="375" height="619"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rbu-l6-xha" userLabel="contentView">
@@ -160,17 +165,21 @@
                 <constraint firstItem="1vj-Dw-czR" firstAttribute="top" secondItem="rdH-Uz-r9U" secondAttribute="bottom" constant="20" id="8F3-Ik-GFv"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="qf1-Ci-CxJ" secondAttribute="bottom" id="BoT-LT-Wke"/>
                 <constraint firstItem="qf1-Ci-CxJ" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="Bu7-SB-DAg"/>
+                <constraint firstItem="AqQ-4O-Wf7" firstAttribute="top" secondItem="dk0-AN-Hja" secondAttribute="top" id="Cll-1g-8tw"/>
                 <constraint firstItem="rdH-Uz-r9U" firstAttribute="top" secondItem="dk0-AN-Hja" secondAttribute="top" id="FSP-gL-Xnq"/>
+                <constraint firstItem="AqQ-4O-Wf7" firstAttribute="bottom" secondItem="dk0-AN-Hja" secondAttribute="bottom" id="Fl9-YT-qJb"/>
                 <constraint firstItem="dk0-AN-Hja" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="PCD-nQ-9GP"/>
                 <constraint firstItem="1vj-Dw-czR" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="PNw-gg-Iru"/>
                 <constraint firstItem="dk0-AN-Hja" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" multiplier="0.2" id="Qea-WF-kDI"/>
                 <constraint firstItem="ABs-WT-4wl" firstAttribute="centerY" secondItem="dk0-AN-Hja" secondAttribute="centerY" id="STX-xh-d0U"/>
                 <constraint firstItem="qf1-Ci-CxJ" firstAttribute="top" secondItem="1vj-Dw-czR" secondAttribute="top" id="T7s-dD-db2"/>
+                <constraint firstItem="AqQ-4O-Wf7" firstAttribute="trailing" secondItem="dk0-AN-Hja" secondAttribute="trailing" id="USi-2K-b31"/>
                 <constraint firstItem="ABs-WT-4wl" firstAttribute="leading" secondItem="rdH-Uz-r9U" secondAttribute="trailing" constant="20" id="XXc-ZJ-vak"/>
                 <constraint firstItem="Gr9-kt-5QC" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" id="avJ-AN-aTP"/>
                 <constraint firstItem="qf1-Ci-CxJ" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" id="b1B-fx-gub"/>
                 <constraint firstItem="1vj-Dw-czR" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" id="gB8-Lh-7JA"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="ABs-WT-4wl" secondAttribute="trailing" constant="20" id="gpq-kw-Vhw"/>
+                <constraint firstItem="AqQ-4O-Wf7" firstAttribute="leading" secondItem="dk0-AN-Hja" secondAttribute="leading" id="ha6-08-dvX"/>
                 <constraint firstItem="Gr9-kt-5QC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1vj-Dw-czR" secondAttribute="top" id="jfL-kU-l8n"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="Gr9-kt-5QC" secondAttribute="trailing" id="roy-zg-A68"/>
             </constraints>
@@ -180,7 +189,6 @@
     </objects>
     <resources>
         <image name="asset-cross" width="44" height="44"/>
-        <image name="asset-user" width="42.666667938232422" height="42.666667938232422"/>
         <image name="demo-qr" width="110.66666412353516" height="110.66666412353516"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -190,9 +198,6 @@
         </namedColor>
         <namedColor name="theme_hint_text">
             <color red="0.69800001382827759" green="0.70200002193450928" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="theme_primary_border">
-            <color red="0.73725490196078436" green="0.8784313725490196" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light_background">
             <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

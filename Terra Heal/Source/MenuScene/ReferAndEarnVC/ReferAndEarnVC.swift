@@ -92,8 +92,9 @@ class ReferAndEarnVC: MainVC {
                 self.ivEarningPoints.setRound()
                 self.ivInviteFriend.setRound()
                 self.cltFriends.reloadData()
-                self.btnReferNow.setHighlighted(isHighlighted: false)
-                self.btnFilter.setHighlighted(isHighlighted: true)
+                self.btnReferNow?.setupBorderedButton()
+                self.btnFilter?.setupFilledButton()
+                self.scrVw.contentInset = self.getGradientInset()
                 self.vwInviteFriend.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
             }
         }
@@ -127,7 +128,7 @@ class ReferAndEarnVC: MainVC {
 
         self.btnReferNow.setTitle("REFER_AND_EARN_BTN_REFER_NOW".localized(), for: .normal)
         self.btnReferNow.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnReferNow.setHighlighted(isHighlighted: false)
+        self.btnReferNow?.setupBorderedButton()
 
         self.lblFriendRefered.text = "REFER_AND_EARN_LBL_FRIEND_REFERRED_TITLE".localized()
         self.lblFriendRefered.setFont(name: FontName.SemiBold, size: FontSize.label_18)
@@ -140,7 +141,8 @@ class ReferAndEarnVC: MainVC {
 
         self.btnFilter.setTitle("last month".localized(), for: .normal)
         self.btnFilter.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnFilter.setHighlighted(isHighlighted: true)
+        self.btnFilter?.setupFilledButton()
+        self.scrVw.contentInset = UIEdgeInsets.init(top: self.vwNavigationBar.bounds.height, left: 0, bottom: self.vwNavigationBar.bounds.height, right: 0)
         self.setupCollectionView(collectionView: self.cltFriends)
         self.setupTableView(tableView: self.tableView)
     }

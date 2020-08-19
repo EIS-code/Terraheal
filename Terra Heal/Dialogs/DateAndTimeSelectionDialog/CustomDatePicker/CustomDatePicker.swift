@@ -21,7 +21,8 @@ class CustomDatePicker: ThemeBottomDialogView {
 
     var onBtnDoneTapped: ((_ date:Double) -> Void)? = nil
     var selectedMilli:Double = 0
-
+    var minDate = Date()
+    var maxDate = Date()
     fileprivate let formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
@@ -91,6 +92,12 @@ class CustomDatePicker: ThemeBottomDialogView {
         }
 
     }
+    
+    func setDate(minDate:Date, maxDate: Date) {
+        self.minDate = minDate
+        self.maxDate = maxDate
+        self.vwCalendar.reloadData()
+    }
 
 }
 
@@ -124,11 +131,11 @@ extension CustomDatePicker: FSCalendarDataSource, FSCalendarDelegate {
         
     }
     func minimumDate(for calendar: FSCalendar) -> Date {
-        return Date.init().addingTimeInterval(-TimeInterval.init(Date.millisecondsOfDay(day: 1)))
+        return minDate
     }
     
     func maximumDate(for calendar: FSCalendar) -> Date {
-        return Date.init().addingTimeInterval(TimeInterval.init(Date.millisecondsOfDay(day: 3)))
+        return maxDate
     }
     
     func selectDate(date:Date) {

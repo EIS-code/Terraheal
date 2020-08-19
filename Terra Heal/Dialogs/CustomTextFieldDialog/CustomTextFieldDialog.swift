@@ -9,20 +9,21 @@
 import UIKit
 
 class CustomTextFieldDialog: ThemeBottomDialogView {
-
+    
     @IBOutlet weak var txtData: ACFloatingTextfield!
-
-
+    
+    var isMandatory: Bool = true
     var onBtnDoneTapped: ((_ data: String) -> Void)? = nil
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-
-    func initialize(title:String, placeholder:String = "", data:String, buttonTitle:String,cancelButtonTitle:String) {
-
+    
+    func initialize(title:String, placeholder:String = "", data:String, buttonTitle:String,cancelButtonTitle:String,isMandatory:Bool = true) {
+        
         self.initialSetup()
+        self.isMandatory = isMandatory
         self.lblTitle.text = title
         self.txtData.placeholder = placeholder
         self.txtData.text = data
@@ -40,19 +41,19 @@ class CustomTextFieldDialog: ThemeBottomDialogView {
         }
         
     }
-
+    
     override func initialSetup() {
         super.initialSetup()
         self.txtData?.placeholder = "".localized()
         self.txtData?.delegate = self
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
     }
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
     }
-
-
+    
+    
     func checkValidation() -> Bool {
         
         if !txtData.validate().0 {
@@ -66,22 +67,30 @@ class CustomTextFieldDialog: ThemeBottomDialogView {
             }
             return false
         }
-
+        
         return true
     }
-
+    
     @IBAction func btnDoneTapped(_ sender: Any) {
-        if self.checkValidation() {
+            if self.isMandatory {
+            if self.checkValidation() {
+                if self.onBtnDoneTapped != nil {
+                    self.onBtnDoneTapped!(txtData!.text!);
+                }
+            }
+        } else {
             if self.onBtnDoneTapped != nil {
                 self.onBtnDoneTapped!(txtData!.text!);
             }
+            
         }
+        
     }
     func configTextField(data:InputTextFieldDetail) {
         self.txtData.configureTextField(data)
         
     }
-
+    
 }
 
 extension CustomTextFieldDialog: UITextFieldDelegate {

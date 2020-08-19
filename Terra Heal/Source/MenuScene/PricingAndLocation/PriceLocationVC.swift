@@ -40,8 +40,7 @@ class PriceLocationVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
-        self.addBottomFade()
-     
+        self.tableView?.contentInset = self.getGradientInset()
         self.wsGetLocationList()
     }
 
@@ -61,8 +60,8 @@ class PriceLocationVC: MainVC {
            self.tableView?.reloadData({
            })
             self.searchVw.setRound(withBorderColor: .clear, andCornerRadious: self.searchVw.bounds.height/2.0, borderWidth: 1.0)
-           self.btnSubmit?.setHighlighted(isHighlighted: true)
-           self.tableView?.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: footerGradient.frame.height, right: 0)
+           self.btnSubmit?.setupFilledButton()
+            self.tableView?.contentInset = self.getGradientInset()
         }
     }
 
@@ -77,7 +76,7 @@ class PriceLocationVC: MainVC {
         self.lblEmptyMsg.text = "NO_LOCATION_MSG".localized()
         self.btnSubmit?.setTitle("BTN_PROCEED".localized(), for: .normal)
         self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnSubmit?.setHighlighted(isHighlighted: true)
+        self.btnSubmit?.setupFilledButton()
         self.btnBack.setBackButton()
     }
 

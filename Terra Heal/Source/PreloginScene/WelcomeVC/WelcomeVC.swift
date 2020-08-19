@@ -10,7 +10,6 @@ import UIKit
 class WelcomeVC: MainVC {
 
 
-    @IBOutlet weak var scrVw: UIScrollView!
     @IBOutlet weak var lblHeader1: ThemeLabel!
     @IBOutlet weak var lblMsg1: ThemeLabel!
     @IBOutlet weak var lblHeader2: ThemeLabel!
@@ -20,7 +19,8 @@ class WelcomeVC: MainVC {
     @IBOutlet weak var btnSignUp: ThemeButton!
     @IBOutlet weak var btnHome: ThemeButton!
     @IBOutlet weak var iv1: UIImageView!
-
+    @IBOutlet weak var btnSignIn: ThemeButton!
+    
     @IBOutlet weak var iv2: UIImageView!
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -48,11 +48,13 @@ class WelcomeVC: MainVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
-            self.btnSignUp?.superview?.layoutIfNeeded()
-            self.btnSignUp?.setHighlighted(isHighlighted: true)
-            self.btnHome?.setHighlighted(isHighlighted: false)
+            self.view.layoutIfNeeded()
+            self.btnSignUp?.setupFilledButton()
+            self.btnSignIn?.setupFilledButton()
+            self.btnHome?.setupBorderedButton()
         }
     }
+    
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeBackground)
         self.lblHeader1?.text = "WELCOME_LBL_HEADER_1".localized()
@@ -65,10 +67,11 @@ class WelcomeVC: MainVC {
         self.lblMsg2?.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.btnSignUp.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnSignUp.setTitle("WELCOME_BTN_SIGN_UP".localized(), for: .normal)
+        self.btnSignIn.setFont(name: FontName.SemiBold, size: FontSize.button_14)
+        self.btnSignIn.setTitle("WELCOME_BTN_SIGN_IN".localized(), for: .normal)
         self.btnHome.setTitle("WELCOME_BTN_HOME".localized(), for: .normal)
         self.btnHome.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-       
-}
+    }
 
 
     // MARK: Action Buttons
@@ -77,6 +80,9 @@ class WelcomeVC: MainVC {
     }
     @IBAction func btnHomeTapped(_ sender: Any) {
         Common.appDelegate.loadHomeVC()
+    }
+    @IBAction func btnSignInTapped(_ sender: Any) {
+           Common.appDelegate.loadLoginVC()
     }
 
     // MARK: Other Functions

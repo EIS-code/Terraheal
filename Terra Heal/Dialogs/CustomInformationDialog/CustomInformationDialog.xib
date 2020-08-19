@@ -27,75 +27,83 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
                     <rect key="frame" x="0.0" y="179" width="414" height="717"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe">
-                            <rect key="frame" x="20" y="10" width="374" height="677"/>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muj-Ae-Rvi" customClass="FadeScrollView" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="20.5" y="10" width="373" height="707"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZI-tS-EDa">
-                                    <rect key="frame" x="167" y="0.0" width="40" height="5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3M5-yW-8Kq" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="373" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="3M5-yW-8Kq" firstAttribute="width" secondItem="muj-Ae-Rvi" secondAttribute="width" id="5iw-AZ-ORs"/>
+                                <constraint firstAttribute="trailing" secondItem="3M5-yW-8Kq" secondAttribute="trailing" id="E5h-3p-VW9"/>
+                                <constraint firstItem="3M5-yW-8Kq" firstAttribute="centerX" secondItem="muj-Ae-Rvi" secondAttribute="centerX" id="WhK-e5-tdT"/>
+                                <constraint firstItem="3M5-yW-8Kq" firstAttribute="leading" secondItem="muj-Ae-Rvi" secondAttribute="leading" id="Yqy-I7-RZb"/>
+                                <constraint firstItem="3M5-yW-8Kq" firstAttribute="top" secondItem="muj-Ae-Rvi" secondAttribute="top" id="mZO-6R-81M"/>
+                                <constraint firstAttribute="bottom" secondItem="3M5-yW-8Kq" secondAttribute="bottom" id="zbA-Ye-4zO"/>
+                            </constraints>
+                            <viewLayoutGuide key="contentLayoutGuide" id="cdc-8v-fal"/>
+                            <viewLayoutGuide key="frameLayoutGuide" id="cNy-L6-FE1"/>
+                        </scrollView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IkD-Wi-84C" userLabel="Stack View - Header">
+                            <rect key="frame" x="20.5" y="10" width="373" height="45.5"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iba-Tr-7hj">
+                                    <rect key="frame" x="166.5" y="0.0" width="40" height="5"/>
                                     <color key="backgroundColor" name="theme_primary"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="40" id="KGC-zt-BFL"/>
-                                        <constraint firstAttribute="height" constant="5" id="vCm-q7-dVu"/>
+                                        <constraint firstAttribute="height" constant="5" id="6dJ-kU-eBt"/>
+                                        <constraint firstAttribute="width" constant="40" id="ZNJ-j9-Yqq"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-4J-xGz" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="166" y="25" width="42" height="20.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2V-bl-vu7" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="165.5" y="25" width="42" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" name="theme_primary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muj-Ae-Rvi">
-                                    <rect key="frame" x="18.5" y="65.5" width="337" height="499.5"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3M5-yW-8Kq" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="337" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="3M5-yW-8Kq" firstAttribute="width" secondItem="muj-Ae-Rvi" secondAttribute="width" id="5iw-AZ-ORs"/>
-                                        <constraint firstAttribute="trailing" secondItem="3M5-yW-8Kq" secondAttribute="trailing" id="E5h-3p-VW9"/>
-                                        <constraint firstItem="3M5-yW-8Kq" firstAttribute="centerX" secondItem="muj-Ae-Rvi" secondAttribute="centerX" id="WhK-e5-tdT"/>
-                                        <constraint firstItem="3M5-yW-8Kq" firstAttribute="leading" secondItem="muj-Ae-Rvi" secondAttribute="leading" id="Yqy-I7-RZb"/>
-                                        <constraint firstItem="3M5-yW-8Kq" firstAttribute="top" secondItem="muj-Ae-Rvi" secondAttribute="top" id="mZO-6R-81M"/>
-                                        <constraint firstAttribute="bottom" secondItem="3M5-yW-8Kq" secondAttribute="bottom" id="zbA-Ye-4zO"/>
-                                    </constraints>
-                                    <viewLayoutGuide key="contentLayoutGuide" id="cdc-8v-fal"/>
-                                    <viewLayoutGuide key="frameLayoutGuide" id="cNy-L6-FE1"/>
-                                </scrollView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="120.5" y="585" width="133" height="40"/>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cnF-8L-Yeo" userLabel="Stack View - Buttons">
+                            <rect key="frame" x="140" y="322" width="133" height="72"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUb-de-oW0" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="133" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                     <state key="normal" title="Sign In">
                                         <color key="titleColor" name="theme_primary"/>
                                     </state>
+                                    <connections>
+                                        <action selector="btnDoneTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="QfB-UW-D6R"/>
+                                    </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="581-cI-fuY" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="160.5" y="645" width="53" height="32"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1i-t2-2L4" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="40" y="40" width="53" height="32"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <state key="normal" title="Sign In">
                                         <color key="titleColor" name="theme_primary"/>
                                     </state>
                                     <connections>
-                                        <action selector="btnCancelTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="48r-yW-5CS"/>
+                                        <action selector="btnCancelTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="asJ-I8-J3v"/>
                                     </connections>
                                 </button>
                             </subviews>
-                            <constraints>
-                                <constraint firstItem="muj-Ae-Rvi" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" multiplier="0.9" id="Sww-ol-jhy"/>
-                            </constraints>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" name="theme_primary_light_background"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" constant="20" id="1HJ-Xp-DOL"/>
-                        <constraint firstItem="cXW-IL-cWe" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="RrZ-kW-n5i"/>
+                        <constraint firstItem="IkD-Wi-84C" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.9" id="FHm-pc-FEv"/>
+                        <constraint firstItem="muj-Ae-Rvi" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.9" id="Llc-6w-cKJ"/>
+                        <constraint firstItem="muj-Ae-Rvi" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="PXm-Al-meT"/>
+                        <constraint firstItem="IkD-Wi-84C" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="PxA-gI-nfN"/>
+                        <constraint firstItem="IkD-Wi-84C" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="W5Z-JR-9pQ"/>
                         <constraint firstAttribute="height" constant="717" id="XsX-u6-tYd"/>
-                        <constraint firstAttribute="bottom" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="30" id="fhi-OD-EBT"/>
-                        <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="gm5-2t-GbH"/>
+                        <constraint firstAttribute="bottom" secondItem="muj-Ae-Rvi" secondAttribute="bottom" id="bhM-xI-MEX"/>
+                        <constraint firstItem="muj-Ae-Rvi" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="vrE-zN-h8v"/>
                     </constraints>
                 </view>
             </subviews>
@@ -112,14 +120,17 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="backgroundView" destination="6ZW-DU-hOd" id="lFA-bQ-tdV"/>
-                <outlet property="btnCancel" destination="581-cI-fuY" id="Hnk-iZ-ihl"/>
-                <outlet property="btnDone" destination="W3s-UH-gbE" id="4jk-wN-Zhb"/>
+                <outlet property="btnCancel" destination="y1i-t2-2L4" id="sNK-Zg-3E4"/>
+                <outlet property="btnDone" destination="uUb-de-oW0" id="gY8-Ys-W8x"/>
                 <outlet property="dialogHeight" destination="XsX-u6-tYd" id="NJf-sF-ZaA"/>
                 <outlet property="dialogView" destination="Yaj-p7-IIT" id="Sjt-cS-gvV"/>
                 <outlet property="lblMessage" destination="3M5-yW-8Kq" id="rgc-An-7Lc"/>
-                <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
-                <outlet property="topBarSpace" destination="gm5-2t-GbH" id="QH3-c5-Q2k"/>
-                <outlet property="vwTopBar" destination="CZI-tS-EDa" id="anh-0Z-gym"/>
+                <outlet property="lblTitle" destination="b2V-bl-vu7" id="e4N-Bs-nML"/>
+                <outlet property="scrDialogVw" destination="muj-Ae-Rvi" id="p83-81-mcm"/>
+                <outlet property="stkButtons" destination="cnF-8L-Yeo" id="P6x-tP-q8V"/>
+                <outlet property="stkHeader" destination="IkD-Wi-84C" id="120-yq-aZz"/>
+                <outlet property="topBarSpace" destination="PxA-gI-nfN" id="hLh-Ua-9ie"/>
+                <outlet property="vwTopBar" destination="iba-Tr-7hj" id="dIV-PX-qTG"/>
             </connections>
             <point key="canvasLocation" x="132" y="131"/>
         </view>

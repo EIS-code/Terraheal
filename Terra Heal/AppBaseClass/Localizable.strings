@@ -24,6 +24,7 @@
 "WELCOME_LBL_MESSAGE_2" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 "WELCOME_BTN_SIGN_UP" =  "Sign Up";
 "WELCOME_BTN_HOME" =  "Book Now";
+"WELCOME_BTN_SIGN_IN" = "Sign In";
 //MARK: LOGIN SCREEN
 "LOGIN_LBL_TITLE" = "welcome back";
 "LOGIN_LBL_MESSAGE" = "you need to identify\nto sign back in";
@@ -185,6 +186,7 @@
 //MARK: Notification
 "NOTIFICATION_TITLE" = "notifications";
 "MY_PLACE_TITLE" = "my places";
+"NO_NOTIFICATION_TITLE" = "no more notifications";
 //MARK: My Address
 "MANAGE_ADDRESS_TITLE" = "manage address";
 "NO_ADDRESS_TITLE" = "you don't have any saved\naddresses";
@@ -435,6 +437,7 @@
 "DATE_DIALOG_LBL_SELECT_TIME" = "select time";
 
 //MARK: FingerPrint Dialog
+
 "FINGER_PRINT_DIALOG_REGISTER_TITLE" = "register your fingerprint";
 "FINGER_PRINT_DIALOG_VALIDATION" = "please verify your bio-matric authentication";
 "FINGER_PRINT_DIALOG_LOGIN_TITLE" = "login with fingerprint";

@@ -13,8 +13,8 @@
             <connections>
                 <outlet property="btnBack" destination="L7d-cr-2FZ" id="i3N-qh-dLD"/>
                 <outlet property="btnSubmit" destination="4EW-h5-Nfs" id="ir5-Cb-LXS"/>
-                <outlet property="footerGradient" destination="Vl3-GD-87f" id="gty-cx-JMA"/>
-                <outlet property="headerGradient" destination="kXe-MZ-CKX" id="IM4-bk-gFM"/>
+                <outlet property="footerGradient" destination="jIm-Vl-3gq" id="Fja-i1-YGD"/>
+                <outlet property="headerGradient" destination="3rJ-pm-hcl" id="zC4-8L-eSl"/>
                 <outlet property="lblTitle" destination="AvE-MA-PhL" id="HgF-r0-r5a"/>
                 <outlet property="tableView" destination="aVT-f3-Mwd" id="nhg-gV-smz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -29,15 +29,33 @@
                     <rect key="frame" x="20" y="44" width="335" height="734"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
-                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kXe-MZ-CKX" userLabel="headerGradient">
-                    <rect key="frame" x="0.0" y="44" width="375" height="130"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </view>
-                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vl3-GD-87f" userLabel="footerGradient">
-                    <rect key="frame" x="0.0" y="648" width="375" height="130"/>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="avG-hh-b4K" userLabel="GradientView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <subviews>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3rJ-pm-hcl" userLabel="TopGradient" customClass="ThemeTopGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="190.66666666666666"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jIm-Vl-3gq" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="698" width="375" height="114"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="Vl3-GD-87f" secondAttribute="height" multiplier="75:26" id="Ypk-C9-9LR"/>
+                        <constraint firstItem="jIm-Vl-3gq" firstAttribute="width" secondItem="avG-hh-b4K" secondAttribute="width" id="Emj-pI-zNi"/>
+                        <constraint firstItem="3rJ-pm-hcl" firstAttribute="top" secondItem="avG-hh-b4K" secondAttribute="top" id="MNN-Qb-zyG"/>
+                        <constraint firstAttribute="bottom" secondItem="jIm-Vl-3gq" secondAttribute="bottom" id="RN5-ap-8XQ"/>
+                        <constraint firstItem="jIm-Vl-3gq" firstAttribute="height" secondItem="3rJ-pm-hcl" secondAttribute="height" priority="250" id="WeD-i9-KOR"/>
+                        <constraint firstItem="jIm-Vl-3gq" firstAttribute="centerX" secondItem="avG-hh-b4K" secondAttribute="centerX" id="dvC-Z4-SQ8"/>
+                        <constraint firstItem="3rJ-pm-hcl" firstAttribute="width" secondItem="avG-hh-b4K" secondAttribute="width" id="egG-DQ-jEU"/>
+                        <constraint firstItem="3rJ-pm-hcl" firstAttribute="centerX" secondItem="avG-hh-b4K" secondAttribute="centerX" id="sbJ-sD-bsx"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M1J-GH-Q0i" userLabel="footerView">
@@ -83,24 +101,23 @@
             <constraints>
                 <constraint firstItem="aVT-f3-Mwd" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" id="12k-3X-GBL"/>
                 <constraint firstItem="L7d-cr-2FZ" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="20" id="1av-gh-hXv"/>
-                <constraint firstItem="kXe-MZ-CKX" firstAttribute="height" secondItem="Vl3-GD-87f" secondAttribute="height" id="24e-85-FXX"/>
-                <constraint firstItem="kXe-MZ-CKX" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="7aY-pm-3LF"/>
-                <constraint firstItem="kXe-MZ-CKX" firstAttribute="top" secondItem="aVT-f3-Mwd" secondAttribute="top" id="8pq-K6-idJ"/>
+                <constraint firstItem="3rJ-pm-hcl" firstAttribute="bottom" secondItem="L7d-cr-2FZ" secondAttribute="bottom" id="AaY-u5-HKC"/>
                 <constraint firstItem="AvE-MA-PhL" firstAttribute="centerY" secondItem="L7d-cr-2FZ" secondAttribute="centerY" id="CHi-lM-pwd"/>
                 <constraint firstItem="aVT-f3-Mwd" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="FOw-Mx-kMa"/>
                 <constraint firstItem="L7d-cr-2FZ" firstAttribute="width" secondItem="L7d-cr-2FZ" secondAttribute="height" multiplier="1:1" id="LvS-DC-FwR"/>
-                <constraint firstItem="Vl3-GD-87f" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="NIW-WP-pdO"/>
                 <constraint firstItem="AvE-MA-PhL" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="NdL-qr-rNa"/>
+                <constraint firstItem="avG-hh-b4K" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" id="OLz-Rr-J3T"/>
                 <constraint firstItem="L7d-cr-2FZ" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="SXw-Bn-FzI"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="M1J-GH-Q0i" secondAttribute="trailing" id="WUZ-6i-55O"/>
                 <constraint firstItem="M1J-GH-Q0i" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" id="XZ6-PQ-5yZ"/>
-                <constraint firstItem="Vl3-GD-87f" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="bze-5P-CPg"/>
-                <constraint firstItem="kXe-MZ-CKX" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="dQS-6u-aqg"/>
+                <constraint firstItem="avG-hh-b4K" firstAttribute="trailing" secondItem="VLJ-uh-dxO" secondAttribute="trailing" id="Y1j-dI-Wxh"/>
+                <constraint firstAttribute="bottom" secondItem="avG-hh-b4K" secondAttribute="bottom" id="cM5-gf-fye"/>
+                <constraint firstItem="jIm-Vl-3gq" firstAttribute="top" secondItem="M1J-GH-Q0i" secondAttribute="top" id="h8F-uA-L4I"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="M1J-GH-Q0i" secondAttribute="bottom" constant="20" id="i8s-mn-EKM"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="aVT-f3-Mwd" secondAttribute="trailing" constant="20" id="jaq-Pv-ANN"/>
+                <constraint firstItem="avG-hh-b4K" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="kvn-Ak-zW4"/>
                 <constraint firstItem="AvE-MA-PhL" firstAttribute="leading" secondItem="L7d-cr-2FZ" secondAttribute="trailing" constant="20" id="tLZ-RR-avR"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="aVT-f3-Mwd" secondAttribute="bottom" id="xL1-kH-6pc"/>
-                <constraint firstItem="Vl3-GD-87f" firstAttribute="bottom" secondItem="aVT-f3-Mwd" secondAttribute="bottom" id="zZF-5G-0if"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
             <point key="canvasLocation" x="131" y="154"/>

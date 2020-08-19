@@ -15,6 +15,7 @@ class HomeVC: MainVC {
     @IBOutlet weak var lblUserName: ThemeLabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var vwFloatingBottom: JDSegmentedControl!
+    @IBOutlet weak var ivUser: RoundedImageView!
     
     var arrForHomeDetails: [HomeItemDetail] = [
         HomeItemDetail(title:appSingleton.user.name, buttonTitle: "HOME_ITEM_ACTION_1".localized(), image: ImageAsset.HomeItem.header),
@@ -52,11 +53,9 @@ class HomeVC: MainVC {
         vwFloatingBottom.didSelectItemWith = { [weak self] (index,title) in
             guard let self = self else { return } ; print(self)
             Common.appDelegate.loadServiceMapVC(navigaionVC: self.navigationController)
-            
         }
         self.addLocationObserver()
-        self.addBottomFade()
-        self.addTopFade()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,7 +67,10 @@ class HomeVC: MainVC {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        SideVC.addToVC(self)
+        
+       // SlideVC.addRightToVC(self, sideVC: ProfileVC.shared)
+        SlideVC.addLeftToVC(self, sideVC: SideVC.shared)
+        SlideVC.addRightToVC(self, sideVC: ProfileVC.shared)
     }
     
     override func viewDidLayoutSubviews() {
@@ -78,24 +80,19 @@ class HomeVC: MainVC {
             })
             vwFloatingBottom.setRound(withBorderColor: .themePrimary, andCornerRadious: self.vwFloatingBottom.bounds.height/2.0, borderWidth: 0.1)
             vwFloatingBottom.setShadow()
-            self.tableView?.contentInset = UIEdgeInsets(top: headerGradient.frame.height, left: 0, bottom: footerGradient.frame.height, right: 0)
+            
+            self.tableView?.contentInset = self.getGradientInset()
         }
     }
     
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeBackground)
         self.setupTableView(tableView: self.tableView)
-        /*
-         self.lblMenu?.text = "HOME_LBL_MENU".localized()
-         self.lblMenu?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
          if appSingleton.user.name.isEmpty() {
-             self.lblUserName?.text = "HOME_LBL_USER".localized()
+            self.ivUser.image = UIImage.init(named: ImageAsset.Placeholder.user)
          } else {
-             self.lblUserName?.text = appSingleton.user.name
+            self.ivUser.downloadedFrom(link: appSingleton.user.profilePhoto)
          }
-         self.lblUserName?.setFont(name: FontName.SemiBold, size: FontSize.label_12)*/
-        
-        
     }
     
     
@@ -129,7 +126,8 @@ class HomeVC: MainVC {
         if PreferenceHelper.shared.getUserId().isEmpty() {
             Common.appDelegate.loadWelcomeVC()
         } else {
-            Common.appDelegate.loadProfileVC(navigaionVC: self.navigationController)
+            ProfileVC.shared.show()
+            //Common.appDelegate.loadProfileVC(navigaionVC: self.navigationController)
         }
     }
     //MARK: Location Observer

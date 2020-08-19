@@ -41,7 +41,7 @@ class VerificationAlert: ThemeBottomDialogView {
         self.verificationData = data
         self.btnVerify.setTitle("VERIFICATION_BTN_VERIFY".localized(), for: .normal)
         self.btnVerify.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnVerify.setHighlighted(isHighlighted: true)
+        self.btnVerify?.setupFilledButton()
         self.btnResend.setTitle("VERIFICATION_BTN_RESEND".localized(), for: .normal)
         self.btnVerify.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.initialSetup()

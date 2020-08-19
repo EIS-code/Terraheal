@@ -33,8 +33,6 @@ class TherapistQuestionariesVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
-        self.addBottomFade()
-        self.addTopFade()
         self.wsGetQuestionList()
 
     }
@@ -56,8 +54,8 @@ class TherapistQuestionariesVC: MainVC {
             self.tableView?.reloadData({
 
             })
-           self.tableView?.contentInset = UIEdgeInsets(top: headerGradient.frame.height, left: 0, bottom: footerGradient.frame.height, right: 0)
-            self.btnSubmit?.setHighlighted(isHighlighted: true)
+          self.tableView?.contentInset = self.getGradientInset()
+            self.btnSubmit?.setupFilledButton()
         }
 
 
@@ -69,7 +67,7 @@ class TherapistQuestionariesVC: MainVC {
          self.btnBack.setBackButton()
         self.btnSubmit.setTitle("BTN_SUBMIT".localized(), for: .normal)
         self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnSubmit?.setHighlighted(isHighlighted: true)
+        self.btnSubmit?.setupFilledButton()
     }
 
 

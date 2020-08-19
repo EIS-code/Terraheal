@@ -59,10 +59,13 @@ class GiftVoucherVC: MainVC {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
             self.view.layoutIfNeeded()
+            self.tableView?.reloadData({
+                self.tableView.contentInset = self.getGradientInset()
+            })
             self.btnBuyGiftVoucher.layoutIfNeeded()
-            self.btnBuyGiftVoucher.setHighlighted(isHighlighted: true)
+            self.btnBuyGiftVoucher?.setupFilledButton()
             self.btnBuyNow.layoutIfNeeded()
-            self.btnBuyNow.setHighlighted(isHighlighted: true)
+            self.btnBuyNow?.setupFilledButton()
         }
     }
     
@@ -103,13 +106,13 @@ class GiftVoucherVC: MainVC {
         self.lblEmptyMessage.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.btnBuyGiftVoucher?.setTitle("GIFT_VOUCHER_BTN_BUY_GIFT_VOUCHER".localized(), for: .normal)
         self.btnBuyGiftVoucher?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnBuyGiftVoucher?.setHighlighted(isHighlighted: true)
+        self.btnBuyGiftVoucher?.setupFilledButton()
         self.btnBuyNow?.setTitle("GIFT_VOUCHER_BTN_BUY_NOW".localized(), for: .normal)
         self.btnBuyNow?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnBuyNow?.setHighlighted(isHighlighted: true)
+        self.btnBuyNow?.setupFilledButton()
         self.btnGetStarted?.setTitle("GIFT_VOUCHER_BTN_GET_STARTED".localized(), for: .normal)
         self.btnGetStarted?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnGetStarted?.setHighlighted(isHighlighted: true)
+        self.btnGetStarted?.setupFilledButton()
     }
     // MARK: - Action Methods
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {

@@ -48,7 +48,7 @@ class AddCardVC: MainVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
-            self.btnAddCard.setHighlighted(isHighlighted: true)
+            self.btnAddCard?.setupFilledButton()
            
         }
     }

@@ -53,7 +53,7 @@ class BookingCompleteVC: MainVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
-            self.btnHome.setHighlighted(isHighlighted: false)
+            self.btnHome?.setupBorderedButton()
         }
     }
 

@@ -21,7 +21,6 @@ class CustomAddNewAddressDialog: ThemeBottomDialogView {
     @IBOutlet weak var btnMapLocation: FloatingRoundButton!
     @IBOutlet weak var txtLatitude: ACFloatingTextfield!
     @IBOutlet weak var txtLongitude: ACFloatingTextfield!
-    
     var onBtnDoneTapped: ((_ data: Address ) -> Void)? = nil
     var selectedAddress: Address = Address.init(fromDictionary: [:])
     var locationVC: MapLocationVC? = nil
@@ -32,7 +31,6 @@ class CustomAddNewAddressDialog: ThemeBottomDialogView {
     
     
     func initialize(title:String, data:Address, buttonTitle:String,cancelButtonTitle:String) {
-        
         self.selectedAddress = data
         self.initialSetup()
         self.lblTitle.text = title
@@ -90,7 +88,7 @@ class CustomAddNewAddressDialog: ThemeBottomDialogView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+       
     }
     
     

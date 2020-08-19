@@ -56,7 +56,7 @@ class CustomCampaignsDetailDialog: ThemeBottomDialogView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.scrVw.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
+        //self.scrVw.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
     }
 
     @IBAction func btnDoneTapped(_ sender: Any) {

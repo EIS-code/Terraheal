@@ -88,7 +88,10 @@ class DateTimeDialog: ThemeBottomDialogView {
     
     func openDatePicker() {
         let datePickerAlert: CustomDatePicker = CustomDatePicker.fromNib()
+        
+        
         datePickerAlert.initialize(title: "DATE_DIALOG_LBL_SELECT_DATE".localized(), buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized())
+        datePickerAlert.setDate(minDate: Date(), maxDate: Date().addingTimeInterval(Date.millisecondsOfDay(day: 3)))
         datePickerAlert.show(animated: true)
         datePickerAlert.onBtnCancelTapped = {
             [weak datePickerAlert, weak self] in

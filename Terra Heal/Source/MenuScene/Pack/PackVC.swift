@@ -43,9 +43,6 @@ class PackVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
-        self.addBottomFade()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,8 +60,7 @@ class PackVC: MainVC {
             self.tableView?.reloadData({
                 
             })
-            self.tableView?.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: footerGradient.frame.height, right: 0)
-            
+            self.tableView?.contentInset = self.getGradientInset()
         }
         
         
@@ -75,7 +71,7 @@ class PackVC: MainVC {
         self.setTitle(title: "PACK_TITLE".localized())
         self.btnSubmit?.setTitle("PACK_BTN_BUY_NEW".localized(), for: .normal)
         self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnSubmit?.setHighlighted(isHighlighted: true)
+        self.btnSubmit?.setupFilledButton()
         self.btnBack.setBackButton()
     }
     

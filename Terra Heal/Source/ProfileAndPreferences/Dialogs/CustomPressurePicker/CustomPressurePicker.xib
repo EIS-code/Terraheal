@@ -44,8 +44,8 @@
                                     <color key="textColor" name="theme_primary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tfg-GV-f0f">
-                                    <rect key="frame" x="0.0" y="65.5" width="374" height="128"/>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tfg-GV-f0f" customClass="FadeTableView" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="18.5" y="65.5" width="337" height="128"/>
                                     <color key="backgroundColor" name="theme_primary_light_background"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="128" id="YYE-9t-jcw"/>
@@ -71,7 +71,7 @@
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="tfg-GV-f0f" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" id="6Op-Ym-9rR"/>
+                                <constraint firstItem="tfg-GV-f0f" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" multiplier="0.9" id="EUp-qP-X96"/>
                             </constraints>
                         </stackView>
                     </subviews>
@@ -111,10 +111,10 @@
     </objects>
     <resources>
         <namedColor name="theme_primary">
-            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light_background">
-            <color red="0.94509803921568625" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

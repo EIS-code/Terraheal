@@ -13,6 +13,10 @@ struct ImageAsset {
     static let downArrow = "asset-arrow-down"
     static let rightArrow = "asset-arrow-right"
     static let leftArrow = "asset-arrow-left"
+    
+    struct Placeholder {
+        static let user = "asset-user"
+    }
     struct Tutorial {
         static let first = "asset-tutorial-0"
         static let second = "asset-tutorial-1"

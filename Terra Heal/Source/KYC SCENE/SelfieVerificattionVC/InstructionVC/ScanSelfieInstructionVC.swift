@@ -49,7 +49,7 @@ class ScanSelfieInstructionVC: MainVC {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-         self.btnScanNow?.setHighlighted(isHighlighted: true)
+         self.btnScanNow?.setupFilledButton()
          self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
         self.btnInfo1?.setRound()
         self.btnInfo2?.setRound()

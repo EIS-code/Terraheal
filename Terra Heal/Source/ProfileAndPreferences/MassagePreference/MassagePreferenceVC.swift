@@ -85,8 +85,8 @@ class MassagePreferenceVC: MainVC {
             self.tableView?.reloadData({
 
             })
-           
-            self.btnSubmit?.setHighlighted(isHighlighted: true)
+            self.tableView.contentInset = self.getGradientInset()
+            self.btnSubmit?.setupFilledButton()
         }
 
 
@@ -97,7 +97,7 @@ class MassagePreferenceVC: MainVC {
         self.setTitle(title: "MASSAGE_PREFERENCE_TITLE".localized())
         self.btnSubmit.setTitle("BTN_SUBMIT".localized(), for: .normal)
         self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnSubmit?.setHighlighted(isHighlighted: true)
+        self.btnSubmit?.setupFilledButton()
         self.btnBack.setBackButton()
     }
 

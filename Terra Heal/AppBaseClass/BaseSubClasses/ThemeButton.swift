@@ -55,21 +55,18 @@ class ThemeButton: UIButton {
         self.titleLabel?.font = FontHelper.font(name: name, size: finalSize)
     }
     
-    func setHighlighted(isHighlighted: Bool) {
-        self.isButtonHighlighted = isHighlighted
-        //self.isSelected = isHighlighted
-        if isHighlighted {
-            self.backgroundColor = UIColor.themePrimary
-            self.setTitleColor(UIColor.white, for: .normal)
-            self.setRound(withBorderColor: UIColor.clear, andCornerRadious: self.frame.height/2.0, borderWidth: 1.0)
-        } else {
-            self.backgroundColor = UIColor.themeLightTextColor
-            self.setTitleColor(UIColor.themePrimary, for: .normal)
-            self.setRound(withBorderColor: UIColor.themePrimary, andCornerRadious: self.frame.height/2.0, borderWidth: 1.0)
-        }
-        //self.tintColor = self.backgroundColor
+    func setupFilledButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themePrimary, borderColor: UIColor = UIColor.clear) {
+        self.height(constant: JDDeviceHelper().offseter(offset: 40))
+        self.backgroundColor = backgroundColor
+        self.setTitleColor(textColor, for: .normal)
+        self.setRound(withBorderColor: borderColor, andCornerRadious: self.frame.height/2.0, borderWidth: 1.0)
     }
-    
+    func setupBorderedButton(textColor: UIColor = UIColor.themePrimary, backgroundColor: UIColor = UIColor.clear, borderColor: UIColor = UIColor.themePrimary) {
+        self.height(constant: JDDeviceHelper().offseter(offset: 40))
+        self.backgroundColor = backgroundColor
+        self.setTitleColor(textColor, for: .normal)
+        self.setRound(withBorderColor: borderColor, andCornerRadious: self.frame.height/2.0, borderWidth: 1.0)
+    }
    
 }
 

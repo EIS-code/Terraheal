@@ -57,10 +57,13 @@ class CustomAddNewEventDialog: ThemeBottomDialogView {
         super.initialSetup()
         self.txtName?.placeholder = "name".localized()
         self.txtName.delegate = self
+        self.txtName.configureTextField(InputTextFieldDetail.getNameConfiguration())
         self.txtMobile?.placeholder = "mobile".localized()
         self.txtMobile.delegate = self
+        self.txtMobile.configureTextField(InputTextFieldDetail.getMobileConfiguration())
         self.txtEmail?.placeholder = "email".localized()
         self.txtEmail.delegate = self
+        self.txtEmail.configureTextField(InputTextFieldDetail.getEmailConfiguration())
         self.txtDescription?.placeholder = "message".localized()
         self.txtDescription.delegate = self
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)

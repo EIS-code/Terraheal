@@ -76,7 +76,7 @@ class MapLocationVC: MainVC {
     
     func  setupLayout(){
         if self.isViewAvailable() {
-            btnDone.setHighlighted(isHighlighted: true)
+            btnDone?.setupFilledButton()
             searchVw.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
             searchVw.setShadow()
         }

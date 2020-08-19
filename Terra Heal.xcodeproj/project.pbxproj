@@ -17,6 +17,10 @@
 		031F895024DD7B600001FD58 /* CustomDistancePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031F894E24DD7B600001FD58 /* CustomDistancePickerCell.xib */; };
 		03280D8C24D03F7300EF06E5 /* ServiceCollapseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03280D8A24D03F7300EF06E5 /* ServiceCollapseCell.xib */; };
 		03280D8D24D03F7300EF06E5 /* ServiceCollapseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280D8B24D03F7300EF06E5 /* ServiceCollapseCell.swift */; };
+		033E822F24EBDBBC00E71506 /* ThemeBottomDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E822E24EBDBBC00E71506 /* ThemeBottomDialog.swift */; };
+		033E823124EBDC1100E71506 /* ThemeBottomDialog + Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E823024EBDC1100E71506 /* ThemeBottomDialog + Animation.swift */; };
+		033E823324EBDC3F00E71506 /* ThemeBottomDialog + Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E823224EBDC3F00E71506 /* ThemeBottomDialog + Gradient.swift */; };
+		033E823524EBEBB100E71506 /* ThemeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E823424EBEBB100E71506 /* ThemeScrollView.swift */; };
 		03406F9A24E2D8F50014AC99 /* GiftVoucherVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03406F7A24E2D8F50014AC99 /* GiftVoucherVC.xib */; };
 		03406F9B24E2D8F50014AC99 /* GiftVoucherTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03406F7C24E2D8F50014AC99 /* GiftVoucherTblCell.xib */; };
 		03406F9C24E2D8F50014AC99 /* GiftVoucherTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03406F7D24E2D8F50014AC99 /* GiftVoucherTblCell.swift */; };
@@ -319,6 +323,9 @@
 		034CD81B24BC947800BFD6E1 /* AddPaymentPreferenceDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CD81724BC947700BFD6E1 /* AddPaymentPreferenceDialog.swift */; };
 		0353013324ADC3F900452F8C /* styleable_map.json in Resources */ = {isa = PBXBuildFile; fileRef = 0353013224ADC3F900452F8C /* styleable_map.json */; };
 		0353013524ADDBF800452F8C /* AddressWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0353013424ADDBF800452F8C /* AddressWebService.swift */; };
+		0353EB0C24EA52A400584357 /* ThemeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0353EB0B24EA52A400584357 /* ThemeImageView.swift */; };
+		0353EB1124EAA70100584357 /* SlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0353EB1024EAA70100584357 /* SlideView.swift */; };
+		0353EB1324EAA71D00584357 /* SlideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0353EB1224EAA71D00584357 /* SlideVC.swift */; };
 		035CB15724E12ADF00C2D5C6 /* CustomServiceCenterSelectionDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035CB15524E12ADF00C2D5C6 /* CustomServiceCenterSelectionDialog.xib */; };
 		035CB15824E12ADF00C2D5C6 /* CustomServiceCenterSelectionDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035CB15624E12ADF00C2D5C6 /* CustomServiceCenterSelectionDialog.swift */; };
 		035CB15C24E14F2100C2D5C6 /* CustomRecipientDetailDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035CB15A24E14F2100C2D5C6 /* CustomRecipientDetailDialog.swift */; };
@@ -413,7 +420,6 @@
 		633C1AC224923D3B009EB6AE /* CountriesWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C1AC124923D3A009EB6AE /* CountriesWebService.swift */; };
 		633C1AC424923FCA009EB6AE /* CityWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C1AC324923FCA009EB6AE /* CityWebService.swift */; };
 		633D1A422488B7910085AC56 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633D1A412488B7910085AC56 /* PinterestLayout.swift */; };
-		63432F8A248F5D37006BA322 /* ThemeBottomDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63432F89248F5D37006BA322 /* ThemeBottomDialog.swift */; };
 		63435B4E24769C4900AF7100 /* AlamofireHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63435B4824769C4900AF7100 /* AlamofireHelper.swift */; };
 		63435B4F24769C4900AF7100 /* AppWebApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63435B4924769C4900AF7100 /* AppWebApi.swift */; };
 		63435B5024769C4900AF7100 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63435B4A24769C4900AF7100 /* Reachability.swift */; };
@@ -455,6 +461,10 @@
 		031F894E24DD7B600001FD58 /* CustomDistancePickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomDistancePickerCell.xib; sourceTree = "<group>"; };
 		03280D8A24D03F7300EF06E5 /* ServiceCollapseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceCollapseCell.xib; sourceTree = "<group>"; };
 		03280D8B24D03F7300EF06E5 /* ServiceCollapseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCollapseCell.swift; sourceTree = "<group>"; };
+		033E822E24EBDBBC00E71506 /* ThemeBottomDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeBottomDialog.swift; sourceTree = "<group>"; };
+		033E823024EBDC1100E71506 /* ThemeBottomDialog + Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThemeBottomDialog + Animation.swift"; sourceTree = "<group>"; };
+		033E823224EBDC3F00E71506 /* ThemeBottomDialog + Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThemeBottomDialog + Gradient.swift"; sourceTree = "<group>"; };
+		033E823424EBEBB100E71506 /* ThemeScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeScrollView.swift; sourceTree = "<group>"; };
 		03406F7A24E2D8F50014AC99 /* GiftVoucherVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftVoucherVC.xib; sourceTree = "<group>"; };
 		03406F7C24E2D8F50014AC99 /* GiftVoucherTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftVoucherTblCell.xib; sourceTree = "<group>"; };
 		03406F7D24E2D8F50014AC99 /* GiftVoucherTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftVoucherTblCell.swift; sourceTree = "<group>"; };
@@ -757,6 +767,9 @@
 		034CD81724BC947700BFD6E1 /* AddPaymentPreferenceDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPaymentPreferenceDialog.swift; sourceTree = "<group>"; };
 		0353013224ADC3F900452F8C /* styleable_map.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = styleable_map.json; sourceTree = "<group>"; };
 		0353013424ADDBF800452F8C /* AddressWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressWebService.swift; sourceTree = "<group>"; };
+		0353EB0B24EA52A400584357 /* ThemeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeImageView.swift; sourceTree = "<group>"; };
+		0353EB1024EAA70100584357 /* SlideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideView.swift; sourceTree = "<group>"; };
+		0353EB1224EAA71D00584357 /* SlideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideVC.swift; sourceTree = "<group>"; };
 		035CB15524E12ADF00C2D5C6 /* CustomServiceCenterSelectionDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomServiceCenterSelectionDialog.xib; sourceTree = "<group>"; };
 		035CB15624E12ADF00C2D5C6 /* CustomServiceCenterSelectionDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomServiceCenterSelectionDialog.swift; sourceTree = "<group>"; };
 		035CB15A24E14F2100C2D5C6 /* CustomRecipientDetailDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRecipientDetailDialog.swift; sourceTree = "<group>"; };
@@ -852,7 +865,6 @@
 		633C1AC124923D3A009EB6AE /* CountriesWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesWebService.swift; sourceTree = "<group>"; };
 		633C1AC324923FCA009EB6AE /* CityWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityWebService.swift; sourceTree = "<group>"; };
 		633D1A412488B7910085AC56 /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
-		63432F89248F5D37006BA322 /* ThemeBottomDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeBottomDialog.swift; sourceTree = "<group>"; };
 		63435B4824769C4900AF7100 /* AlamofireHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireHelper.swift; sourceTree = "<group>"; };
 		63435B4924769C4900AF7100 /* AppWebApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppWebApi.swift; sourceTree = "<group>"; };
 		63435B4A24769C4900AF7100 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -954,6 +966,16 @@
 				03280D8B24D03F7300EF06E5 /* ServiceCollapseCell.swift */,
 			);
 			path = ServiceCollapseCell;
+			sourceTree = "<group>";
+		};
+		033E822D24EBDBBC00E71506 /* BottomDialog */ = {
+			isa = PBXGroup;
+			children = (
+				033E822E24EBDBBC00E71506 /* ThemeBottomDialog.swift */,
+				033E823024EBDC1100E71506 /* ThemeBottomDialog + Animation.swift */,
+				033E823224EBDC3F00E71506 /* ThemeBottomDialog + Gradient.swift */,
+			);
+			path = BottomDialog;
 			sourceTree = "<group>";
 		};
 		03406F7824E2D8F50014AC99 /* GiftVoucherVC */ = {
@@ -1999,6 +2021,7 @@
 		0348771F24B2EF62006774AB /* HelperVC */ = {
 			isa = PBXGroup;
 			children = (
+				0353EB0F24EAA70100584357 /* SlideHelper */,
 				0348772024B2EF62006774AB /* MapLocationVC */,
 				0348772724B2EF62006774AB /* ImagePickerVC */,
 			);
@@ -2906,6 +2929,15 @@
 			path = AddPaymentTblCell;
 			sourceTree = "<group>";
 		};
+		0353EB0F24EAA70100584357 /* SlideHelper */ = {
+			isa = PBXGroup;
+			children = (
+				0353EB1024EAA70100584357 /* SlideView.swift */,
+				0353EB1224EAA71D00584357 /* SlideVC.swift */,
+			);
+			path = SlideHelper;
+			sourceTree = "<group>";
+		};
 		035CB15424E12ADF00C2D5C6 /* CustomServiceCenterSelectionDialog */ = {
 			isa = PBXGroup;
 			children = (
@@ -3464,7 +3496,9 @@
 			children = (
 				633D1A412488B7910085AC56 /* PinterestLayout.swift */,
 				634BB76E2461268B00494379 /* ThemeView.swift */,
-				63432F89248F5D37006BA322 /* ThemeBottomDialog.swift */,
+				033E823424EBEBB100E71506 /* ThemeScrollView.swift */,
+				0353EB0B24EA52A400584357 /* ThemeImageView.swift */,
+				033E822D24EBDBBC00E71506 /* BottomDialog */,
 				634397C2245BE6DF009BCA1F /* Main.swift */,
 				633B7124245FDA5800CF490D /* ThemeButton.swift */,
 				633B7125245FDA5800CF490D /* ThemeLabel.swift */,
@@ -3843,6 +3877,7 @@
 				0348786B24B2EF64006774AB /* CustomHistoryFilterPicker.swift in Sources */,
 				0348782524B2EF64006774AB /* MyAddressVC.swift in Sources */,
 				0344499524B604A000C8B763 /* PressureSelectionTblCell.swift in Sources */,
+				033E822F24EBDBBC00E71506 /* ThemeBottomDialog.swift in Sources */,
 				0348783024B2EF64006774AB /* UIImage+FixOrientation.swift in Sources */,
 				0382C04E24ACB91E0041A4B6 /* TherapistQuastionariesWebservice.swift in Sources */,
 				034449B324B604C000C8B763 /* CustomDistanceUnitPicker.swift in Sources */,
@@ -3855,11 +3890,13 @@
 				0383B28B24B86C26003622F6 /* CustomButtonTblCell.swift in Sources */,
 				03D77F3D24AB2FAF0098DD01 /* JDImageExtension.swift in Sources */,
 				03AA725C24B6E3EA00F3B002 /* UBottomSheetCoordinator.swift in Sources */,
+				0353EB1124EAA70100584357 /* SlideView.swift in Sources */,
 				0361A41B24E503BC00068C81 /* DesignCltCell.swift in Sources */,
 				03AA725B24B6E3EA00F3B002 /* UBottomSheetCoordinatorDataSource.swift in Sources */,
 				635675F4249A1D69006F5511 /* PricingLocationWebService.swift in Sources */,
 				0344496F24B6045F00C8B763 /* CustomAlert.swift in Sources */,
 				0383B27C24B80F2C003622F6 /* ReviewReciepentTblCell.swift in Sources */,
+				033E823124EBDC1100E71506 /* ThemeBottomDialog + Animation.swift in Sources */,
 				034878A024B2EF64006774AB /* CustomChatDialog.swift in Sources */,
 				03AA726024B6E3EA00F3B002 /* Draggable.swift in Sources */,
 				633B7126245FDA5800CF490D /* ThemeTextField.swift in Sources */,
@@ -3913,6 +3950,7 @@
 				0348785624B2EF64006774AB /* ServiceMapVC.swift in Sources */,
 				0348789D24B2EF64006774AB /* HelpTblCell.swift in Sources */,
 				03AA725924B6E3EA00F3B002 /* UBottomSheetCoordinatorDelegate.swift in Sources */,
+				0353EB1324EAA71D00584357 /* SlideVC.swift in Sources */,
 				0348782424B2EF64006774AB /* MyAddressTblCell.swift in Sources */,
 				63435B5124769C4900AF7100 /* ResponseModel.swift in Sources */,
 				0348783F24B2EF64006774AB /* VerificationAlert.swift in Sources */,
@@ -3935,9 +3973,10 @@
 				0348788D24B2EF64006774AB /* NotificationTblCell.swift in Sources */,
 				0345C66B24C9A7B600873FD1 /* ReservationVC.swift in Sources */,
 				0348789524B2EF64006774AB /* CampaignsTblCell.swift in Sources */,
+				033E823324EBDC3F00E71506 /* ThemeBottomDialog + Gradient.swift in Sources */,
 				0348782124B2EF64006774AB /* MyTherapistTblCell.swift in Sources */,
 				035CB15824E12ADF00C2D5C6 /* CustomServiceCenterSelectionDialog.swift in Sources */,
-				63432F8A248F5D37006BA322 /* ThemeBottomDialog.swift in Sources */,
+				0353EB0C24EA52A400584357 /* ThemeImageView.swift in Sources */,
 				036CEF4D24E25FC300E349FF /* CustomAmountTextFieldDialog.swift in Sources */,
 				0348785B24B2EF64006774AB /* CustomServiceHourSelectionDialog.swift in Sources */,
 				0348783E24B2EF64006774AB /* OTPTextField.swift in Sources */,
@@ -3957,6 +3996,7 @@
 				0348789324B2EF64006774AB /* CampaignsVC.swift in Sources */,
 				0344384224C1BC5D0066DDCA /* ReciepentTblFooter.swift in Sources */,
 				0365CDB024C995AA00E1361B /* AccessorySelectionDialog.swift in Sources */,
+				033E823524EBEBB100E71506 /* ThemeScrollView.swift in Sources */,
 				0344490424B5FA1600C8B763 /* ServiceMap + MapView.swift in Sources */,
 				0344496324B6045F00C8B763 /* CustomDatePicker.swift in Sources */,
 				632DB09A248FA5CC00B65B46 /* String + Validation.swift in Sources */,

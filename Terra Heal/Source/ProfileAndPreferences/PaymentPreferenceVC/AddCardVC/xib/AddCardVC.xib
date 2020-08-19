@@ -14,10 +14,13 @@
                 <outlet property="btnAddCard" destination="Rvk-lS-msT" id="bs9-BV-8tD"/>
                 <outlet property="btnCheckBox" destination="VHu-bC-x3D" id="kr7-Hw-CRh"/>
                 <outlet property="btnLeft" destination="3SF-7Z-2TP" id="mtL-8W-BdH"/>
+                <outlet property="footerGradient" destination="mi4-D7-vhf" id="0YV-1E-Zn6"/>
+                <outlet property="headerGradient" destination="YtI-tc-6lz" id="VKW-J7-nd6"/>
                 <outlet property="lblAccept" destination="iEj-mm-tga" id="n85-4C-AL4"/>
                 <outlet property="lblSaveDetailMsg" destination="YY9-pR-ePc" id="Ntg-Az-IBj"/>
                 <outlet property="lblTitle" destination="1tb-db-H1r" id="373-Hd-Rxf"/>
                 <outlet property="lblTitleMessage" destination="j8d-Xr-oPG" id="Nti-Ve-pX0"/>
+                <outlet property="mainScrollView" destination="xeM-9R-86B" id="J7C-as-ACl"/>
                 <outlet property="txtCardName" destination="EnU-5E-Jr6" id="Klv-XX-HDH"/>
                 <outlet property="txtCardNumber" destination="rMz-88-9Ib" id="Zqg-Wq-O4m"/>
                 <outlet property="txtCvv" destination="Okc-Yb-j3m" id="cuO-AN-LZw"/>
@@ -31,7 +34,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeM-9R-86B" userLabel="scrVw">
-                    <rect key="frame" x="0.0" y="130.5" width="340" height="686.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="340" height="817"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQc-C6-2jQ" userLabel="vwContent">
                             <rect key="frame" x="0.0" y="0.0" width="340" height="381.5"/>
@@ -148,6 +151,35 @@
                         <constraint firstAttribute="trailing" secondItem="eQc-C6-2jQ" secondAttribute="trailing" id="zQx-ud-aiC"/>
                     </constraints>
                 </scrollView>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K0P-Ek-R05" userLabel="GradientView">
+                    <rect key="frame" x="0.0" y="0.0" width="340" height="817"/>
+                    <subviews>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YtI-tc-6lz" userLabel="TopGradient" customClass="ThemeTopGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="340" height="110.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mi4-D7-vhf" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="762.5" width="340" height="54.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="mi4-D7-vhf" firstAttribute="centerX" secondItem="K0P-Ek-R05" secondAttribute="centerX" id="12w-p0-jjr"/>
+                        <constraint firstItem="YtI-tc-6lz" firstAttribute="top" secondItem="K0P-Ek-R05" secondAttribute="top" id="Aq9-oP-TNT"/>
+                        <constraint firstItem="mi4-D7-vhf" firstAttribute="width" secondItem="K0P-Ek-R05" secondAttribute="width" id="Zb8-uR-jS7"/>
+                        <constraint firstItem="YtI-tc-6lz" firstAttribute="centerX" secondItem="K0P-Ek-R05" secondAttribute="centerX" id="a6z-g0-Qze"/>
+                        <constraint firstAttribute="bottom" secondItem="mi4-D7-vhf" secondAttribute="bottom" id="d1B-ZB-1eT"/>
+                        <constraint firstItem="mi4-D7-vhf" firstAttribute="height" secondItem="YtI-tc-6lz" secondAttribute="height" priority="250" id="phO-9b-Saa"/>
+                        <constraint firstItem="YtI-tc-6lz" firstAttribute="width" secondItem="K0P-Ek-R05" secondAttribute="width" id="zyq-eA-XWE"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewm-RK-wjj" userLabel="footerView">
                     <rect key="frame" x="0.0" y="762.5" width="340" height="54.5"/>
                     <subviews>
@@ -202,13 +234,19 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ewm-RK-wjj" secondAttribute="bottom" id="AlV-Ti-dul"/>
                 <constraint firstItem="ewm-RK-wjj" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="Aum-3F-brz"/>
                 <constraint firstItem="1tb-db-H1r" firstAttribute="leading" secondItem="3SF-7Z-2TP" secondAttribute="trailing" constant="20" id="KlP-IC-XUy"/>
+                <constraint firstItem="K0P-Ek-R05" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="LvZ-kI-3wy"/>
                 <constraint firstItem="j8d-Xr-oPG" firstAttribute="top" secondItem="1tb-db-H1r" secondAttribute="bottom" constant="5" id="PLk-Zg-Fjq"/>
                 <constraint firstItem="1tb-db-H1r" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Rq6-9w-2QR"/>
-                <constraint firstItem="xeM-9R-86B" firstAttribute="top" secondItem="j8d-Xr-oPG" secondAttribute="bottom" constant="20" id="YX6-mq-Cdv"/>
+                <constraint firstItem="xeM-9R-86B" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="YX6-mq-Cdv"/>
                 <constraint firstItem="3SF-7Z-2TP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="d89-G6-Zgu"/>
                 <constraint firstItem="xeM-9R-86B" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dTB-Cw-ZXo"/>
+                <constraint firstAttribute="trailing" secondItem="K0P-Ek-R05" secondAttribute="trailing" id="eGG-7z-x95"/>
                 <constraint firstItem="3SF-7Z-2TP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="erj-WB-AAn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="K0P-Ek-R05" secondAttribute="bottom" id="kUV-ia-FpJ"/>
                 <constraint firstItem="j8d-Xr-oPG" firstAttribute="leading" secondItem="1tb-db-H1r" secondAttribute="leading" id="pw0-rI-EPI"/>
+                <constraint firstItem="K0P-Ek-R05" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="qfd-4x-42V"/>
+                <constraint firstItem="mi4-D7-vhf" firstAttribute="top" secondItem="ewm-RK-wjj" secondAttribute="top" id="reR-GD-gYa"/>
+                <constraint firstItem="YtI-tc-6lz" firstAttribute="bottom" secondItem="j8d-Xr-oPG" secondAttribute="bottom" id="vy0-3k-DBY"/>
                 <constraint firstItem="1tb-db-H1r" firstAttribute="centerY" secondItem="3SF-7Z-2TP" secondAttribute="centerY" id="w3j-AY-Wt4"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

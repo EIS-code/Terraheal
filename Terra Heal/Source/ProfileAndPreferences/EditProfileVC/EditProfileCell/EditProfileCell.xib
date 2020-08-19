@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="290" height="60"/>
                         <subviews>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NEu-dK-q3n" customClass="EditProfileTextfield" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="10" y="5" width="270" height="50"/>
+                                <rect key="frame" x="10" y="0.0" width="270" height="60"/>
                                 <color key="textColor" name="theme_light_text_color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -66,14 +66,14 @@
                         </subviews>
                         <color key="backgroundColor" name="theme_primary_light_background"/>
                         <constraints>
-                            <constraint firstItem="NEu-dK-q3n" firstAttribute="top" secondItem="582-VR-E0n" secondAttribute="top" constant="5" id="3AL-KX-E2X"/>
+                            <constraint firstItem="NEu-dK-q3n" firstAttribute="top" secondItem="582-VR-E0n" secondAttribute="top" id="3AL-KX-E2X"/>
                             <constraint firstItem="Cr6-m1-qG1" firstAttribute="top" secondItem="OOc-tD-A2C" secondAttribute="top" id="7Ox-MI-8ae"/>
                             <constraint firstItem="Cr6-m1-qG1" firstAttribute="trailing" secondItem="OOc-tD-A2C" secondAttribute="trailing" id="8kG-si-sS5"/>
                             <constraint firstAttribute="trailing" secondItem="OOc-tD-A2C" secondAttribute="trailing" constant="10" id="BCH-wy-LxD"/>
                             <constraint firstItem="NEu-dK-q3n" firstAttribute="centerY" secondItem="582-VR-E0n" secondAttribute="centerY" id="JhO-ST-sgh"/>
-                            <constraint firstItem="NEu-dK-q3n" firstAttribute="leading" secondItem="582-VR-E0n" secondAttribute="leading" constant="10" id="SCE-AE-6Bq"/>
                             <constraint firstItem="OOc-tD-A2C" firstAttribute="top" secondItem="582-VR-E0n" secondAttribute="top" constant="10" id="lBt-vT-1Fc"/>
-                            <constraint firstItem="NEu-dK-q3n" firstAttribute="width" secondItem="582-VR-E0n" secondAttribute="width" constant="-20" id="pfr-FO-oXK"/>
+                            <constraint firstItem="NEu-dK-q3n" firstAttribute="leading" secondItem="582-VR-E0n" secondAttribute="leading" constant="10" id="ync-wN-5Z0"/>
+                            <constraint firstItem="NEu-dK-q3n" firstAttribute="centerX" secondItem="582-VR-E0n" secondAttribute="centerX" id="zu8-RQ-aam"/>
                         </constraints>
                     </view>
                 </subviews>

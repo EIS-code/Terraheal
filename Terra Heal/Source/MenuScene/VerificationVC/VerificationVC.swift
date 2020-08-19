@@ -58,7 +58,7 @@ class VerificationVC: MainVC {
             self.tableView?.reloadData(heightToFit: self.hTblVw, {
 
             })
-            self.btnVerified.setHighlighted(isHighlighted: true)
+            self.btnVerified?.setupFilledButton()
         }
 
 

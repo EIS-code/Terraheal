@@ -173,7 +173,7 @@
     </objects>
     <resources>
         <image name="asset-cross" width="44" height="44"/>
-        <image name="asset-location" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="asset-location" width="10" height="16"/>
         <image name="asset-my-location" width="36" height="36"/>
         <image name="asset-search" width="10.666666984558105" height="10.666666984558105"/>
         <namedColor name="theme_background">

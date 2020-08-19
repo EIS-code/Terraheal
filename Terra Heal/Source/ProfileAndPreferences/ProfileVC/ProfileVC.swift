@@ -57,8 +57,8 @@ struct ProfileItemDetail {
 }
 
 
-class ProfileVC: MainVC {
-
+class ProfileVC: SlideVC {
+    
     @IBOutlet weak var btnProfile: FloatingRoundButton!
     @IBOutlet weak var btnMenu: FloatingRoundButton!
     @IBOutlet weak var lblEmail: ThemeLabel!
@@ -71,11 +71,12 @@ class ProfileVC: MainVC {
     var kTableHeaderHeight:CGFloat = 300.0
     @IBOutlet weak var scrVw: UIScrollView!
     @IBOutlet weak var headerView: UIView!
-
+    
+    @IBOutlet weak var ivUser: RoundedImageView!
     @IBOutlet weak var hVwContent: NSLayoutConstraint!
-
-
-
+    
+    
+    
     var arrForMenu: [ProfileItemDetail] = [
         ProfileItemDetail(type: ProfileMenu.MyProfile,  image: ImageAsset.ProfileMenu.myProfile),
         ProfileItemDetail(type: ProfileMenu.Varification, image: ImageAsset.ProfileMenu.varification),
@@ -91,8 +92,6 @@ class ProfileVC: MainVC {
         //,ProfileItemDetail(type: ProfileMenu.KycVerification,  image: ""),
     ]
     
-     
-   
     
     
     
@@ -100,46 +99,56 @@ class ProfileVC: MainVC {
     
     
     
+    
+    static let shared: ProfileVC = {
+        let instance: ProfileVC = ProfileVC.fromNib()
+        return instance
+    }()
     
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
-
+    
     private func setup() {
-
-
+        
+        
     }
-
+    
     // MARK: View lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
         self.headerView.layoutIfNeeded()
-       self.kTableHeaderHeight = self.headerView.frame.height
-       scrVw.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
-
+        self.kTableHeaderHeight = self.headerView.frame.height
+        scrVw.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
+        
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if appSingleton.user.profilePhoto.isEmpty() {
+                   self.ivUser.image = UIImage.init(named: ImageAsset.Placeholder.user)
+               } else {
+                   self.ivUser.downloadedFrom(link: appSingleton.user.profilePhoto)
+               }
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
+        
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-
+        
         if self.isViewAvailable() {
             
             //self.updateHeaderView()
@@ -147,7 +156,7 @@ class ProfileVC: MainVC {
             self.vwBg?.setShadow()
         }
     }
-
+    
     private func initialViewSetup() {
         self.view.backgroundColor = UIColor.themeBackground
         self.lblEmail?.text = appSingleton.user.email
@@ -159,25 +168,27 @@ class ProfileVC: MainVC {
         self.lblDescription?.text = "description goes here."//appSingleton.user.name
         self.lblDescription?.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.setupTableView(tableView: self.tableView)
+       
     }
-
+    
     // MARK: - Action Methods
     @IBAction func btnMenuTapped(_ sender: Any) {
-    
+        
     }
-
+    
     @IBAction func btnProfileTapped(_ sender: Any) {
-         _ = (self.navigationController as? NC)?.popVC()
+        ProfileVC.shared.hide()
+        //_ = (self.navigationController as? NC)?.popVC()
     }
 }
 
 
 extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegate {
-
+    
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-tableView.backgroundColor = .clear
+        tableView.backgroundColor = .clear
         self.scrVw.delegate = self
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = 60
@@ -187,32 +198,32 @@ tableView.backgroundColor = .clear
         tableView.tableFooterView = UIView()
         self.updateHeaderView()
     }
-
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         updateHeaderView()
     }
-
+    
     func updateHeaderView() {
-
+        
         if self.scrVw.contentOffset.y < -20 {
             let y = abs(self.scrVw.contentOffset.y)
             let transLation = y/kTableHeaderHeight
             self.tableView.isScrollEnabled = false
             headerView.alpha = transLation
             headerView.transform = CGAffineTransform.init(scaleX: transLation, y: transLation)
-
+            
         } else {
             headerView.alpha = 0.0
             self.tableView.isScrollEnabled = true
         }
         
     }
-
-
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrForMenu.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTblCell.name, for: indexPath) as?  ProfileTblCell
         cell?.layoutIfNeeded()

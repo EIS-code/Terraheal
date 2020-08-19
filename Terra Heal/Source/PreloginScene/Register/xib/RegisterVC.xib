@@ -25,13 +25,15 @@
                 <outlet property="btnLogin" destination="sVN-Hj-vhs" id="UJ8-ur-6Zs"/>
                 <outlet property="btnSignUp" destination="KCc-Ig-liE" id="WXo-0Q-0qW"/>
                 <outlet property="btnTermsCondition" destination="3ht-US-BsD" id="PPd-Uf-yBX"/>
+                <outlet property="footerGradient" destination="I36-iZ-XgI" id="J4r-uY-f3Q"/>
                 <outlet property="hVwContent" destination="Ucj-XE-hyn" id="xWx-CE-0na"/>
+                <outlet property="headerGradient" destination="O7d-Bi-850" id="TLz-r8-NWT"/>
                 <outlet property="ivHeader" destination="Gf0-PD-r8o" id="56I-td-tLE"/>
                 <outlet property="lblAccept" destination="EOR-Lw-zpD" id="DBN-hi-2Ll"/>
                 <outlet property="lblAlreadyMember" destination="aEl-P4-Xko" id="o9C-ad-YuN"/>
                 <outlet property="lblConnect" destination="vUJ-Um-wtc" id="cG5-L7-HMM"/>
                 <outlet property="lblMessage" destination="7jV-sf-aUO" id="At4-da-45B"/>
-                <outlet property="scrVw" destination="Agl-Wb-btm" id="bu9-vP-nMg"/>
+                <outlet property="mainScrollView" destination="Agl-Wb-btm" id="Q3d-67-epP"/>
                 <outlet property="txtConfirmPassword" destination="bTc-Ja-HUs" id="nae-n5-YQM"/>
                 <outlet property="txtCountryPhoneCode" destination="SYQ-bq-Hmf" id="Z75-ua-fmF"/>
                 <outlet property="txtEmail" destination="0Yb-4K-vhh" id="b7b-CD-Rmu"/>
@@ -50,11 +52,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-register-top" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gf0-PD-r8o" userLabel="ivHeader">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
-                </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agl-Wb-btm" userLabel="scrVw">
-                    <rect key="frame" x="37.666666666666657" y="53" width="300" height="725"/>
+                    <rect key="frame" x="37.666666666666657" y="44" width="300" height="734"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hp5-yH-riX" userLabel="vwContent">
                             <rect key="frame" x="0.0" y="0.0" width="300" height="743.66666666666663"/>
@@ -287,16 +286,53 @@ to sign back in</string>
                         <constraint firstItem="hp5-yH-riX" firstAttribute="top" secondItem="Agl-Wb-btm" secondAttribute="top" id="kqv-yZ-rqA"/>
                     </constraints>
                 </scrollView>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgA-It-QT8" userLabel="GradientView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <subviews>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O7d-Bi-850" userLabel="TopGradient" customClass="ThemeTopGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I36-iZ-XgI" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="759" width="375" height="53"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="I36-iZ-XgI" firstAttribute="width" secondItem="kgA-It-QT8" secondAttribute="width" id="4lC-83-Vfp"/>
+                        <constraint firstItem="O7d-Bi-850" firstAttribute="centerX" secondItem="kgA-It-QT8" secondAttribute="centerX" id="9d3-ES-0Dr"/>
+                        <constraint firstItem="I36-iZ-XgI" firstAttribute="centerX" secondItem="kgA-It-QT8" secondAttribute="centerX" id="BYH-hQ-TH5"/>
+                        <constraint firstAttribute="bottom" secondItem="I36-iZ-XgI" secondAttribute="bottom" id="WiR-vI-ed3"/>
+                        <constraint firstItem="I36-iZ-XgI" firstAttribute="height" secondItem="O7d-Bi-850" secondAttribute="height" priority="250" id="anK-W6-oIc"/>
+                        <constraint firstItem="O7d-Bi-850" firstAttribute="width" secondItem="kgA-It-QT8" secondAttribute="width" id="wG8-Y5-Qxi"/>
+                        <constraint firstItem="O7d-Bi-850" firstAttribute="top" secondItem="kgA-It-QT8" secondAttribute="top" id="yUr-YU-IYf"/>
+                    </constraints>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-register-top" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gf0-PD-r8o" userLabel="ivHeader">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="kgA-It-QT8" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="6to-mo-u8a"/>
                 <constraint firstItem="Gf0-PD-r8o" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ewv-al-LPV"/>
                 <constraint firstItem="Gf0-PD-r8o" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="KNd-cn-8lk"/>
+                <constraint firstAttribute="bottom" secondItem="kgA-It-QT8" secondAttribute="bottom" id="LTe-RM-URw"/>
                 <constraint firstItem="Agl-Wb-btm" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="Odt-I1-6CX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Agl-Wb-btm" secondAttribute="bottom" id="TPz-Zk-G3f"/>
+                <constraint firstItem="O7d-Bi-850" firstAttribute="bottom" secondItem="Gf0-PD-r8o" secondAttribute="bottom" id="UNc-E3-LNk"/>
+                <constraint firstItem="kgA-It-QT8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bho-wi-YJR"/>
                 <constraint firstItem="Gf0-PD-r8o" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="efa-wZ-auw"/>
                 <constraint firstItem="Agl-Wb-btm" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="t1S-Y5-R9B"/>
-                <constraint firstItem="Agl-Wb-btm" firstAttribute="top" secondItem="Gf0-PD-r8o" secondAttribute="bottom" id="xu9-De-egx"/>
+                <constraint firstItem="kgA-It-QT8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="tbY-3W-bmO"/>
+                <constraint firstItem="Agl-Wb-btm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="xu9-De-egx"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="130.40000000000001" y="153.69458128078819"/>
@@ -307,7 +343,7 @@ to sign back in</string>
         <image name="asset-social-login-fb" width="16.333333969116211" height="30"/>
         <image name="asset-social-login-google" width="29.666666030883789" height="30"/>
         <namedColor name="theme_dark_text">
-            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

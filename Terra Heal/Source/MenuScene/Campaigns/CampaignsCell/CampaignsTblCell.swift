@@ -29,7 +29,7 @@ class CampaignsTblCell: TableCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
-        self.btnDetails.setHighlighted(isHighlighted: false)
+        self.btnDetails?.setupBorderedButton()
         
 
     }

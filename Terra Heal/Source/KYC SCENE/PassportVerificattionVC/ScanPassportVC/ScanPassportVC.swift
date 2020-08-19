@@ -51,7 +51,7 @@ class ScanPassportVC: MainVC, AVCapturePhotoCaptureDelegate {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.btnScanNow?.setHighlighted(isHighlighted: true)
+        self.btnScanNow?.setupFilledButton()
          self.previewView?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
     }
 

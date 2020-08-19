@@ -42,7 +42,7 @@ class RecipentMassageManageDialog: ThemeBottomDialogView {
     }
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.btnAddReciepent.setHighlighted(isHighlighted: true)
+        self.btnAddReciepent?.setupFilledButton()
     }
     
     override func initialSetup() {

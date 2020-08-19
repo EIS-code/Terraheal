@@ -52,7 +52,7 @@ class CustomCountryPhoneCodePicker: ThemeBottomDialogView {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.btnDone?.layoutIfNeeded()
-        self.btnDone?.setHighlighted(isHighlighted: true)
+        self.btnDone?.setupFilledButton()
         self.reloadTableDateToFitHeight(tableView: self.tableView)
         self.searchVw.setRound(withBorderColor: .clear, andCornerRadious: self.searchVw.bounds.height/2.0, borderWidth: 1.0)
     }

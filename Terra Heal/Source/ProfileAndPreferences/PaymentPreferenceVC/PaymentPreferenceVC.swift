@@ -75,8 +75,8 @@ class PaymentPreferenceVC: MainVC {
             self.vwCreditCardDetail?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
             self.btnDefault.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
             self.reloadTableDataToFitHeight(tableView: self.tableView, height: self.hTblVw)
-            self.btnSubmit?.setHighlighted(isHighlighted: true)
-            self.btnAddPayment?.setHighlighted(isHighlighted: false)
+            self.btnSubmit?.setupFilledButton()
+            self.btnAddPayment?.setupBorderedButton()
         }
     }
     
@@ -96,10 +96,10 @@ class PaymentPreferenceVC: MainVC {
         self.btnDefault?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnSubmit?.setTitle("PAYMENT_BTN_ADD_NEW".localized(), for: .normal)
         self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnSubmit?.setHighlighted(isHighlighted: true)
+        self.btnSubmit?.setupFilledButton()
         self.btnAddPayment?.setTitle("PAYMENT_BTN_ADD_NEW_PAYMENT".localized(), for: .normal)
         self.btnAddPayment?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnAddPayment?.setHighlighted(isHighlighted: false)
+        self.btnAddPayment?.setupBorderedButton()
         self.setupTableView(tableView: self.tableView)
         self.btnBack.setBackButton()
         self.btnAddPayment.addTarget(self, action: #selector(btnAddPaymentTapped(_:)), for: .touchUpInside)

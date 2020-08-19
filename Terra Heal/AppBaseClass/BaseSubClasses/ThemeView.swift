@@ -10,8 +10,87 @@ class ThemeView: UIView {
     
 
 }
+class ThemeTopGradientView: UIView {
+    var gradientLayer: CAGradientLayer? = nil
+    @IBInspectable open var enableGradient : Bool = false {
+           didSet{
+               self.addGradientFade()
+           }
+    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = .clear
+        self.addGradientFade()
+    }
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.backgroundColor = .clear
+        self.addGradientFade()
+    }
+    override func layoutSubviews() {
+        self.gradientLayer?.frame = self.bounds
+    }
+    
+    func addGradientFade() {
+        if enableGradient {
+                gradientLayer =  CAGradientLayer()
+                let gradientColor = UIColor.white
+                gradientLayer!.frame = self.bounds
+                gradientLayer!.colors = [gradientColor.withAlphaComponent(1.0).cgColor,gradientColor.withAlphaComponent(0.8).cgColor, gradientColor.withAlphaComponent(0.5).cgColor,gradientColor.withAlphaComponent(0.0).cgColor]
+                gradientLayer!.name = "gradient"
 
+                if let oldLayer:  CAGradientLayer = self.layer.sublayers?.last(where: { (currentLayer) -> Bool in
+                    return currentLayer.name == "topGradient"
+                }) as?  CAGradientLayer {
+                    oldLayer.removeFromSuperlayer()
+                }
+            self.layer.addSublayer(gradientLayer!)
+        } else {
+            gradientLayer = nil
+        }
+    }
+}
 
+class ThemeBottomGradientView: UIView {
+    var gradientLayer: CAGradientLayer? = nil
+    @IBInspectable open var enableGradient : Bool = false {
+           didSet{
+               self.addGradientFade()
+           }
+    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = .clear
+        self.addGradientFade()
+    }
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.backgroundColor = .clear
+        self.addGradientFade()
+    }
+    override func layoutSubviews() {
+        self.gradientLayer?.frame = self.bounds
+    }
+    
+    func addGradientFade() {
+        if enableGradient {
+                gradientLayer =  CAGradientLayer()
+                let gradientColor = UIColor.white
+                gradientLayer!.frame = self.bounds
+                gradientLayer!.colors = [gradientColor.withAlphaComponent(0.0).cgColor,gradientColor.withAlphaComponent(0.5).cgColor, gradientColor.withAlphaComponent(0.8).cgColor,gradientColor.withAlphaComponent(1.0).cgColor]
+                gradientLayer!.name = "gradient"
+
+                if let oldLayer:  CAGradientLayer = self.layer.sublayers?.last(where: { (currentLayer) -> Bool in
+                    return currentLayer.name == "topGradient"
+                }) as?  CAGradientLayer {
+                    oldLayer.removeFromSuperlayer()
+                }
+            self.layer.addSublayer(gradientLayer!)
+        } else {
+            gradientLayer = nil
+        }
+    }
+}
 
 
 extension UIView {
@@ -146,53 +225,5 @@ class CustomSegmentedControl: UISegmentedControl {
             foregroundImageView.layer.maskedCorners = maskedCorners
         }
     }
-}
-
-@IBDesignable class PaddedImageView: UIImageView {
-    @IBInspectable open var padding: CGFloat = 0 {
-        didSet{
-            self.setPadding(padding: self.padding)
-        }
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.setPadding(padding: self.padding)
-    }
-    
-    override init(image: UIImage?) {
-        super.init(image: nil)
-        self.setPadding(padding: self.padding)
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        self.setPadding(padding: self.padding)
-    }
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        //self.setPadding(padding: self.padding)
-    }
-    func setPadding(padding:CGFloat) {
-            self.image = self.image?.imageWithInsets(insetDimen: padding)
-    }
-}
-
-extension UIImage {
-    func imageWithInsets(insetDimen: CGFloat) -> UIImage {
-        return imageWithInset(insets: UIEdgeInsets(top: insetDimen, left: insetDimen, bottom: insetDimen, right: insetDimen))
-    }
-    
-    func imageWithInset(insets: UIEdgeInsets) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(
-            CGSize(width: self.size.width + insets.left + insets.right,
-                   height: self.size.height + insets.top + insets.bottom), false, self.scale)
-        let origin = CGPoint(x: insets.left, y: insets.top)
-        self.draw(at: origin)
-        let imageWithInsets = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return imageWithInsets!
-    }
-    
 }
 
