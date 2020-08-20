@@ -69,6 +69,7 @@ class ThemeBottomGradientView: UIView {
         self.addGradientFade()
     }
     override func layoutSubviews() {
+        
         self.gradientLayer?.frame = self.bounds
     }
     

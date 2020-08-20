@@ -96,7 +96,7 @@ class CustomPreferGenderPicker: ThemeBottomDialogView {
     }
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
     }
 
     @IBAction func btnDoneTapped(_ sender: Any) {
@@ -114,7 +114,7 @@ class CustomPreferGenderPicker: ThemeBottomDialogView {
 
 extension CustomPreferGenderPicker : UITableViewDelegate,UITableViewDataSource {
 
-    private func reloadTableDateToFitHeight(tableView: UITableView) {
+    private func reloadTableDataToFitHeight(tableView: UITableView) {
         tableView.reloadData()
         /*tableView.reloadData(heightToFit: self.hTblVw) {
         }*/

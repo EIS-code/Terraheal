@@ -14,11 +14,10 @@ class RecipentMassageManageDialog: ThemeBottomDialogView {
     @IBOutlet weak var lblTotal: ThemeLabel!
     @IBOutlet weak var lblTotalValue: ThemeLabel!
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var totalView: UIView!
     var arrForData: [BookingInfo] = appSingleton.myBookingData.booking_info
     var sheetCoordinator: UBottomSheetCoordinator?
     var onBtnNextSelectedTapped: ((_ data: [BookingInfo]) -> Void)? = nil
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,8 +39,10 @@ class RecipentMassageManageDialog: ThemeBottomDialogView {
             self.btnNext.isHidden = false
         }
     }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.tableView.contentInset = self.getGradientInset()
         self.btnAddReciepent?.setupFilledButton()
     }
     
@@ -63,7 +64,6 @@ class RecipentMassageManageDialog: ThemeBottomDialogView {
         self.btnAddReciepent.isEnabled = false
         self.openRecipientSelectionDialog()
     }
-    
     
     @IBAction func btnNextTapped(_ sender: Any) {
         self.btnAddReciepent.isEnabled = false
@@ -106,15 +106,13 @@ class RecipentMassageManageDialog: ThemeBottomDialogView {
             self.tableView.reloadData()
         }
     }
-    
-    
 }
 
 
 // MARK: - Table View Delegate & Data source
 
 extension RecipentMassageManageDialog: UITableViewDelegate, UITableViewDataSource {
-    private func reloadTableDateToFitHeight(tableView: UITableView) {
+    private func reloadTableDataToFitHeight(tableView: UITableView) {
         DispatchQueue.main.async {
             tableView.reloadData {
             }
@@ -124,7 +122,7 @@ extension RecipentMassageManageDialog: UITableViewDelegate, UITableViewDataSourc
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-tableView.backgroundColor = .clear
+            tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 40
@@ -137,15 +135,17 @@ tableView.backgroundColor = .clear
         tableView.register(ReciepentTblFooter.nib(), forHeaderFooterViewReuseIdentifier: ReciepentTblFooter.name)
         tableView.register(ReciepentTblSection.nib(), forHeaderFooterViewReuseIdentifier: ReciepentTblSection.name)
         tableView.backgroundColor = .themePrimaryLightBackground
-        //tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView.init()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrForData[section].services.count
     }
+   
     func numberOfSections(in tableView: UITableView) -> Int {
         arrForData.count
     }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let view = tableView.dequeueReusableHeaderFooterView(
             withIdentifier: ReciepentTblSection.name)
@@ -156,6 +156,7 @@ tableView.backgroundColor = .clear
         view.setData(data: arrForData[section].reciepent)
         return view
     }
+    
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         guard let view = tableView.dequeueReusableHeaderFooterView(
             withIdentifier: ReciepentTblFooter.name)
@@ -167,14 +168,15 @@ tableView.backgroundColor = .clear
         view.btnAddService.addTarget(self, action: #selector(addService(sender:)), for: .touchUpInside)
         return view
     }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return  UITableView.automaticDimension
     }
+    
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: ReciepentTblCell.name, for: indexPath) as?  ReciepentTblCell
         cell?.layoutIfNeeded()
         cell?.setData(data: arrForData[indexPath.section].services[indexPath.row])

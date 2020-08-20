@@ -105,14 +105,14 @@
                     <rect key="frame" x="0.0" y="44" width="375" height="768"/>
                     <subviews>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xqw-fa-EAY" userLabel="TopGradient" customClass="ThemeTopGradientView" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="114"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="194"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gw2-Lp-dcG" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="654" width="375" height="114"/>
+                            <rect key="frame" x="0.0" y="574" width="375" height="194"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
@@ -130,33 +130,38 @@
                         <constraint firstItem="Xqw-fa-EAY" firstAttribute="width" secondItem="6T6-f1-ioy" secondAttribute="width" id="qYc-4b-wJA"/>
                     </constraints>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="i27-80-VjO" userLabel="Stack View - Next">
-                    <rect key="frame" x="20" y="698" width="335" height="60"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="i27-80-VjO" userLabel="Stack View - Next">
+                    <rect key="frame" x="20" y="618" width="335" height="140"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uje-OS-aMX" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="98.333333333333329" height="60"/>
-                            <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
-                            <inset key="contentEdgeInsets" minX="10" minY="20" maxX="10" maxY="20"/>
-                            <state key="normal" title="Sign Up">
-                                <color key="titleColor" name="theme_primary"/>
-                            </state>
-                            <connections>
-                                <action selector="btnSignupTapped:" destination="-1" eventType="touchUpInside" id="Gte-sy-eBX"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jj-4I-VWj" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="118.33333333333334" y="0.0" width="98.333333333333343" height="60"/>
-                            <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
-                            <inset key="contentEdgeInsets" minX="10" minY="20" maxX="10" maxY="20"/>
-                            <state key="normal" title="Sign In">
-                                <color key="titleColor" name="theme_primary"/>
-                            </state>
-                            <connections>
-                                <action selector="btnSignInTapped:" destination="-1" eventType="touchUpInside" id="ztv-S7-yVa"/>
-                            </connections>
-                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fz0-q9-FdF">
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="60"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uje-OS-aMX" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="157.66666666666666" height="60"/>
+                                    <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
+                                    <inset key="contentEdgeInsets" minX="10" minY="20" maxX="10" maxY="20"/>
+                                    <state key="normal" title="Sign Up">
+                                        <color key="titleColor" name="theme_primary"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnSignupTapped:" destination="-1" eventType="touchUpInside" id="Gte-sy-eBX"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jj-4I-VWj" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="177.66666666666663" y="0.0" width="157.33333333333337" height="60"/>
+                                    <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
+                                    <inset key="contentEdgeInsets" minX="10" minY="20" maxX="10" maxY="20"/>
+                                    <state key="normal" title="Sign In">
+                                        <color key="titleColor" name="theme_primary"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnSignInTapped:" destination="-1" eventType="touchUpInside" id="ztv-S7-yVa"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPc-yM-mM9" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="236.66666666666671" y="0.0" width="98.333333333333343" height="60"/>
+                            <rect key="frame" x="0.0" y="80" width="335" height="60"/>
                             <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                             <inset key="contentEdgeInsets" minX="10" minY="20" maxX="10" maxY="20"/>
                             <state key="normal" title="Home">

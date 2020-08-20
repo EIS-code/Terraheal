@@ -189,7 +189,7 @@ extension MapLocationVC : UITextFieldDelegate {
                 if self.arrForAdress.count > 0
                 {
                     self.heightForAutoComplete.constant = self.tblAutocomplete.contentSize.height
-                    self.reloadTableDateToFitHeight(tableView: self.tblAutocomplete)
+                    self.reloadTableDataToFitHeight(tableView: self.tblAutocomplete)
                     self.tblAutocomplete.isHidden = false
                 }
                 else
@@ -211,7 +211,7 @@ extension MapLocationVC: UITableViewDataSource,UITableViewDelegate {
     
     
     
-    private func reloadTableDateToFitHeight(tableView: UITableView) {
+    private func reloadTableDataToFitHeight(tableView: UITableView) {
         DispatchQueue.main.async {
             tableView.reloadData(heightToFit: self.heightForAutoComplete) {
                 

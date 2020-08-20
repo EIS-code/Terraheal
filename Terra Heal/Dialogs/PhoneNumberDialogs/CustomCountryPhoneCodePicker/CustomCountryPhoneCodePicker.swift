@@ -53,7 +53,7 @@ class CustomCountryPhoneCodePicker: ThemeBottomDialogView {
         super.layoutSubviews()
         self.btnDone?.layoutIfNeeded()
         self.btnDone?.setupFilledButton()
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
         self.searchVw.setRound(withBorderColor: .clear, andCornerRadious: self.searchVw.bounds.height/2.0, borderWidth: 1.0)
     }
 
@@ -72,7 +72,7 @@ class CustomCountryPhoneCodePicker: ThemeBottomDialogView {
 
 extension CustomCountryPhoneCodePicker : UITableViewDelegate,UITableViewDataSource {
 
-    private func reloadTableDateToFitHeight(tableView: UITableView) {
+    private func reloadTableDataToFitHeight(tableView: UITableView) {
         DispatchQueue.main.async {
 
             tableView.reloadData {
@@ -152,7 +152,7 @@ extension CustomCountryPhoneCodePicker : UITextFieldDelegate {
                 }
             }
         }
-        self.reloadTableDateToFitHeight(tableView: tableView)
+        self.reloadTableDataToFitHeight(tableView: tableView)
     }
 
     @IBAction func searching(_ sender: UITextField) {

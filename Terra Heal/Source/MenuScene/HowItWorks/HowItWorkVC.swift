@@ -78,7 +78,7 @@ class HowItWorkVC: MainVC {
         if self.isViewAvailable() {
             self.tableView?.reloadData({
             })
-            
+            self.tableView?.contentInset = self.getGradientInset()
         }
     }
     

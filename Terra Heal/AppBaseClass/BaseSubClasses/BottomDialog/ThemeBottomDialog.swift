@@ -35,12 +35,16 @@ class ThemeBottomDialogView: ThemeView {
     @IBOutlet weak var btnNext: ThemeButton!
     //Footer Gradient
     @IBOutlet weak var stkButtons: UIView!
-   
+    
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var dialogView: UIView!
     @IBOutlet weak var dialogHeight: NSLayoutConstraint!
     @IBOutlet weak var scrDialogVw: UIScrollView!
-    
+    @IBOutlet weak var headerGradient: ThemeTopGradientView!
+    @IBOutlet weak var footerGradient: ThemeBottomGradientView!
+   
+    @IBOutlet weak var hwHeaderGradient: NSLayoutConstraint!
+    @IBOutlet weak var hwFooterGradient: NSLayoutConstraint!
     var onBtnCancelTapped: (() -> Void)? = nil
     var arrForSteps: [CGFloat]  = []
     //Animation Properties
@@ -57,16 +61,18 @@ class ThemeBottomDialogView: ThemeView {
         self.setupTopBar()
         vwTopBar?.backgroundColor = UIColor.themeDarkText
         self.dialogView.clipsToBounds = true
+        (self.stkButtons as? UIStackView)?.spacing = 10
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-       
+        self.hwHeaderGradient?.constant = (stkHeader?.bounds.height ?? 0) + 20
+        self.hwFooterGradient?.constant = (stkButtons?.bounds.height ?? 0) + 20
         self.vwTopBar?.setRound(withBorderColor: .clear, andCornerRadious: 2.5, borderWidth: 1.0)
         self.dialogView?.roundCorners(corners: [.topLeft,.topRight], radius: 40.0)
         self.btnDone?.layoutIfNeeded()
         self.btnDone?.setupFilledButton()
-        self.scrDialogVw?.contentInset = UIEdgeInsets(top: (stkHeader?.bounds.height ?? 0) + topBarSpace.constant, left: 0, bottom: stkButtons?.bounds.height ?? 0, right: 0)
+        self.scrDialogVw?.contentInset = self.getGradientInset()
     }
     
     deinit {
@@ -93,8 +99,6 @@ class ThemeBottomDialogView: ThemeView {
         self.btnNext?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnDone?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.dialogView?.roundCorners(corners: [.topLeft,.topRight], radius: 40.0)
-        //self.addBottomFade()
-        //self.addTopFade()
     }
     
     func setDialogHeight(height:CGFloat){
@@ -111,7 +115,10 @@ class ThemeBottomDialogView: ThemeView {
             dismiss()
         }
     }
-
+    
+    func getGradientInset() -> UIEdgeInsets {
+        return UIEdgeInsets(top: (stkHeader?.bounds.height ?? 0) + topBarSpace.constant + 20, left: 0, bottom: (stkButtons?.bounds.height ?? 0) + 20, right: 0)
+    }
 }
 
 

@@ -48,6 +48,41 @@
                             <viewLayoutGuide key="contentLayoutGuide" id="cdc-8v-fal"/>
                             <viewLayoutGuide key="frameLayoutGuide" id="cNy-L6-FE1"/>
                         </scrollView>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ra7-qc-OTt" userLabel="GradientView">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="717"/>
+                            <subviews>
+                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJX-39-0aW" userLabel="TopGradient" customClass="ThemeTopGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="53"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="53" id="LCC-UQ-6AU"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="10S-Cx-5X3" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="664" width="414" height="53"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="53" id="fah-UD-2BV"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="10S-Cx-5X3" firstAttribute="height" secondItem="sJX-39-0aW" secondAttribute="height" priority="250" id="1Or-ZX-LS2"/>
+                                <constraint firstItem="10S-Cx-5X3" firstAttribute="width" secondItem="ra7-qc-OTt" secondAttribute="width" id="6Q4-CD-WZE"/>
+                                <constraint firstAttribute="bottom" secondItem="10S-Cx-5X3" secondAttribute="bottom" id="6Wq-tz-NqC"/>
+                                <constraint firstItem="10S-Cx-5X3" firstAttribute="centerX" secondItem="ra7-qc-OTt" secondAttribute="centerX" id="FwG-HR-VMo"/>
+                                <constraint firstItem="sJX-39-0aW" firstAttribute="top" secondItem="ra7-qc-OTt" secondAttribute="top" id="QBG-N7-TIB"/>
+                                <constraint firstItem="sJX-39-0aW" firstAttribute="width" secondItem="ra7-qc-OTt" secondAttribute="width" id="Qai-JJ-guA"/>
+                                <constraint firstItem="sJX-39-0aW" firstAttribute="centerX" secondItem="ra7-qc-OTt" secondAttribute="centerX" id="gAl-Vk-ur5"/>
+                            </constraints>
+                        </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IkD-Wi-84C" userLabel="Stack View - Header">
                             <rect key="frame" x="20.5" y="10" width="373" height="45.5"/>
                             <subviews>
@@ -67,8 +102,8 @@
                                 </label>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cnF-8L-Yeo" userLabel="Stack View - Buttons">
-                            <rect key="frame" x="140" y="322" width="133" height="72"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cnF-8L-Yeo" userLabel="Stack View - Buttons">
+                            <rect key="frame" x="140.5" y="591" width="133" height="72"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUb-de-oW0" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="133" height="40"/>
@@ -96,13 +131,17 @@
                     </subviews>
                     <color key="backgroundColor" name="theme_primary_light_background"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="ra7-qc-OTt" secondAttribute="bottom" id="6Wh-Lx-pAB"/>
                         <constraint firstItem="IkD-Wi-84C" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.9" id="FHm-pc-FEv"/>
                         <constraint firstItem="muj-Ae-Rvi" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.9" id="Llc-6w-cKJ"/>
+                        <constraint firstAttribute="trailing" secondItem="ra7-qc-OTt" secondAttribute="trailing" id="Ose-9c-L2Q"/>
                         <constraint firstItem="muj-Ae-Rvi" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="PXm-Al-meT"/>
                         <constraint firstItem="IkD-Wi-84C" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="PxA-gI-nfN"/>
                         <constraint firstItem="IkD-Wi-84C" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="W5Z-JR-9pQ"/>
                         <constraint firstAttribute="height" constant="717" id="XsX-u6-tYd"/>
+                        <constraint firstItem="ra7-qc-OTt" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" id="Z0k-Do-8lG"/>
                         <constraint firstAttribute="bottom" secondItem="muj-Ae-Rvi" secondAttribute="bottom" id="bhM-xI-MEX"/>
+                        <constraint firstItem="ra7-qc-OTt" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" id="uf1-0P-k5b"/>
                         <constraint firstItem="muj-Ae-Rvi" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="vrE-zN-h8v"/>
                     </constraints>
                 </view>
@@ -113,7 +152,9 @@
                 <constraint firstAttribute="trailing" secondItem="6ZW-DU-hOd" secondAttribute="trailing" id="C4E-pP-AJq"/>
                 <constraint firstAttribute="bottom" secondItem="Yaj-p7-IIT" secondAttribute="bottom" id="JTg-za-1ir"/>
                 <constraint firstItem="6ZW-DU-hOd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O4e-FZ-uqZ"/>
+                <constraint firstItem="cnF-8L-Yeo" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="OwE-eL-STE"/>
                 <constraint firstItem="6ZW-DU-hOd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Q6J-jS-lz5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="cnF-8L-Yeo" secondAttribute="bottom" constant="20" id="jOy-KF-tEJ"/>
                 <constraint firstItem="Yaj-p7-IIT" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" id="pYV-Pm-HG9"/>
                 <constraint firstAttribute="bottom" secondItem="6ZW-DU-hOd" secondAttribute="bottom" id="xcn-ZA-5s5"/>
             </constraints>
@@ -124,6 +165,10 @@
                 <outlet property="btnDone" destination="uUb-de-oW0" id="gY8-Ys-W8x"/>
                 <outlet property="dialogHeight" destination="XsX-u6-tYd" id="NJf-sF-ZaA"/>
                 <outlet property="dialogView" destination="Yaj-p7-IIT" id="Sjt-cS-gvV"/>
+                <outlet property="footerGradient" destination="10S-Cx-5X3" id="h5Z-If-eeS"/>
+                <outlet property="headerGradient" destination="sJX-39-0aW" id="26a-WB-dVG"/>
+                <outlet property="hwFooterGradient" destination="fah-UD-2BV" id="cA4-sX-Upe"/>
+                <outlet property="hwHeaderGradient" destination="LCC-UQ-6AU" id="Lke-3q-Gjf"/>
                 <outlet property="lblMessage" destination="3M5-yW-8Kq" id="rgc-An-7Lc"/>
                 <outlet property="lblTitle" destination="b2V-bl-vu7" id="e4N-Bs-nML"/>
                 <outlet property="scrDialogVw" destination="muj-Ae-Rvi" id="p83-81-mcm"/>

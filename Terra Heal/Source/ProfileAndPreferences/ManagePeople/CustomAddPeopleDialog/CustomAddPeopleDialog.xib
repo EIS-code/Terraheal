@@ -27,7 +27,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="dialogView">
                     <rect key="frame" x="0.0" y="111.5" width="375" height="555.5"/>
                     <subviews>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMU-5Z-1cH" customClass="FadeScrollView" customModule="Terra_Heal" customModuleProvider="target">
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMU-5Z-1cH">
                             <rect key="frame" x="19" y="10" width="337.5" height="545.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="87a-De-Zhb">
@@ -211,6 +211,41 @@
                             <viewLayoutGuide key="contentLayoutGuide" id="NAF-pW-fKq"/>
                             <viewLayoutGuide key="frameLayoutGuide" id="Ar3-t9-FsS"/>
                         </scrollView>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zy8-1t-hOQ" userLabel="GradientView">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="555.5"/>
+                            <subviews>
+                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gC5-Bc-igd" userLabel="TopGradient" customClass="ThemeTopGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="53" id="GoC-So-T97"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzF-mr-NkL" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="502.5" width="375" height="53"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="53" id="8F1-Mh-fYF"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="gC5-Bc-igd" firstAttribute="centerX" secondItem="zy8-1t-hOQ" secondAttribute="centerX" id="0gZ-qW-fSk"/>
+                                <constraint firstItem="gC5-Bc-igd" firstAttribute="top" secondItem="zy8-1t-hOQ" secondAttribute="top" id="3U3-Ou-IGR"/>
+                                <constraint firstItem="tzF-mr-NkL" firstAttribute="height" secondItem="gC5-Bc-igd" secondAttribute="height" priority="250" id="HJx-5O-4Jk"/>
+                                <constraint firstItem="gC5-Bc-igd" firstAttribute="width" secondItem="zy8-1t-hOQ" secondAttribute="width" id="Lpk-4T-mG4"/>
+                                <constraint firstAttribute="bottom" secondItem="tzF-mr-NkL" secondAttribute="bottom" id="kAW-ne-Yhm"/>
+                                <constraint firstItem="tzF-mr-NkL" firstAttribute="centerX" secondItem="zy8-1t-hOQ" secondAttribute="centerX" id="ufT-h0-XOj"/>
+                                <constraint firstItem="tzF-mr-NkL" firstAttribute="width" secondItem="zy8-1t-hOQ" secondAttribute="width" id="vEv-x7-oSi"/>
+                            </constraints>
+                        </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe" userLabel="Stack View - main">
                             <rect key="frame" x="20" y="10" width="335" height="45.5"/>
                             <subviews>
@@ -270,6 +305,9 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" constant="20" id="1HJ-Xp-DOL"/>
                         <constraint firstItem="DMU-5Z-1cH" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.9" id="3ie-4t-ByO"/>
+                        <constraint firstAttribute="bottom" secondItem="zy8-1t-hOQ" secondAttribute="bottom" id="5X9-cB-5tN"/>
+                        <constraint firstItem="zy8-1t-hOQ" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" id="CUX-Ab-7yU"/>
+                        <constraint firstItem="zy8-1t-hOQ" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" id="F5k-QC-k6R"/>
                         <constraint firstAttribute="bottom" secondItem="DMU-5Z-1cH" secondAttribute="bottom" id="I4Y-oC-GsW"/>
                         <constraint firstItem="DMU-5Z-1cH" firstAttribute="top" secondItem="cXW-IL-cWe" secondAttribute="top" id="IZ2-xB-c4P"/>
                         <constraint firstItem="DMU-5Z-1cH" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="MAb-9I-aHO"/>
@@ -278,6 +316,7 @@
                         <constraint firstItem="jjt-92-xa2" firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" id="aLD-m4-gtf"/>
                         <constraint firstAttribute="height" constant="555.5" id="got-qA-Eaw"/>
                         <constraint firstItem="jjt-92-xa2" firstAttribute="top" secondItem="cXW-IL-cWe" secondAttribute="top" id="k4A-Dg-UfR"/>
+                        <constraint firstAttribute="trailing" secondItem="zy8-1t-hOQ" secondAttribute="trailing" id="mGO-wn-5QT"/>
                     </constraints>
                 </view>
             </subviews>
@@ -305,6 +344,10 @@
                 <outlet property="btnTherapistGender" destination="ZCk-lu-hgK" id="2gj-Rq-APH"/>
                 <outlet property="dialogHeight" destination="got-qA-Eaw" id="vob-ME-w1W"/>
                 <outlet property="dialogView" destination="Yaj-p7-IIT" id="Sjt-cS-gvV"/>
+                <outlet property="footerGradient" destination="tzF-mr-NkL" id="I0j-Bm-Ksb"/>
+                <outlet property="headerGradient" destination="gC5-Bc-igd" id="e4J-E0-LBI"/>
+                <outlet property="hwFooterGradient" destination="8F1-Mh-fYF" id="V1c-Ex-oyY"/>
+                <outlet property="hwHeaderGradient" destination="GoC-So-T97" id="NV8-qD-99e"/>
                 <outlet property="imgProfilePic" destination="xrR-hI-5Fr" id="MSe-HV-BIJ"/>
                 <outlet property="ivFemaleSelected" destination="0Gj-VT-xex" id="EZ6-cr-lRL"/>
                 <outlet property="ivMaleSelected" destination="KDS-9J-oFM" id="9QT-Ic-11h"/>

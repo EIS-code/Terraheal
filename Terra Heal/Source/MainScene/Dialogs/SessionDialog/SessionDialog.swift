@@ -11,7 +11,6 @@ import UIKit
 
 class SessionDialog: ThemeBottomDialogView {
     
-    @IBOutlet weak var hTblVw: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     
     var onBtnDoneTapped: ((_ data:SessionDetail) -> Void)? = nil
@@ -61,7 +60,8 @@ class SessionDialog: ThemeBottomDialogView {
                 self.selectedData = value
             }
         }
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
         //self.select(data: self.selectedData)
     }
     override func initialSetup() {
@@ -72,7 +72,7 @@ class SessionDialog: ThemeBottomDialogView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.tableView.contentInset = self.getGradientInset()
     }
     
     @IBAction func btnDoneTapped(_ sender: Any) {
@@ -92,15 +92,15 @@ class SessionDialog: ThemeBottomDialogView {
 
 extension SessionDialog : UITableViewDelegate,UITableViewDataSource {
     
-    private func reloadTableDateToFitHeight(tableView: UITableView) {
-        tableView.reloadData(heightToFit: self.hTblVw) {
+    private func reloadTableDataToFitHeight(tableView: UITableView) {
+        tableView.reloadData {
             
         }
     }
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-tableView.backgroundColor = .clear
+        tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 60

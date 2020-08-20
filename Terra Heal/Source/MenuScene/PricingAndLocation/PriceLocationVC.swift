@@ -130,7 +130,7 @@ class PriceLocationVC: MainVC {
 
 extension PriceLocationVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegate {
 
-    private func reloadTableDateToFitHeight(tableView: UITableView) {
+    private func reloadTableDataToFitHeight(tableView: UITableView) {
         DispatchQueue.main.async {
 
             tableView.reloadData {
@@ -214,7 +214,7 @@ extension PriceLocationVC : UITextFieldDelegate {
                 }
             }
         }
-        self.reloadTableDateToFitHeight(tableView: tableView)
+        self.reloadTableDataToFitHeight(tableView: tableView)
     }
 
 
@@ -233,7 +233,7 @@ extension PriceLocationVC {
                     self.arrForForOriginalData.append(data)
                     self.arrForFilteredData.append(data)
                 }
-                self.reloadTableDateToFitHeight(tableView: self.tableView)
+                self.reloadTableDataToFitHeight(tableView: self.tableView)
             }
             Loader.hideLoading()
         }

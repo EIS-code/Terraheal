@@ -105,7 +105,7 @@ class CustomLanguagePicker: ThemeBottomDialogView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
     }
 
     @IBAction func btnDoneTapped(_ sender: Any) {
@@ -124,7 +124,7 @@ class CustomLanguagePicker: ThemeBottomDialogView {
 
 extension CustomLanguagePicker : UITableViewDelegate,UITableViewDataSource {
 
-    private func reloadTableDateToFitHeight(tableView: UITableView) {
+    private func reloadTableDataToFitHeight(tableView: UITableView) {
         tableView.reloadData(heightToFit: self.hTblVw) {
 
         }

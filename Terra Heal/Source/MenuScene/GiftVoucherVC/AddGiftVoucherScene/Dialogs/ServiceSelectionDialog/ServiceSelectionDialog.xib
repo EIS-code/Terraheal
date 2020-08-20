@@ -28,16 +28,73 @@
                     <rect key="frame" x="0.0" y="268" width="320" height="300"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
-                            <rect key="frame" x="0.0" y="35.5" width="320" height="264.5"/>
+                            <rect key="frame" x="0.0" y="28.5" width="320" height="271.5"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label fsadf dsaf dsafjkdsljfdskajfklsdjaklfjkslad" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-4J-xGz" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="32" y="55.5" width="256" height="41"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" name="theme_primary"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="252" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ps3-Js-7Iq">
+                                    <rect key="frame" x="32" y="0.0" width="256" height="271.5"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="z33-qW-ZLm">
+                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ft1-rW-zTS" userLabel="GradientView">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="271.5"/>
+                                    <subviews>
+                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fxt-a0-TyH" userLabel="TopGradient" customClass="ThemeTopGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="53"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="53" id="g2o-9R-Xsg"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="luh-vP-MYW" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="218.5" width="320" height="53"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="53" id="MKo-CJ-nvw"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="luh-vP-MYW" firstAttribute="width" secondItem="Ft1-rW-zTS" secondAttribute="width" id="54k-ws-jmp"/>
+                                        <constraint firstItem="Fxt-a0-TyH" firstAttribute="centerX" secondItem="Ft1-rW-zTS" secondAttribute="centerX" id="9A9-9T-Yxb"/>
+                                        <constraint firstAttribute="bottom" secondItem="luh-vP-MYW" secondAttribute="bottom" id="VAu-Hx-f32"/>
+                                        <constraint firstItem="luh-vP-MYW" firstAttribute="centerX" secondItem="Ft1-rW-zTS" secondAttribute="centerX" id="aex-cI-WQN"/>
+                                        <constraint firstItem="luh-vP-MYW" firstAttribute="height" secondItem="Fxt-a0-TyH" secondAttribute="height" priority="250" id="bU0-Eb-B6H"/>
+                                        <constraint firstItem="Fxt-a0-TyH" firstAttribute="width" secondItem="Ft1-rW-zTS" secondAttribute="width" id="l6n-uM-yLY"/>
+                                        <constraint firstItem="Fxt-a0-TyH" firstAttribute="top" secondItem="Ft1-rW-zTS" secondAttribute="top" id="n6k-zo-KcD"/>
+                                    </constraints>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ghQ-ak-flk">
+                                    <rect key="frame" x="16" y="38.5" width="288" height="101"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label fsadf dsaf dsafjkdsljfdskajfklsdjaklfjkslad" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSJ-WC-ki0" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="29.5" y="0.0" width="229.5" height="41"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="theme_primary"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JFp-Hf-KDL">
+                                            <rect key="frame" x="80" y="61" width="128" height="40"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="eaj-8N-uwG"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLP-3J-98a" userLabel="vwContent" customClass="JDSegmentedControl" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="96" y="116.5" width="128" height="40"/>
+                                    <rect key="frame" x="96" y="99.5" width="128" height="40"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="Oe6-gz-a6P"/>
@@ -48,45 +105,50 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="252" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ps3-Js-7Iq">
-                                    <rect key="frame" x="32" y="176.5" width="256" height="88"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="z33-qW-ZLm">
-                                        <size key="itemSize" width="128" height="128"/>
-                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    </collectionViewFlowLayout>
-                                </collectionView>
-                                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="93.5" y="204.5" width="133" height="40"/>
-                                    <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
-                                    <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
-                                    <state key="normal" title="Sign In">
-                                        <color key="titleColor" name="theme_primary"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="btnDoneTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="wh8-Sw-Wux"/>
-                                    </connections>
-                                </button>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hmz-rc-diC" userLabel="Stack View - Buttons">
+                                    <rect key="frame" x="93.5" y="181.5" width="133" height="70"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="133" height="40"/>
+                                            <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
+                                            <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
+                                            <state key="normal" title="Sign In">
+                                                <color key="titleColor" name="theme_primary"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="btnDoneTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="wh8-Sw-Wux"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5q-Td-sCp" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="43.5" y="40" width="46" height="30"/>
+                                            <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="btnCancelTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="r0D-Lc-Vpq"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                             <color key="backgroundColor" name="theme_primary_light_background"/>
                             <constraints>
-                                <constraint firstItem="eho-4J-xGz" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="0af-1m-p6W"/>
+                                <constraint firstItem="qLP-3J-98a" firstAttribute="leading" secondItem="JFp-Hf-KDL" secondAttribute="leading" id="7T7-Fx-A4V"/>
                                 <constraint firstItem="ps3-Js-7Iq" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.8" id="8fa-E8-LxJ"/>
                                 <constraint firstItem="qLP-3J-98a" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="Nqr-5k-jFD"/>
-                                <constraint firstItem="ps3-Js-7Iq" firstAttribute="top" secondItem="qLP-3J-98a" secondAttribute="bottom" constant="20" id="PVm-a7-oW5"/>
+                                <constraint firstItem="ps3-Js-7Iq" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" id="PVm-a7-oW5"/>
+                                <constraint firstAttribute="trailing" secondItem="Ft1-rW-zTS" secondAttribute="trailing" id="PZL-ep-kaS"/>
                                 <constraint firstItem="qLP-3J-98a" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.4" id="PuD-0H-uQ9"/>
-                                <constraint firstAttribute="bottom" secondItem="W3s-UH-gbE" secondAttribute="bottom" constant="20" id="c3a-nN-Bx0"/>
+                                <constraint firstItem="qLP-3J-98a" firstAttribute="top" secondItem="JFp-Hf-KDL" secondAttribute="top" id="Tc6-JV-s2x"/>
+                                <constraint firstItem="Ft1-rW-zTS" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" id="Xeb-SS-yd4"/>
                                 <constraint firstItem="ps3-Js-7Iq" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="e3K-nR-VPz"/>
                                 <constraint firstAttribute="bottom" secondItem="ps3-Js-7Iq" secondAttribute="bottom" id="iKl-Bx-2td"/>
-                                <constraint firstItem="W3s-UH-gbE" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="la7-5Y-5S1"/>
-                                <constraint firstItem="qLP-3J-98a" firstAttribute="top" secondItem="eho-4J-xGz" secondAttribute="bottom" constant="20" id="qH6-2W-y1l"/>
-                                <constraint firstItem="eho-4J-xGz" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.8" id="ydI-AK-c6q"/>
+                                <constraint firstItem="Ft1-rW-zTS" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" id="mDj-Ca-v0M"/>
+                                <constraint firstAttribute="bottom" secondItem="Ft1-rW-zTS" secondAttribute="bottom" id="piU-o0-fTt"/>
+                                <constraint firstItem="qLP-3J-98a" firstAttribute="trailing" secondItem="JFp-Hf-KDL" secondAttribute="trailing" id="wP1-EQ-ID6"/>
+                                <constraint firstItem="qLP-3J-98a" firstAttribute="bottom" secondItem="JFp-Hf-KDL" secondAttribute="bottom" id="yRq-a3-rNs"/>
                             </constraints>
                         </view>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center" translatesAutoresizingMaskIntoConstraints="NO" id="az3-5n-QhJ" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="124.5" y="0.0" width="71" height="71"/>
+                            <rect key="frame" x="131.5" y="0.0" width="57" height="57"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="az3-5n-QhJ" secondAttribute="height" multiplier="1:1" priority="999" id="gTw-dh-Adp"/>
                             </constraints>
@@ -102,10 +164,10 @@
                         <constraint firstItem="Yaj-p7-IIT" firstAttribute="centerX" secondItem="V39-84-TsB" secondAttribute="centerX" id="0Vo-2B-aLF"/>
                         <constraint firstItem="az3-5n-QhJ" firstAttribute="centerY" secondItem="Yaj-p7-IIT" secondAttribute="top" id="91X-Ow-Eb7"/>
                         <constraint firstAttribute="height" constant="300" id="BAW-Ip-K82"/>
-                        <constraint firstItem="eho-4J-xGz" firstAttribute="top" secondItem="az3-5n-QhJ" secondAttribute="bottom" constant="20" id="Jzz-tT-W9e"/>
                         <constraint firstAttribute="bottom" secondItem="Yaj-p7-IIT" secondAttribute="bottom" id="Kzi-5I-qTc"/>
                         <constraint firstItem="Yaj-p7-IIT" firstAttribute="width" secondItem="V39-84-TsB" secondAttribute="width" id="MUD-su-Zve"/>
                         <constraint firstItem="az3-5n-QhJ" firstAttribute="top" secondItem="V39-84-TsB" secondAttribute="top" id="RTR-tp-f7u"/>
+                        <constraint firstItem="ghQ-ak-flk" firstAttribute="top" secondItem="az3-5n-QhJ" secondAttribute="bottom" constant="10" id="RxX-AD-7qT"/>
                         <constraint firstItem="az3-5n-QhJ" firstAttribute="centerX" secondItem="V39-84-TsB" secondAttribute="centerX" id="zM4-ht-nd9"/>
                     </constraints>
                 </view>
@@ -113,31 +175,44 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="6ZW-DU-hOd" secondAttribute="trailing" id="C4E-pP-AJq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Hmz-rc-diC" secondAttribute="bottom" constant="20" id="FbO-Os-uX0"/>
                 <constraint firstItem="6ZW-DU-hOd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O4e-FZ-uqZ"/>
                 <constraint firstItem="6ZW-DU-hOd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Q6J-jS-lz5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="V39-84-TsB" secondAttribute="trailing" id="dUH-Mq-8NY"/>
+                <constraint firstItem="ghQ-ak-flk" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="dyC-W3-0gx"/>
+                <constraint firstItem="Hmz-rc-diC" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="jQG-6l-eZv"/>
                 <constraint firstItem="V39-84-TsB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kCB-jR-Feo"/>
                 <constraint firstItem="V39-84-TsB" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="pVs-FU-SqG"/>
+                <constraint firstItem="ghQ-ak-flk" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.9" id="phx-aD-6ep"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="V39-84-TsB" secondAttribute="bottom" id="rX8-mU-2eq"/>
                 <constraint firstAttribute="bottom" secondItem="6ZW-DU-hOd" secondAttribute="bottom" id="xcn-ZA-5s5"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="backgroundView" destination="6ZW-DU-hOd" id="lFA-bQ-tdV"/>
+                <outlet property="btnCancel" destination="M5q-Td-sCp" id="VTM-cv-YBR"/>
                 <outlet property="btnDone" destination="W3s-UH-gbE" id="4jk-wN-Zhb"/>
                 <outlet property="collectionVw" destination="ps3-Js-7Iq" id="Z3t-vo-tQ7"/>
                 <outlet property="contentView" destination="Yaj-p7-IIT" id="zmD-Kv-bDE"/>
                 <outlet property="dialogHeight" destination="BAW-Ip-K82" id="OFe-Uf-nbU"/>
                 <outlet property="dialogView" destination="V39-84-TsB" id="10y-q1-aod"/>
+                <outlet property="footerGradient" destination="luh-vP-MYW" id="56y-al-b8d"/>
+                <outlet property="headerGradient" destination="Fxt-a0-TyH" id="89i-ki-9k1"/>
+                <outlet property="hwFooterGradient" destination="MKo-CJ-nvw" id="cx8-f6-Eh7"/>
+                <outlet property="hwHeaderGradient" destination="g2o-9R-Xsg" id="J4A-uX-WHw"/>
                 <outlet property="ivMassageCenter" destination="az3-5n-QhJ" id="B7p-eD-hDe"/>
-                <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
+                <outlet property="lblTitle" destination="OSJ-WC-ki0" id="4vr-vL-UaB"/>
+                <outlet property="scrDialogVw" destination="ps3-Js-7Iq" id="rlW-Qc-swI"/>
+                <outlet property="stkButtons" destination="Hmz-rc-diC" id="n1N-bz-vLS"/>
+                <outlet property="stkHeader" destination="ghQ-ak-flk" id="PDU-I9-lro"/>
+                <outlet property="topBarSpace" destination="RxX-AD-7qT" id="LvV-xz-SpS"/>
                 <outlet property="vwServiceSelection" destination="qLP-3J-98a" id="k4J-Gd-PBA"/>
             </connections>
             <point key="canvasLocation" x="132" y="131"/>
         </view>
     </objects>
     <resources>
-        <image name="asset-center" width="71" height="71"/>
+        <image name="asset-center" width="57" height="57"/>
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

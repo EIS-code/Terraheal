@@ -67,7 +67,7 @@ class CustomThemePicker: ThemeBottomDialogView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
        
     }
 
@@ -84,7 +84,7 @@ class CustomThemePicker: ThemeBottomDialogView {
 
 extension CustomThemePicker : UITableViewDelegate,UITableViewDataSource {
 
-    private func reloadTableDateToFitHeight(tableView: UITableView) {
+    private func reloadTableDataToFitHeight(tableView: UITableView) {
         DispatchQueue.main.async {
             tableView.reloadData {
             }

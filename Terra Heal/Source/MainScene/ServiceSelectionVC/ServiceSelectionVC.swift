@@ -15,8 +15,14 @@ class ServiceSelectionVC: MainVC {
     var arrForMassage: [ServiceDetail] = []
     var arrForTherapies: [ServiceDetail] = []
     var selectedService: ServiceDetail = ServiceDetail.init(fromDictionary: [:])
+    var massageInfo = MyMassageInfo.init()
     var onBtnServiceSelectedTapped: ((_ data: BookingInfo) -> Void)? = nil
     var bookingDetail:BookingInfo? = nil
+    //Dialogs
+    var durationSelectionDialog: DurationSelectionDialog!
+    var textViewDialog: TextViewDialog!
+    var pressureSelectionDialog: CustomPressurePicker!
+    var genderSelectionDialog: CustomPreferGenderPicker!
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -105,7 +111,7 @@ class ServiceSelectionVC: MainVC {
     
     func openServiceDurationSelection(index: Int) {
         self.selectedService = self.arrForData[index]
-        let durationSelectionDialog: DurationSelectionDialog = DurationSelectionDialog.fromNib()
+        durationSelectionDialog = DurationSelectionDialog.fromNib()
         durationSelectionDialog.initialize(title: "Select duration",message: "note:- 23% VAT is included", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
         durationSelectionDialog.setDataSource(data: arrForData[index].duration)
         durationSelectionDialog.show(animated: true)
@@ -115,9 +121,8 @@ class ServiceSelectionVC: MainVC {
             durationSelectionDialog?.dismiss()
         }
         durationSelectionDialog.onBtnDoneTapped = {
-            [weak durationSelectionDialog, weak self]  (hour) in
+            [weak self]  (hour) in
             guard let self = self else { return } ; print(self)
-            durationSelectionDialog?.dismiss()
             for i in 0..<self.selectedService.duration.count {
                   self.selectedService.duration[i].isSelected = false
                 if self.selectedService.duration[i].id == hour.id {
@@ -125,76 +130,78 @@ class ServiceSelectionVC: MainVC {
                     self.selectedService.selectedDuration = hour
                 }
             }
-            self.bookingDetail?.services.append(self.selectedService)
-            let massageInfo = MyMassageInfo.init()
-            massageInfo.massage_prices_id = self.selectedService.selectedDuration.pricing.id
-            self.bookingDetail?.massage_info.append(massageInfo)
-            self.openPreferGenderPicker()
+           self.massageInfo.massage_prices_id = self.selectedService.selectedDuration.pricing.id
+           self.openPreferGenderPicker()
         }
     }
     func openPreferGenderPicker() {
            if let pressureData = appSingleton.getPreferedGender() {
-               let alert: CustomPreferGenderPicker = CustomPreferGenderPicker.fromNib()
-            alert.initialize(title: MassagePreferenceMenu.GenderPreference.name(), buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
-               alert.setDataSource(data: pressureData.preferenceOptions)
-               alert.show(animated: true)
-               alert.onBtnCancelTapped = {
-                   [weak alert, weak self] in
+            genderSelectionDialog = CustomPreferGenderPicker.fromNib()
+            genderSelectionDialog.initialize(title: MassagePreferenceMenu.GenderPreference.name(), buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+               genderSelectionDialog.setDataSource(data: pressureData.preferenceOptions)
+               genderSelectionDialog.show(animated: true)
+               genderSelectionDialog.onBtnCancelTapped = {
+                   [weak genderSelectionDialog, weak self] in
                    guard let self = self else {return}; print(self)
-                   alert?.dismiss()
+                   genderSelectionDialog?.dismiss()
                }
-               alert.onBtnDoneTapped = {
-                   [weak alert, weak self] (preferenceData) in
+               genderSelectionDialog.onBtnDoneTapped = {
+                   [weak self] (preferenceData) in
                     guard let self = self else { return } ; print(self)
-                    alert?.dismiss()
-                self.bookingDetail?.massage_info.last?.preference = preferenceData.id
+                    self.massageInfo.preference = preferenceData.id
                     self.openPressurerPicker()
                }
            }
     }
     func openPressurerPicker() {
         if let pressureData = appSingleton.getPressureDetail() {
-                let alert: CustomPressurePicker = CustomPressurePicker.fromNib()
-            alert.initialize(title: MassagePreferenceMenu.Pressure.name(), buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
-                alert.setDataSource(data: pressureData)
-                alert.show(animated: true)
-                alert.onBtnCancelTapped = {
-                    [weak alert, weak self] in
+            
+            pressureSelectionDialog = CustomPressurePicker.fromNib()
+            pressureSelectionDialog.initialize(title: MassagePreferenceMenu.Pressure.name(), buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+                pressureSelectionDialog.setDataSource(data: pressureData)
+                pressureSelectionDialog.show(animated: true)
+                pressureSelectionDialog.onBtnCancelTapped = {
+                    [weak pressureSelectionDialog, weak self] in
                     guard let self = self else {return}; print(self)
-                    alert?.dismiss()
+                    pressureSelectionDialog?.dismiss()
                 }
-                alert.onBtnDoneTapped = {
-                    [weak alert, weak self] (preferenceData) in
+                pressureSelectionDialog.onBtnDoneTapped = {
+                    [ weak self] (preferenceData) in
                      guard let self = self else { return } ; print(self)
-                    alert?.dismiss()
-                    self.bookingDetail?.massage_info.last?.massage_preference_option_id = preferenceData.id
+                    self.massageInfo.massage_preference_option_id = preferenceData.id
                     self.openTextViewPicker()
                 }
 
         }
     }
     func openTextViewPicker() {
-        let alert: TextViewDialog = TextViewDialog.fromNib()
-        alert.initialize(title: "booking notes", data: self.bookingDetail?.massage_info.last?.notes ?? "" , buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized(), isMandatory: false)
-        alert.show(animated: true)
-        alert.onBtnCancelTapped = {
-            [weak alert, weak self] in
+        textViewDialog = TextViewDialog.fromNib()
+        textViewDialog.initialize(title: "booking notes", data: self.bookingDetail?.massage_info.last?.notes ?? "" , buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized(), isMandatory: false)
+        textViewDialog.show(animated: true)
+        textViewDialog.onBtnCancelTapped = {
+            [weak textViewDialog, weak self] in
             guard let self = self else {return}; print(self)
-            alert?.dismiss()
+            textViewDialog?.dismiss()
         }
-        alert.onBtnDoneTapped = {
-            [weak alert, weak self] (description) in
+        textViewDialog.onBtnDoneTapped = {
+            [weak self] (description) in
             guard let self = self else { return } ; print(self)
-            alert?.dismiss()
-            self.bookingDetail?.massage_info.last?.notes = description
+            self.massageInfo.notes = description
+            self.bookingDetail?.services.append(self.selectedService)
+            self.bookingDetail?.massage_info.append(self.massageInfo)
+            self.dissmissAllDialog()
             if self.onBtnServiceSelectedTapped != nil {
                 self.onBtnServiceSelectedTapped!(self.bookingDetail!)
             }
-            
         }
     }
     
-    
+    func dissmissAllDialog() {
+        self.durationSelectionDialog?.dismiss()
+        self.textViewDialog?.dismiss()
+        self.pressureSelectionDialog?.dismiss()
+        self.genderSelectionDialog?.dismiss()
+    }
 }
 
 
@@ -210,7 +217,6 @@ extension ServiceSelectionVC:  UICollectionViewDelegate, UICollectionViewDataSou
         collectionView.dataSource = self
         collectionView.register(LocationServiceCltCell.nib()
             , forCellWithReuseIdentifier: LocationServiceCltCell.name)
-        
     }
     
     // MARK: UICollectionViewDataSource

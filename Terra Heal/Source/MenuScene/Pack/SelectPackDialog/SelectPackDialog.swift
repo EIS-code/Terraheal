@@ -49,7 +49,7 @@ class SelectPackDialog: ThemeBottomDialogView {
                 arrForData[i].isSelected = true
             }
         }
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
         
     }
     
@@ -61,7 +61,7 @@ class SelectPackDialog: ThemeBottomDialogView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
     }
     
     @IBAction func btnDoneTapped(_ sender: Any) {
@@ -78,7 +78,7 @@ class SelectPackDialog: ThemeBottomDialogView {
 
 extension SelectPackDialog : UITableViewDelegate,UITableViewDataSource {
     
-    private func reloadTableDateToFitHeight(tableView: UITableView) {
+    private func reloadTableDataToFitHeight(tableView: UITableView) {
         tableView.reloadData() {
             
         }

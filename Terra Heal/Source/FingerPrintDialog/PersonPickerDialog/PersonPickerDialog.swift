@@ -58,7 +58,7 @@ class PersonPickerDialog: ThemeBottomDialogView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
     }
 
     @IBAction func btnDoneTapped(_ sender: Any) {
@@ -74,7 +74,7 @@ class PersonPickerDialog: ThemeBottomDialogView {
 
 extension PersonPickerDialog : UITableViewDelegate,UITableViewDataSource {
 
-    private func reloadTableDateToFitHeight(tableView: UITableView) {
+    private func reloadTableDataToFitHeight(tableView: UITableView) {
         DispatchQueue.main.async {
             tableView.reloadData {
             }

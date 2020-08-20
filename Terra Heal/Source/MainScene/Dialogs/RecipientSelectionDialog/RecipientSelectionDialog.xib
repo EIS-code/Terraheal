@@ -27,11 +27,50 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
                     <rect key="frame" x="0.0" y="485" width="414" height="411"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe" userLabel="Stack View - main">
-                            <rect key="frame" x="20" y="10" width="374" height="381"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tfg-GV-f0f" customClass="FadeTableView" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="20.5" y="0.0" width="373" height="411"/>
+                            <color key="backgroundColor" name="theme_primary_light_background"/>
+                        </tableView>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AL3-h4-YXX" userLabel="GradientView">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="411"/>
+                            <subviews>
+                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHD-Au-svU" userLabel="TopGradient" customClass="ThemeTopGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="53"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="53" id="VS7-Vm-o4i"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44m-sN-HwG" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="358" width="414" height="53"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="53" id="DXs-9m-8JF"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="UHD-Au-svU" firstAttribute="top" secondItem="AL3-h4-YXX" secondAttribute="top" id="M56-et-3HY"/>
+                                <constraint firstItem="44m-sN-HwG" firstAttribute="height" secondItem="UHD-Au-svU" secondAttribute="height" priority="250" id="hRv-X7-dlV"/>
+                                <constraint firstItem="UHD-Au-svU" firstAttribute="centerX" secondItem="AL3-h4-YXX" secondAttribute="centerX" id="m7u-25-Dvs"/>
+                                <constraint firstAttribute="bottom" secondItem="44m-sN-HwG" secondAttribute="bottom" id="om6-mO-bfk"/>
+                                <constraint firstItem="44m-sN-HwG" firstAttribute="centerX" secondItem="AL3-h4-YXX" secondAttribute="centerX" id="pdg-bv-ZIS"/>
+                                <constraint firstItem="44m-sN-HwG" firstAttribute="width" secondItem="AL3-h4-YXX" secondAttribute="width" id="ptq-8s-dwe"/>
+                                <constraint firstItem="UHD-Au-svU" firstAttribute="width" secondItem="AL3-h4-YXX" secondAttribute="width" id="vMn-U1-xpq"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LVP-rF-vkL">
+                            <rect key="frame" x="20.5" y="10" width="373" height="25.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OsI-uf-Fb8">
-                                    <rect key="frame" x="167" y="0.0" width="40" height="5"/>
+                                    <rect key="frame" x="166.5" y="0.0" width="40" height="5"/>
                                     <color key="backgroundColor" name="theme_primary"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="LSt-UA-ZZO"/>
@@ -39,17 +78,18 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session Type" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-4J-xGz" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="136.5" y="25" width="101.5" height="20.5"/>
+                                    <rect key="frame" x="136" y="5" width="101.5" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" name="theme_primary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tfg-GV-f0f">
-                                    <rect key="frame" x="0.0" y="65.5" width="374" height="205.5"/>
-                                    <color key="backgroundColor" name="theme_primary_light_background"/>
-                                </tableView>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1hI-PS-hbR">
+                            <rect key="frame" x="140.5" y="287" width="133" height="70"/>
+                            <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="120.5" y="291" width="133" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="133" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                     <state key="normal" title="Sign In">
@@ -60,25 +100,29 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVl-el-UJJ" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="164" y="351" width="46" height="30"/>
+                                    <rect key="frame" x="0.0" y="40" width="133" height="30"/>
                                     <state key="normal" title="Button"/>
                                     <connections>
                                         <action selector="btnCancelTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="EhO-GW-jUf"/>
                                     </connections>
                                 </button>
                             </subviews>
-                            <constraints>
-                                <constraint firstItem="tfg-GV-f0f" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" id="6Op-Ym-9rR"/>
-                            </constraints>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" name="theme_primary_light_background"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" constant="20" id="1HJ-Xp-DOL"/>
-                        <constraint firstItem="cXW-IL-cWe" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="RrZ-kW-n5i"/>
+                        <constraint firstItem="tfg-GV-f0f" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="8SB-s0-4WN"/>
+                        <constraint firstItem="AL3-h4-YXX" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" id="9xz-Z4-bjZ"/>
+                        <constraint firstItem="AL3-h4-YXX" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" id="Q0M-y3-obh"/>
+                        <constraint firstAttribute="trailing" secondItem="AL3-h4-YXX" secondAttribute="trailing" id="SIC-Ho-acV"/>
+                        <constraint firstAttribute="bottom" secondItem="tfg-GV-f0f" secondAttribute="bottom" id="Wrx-Bp-O8P"/>
                         <constraint firstAttribute="height" constant="411" id="YoW-OK-TWR"/>
-                        <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="Zud-Qp-ll1"/>
-                        <constraint firstAttribute="bottom" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="20" id="fhi-OD-EBT"/>
+                        <constraint firstItem="LVP-rF-vkL" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.9" id="aua-TY-zRr"/>
+                        <constraint firstItem="tfg-GV-f0f" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.9" id="bj3-KY-0tg"/>
+                        <constraint firstItem="LVP-rF-vkL" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="fd0-tt-6uM"/>
+                        <constraint firstItem="LVP-rF-vkL" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="gLe-gP-DCl"/>
+                        <constraint firstItem="tfg-GV-f0f" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" id="h4X-Nx-e6L"/>
+                        <constraint firstAttribute="bottom" secondItem="AL3-h4-YXX" secondAttribute="bottom" id="wgI-SJ-4zB"/>
                     </constraints>
                 </view>
             </subviews>
@@ -86,9 +130,11 @@
             <constraints>
                 <constraint firstItem="Yaj-p7-IIT" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="8dM-F7-kDK"/>
                 <constraint firstAttribute="trailing" secondItem="6ZW-DU-hOd" secondAttribute="trailing" id="C4E-pP-AJq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="1hI-PS-hbR" secondAttribute="bottom" constant="20" id="D8t-mS-EN6"/>
                 <constraint firstAttribute="bottom" secondItem="Yaj-p7-IIT" secondAttribute="bottom" id="JTg-za-1ir"/>
                 <constraint firstItem="6ZW-DU-hOd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O4e-FZ-uqZ"/>
                 <constraint firstItem="6ZW-DU-hOd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Q6J-jS-lz5"/>
+                <constraint firstItem="1hI-PS-hbR" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="RUi-ma-YD8"/>
                 <constraint firstItem="Yaj-p7-IIT" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" id="pYV-Pm-HG9"/>
                 <constraint firstAttribute="bottom" secondItem="6ZW-DU-hOd" secondAttribute="bottom" id="xcn-ZA-5s5"/>
             </constraints>
@@ -99,9 +145,15 @@
                 <outlet property="btnDone" destination="W3s-UH-gbE" id="Cp0-qH-ylB"/>
                 <outlet property="dialogHeight" destination="YoW-OK-TWR" id="krX-d1-dGV"/>
                 <outlet property="dialogView" destination="Yaj-p7-IIT" id="I5L-DG-Qv7"/>
+                <outlet property="footerGradient" destination="44m-sN-HwG" id="5aq-h4-Njo"/>
+                <outlet property="headerGradient" destination="UHD-Au-svU" id="i92-UY-v35"/>
+                <outlet property="hwFooterGradient" destination="DXs-9m-8JF" id="Gyw-aj-XWe"/>
+                <outlet property="hwHeaderGradient" destination="VS7-Vm-o4i" id="diq-3C-dd0"/>
                 <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
+                <outlet property="stkButtons" destination="1hI-PS-hbR" id="HTq-KF-DC6"/>
+                <outlet property="stkHeader" destination="LVP-rF-vkL" id="H3F-e7-arO"/>
                 <outlet property="tableView" destination="tfg-GV-f0f" id="Ira-PT-Aex"/>
-                <outlet property="topBarSpace" destination="Zud-Qp-ll1" id="fiW-zy-8QE"/>
+                <outlet property="topBarSpace" destination="fd0-tt-6uM" id="3Gd-Zx-IBl"/>
                 <outlet property="vwTopBar" destination="OsI-uf-Fb8" id="VT3-o0-WSd"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="130.58035714285714"/>
@@ -112,7 +164,7 @@
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light_background">
-            <color red="0.94509803921568625" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

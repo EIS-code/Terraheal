@@ -27,7 +27,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="dialogView">
                     <rect key="frame" x="0.0" y="113.5" width="320" height="454.5"/>
                     <subviews>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4k-c1-F6Z" customClass="FadeScrollView" customModule="Terra_Heal" customModuleProvider="target">
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4k-c1-F6Z">
                             <rect key="frame" x="16" y="0.0" width="288" height="454.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tmm-pq-3Oq">
@@ -122,6 +122,41 @@
                             <viewLayoutGuide key="contentLayoutGuide" id="kmE-Kj-TCz"/>
                             <viewLayoutGuide key="frameLayoutGuide" id="qQE-ZM-GWo"/>
                         </scrollView>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGp-MV-eFG" userLabel="GradientView">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="454.5"/>
+                            <subviews>
+                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gqa-gN-Cll" userLabel="TopGradient" customClass="ThemeTopGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="53"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="53" id="mXK-e4-5ts"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZN-oz-6Vn" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="401.5" width="320" height="53"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="53" id="47g-Z6-S8q"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="qZN-oz-6Vn" firstAttribute="centerX" secondItem="iGp-MV-eFG" secondAttribute="centerX" id="GHz-YR-bgU"/>
+                                <constraint firstItem="qZN-oz-6Vn" firstAttribute="width" secondItem="iGp-MV-eFG" secondAttribute="width" id="NCK-rn-flR"/>
+                                <constraint firstItem="gqa-gN-Cll" firstAttribute="centerX" secondItem="iGp-MV-eFG" secondAttribute="centerX" id="R7A-8Y-ER8"/>
+                                <constraint firstAttribute="bottom" secondItem="qZN-oz-6Vn" secondAttribute="bottom" id="fWf-ER-5zp"/>
+                                <constraint firstItem="qZN-oz-6Vn" firstAttribute="height" secondItem="gqa-gN-Cll" secondAttribute="height" priority="250" id="kQ4-vu-WfQ"/>
+                                <constraint firstItem="gqa-gN-Cll" firstAttribute="top" secondItem="iGp-MV-eFG" secondAttribute="top" id="vjw-rJ-JFI"/>
+                                <constraint firstItem="gqa-gN-Cll" firstAttribute="width" secondItem="iGp-MV-eFG" secondAttribute="width" id="wOQ-TI-HPV"/>
+                            </constraints>
+                        </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe" userLabel="Stack View - Header">
                             <rect key="frame" x="20" y="10" width="280" height="45.5"/>
                             <subviews>
@@ -184,11 +219,15 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" constant="20" id="1HJ-Xp-DOL"/>
                         <constraint firstItem="w4k-c1-F6Z" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="CDA-X5-Vw1"/>
+                        <constraint firstItem="iGp-MV-eFG" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" id="CrU-fC-p8h"/>
+                        <constraint firstAttribute="trailing" secondItem="iGp-MV-eFG" secondAttribute="trailing" id="MaP-TG-hpp"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="RrZ-kW-n5i"/>
                         <constraint firstItem="gd8-8q-HDU" firstAttribute="top" secondItem="cXW-IL-cWe" secondAttribute="top" id="VvU-OS-Nvu"/>
                         <constraint firstAttribute="bottom" secondItem="w4k-c1-F6Z" secondAttribute="bottom" id="a2J-kt-wG5"/>
                         <constraint firstItem="w4k-c1-F6Z" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" id="blj-9R-1u0"/>
+                        <constraint firstItem="iGp-MV-eFG" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" id="fBN-au-OCi"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="gm5-2t-GbH"/>
+                        <constraint firstAttribute="bottom" secondItem="iGp-MV-eFG" secondAttribute="bottom" id="lka-3C-qpT"/>
                         <constraint firstItem="gd8-8q-HDU" firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" id="oeu-Hx-v81"/>
                         <constraint firstItem="w4k-c1-F6Z" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.9" id="puY-JI-yHf"/>
                         <constraint firstAttribute="height" constant="454.5" id="slS-32-68b"/>
@@ -215,6 +254,10 @@
                 <outlet property="btnMapLocation" destination="gd8-8q-HDU" id="R6J-CN-6FV"/>
                 <outlet property="dialogHeight" destination="slS-32-68b" id="kUY-s0-NPr"/>
                 <outlet property="dialogView" destination="Yaj-p7-IIT" id="Sjt-cS-gvV"/>
+                <outlet property="footerGradient" destination="qZN-oz-6Vn" id="XRh-nG-wIe"/>
+                <outlet property="headerGradient" destination="gqa-gN-Cll" id="9iZ-ud-Rx0"/>
+                <outlet property="hwFooterGradient" destination="47g-Z6-S8q" id="bBt-Ih-uON"/>
+                <outlet property="hwHeaderGradient" destination="mXK-e4-5ts" id="BRA-aS-ATd"/>
                 <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
                 <outlet property="scrDialogVw" destination="w4k-c1-F6Z" id="XDc-nu-HTe"/>
                 <outlet property="stkButtons" destination="0ZW-aH-OGq" id="aza-Gg-evo"/>

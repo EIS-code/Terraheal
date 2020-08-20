@@ -27,7 +27,7 @@ class CustomServiceSelectionDialog: ThemeBottomDialogView {
     }
     
     
-    func initialize(title:String,buttonTitle:String) {
+    func initialize(title:String,buttonTitle:String, cancelButtonTitle:String = "") {
 
         self.initialSetup()
         self.lblTitle.text = title
@@ -36,6 +36,12 @@ class CustomServiceSelectionDialog: ThemeBottomDialogView {
         } else {
             self.btnDone.setTitle(buttonTitle, for: .normal)
             self.btnDone.isHidden = false
+        }
+        if cancelButtonTitle.isEmpty() {
+            self.btnCancel.isHidden = true
+        } else {
+            self.btnCancel.setTitle(cancelButtonTitle, for: .normal)
+            self.btnCancel.isHidden = false
         }
         
     }

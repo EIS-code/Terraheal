@@ -77,7 +77,7 @@ class CustomDistanceUnitPicker: ThemeBottomDialogView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
     }
 
     
@@ -104,7 +104,7 @@ class CustomDistanceUnitPicker: ThemeBottomDialogView {
 
 extension CustomDistanceUnitPicker : UITableViewDelegate,UITableViewDataSource {
 
-    private func reloadTableDateToFitHeight(tableView: UITableView) {
+    private func reloadTableDataToFitHeight(tableView: UITableView) {
         tableView.reloadData(heightToFit: self.hTblVw) {
 
         }

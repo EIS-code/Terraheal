@@ -23,7 +23,7 @@ class BuyPackageDialog: ThemeBottomDialogView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
     }
     
     func initialize(title:String,buttonTitle:String,cancelButtonTitle:String) {
@@ -64,7 +64,7 @@ class BuyPackageDialog: ThemeBottomDialogView {
                 self.selectedData = value
             }
         }
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
         //self.select(data: self.selectedData)
     }
     override func initialSetup() {
@@ -84,7 +84,7 @@ class BuyPackageDialog: ThemeBottomDialogView {
 
 extension BuyPackageDialog : UITableViewDelegate,UITableViewDataSource {
     
-    private func reloadTableDateToFitHeight(tableView: UITableView) {
+    private func reloadTableDataToFitHeight(tableView: UITableView) {
         tableView.reloadData(heightToFit: self.hTblVw) {
             
         }

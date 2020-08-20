@@ -63,7 +63,7 @@ class CustomHistoryFilterPicker: ThemeBottomDialogView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
     }
     
     @IBAction func btnDoneTapped(_ sender: Any) {
@@ -80,7 +80,7 @@ class CustomHistoryFilterPicker: ThemeBottomDialogView {
 
 extension CustomHistoryFilterPicker : UITableViewDelegate,UITableViewDataSource {
     
-    private func reloadTableDateToFitHeight(tableView: UITableView) {
+    private func reloadTableDataToFitHeight(tableView: UITableView) {
         DispatchQueue.main.async {
             tableView.reloadData {
             }

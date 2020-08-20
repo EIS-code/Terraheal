@@ -58,7 +58,7 @@ class AddPaymentPreferenceDialog: ThemeBottomDialogView {
                 self.selectedData = value
             }
         }
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
         //self.select(data: self.selectedData)
     }
     override func initialSetup() {
@@ -68,7 +68,7 @@ class AddPaymentPreferenceDialog: ThemeBottomDialogView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
     }
     
     @IBAction func btnDoneTapped(_ sender: Any) {
@@ -81,7 +81,7 @@ class AddPaymentPreferenceDialog: ThemeBottomDialogView {
 
 extension AddPaymentPreferenceDialog : UITableViewDelegate,UITableViewDataSource {
     
-    private func reloadTableDateToFitHeight(tableView: UITableView) {
+    private func reloadTableDataToFitHeight(tableView: UITableView) {
         tableView.reloadData(heightToFit: self.hTblVw) {
             
         }

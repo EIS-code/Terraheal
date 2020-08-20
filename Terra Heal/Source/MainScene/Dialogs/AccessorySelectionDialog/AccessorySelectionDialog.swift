@@ -28,7 +28,7 @@ class AccessorySelectionDialog: ThemeBottomDialogView {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.lblQuatity?.setRound(withBorderColor: .clear, andCornerRadious: 3.0, borderWidth: 1.0)
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
     }
     
     func initialize(title:String,buttonTitle:String,cancelButtonTitle:String) {
@@ -65,7 +65,7 @@ class AccessorySelectionDialog: ThemeBottomDialogView {
         for value in data {
             self.arrForData.append(value)
         }
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
         //self.select(data: self.selectedData)
     }
     override func initialSetup() {
@@ -101,7 +101,7 @@ class AccessorySelectionDialog: ThemeBottomDialogView {
 
 extension AccessorySelectionDialog : UITableViewDelegate,UITableViewDataSource {
     
-    private func reloadTableDateToFitHeight(tableView: UITableView) {
+    private func reloadTableDataToFitHeight(tableView: UITableView) {
         tableView.reloadData(heightToFit: self.hTblVw) {
             
         }

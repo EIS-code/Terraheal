@@ -56,7 +56,7 @@ class CustomCityPicker: ThemeBottomDialogView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
         self.searchVw.setRound(withBorderColor: .clear, andCornerRadious: self.searchVw.bounds.height/2.0, borderWidth: 1.0)
     }
 
@@ -73,7 +73,7 @@ class CustomCityPicker: ThemeBottomDialogView {
 
 extension CustomCityPicker : UITableViewDelegate,UITableViewDataSource {
 
-    private func reloadTableDateToFitHeight(tableView: UITableView) {
+    private func reloadTableDataToFitHeight(tableView: UITableView) {
         DispatchQueue.main.async {
             tableView.reloadData {
             }
@@ -149,7 +149,7 @@ extension CustomCityPicker : UITextFieldDelegate {
                 }
             }
         }
-        self.reloadTableDateToFitHeight(tableView: tableView)
+        self.reloadTableDataToFitHeight(tableView: tableView)
     }
 }
 
@@ -167,7 +167,7 @@ extension CustomCityPicker {
                     self.arrForForOriginalData.append(data)
                     self.arrForFilteredData.append(data)
                 }
-                self.reloadTableDateToFitHeight(tableView: self.tableView)
+                self.reloadTableDataToFitHeight(tableView: self.tableView)
             }
         }
     }

@@ -27,20 +27,65 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
                     <rect key="frame" x="0.0" y="279.5" width="414" height="582.5"/>
                     <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6B9-d9-fu1">
+                            <rect key="frame" x="20.5" y="0.0" width="373" height="582.5"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NDJ-CX-CnJ">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HqW-zf-UKY" userLabel="GradientView">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="582.5"/>
+                            <subviews>
+                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAD-nR-bMH" userLabel="TopGradient" customClass="ThemeTopGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="53"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="53" id="6g8-Jy-mPy"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dx4-PU-kDz" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="529.5" width="414" height="53"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="53" id="7se-xT-m1v"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="bAD-nR-bMH" firstAttribute="top" secondItem="HqW-zf-UKY" secondAttribute="top" id="4a0-Nc-QD5"/>
+                                <constraint firstAttribute="bottom" secondItem="Dx4-PU-kDz" secondAttribute="bottom" id="DHO-kn-gk3"/>
+                                <constraint firstItem="bAD-nR-bMH" firstAttribute="width" secondItem="HqW-zf-UKY" secondAttribute="width" id="GCv-yz-AOs"/>
+                                <constraint firstItem="Dx4-PU-kDz" firstAttribute="centerX" secondItem="HqW-zf-UKY" secondAttribute="centerX" id="bvk-nR-M3l"/>
+                                <constraint firstItem="Dx4-PU-kDz" firstAttribute="width" secondItem="HqW-zf-UKY" secondAttribute="width" id="bwX-Pf-mfT"/>
+                                <constraint firstItem="Dx4-PU-kDz" firstAttribute="height" secondItem="bAD-nR-bMH" secondAttribute="height" priority="250" id="vWi-w7-uA7"/>
+                                <constraint firstItem="bAD-nR-bMH" firstAttribute="centerX" secondItem="HqW-zf-UKY" secondAttribute="centerX" id="x86-bR-IQq"/>
+                            </constraints>
+                        </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCJ-fh-lMI" userLabel="vwTab">
-                            <rect key="frame" x="161" y="185" width="92" height="46"/>
+                            <rect key="frame" x="161" y="111" width="92" height="46"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bk0-ac-ye3" userLabel="vwHome">
-                            <rect key="frame" x="161" y="185" width="46" height="46"/>
+                            <rect key="frame" x="161" y="111" width="46" height="46"/>
                             <color key="backgroundColor" name="theme_primary"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wnm-sx-MwK" userLabel="vwTherapist">
-                            <rect key="frame" x="207" y="185" width="46" height="46"/>
+                            <rect key="frame" x="207" y="111" width="46" height="46"/>
                             <color key="backgroundColor" name="theme_primary"/>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe" userLabel="Stack View - main">
-                            <rect key="frame" x="20" y="10" width="374" height="552.5"/>
+                            <rect key="frame" x="20" y="10" width="374" height="142"/>
                             <subviews>
                                 <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="OsI-uf-Fb8">
                                     <rect key="frame" x="167" y="0.0" width="40" height="5"/>
@@ -51,19 +96,19 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="Session Type" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-4J-xGz" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="136.5" y="25" width="101.5" height="94.5"/>
+                                    <rect key="frame" x="136.5" y="25" width="101.5" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" name="theme_primary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="Session Type" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7n5-1Q-JAF" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="136.5" y="139.5" width="101.5" height="20.5"/>
+                                    <rect key="frame" x="136.5" y="65.5" width="101.5" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" name="theme_hint_text"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ovk-PL-sFX">
-                                    <rect key="frame" x="146" y="180" width="82" height="36"/>
+                                    <rect key="frame" x="146" y="106" width="82" height="36"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4o6-gY-uGQ">
                                             <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
@@ -85,18 +130,13 @@
                                         </button>
                                     </subviews>
                                 </stackView>
-                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6B9-d9-fu1">
-                                    <rect key="frame" x="18.5" y="236" width="337" height="206.5"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NDJ-CX-CnJ">
-                                        <size key="itemSize" width="128" height="128"/>
-                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    </collectionViewFlowLayout>
-                                </collectionView>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WcN-mz-AOp">
+                            <rect key="frame" x="140.5" y="472.5" width="133" height="90"/>
+                            <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="120.5" y="462.5" width="133" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="133" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                     <state key="normal" title="Sign In">
@@ -107,34 +147,38 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVl-el-UJJ" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="164" y="522.5" width="46" height="30"/>
+                                    <rect key="frame" x="43.5" y="60" width="46" height="30"/>
                                     <state key="normal" title="Button"/>
                                     <connections>
                                         <action selector="btnCancelTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="EhO-GW-jUf"/>
                                     </connections>
                                 </button>
                             </subviews>
-                            <constraints>
-                                <constraint firstItem="6B9-d9-fu1" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" multiplier="0.9" id="rUf-w5-uDL"/>
-                            </constraints>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" name="theme_primary_light_background"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" constant="20" id="1HJ-Xp-DOL"/>
+                        <constraint firstAttribute="trailing" secondItem="HqW-zf-UKY" secondAttribute="trailing" id="32i-4i-paU"/>
                         <constraint firstItem="Bk0-ac-ye3" firstAttribute="leading" secondItem="4o6-gY-uGQ" secondAttribute="leading" constant="-5" id="3MB-jw-bcn"/>
                         <constraint firstItem="Bk0-ac-ye3" firstAttribute="top" secondItem="4o6-gY-uGQ" secondAttribute="top" constant="-5" id="6UF-TJ-fzq"/>
                         <constraint firstItem="Wnm-sx-MwK" firstAttribute="bottom" secondItem="rJt-ru-yx8" secondAttribute="bottom" constant="5" id="6bC-pm-JgU"/>
                         <constraint firstItem="Wnm-sx-MwK" firstAttribute="trailing" secondItem="rJt-ru-yx8" secondAttribute="trailing" constant="5" id="754-V1-8fj"/>
+                        <constraint firstItem="6B9-d9-fu1" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="Egm-WW-dV3"/>
+                        <constraint firstAttribute="bottom" secondItem="6B9-d9-fu1" secondAttribute="bottom" id="G2G-h0-Bj4"/>
                         <constraint firstItem="wCJ-fh-lMI" firstAttribute="trailing" secondItem="Ovk-PL-sFX" secondAttribute="trailing" constant="5" id="JxL-ba-Jb5"/>
                         <constraint firstItem="Bk0-ac-ye3" firstAttribute="bottom" secondItem="4o6-gY-uGQ" secondAttribute="bottom" constant="5" id="Oqp-G7-tvw"/>
+                        <constraint firstItem="6B9-d9-fu1" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" id="Q32-ga-zhU"/>
                         <constraint firstItem="wCJ-fh-lMI" firstAttribute="bottom" secondItem="Ovk-PL-sFX" secondAttribute="bottom" constant="5" id="RPZ-04-Oh8"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="RrZ-kW-n5i"/>
+                        <constraint firstItem="HqW-zf-UKY" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" id="Wbg-2q-ydq"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="Zud-Qp-ll1"/>
                         <constraint firstAttribute="height" constant="582.5" id="akO-EM-GHD"/>
                         <constraint firstItem="wCJ-fh-lMI" firstAttribute="top" secondItem="Ovk-PL-sFX" secondAttribute="top" constant="-5" id="eKE-D3-gWB"/>
-                        <constraint firstAttribute="bottom" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="20" id="fhi-OD-EBT"/>
+                        <constraint firstAttribute="bottom" secondItem="HqW-zf-UKY" secondAttribute="bottom" id="fCo-DH-e1V"/>
+                        <constraint firstItem="HqW-zf-UKY" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" id="fnj-3J-L74"/>
                         <constraint firstItem="Bk0-ac-ye3" firstAttribute="trailing" secondItem="4o6-gY-uGQ" secondAttribute="trailing" constant="5" id="gZv-9w-J2a"/>
+                        <constraint firstItem="6B9-d9-fu1" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.9" id="jQH-17-Xnp"/>
                         <constraint firstItem="Wnm-sx-MwK" firstAttribute="leading" secondItem="rJt-ru-yx8" secondAttribute="leading" constant="-5" id="k77-MV-pXv"/>
                         <constraint firstItem="wCJ-fh-lMI" firstAttribute="leading" secondItem="Ovk-PL-sFX" secondAttribute="leading" constant="-5" id="qCK-L5-fxt"/>
                         <constraint firstItem="Wnm-sx-MwK" firstAttribute="top" secondItem="rJt-ru-yx8" secondAttribute="top" constant="-5" id="uTK-IC-Kj1"/>
@@ -146,10 +190,12 @@
                 <constraint firstItem="Yaj-p7-IIT" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="8dM-F7-kDK"/>
                 <constraint firstAttribute="trailing" secondItem="6ZW-DU-hOd" secondAttribute="trailing" id="C4E-pP-AJq"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Yaj-p7-IIT" secondAttribute="bottom" id="JTg-za-1ir"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="WcN-mz-AOp" secondAttribute="bottom" constant="20" id="KR1-wL-k82"/>
                 <constraint firstItem="6ZW-DU-hOd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O4e-FZ-uqZ"/>
                 <constraint firstItem="6ZW-DU-hOd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Q6J-jS-lz5"/>
                 <constraint firstItem="Yaj-p7-IIT" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" id="pYV-Pm-HG9"/>
                 <constraint firstAttribute="bottom" secondItem="6ZW-DU-hOd" secondAttribute="bottom" id="xcn-ZA-5s5"/>
+                <constraint firstItem="WcN-mz-AOp" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="zde-nA-BKD"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
@@ -161,8 +207,15 @@
                 <outlet property="collectionVw" destination="6B9-d9-fu1" id="6T7-Xz-8a0"/>
                 <outlet property="dialogHeight" destination="akO-EM-GHD" id="zd1-F0-iNy"/>
                 <outlet property="dialogView" destination="Yaj-p7-IIT" id="I5L-DG-Qv7"/>
+                <outlet property="footerGradient" destination="Dx4-PU-kDz" id="nEv-BO-aw4"/>
+                <outlet property="headerGradient" destination="bAD-nR-bMH" id="i5C-Y3-kFg"/>
+                <outlet property="hwFooterGradient" destination="7se-xT-m1v" id="sjV-Vx-Zbz"/>
+                <outlet property="hwHeaderGradient" destination="6g8-Jy-mPy" id="mdk-k8-4Kd"/>
                 <outlet property="lblMessage" destination="7n5-1Q-JAF" id="qQy-Jc-8Sj"/>
                 <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
+                <outlet property="scrDialogVw" destination="6B9-d9-fu1" id="xfa-qC-i4c"/>
+                <outlet property="stkButtons" destination="WcN-mz-AOp" id="JbQ-Kh-J6x"/>
+                <outlet property="stkHeader" destination="cXW-IL-cWe" id="AQH-hp-luN"/>
                 <outlet property="topBarSpace" destination="Zud-Qp-ll1" id="R3N-JH-520"/>
                 <outlet property="vwHome" destination="Bk0-ac-ye3" id="L72-Ix-Cx1"/>
                 <outlet property="vwTab" destination="wCJ-fh-lMI" id="w0N-NT-VGh"/>

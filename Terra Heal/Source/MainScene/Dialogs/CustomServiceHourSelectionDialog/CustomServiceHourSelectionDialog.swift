@@ -68,7 +68,7 @@ class CustomServiceHourSelectionDialog: ThemeBottomDialogView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
     }
 
     @IBAction func btnDoneTapped(_ sender: Any) {
@@ -86,7 +86,7 @@ class CustomServiceHourSelectionDialog: ThemeBottomDialogView {
 
 extension CustomServiceHourSelectionDialog : UITableViewDelegate,UITableViewDataSource {
 
-    private func reloadTableDateToFitHeight(tableView: UITableView) {
+    private func reloadTableDataToFitHeight(tableView: UITableView) {
         DispatchQueue.main.async {
 
             tableView.reloadData(heightToFit: self.hTblVw) {

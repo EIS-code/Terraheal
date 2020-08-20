@@ -13,9 +13,7 @@ import UIKit
 class RecipientSelectionDialog: ThemeBottomDialogView {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var hTblVw: NSLayoutConstraint!
-    
-    var onBtnDoneTapped: ((_ data:People) -> Void)? = nil
+   var onBtnDoneTapped: ((_ data:People) -> Void)? = nil
     var selectedData:People = People.init(fromDictionary: [:])
     var arrForData: [People] = []
     var arrForGenderPreference: [PreferenceOption] = []
@@ -59,11 +57,15 @@ class RecipientSelectionDialog: ThemeBottomDialogView {
         self.arrForData.removeAll()
         for value in data {
             self.arrForData.append(value)
+            self.arrForData.append(value)
+            self.arrForData.append(value)
+            self.arrForData.append(value)
+            self.arrForData.append(value)
             if value.isSelected {
                 self.selectedData = value
             }
         }
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
         //self.select(data: self.selectedData)
     }
     override func initialSetup() {
@@ -74,7 +76,7 @@ class RecipientSelectionDialog: ThemeBottomDialogView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+       // self.reloadTableDataToFitHeight(tableView: self.tableView)
     }
     
     @IBAction func btnDoneTapped(_ sender: Any) {
@@ -115,15 +117,15 @@ class RecipientSelectionDialog: ThemeBottomDialogView {
 
 extension RecipientSelectionDialog : UITableViewDelegate,UITableViewDataSource {
     
-    private func reloadTableDateToFitHeight(tableView: UITableView) {
-        self.tableView.reloadData(heightToFit: self.hTblVw, maxHeight: self.dialogView.bounds.height * 0.5) {
-            
+    private func reloadTableDataToFitHeight(tableView: UITableView) {
+        self.tableView.reloadData {
+        
         }
     }
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-tableView.backgroundColor = .clear
+        tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 60
@@ -171,7 +173,7 @@ extension RecipientSelectionDialog {
         } else {
             self.tableView.isHidden = false
         }
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
     }
     func wsSavePeople(request:ManagePeople.RequestAddPeoples, doc: UploadDocumentDetail?) {
            Loader.showLoading()
@@ -189,9 +191,7 @@ extension RecipientSelectionDialog {
         AppWebApi.getPeopleList { (response) in
             self.arrForData.removeAll()
             if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
-                for data in response.peopleList {
-                    self.arrForData.append(data)
-                }
+                self.setDataSource(data: response.peopleList)
                 for data in response.preferenceOptions {
                     self.arrForGenderPreference.append(data)
                 }

@@ -42,7 +42,7 @@ class AddPackDialog: ThemeBottomDialogView {
     }
     func setDataSource(data:[AddPackageDetail]) {
         self.arrForData = data
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
     }
     func select(data:AddPackageDetail) {
         self.selectedData = data
@@ -52,7 +52,7 @@ class AddPackDialog: ThemeBottomDialogView {
                 arrForData[i].isSelected = true
             }
         }
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
     }
     
     override func initialSetup() {
@@ -63,7 +63,7 @@ class AddPackDialog: ThemeBottomDialogView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
     }
     
     @IBAction func btnDoneTapped(_ sender: Any) {
@@ -87,7 +87,7 @@ class AddPackDialog: ThemeBottomDialogView {
 
 extension AddPackDialog : UITableViewDelegate,UITableViewDataSource {
     
-    private func reloadTableDateToFitHeight(tableView: UITableView) {
+    private func reloadTableDataToFitHeight(tableView: UITableView) {
         tableView.reloadData() {
             
         }

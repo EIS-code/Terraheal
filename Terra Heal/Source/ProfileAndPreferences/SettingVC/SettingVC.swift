@@ -90,6 +90,7 @@ class SettingVC: MainVC {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        tableView.setContentOffset(CGPoint.init(x: 0, y: 0), animated: true)
     }
 
     override func viewDidLayoutSubviews() {
