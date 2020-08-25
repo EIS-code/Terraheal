@@ -94,19 +94,22 @@ class PaymentPreferenceVC: MainVC {
         self.lblCreditCardValue.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.btnDefault?.setTitle("PAYMENT_LBL_DEFAULT".localized(), for: .normal)
         self.btnDefault?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnSubmit?.setTitle("PAYMENT_BTN_ADD_NEW".localized(), for: .normal)
+        
         self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnSubmit?.setupFilledButton()
-        self.btnAddPayment?.setTitle("PAYMENT_BTN_ADD_NEW_PAYMENT".localized(), for: .normal)
+       
         self.btnAddPayment?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
+        self.btnAddPayment?.setTitle("PAYMENT_BTN_ADD_NEW".localized(), for: .normal)
         self.btnAddPayment?.setupBorderedButton()
         self.setupTableView(tableView: self.tableView)
         self.btnBack.setBackButton()
         self.btnAddPayment.addTarget(self, action: #selector(btnAddPaymentTapped(_:)), for: .touchUpInside)
         if isFromMenu {
+            self.btnSubmit?.setTitle("PAYMENT_BTN_ADD_NEW".localized(), for: .normal)
             self.btnAddPayment.isHidden = true
             self.btnSubmit.addTarget(self, action: #selector(btnAddPaymentTapped(_:)), for: .touchUpInside)
         } else {
+            self.btnSubmit?.setTitle("BTN_SUBMIT".localized(), for: .normal)
             self.btnAddPayment.isHidden = false
             self.btnSubmit.addTarget(self, action: #selector(btnSubmitTapped(_:)), for: .touchUpInside)
         }
@@ -132,7 +135,7 @@ class PaymentPreferenceVC: MainVC {
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
-            _ = (self.navigationController as? NC)?.popVC()
+              Common.appDelegate.loadReservationVC()
     }
     
     func openAddPaymentDialog() {

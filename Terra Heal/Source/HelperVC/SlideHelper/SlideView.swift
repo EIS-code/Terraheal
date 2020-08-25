@@ -9,9 +9,6 @@
 import Foundation
 import UIKit
 
-
-
-
 class SlideTouchVw: ThemeView {
     
     weak var slideLeftVC: SlideVC?

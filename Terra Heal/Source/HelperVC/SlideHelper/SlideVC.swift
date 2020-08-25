@@ -47,7 +47,7 @@ class SlideVC: MainVC {
     }
     
     class func remove() {
-        let sideVC: SideVC = SideVC.shared
+        /*let sideVC: SideVC = SideVC.shared
         sideVC.hide()
         //SO.removeVwBg()
         sideVC.view.removeFromSuperview()
@@ -56,7 +56,8 @@ class SlideVC: MainVC {
         profileVC.hide()
         //SO.removeVwBg()
         profileVC.view.removeFromSuperview()
-        profileVC.removeFromParent()
+        profileVC.removeFromParent()*/
+        
     }
     
     

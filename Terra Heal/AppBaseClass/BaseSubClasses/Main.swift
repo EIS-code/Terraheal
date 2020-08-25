@@ -41,14 +41,13 @@ class MainVC: UIViewController {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
             self.mainScrollView?.contentInset = self.getGradientInset()
-           print(self.mainScrollView?.contentInset)
         }
-        
     }
     
     func getGradientInset() -> UIEdgeInsets {
         return UIEdgeInsets.init(top: self.getTopInset(), left: 0, bottom: self.getBottomInset(), right: 0)
     }
+    
     func getTopInset() -> CGFloat{
         if headerGradient != nil {
             if headerGradient!.enableGradient {
@@ -59,6 +58,7 @@ class MainVC: UIViewController {
         }
         return 0
     }
+    
     func getBottomInset() -> CGFloat{
         if footerGradient != nil {
             if footerGradient!.enableGradient {

@@ -7,6 +7,8 @@ import UIKit
 import CoreLocation
 import Alamofire
 
+
+
 class HomeVC: MainVC {
     
     @IBOutlet weak var btnProfile: FloatingRoundButton!
@@ -18,11 +20,7 @@ class HomeVC: MainVC {
     @IBOutlet weak var ivUser: RoundedImageView!
     
     var arrForHomeDetails: [HomeItemDetail] = [
-        HomeItemDetail(title:appSingleton.user.name, buttonTitle: "HOME_ITEM_ACTION_1".localized(), image: ImageAsset.HomeItem.header),
-        HomeItemDetail(title: "HOME_ITEM_1".localized(), buttonTitle: "HOME_ITEM_ACTION_1".localized(), image: ImageAsset.HomeItem.sub1, homeItemtype: .MassageCenter),
-        HomeItemDetail(title: "HOME_ITEM_2".localized(), buttonTitle: "HOME_ITEM_ACTION_2".localized(), image: ImageAsset.HomeItem.sub2, homeItemtype: .HotelOrRoom),
-        HomeItemDetail(title: "HOME_ITEM_3".localized(), buttonTitle: "HOME_ITEM_ACTION_3".localized(), image: ImageAsset.HomeItem.sub3, homeItemtype: .EventAndCorporate)
-    ]
+        HomeItemDetail(title:appSingleton.user.name, buttonTitle: "HOME_ITEM_ACTION_1".localized(), image: ImageAsset.HomeItem.header,homeItemtype: .Header )]
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -55,22 +53,19 @@ class HomeVC: MainVC {
             Common.appDelegate.loadServiceMapVC(navigaionVC: self.navigationController)
         }
         self.addLocationObserver()
+        self.btnMenu.addTarget(self.revealViewController(), action: #selector(PBRevealViewController.revealLeftView), for: .touchUpInside)
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let lc = LocationCenter.init()
-         lc.requestLocationOnce()
+        lc.requestLocationOnce()
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-       // SlideVC.addRightToVC(self, sideVC: ProfileVC.shared)
-        SlideVC.addLeftToVC(self, sideVC: SideVC.shared)
-        SlideVC.addRightToVC(self, sideVC: ProfileVC.shared)
     }
     
     override func viewDidLayoutSubviews() {
@@ -88,46 +83,21 @@ class HomeVC: MainVC {
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeBackground)
         self.setupTableView(tableView: self.tableView)
-         if appSingleton.user.name.isEmpty() {
+        if appSingleton.user.name.isEmpty() {
             self.ivUser.image = UIImage.init(named: ImageAsset.Placeholder.user)
-         } else {
+        } else {
             self.ivUser.downloadedFrom(link: appSingleton.user.profilePhoto)
-         }
+        }
     }
     
     
     //MARK: Action Methods
     
-    @IBAction func btnMenuTapped(_ sender: Any) {
-        SideVC.shared.show()
-    }
-    
-    
-    func openPartialPaymentBookingDialog() {
-        let paymentPercentageDialog: PaymentPercentatgeSelectionDialog  = PaymentPercentatgeSelectionDialog.fromNib()
-        
-        paymentPercentageDialog.initialize(title: "Payment", buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
-        paymentPercentageDialog.show(animated: true)
-        paymentPercentageDialog.onBtnCancelTapped = {
-            [weak paymentPercentageDialog, weak self] in
-            guard let self = self else { return } ; print(self)
-            paymentPercentageDialog?.dismiss()
-           
-        }
-        paymentPercentageDialog.onBtnDoneTapped = {
-            [weak paymentPercentageDialog, weak self]  (button) in
-            guard let self = self else { return } ; print(self)
-            paymentPercentageDialog?.dismiss()
-            Common.appDelegate.loadPaymentReferenceVC(navigaionVC: self.navigationController,isFromMenu: false)
-        }
-    }
-    
     @IBAction func btnProfileTapped(_ sender: Any) {
         if PreferenceHelper.shared.getUserId().isEmpty() {
             Common.appDelegate.loadWelcomeVC()
         } else {
-            ProfileVC.shared.show()
-            //Common.appDelegate.loadProfileVC(navigaionVC: self.navigationController)
+            self.revealViewController()?.revealRightView()
         }
     }
     //MARK: Location Observer
@@ -143,6 +113,15 @@ class HomeVC: MainVC {
     
     override func locationFail(_ ntf: Notification = Common.defaultNtf) {
     }
+    
+    func updateEventData() {
+        arrForHomeDetails = [
+            HomeItemDetail(title: "HOME_ITEM_1".localized(), buttonTitle: "HOME_ITEM_ACTION_1".localized(), image: ImageAsset.HomeItem.sub1, homeItemtype: .MassageCenter),
+            HomeItemDetail(title: "HOME_ITEM_2".localized(), buttonTitle: "HOME_ITEM_ACTION_2".localized(), image: ImageAsset.HomeItem.sub2, homeItemtype: .HotelOrRoom),
+            HomeItemDetail(title: "HOME_ITEM_3".localized(), buttonTitle: "HOME_ITEM_ACTION_3".localized(), image: ImageAsset.HomeItem.sub3, homeItemtype: .EventAndCorporate)
+        ]
+        self.tableView.reloadData()
+    }
 }
 
 //MARK: Tableview DataSource and Delegate
@@ -151,7 +130,7 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource {
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-tableView.backgroundColor = .clear
+        tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 160
@@ -170,16 +149,20 @@ tableView.backgroundColor = .clear
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row == 0 {
+        let data = arrForHomeDetails[indexPath.row]
+        
+        if data.homeItemtype == .Header {
             let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTblUserInfoCell.name, for: indexPath) as?  ProfileTblUserInfoCell
+            cell?.parentVC = self
             cell?.layoutIfNeeded()
-            cell?.setData(data: arrForHomeDetails[indexPath.row])
+            cell?.setData(data: data)
             cell?.layoutIfNeeded()
             return cell!
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: HomeTblCell.name, for: indexPath) as?  HomeTblCell
+            cell?.parentVC = self
             cell?.layoutIfNeeded()
-            cell?.setData(data: arrForHomeDetails[indexPath.row])
+            cell?.setData(data: data)
             cell?.layoutIfNeeded()
             return cell!
         }

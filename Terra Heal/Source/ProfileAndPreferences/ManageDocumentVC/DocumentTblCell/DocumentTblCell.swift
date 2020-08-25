@@ -13,27 +13,28 @@ class DocumentTblCell: TableCell {
     @IBOutlet weak var lblName: ThemeLabel!
     @IBOutlet weak var vwBg: UIView!
     @IBOutlet weak var btnDelete: FloatingRoundButton!
-    @IBOutlet weak var imgCompleted: UIImageView!
+    @IBOutlet weak var ivDocument: UIImageView!
     
-
 
     override func awakeFromNib() {
         super.awakeFromNib()
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-        self.imgCompleted.setRound()
+        self.btnDelete?.setRound()
     }
 
     func setData(data: UploadDocumentDetail ) {
         self.lblName.text = data.name
-        self.btnDelete.isHidden = data.isCompleted
-        self.imgCompleted.isHidden = !data.isCompleted
+        self.ivDocument?.image = data.image
+        //self.btnDelete.isHidden = !data.isCompleted
+       
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-        self.imgCompleted.setRound()
+        self.btnDelete?.setRound()
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

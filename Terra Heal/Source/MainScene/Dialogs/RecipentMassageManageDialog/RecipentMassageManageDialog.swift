@@ -16,7 +16,6 @@ class RecipentMassageManageDialog: ThemeBottomDialogView {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var totalView: UIView!
     var arrForData: [BookingInfo] = appSingleton.myBookingData.booking_info
-    var sheetCoordinator: UBottomSheetCoordinator?
     var onBtnNextSelectedTapped: ((_ data: [BookingInfo]) -> Void)? = nil
     
     override func awakeFromNib() {
@@ -199,7 +198,6 @@ extension RecipentMassageManageDialog: UITableViewDelegate, UITableViewDataSourc
         serviceDetailVC.modalPresentationStyle = .fullScreen
         serviceDetailVC.bookingDetail = self.arrForData[sender.tag]
         DispatchQueue.main.async {
-            // self.navigationController?.pushViewController(serviceDetailVC, animated: true)
             Common.appDelegate.getTopViewController()?.present(serviceDetailVC, animated: true, completion: nil)
         }
         serviceDetailVC.onBtnServiceSelectedTapped = { [weak self] (service) in
@@ -211,9 +209,6 @@ extension RecipentMassageManageDialog: UITableViewDelegate, UITableViewDataSourc
                 self.calculateTotal()
                 self.tableView.reloadData()
             }
-            
-            // _ = (self.navigationController as? NC)?.popVC()
-            
         }
     }
     @objc func removeService(sender: UIButton) {

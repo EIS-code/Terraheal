@@ -57,10 +57,6 @@ class RecipientSelectionDialog: ThemeBottomDialogView {
         self.arrForData.removeAll()
         for value in data {
             self.arrForData.append(value)
-            self.arrForData.append(value)
-            self.arrForData.append(value)
-            self.arrForData.append(value)
-            self.arrForData.append(value)
             if value.isSelected {
                 self.selectedData = value
             }

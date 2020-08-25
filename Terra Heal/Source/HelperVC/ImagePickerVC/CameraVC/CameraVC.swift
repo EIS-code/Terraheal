@@ -43,17 +43,8 @@ class CameraVC: MainVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        func configureCameraController() {
-            cameraController.prepare {(error) in
-                if let error = error {
-                    print(error)
-                    Common.showAlert(message: error.localizedDescription)
-                }
-                
-                try? self.cameraController.displayPreview(on: self.capturePreviewView)
-            }
-        }
-        configureCameraController()
+       
+        
         self.initialViewSetup()
     }
     
@@ -66,17 +57,29 @@ class CameraVC: MainVC {
         self.imgHint.image = UIImage.init(named: image)
         self.vwHintLayer.isHidden = false
     }
+    func configureCameraController() {
+               cameraController.prepare {(error) in
+                   if let error = error {
+                       print(error)
+                       Common.showAlert(message: error.localizedDescription)
+                   }
+                   
+                   try? self.cameraController.displayPreview(on: self.capturePreviewView)
+               }
+           }
+    
     func hideHint() {
         self.vwHintLayer.isHidden = true
     }
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeBackground)
         self.lblMsg?.setFont(name: FontName.SemiBold, size: FontSize.label_26)
-        self.showHint(messae: "CAMERA_LBL_MESSAGE".localized(), image: "asset-face")
+        self.showHint(messae: "DOCUMENT_LB_MESSAGE".localized(), image: ImageAsset.Camera.square)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        configureCameraController()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -110,17 +113,18 @@ class CameraVC: MainVC {
         do {
             try cameraController.switchCameras()
         }
-            
         catch {
             print(error)
         }
         
         switch cameraController.currentCameraPosition {
         case .some(.front):
-            toggleCameraButton.setImage(#imageLiteral(resourceName: "Front Camera Icon"), for: .normal)
+                print("Front")
+            //toggleCameraButton.setImage(#imageLiteral(resourceName: "Front Camera Icon"), for: .normal)
             
         case .some(.rear):
-            toggleCameraButton.setImage(#imageLiteral(resourceName: "Rear Camera Icon"), for: .normal)
+                print("Rear")
+            //toggleCameraButton.setImage(#imageLiteral(resourceName: "Rear Camera Icon"), for: .normal)
             
         case .none:
             return
@@ -130,8 +134,13 @@ class CameraVC: MainVC {
     @IBAction func captureImage(_ sender: UIButton) {
         cameraController.captureImage {(image, error) in
             guard let image = image else {
-                
-                Common.showAlert(message: error?.localizedDescription ?? "Image capture error" )
+                self.uploadeDocument.image = UIImage.init(named: ImageAsset.Camera.face)
+                self.uploadeDocument.name = appSingleton.user.name
+                self.uploadeDocument.id = appSingleton.user.id
+                if self.onBtnCaptureTapped != nil {
+                    self.onBtnCaptureTapped!(self.uploadeDocument);
+                }
+                //Common.showAlert(message: error?.localizedDescription ?? "Image capture error" )
                 return
             }
             try? PHPhotoLibrary.shared().performChangesAndWait {

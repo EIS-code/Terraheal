@@ -81,18 +81,28 @@ extension AppDelegate {
     }
     
     fileprivate func loadHomeVC(_ navigaionVC: UINavigationController?) {
+        /*var finalHomeVC: UIViewController? = nil
         if let nc = navigaionVC as? NC {
             if let targetVC: HomeVC =  nc.findVCs(ofType: HomeVC.self).first {
                 _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: HomeVC = HomeVC.fromNib()
                 nc.pushVC(targetVC)
+                finalHomeVC = nc
             }
         } else {
             let targetVC: HomeVC = HomeVC.fromNib()
-            let nC: NC = NC(rootViewController: targetVC)
-            self.windowConfig(withRootVC: nC)
-        }
+            let nc: NC = NC(rootViewController: targetVC)
+            finalHomeVC = nc
+        }*/
+        let homeVC: NC = NC(rootViewController: HomeVC.fromNib())
+        let leftVC: NC = NC(rootViewController: SideVC.fromNib())
+        let rightVC: NC = NC(rootViewController: ProfileVC.fromNib())
+        
+        
+        let targetVC = PBRevealViewController.init(leftViewController: leftVC, mainViewController: homeVC, rightViewController: rightVC)
+        
+         self.windowConfig(withRootVC: targetVC)
     }
     
     func loadHomeVC(navigaionVC:UINavigationController? = nil) {
@@ -198,28 +208,6 @@ extension AppDelegate {
             }
         } else {
             let targetVC: MapLocationVC = MapLocationVC.fromNib()
-            let nC: NC = NC(rootViewController: targetVC)
-            self.windowConfig(withRootVC: nC)
-            return targetVC
-        }
-    }
-    
-    
-    
-    
-    func loadGallaryVC(navigaionVC:UINavigationController? = nil) -> GallaryVC {
-        
-        if let nc = navigaionVC as? NC {
-            if let targetVC: GallaryVC =  nc.findVCs(ofType: GallaryVC.self).first {
-                _ =  nc.popToViewController
-                return targetVC
-            } else {
-                let targetVC: GallaryVC = GallaryVC.fromNib()
-                nc.pushVC(targetVC)
-                return targetVC
-            }
-        } else {
-            let targetVC: GallaryVC = GallaryVC.fromNib()
             let nC: NC = NC(rootViewController: targetVC)
             self.windowConfig(withRootVC: nC)
             return targetVC

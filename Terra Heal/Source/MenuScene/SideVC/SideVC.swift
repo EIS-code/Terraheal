@@ -69,17 +69,13 @@ enum Menu: String {
        }
 }
 
-class SideVC: SlideVC {
+class SideVC: MainVC {
 
     @IBOutlet weak var lblMenu: ThemeLabel!
     @IBOutlet weak var btnClose: FloatingRoundButton!
     @IBOutlet weak var cvForMenu: UICollectionView!
     var idxPathSelected: IndexPath = IndexPath(row: -1, section: -1)
-    static let shared: SideVC = {
-        let instance: SideVC = SideVC.fromNib()
-        return instance
-    }()
-
+   
     var arrForMenu: [MenuItem] = [
         MenuItem.init(id: Menu.HowItWork, image: "", isVerticle: true),
         MenuItem.init(id: Menu.ReferAndEarn, image: "", isVerticle: true),
@@ -102,7 +98,8 @@ class SideVC: SlideVC {
     }
 
     @IBAction func btnCloseTapped(_ sender: Any) {
-        SideVC.shared.hide()
+        self.revealViewController()?.revealLeftView()
+        //SideVC.shared.hide()
     }
 }
 
@@ -172,27 +169,29 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        self.hide()
-        switch self.arrForMenu[indexPath.row].id {
-        case Menu.Notifications:
-            Common.appDelegate.loadNotificationVC(navigaionVC: Common.appDelegate.window?.rootViewController as? NC)
-        case Menu.HowItWork:
-            Common.appDelegate.loadHowItWorkVC(navigaionVC: Common.appDelegate.window?.rootViewController  as? NC)
-        case Menu.PricingAndLocation:
-            Common.appDelegate.loadPriceLocationVC(navigaionVC: Common.appDelegate.window?.rootViewController  as? NC)
-        case Menu.PromoCode:
-            Common.appDelegate.loadPromocodeVC(navigaionVC: Common.appDelegate.window?.rootViewController  as? NC)
-        case Menu.Packs:
-            Common.appDelegate.loadPackVC(navigaionVC: Common.appDelegate.window?.rootViewController  as? NC)
-        case Menu.ReferAndEarn:
-            Common.appDelegate.loadReferAndEarnVC(navigaionVC: Common.appDelegate.window?.rootViewController  as? NC)
-        case Menu.Campaigns:
-            Common.appDelegate.loadCampaignsVC(navigaionVC: Common.appDelegate.window?.rootViewController  as? NC)
-        case Menu.Help:
-            Common.appDelegate.loadHelpVC(navigaionVC: Common.appDelegate.window?.rootViewController  as? NC)
-        case Menu.GiftVoucher:
-            Common.appDelegate.loadGiftVoucherVC(navigaionVC: Common.appDelegate.window?.rootViewController  as? NC)
+        if  let mainVC = self.revealViewController()?.leftViewController as? NC{
+            switch self.arrForMenu[indexPath.row].id {
+                   case Menu.Notifications:
+                       Common.appDelegate.loadNotificationVC(navigaionVC: mainVC)
+                   case Menu.HowItWork:
+                       Common.appDelegate.loadHowItWorkVC(navigaionVC: mainVC)
+                   case Menu.PricingAndLocation:
+                       Common.appDelegate.loadPriceLocationVC(navigaionVC: mainVC)
+                   case Menu.PromoCode:
+                       Common.appDelegate.loadPromocodeVC(navigaionVC: mainVC)
+                   case Menu.Packs:
+                       Common.appDelegate.loadPackVC(navigaionVC: mainVC)
+                   case Menu.ReferAndEarn:
+                       Common.appDelegate.loadReferAndEarnVC(navigaionVC: mainVC)
+                   case Menu.Campaigns:
+                       Common.appDelegate.loadCampaignsVC(navigaionVC: mainVC)
+                   case Menu.Help:
+                       Common.appDelegate.loadHelpVC(navigaionVC: mainVC)
+                   case Menu.GiftVoucher:
+                       Common.appDelegate.loadGiftVoucherVC(navigaionVC: mainVC)
+                   }
         }
+       
     }
 
 }

@@ -86,8 +86,10 @@ class ManageDocumentVC: MainVC {
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
-        self.arrForData = [UploadDocumentDetail.init(id: "599905", name:"Front Side", image: nil, data: nil, isCompleted: true),UploadDocumentDetail.init(id: "599905", name:"Back Side", image: nil, data: nil, isCompleted: false)]
-        self.updateUI()
+        self.btnSubmit.isEnabled = false
+        self.openPhotoPicker()
+        
+        
     }
     
     func updateUI()  {
@@ -99,6 +101,13 @@ class ManageDocumentVC: MainVC {
             self.tableView.isHidden = false
         }
         self.tableView.reloadData()
+        if arrForData.count == 2 {
+            self.btnSubmit.isEnabled = false
+            self.btnSubmit.gone()
+        } else {
+            self.btnSubmit.visible()
+            self.btnSubmit.isEnabled = true
+        }
     }
   
     func openConfirmationDialog(index:Int) {
@@ -116,7 +125,8 @@ class ManageDocumentVC: MainVC {
             [weak alert, weak self]  in
             guard let self = self else {return}; print(self)
             alert?.dismiss()
-            
+            self.arrForData.remove(at: index)
+            self.updateUI()
             
         }
     }
@@ -124,6 +134,50 @@ class ManageDocumentVC: MainVC {
         self.openConfirmationDialog(index: button.tag)
     }
    
+    func openPhotoPicker() {
+        
+        let photoPickerAlert: CustomDocumentPicker = CustomDocumentPicker.fromNib()
+        photoPickerAlert.initialize(title:"PHOTO_DIALOG_FROM_TITLE".localized(), buttonTitle: "".localized(),cancelButtonTitle: "BTN_CANCEL".localized())
+        photoPickerAlert.show(animated: true)
+        photoPickerAlert.onBtnCancelTapped = { [weak photoPickerAlert, weak self] in
+            photoPickerAlert?.dismiss()
+             guard let self = self else { return } ; print(self)
+            self.btnSubmit.isEnabled = true
+        }
+        photoPickerAlert.onBtnDoneTapped = { [weak photoPickerAlert, weak self] in
+            photoPickerAlert?.dismiss()
+            guard let self = self else { return } ; print(self)
+            self.btnSubmit.isEnabled = true
+        }
+        photoPickerAlert.onBtnCameraTapped = { [weak photoPickerAlert, weak self] (doc) in
+            photoPickerAlert?.dismiss()
+             guard let self = self else { return } ; print(self)
+            self.openCropper(image: doc.image ?? UIImage())
+            
+        }
+        photoPickerAlert.onBtnGallaryTapped = { [weak photoPickerAlert, weak self] (doc) in
+            photoPickerAlert?.dismiss()
+             guard let self = self else { return } ; print(self)
+            self.openCropper(image: doc.image ?? UIImage())
+            //let gallaryVC:GallaryVC = Common.appDelegate.loadGallaryVC(navigaionVC: self.navigationController)
+        }
+    }
+    
+    func openCropper(image: UIImage) {
+        
+        let cropper: UIImageCropperVC = UIImageCropperVC.fromNib()
+        cropper.cropRatio = 1/1
+        cropper.delegate = self
+        cropper.picker = nil
+        cropper.image = image
+        cropper.cancelButtonText = "Cancel"
+        cropper.view.layoutIfNeeded()
+        cropper.modalPresentationStyle = .fullScreen
+        DispatchQueue.main.async {
+            self.btnSubmit.isEnabled = true
+            Common.appDelegate.getTopViewController()?.present(cropper, animated: true, completion: nil)
+        }
+    }
 }
 
 
@@ -167,3 +221,26 @@ extension ManageDocumentVC: UITableViewDelegate,UITableViewDataSource, UIScrollV
 }
 
 
+extension ManageDocumentVC: UIImageCropperProtocol {
+    func didCropImage(originalImage: UIImage?, croppedImage: UIImage?) {
+       print("croper\(croppedImage)")
+        
+        if arrForData.isEmpty {
+                self.arrForData.append(UploadDocumentDetail.init(id: "599905", name:"Front Side", image: croppedImage, data: nil, isCompleted: true))
+        } else {
+            self.arrForData.append(UploadDocumentDetail.init(id: "599905", name:"Back Side", image: croppedImage, data: nil, isCompleted: true))
+        }
+        self.updateUI()
+        
+        /*self.arrForData = [,UploadDocumentDetail.init(id: "599905", name:"Back Side", image: nil, data: nil, isCompleted: false)]
+        self.updateUI()*/
+        
+    }
+    
+    //optional
+    func didCancel() {
+        print("did cancel")
+         _ = (self.navigationController as? NC)?.popVC()
+        //self.wsUpdateProfile()
+    }
+}

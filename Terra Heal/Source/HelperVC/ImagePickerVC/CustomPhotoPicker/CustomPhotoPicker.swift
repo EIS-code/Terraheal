@@ -98,6 +98,7 @@ extension CustomPhotoPicker:  UIImagePickerControllerDelegate {
         cameraVC.modalPresentationStyle = .fullScreen
         DispatchQueue.main.async {
                 Common.appDelegate.getTopViewController()?.present(cameraVC, animated: true, completion: nil)
+            cameraVC.showHint(messae: "FACE_SCAN_MESSAGE".localized(), image: ImageAsset.Camera.face)
         }
         //Common.appDelegate.loadCameraVC(navigaionVC: Common.appDelegate.getTopViewController() as! UINavigationController)
         cameraVC.onBtnCaptureTapped = { [weak self] (document)  in

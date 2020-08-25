@@ -182,13 +182,17 @@ class ReferAndEarnVC: MainVC {
     
     func shareOnWhatsApp(message:String) {
         let newMessage = message.addingPercentEncoding(withAllowedCharacters: (NSCharacterSet.urlQueryAllowed))!
-        let whatsappURL = NSURL(string: "whatsapp://send?text=\(newMessage)")
-
-        if UIApplication.shared.canOpenURL(whatsappURL! as URL) {
-            UIApplication.shared.openURL(whatsappURL! as URL)
-        } else {
-            Common.showAlert(message:"Whatsapp is not installed on this device. Please install Whatsapp and try again.")
+        if let whatsappURL = URL(string: "whatsapp://send?text=\(newMessage)") {
+                if UIApplication.shared.canOpenURL(whatsappURL) {
+                    UIApplication.shared.open(whatsappURL) { (open) in
+                    }
+                    
+                } else {
+                    Common.showAlert(message:"Whatsapp is not installed on this device. Please install Whatsapp and try again.")
+                }
         }
+
+        
     }
     func openHistoryFilterDialog() {
         let alert: CustomHistoryFilterPicker = CustomHistoryFilterPicker.fromNib()

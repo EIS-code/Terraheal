@@ -80,7 +80,7 @@ class FadeTableView: UITableView, UIScrollViewDelegate {
         let scrollOffset = contentOffset.y
         let alpha:CGFloat = (scrollViewHeight >= scrollContentSizeHeight || scrollOffset <= 0) ? 1 : 0
         let color = UIColor(white: 0, alpha: alpha)
-        return UIColor.red.cgColor//color.cgColor
+        return color.cgColor
     }
     
     var bottomOpacity: CGColor {
@@ -89,7 +89,7 @@ class FadeTableView: UITableView, UIScrollViewDelegate {
         let scrollOffset = contentOffset.y
         let alpha:CGFloat = (scrollViewHeight >= scrollContentSizeHeight || scrollOffset + scrollViewHeight >= scrollContentSizeHeight) ? 1 : 0
         let color = UIColor(white: 0, alpha: alpha)
-        return UIColor.red.cgColor//color.cgColor
+        return color.cgColor
     }
     
     override func layoutSubviews() {
@@ -116,7 +116,7 @@ class FadeTableView: UITableView, UIScrollViewDelegate {
     }
     
     func updateColors() {
-        gradientLayer.colors = [UIColor.red.cgColor,UIColor.green.cgColor,UIColor.green.cgColor,UIColor.red.cgColor]//[topOpacity, opaqueColor, opaqueColor, bottomOpacity]
+        gradientLayer.colors = [topOpacity, opaqueColor, opaqueColor, bottomOpacity]
         gradientLayer.locations = [0, NSNumber(floatLiteral: fadePercentage), NSNumber(floatLiteral: 1 - fadePercentage), 1]
     }
     

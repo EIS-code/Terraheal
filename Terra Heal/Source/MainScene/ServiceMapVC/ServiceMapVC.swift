@@ -78,9 +78,16 @@ class ServiceMapVC: MainVC {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
             self.collectionView.reloadData {
+                let height = self.collectionView.collectionViewLayout.collectionViewContentSize.height
+                self.hCltVw.constant = height
+                self.view.layoutIfNeeded()
+            }
+            self.cltForCollapseView.reloadData {
+            let height = self.cltForCollapseView.collectionViewLayout.collectionViewContentSize.height
+            self.hCltCollapseView.constant = height
+            self.view.layoutIfNeeded()
                 
             }
-            self.cltForCollapseView.reloadData { }
             self.btnBook?.setupBorderedButton()
             self.btnCheckService?.setupFilledButton()
             self.mapView.roundCorners(corners:[.topLeft,.topRight], radius: 40.0)

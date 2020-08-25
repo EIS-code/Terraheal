@@ -39,6 +39,7 @@ class SessionTblCell: TableCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.vwBg.layoutIfNeeded()
         self.ivPicture?.setRound()
         self.ivSelected?.setRound()
         if data.isSelected {

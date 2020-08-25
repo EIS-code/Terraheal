@@ -31,14 +31,14 @@
                             <rect key="frame" x="0.0" y="150" width="320" height="300"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7EO-xA-RgX" userLabel="vwServiceDialog">
-                                    <rect key="frame" x="0.0" y="39" width="320" height="261"/>
+                                    <rect key="frame" x="0.0" y="15" width="320" height="285"/>
                                     <color key="backgroundColor" name="theme_dialog_background"/>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iDl-ql-GM7" userLabel="stk-shop-detail">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="270"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center" translatesAutoresizingMaskIntoConstraints="NO" id="qE7-YW-YVL" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="121" y="0.0" width="78" height="78"/>
+                                            <rect key="frame" x="145" y="0.0" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="qE7-YW-YVL" secondAttribute="height" multiplier="1:1" id="lgQ-CR-ppo"/>
                                             </constraints>
@@ -49,10 +49,10 @@
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="m6e-n7-8qE">
-                                            <rect key="frame" x="0.0" y="78" width="320" height="192"/>
+                                            <rect key="frame" x="0.0" y="30" width="320" height="240"/>
                                             <color key="backgroundColor" name="theme_dialog_background"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="m6e-n7-8qE" secondAttribute="height" multiplier="5:3" id="qVw-Su-sVV"/>
+                                                <constraint firstAttribute="width" secondItem="m6e-n7-8qE" secondAttribute="height" multiplier="4:3" id="qVw-Su-sVV"/>
                                             </constraints>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Jvy-8Z-gRo">
                                                 <size key="itemSize" width="128" height="128"/>
@@ -96,7 +96,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dJ-7Q-f2w" userLabel="vwMap" customClass="GMSMapView">
-                            <rect key="frame" x="0.0" y="76" width="320" height="153"/>
+                            <rect key="frame" x="0.0" y="76" width="320" height="129"/>
                             <color key="backgroundColor" name="theme_primary_border"/>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">

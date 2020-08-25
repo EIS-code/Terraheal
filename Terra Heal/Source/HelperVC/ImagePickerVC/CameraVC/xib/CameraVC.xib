@@ -29,54 +29,22 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcE-QE-XNU" userLabel="capturepreview">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aav-cS-Vay">
-                            <rect key="frame" x="260" y="16" width="44" height="44"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="44" id="pA8-aw-XPy"/>
-                                <constraint firstAttribute="height" constant="44" id="ssG-dE-l0F"/>
-                            </constraints>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" image="Flash Off Icon"/>
-                            <connections>
-                                <action selector="toggleFlash:" destination="-1" eventType="touchUpInside" id="zlh-QB-vtc"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sl4-cb-8vU">
-                            <rect key="frame" x="260" y="60" width="44" height="44"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="44" id="d6F-Oc-NFo"/>
-                                <constraint firstAttribute="width" constant="44" id="gdU-So-rdW"/>
-                            </constraints>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" image="Rear Camera Icon"/>
-                            <connections>
-                                <action selector="switchCameras:" destination="-1" eventType="touchUpInside" id="1nW-6d-DKb"/>
-                            </connections>
-                        </button>
-                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="aav-cS-Vay" secondAttribute="trailing" constant="16" id="9IF-PY-kx0"/>
-                        <constraint firstItem="aav-cS-Vay" firstAttribute="top" secondItem="XcE-QE-XNU" secondAttribute="top" constant="16" id="L18-aF-TMJ"/>
-                        <constraint firstAttribute="trailing" secondItem="sl4-cb-8vU" secondAttribute="trailing" constant="16" id="juo-Cd-YnL"/>
-                        <constraint firstItem="sl4-cb-8vU" firstAttribute="top" secondItem="aav-cS-Vay" secondAttribute="bottom" id="pmb-y4-eQO"/>
-                    </constraints>
                 </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0D3-ql-opy" userLabel="vwHintLayer">
-                    <rect key="frame" x="0.0" y="40" width="320" height="408"/>
+                    <rect key="frame" x="0.0" y="70" width="320" height="378"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1u5-f2-p25">
-                            <rect key="frame" x="20" y="-11.5" width="280" height="431"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1u5-f2-p25">
+                            <rect key="frame" x="32" y="19" width="256" height="340"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="asset-face" translatesAutoresizingMaskIntoConstraints="NO" id="qbS-uh-3lP">
-                                    <rect key="frame" x="0.0" y="0.0" width="280" height="350"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="qbS-uh-3lP" secondAttribute="height" multiplier="1:1.25" id="akj-hD-lKE"/>
-                                    </constraints>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalCompressionResistancePriority="749" image="asset-square-cutter" translatesAutoresizingMaskIntoConstraints="NO" id="qbS-uh-3lP">
+                                    <rect key="frame" x="0.0" y="0.0" width="256" height="259"/>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label sdafsdafdsa fhsdfjsdkfsdkljfsdkafksdfklsdfklsdaklfsda" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOG-OI-OfF" userLabel="lblTitle" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="1" y="370" width="278" height="61"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOG-OI-OfF" userLabel="lblTitle" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="279" width="256" height="61"/>
+                                    <string key="text">
+Label 
+Label </string>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" name="theme_dark_text"/>
                                     <nil key="highlightedColor"/>
@@ -86,14 +54,28 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="1u5-f2-p25" firstAttribute="height" secondItem="0D3-ql-opy" secondAttribute="height" multiplier="0.9" id="5mJ-Ac-aDD"/>
+                        <constraint firstItem="1u5-f2-p25" firstAttribute="width" secondItem="0D3-ql-opy" secondAttribute="width" multiplier="0.8" id="7rV-sE-EEz"/>
                         <constraint firstItem="1u5-f2-p25" firstAttribute="centerY" secondItem="0D3-ql-opy" secondAttribute="centerY" id="Fg2-cx-tsy"/>
-                        <constraint firstItem="1u5-f2-p25" firstAttribute="leading" secondItem="0D3-ql-opy" secondAttribute="leading" constant="20" id="nAf-VN-5sE"/>
-                        <constraint firstAttribute="trailing" secondItem="1u5-f2-p25" secondAttribute="trailing" constant="20" id="vFv-lT-3P2"/>
+                        <constraint firstItem="1u5-f2-p25" firstAttribute="centerX" secondItem="0D3-ql-opy" secondAttribute="centerX" id="gK1-SV-f6O"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zd5-cD-PSn" userLabel="bottomControlView">
                     <rect key="frame" x="0.0" y="448" width="320" height="120"/>
                     <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aav-cS-Vay" userLabel="toggleFlash">
+                            <rect key="frame" x="20" y="38" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="pA8-aw-XPy"/>
+                                <constraint firstAttribute="height" constant="44" id="ssG-dE-l0F"/>
+                            </constraints>
+                            <state key="normal" image="Flash Off Icon">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="toggleFlash:" destination="-1" eventType="touchUpInside" id="zlh-QB-vtc"/>
+                            </connections>
+                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phD-1A-sjB" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
                             <rect key="frame" x="139" y="39" width="42" height="42"/>
                             <color key="backgroundColor" name="theme_primary"/>
@@ -108,18 +90,34 @@
                                 <action selector="captureImage:" destination="-1" eventType="touchUpInside" id="RZw-S5-bIm"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sl4-cb-8vU" userLabel="switchCamera">
+                            <rect key="frame" x="256" y="38" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="d6F-Oc-NFo"/>
+                                <constraint firstAttribute="width" constant="44" id="gdU-So-rdW"/>
+                            </constraints>
+                            <state key="normal" image="Front Camera Icon"/>
+                            <connections>
+                                <action selector="switchCameras:" destination="-1" eventType="touchUpInside" id="1nW-6d-DKb"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="phD-1A-sjB" firstAttribute="centerX" secondItem="zd5-cD-PSn" secondAttribute="centerX" id="1Df-s7-TI8"/>
+                        <constraint firstAttribute="trailing" secondItem="sl4-cb-8vU" secondAttribute="trailing" constant="20" id="1c0-W9-75P"/>
+                        <constraint firstItem="sl4-cb-8vU" firstAttribute="centerY" secondItem="zd5-cD-PSn" secondAttribute="centerY" id="79l-y9-Hy1"/>
                         <constraint firstItem="phD-1A-sjB" firstAttribute="centerY" secondItem="zd5-cD-PSn" secondAttribute="centerY" id="EX9-aq-sYf"/>
+                        <constraint firstItem="aav-cS-Vay" firstAttribute="centerY" secondItem="phD-1A-sjB" secondAttribute="centerY" id="XaF-fb-4ob"/>
+                        <constraint firstItem="aav-cS-Vay" firstAttribute="leading" secondItem="zd5-cD-PSn" secondAttribute="leading" constant="20" id="c7k-2j-5oZ"/>
                         <constraint firstAttribute="height" constant="120" id="qn6-I4-CG9"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrA-7C-eCO" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="10" y="10" width="30" height="30"/>
+                    <rect key="frame" x="10" y="10" width="60" height="60"/>
                     <color key="backgroundColor" name="theme_primary_light"/>
                     <constraints>
+                        <constraint firstAttribute="height" constant="60" id="Q5a-s2-ks9"/>
                         <constraint firstAttribute="width" secondItem="mrA-7C-eCO" secondAttribute="height" multiplier="1:1" id="lgA-U9-e2Q"/>
                     </constraints>
                     <state key="normal">
@@ -152,9 +150,9 @@
     </objects>
     <resources>
         <image name="Flash Off Icon" width="24" height="24"/>
-        <image name="Rear Camera Icon" width="24" height="24"/>
+        <image name="Front Camera Icon" width="21.333333969116211" height="21.333333969116211"/>
         <image name="asset-camera-edit" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="asset-face" width="432.5" height="534.5"/>
+        <image name="asset-square-cutter" width="170.66667175292969" height="170.66667175292969"/>
         <namedColor name="theme_dark_text">
             <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

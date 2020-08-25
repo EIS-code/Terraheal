@@ -62,7 +62,7 @@ extension ServiceMapVC:  UICollectionViewDelegate, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         if collectionView == cltForCollapseView {
-            self.upDialogAnimation()
+            self.upInterativeAnimation()
             self.transitionAnimator?.startAnimation()
         }
     }
@@ -111,7 +111,7 @@ extension ServiceMapVC:  UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func scrollToItem(index:Int) {
-        let currentX = self.collectionView.contentOffset.x
+        //let currentX = self.collectionView.contentOffset.x
         let cellWidth = self.collectionView.frame.width
         let targetX = (CGFloat(index) * cellWidth)
         let duration = Double(abs( self.collectionView.contentOffset.x - targetX)/self.collectionView.frame.width)

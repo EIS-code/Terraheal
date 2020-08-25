@@ -23,6 +23,8 @@
                 <outlet property="btnMyLocation" destination="4bD-XR-1BI" id="1qM-ta-MOY"/>
                 <outlet property="cltForCollapseView" destination="kfe-FQ-VpY" id="UPn-gQ-nzh"/>
                 <outlet property="collectionView" destination="0xa-H5-01s" id="2sA-Eq-zD2"/>
+                <outlet property="hCltCollapseView" destination="YLL-R8-TbJ" id="rMl-Y0-6Kn"/>
+                <outlet property="hCltVw" destination="nHk-WK-dC0" id="KTx-a2-b2t"/>
                 <outlet property="ivService" destination="26x-e7-0XI" id="nbo-rf-fs4"/>
                 <outlet property="lblAddress" destination="2xC-vK-VPV" id="2Ta-kL-jQb"/>
                 <outlet property="lblAddressTitle" destination="xk9-ZP-J9T" id="QMu-bZ-RrF"/>
@@ -44,46 +46,38 @@
                     <color key="backgroundColor" name="theme_primary_border"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEK-Cr-eQL" userLabel="ViewService">
-                    <rect key="frame" x="0.0" y="415.66666666666674" width="375" height="396.33333333333326"/>
+                    <rect key="frame" x="0.0" y="433.33333333333326" width="375" height="418.66666666666674"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQv-Wj-FT7" userLabel="vwServiceDialog">
-                            <rect key="frame" x="0.0" y="28.666666666666629" width="375" height="367.66666666666669"/>
+                            <rect key="frame" x="0.0" y="28.666666666666686" width="375" height="390"/>
                             <color key="backgroundColor" name="theme_background"/>
                         </view>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gpz-MM-woQ" userLabel="stk-shop-detail">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="282.33333333333331"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center" translatesAutoresizingMaskIntoConstraints="NO" id="26x-e7-0XI" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="159" y="0.0" width="57.333333333333343" height="57.333333333333336"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="26x-e7-0XI" secondAttribute="height" multiplier="1:1" id="BFA-Vm-8TA"/>
-                                    </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="padding">
-                                            <real key="value" value="15"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </imageView>
-                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0xa-H5-01s">
-                                    <rect key="frame" x="0.0" y="57.333333333333314" width="375" height="225"/>
-                                    <color key="backgroundColor" name="theme_secondary"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="0xa-H5-01s" secondAttribute="height" multiplier="5:3" id="s03-E4-nLM"/>
-                                    </constraints>
-                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Igc-ta-une">
-                                        <size key="itemSize" width="128" height="128"/>
-                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    </collectionViewFlowLayout>
-                                </collectionView>
-                            </subviews>
+                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center" translatesAutoresizingMaskIntoConstraints="NO" id="26x-e7-0XI" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="159" y="0.0" width="57.333333333333343" height="57.333333333333336"/>
                             <constraints>
-                                <constraint firstItem="0xa-H5-01s" firstAttribute="width" secondItem="gpz-MM-woQ" secondAttribute="width" id="bhf-62-bWG"/>
+                                <constraint firstAttribute="width" secondItem="26x-e7-0XI" secondAttribute="height" multiplier="1:1" id="BFA-Vm-8TA"/>
                             </constraints>
-                        </stackView>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                    <real key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0xa-H5-01s">
+                            <rect key="frame" x="0.0" y="57.333333333333385" width="375" height="187.33333333333337"/>
+                            <color key="backgroundColor" name="theme_secondary"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="187.33333333333337" id="nHk-WK-dC0"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Igc-ta-une">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ydl-Fk-PfO">
-                            <rect key="frame" x="18.666666666666657" y="282.33333333333331" width="337.66666666666674" height="60"/>
+                            <rect key="frame" x="18.666666666666657" y="264.66666666666669" width="337.66666666666674" height="60"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="i27-80-VjO" userLabel="Stack View - Next">
                                     <rect key="frame" x="0.0" y="0.0" width="337.66666666666669" height="60"/>
@@ -125,23 +119,27 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="gpz-MM-woQ" firstAttribute="top" secondItem="BEK-Cr-eQL" secondAttribute="top" id="17U-hA-hVc"/>
-                        <constraint firstItem="QQv-Wj-FT7" firstAttribute="top" secondItem="26x-e7-0XI" secondAttribute="centerY" id="9Xp-US-Kb3"/>
+                        <constraint firstItem="QQv-Wj-FT7" firstAttribute="top" secondItem="26x-e7-0XI" secondAttribute="centerY" id="4en-EO-adL"/>
                         <constraint firstAttribute="trailing" secondItem="QQv-Wj-FT7" secondAttribute="trailing" id="Dg3-y5-YG4"/>
-                        <constraint firstItem="Ydl-Fk-PfO" firstAttribute="top" secondItem="gpz-MM-woQ" secondAttribute="bottom" id="W7g-yt-3zg"/>
+                        <constraint firstItem="0xa-H5-01s" firstAttribute="top" secondItem="26x-e7-0XI" secondAttribute="bottom" id="ERB-0c-nlo"/>
+                        <constraint firstItem="0xa-H5-01s" firstAttribute="centerX" secondItem="BEK-Cr-eQL" secondAttribute="centerX" id="dWz-8Q-lyw"/>
+                        <constraint firstItem="26x-e7-0XI" firstAttribute="centerX" secondItem="BEK-Cr-eQL" secondAttribute="centerX" id="gs4-cp-D6s"/>
                         <constraint firstItem="QQv-Wj-FT7" firstAttribute="leading" secondItem="BEK-Cr-eQL" secondAttribute="leading" id="h0e-ua-5FI"/>
+                        <constraint firstItem="Ydl-Fk-PfO" firstAttribute="top" secondItem="0xa-H5-01s" secondAttribute="bottom" constant="20" id="hf9-1v-wv9"/>
+                        <constraint firstItem="26x-e7-0XI" firstAttribute="top" secondItem="BEK-Cr-eQL" secondAttribute="top" id="iUi-Tf-iGA"/>
+                        <constraint firstItem="0xa-H5-01s" firstAttribute="width" secondItem="BEK-Cr-eQL" secondAttribute="width" id="kOZ-df-VBR"/>
                         <constraint firstAttribute="bottom" secondItem="QQv-Wj-FT7" secondAttribute="bottom" id="riQ-T7-gdC"/>
                         <constraint firstItem="QQv-Wj-FT7" firstAttribute="bottom" secondItem="BEK-Cr-eQL" secondAttribute="bottom" id="uLq-j6-SeI"/>
                     </constraints>
                 </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cP1-hm-j0m" userLabel="vwCollapseServiceView">
-                    <rect key="frame" x="0.0" y="590.66666666666663" width="375" height="221.33333333333337"/>
+                    <rect key="frame" x="0.0" y="590.66666666666663" width="375" height="261.33333333333337"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="kfe-FQ-VpY">
                             <rect key="frame" x="0.0" y="20" width="375" height="187.33333333333334"/>
                             <color key="backgroundColor" name="theme_background"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="kfe-FQ-VpY" secondAttribute="height" multiplier="2:1" id="At1-Xl-SJ3"/>
+                                <constraint firstAttribute="height" constant="187.33333333333334" id="YLL-R8-TbJ"/>
                             </constraints>
                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="7Hn-Gj-1fz">
                                 <size key="itemSize" width="128" height="128"/>
@@ -238,8 +236,7 @@
                 <constraint firstItem="Ydl-Fk-PfO" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" multiplier="0.9" id="4lg-RE-wCC"/>
                 <constraint firstItem="kfe-FQ-VpY" firstAttribute="bottom" secondItem="VLJ-uh-dxO" secondAttribute="bottom" constant="20" id="5Ev-Gz-l5h"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="0ux-6h-A7d" secondAttribute="trailing" id="91j-uN-GDQ"/>
-                <constraint firstAttribute="bottom" secondItem="cP1-hm-j0m" secondAttribute="bottom" id="BaM-Ud-s9f"/>
-                <constraint firstItem="gpz-MM-woQ" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="Byi-sN-72J"/>
+                <constraint firstItem="cP1-hm-j0m" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" constant="40" id="BaM-Ud-s9f"/>
                 <constraint firstAttribute="bottom" secondItem="0ux-6h-A7d" secondAttribute="bottom" id="C0k-d0-NuD"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="Ydl-Fk-PfO" secondAttribute="bottom" constant="20" id="Cbg-lV-YkR"/>
                 <constraint firstItem="5ts-YA-ha4" firstAttribute="top" secondItem="0ux-6h-A7d" secondAttribute="top" constant="20" id="K44-m2-yJC"/>
@@ -247,7 +244,6 @@
                 <constraint firstItem="0ux-6h-A7d" firstAttribute="top" secondItem="RkY-uq-l4w" secondAttribute="bottom" id="Mbb-AO-ukf"/>
                 <constraint firstItem="IND-Az-SGv" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="20" id="PYL-OS-hgi"/>
                 <constraint firstItem="cP1-hm-j0m" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" id="eIr-ou-iAW"/>
-                <constraint firstItem="gpz-MM-woQ" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" id="g9W-RV-I7o"/>
                 <constraint firstItem="BEK-Cr-eQL" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="gDX-nb-O7M"/>
                 <constraint firstItem="4bD-XR-1BI" firstAttribute="trailing" secondItem="0ux-6h-A7d" secondAttribute="trailing" constant="-20" id="gzd-7M-sZ4"/>
                 <constraint firstItem="5ts-YA-ha4" firstAttribute="leading" secondItem="0ux-6h-A7d" secondAttribute="leading" constant="20" id="h21-Ef-bP7"/>
@@ -257,7 +253,7 @@
                 <constraint firstItem="cP1-hm-j0m" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sDb-kH-Swd"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="RkY-uq-l4w" secondAttribute="trailing" id="st1-ED-qLy"/>
                 <constraint firstItem="RkY-uq-l4w" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vCT-LJ-Nhl"/>
-                <constraint firstAttribute="bottom" secondItem="BEK-Cr-eQL" secondAttribute="bottom" id="wlA-KJ-dFm"/>
+                <constraint firstItem="BEK-Cr-eQL" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" constant="40" id="wlA-KJ-dFm"/>
                 <constraint firstItem="BEK-Cr-eQL" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="zIk-1b-aUF"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>

@@ -19,15 +19,6 @@ class ServiceCell: CollectionCell {
   
     
     
-    var vwExpandedViewRect: CGRect = CGRect.init()
-    var lblNameRect: CGRect = CGRect.init()
-    var lblAddressRect: CGRect = CGRect.init()
-    var ivMapRect: CGRect = CGRect.init()
-    var btnHoursRect: CGRect = CGRect.init()
-    var stkNumberOfServiceRect: CGRect = CGRect.init()
-    var lblServicesRect: CGRect = CGRect.init()
-    var btnNumberOfServicesRect: CGRect = CGRect.init()
-    
     var data: ServiceCenterDetail = ServiceCenterDetail.init(fromDictionary: [:])
     
     override func awakeFromNib() {
@@ -45,7 +36,7 @@ class ServiceCell: CollectionCell {
         self.data = data
         self.lblName?.text = data.name
         self.lblAddress?.text = data.address
-        self.btnNumberOfServices.setTitle(data.totalServices + "+", for: .normal)
+        self.btnNumberOfServices?.setTitle(data.totalServices + "+", for: .normal)
     
     }
     

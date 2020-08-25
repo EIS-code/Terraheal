@@ -8,9 +8,10 @@
 
 import UIKit
 enum HomeItemType: Int {
-    case MassageCenter = 0
-    case HotelOrRoom = 1
-    case EventAndCorporate = 2
+    case Header = 0
+    case MassageCenter = 1
+    case HotelOrRoom = 2
+    case EventAndCorporate = 3
 }
 struct HomeItemDetail {
     var title: String = ""
@@ -32,7 +33,6 @@ class HomeTblCell: TableCell {
         
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_22)
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-        self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
         self.btnAction?.setupBorderedButton()
     }
     
@@ -64,7 +64,9 @@ class HomeTblCell: TableCell {
             self.openInfoDialog()
         case .EventAndCorporate:
             self.openEventDialog()
-         }
+        case .Header:
+            print("No need")
+        }
     }
     
     func openEventDialog() {
@@ -101,6 +103,7 @@ class HomeTblCell: TableCell {
             [weak alert, weak self]  in
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
+            Common.appDelegate.loadServiceMapVC(navigaionVC: self.parentVC?.navigationController)
         }
     }
 }

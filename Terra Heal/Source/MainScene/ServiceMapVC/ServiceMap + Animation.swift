@@ -82,9 +82,9 @@ extension  ServiceMapVC {
     func upDownAnimation(direction:AnimationDirection) {
         switch  direction {
         case .up:
-            self.doStepUpAnimation()
+            self.upInterativeAnimation()
         case .down:
-            self.doStepDownAnimation()
+            self.downDialogAnimation()
         case .left:
             print("No Animation Leftt")
         case .right:
@@ -94,75 +94,133 @@ extension  ServiceMapVC {
         }
     }
     
-    func doStepDownAnimation() {
-        self.downDialogAnimation()
-    }
+    
     
     func setInitialAnimationProperty() {
-
         if let visibleCell = self.collectionView.visibleCells.first as? ServiceCell {
-                    self.animatingCell = visibleCell
-            
-                    self.animatingCell.lblNameRect = self.animatingCell.lblName.frame
-                    self.animatingCell.lblAddressRect = self.animatingCell.lblAddress.frame
-                    self.animatingCell.ivMapRect = self.animatingCell.ivMap.frame
-                    self.animatingCell.btnHoursRect = self.animatingCell.btnHours.frame
-                    self.animatingCell.stkNumberOfServiceRect = self.animatingCell.stkNumberOfService.frame
-                    self.animatingCell.lblServicesRect = self.animatingCell.lblServices.frame
-                print(self.animatingCell.stkNumberOfServiceRect)
+            self.animatingCell = visibleCell
+            print("Animating Cell Copied")
         }
         if let visibleCell = self.cltForCollapseView.visibleCells.first as? ServiceCollapseCell {
-                    self.targetAnimatingCell = visibleCell
+            self.targetAnimatingCell = visibleCell
+            print("Target Animating Cell Copied")
         }
     }
     
     func downDialogAnimation() {
-        print("DownAnimation")
         self.transitionAnimator?.stopAnimation(true)
+        let targetCell: ServiceCollapseCell = self.targetAnimatingCell
         self.transitionAnimator?.addAnimations {
-            self.animatingCell.lblName.frame = self.targetAnimatingCell.lblName.frame
-            self.animatingCell.stkNumberOfService.frame =
-            self.targetAnimatingCell.stkNumberOfService.frame
-            self.ivService.alpha = 0.0
-            self.vwService.transform = CGAffineTransform(translationX:0, y: self.vwServiceDialog.frame.height  - self.vwForCollapseView.frame.height)
-            self.vwBottomButtons.alpha = 0.5
+            self.animatingCell.lblName.frame = targetCell.lblName.frame
+            self.animatingCell.stkNumberOfService.frame =  targetCell.stkNumberOfService.frame
+            self.animatingCell.lblAddress.frame = targetCell.lblAddress.frame
+            self.animatingCell.btnHours.frame = targetCell.btnHours.frame
+            self.animatingCell.ivMap.frame = targetCell.ivMap.frame
             self.animatingCell.vwExpandedView.layoutIfNeeded()
+            self.ivService.alpha = 0.0
+            self.vwService.transform = CGAffineTransform(translationX:0, y: self.vwServiceDialog.frame.height  -  (self.vwForCollapseView.frame.height ))
+            self.vwBottomButtons.alpha = 0.5
         }
         self.transitionAnimator?.addCompletion({ (position) in
-            self.vwService.isHidden = true
-            self.vwForCollapseView.isHidden = false
-            self.vwBottomButtons.isHidden = true
-            self.mapView.padding = UIEdgeInsets.init(top: 20, left: 20, bottom: self.vwForCollapseView.frame.height, right: 20)
+            self.downCompletionAnimation()
         })
-        
-        
-    }
-    func doStepUpAnimation() {
-        self.upDialogAnimation()
     }
     
-    func upDialogAnimation() {
+    
+    
+    func upInterativeAnimation() {
+        
         if animatingCell == nil {
             return;
         }
+        transitionAnimator?.stopAnimation(true)
+        let targetCell: ServiceCell = ServiceCell.fromNib()
+        targetCell.setData(data: self.animatingCell.data)
+        targetCell.layoutIfNeeded()
         self.vwForCollapseView.isHidden = true
         self.vwService.isHidden = false
         self.vwBottomButtons.isHidden = false
         self.ivService.alpha = 0.0
-        transitionAnimator?.stopAnimation(true)
         transitionAnimator?.addAnimations {
-            self.animatingCell.lblName.frame = self.animatingCell.lblNameRect
-            self.animatingCell.stkNumberOfService.frame = self.animatingCell.stkNumberOfServiceRect
-            self.ivService.alpha = 1.0
-            self.vwBottomButtons.alpha = 1.0
-            self.vwService.transform = CGAffineTransform.identity
-            self.animatingCell.vwExpandedView.layoutIfNeeded()
+         self.animatingCell.lblName.frame = targetCell.lblName.frame
+                self.animatingCell.stkNumberOfService.frame = targetCell.stkNumberOfService.frame
+                self.animatingCell.lblAddress.frame = targetCell.lblAddress.frame
+                self.animatingCell.btnHours.frame = targetCell.btnHours.frame
+                self.animatingCell.ivMap.frame = targetCell.ivMap.frame
+                self.animatingCell.vwExpandedView.layoutIfNeeded()
+                self.ivService.alpha = 1.0
+                self.vwBottomButtons.alpha = 1.0
+                self.vwService.transform = CGAffineTransform.identity
+                
+         }
+         transitionAnimator?.addCompletion({ (position) in
+         self.upCompletionAnimation()
+         })
+    }
+    
+    
+    
+    func downCompletionAnimation() {
+        self.vwService.isHidden = true
+        self.vwForCollapseView.isHidden = false
+        self.vwBottomButtons.isHidden = true
+        self.mapView.padding = UIEdgeInsets.init(top: 20, left: 20, bottom: self.vwForCollapseView.frame.height, right: 20)
+    }
+    func upCompletionAnimation() {
+        self.collectionView.reloadData {
+            self.vwService.isUserInteractionEnabled = true
+            self.mapView.padding = UIEdgeInsets.init(top: 20, left: 20, bottom: self.vwService.frame.height, right: 20)
         }
-        transitionAnimator?.addCompletion({ (position) in
-            self.collectionView.reloadData {
-                    self.vwService.isUserInteractionEnabled = true
-                    self.mapView.padding = UIEdgeInsets.init(top: 20, left: 20, bottom: self.vwService.frame.height, right: 20)
-            }
-        })
+    }
+    func upAnimationWithUI() {
+        let targetCell: ServiceCell = ServiceCell.fromNib()
+        targetCell.setData(data: self.animatingCell.data)
+        targetCell.layoutIfNeeded()
+        UIView.animate(withDuration: 5.0, animations: {
+            self.animateCellForUpAnimation(targetCell: targetCell)
+            
+        }) { (completion) in
+            self.upCompletionAnimation()
+        }
+    }
+    func downAnimationWithUI() {
+        let targetCell: ServiceCollapseCell = self.targetAnimatingCell
+        UIView.animate(withDuration: 5.0, animations: {
+            self.animatingCell.lblName.frame = targetCell.lblName.frame
+            self.animatingCell.stkNumberOfService.frame =  targetCell.stkNumberOfService.frame
+            self.animatingCell.lblAddress.frame = targetCell.lblAddress.frame
+            self.animatingCell.btnHours.frame = targetCell.btnHours.frame
+            self.ivService.alpha = 0.0
+            self.vwService.transform = CGAffineTransform(translationX:0, y: self.vwServiceDialog.frame.height  -  (self.vwForCollapseView.frame.height ))
+            self.vwBottomButtons.alpha = 0.5
+            
+            //   self.animateCellForDownAnimation(targetCell: targetCell)
+        }) { (completion) in
+            //self.downCompletionAnimation()
+        }
+    }
+    
+    func animateCellForUpAnimation(targetCell:ServiceCell) {
+        self.animatingCell.lblName.frame = targetCell.lblName.frame
+        self.animatingCell.stkNumberOfService.frame = targetCell.stkNumberOfService.frame
+        self.animatingCell.lblAddress.frame = targetCell.lblAddress.frame
+        self.animatingCell.btnHours.frame = targetCell.btnHours.frame
+        // self.animatingCell.ivMap.frame = targetCell.ivMap.frame
+        self.ivService.alpha = 1.0
+        self.vwBottomButtons.alpha = 1.0
+        self.vwService.transform = CGAffineTransform.identity
+        self.animatingCell.vwExpandedView.layoutIfNeeded()
+    }
+    func animateCellForDownAnimation(targetCell:ServiceCollapseCell) {
+        
+        self.animatingCell.lblName.frame = targetCell.lblName.frame
+        self.animatingCell.stkNumberOfService.frame =  targetCell.stkNumberOfService.frame
+        self.animatingCell.lblAddress.frame = targetCell.lblAddress.frame
+        self.animatingCell.btnHours.frame = targetCell.btnHours.frame
+        self.ivService.alpha = 0.0
+        self.vwService.transform = CGAffineTransform(translationX:0, y: self.vwServiceDialog.frame.height  -  (self.vwForCollapseView.frame.height ))
+        self.vwBottomButtons.alpha = 0.5
+        self.animatingCell.lblName.superview?.setNeedsLayout()
+        self.animatingCell.lblName.superview?.layoutIfNeeded()
     }
 }

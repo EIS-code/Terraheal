@@ -57,7 +57,7 @@ struct ProfileItemDetail {
 }
 
 
-class ProfileVC: SlideVC {
+class ProfileVC: MainVC {
     
     @IBOutlet weak var btnProfile: FloatingRoundButton!
     @IBOutlet weak var btnMenu: FloatingRoundButton!
@@ -99,11 +99,6 @@ class ProfileVC: SlideVC {
     
     
     
-    
-    static let shared: ProfileVC = {
-        let instance: ProfileVC = ProfileVC.fromNib()
-        return instance
-    }()
     
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -177,8 +172,7 @@ class ProfileVC: SlideVC {
     }
     
     @IBAction func btnProfileTapped(_ sender: Any) {
-        ProfileVC.shared.hide()
-        //_ = (self.navigationController as? NC)?.popVC()
+        self.revealViewController()?.revealRightView()
     }
 }
 

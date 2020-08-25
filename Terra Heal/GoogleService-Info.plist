@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>977977845765-t8sftkrms5nbjt83347fo8avdqrq6q1r.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.977977845765-t8sftkrms5nbjt83347fo8avdqrq6q1r</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBDE1nQ4cP0Fcu2l1ysTxcD3CXJMeKKgMw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>977977845765</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.terraheal</string>
+	<key>PROJECT_ID</key>
+	<string>terra-heal</string>
+	<key>STORAGE_BUCKET</key>
+	<string>terra-heal.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:977977845765:ios:8ba708f91699bb50a3546c</string>
+	<key>DATABASE_URL</key>
+	<string>https://terra-heal.firebaseio.com</string>
+</dict>
+</plist>

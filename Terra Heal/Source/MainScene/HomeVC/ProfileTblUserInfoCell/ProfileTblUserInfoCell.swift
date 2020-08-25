@@ -23,7 +23,6 @@ class ProfileTblUserInfoCell: TableCell {
         self.lblName?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
         self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.lblDescription?.setFont(name: FontName.Regular, size: FontSize.label_12)
-        self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
         self.btnAction?.setupBorderedButton()
         
 
@@ -45,11 +44,32 @@ class ProfileTblUserInfoCell: TableCell {
         self.btnAction?.setupBorderedButton()
     }
     @IBAction func btnHomeTapped(_ sender: Any) {
-        Common.appDelegate.loadReservationVC()
+        //self.openEventDialog()
+        (self.parentVC as? HomeVC)?.updateEventData()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
+    }
+    func openEventDialog() {
+        let alert: CustomAddNewEventDialog = CustomAddNewEventDialog.fromNib()
+        alert.initialize(title:"events and corporate Booking", buttonTitle: "BTN_SEND".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            guard let self = self else { return } ; print(self)
+            alert?.dismiss()
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (event) in
+            guard let self = self else { return } ; print(self)
+            alert?.dismiss()
+            Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "EVENT_BOOKING_TITLE".localized(), strMessage: "EVENT_BOOKING_MESSAGE".localized(), strImg: ImageAsset.Completion.requestBookingCompletion, strButtonTitle: "EVENT_BOOKING_BTN_HOME".localized()))
+        }
+        
+        
+        
+        
     }
 }

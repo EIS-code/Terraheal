@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="btnLeft" destination="E65-Md-Oec" id="74c-I6-IUX"/>
                 <outlet property="btnScanNow" destination="phD-1A-sjB" id="WMx-LZ-vi1"/>
+                <outlet property="ivForDocument" destination="bst-yb-q3n" id="Vxh-XI-vdl"/>
                 <outlet property="lblHeader" destination="xOG-OI-OfF" id="hde-C2-8N6"/>
                 <outlet property="previewView" destination="cmV-AP-sC2" id="dZc-jB-5WD"/>
                 <outlet property="progressBar" destination="CFs-8l-IGN" id="uvm-fq-QKO"/>

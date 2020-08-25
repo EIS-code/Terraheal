@@ -75,8 +75,8 @@
                                         <constraint firstItem="lfs-Ot-OgB" firstAttribute="centerX" secondItem="yAp-fy-7YT" secondAttribute="centerX" id="yiA-uQ-Ciw"/>
                                     </constraints>
                                 </view>
-                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1x2-DH-fYI">
-                                    <rect key="frame" x="20" y="92.5" width="288" height="101"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1x2-DH-fYI">
+                                    <rect key="frame" x="16" y="10" width="288" height="101"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label fsadf dsaf dsafjkdsljfdskajfklsdjaklfjkslad" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-4J-xGz" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="29.5" y="0.0" width="229.5" height="41"/>
@@ -195,12 +195,12 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Cqm-Aj-Pqf" secondAttribute="bottom" constant="20" id="8Zl-4P-4k9"/>
                 <constraint firstItem="Cqm-Aj-Pqf" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Ag8-bM-Nvc"/>
                 <constraint firstAttribute="trailing" secondItem="6ZW-DU-hOd" secondAttribute="trailing" id="C4E-pP-AJq"/>
+                <constraint firstItem="V39-84-TsB" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="Grm-t3-8Xq"/>
                 <constraint firstItem="6ZW-DU-hOd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O4e-FZ-uqZ"/>
                 <constraint firstItem="6ZW-DU-hOd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Q6J-jS-lz5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="V39-84-TsB" secondAttribute="trailing" id="dUH-Mq-8NY"/>
                 <constraint firstItem="V39-84-TsB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kCB-jR-Feo"/>
                 <constraint firstItem="V39-84-TsB" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="pVs-FU-SqG"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="V39-84-TsB" secondAttribute="bottom" id="rX8-mU-2eq"/>
                 <constraint firstAttribute="bottom" secondItem="6ZW-DU-hOd" secondAttribute="bottom" id="xcn-ZA-5s5"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

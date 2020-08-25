@@ -13,4 +13,7 @@ target 'Terra Heal' do
   pod 'SDWebImage'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  # Recommended: Add the Firebase pod for Google Analytics and Crashlytics
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Analytics'
 end

@@ -80,7 +80,7 @@ class EditProfileVC: MainVC {
     }
     
     @IBAction func btnBackTapped(_ sender: Any) {
-         _ = (self.navigationController as? NC)?.popVC()
+        _ = (self.navigationController as? NC)?.popVC()
     }
     
     @IBAction func btnAddPictureTapped(_ sender: Any) {
@@ -95,22 +95,22 @@ class EditProfileVC: MainVC {
         photoPickerAlert.show(animated: true)
         photoPickerAlert.onBtnCancelTapped = { [weak photoPickerAlert, weak self] in
             photoPickerAlert?.dismiss()
-             guard let self = self else { return } ; print(self)
+            guard let self = self else { return } ; print(self)
         }
         photoPickerAlert.onBtnDoneTapped = { [weak photoPickerAlert, weak self] in
             photoPickerAlert?.dismiss()
-             guard let self = self else { return } ; print(self)
+            guard let self = self else { return } ; print(self)
         }
         photoPickerAlert.onBtnCameraTapped = { [weak photoPickerAlert, weak self] (doc) in
             photoPickerAlert?.dismiss()
-             guard let self = self else { return } ; print(self)
+            guard let self = self else { return } ; print(self)
             self.selectedProfileDoc = doc
             self.openCropper(image: doc.image ?? UIImage())
             
         }
         photoPickerAlert.onBtnGallaryTapped = { [weak photoPickerAlert, weak self] (doc) in
             photoPickerAlert?.dismiss()
-             guard let self = self else { return } ; print(self)
+            guard let self = self else { return } ; print(self)
             self.selectedProfileDoc = doc
             self.openCropper(image: doc.image ?? UIImage())
             //let gallaryVC:GallaryVC = Common.appDelegate.loadGallaryVC(navigaionVC: self.navigationController)
@@ -209,13 +209,13 @@ class EditProfileVC: MainVC {
     func openMobileNumberDialog(index:Int = 0) {
         let alert: CustomMobileNumberDialog = CustomMobileNumberDialog.fromNib()
         switch self.arrForProfile[index].contentType {
-            case .EmergencyContact:
-                alert.initialize(title: arrForProfile[index].placeholder,countryPhoneCode: appSingleton.user.emergencyTelNumberCode,phoneNumber: appSingleton.user.emergencyTelNumber, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
-            case .Phone:
-                alert.initialize(title: arrForProfile[index].placeholder,countryPhoneCode: appSingleton.user.telNumberCode,phoneNumber: appSingleton.user.telNumber, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
-             default : print("Default")
+        case .EmergencyContact:
+            alert.initialize(title: arrForProfile[index].placeholder,countryPhoneCode: appSingleton.user.emergencyTelNumberCode,phoneNumber: appSingleton.user.emergencyTelNumber, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+        case .Phone:
+            alert.initialize(title: arrForProfile[index].placeholder,countryPhoneCode: appSingleton.user.telNumberCode,phoneNumber: appSingleton.user.telNumber, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+        default : print("Default")
         }
-       
+        
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
@@ -245,7 +245,10 @@ class EditProfileVC: MainVC {
     func openDatePicker(index:Int = 0) {
         let datePickerAlert: CustomDatePicker = CustomDatePicker.fromNib()
         datePickerAlert.initialize(title: arrForProfile[index].placeholder, buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized())
-         datePickerAlert.setDate(minDate:Date().addingTimeInterval(-Date.millisecondsOfDay(day: 3)) , maxDate: Date())
+        
+        let minimumDate = Calendar.current.date(byAdding: .year, value: -100, to: Date()) ?? Date()
+        
+        datePickerAlert.setDate(minDate: minimumDate , maxDate: Date())
         datePickerAlert.show(animated: true)
         datePickerAlert.onBtnCancelTapped = {
             [weak datePickerAlert, weak self] in
@@ -453,7 +456,7 @@ extension EditProfileVC {
 extension EditProfileVC: UIImageCropperProtocol {
     func didCropImage(originalImage: UIImage?, croppedImage: UIImage?) {
         ivProfilePic.image = croppedImage
-         _ = (self.navigationController as? NC)?.popVC()
+        _ = (self.navigationController as? NC)?.popVC()
         self.ivProfilePic.image = croppedImage
         self.selectedProfileDoc?.image = croppedImage
         self.wsUpdateProfile()
@@ -462,7 +465,7 @@ extension EditProfileVC: UIImageCropperProtocol {
     //optional
     func didCancel() {
         print("did cancel")
-         _ = (self.navigationController as? NC)?.popVC()
+        _ = (self.navigationController as? NC)?.popVC()
         //self.wsUpdateProfile()
     }
 }

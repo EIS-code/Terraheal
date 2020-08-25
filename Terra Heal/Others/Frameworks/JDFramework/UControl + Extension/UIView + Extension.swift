@@ -44,7 +44,10 @@ public extension UIView {
         mask.path = path.cgPath
         layer.mask = mask
     }
-
+    
+    func copyView<T: UIView>() -> T {
+            return NSKeyedUnarchiver.unarchiveObject(with: NSKeyedArchiver.archivedData(withRootObject: self)) as! T
+        }
 }
 
 // MARK: Nib Extension

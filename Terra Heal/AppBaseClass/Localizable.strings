@@ -424,7 +424,8 @@
 "PHOTO_DIALOG_FROM_TITLE" = "upload a photo ";
 "PHOTO_DIALOG_FROM_CAMERA" = "take a photo ";
 "PHOTO_DIALOG_FROM_GALLARY" = "load from gallary";
-"CAMERA_LBL_MESSAGE" = "Hold your phone at eye level so that your selfie is similar to your passport photo";
+"FACE_SCAN_MESSAGE" = "Hold your phone at eye level so that your selfie is similar to your passport photo";
+"DOCUMENT_LB_MESSAGE" = "Hold your phone to scan your document";
 
 //MARK: Reciepent Dialog
 "RECIEPENT_DIALOG__TITLE" = "select recipient";
@@ -460,6 +461,11 @@
 "BTN_APPLY" =  "apply";
 "LBL_MENU" =  "menu";
 "TIME_UNIT_MIN" = "min";
+
+"PHOTO_DIALOG_SCAN_DOCUMENT" = "Scan";
+"PHOTO_DIALOG_UPLODED"= "Upload";
+
+
 "FAQ_CONTENT" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget. Nullam eget felis eget nunc lobortis. Faucibus ornare suspendisse sed nisi. Sagittis eu volutpat odio facilisis mauris sit amet massa. Erat velit scelerisque in dictum non consectetur a erat. Amet nulla facilisi morbi tempus iaculis urna.";
 //MARK: -
 //MARK: VALIDATION TOAST MESSAGES

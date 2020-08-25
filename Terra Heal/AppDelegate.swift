@@ -6,6 +6,8 @@ import UIKit
 import IQKeyboardManager
 import GoogleMaps
 import GooglePlaces
+import Firebase
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window = UIWindow(frame:UIScreen.main.bounds)
         
+        //FirebaseApp.configure()
         IQKeyboardManager.shared().isEnabled = true
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true
         IQKeyboardManager.shared().isEnableAutoToolbar = true
@@ -24,8 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyBuupL4pg_TJS76EVkKrrquH3gCgFs--u4")
         GMSPlacesClient.provideAPIKey("AIzaSyBuupL4pg_TJS76EVkKrrquH3gCgFs--u4")
         self.loadLaunchVC()
-        //self.setupFireBaseConfiguration()
-        //self.loadWelcomeVC()
+        
         return true
     }
 

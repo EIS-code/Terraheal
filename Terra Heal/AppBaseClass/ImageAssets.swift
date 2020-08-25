@@ -14,6 +14,10 @@ struct ImageAsset {
     static let rightArrow = "asset-arrow-right"
     static let leftArrow = "asset-arrow-left"
     
+    struct Camera {
+        static let square = "asset-square-cutter"
+        static let face = "asset-face"
+    }
     struct Placeholder {
         static let user = "asset-user"
     }
