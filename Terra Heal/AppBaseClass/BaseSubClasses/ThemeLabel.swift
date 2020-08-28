@@ -35,7 +35,6 @@ class ThemeLabel: UILabel {
         self.text = text
     }
 
-    //followed from @Chris and @winnie-ru
     func fadeTransition(_ duration:CFTimeInterval) {
         let animation = CATransition()
         animation.timingFunction = CAMediaTimingFunction(name:

@@ -391,6 +391,8 @@
 		03C72FF824DAE90700EA55D2 /* EditProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C72FF624DAE90700EA55D2 /* EditProfileCell.swift */; };
 		03C72FF924DAE90700EA55D2 /* EditProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C72FF724DAE90700EA55D2 /* EditProfileCell.xib */; };
 		03D77F3D24AB2FAF0098DD01 /* JDImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D77F3C24AB2FAF0098DD01 /* JDImageExtension.swift */; };
+		03E934FA24F6988800E34A67 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03E934FC24F6988800E34A67 /* Localizable.strings */; };
+		03E934FF24F69B0E00E34A67 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E934FE24F69B0E00E34A67 /* LanguageManager.swift */; };
 		03F5255824AB546F008E1493 /* MassagePreferenceWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5255724AB546F008E1493 /* MassagePreferenceWebservice.swift */; };
 		55164A22FACE35DC8CBD8350 /* Pods_Terra_Heal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897AF53337FB6FB8116C0500 /* Pods_Terra_Heal.framework */; };
 		632DB095248FA5CC00B65B46 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632DB080248FA5CC00B65B46 /* RatingView.swift */; };
@@ -422,7 +424,6 @@
 		6343984C245BE6DF009BCA1F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634397AD245BE6DF009BCA1F /* Constant.swift */; };
 		6343984D245BE6DF009BCA1F /* PreferenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634397AE245BE6DF009BCA1F /* PreferenceHelper.swift */; };
 		6343985A245BE6DF009BCA1F /* APP+NAVIGATION.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634397BD245BE6DF009BCA1F /* APP+NAVIGATION.swift */; };
-		6343985B245BE6DF009BCA1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 634397BE245BE6DF009BCA1F /* Localizable.strings */; };
 		6343985C245BE6DF009BCA1F /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634397BF245BE6DF009BCA1F /* AppTheme.swift */; };
 		6343985E245BE6DF009BCA1F /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634397C2245BE6DF009BCA1F /* Main.swift */; };
 		63439860245BE6DF009BCA1F /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634397C4245BE6DF009BCA1F /* FontHelper.swift */; };
@@ -827,6 +828,9 @@
 		03C72FF624DAE90700EA55D2 /* EditProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileCell.swift; sourceTree = "<group>"; };
 		03C72FF724DAE90700EA55D2 /* EditProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileCell.xib; sourceTree = "<group>"; };
 		03D77F3C24AB2FAF0098DD01 /* JDImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDImageExtension.swift; sourceTree = "<group>"; };
+		03E934FB24F6988800E34A67 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		03E934FD24F698BA00E34A67 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		03E934FE24F69B0E00E34A67 /* LanguageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		03F5255724AB546F008E1493 /* MassagePreferenceWebservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MassagePreferenceWebservice.swift; sourceTree = "<group>"; };
 		168AB6908BA3531B68A95E2E /* Pods-Terra Heal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Terra Heal.debug.xcconfig"; path = "Target Support Files/Pods-Terra Heal/Pods-Terra Heal.debug.xcconfig"; sourceTree = "<group>"; };
 		4B09919DBC145176C38FE81D /* Pods-Terra Heal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Terra Heal.release.xcconfig"; path = "Target Support Files/Pods-Terra Heal/Pods-Terra Heal.release.xcconfig"; sourceTree = "<group>"; };
@@ -862,7 +866,6 @@
 		634397AD245BE6DF009BCA1F /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		634397AE245BE6DF009BCA1F /* PreferenceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceHelper.swift; sourceTree = "<group>"; };
 		634397BD245BE6DF009BCA1F /* APP+NAVIGATION.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APP+NAVIGATION.swift"; sourceTree = "<group>"; };
-		634397BE245BE6DF009BCA1F /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		634397BF245BE6DF009BCA1F /* AppTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		634397C2245BE6DF009BCA1F /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		634397C4245BE6DF009BCA1F /* FontHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
@@ -3399,7 +3402,8 @@
 				634397AD245BE6DF009BCA1F /* Constant.swift */,
 				634397AE245BE6DF009BCA1F /* PreferenceHelper.swift */,
 				634397BD245BE6DF009BCA1F /* APP+NAVIGATION.swift */,
-				634397BE245BE6DF009BCA1F /* Localizable.strings */,
+				03E934FE24F69B0E00E34A67 /* LanguageManager.swift */,
+				03E934FC24F6988800E34A67 /* Localizable.strings */,
 				634397BF245BE6DF009BCA1F /* AppTheme.swift */,
 				0344384724C1DAA90066DDCA /* ImageAssets.swift */,
 				634398AB245BE92C009BCA1F /* Common.swift */,
@@ -3526,6 +3530,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-PT",
 			);
 			mainGroup = 63439754245BE460009BCA1F;
 			productRefGroup = 6343975E245BE460009BCA1F /* Products */;
@@ -3710,7 +3715,7 @@
 				0348788C24B2EF64006774AB /* NotificationVC.xib in Resources */,
 				0344490924B5FC9400C8B763 /* BookingCompleteVC.xib in Resources */,
 				03B2B74224E6514A00EC18D5 /* PricingDurationSelectionDialog.xib in Resources */,
-				6343985B245BE6DF009BCA1F /* Localizable.strings in Resources */,
+				03E934FA24F6988800E34A67 /* Localizable.strings in Resources */,
 				03B2B74324E6514A00EC18D5 /* PricingDurationCltCell.xib in Resources */,
 				0344496424B6045F00C8B763 /* TimeDialog.xib in Resources */,
 				0347835E24BDDB2D00E3D4EC /* ServiceCenterDetailDialog.xib in Resources */,
@@ -3842,6 +3847,7 @@
 				632DB09D248FA5CC00B65B46 /* JDDeviceHelper.swift in Sources */,
 				0382B5AE24D3F465002B6BF5 /* PersonPickerDialog.swift in Sources */,
 				0348784724B2EF64006774AB /* RegisterVC.swift in Sources */,
+				03E934FF24F69B0E00E34A67 /* LanguageManager.swift in Sources */,
 				03A1B54C24B5C946008BAC3A /* ServiceSelectionVC.swift in Sources */,
 				0348786B24B2EF64006774AB /* CustomHistoryFilterPicker.swift in Sources */,
 				0348782524B2EF64006774AB /* MyAddressVC.swift in Sources */,
@@ -4062,11 +4068,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		03E934FC24F6988800E34A67 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03E934FB24F6988800E34A67 /* en */,
+				03E934FD24F698BA00E34A67 /* pt-PT */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		6343976F245BE467009BCA1F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -4127,6 +4146,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

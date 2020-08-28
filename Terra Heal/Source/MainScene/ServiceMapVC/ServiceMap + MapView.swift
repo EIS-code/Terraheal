@@ -50,12 +50,12 @@ extension ServiceMapVC :GMSMapViewDelegate {
         }
         self.arrForServicesMarker.removeAll()
     }
+    
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         if let index = marker.userData as? Int {
             self.currentIndex = index
             self.setCenterDataFor(index: self.currentIndex)
         }
-            
         return true
     }
 }

@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         self.window = UIWindow(frame:UIScreen.main.bounds)
-        
+        Bundle.swizzleLocalization()
         //FirebaseApp.configure()
         IQKeyboardManager.shared().isEnabled = true
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true
@@ -73,11 +73,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             while let presentedViewController = topController.presentedViewController {
                 topController = presentedViewController
             }
-            
             return topController
         } else {
             return UIApplication.shared.windows.last?.rootViewController ?? nil
         }
+    }
+    
+    
+    func changeLanguage() {
+        self.loadHomeVC()
     }
     
 }

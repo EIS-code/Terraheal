@@ -10,6 +10,7 @@ class PreferenceHelper: NSObject {
    
     // MARK: User Preference Keys
     private let KEY_USER_ID = "user_id"
+    private let KEY_LAGUAGE_CODE = "language_code"
     private let KEY_IS_TUTORIAL_SHOW = "is_tutorial_show"
     private let KEY_SESSION_TOKEN = "session_token"
     private let KEY_DEVICE_TOKEN = "device_token";
@@ -44,6 +45,14 @@ class PreferenceHelper: NSObject {
         return (ph.value(forKey: KEY_SESSION_TOKEN) as? String) ?? ""
     }
 
+    func setLanguageCode(_ code:String) {
+        ph.set(code, forKey: KEY_LAGUAGE_CODE);
+        ph.synchronize();
+    }
+    func getLanguageCode() -> String {
+        return (ph.value(forKey: KEY_LAGUAGE_CODE) as? String) ?? "en"
+    }
+    
     // MARK: Preference User Getter Setters
     func setIsTutorialShow(_ isShow:Bool) {
         ph.set(isShow, forKey: KEY_IS_TUTORIAL_SHOW);

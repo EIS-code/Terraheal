@@ -75,7 +75,6 @@ class HomeVC: MainVC {
             })
             vwFloatingBottom.setRound(withBorderColor: .themePrimary, andCornerRadious: self.vwFloatingBottom.bounds.height/2.0, borderWidth: 0.1)
             vwFloatingBottom.setShadow()
-            
             self.tableView?.contentInset = self.getGradientInset()
         }
     }

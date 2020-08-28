@@ -110,7 +110,7 @@
                 <outlet property="lblName" destination="oE3-Gb-NsU" id="XRV-oS-0W7"/>
                 <outlet property="lblServices" destination="joc-95-65Q" id="NOf-9H-iYQ"/>
                 <outlet property="stkNumberOfService" destination="G0t-Db-nqo" id="aTj-5x-VOf"/>
-                <outlet property="vwCollapseService" destination="95s-Gw-NKe" id="Gwx-JM-7gx"/>
+                <outlet property="vwBg" destination="95s-Gw-NKe" id="a3i-9Y-pKk"/>
             </connections>
             <point key="canvasLocation" x="308.69565217391306" y="71.651785714285708"/>
         </collectionViewCell>

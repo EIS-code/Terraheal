@@ -34,7 +34,7 @@ enum PreferLanguage: String {
         switch self {
         // Use Internationalization, as appropriate.
         case .English: return "en"
-        case .Portugues: return "pt"
+        case .Portugues: return "pt-PT"
         default: return "--"
         }
     }

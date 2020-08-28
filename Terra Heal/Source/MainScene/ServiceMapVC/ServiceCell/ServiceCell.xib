@@ -111,7 +111,7 @@
                 <outlet property="lblName" destination="wN0-af-H7V" id="Bfe-6k-WKR"/>
                 <outlet property="lblServices" destination="KWZ-S2-XHf" id="LTz-90-73q"/>
                 <outlet property="stkNumberOfService" destination="GD8-AV-6yj" id="BrD-MU-PGw"/>
-                <outlet property="vwExpandedView" destination="WXm-me-4QY" id="oax-aM-2aW"/>
+                <outlet property="vwBg" destination="WXm-me-4QY" id="QZ3-gl-9fR"/>
             </connections>
             <point key="canvasLocation" x="409.4202898550725" y="128.57142857142856"/>
         </collectionViewCell>

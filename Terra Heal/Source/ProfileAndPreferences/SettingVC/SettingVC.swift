@@ -125,8 +125,6 @@ class SettingVC: MainVC {
         }
     }
 
-
-
     @IBAction func btnBackTapped(_ sender: Any) {
          _ = (self.navigationController as? NC)?.popVC()
     }
@@ -134,9 +132,6 @@ class SettingVC: MainVC {
     @IBAction func btnSubmitTapped(_ sender: Any) {
         Common.appDelegate.loadHomeVC()
     }
-
-
-
 
 }
 //MARK:- Dialogs
@@ -156,12 +151,12 @@ extension SettingVC {
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (language) in
             alert?.dismiss()
-             guard let self = self else { return } ; print(self)
+            guard let self = self else { return } ; print(self)
             var request: SettingPreference.SaveSettingPrefence = SettingPreference.SaveSettingPrefence()
             request.language_code = language.code()
-            
-            self.wsUpdateSettingDetail(request: request)
-            
+            //self.wsUpdateSettingDetail(request: request)
+            PreferenceHelper.shared.setLanguageCode(language.code())
+            Common.appDelegate.changeLanguage()
         }
     }
 
@@ -178,7 +173,6 @@ extension SettingVC {
             [weak alert, weak self]  in
              guard let self = self else { return } ; print(self)
             alert?.dismiss()
-
         }
     }
 

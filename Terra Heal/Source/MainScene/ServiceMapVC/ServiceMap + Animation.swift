@@ -109,14 +109,14 @@ extension  ServiceMapVC {
     
     func downDialogAnimation() {
         self.transitionAnimator?.stopAnimation(true)
-        let targetCell: ServiceCollapseCell = self.targetAnimatingCell
+        let targetCell: ServiceCollapseCell = self.targetAnimatingCell as! ServiceCollapseCell
         self.transitionAnimator?.addAnimations {
             self.animatingCell.lblName.frame = targetCell.lblName.frame
             self.animatingCell.stkNumberOfService.frame =  targetCell.stkNumberOfService.frame
             self.animatingCell.lblAddress.frame = targetCell.lblAddress.frame
             self.animatingCell.btnHours.frame = targetCell.btnHours.frame
             self.animatingCell.ivMap.frame = targetCell.ivMap.frame
-            self.animatingCell.vwExpandedView.layoutIfNeeded()
+            self.animatingCell.vwBg.layoutIfNeeded()
             self.ivService.alpha = 0.0
             self.vwService.transform = CGAffineTransform(translationX:0, y: self.vwServiceDialog.frame.height  -  (self.vwForCollapseView.frame.height ))
             self.vwBottomButtons.alpha = 0.5
@@ -147,7 +147,7 @@ extension  ServiceMapVC {
                 self.animatingCell.lblAddress.frame = targetCell.lblAddress.frame
                 self.animatingCell.btnHours.frame = targetCell.btnHours.frame
                 self.animatingCell.ivMap.frame = targetCell.ivMap.frame
-                self.animatingCell.vwExpandedView.layoutIfNeeded()
+                self.animatingCell.vwBg.layoutIfNeeded()
                 self.ivService.alpha = 1.0
                 self.vwBottomButtons.alpha = 1.0
                 self.vwService.transform = CGAffineTransform.identity
@@ -172,55 +172,6 @@ extension  ServiceMapVC {
             self.mapView.padding = UIEdgeInsets.init(top: 20, left: 20, bottom: self.vwService.frame.height, right: 20)
         }
     }
-    func upAnimationWithUI() {
-        let targetCell: ServiceCell = ServiceCell.fromNib()
-        targetCell.setData(data: self.animatingCell.data)
-        targetCell.layoutIfNeeded()
-        UIView.animate(withDuration: 5.0, animations: {
-            self.animateCellForUpAnimation(targetCell: targetCell)
-            
-        }) { (completion) in
-            self.upCompletionAnimation()
-        }
-    }
-    func downAnimationWithUI() {
-        let targetCell: ServiceCollapseCell = self.targetAnimatingCell
-        UIView.animate(withDuration: 5.0, animations: {
-            self.animatingCell.lblName.frame = targetCell.lblName.frame
-            self.animatingCell.stkNumberOfService.frame =  targetCell.stkNumberOfService.frame
-            self.animatingCell.lblAddress.frame = targetCell.lblAddress.frame
-            self.animatingCell.btnHours.frame = targetCell.btnHours.frame
-            self.ivService.alpha = 0.0
-            self.vwService.transform = CGAffineTransform(translationX:0, y: self.vwServiceDialog.frame.height  -  (self.vwForCollapseView.frame.height ))
-            self.vwBottomButtons.alpha = 0.5
-            
-            //   self.animateCellForDownAnimation(targetCell: targetCell)
-        }) { (completion) in
-            //self.downCompletionAnimation()
-        }
-    }
     
-    func animateCellForUpAnimation(targetCell:ServiceCell) {
-        self.animatingCell.lblName.frame = targetCell.lblName.frame
-        self.animatingCell.stkNumberOfService.frame = targetCell.stkNumberOfService.frame
-        self.animatingCell.lblAddress.frame = targetCell.lblAddress.frame
-        self.animatingCell.btnHours.frame = targetCell.btnHours.frame
-        // self.animatingCell.ivMap.frame = targetCell.ivMap.frame
-        self.ivService.alpha = 1.0
-        self.vwBottomButtons.alpha = 1.0
-        self.vwService.transform = CGAffineTransform.identity
-        self.animatingCell.vwExpandedView.layoutIfNeeded()
-    }
-    func animateCellForDownAnimation(targetCell:ServiceCollapseCell) {
-        
-        self.animatingCell.lblName.frame = targetCell.lblName.frame
-        self.animatingCell.stkNumberOfService.frame =  targetCell.stkNumberOfService.frame
-        self.animatingCell.lblAddress.frame = targetCell.lblAddress.frame
-        self.animatingCell.btnHours.frame = targetCell.btnHours.frame
-        self.ivService.alpha = 0.0
-        self.vwService.transform = CGAffineTransform(translationX:0, y: self.vwServiceDialog.frame.height  -  (self.vwForCollapseView.frame.height ))
-        self.vwBottomButtons.alpha = 0.5
-        self.animatingCell.lblName.superview?.setNeedsLayout()
-        self.animatingCell.lblName.superview?.layoutIfNeeded()
-    }
+
 }

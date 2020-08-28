@@ -40,7 +40,7 @@ class ServiceMapVC: MainVC {
     var animationProgress: CGFloat = 0
     var yPostion: CGFloat = 0.0
     var animatingCell: ServiceCell!
-    var targetAnimatingCell: ServiceCollapseCell!
+    var targetAnimatingCell: ServiceCell!
     var sessionSelectionDialog: SessionDialog!
     var recipentMassageManageDialog: RecipentMassageManageDialog!
     var dialogForAccessory: AccessorySelectionDialog!
@@ -83,19 +83,17 @@ class ServiceMapVC: MainVC {
                 self.view.layoutIfNeeded()
             }
             self.cltForCollapseView.reloadData {
-            let height = self.cltForCollapseView.collectionViewLayout.collectionViewContentSize.height
-            self.hCltCollapseView.constant = height
-            self.view.layoutIfNeeded()
-                
+                let height = self.cltForCollapseView.collectionViewLayout.collectionViewContentSize.height
+                self.hCltCollapseView.constant = height
+                self.view.layoutIfNeeded()
             }
             self.btnBook?.setupBorderedButton()
             self.btnCheckService?.setupFilledButton()
             self.mapView.roundCorners(corners:[.topLeft,.topRight], radius: 40.0)
             self.vwServiceDialog.roundCorners(corners:[.topLeft,.topRight], radius: 40.0)
             self.vwForCollapseView.roundCorners(corners: [.topLeft,.topRight] , radius: 40.0)
-            
             self.btnKm.setRound(withBorderColor: UIColor.clear, andCornerRadious: self.btnKm.frame.height/2.0, borderWidth: 1.0)
-           // self.btnKmsetupFilledButton()
+            // self.btnKmsetupFilledButton()
             self.ivService.setRound()
         }
     }
@@ -106,10 +104,10 @@ class ServiceMapVC: MainVC {
         self.lblAddressTitle?.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.lblAddress?.text = "Lorem Ipsum, Lisbon, portugal 12451.".localized()
         self.lblAddress?.setFont(name: FontName.Regular, size: FontSize.label_12)
-        self.btnBook.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnBook.setTitle("BTN_BOOK_HERE".localized(), for: .normal)
-        self.btnCheckService.setTitle("BTN_CHECK_SERVICE".localized(), for: .normal)
-        self.btnCheckService.setFont(name: FontName.SemiBold, size: FontSize.button_14)
+        self.btnBook?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
+        self.btnBook?.setTitle("BTN_BOOK_HERE".localized(), for: .normal)
+        self.btnCheckService?.setTitle("BTN_CHECK_SERVICE".localized(), for: .normal)
+        self.btnCheckService?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.setupCollectionView()
     }
     
@@ -259,7 +257,7 @@ extension ServiceMapVC {
             
         }
     }
-      
+    
 }
 
 

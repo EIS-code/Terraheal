@@ -14,6 +14,16 @@
       "filename" : "thai yoga MASSAGES@2x.png",
       "idiom" : "universal",
       "scale" : "3x"
+    },
+    {
+      "filename" : "thai yoga MASSAGES@2x-1.png",
+      "idiom" : "ipad",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "thai yoga MASSAGES@3x-1.png",
+      "idiom" : "ipad",
+      "scale" : "2x"
     }
   ],
   "info" : {

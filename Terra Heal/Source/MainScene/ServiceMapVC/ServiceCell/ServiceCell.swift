@@ -8,7 +8,7 @@ import Foundation
 
 class ServiceCell: CollectionCell {
 
-    @IBOutlet weak var vwExpandedView: UIView!
+    @IBOutlet weak var vwBg: UIView!
     @IBOutlet weak var lblName: ThemeLabel!
     @IBOutlet weak var lblAddress: ThemeLabel!
     @IBOutlet weak var ivMap: UIImageView!
