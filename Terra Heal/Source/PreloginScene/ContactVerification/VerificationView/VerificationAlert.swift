@@ -15,7 +15,7 @@ class VerificationAlert: ThemeBottomDialogView {
     @IBOutlet weak var btnVerify: ThemeButton!
     
     @IBOutlet var otpTextFieldView: OTPFieldView!
-    @IBOutlet weak var btnResend: UnderlineTextButton!
+    @IBOutlet weak var btnResend: DialogCancelButton!
     
     var currentTab = 0
     

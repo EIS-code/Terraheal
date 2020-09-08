@@ -26,8 +26,8 @@ class TutorialCell: CollectionCell {
 
     func setData(tutorialDetail:TutorialDetail) {
 
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_22)
-        self.lblDescription?.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.header)
+        self.lblDescription?.setFont(name: FontName.Regular, size: FontSize.detail)
         self.lblTitle?.text = tutorialDetail.title
         self.lblDescription?.text = tutorialDetail.description
         self.ivTutorial.image = UIImage.init(named: tutorialDetail.image)

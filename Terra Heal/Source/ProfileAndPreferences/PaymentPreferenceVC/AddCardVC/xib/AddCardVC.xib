@@ -213,7 +213,7 @@
                     <color key="textColor" name="theme_hint_text"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3SF-7Z-2TP" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3SF-7Z-2TP" customClass="BackButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="20" y="20" width="109" height="109"/>
                     <color key="backgroundColor" name="theme_primary_light"/>
                     <constraints>

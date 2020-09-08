@@ -131,9 +131,7 @@ public class JDDeviceHelper {
             if finalFontSize > maximumSize && maximumSize != 0.0{
                 finalFontSize = maximumSize
             }
-
         }
-
         return finalFontSize
     }
     

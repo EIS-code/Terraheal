@@ -47,6 +47,57 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="38N-m7-szN" userLabel="GradientView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <subviews>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Lr-5t-cFx" userLabel="TopGradient" customClass="ThemeTopGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="144"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUp-w5-4ZG" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="668" width="375" height="144"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="iUp-w5-4ZG" firstAttribute="width" secondItem="38N-m7-szN" secondAttribute="width" id="4MU-g2-poh"/>
+                        <constraint firstAttribute="bottom" secondItem="iUp-w5-4ZG" secondAttribute="bottom" id="4gy-qU-wn6"/>
+                        <constraint firstItem="8Lr-5t-cFx" firstAttribute="centerX" secondItem="38N-m7-szN" secondAttribute="centerX" id="Odf-GR-UqK"/>
+                        <constraint firstItem="8Lr-5t-cFx" firstAttribute="top" secondItem="38N-m7-szN" secondAttribute="top" id="QKm-r7-Dz5"/>
+                        <constraint firstItem="8Lr-5t-cFx" firstAttribute="width" secondItem="38N-m7-szN" secondAttribute="width" id="cVR-pG-lzd"/>
+                        <constraint firstItem="iUp-w5-4ZG" firstAttribute="height" secondItem="8Lr-5t-cFx" secondAttribute="height" priority="250" id="mAj-8W-LHc"/>
+                        <constraint firstItem="iUp-w5-4ZG" firstAttribute="centerX" secondItem="38N-m7-szN" secondAttribute="centerX" id="tUn-GH-jtE"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61W-uk-1J7" userLabel="vwNavigationBar" customClass="ThemeView" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="144"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uad-Jv-517" userLabel="btnLeft" customClass="BackButton" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="20" y="64" width="60" height="60"/>
+                    <color key="backgroundColor" name="theme_primary_light"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="Cgq-mW-SUU"/>
+                        <constraint firstAttribute="width" secondItem="Uad-Jv-517" secondAttribute="height" multiplier="1:1" id="weZ-u6-1vx"/>
+                    </constraints>
+                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                    <connections>
+                        <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="eva-O3-038"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqG-Ga-6Yt" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="100" y="84" width="175" height="20.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="theme_primary"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msw-Lg-la4" userLabel="scrView" customClass="FadeScrollView" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="37.666666666666657" y="44" width="300" height="734"/>
                     <subviews>
@@ -56,7 +107,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U6w-Xw-zbe" userLabel="vwEarningPoints">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="151.33333333333334"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bCj-dR-0PF">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-balance" translatesAutoresizingMaskIntoConstraints="NO" id="bCj-dR-0PF">
                                             <rect key="frame" x="0.0" y="20" width="30" height="30"/>
                                             <color key="backgroundColor" name="theme_primary"/>
                                             <constraints>
@@ -169,7 +220,7 @@
                                             <color key="textColor" name="theme_dark_text"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UE9-aD-Vxk" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UE9-aD-Vxk" customClass="RoundedBorderButton" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="20" y="64.666666666666657" width="109" height="38"/>
                                             <color key="backgroundColor" name="theme_primary_light_background"/>
                                             <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
@@ -333,57 +384,6 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="d4a-C9-GI4"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="YtE-P3-Xvk"/>
                 </scrollView>
-                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="38N-m7-szN" userLabel="GradientView">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                    <subviews>
-                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Lr-5t-cFx" userLabel="TopGradient" customClass="ThemeTopGradientView" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="144"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
-                            </userDefinedRuntimeAttributes>
-                        </view>
-                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUp-w5-4ZG" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="668" width="375" height="144"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
-                            </userDefinedRuntimeAttributes>
-                        </view>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="iUp-w5-4ZG" firstAttribute="width" secondItem="38N-m7-szN" secondAttribute="width" id="4MU-g2-poh"/>
-                        <constraint firstAttribute="bottom" secondItem="iUp-w5-4ZG" secondAttribute="bottom" id="4gy-qU-wn6"/>
-                        <constraint firstItem="8Lr-5t-cFx" firstAttribute="centerX" secondItem="38N-m7-szN" secondAttribute="centerX" id="Odf-GR-UqK"/>
-                        <constraint firstItem="8Lr-5t-cFx" firstAttribute="top" secondItem="38N-m7-szN" secondAttribute="top" id="QKm-r7-Dz5"/>
-                        <constraint firstItem="8Lr-5t-cFx" firstAttribute="width" secondItem="38N-m7-szN" secondAttribute="width" id="cVR-pG-lzd"/>
-                        <constraint firstItem="iUp-w5-4ZG" firstAttribute="height" secondItem="8Lr-5t-cFx" secondAttribute="height" priority="250" id="mAj-8W-LHc"/>
-                        <constraint firstItem="iUp-w5-4ZG" firstAttribute="centerX" secondItem="38N-m7-szN" secondAttribute="centerX" id="tUn-GH-jtE"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61W-uk-1J7" userLabel="vwNavigationBar" customClass="ThemeView" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="144"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uad-Jv-517" userLabel="btnLeft" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="20" y="64" width="60" height="60"/>
-                    <color key="backgroundColor" name="theme_primary_light"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="60" id="Cgq-mW-SUU"/>
-                        <constraint firstAttribute="width" secondItem="Uad-Jv-517" secondAttribute="height" multiplier="1:1" id="weZ-u6-1vx"/>
-                    </constraints>
-                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                    <connections>
-                        <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="eva-O3-038"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqG-Ga-6Yt" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="100" y="84" width="175" height="20.333333333333329"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" name="theme_primary"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -411,7 +411,8 @@
         </view>
     </objects>
     <resources>
-        <image name="asset-no-referral-history" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="asset-balance" width="28" height="19.333333969116211"/>
+        <image name="asset-no-referral-history" width="12" height="12"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

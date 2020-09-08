@@ -105,10 +105,14 @@ class PricingDurationSelectionDialog: ThemeBottomDialogView {
     @IBAction func btnHomeTapped(_ sender: UIButton) {
         self.vwHome.visible()
         self.vwTherapist.gone()
+        self.btnHome.isSelected = true
+        self.btnTherapist.isSelected = false
     }
     @IBAction func btnTherapistTapped(_ sender: Any) {
         self.vwHome.gone()
         self.vwTherapist.visible()
+        self.btnTherapist.isSelected = true
+        self.btnHome.isSelected = false
     }
     
 }

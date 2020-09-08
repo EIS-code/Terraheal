@@ -11,7 +11,7 @@ class ReviewAndBookVC: MainVC {
     
     @IBOutlet weak var vwBar: UIView!
     @IBOutlet weak var lblTitleDetail: ThemeLabel!
-    @IBOutlet weak var btnBack: FloatingRoundButton!
+    @IBOutlet weak var btnCancel: CancelButton!
     @IBOutlet weak var scrVw: UIScrollView!
     @IBOutlet weak var contentVw: UIView!
     
@@ -56,7 +56,7 @@ class ReviewAndBookVC: MainVC {
     @IBOutlet weak var btnCheckBox: JDCheckboxButton!
     
     @IBOutlet weak var vwPayment: UIView!
-    @IBOutlet weak var btnWithoutPayment: ThemeButton!
+    @IBOutlet weak var btnWithoutPayment: RoundedBorderButton!
     @IBOutlet weak var btnPrepayment: ThemeButton!
     
     @IBOutlet weak var vwTotalBg: UIView!
@@ -141,7 +141,7 @@ class ReviewAndBookVC: MainVC {
     }
     
     @IBAction func btnCloseTapped(_ sender: Any) {
-        self.btnBack.isEnabled = false
+        self.btnCancel.isEnabled = false
         self.openCancelBookingDialog()
     }
     @IBAction func onBtnExpandBookingDetailTapped(_ sender: Any) {
@@ -192,7 +192,7 @@ class ReviewAndBookVC: MainVC {
             [weak paymentPercentageDialog, weak self] in
             guard let self = self else { return } ; print(self)
             paymentPercentageDialog?.dismiss()
-            self.btnBack.isEnabled = true
+            self.btnCancel.isEnabled = true
         }
         paymentPercentageDialog.onBtnDoneTapped = {
             [weak paymentPercentageDialog, weak self]  (button) in
@@ -210,7 +210,7 @@ class ReviewAndBookVC: MainVC {
             [weak cancelBookingDialog, weak self] in
             guard let self = self else { return } ; print(self)
             cancelBookingDialog?.dismiss()
-            self.btnBack.isEnabled = true
+            self.btnCancel.isEnabled = true
         }
         cancelBookingDialog.onBtnDoneTapped = {
             [weak cancelBookingDialog, weak self]  in

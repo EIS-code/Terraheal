@@ -22,12 +22,11 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fV3-Pw-zf9" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="330" y="64" width="64" height="64"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fV3-Pw-zf9" customClass="CancelButton" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="350" y="64" width="44" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="fV3-Pw-zf9" secondAttribute="height" multiplier="1:1" id="v25-xO-BeZ"/>
                     </constraints>
-                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                     <state key="normal" image="asset-cross"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="enableFloating" value="NO"/>
@@ -37,13 +36,13 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXp-In-rQJ" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="20" y="86" width="43" height="20.5"/>
+                    <rect key="frame" x="20" y="76" width="43" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="theme_dark_text"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="eob-8f-sCl">
-                    <rect key="frame" x="10" y="148" width="394" height="704"/>
+                    <rect key="frame" x="10" y="128" width="394" height="724"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <collectionViewLayout key="collectionViewLayout" id="eog-US-gn1" customClass="PinterestLayout" customModule="Terra_Heal" customModuleProvider="target"/>
                 </collectionView>
@@ -60,7 +59,7 @@
                 <constraint firstItem="eob-8f-sCl" firstAttribute="top" secondItem="fV3-Pw-zf9" secondAttribute="bottom" constant="20" id="zqf-Bh-43G"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Pha-Yw-JZd"/>
-            <point key="canvasLocation" x="129" y="125"/>
+            <point key="canvasLocation" x="9" y="117"/>
         </view>
     </objects>
     <resources>

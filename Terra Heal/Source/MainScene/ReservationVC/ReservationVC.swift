@@ -13,11 +13,11 @@ class ReservationVC: MainVC {
     @IBOutlet weak var lblMessage: ThemeLabel!
     @IBOutlet var vwBg: UIView!
     
-    @IBOutlet weak var btnProceedDone: FloatingRoundButton!
+    @IBOutlet weak var btnProceedDone: DialogFloatingProceedButton!
     @IBOutlet weak var btnProceed: ThemeButton!
     
     @IBOutlet weak var btnProceed2: ThemeButton!
-    @IBOutlet weak var btnProceed2Done: FloatingRoundButton!
+    @IBOutlet weak var btnProceed2Done: DialogFloatingProceedButton!
     @IBOutlet weak var btnBack: UnderlineTextButton!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -61,8 +61,6 @@ class ReservationVC: MainVC {
         self.btnProceed2.titleLabel?.numberOfLines = 0
         self.btnBack.setFont(name: FontName.Bold, size: FontSize.button_22)
         self.btnBack.setTitle("BTN_CANCEL".localized(), for: .normal)
-        self.btnProceedDone.setForwardButton()
-        self.btnProceed2Done.setForwardButton()
         self.btnProceed2?.setFont(name: FontName.SemiBold, size: FontSize.button_22)
     }
   

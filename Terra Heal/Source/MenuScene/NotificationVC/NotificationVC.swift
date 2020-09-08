@@ -14,7 +14,6 @@ struct NotificationDetail {
 
 class NotificationVC: MainVC {
     
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblEmptyTitle: ThemeLabel!
     @IBOutlet weak var lblEmptyMsg: ThemeLabel!
@@ -68,16 +67,17 @@ class NotificationVC: MainVC {
         
         self.setupTableView(tableView: self.tableView)
         self.setTitle(title: "NOTIFICATION_TITLE".localized())
-        self.btnBack.setBackButton()
         self.lblEmptyTitle.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.lblEmptyMsg.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.lblEmptyTitle.text = "NO_NOTIFICATION_TITLE".localized()
         self.lblEmptyMsg.text = ""
     }
     
-    @IBAction func btnBackTapped(_ sender: Any) {
+    override func btnLeftTapped(_ btn: UIButton = UIButton()) {
+        super.btnLeftTapped()
         _ = (self.navigationController as? NC)?.popVC()
     }
+    
     func updateUI()  {
         if arrForNotification.isEmpty {
             self.setBackground(color: UIColor.themeBackground)

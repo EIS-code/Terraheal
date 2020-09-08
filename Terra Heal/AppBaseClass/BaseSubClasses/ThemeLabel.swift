@@ -43,5 +43,8 @@ class ThemeLabel: UILabel {
         animation.duration = duration
         layer.add(animation, forKey: CATransitionType.fade.rawValue)
     }
+    func printFontSize() {
+        print("\(self.text!) \n FontName: \(self.font.fontName) - FontSize: \(self.font.pointSize)")
+    }
 }
 

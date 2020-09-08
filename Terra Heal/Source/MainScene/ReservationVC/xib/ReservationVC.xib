@@ -114,7 +114,7 @@
                                                 <color key="titleColor" name="theme_primary"/>
                                             </state>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BoI-K3-Loo" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BoI-K3-Loo" customClass="DialogFloatingProceedButton" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="79" y="2" width="38" height="38"/>
                                             <color key="backgroundColor" name="theme_primary_light"/>
                                             <constraints>
@@ -151,7 +151,7 @@
                                                 <color key="titleColor" name="theme_primary"/>
                                             </state>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qzk-JG-Wv0" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qzk-JG-Wv0" customClass="DialogFloatingProceedButton" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="218" y="2" width="38" height="38"/>
                                             <color key="backgroundColor" name="theme_primary_light"/>
                                             <constraints>

@@ -77,7 +77,6 @@ class KycInfoVC: MainVC {
         self.lblAddCreditCard?.setFont(name:  FontName.SemiBold, size: FontSize.label_22)
 
 
-        self.btnDone?.setForwardButton()
         self.btnNext?.setTitle("BTN_YES_PROCEED".localized(), for: .normal)
         self.btnNext?.setFont(name: FontName.SemiBold, size: FontSize.button_22)
     }

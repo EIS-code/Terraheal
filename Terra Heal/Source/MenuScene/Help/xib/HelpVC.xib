@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HelpVC" customModule="Terra_Heal" customModuleProvider="target">
             <connections>
-                <outlet property="btnBack" destination="L7d-cr-2FZ" id="i3N-qh-dLD"/>
+                <outlet property="btnLeft" destination="L7d-cr-2FZ" id="RyE-E5-690"/>
                 <outlet property="lblDetails" destination="N5p-cn-Haa" id="mCF-AF-ofU"/>
                 <outlet property="lblTitle" destination="AvE-MA-PhL" id="HgF-r0-r5a"/>
                 <outlet property="tableView" destination="aVT-f3-Mwd" id="nhg-gV-smz"/>
@@ -74,7 +74,7 @@
                     <color key="textColor" name="theme_primary"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7d-cr-2FZ" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7d-cr-2FZ" customClass="BackButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="20.000000000000007" y="64" width="126.66666666666669" height="126.66666666666669"/>
                     <color key="backgroundColor" name="theme_primary_light"/>
                     <constraints>
@@ -82,7 +82,7 @@
                     </constraints>
                     <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                     <connections>
-                        <action selector="btnBackTapped:" destination="-1" eventType="touchUpInside" id="xrS-cz-zKI"/>
+                        <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="M5t-HA-fmY"/>
                     </connections>
                 </button>
             </subviews>

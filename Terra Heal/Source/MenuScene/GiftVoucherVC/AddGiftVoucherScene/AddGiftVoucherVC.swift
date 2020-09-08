@@ -61,7 +61,6 @@ struct AddVouncherMenuDetail {
 
 class AddGiftVoucherVC: MainVC {
     
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnPreview: ThemeButton!
     @IBOutlet weak var lblSubTotal: ThemeLabel!
@@ -124,13 +123,14 @@ class AddGiftVoucherVC: MainVC {
         self.lblSubTotal.text  = "ADD_GIFT_VOUCHER_SUBTOTAL".localized()
         self.setTitle(title: "ADD_GIFT_VOUCHER_TITLE".localized())
         self.btnPreview.setTitle("GIFT_VOUCHER_BTN_PREVIEW".localized(), for: .normal)
-        self.btnBack.setBackButton()
+        
     }
     
-    @IBAction func btnBackTapped(_ sender: Any) {
+    
+    override func btnLeftTapped(_ btn: UIButton = UIButton()) {
+        super.btnLeftTapped()
         _ = (self.navigationController as? NC)?.popVC()
     }
-    
     @IBAction func btnPreviewTapped(_ sender: Any) {
         self.openPreviewDialog()
     }

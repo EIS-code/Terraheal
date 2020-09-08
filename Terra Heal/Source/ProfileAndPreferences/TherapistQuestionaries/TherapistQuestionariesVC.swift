@@ -8,7 +8,6 @@ import UIKit
 
 class TherapistQuestionariesVC: MainVC {
 
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnSubmit: ThemeButton!
 
@@ -64,17 +63,16 @@ class TherapistQuestionariesVC: MainVC {
         self.setBackground(color: UIColor.themeBackground)
         self.setupTableView(tableView: self.tableView)
         self.setTitle(title: "THERAPIST_QUESTIONARY_TITLE".localized())
-         self.btnBack.setBackButton()
         self.btnSubmit.setTitle("BTN_SUBMIT".localized(), for: .normal)
         self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnSubmit?.setupFilledButton()
     }
 
-
-    @IBAction func btnBackTapped(_ sender: Any) {
-         _ = (self.navigationController as? NC)?.popVC()
+    override func btnLeftTapped(_ btn: UIButton = UIButton()) {
+        super.btnLeftTapped()
+        _ = (self.navigationController as? NC)?.popVC()
     }
-
+    
     @IBAction func btnSubmitTapped(_ sender: Any) {
         self.btnSubmit.isEnabled = false
         self.wsSaveQuestionList()

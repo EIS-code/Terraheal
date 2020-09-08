@@ -36,7 +36,7 @@
                     <color key="textColor" name="theme_dark_text"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phD-1A-sjB" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phD-1A-sjB" customClass="FilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="97" y="500" width="126" height="38"/>
                     <color key="backgroundColor" name="theme_primary_light_background"/>
                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
@@ -47,7 +47,7 @@
                         <action selector="btnScanTapped:" destination="-1" eventType="touchUpInside" id="GS7-Ux-bQM"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rck-R5-H9l" userLabel="btnBack" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rck-R5-H9l" userLabel="btnBack" customClass="BackButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="20" y="20" width="30" height="30"/>
                     <color key="backgroundColor" name="theme_primary"/>
                     <constraints>

@@ -12,7 +12,7 @@ class ScanPassportVC: MainVC, AVCapturePhotoCaptureDelegate {
     
     
     
-    @IBOutlet weak var btnScanNow: ThemeButton!
+    @IBOutlet weak var btnScanNow: FilledRoundedButton!
     @IBOutlet weak var lblHeader: ThemeLabel!
     @IBOutlet var previewView: UIView!
     @IBOutlet weak var progressBar: UIProgressView!

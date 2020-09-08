@@ -75,6 +75,22 @@ class MassagePreferenceDetail: ResponseModel {
             }
         }
     }
+    
+    static func getFocusPreferences() -> MassagePreferenceDetail {
+        let massagePReferenceOption: MassagePreferenceDetail = MassagePreferenceDetail.init(fromDictionary: [:])
+        var arrForMassage: [PreferenceOption] = []
+        arrForMassage.removeAll()
+        arrForMassage.append(PreferenceOption.init(fromDictionary: ["id": "1", "name":"head", "selected":"true"]))
+        arrForMassage.append(PreferenceOption.init(fromDictionary: ["id": "2", "name":"neck", "selected":"false"]))
+        arrForMassage.append(PreferenceOption.init(fromDictionary: ["id": "3", "name":"back", "selected":"false"]))
+        arrForMassage.append(PreferenceOption.init(fromDictionary: ["id": "4", "name":"leg", "selected":"false"]))
+        arrForMassage.append(PreferenceOption.init(fromDictionary: ["id": "5", "name":"shoulder", "selected":"false"]))
+        arrForMassage.append(PreferenceOption.init(fromDictionary: ["id": "6", "name":"hand", "selected":"false"]))
+        massagePReferenceOption.preferenceOptions = arrForMassage
+        massagePReferenceOption.id = "1"
+        massagePReferenceOption.name = "Select Focus area"
+        return massagePReferenceOption
+    }
 }
 
 
@@ -98,6 +114,7 @@ class PreferenceOption{
         self.isSelected = self.selected.toBool
     }
 
+    
 }
 
 enum Session {
@@ -136,6 +153,15 @@ class SessionDetail: ResponseModel {
         self.name = (dictionary["type"] as? String) ?? ""
         self.detail = (dictionary["descriptions"] as? String) ?? ""
         self.image = (dictionary["image"] as? String) ?? ""
+        if self.id == "4" {
+            self.image = ImageAsset.Session.single
+        }
+        if self.id == "5" {
+            self.image = ImageAsset.Session.couple
+        }
+        if self.id == "6" {
+            self.image = ImageAsset.Session.group
+        }
     }
     
    

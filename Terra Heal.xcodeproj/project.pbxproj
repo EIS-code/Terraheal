@@ -41,6 +41,13 @@
 		03406FAB24E2D8F50014AC99 /* AddGiftVoucherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03406F9724E2D8F50014AC99 /* AddGiftVoucherCell.swift */; };
 		03406FAC24E2D8F50014AC99 /* AddGiftVoucherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03406F9824E2D8F50014AC99 /* AddGiftVoucherCell.xib */; };
 		03406FAD24E2D8F50014AC99 /* GiftVoucherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03406F9924E2D8F50014AC99 /* GiftVoucherVC.swift */; };
+		03411D7A25074B0B00700A3F /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03411D7825074B0A00700A3F /* RadioButton.swift */; };
+		03411D7B25074B0B00700A3F /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03411D7925074B0B00700A3F /* CheckBoxButton.swift */; };
+		03411D7D250750C000700A3F /* FloatingRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03411D7C250750C000700A3F /* FloatingRoundButton.swift */; };
+		03411D842507843600700A3F /* CustomFocusAreaPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03411D7F2507843600700A3F /* CustomFocusAreaPicker.swift */; };
+		03411D852507843600700A3F /* RadioSelectionTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03411D812507843600700A3F /* RadioSelectionTblCell.swift */; };
+		03411D862507843600700A3F /* RadioSelectionTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03411D822507843600700A3F /* RadioSelectionTblCell.xib */; };
+		03411D872507843600700A3F /* CustomFocusAreaPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03411D832507843600700A3F /* CustomFocusAreaPicker.xib */; };
 		03429B0624B49565000059A2 /* CustomServiceSelectionDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03429B0424B49565000059A2 /* CustomServiceSelectionDialog.swift */; };
 		03429B0724B49565000059A2 /* CustomServiceSelectionDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03429B0524B49565000059A2 /* CustomServiceSelectionDialog.xib */; };
 		0342B40924AF0E05003E5D59 /* ManagePeopleWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342B40824AF0E05003E5D59 /* ManagePeopleWebService.swift */; };
@@ -201,10 +208,8 @@
 		0348783324B2EF64006774AB /* CameraVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0348773824B2EF63006774AB /* CameraVC.xib */; };
 		0348783424B2EF64006774AB /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0348773A24B2EF63006774AB /* CameraController.swift */; };
 		0348783524B2EF64006774AB /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0348773B24B2EF63006774AB /* CameraVC.swift */; };
-		0348783624B2EF64006774AB /* ContactVerificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0348773F24B2EF63006774AB /* ContactVerificationVC.xib */; };
 		0348783724B2EF64006774AB /* ContactVerifiedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0348774224B2EF63006774AB /* ContactVerifiedVC.xib */; };
 		0348783824B2EF64006774AB /* ContactVerifiedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0348774324B2EF63006774AB /* ContactVerifiedVC.swift */; };
-		0348783924B2EF64006774AB /* ContactVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0348774424B2EF63006774AB /* ContactVerificationVC.swift */; };
 		0348783A24B2EF64006774AB /* VerifyContactVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0348774724B2EF63006774AB /* VerifyContactVC.xib */; };
 		0348783B24B2EF64006774AB /* VerifyContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0348774824B2EF63006774AB /* VerifyContactVC.swift */; };
 		0348783C24B2EF64006774AB /* VerificationAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0348774A24B2EF63006774AB /* VerificationAlert.xib */; };
@@ -365,6 +370,13 @@
 		0392194424EF9A1E00302BC7 /* CustomDocumentPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0392194224EF9A1E00302BC7 /* CustomDocumentPicker.xib */; };
 		0392194524EF9A1E00302BC7 /* CustomDocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0392194324EF9A1E00302BC7 /* CustomDocumentPicker.swift */; };
 		0392194724EFF22500302BC7 /* PBRevealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0392194624EFF22500302BC7 /* PBRevealViewController.swift */; };
+		0393959F250662D000AB9404 /* UIButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03939598250662D000AB9404 /* UIButtonHelper.swift */; };
+		039395A0250662D000AB9404 /* NSLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03939599250662D000AB9404 /* NSLayoutHelper.swift */; };
+		039395A1250662D000AB9404 /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0393959A250662D000AB9404 /* DeviceHelper.swift */; };
+		039395A2250662D000AB9404 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 0393959B250662D000AB9404 /* .gitkeep */; };
+		039395A3250662D000AB9404 /* UITextViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0393959C250662D000AB9404 /* UITextViewHelper.swift */; };
+		039395A4250662D000AB9404 /* UILabelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0393959D250662D000AB9404 /* UILabelHelper.swift */; };
+		039395A5250662D000AB9404 /* UITextFieldHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0393959E250662D000AB9404 /* UITextFieldHelper.swift */; };
 		039B509A24B7178D00B06312 /* RequestBookingWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039B509924B7178D00B06312 /* RequestBookingWebService.swift */; };
 		03A1B53924B58EAD008BAC3A /* SessionDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A1B53424B58EAD008BAC3A /* SessionDialog.xib */; };
 		03A1B53A24B58EAD008BAC3A /* SessionTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A1B53624B58EAD008BAC3A /* SessionTblCell.xib */; };
@@ -478,6 +490,13 @@
 		03406F9724E2D8F50014AC99 /* AddGiftVoucherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGiftVoucherCell.swift; sourceTree = "<group>"; };
 		03406F9824E2D8F50014AC99 /* AddGiftVoucherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddGiftVoucherCell.xib; sourceTree = "<group>"; };
 		03406F9924E2D8F50014AC99 /* GiftVoucherVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftVoucherVC.swift; sourceTree = "<group>"; };
+		03411D7825074B0A00700A3F /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		03411D7925074B0B00700A3F /* CheckBoxButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
+		03411D7C250750C000700A3F /* FloatingRoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingRoundButton.swift; sourceTree = "<group>"; };
+		03411D7F2507843600700A3F /* CustomFocusAreaPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFocusAreaPicker.swift; sourceTree = "<group>"; };
+		03411D812507843600700A3F /* RadioSelectionTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioSelectionTblCell.swift; sourceTree = "<group>"; };
+		03411D822507843600700A3F /* RadioSelectionTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioSelectionTblCell.xib; sourceTree = "<group>"; };
+		03411D832507843600700A3F /* CustomFocusAreaPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomFocusAreaPicker.xib; sourceTree = "<group>"; };
 		03429B0424B49565000059A2 /* CustomServiceSelectionDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomServiceSelectionDialog.swift; sourceTree = "<group>"; };
 		03429B0524B49565000059A2 /* CustomServiceSelectionDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomServiceSelectionDialog.xib; sourceTree = "<group>"; };
 		0342B40824AF0E05003E5D59 /* ManagePeopleWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagePeopleWebService.swift; sourceTree = "<group>"; };
@@ -638,10 +657,8 @@
 		0348773824B2EF63006774AB /* CameraVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraVC.xib; sourceTree = "<group>"; };
 		0348773A24B2EF63006774AB /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		0348773B24B2EF63006774AB /* CameraVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
-		0348773F24B2EF63006774AB /* ContactVerificationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactVerificationVC.xib; sourceTree = "<group>"; };
 		0348774224B2EF63006774AB /* ContactVerifiedVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactVerifiedVC.xib; sourceTree = "<group>"; };
 		0348774324B2EF63006774AB /* ContactVerifiedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactVerifiedVC.swift; sourceTree = "<group>"; };
-		0348774424B2EF63006774AB /* ContactVerificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactVerificationVC.swift; sourceTree = "<group>"; };
 		0348774724B2EF63006774AB /* VerifyContactVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerifyContactVC.xib; sourceTree = "<group>"; };
 		0348774824B2EF63006774AB /* VerifyContactVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyContactVC.swift; sourceTree = "<group>"; };
 		0348774A24B2EF63006774AB /* VerificationAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerificationAlert.xib; sourceTree = "<group>"; };
@@ -802,6 +819,13 @@
 		0392194224EF9A1E00302BC7 /* CustomDocumentPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomDocumentPicker.xib; sourceTree = "<group>"; };
 		0392194324EF9A1E00302BC7 /* CustomDocumentPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDocumentPicker.swift; sourceTree = "<group>"; };
 		0392194624EFF22500302BC7 /* PBRevealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBRevealViewController.swift; sourceTree = "<group>"; };
+		03939598250662D000AB9404 /* UIButtonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonHelper.swift; sourceTree = "<group>"; };
+		03939599250662D000AB9404 /* NSLayoutHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutHelper.swift; sourceTree = "<group>"; };
+		0393959A250662D000AB9404 /* DeviceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceHelper.swift; sourceTree = "<group>"; };
+		0393959B250662D000AB9404 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		0393959C250662D000AB9404 /* UITextViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewHelper.swift; sourceTree = "<group>"; };
+		0393959D250662D000AB9404 /* UILabelHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelHelper.swift; sourceTree = "<group>"; };
+		0393959E250662D000AB9404 /* UITextFieldHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldHelper.swift; sourceTree = "<group>"; };
 		039B509924B7178D00B06312 /* RequestBookingWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBookingWebService.swift; sourceTree = "<group>"; };
 		03A1B53424B58EAD008BAC3A /* SessionDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionDialog.xib; sourceTree = "<group>"; };
 		03A1B53624B58EAD008BAC3A /* SessionTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionTblCell.xib; sourceTree = "<group>"; };
@@ -1098,6 +1122,36 @@
 			path = AddGiftVoucherCell;
 			sourceTree = "<group>";
 		};
+		03411D7725074AD400700A3F /* ThemeButton */ = {
+			isa = PBXGroup;
+			children = (
+				03411D7925074B0B00700A3F /* CheckBoxButton.swift */,
+				03411D7825074B0A00700A3F /* RadioButton.swift */,
+				633B7124245FDA5800CF490D /* ThemeButton.swift */,
+				03411D7C250750C000700A3F /* FloatingRoundButton.swift */,
+			);
+			path = ThemeButton;
+			sourceTree = "<group>";
+		};
+		03411D7E2507843600700A3F /* CustomFocusAreaPicker */ = {
+			isa = PBXGroup;
+			children = (
+				03411D7F2507843600700A3F /* CustomFocusAreaPicker.swift */,
+				03411D802507843600700A3F /* RadioSelectionTblCell */,
+				03411D832507843600700A3F /* CustomFocusAreaPicker.xib */,
+			);
+			path = CustomFocusAreaPicker;
+			sourceTree = "<group>";
+		};
+		03411D802507843600700A3F /* RadioSelectionTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				03411D812507843600700A3F /* RadioSelectionTblCell.swift */,
+				03411D822507843600700A3F /* RadioSelectionTblCell.xib */,
+			);
+			path = RadioSelectionTblCell;
+			sourceTree = "<group>";
+		};
 		03429B0324B49565000059A2 /* CustomServiceSelectionDialog */ = {
 			isa = PBXGroup;
 			children = (
@@ -1318,6 +1372,7 @@
 		0344497024B6049F00C8B763 /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
+				03411D7E2507843600700A3F /* CustomFocusAreaPicker */,
 				0344497124B6049F00C8B763 /* CustomPrefereGenderPicker */,
 				0344497724B6049F00C8B763 /* CustomCityPicker */,
 				0344497D24B6049F00C8B763 /* CustomPressurePicker */,
@@ -2123,21 +2178,11 @@
 		0348773D24B2EF63006774AB /* ContactVerification */ = {
 			isa = PBXGroup;
 			children = (
-				0348773E24B2EF63006774AB /* xib */,
 				0348774024B2EF63006774AB /* ContactVerifiedVC */,
-				0348774424B2EF63006774AB /* ContactVerificationVC.swift */,
 				0348774524B2EF63006774AB /* VerifyContactVC */,
 				0348774924B2EF63006774AB /* VerificationView */,
 			);
 			path = ContactVerification;
-			sourceTree = "<group>";
-		};
-		0348773E24B2EF63006774AB /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				0348773F24B2EF63006774AB /* ContactVerificationVC.xib */,
-			);
-			path = xib;
 			sourceTree = "<group>";
 		};
 		0348774024B2EF63006774AB /* ContactVerifiedVC */ = {
@@ -3087,6 +3132,20 @@
 			path = CustomDocumentPicker;
 			sourceTree = "<group>";
 		};
+		03939597250662D000AB9404 /* LayoutHelper */ = {
+			isa = PBXGroup;
+			children = (
+				03939598250662D000AB9404 /* UIButtonHelper.swift */,
+				03939599250662D000AB9404 /* NSLayoutHelper.swift */,
+				0393959A250662D000AB9404 /* DeviceHelper.swift */,
+				0393959B250662D000AB9404 /* .gitkeep */,
+				0393959C250662D000AB9404 /* UITextViewHelper.swift */,
+				0393959D250662D000AB9404 /* UILabelHelper.swift */,
+				0393959E250662D000AB9404 /* UITextFieldHelper.swift */,
+			);
+			path = LayoutHelper;
+			sourceTree = "<group>";
+		};
 		03A1B53224B58EAD008BAC3A /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
@@ -3254,6 +3313,7 @@
 		632DB083248FA5CC00B65B46 /* JDFramework */ = {
 			isa = PBXGroup;
 			children = (
+				03939597250662D000AB9404 /* LayoutHelper */,
 				632DB084248FA5CC00B65B46 /* Othert + Extension */,
 				632DB087248FA5CC00B65B46 /* String + Extension */,
 				632DB08B248FA5CC00B65B46 /* JDSubClasses */,
@@ -3450,13 +3510,13 @@
 		634398AD245BE9D8009BCA1F /* BaseSubClasses */ = {
 			isa = PBXGroup;
 			children = (
+				03411D7725074AD400700A3F /* ThemeButton */,
 				633D1A412488B7910085AC56 /* PinterestLayout.swift */,
 				634BB76E2461268B00494379 /* ThemeView.swift */,
 				033E823424EBEBB100E71506 /* ThemeScrollView.swift */,
 				0353EB0B24EA52A400584357 /* ThemeImageView.swift */,
 				033E822D24EBDBBC00E71506 /* BottomDialog */,
 				634397C2245BE6DF009BCA1F /* Main.swift */,
-				633B7124245FDA5800CF490D /* ThemeButton.swift */,
 				633B7125245FDA5800CF490D /* ThemeLabel.swift */,
 				633B7123245FDA5800CF490D /* ThemeTextField.swift */,
 			);
@@ -3591,7 +3651,6 @@
 				0344496224B6045F00C8B763 /* CustomDatePicker.xib in Resources */,
 				0348788124B2EF64006774AB /* CustomLocationServiceDialog.xib in Resources */,
 				0345C69724C9B21800873FD1 /* ScanSelfieInstructionVC.xib in Resources */,
-				0348783624B2EF64006774AB /* ContactVerificationVC.xib in Resources */,
 				0361A41A24E503BC00068C81 /* DesignCltCell.xib in Resources */,
 				0348784E24B2EF64006774AB /* HomeVC.xib in Resources */,
 				0353013324ADC3F900452F8C /* styleable_map.json in Resources */,
@@ -3602,6 +3661,7 @@
 				0348785424B2EF64006774AB /* HomeTblCell.xib in Resources */,
 				0348784C24B2EF64006774AB /* LaunchVC.xib in Resources */,
 				031F895024DD7B600001FD58 /* CustomDistancePickerCell.xib in Resources */,
+				03411D872507843600700A3F /* CustomFocusAreaPicker.xib in Resources */,
 				03A1B54624B5A804008BAC3A /* RecipientSelectionDialog.xib in Resources */,
 				0348786924B2EF64006774AB /* CustomHistoryFilterPickerCell.xib in Resources */,
 				0344491324B6035800C8B763 /* CustomAddNewAddressDialog.xib in Resources */,
@@ -3658,12 +3718,14 @@
 				034CD80A24BC48F200BFD6E1 /* PaymentPreferenceVC.xib in Resources */,
 				634398B3245BEAB2009BCA1F /* CommonColor.xcassets in Resources */,
 				0348789824B2EF64006774AB /* HelpVC.xib in Resources */,
+				039395A2250662D000AB9404 /* .gitkeep in Resources */,
 				03406F9A24E2D8F50014AC99 /* GiftVoucherVC.xib in Resources */,
 				0345C66A24C9A7B600873FD1 /* ReservationVC.xib in Resources */,
 				0348781E24B2EF64006774AB /* MyTherapistVC.xib in Resources */,
 				034449B124B604C000C8B763 /* CustomLanguagePicker.xib in Resources */,
 				0347835124BDB1AA00E3D4EC /* AddCardVC.xib in Resources */,
 				034449AF24B604C000C8B763 /* CustomLanguagePickerCell.xib in Resources */,
+				03411D862507843600700A3F /* RadioSelectionTblCell.xib in Resources */,
 				0383B29124B87073003622F6 /* ReviewReciepentTblSection.xib in Resources */,
 				0344498C24B604A000C8B763 /* PreferGenderPickerCell.xib in Resources */,
 				0344384324C1BC5D0066DDCA /* ReciepentTblSection.xib in Resources */,
@@ -3829,6 +3891,7 @@
 				030B2D4424B4A65E0072C564 /* SeviceDurationCltCell.swift in Sources */,
 				0348789B24B2EF64006774AB /* FaqCltCell.swift in Sources */,
 				633D1A422488B7910085AC56 /* PinterestLayout.swift in Sources */,
+				0393959F250662D000AB9404 /* UIButtonHelper.swift in Sources */,
 				03406FA824E2D8F50014AC99 /* ServiceSelectionDialog.swift in Sources */,
 				034878B124B2F2FF006774AB /* ManageDocumentVC.swift in Sources */,
 				6343984D245BE6DF009BCA1F /* PreferenceHelper.swift in Sources */,
@@ -3845,6 +3908,8 @@
 				0382B5AC24D3F465002B6BF5 /* PersonPickerCell.swift in Sources */,
 				031F894F24DD7B600001FD58 /* CustomDistancePickerCell.swift in Sources */,
 				632DB09D248FA5CC00B65B46 /* JDDeviceHelper.swift in Sources */,
+				03411D842507843600700A3F /* CustomFocusAreaPicker.swift in Sources */,
+				039395A4250662D000AB9404 /* UILabelHelper.swift in Sources */,
 				0382B5AE24D3F465002B6BF5 /* PersonPickerDialog.swift in Sources */,
 				0348784724B2EF64006774AB /* RegisterVC.swift in Sources */,
 				03E934FF24F69B0E00E34A67 /* LanguageManager.swift in Sources */,
@@ -3860,6 +3925,7 @@
 				634398AC245BE92C009BCA1F /* Common.swift in Sources */,
 				0344491424B6035800C8B763 /* CustomAddNewAddressDialog.swift in Sources */,
 				03453CC524CA908700DEF2DE /* SelectPackTblCell.swift in Sources */,
+				03411D852507843600700A3F /* RadioSelectionTblCell.swift in Sources */,
 				0344496724B6045F00C8B763 /* CustomAlertConfirmation.swift in Sources */,
 				0348783D24B2EF64006774AB /* OTPFieldView.swift in Sources */,
 				0383B28B24B86C26003622F6 /* CustomButtonTblCell.swift in Sources */,
@@ -3915,6 +3981,7 @@
 				0344490A24B5FC9400C8B763 /* BookingCompleteVC.swift in Sources */,
 				0348780724B2EF64006774AB /* SettingSwitchTblCell.swift in Sources */,
 				0353013524ADDBF800452F8C /* AddressWebService.swift in Sources */,
+				03411D7A25074B0B00700A3F /* RadioButton.swift in Sources */,
 				034CD81824BC947800BFD6E1 /* AddPaymentTblCell.swift in Sources */,
 				03A1B53C24B58EAD008BAC3A /* SessionDialog.swift in Sources */,
 				035CB16724E15BE400C2D5C6 /* CustomSendingPreferenceDialog.swift in Sources */,
@@ -3950,6 +4017,7 @@
 				036CEF4D24E25FC300E349FF /* CustomAmountTextFieldDialog.swift in Sources */,
 				0348785B24B2EF64006774AB /* CustomServiceHourSelectionDialog.swift in Sources */,
 				0348783E24B2EF64006774AB /* OTPTextField.swift in Sources */,
+				039395A1250662D000AB9404 /* DeviceHelper.swift in Sources */,
 				632DB0A0248FA5CC00B65B46 /* UITextField + Extension.swift in Sources */,
 				635675BB2499E332006F5511 /* JDSegmentControl.swift in Sources */,
 				03406FAB24E2D8F50014AC99 /* AddGiftVoucherCell.swift in Sources */,
@@ -3964,6 +4032,7 @@
 				0383B29024B87073003622F6 /* ReviewReciepentTblSection.swift in Sources */,
 				0344490F24B5FFE600C8B763 /* TextViewDialog.swift in Sources */,
 				0348789124B2EF64006774AB /* NotificationVC.swift in Sources */,
+				03411D7B25074B0B00700A3F /* CheckBoxButton.swift in Sources */,
 				0348789324B2EF64006774AB /* CampaignsVC.swift in Sources */,
 				0344384224C1BC5D0066DDCA /* ReciepentTblFooter.swift in Sources */,
 				0365CDB024C995AA00E1361B /* AccessorySelectionDialog.swift in Sources */,
@@ -3982,6 +4051,7 @@
 				0348783424B2EF64006774AB /* CameraController.swift in Sources */,
 				03A3825724C1AD5C00101792 /* RecipentMassageManageDialog.swift in Sources */,
 				0348785324B2EF64006774AB /* HomeTblCell.swift in Sources */,
+				039395A0250662D000AB9404 /* NSLayoutHelper.swift in Sources */,
 				03B2B74424E6514A00EC18D5 /* PricingDurationCltCell.swift in Sources */,
 				0344496924B6045F00C8B763 /* CustomTextFieldDialog.swift in Sources */,
 				0348783124B2EF64006774AB /* CustomPhotoPicker.swift in Sources */,
@@ -4017,6 +4087,7 @@
 				0348789624B2EF64006774AB /* CustomCampaignsDetailDialog.swift in Sources */,
 				03B2B74524E6514A00EC18D5 /* PricingDurationSelectionDialog.swift in Sources */,
 				0344384624C1BC5D0066DDCA /* ReciepentTblCell.swift in Sources */,
+				039395A5250662D000AB9404 /* UITextFieldHelper.swift in Sources */,
 				0344495E24B6045F00C8B763 /* CustomTextViewDialog.swift in Sources */,
 				0347835824BDD52300E3D4EC /* MonthYearPickerView.swift in Sources */,
 				030B2D4224B4A65E0072C564 /* ServiceDetailVC.swift in Sources */,
@@ -4039,16 +4110,17 @@
 				0348788324B2EF64006774AB /* PriceLocationVC.swift in Sources */,
 				03406FA324E2D8F50014AC99 /* CustomThemePickerCell.swift in Sources */,
 				0348784B24B2EF64006774AB /* LoginVC.swift in Sources */,
+				039395A3250662D000AB9404 /* UITextViewHelper.swift in Sources */,
 				0348780D24B2EF64006774AB /* MyBookingVC.swift in Sources */,
 				03429B0624B49565000059A2 /* CustomServiceSelectionDialog.swift in Sources */,
 				633C1AC424923FCA009EB6AE /* CityWebService.swift in Sources */,
 				03A1B53B24B58EAD008BAC3A /* SessionTblCell.swift in Sources */,
+				03411D7D250750C000700A3F /* FloatingRoundButton.swift in Sources */,
 				0383B28924B86C26003622F6 /* PaymentPercentatgeSelectionDialog.swift in Sources */,
 				63439861245BE6DF009BCA1F /* SceneDelegate.swift in Sources */,
 				0348784924B2EF64006774AB /* TouchIdVC.swift in Sources */,
 				0344495724B6045F00C8B763 /* CustomCountryPhoneCodePickerCell.swift in Sources */,
 				034877FD24B2EF64006774AB /* CustomAddPeopleDialog.swift in Sources */,
-				0348783924B2EF64006774AB /* ContactVerificationVC.swift in Sources */,
 				0344499D24B604A000C8B763 /* CustomGenderPicker.swift in Sources */,
 				632DB09F248FA5CC00B65B46 /* UIViewController + Extension.swift in Sources */,
 				0348782F24B2EF64006774AB /* UIImageCropperVC.swift in Sources */,

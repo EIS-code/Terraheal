@@ -33,7 +33,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" customClass="BackButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="20" y="64" width="167" height="167"/>
                     <color key="backgroundColor" name="theme_primary_light"/>
                     <constraints>
@@ -41,7 +41,6 @@
                     </constraints>
                     <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                     <connections>
-                        <action selector="btnBack:" destination="-1" eventType="touchUpInside" id="psz-ZG-8db"/>
                         <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="5Rg-yy-tEu"/>
                     </connections>
                 </button>

@@ -10,7 +10,6 @@ import UIKit
 class VerifyContactVC: MainVC {
 
 
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var btnHome: ThemeButton!
     @IBOutlet weak var lblHeader: ThemeLabel!
     @IBOutlet weak var lblMessage: ThemeLabel!
@@ -54,17 +53,13 @@ class VerifyContactVC: MainVC {
         self.btnHome?.setTitle("CONTACT_VERIFICATION_BTN_VERIFY".localized(), for: .normal)
         self.btnHome?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnHome?.setupFilledButton()
-        self.btnBack.setBackButton()
-
     }
 
     // MARK: - Action Methods
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
-         _ = (self.navigationController as? NC)?.popVC()
+         Common.appDelegate.loadHomeVC()
     }
-    @IBAction func btnBackTapped(_ sender: Any) {
-        Common.appDelegate.loadHomeVC()
-    }
+    
 
     @IBAction func btnHomeTapped(_ sender: Any) {
         self.openVerification()

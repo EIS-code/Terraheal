@@ -37,8 +37,8 @@ loadTherapistKycInfoVC</string>
                                     <constraint firstAttribute="width" secondItem="IBU-Uk-kxo" secondAttribute="height" multiplier="1:1" id="oNd-UH-sXD"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6GD-a7-jdb" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="79" y="372.5" width="143" height="37.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6GD-a7-jdb" customClass="RoundedBorderButton" customModule="Terra_Heal" customModuleProvider="target">
+                                <rect key="frame" x="75.5" y="372.5" width="150.5" height="37.5"/>
                                 <color key="backgroundColor" name="theme_primary"/>
                                 <inset key="contentEdgeInsets" minX="30" minY="10" maxX="30" maxY="10"/>
                                 <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
@@ -50,6 +50,7 @@ loadTherapistKycInfoVC</string>
                         </subviews>
                         <color key="backgroundColor" name="theme_background"/>
                         <constraints>
+                            <constraint firstItem="6GD-a7-jdb" firstAttribute="width" relation="greaterThanOrEqual" secondItem="fTr-D4-KiU" secondAttribute="width" multiplier="0.5" id="7AR-O1-MTg"/>
                             <constraint firstAttribute="bottom" secondItem="6GD-a7-jdb" secondAttribute="bottom" constant="20" id="FcF-dr-glg"/>
                             <constraint firstItem="6GD-a7-jdb" firstAttribute="top" secondItem="IBU-Uk-kxo" secondAttribute="bottom" priority="999" constant="20" id="Gx0-Xf-SOO"/>
                             <constraint firstItem="IBU-Uk-kxo" firstAttribute="top" secondItem="zbl-J2-KSJ" secondAttribute="bottom" constant="20" id="PUA-Gq-nqq"/>
@@ -84,7 +85,7 @@ loadTherapistKycInfoVC</string>
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_dark_text">
-            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

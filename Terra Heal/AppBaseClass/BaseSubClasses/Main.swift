@@ -10,7 +10,7 @@ import UIKit
 class MainVC: UIViewController {
    
     @IBOutlet weak var lblTitle: ThemeLabel?
-    @IBOutlet weak var btnLeft: FloatingRoundButton?
+    @IBOutlet weak var btnLeft: BackButton?
     @IBOutlet weak var btnRight: ThemeButton?
     @IBOutlet weak var vwNavigationBar: ThemeView!
     @IBOutlet weak var headerGradient: ThemeTopGradientView!
@@ -32,7 +32,6 @@ class MainVC: UIViewController {
         self.vwNavigationBar?.backgroundColor = .clear
         self.setBackground(color: .themePrimaryLightBackground)
         self.lblTitle?.textColor = UIColor.themeNavigationTitle
-        self.btnLeft?.setBackButton()
         self.lblTitle?.textColor = UIColor.themeDarkText
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_22)
     }

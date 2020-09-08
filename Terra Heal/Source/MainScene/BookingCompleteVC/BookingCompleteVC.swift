@@ -16,7 +16,7 @@ class BookingCompleteVC: MainVC {
 
 
     @IBOutlet weak var ivCompletion: UIImageView!
-    @IBOutlet weak var btnHome: ThemeButton!
+    @IBOutlet weak var btnHome: RoundedBorderButton!
     @IBOutlet weak var lblHeader: ThemeLabel!
     @IBOutlet weak var lblMessage: ThemeLabel!
     var completionData: CompletionData = CompletionData.init()

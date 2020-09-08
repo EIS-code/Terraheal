@@ -11,8 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileVC" customModule="Terra_Heal" customModuleProvider="target">
             <connections>
+                <outlet property="btnCancel" destination="ABs-WT-4wl" id="Um2-j7-RvM"/>
                 <outlet property="btnMenu" destination="dk0-AN-Hja" id="WOd-ft-33V"/>
-                <outlet property="btnProfile" destination="ABs-WT-4wl" id="LaB-7n-cf4"/>
                 <outlet property="hVwContent" destination="W7U-9Q-vcJ" id="ldP-cU-ECM"/>
                 <outlet property="headerView" destination="1vj-Dw-czR" id="cSC-pd-oOA"/>
                 <outlet property="ivQrCode" destination="ioG-BP-L40" id="RFY-Ru-KiI"/>
@@ -47,22 +47,21 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AqQ-4O-Wf7" customClass="RoundedImageView" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="20" y="64" width="75" height="75"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABs-WT-4wl" userLabel="btnClose" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="291" y="69.666666666666671" width="64" height="64.000000000000014"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABs-WT-4wl" userLabel="btnClose" customClass="CancelButton" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="311" y="79.666666666666671" width="44" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="ABs-WT-4wl" secondAttribute="height" multiplier="1:1" id="rbh-eT-iAL"/>
                     </constraints>
-                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                     <state key="normal" image="asset-cross"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="enableFloating" value="NO"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="btnProfileTapped:" destination="-1" eventType="touchUpInside" id="BB9-uY-RSI"/>
+                        <action selector="btnCancelTapped:" destination="-1" eventType="touchUpInside" id="7g3-VY-SZg"/>
                     </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="rdH-Uz-r9U">
-                    <rect key="frame" x="115" y="64" width="156" height="75"/>
+                    <rect key="frame" x="115" y="64" width="176" height="75"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YhJ-oo-h2F" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="85.666666666666671" height="34.333333333333336"/>

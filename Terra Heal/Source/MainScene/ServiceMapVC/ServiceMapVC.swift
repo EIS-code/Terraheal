@@ -9,11 +9,11 @@ import GoogleMaps
 class ServiceMapVC: MainVC {
     
     
+    @IBOutlet weak var btnCancel: CancelButton!
     @IBOutlet weak var btnCheckService: ThemeButton!
-    @IBOutlet weak var btnBook: ThemeButton!
+    @IBOutlet weak var btnBook: RoundedBorderButton!
     @IBOutlet weak var lblAddressTitle: ThemeLabel!
     @IBOutlet weak var lblAddress: ThemeLabel!
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var vwServiceDialog: UIView!
     @IBOutlet weak var ivService: PaddedImageView!

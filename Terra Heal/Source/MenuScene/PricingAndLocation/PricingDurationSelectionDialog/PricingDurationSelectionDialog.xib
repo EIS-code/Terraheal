@@ -73,19 +73,19 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCJ-fh-lMI" userLabel="vwTab">
-                            <rect key="frame" x="161" y="111" width="92" height="46"/>
+                            <rect key="frame" x="163" y="111" width="88" height="44"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bk0-ac-ye3" userLabel="vwHome">
-                            <rect key="frame" x="161" y="111" width="46" height="46"/>
+                            <rect key="frame" x="163" y="111" width="44" height="44"/>
                             <color key="backgroundColor" name="theme_primary"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wnm-sx-MwK" userLabel="vwTherapist">
-                            <rect key="frame" x="207" y="111" width="46" height="46"/>
+                            <rect key="frame" x="207" y="111" width="44" height="44"/>
                             <color key="backgroundColor" name="theme_primary"/>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe" userLabel="Stack View - main">
-                            <rect key="frame" x="20" y="10" width="374" height="142"/>
+                            <rect key="frame" x="20" y="10" width="374" height="140"/>
                             <subviews>
                                 <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="OsI-uf-Fb8">
                                     <rect key="frame" x="167" y="0.0" width="40" height="5"/>
@@ -108,22 +108,24 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ovk-PL-sFX">
-                                    <rect key="frame" x="146" y="106" width="82" height="36"/>
+                                    <rect key="frame" x="148" y="106" width="78" height="34"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4o6-gY-uGQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="4o6-gY-uGQ" secondAttribute="height" multiplier="1:1" id="pa4-pS-RoK"/>
                                             </constraints>
                                             <state key="normal" image="asset-pricing-home-tab"/>
+                                            <state key="selected" image="asset-pricing-home-tab-selected"/>
                                             <connections>
                                                 <action selector="btnHomeTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="PJn-Vs-NEj"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJt-ru-yx8">
-                                            <rect key="frame" x="46" y="0.0" width="36" height="36"/>
+                                            <rect key="frame" x="44" y="0.0" width="34" height="34"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" image="asset-pricing-therapist-tab"/>
+                                            <state key="selected" image="asset-pricing-therapist-tab-selected"/>
                                             <connections>
                                                 <action selector="btnTherapistTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="hcw-s7-I4G"/>
                                             </connections>
@@ -146,7 +148,7 @@
                                         <action selector="btnDoneTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="c2U-cc-MxJ"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVl-el-UJJ" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVl-el-UJJ" customClass="DialogCancelButton" customModule="Terra_Heal" customModuleProvider="target">
                                     <rect key="frame" x="43.5" y="60" width="46" height="30"/>
                                     <state key="normal" title="Button"/>
                                     <connections>
@@ -226,8 +228,10 @@
         </view>
     </objects>
     <resources>
-        <image name="asset-pricing-home-tab" width="33" height="36"/>
+        <image name="asset-pricing-home-tab" width="31" height="34"/>
+        <image name="asset-pricing-home-tab-selected" width="31" height="34"/>
         <image name="asset-pricing-therapist-tab" width="26.5" height="30"/>
+        <image name="asset-pricing-therapist-tab-selected" width="26.5" height="30"/>
         <namedColor name="theme_hint_text">
             <color red="0.69800001382827759" green="0.70200002193450928" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

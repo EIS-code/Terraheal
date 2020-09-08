@@ -18,6 +18,7 @@ struct FontSize {
     static let textField_14: CGFloat = 14
     static let textField_20: CGFloat = 20
     static let placeHolder_14: CGFloat = 12
+    
     static let button_18: CGFloat = 18
     static let button_22: CGFloat = 22
     static let button_20: CGFloat = 20
@@ -32,6 +33,13 @@ struct FontSize {
     static let label_26: CGFloat = 26
     static let label_36: CGFloat = 36
     static let label_10: CGFloat = 10
+    
+    
+    static let header: CGFloat = 21
+    static let detail: CGFloat = 13
+    
+    
+    static let proceedButton: CGFloat = 14
 }
 
 class FontHelper: UIFont {

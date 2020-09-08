@@ -9,7 +9,6 @@ import UIKit
 
 
 class ServiceDetailVC: MainVC {
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var ivPicture: UIImageView!
     @IBOutlet weak var scrVw: UIScrollView!
     @IBOutlet weak var headerView: UIView!
@@ -73,15 +72,13 @@ class ServiceDetailVC: MainVC {
         self.lblServiceName?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.lblServiceDetail?.text = serviceDetail.details
         self.lblServiceDetail?.setFont(name: FontName.Regular, size: FontSize.label_12)
-        self.btnBack.setBackButton()
     }
-    
-    @IBAction func btnBackTapped(_ sender: Any) {
+    override func btnLeftTapped(_ btn: UIButton = UIButton()) {
+        super.btnLeftTapped()
         self.dismiss(animated: true) {
                  _ = (self.navigationController as? NC)?.popVC()
         }
     }
-    
     
     // MARK: - Other Methods
     

@@ -106,7 +106,7 @@
                                                         <action selector="btnDoneTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="M9m-4t-B9M"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWR-CU-Wge" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWR-CU-Wge" customClass="DialogFloatingProceedButton" customModule="Terra_Heal" customModuleProvider="target">
                                                     <rect key="frame" x="79" y="2" width="38" height="38"/>
                                                     <color key="backgroundColor" name="theme_primary_light"/>
                                                     <constraints>
@@ -130,7 +130,7 @@
                                         <constraint firstItem="7CA-Q7-Txn" firstAttribute="top" secondItem="wIn-ih-b3C" secondAttribute="top" constant="5" id="Q8B-UE-6DN"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVl-el-UJJ" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVl-el-UJJ" customClass="DialogCancelButton" customModule="Terra_Heal" customModuleProvider="target">
                                     <rect key="frame" x="164" y="374" width="46" height="30"/>
                                     <state key="normal" title="Button"/>
                                     <connections>
@@ -189,7 +189,7 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_dark_text">
-            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_light_text_color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

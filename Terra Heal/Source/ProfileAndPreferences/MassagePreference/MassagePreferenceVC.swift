@@ -41,7 +41,6 @@ enum MassagePreferenceMenu: String {
 
 class MassagePreferenceVC: MainVC {
 
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnSubmit: ThemeButton!
 
@@ -98,7 +97,7 @@ class MassagePreferenceVC: MainVC {
         self.btnSubmit.setTitle("BTN_SUBMIT".localized(), for: .normal)
         self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnSubmit?.setupFilledButton()
-        self.btnBack.setBackButton()
+        
     }
 
     func openMassagerPressurePicker(index:Int = 0) {
@@ -171,10 +170,11 @@ class MassagePreferenceVC: MainVC {
         }
     }
 
-    @IBAction func btnBackTapped(_ sender: Any) {
+    override func btnLeftTapped(_ btn: UIButton = UIButton()) {
+        super.btnLeftTapped()
          _ = (self.navigationController as? NC)?.popVC()
     }
-
+   
     @IBAction func btnSubmitTapped(_ sender: Any) {
         Common.appDelegate.loadHomeVC()
     }

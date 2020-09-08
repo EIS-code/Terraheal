@@ -18,6 +18,7 @@ class MyBookingData: NSObject {
     var booking_info: [BookingInfo] = []
     var user_id: String = PreferenceHelper.shared.getUserId()
     var shop_id: String = ""
+    var currency_id: String = ""
     //Data Not In Web Call
     var serviceCenterDetail: ServiceCenterDetail = ServiceCenterDetail.init(fromDictionary: [:])
     override init() {
@@ -26,11 +27,12 @@ class MyBookingData: NSObject {
     func toDictionary() ->  [String:Any] {
         var dictionary = [String:Any]()
         dictionary["session_id"] = session_id
-        dictionary["date"] = date
+        dictionary["booking_date_time"] = date
         dictionary["booking_type"] = booking_type
         dictionary["special_notes"] = special_notes
         dictionary["user_id"] = user_id
         dictionary["shop_id"] = shop_id
+        dictionary["currency_id"] = currency_id
         var dictionaryElements = [[String:Any]]()
         for dataElement in booking_info {
             dictionaryElements.append(dataElement.toDictionary())
@@ -42,6 +44,9 @@ class MyBookingData: NSObject {
 }
 
 class BookingInfo: NSObject {
+    
+    
+    
     var user_people_id: String = ""
     var location: String = ""
     var notes_of_injuries: String = ""
@@ -49,6 +54,9 @@ class BookingInfo: NSObject {
     var therapist_id: String = ""
     var room_id: String = ""
     var massage_info: [MyMassageInfo] = []
+    var massagePreferenceOptionId : String = ""
+    var preference : String = ""
+    
     //Data Not In Web Call
     var reciepent:People = People.init(fromDictionary: [:])
     var services: [ServiceDetail] = []

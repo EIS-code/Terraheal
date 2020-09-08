@@ -16,7 +16,6 @@ struct PackDetail {
 
 class PackVC: MainVC {
     
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnSubmit: ThemeButton!
     
@@ -72,7 +71,7 @@ class PackVC: MainVC {
         self.btnSubmit?.setTitle("PACK_BTN_BUY_NEW".localized(), for: .normal)
         self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnSubmit?.setupFilledButton()
-        self.btnBack.setBackButton()
+        
     }
     
     
@@ -84,7 +83,8 @@ class PackVC: MainVC {
         self.openBuyPackDialog()
     }
     
-    @IBAction func btnBackTapped(_ sender: Any) {
+    override func btnLeftTapped(_ btn: UIButton = UIButton()) {
+        super.btnLeftTapped()
         _ = (self.navigationController as? NC)?.popVC()
     }
     

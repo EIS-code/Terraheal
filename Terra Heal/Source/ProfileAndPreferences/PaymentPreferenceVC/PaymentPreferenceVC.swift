@@ -15,7 +15,6 @@ struct CreditCardDetail {
 
 class PaymentPreferenceVC: MainVC {
     
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnSubmit: ThemeButton!
     @IBOutlet weak var vwPaypalDetail: UIView!
@@ -30,7 +29,7 @@ class PaymentPreferenceVC: MainVC {
     @IBOutlet weak var lblCreditCardValue: ThemeLabel!
     @IBOutlet weak var btnExpandCreditCard: ThemeButton!
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
-    @IBOutlet weak var btnAddPayment: ThemeButton!
+    @IBOutlet weak var btnAddPayment: RoundedBorderButton!
     
     var isFromMenu: Bool = false
     var arrForData: [CreditCardDetail] = [CreditCardDetail.init(id: "1", name: "personal", value: "254xxxxxxxxx324841", isSeleced: false),CreditCardDetail.init(id: "2", name: "business", value: "254xxxxxxxxx324841", isSeleced: true)]
@@ -102,7 +101,6 @@ class PaymentPreferenceVC: MainVC {
         self.btnAddPayment?.setTitle("PAYMENT_BTN_ADD_NEW".localized(), for: .normal)
         self.btnAddPayment?.setupBorderedButton()
         self.setupTableView(tableView: self.tableView)
-        self.btnBack.setBackButton()
         self.btnAddPayment.addTarget(self, action: #selector(btnAddPaymentTapped(_:)), for: .touchUpInside)
         if isFromMenu {
             self.btnSubmit?.setTitle("PAYMENT_BTN_ADD_NEW".localized(), for: .normal)
@@ -126,10 +124,10 @@ class PaymentPreferenceVC: MainVC {
         btnExpandCreditCard.isSelected.toggle()
     }
     
-    @IBAction func btnBackTapped(_ sender: Any) {
-         _ = (self.navigationController as? NC)?.popVC()
+    override func btnLeftTapped(_ btn: UIButton = UIButton()) {
+        super.btnLeftTapped()
+        _ = (self.navigationController as? NC)?.popVC()
     }
-    
     @IBAction func btnAddPaymentTapped(_ sender: Any) {
         self.openAddPaymentDialog()
     }

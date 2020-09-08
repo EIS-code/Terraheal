@@ -52,7 +52,7 @@
                         <constraint firstAttribute="trailing" secondItem="uYI-8a-qTt" secondAttribute="trailing" id="o5s-tl-msB"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phD-1A-sjB" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phD-1A-sjB" customClass="FilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="97" y="436" width="126" height="38"/>
                     <color key="backgroundColor" name="theme_primary_light_background"/>
                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
@@ -63,7 +63,7 @@
                         <action selector="btnScanTapped:" destination="-1" eventType="touchUpInside" id="GS7-Ux-bQM"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQB-4n-2IC" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQB-4n-2IC" customClass="BackButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="20" y="20" width="30" height="30"/>
                     <color key="backgroundColor" name="theme_primary_light"/>
                     <constraints>

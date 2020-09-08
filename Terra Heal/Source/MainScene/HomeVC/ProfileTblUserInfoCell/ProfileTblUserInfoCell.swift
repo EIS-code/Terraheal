@@ -15,7 +15,7 @@ class ProfileTblUserInfoCell: TableCell {
     @IBOutlet weak var lblDescription: ThemeLabel!
 
     @IBOutlet weak var vwBg: UIView!
-   @IBOutlet weak var btnAction: ThemeButton!
+   @IBOutlet weak var btnAction: RoundedBorderButton!
 
 
     override func awakeFromNib() {

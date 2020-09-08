@@ -14,6 +14,16 @@
       "filename" : "Icon metro-dollar2@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
+    },
+    {
+      "filename" : "Icon metro-dollar2@2x-1.png",
+      "idiom" : "ipad",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Icon metro-dollar2@3x-2.png",
+      "idiom" : "ipad",
+      "scale" : "2x"
     }
   ],
   "info" : {

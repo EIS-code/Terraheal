@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyAddressVC" customModule="Terra_Heal" customModuleProvider="target">
             <connections>
-                <outlet property="btnBack" destination="dk0-AN-Hja" id="g3C-po-hKO"/>
+                <outlet property="btnLeft" destination="dk0-AN-Hja" id="aoX-3F-IgI"/>
                 <outlet property="btnSubmit" destination="qBm-VY-Sku" id="Xrt-bg-id9"/>
                 <outlet property="footerGradient" destination="Ov6-y8-iq7" id="P6s-li-ZPF"/>
                 <outlet property="headerGradient" destination="2VO-fT-GXj" id="v9I-mR-C0P"/>
@@ -113,7 +113,7 @@
                         <constraint firstItem="qBm-VY-Sku" firstAttribute="centerX" secondItem="Ibk-5A-rNu" secondAttribute="centerX" id="SkP-ju-ntR"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" customClass="BackButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="20.000000000000007" y="64" width="126.66666666666669" height="126.66666666666669"/>
                     <color key="backgroundColor" name="theme_primary_light"/>
                     <constraints>
@@ -121,7 +121,7 @@
                     </constraints>
                     <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                     <connections>
-                        <action selector="btnBackTapped:" destination="-1" eventType="touchUpInside" id="Paq-Ih-WlD"/>
+                        <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="hBu-T9-lrn"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXO-ds-8JK" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">

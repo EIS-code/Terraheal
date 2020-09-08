@@ -10,6 +10,7 @@ import UIKit
 
 class SessionTblCell: TableCell {
 
+    @IBOutlet weak var btnInfo: FloatingRoundButton!
     @IBOutlet weak var lblName: ThemeLabel!
     @IBOutlet weak var lblDetail: ThemeLabel!
     @IBOutlet weak var vwBg: UIView!
@@ -28,6 +29,7 @@ class SessionTblCell: TableCell {
         self.data = data
         self.lblName.text = data.name
         self.lblDetail.text = data.detail
+        self.ivPicture.image = UIImage.init(named: data.image)
         if data.isSelected {
             self.ivSelected.isHidden = false
             self.vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)

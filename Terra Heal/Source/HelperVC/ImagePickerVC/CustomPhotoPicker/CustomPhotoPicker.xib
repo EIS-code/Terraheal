@@ -120,7 +120,7 @@
                                         <constraint firstItem="xgv-6m-XId" firstAttribute="leading" secondItem="GAw-VG-R1B" secondAttribute="trailing" constant="10" id="uBY-pC-6je"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3t4-DL-CeP" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3t4-DL-CeP" customClass="DialogFilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
                                     <rect key="frame" x="120.5" y="212.5" width="133" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
@@ -131,7 +131,7 @@
                                         <action selector="btnDoneTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="q46-yq-9fA"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocy-xf-jLE" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocy-xf-jLE" customClass="DialogCancelButton" customModule="Terra_Heal" customModuleProvider="target">
                                     <rect key="frame" x="164" y="272.5" width="46" height="30"/>
                                     <state key="normal" title="Button"/>
                                     <connections>

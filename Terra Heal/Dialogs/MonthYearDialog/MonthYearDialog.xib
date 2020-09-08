@@ -67,7 +67,7 @@
                                                         <action selector="onClickBtnDone:" destination="iN0-l3-epB" eventType="touchUpInside" id="7kL-dt-K9f"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1W-AP-3eY" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1W-AP-3eY" customClass="DialogFloatingProceedButton" customModule="Terra_Heal" customModuleProvider="target">
                                                     <rect key="frame" x="79" y="2" width="38" height="38"/>
                                                     <color key="backgroundColor" name="theme_primary_light"/>
                                                     <constraints>
@@ -91,7 +91,7 @@
                                         <constraint firstItem="Rqi-IJ-x8k" firstAttribute="centerY" secondItem="ZP6-Da-KrV" secondAttribute="centerY" id="q8U-5e-Nja"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpg-NK-hBn" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpg-NK-hBn" customClass="DialogCancelButton" customModule="Terra_Heal" customModuleProvider="target">
                                     <rect key="frame" x="141" y="255.5" width="53" height="32"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <state key="normal" title="Sign In">

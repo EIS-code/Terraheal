@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ManagePeopleVC" customModule="Terra_Heal" customModuleProvider="target">
             <connections>
                 <outlet property="btnAddNewPeople" destination="3FN-jR-Ric" id="Qwl-63-HUw"/>
-                <outlet property="btnBack" destination="dk0-AN-Hja" id="g3C-po-hKO"/>
+                <outlet property="btnLeft" destination="dk0-AN-Hja" id="UPd-m6-hEJ"/>
                 <outlet property="footerGradient" destination="VrK-TS-qlU" id="P7d-P1-4wT"/>
                 <outlet property="headerGradient" destination="vyw-vb-KsB" id="e6s-Id-pCe"/>
                 <outlet property="lblEmptyMsg" destination="dq6-Ju-L13" id="qcb-PW-Kgr"/>
@@ -93,7 +93,7 @@
                         <constraint firstItem="9CR-4q-nXD" firstAttribute="width" secondItem="GK8-Yw-bGx" secondAttribute="width" multiplier="0.75" id="cYz-EH-41z"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" customClass="BackButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="20.000000000000007" y="64" width="126.66666666666669" height="126.66666666666669"/>
                     <color key="backgroundColor" name="theme_primary_light"/>
                     <constraints>
@@ -101,7 +101,7 @@
                     </constraints>
                     <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                     <connections>
-                        <action selector="btnBackTapped:" destination="-1" eventType="touchUpInside" id="Paq-Ih-WlD"/>
+                        <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="r2D-Yp-n1a"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXO-ds-8JK" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">

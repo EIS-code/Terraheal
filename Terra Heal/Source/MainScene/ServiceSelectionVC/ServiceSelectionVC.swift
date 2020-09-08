@@ -7,7 +7,7 @@ import UIKit
 
 class ServiceSelectionVC: MainVC {
     
-    @IBOutlet weak var btnBack: FloatingRoundButton!
+    @IBOutlet weak var btnCancel: CancelButton!
     @IBOutlet weak var collectionVw: UICollectionView!
     @IBOutlet weak var vwServiceSelection: JDSegmentedControl!
     var selectedServiceType: ServiceType = ServiceType.Massages
@@ -21,6 +21,7 @@ class ServiceSelectionVC: MainVC {
     //Dialogs
     var durationSelectionDialog: DurationSelectionDialog!
     var textViewDialog: TextViewDialog!
+    var pressureFocusSelectionDialog: CustomFocusAreaPicker!
     var pressureSelectionDialog: CustomPressurePicker!
     var genderSelectionDialog: CustomPreferGenderPicker!
     // MARK: Object lifecycle
@@ -89,7 +90,7 @@ class ServiceSelectionVC: MainVC {
     }
     
     
-    @IBAction func btnBackTapped(_ sender: Any) {
+    @IBAction func btnCancelTapped(_ sender: Any) {
         self.dismiss(animated: true) {
                  _ = (self.navigationController as? NC)?.popVC()
         }
@@ -169,9 +170,30 @@ class ServiceSelectionVC: MainVC {
                     [ weak self] (preferenceData) in
                      guard let self = self else { return } ; print(self)
                     self.massageInfo.massage_preference_option_id = preferenceData.id
-                    self.openTextViewPicker()
+                    self.openFocusPressurerPicker()
                 }
 
+        }
+    }
+    
+    func openFocusPressurerPicker() {
+        if let pressureData: MassagePreferenceDetail = MassagePreferenceDetail.getFocusPreferences() {
+            
+            pressureFocusSelectionDialog = CustomFocusAreaPicker.fromNib()
+            pressureFocusSelectionDialog.initialize(title: pressureData.name, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
+            pressureFocusSelectionDialog.setDataSource(data: pressureData)
+            pressureFocusSelectionDialog.show(animated: true)
+            pressureFocusSelectionDialog.onBtnCancelTapped = {
+                    [weak pressureFocusSelectionDialog, weak self] in
+                    guard let self = self else {return}; print(self)
+                    pressureFocusSelectionDialog?.dismiss()
+                }
+            pressureFocusSelectionDialog.onBtnDoneTapped = {
+                    [ weak self] (preferenceData) in
+                     guard let self = self else { return } ; print(self)
+                    self.massageInfo.massage_preference_option_id = preferenceData.id
+                    self.openTextViewPicker()
+            }
         }
     }
     func openTextViewPicker() {
@@ -201,6 +223,7 @@ class ServiceSelectionVC: MainVC {
         self.textViewDialog?.dismiss()
         self.pressureSelectionDialog?.dismiss()
         self.genderSelectionDialog?.dismiss()
+        self.pressureFocusSelectionDialog?.dismiss()
     }
 }
 

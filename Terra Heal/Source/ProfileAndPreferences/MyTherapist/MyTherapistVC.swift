@@ -7,7 +7,6 @@ import UIKit
 
 class MyTherapistVC: MainVC {
     
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var tableView: UITableView!
     
     var arrForTherapist: [MyTherapistDetail] = [
@@ -61,7 +60,6 @@ class MyTherapistVC: MainVC {
         
         self.setupTableView(tableView: self.tableView)
         self.setTitle(title: "MYTHERAPIST_TITLE".localized())
-        self.btnBack.setBackButton()
     }
     
     func openRateViewPicker(name: String) {
@@ -81,11 +79,12 @@ class MyTherapistVC: MainVC {
             print(rating)
         }
     }
-    
-    @IBAction func btnBackTapped(_ sender: Any) {
+   
+    override func btnLeftTapped(_ btn: UIButton = UIButton()) {
+        super.btnLeftTapped()
         _ = (self.navigationController as? NC)?.popVC()
+        
     }
-    
     @IBAction func btnSubmitTapped(_ sender: Any) {
         Common.appDelegate.loadHomeVC()
     }

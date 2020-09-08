@@ -42,8 +42,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-home-massage-center" translatesAutoresizingMaskIntoConstraints="NO" id="0Ue-uY-Y2M">
                                 <rect key="frame" x="106" y="295" width="289" height="238"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yc7-md-upC" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="179" y="553" width="143" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yc7-md-upC" customClass="RoundedBorderButton" customModule="Terra_Heal" customModuleProvider="target">
+                                <rect key="frame" x="125.5" y="553" width="250.5" height="42"/>
                                 <color key="backgroundColor" name="theme_primary"/>
                                 <inset key="contentEdgeInsets" minX="30" minY="10" maxX="30" maxY="10"/>
                                 <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
@@ -56,6 +56,7 @@
                         <color key="backgroundColor" name="theme_background"/>
                         <constraints>
                             <constraint firstItem="eWe-fo-Zfx" firstAttribute="top" secondItem="gph-dA-JOW" secondAttribute="bottom" constant="10" id="1NA-9E-xlG"/>
+                            <constraint firstItem="Yc7-md-upC" firstAttribute="width" relation="greaterThanOrEqual" secondItem="fTr-D4-KiU" secondAttribute="width" multiplier="0.5" id="6Gd-aq-TVB"/>
                             <constraint firstItem="zbl-J2-KSJ" firstAttribute="centerX" secondItem="fTr-D4-KiU" secondAttribute="centerX" id="6v3-ni-ZDp"/>
                             <constraint firstAttribute="bottom" secondItem="Yc7-md-upC" secondAttribute="bottom" constant="10" id="Aow-Lc-ucu"/>
                             <constraint firstItem="0Ue-uY-Y2M" firstAttribute="top" secondItem="eWe-fo-Zfx" secondAttribute="bottom" constant="10" id="GMc-90-F3k"/>
@@ -97,7 +98,7 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_dark_text">
-            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_hint_text">
             <color red="0.69800001382827759" green="0.70200002193450928" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

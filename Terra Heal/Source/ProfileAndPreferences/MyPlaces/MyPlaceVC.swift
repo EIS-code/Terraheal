@@ -12,7 +12,6 @@ struct MyPlaceTblDetail{
 
 class MyPlaceVC: MainVC {
 
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var tableView: UITableView!
 
     var arrForMyPlaces: [ServiceCenterDetail] = []
@@ -36,10 +35,7 @@ class MyPlaceVC: MainVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.initialViewSetup()
-        //self.addBottomFade()
-        //self.addTopFade()
         self.getPlacesList()
     }
 
@@ -63,7 +59,7 @@ class MyPlaceVC: MainVC {
     private func initialViewSetup() {
         self.setupTableView(tableView: self.tableView)
         self.setTitle(title: "MY_PLACE_TITLE".localized())
-        self.btnBack.setBackButton()
+      
     }
 
     func openPlaceDetailDialog(data: ServiceCenterDetail) {
@@ -82,10 +78,11 @@ class MyPlaceVC: MainVC {
         }
     }
 
-    @IBAction func btnBackTapped(_ sender: Any) {
-         _ = (self.navigationController as? NC)?.popVC()
+    override func btnLeftTapped(_ btn: UIButton = UIButton()) {
+        super.btnLeftTapped()
+        _ = (self.navigationController as? NC)?.popVC()
+        
     }
-
     @IBAction func btnSubmitTapped(_ sender: Any) {
         Common.appDelegate.loadHomeVC()
     }

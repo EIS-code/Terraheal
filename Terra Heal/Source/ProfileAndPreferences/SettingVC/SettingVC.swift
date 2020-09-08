@@ -48,7 +48,6 @@ struct SettingPreferenceDetail {
 
 class SettingVC: MainVC {
 
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var tableView: UITableView!
     var settingDetail:Setting = Setting.init(fromDictionary: [:])
     var arrForData: [SettingPreferenceDetail] = [
@@ -102,10 +101,8 @@ class SettingVC: MainVC {
     }
 
     private func initialViewSetup() {
-        
         self.setupTableView(tableView: self.tableView)
         self.setTitle(title: "SETTING_MENU_TITTLE".localized())
-        self.btnBack.setBackButton()
     }
 
     func openMassagerPressurePicker() {
@@ -125,8 +122,9 @@ class SettingVC: MainVC {
         }
     }
 
-    @IBAction func btnBackTapped(_ sender: Any) {
-         _ = (self.navigationController as? NC)?.popVC()
+    override func btnLeftTapped(_ btn: UIButton = UIButton()) {
+        super.btnLeftTapped()
+        _ = (self.navigationController as? NC)?.popVC()
     }
 
     @IBAction func btnSubmitTapped(_ sender: Any) {

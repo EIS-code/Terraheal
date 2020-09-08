@@ -95,7 +95,7 @@ to sign back in</string>
                                     </subviews>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCc-Ig-liE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="93.5" y="502.5" width="133" height="40"/>
+                                    <rect key="frame" x="90" y="502.5" width="140" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                     <state key="normal" title="Sign In">
@@ -214,6 +214,7 @@ to sign back in</string>
                                 <constraint firstItem="OFC-v0-9Er" firstAttribute="width" secondItem="hp5-yH-riX" secondAttribute="width" multiplier="0.9" id="UDn-R0-eks"/>
                                 <constraint firstItem="KCc-Ig-liE" firstAttribute="centerX" secondItem="hp5-yH-riX" secondAttribute="centerX" id="XAZ-PE-ETa"/>
                                 <constraint firstItem="LZo-vT-jyU" firstAttribute="top" secondItem="hp5-yH-riX" secondAttribute="top" constant="20" id="XB0-0Z-g2n"/>
+                                <constraint firstItem="KCc-Ig-liE" firstAttribute="width" relation="greaterThanOrEqual" secondItem="J5Q-R5-iLe" secondAttribute="width" multiplier="0.5" id="ZAI-3p-S8M"/>
                                 <constraint firstItem="0Z0-gR-a9P" firstAttribute="centerX" secondItem="hp5-yH-riX" secondAttribute="centerX" id="aG9-XI-quF"/>
                                 <constraint firstItem="OFC-v0-9Er" firstAttribute="top" secondItem="aP0-Wu-Qbj" secondAttribute="bottom" constant="20" id="dWn-db-oQI"/>
                                 <constraint firstItem="LZo-vT-jyU" firstAttribute="centerX" secondItem="hp5-yH-riX" secondAttribute="centerX" id="hM1-xG-cNb"/>

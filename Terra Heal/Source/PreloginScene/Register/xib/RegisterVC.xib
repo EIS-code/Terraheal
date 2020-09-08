@@ -186,7 +186,7 @@ to sign back in</string>
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCc-Ig-liE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="83.333333333333343" y="471.66666666666663" width="133" height="40"/>
+                                    <rect key="frame" x="82.333333333333343" y="471.66666666666663" width="135" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                     <state key="normal" title="Sign In">
@@ -255,6 +255,7 @@ to sign back in</string>
                                 <constraint firstItem="Y84-jM-cel" firstAttribute="centerX" secondItem="hp5-yH-riX" secondAttribute="centerX" id="4tJ-nD-LLk"/>
                                 <constraint firstItem="vUJ-Um-wtc" firstAttribute="centerX" secondItem="uVN-0T-0Am" secondAttribute="centerX" id="BlW-tx-W8x"/>
                                 <constraint firstAttribute="trailing" secondItem="7jV-sf-aUO" secondAttribute="trailing" constant="20" id="CAH-3r-Qdy"/>
+                                <constraint firstItem="KCc-Ig-liE" firstAttribute="width" relation="greaterThanOrEqual" secondItem="J5Q-R5-iLe" secondAttribute="width" multiplier="0.5" id="IVx-B0-2Ud"/>
                                 <constraint firstItem="uVN-0T-0Am" firstAttribute="width" secondItem="hp5-yH-riX" secondAttribute="width" multiplier="0.9" id="KoD-L4-8uF"/>
                                 <constraint firstAttribute="bottom" secondItem="Y84-jM-cel" secondAttribute="bottom" constant="20" id="Kpl-8A-lbY"/>
                                 <constraint firstItem="KCc-Ig-liE" firstAttribute="top" secondItem="g0k-nb-0QI" secondAttribute="bottom" constant="20" id="MKF-AT-dCN"/>

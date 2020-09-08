@@ -13,7 +13,7 @@ enum AnimationDirection: Int {    case up, down, left, right, undefined}
 class CustomAlert: ThemeDialogView {
 
     @IBOutlet weak var dialogView: UIView!
-    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var cancelButton: CancelButton!
     @IBOutlet weak var lblMessage: ThemeLabel!
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var animationVw: UIView!

@@ -59,7 +59,7 @@ struct ProfileItemDetail {
 
 class ProfileVC: MainVC {
     
-    @IBOutlet weak var btnProfile: FloatingRoundButton!
+    @IBOutlet weak var btnCancel: CancelButton!
     @IBOutlet weak var btnMenu: FloatingRoundButton!
     @IBOutlet weak var lblEmail: ThemeLabel!
     @IBOutlet weak var lblUserName: ThemeLabel!
@@ -170,8 +170,7 @@ class ProfileVC: MainVC {
     @IBAction func btnMenuTapped(_ sender: Any) {
         
     }
-    
-    @IBAction func btnProfileTapped(_ sender: Any) {
+    @IBAction func btnCancelTapped(_ sender: Any) {
         self.revealViewController()?.revealRightView()
     }
 }
@@ -185,7 +184,7 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
         tableView.backgroundColor = .clear
         self.scrVw.delegate = self
         tableView.showsVerticalScrollIndicator = false
-        tableView.rowHeight = 60
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 60
         tableView.register(ProfileTblCell.nib()
             , forCellReuseIdentifier: ProfileTblCell.name)
@@ -226,7 +225,8 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
         return cell!
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        
+        return tableView.frame.width * 0.2
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

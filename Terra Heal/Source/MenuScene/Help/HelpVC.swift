@@ -12,7 +12,6 @@ struct HelpDetail{
 
 class HelpVC: MainVC {
     
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblDetails: ThemeLabel!
     
@@ -73,12 +72,12 @@ class HelpVC: MainVC {
     
         self.setTitle(title: "HELP_TITLE".localized())
         self.lblDetails.setFont(name: FontName.Regular, size: FontSize.label_12)
-        self.btnBack.setBackButton()
     }
     
     
-    @IBAction func btnBackTapped(_ sender: Any) {
-         _ = (self.navigationController as? NC)?.popVC()
+    override func btnLeftTapped(_ btn: UIButton = UIButton()) {
+        super.btnLeftTapped()
+        _ = (self.navigationController as? NC)?.popVC()
     }
     
     func openChatDialog(index:Int = 0) {

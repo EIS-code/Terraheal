@@ -16,7 +16,7 @@ struct UploadDocumentDetail {
 
 class ManageDocumentVC: MainVC {
     
-    @IBOutlet weak var btnBack: FloatingRoundButton!
+    @IBOutlet weak var btnCancel: CancelButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var vwForEmpty: UIView!
     @IBOutlet weak var vwBg: UIView!
@@ -81,15 +81,13 @@ class ManageDocumentVC: MainVC {
         self.btnSubmit?.setupFilledButton()
     }
     
-    @IBAction func btnBackTapped(_ sender: Any) {
+    @IBAction func btnCancelTapped(_ sender: Any) {
          _ = (self.navigationController as? NC)?.popVC()
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
         self.btnSubmit.isEnabled = false
         self.openPhotoPicker()
-        
-        
     }
     
     func updateUI()  {

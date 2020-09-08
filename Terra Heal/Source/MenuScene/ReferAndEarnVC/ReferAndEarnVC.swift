@@ -34,7 +34,7 @@ class ReferAndEarnVC: MainVC {
     @IBOutlet weak var lblReferAndEarn: ThemeLabel!
     @IBOutlet weak var lblInviteFriendMsg: ThemeLabel!
     @IBOutlet weak var ivInviteFriend: UIImageView!
-    @IBOutlet weak var btnReferNow: ThemeButton!
+    @IBOutlet weak var btnReferNow: RoundedBorderButton!
     @IBOutlet weak var vwInviteFriend: UIView!
 
     /*Referred Friends*/

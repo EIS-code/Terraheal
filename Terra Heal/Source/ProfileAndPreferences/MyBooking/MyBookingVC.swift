@@ -12,7 +12,6 @@ struct MyBookingTblDetail{
 
 class MyBookingVC: MainVC {
 
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var vwTab: JDSegmentedControl!
     @IBOutlet weak var vwBg: UIView!
@@ -71,7 +70,6 @@ class MyBookingVC: MainVC {
         self.setBackground(color: UIColor.themeBackground)
         self.setupTableView(tableView: self.tableView)
         self.setTitle(title: "MY_BOOKING_TITLE".localized())
-        self.btnBack.setBackButton()
         self.vwTab.allowChangeThumbWidth = false
         self.vwTab.itemTitles = ["pending","upcoming","past"]
         self.vwTab.changeBackgroundColor(UIColor.themeLightTextColor)
@@ -84,6 +82,9 @@ class MyBookingVC: MainVC {
          _ = (self.navigationController as? NC)?.popVC()
     }
 
+    override func btnLeftTapped(_ btn: UIButton = UIButton()) {
+        super.btnLeftTapped()
+    }
     @IBAction func btnSubmitTapped(_ sender: Any) {
         Common.appDelegate.loadHomeVC()
     }

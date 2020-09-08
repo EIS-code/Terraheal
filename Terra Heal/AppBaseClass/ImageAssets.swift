@@ -14,6 +14,9 @@ struct ImageAsset {
     static let rightArrow = "asset-arrow-right"
     static let leftArrow = "asset-arrow-left"
     
+    struct Button {
+        static let backButton = "asset-back-button"
+    }
     struct Camera {
         static let square = "asset-square-cutter"
         static let face = "asset-face"
@@ -74,6 +77,13 @@ struct ImageAsset {
         static let termsAndCondition = "asset-menu-setting-termsAndCondition"
         static let managePrivacy = "asset-menu-setting-manage-privacy"
         static let logout = "asset-menu-setting-logout"
+    }
+    
+    struct Session {
+        static let single = "asset-session-single"
+        static let couple = "asset-session-couple"
+        static let group = "asset-session-group"
+       
     }
     struct SideMenu {
         

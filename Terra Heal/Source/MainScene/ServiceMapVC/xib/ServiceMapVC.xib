@@ -16,8 +16,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ServiceMapVC" customModule="Terra_Heal" customModuleProvider="target">
             <connections>
-                <outlet property="btnBack" destination="IND-Az-SGv" id="c9g-YH-AcQ"/>
                 <outlet property="btnBook" destination="XPc-yM-mM9" id="s0h-NP-gGB"/>
+                <outlet property="btnCancel" destination="IND-Az-SGv" id="26B-h4-YWn"/>
                 <outlet property="btnCheckService" destination="Uje-OS-aMX" id="e5y-4X-XO9"/>
                 <outlet property="btnKm" destination="5ts-YA-ha4" id="pYN-jC-D04"/>
                 <outlet property="btnMyLocation" destination="4bD-XR-1BI" id="1qM-ta-MOY"/>
@@ -42,18 +42,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ux-6h-A7d" userLabel="vwMap" customClass="GMSMapView">
-                    <rect key="frame" x="0.0" y="192" width="375" height="620"/>
+                    <rect key="frame" x="0.0" y="172" width="375" height="640"/>
                     <color key="backgroundColor" name="theme_primary_border"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEK-Cr-eQL" userLabel="ViewService">
-                    <rect key="frame" x="0.0" y="433.33333333333326" width="375" height="418.66666666666674"/>
+                    <rect key="frame" x="0.0" y="440.66666666666674" width="375" height="411.33333333333326"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQv-Wj-FT7" userLabel="vwServiceDialog">
-                            <rect key="frame" x="0.0" y="28.666666666666686" width="375" height="390"/>
+                            <rect key="frame" x="0.0" y="25" width="375" height="386.33333333333331"/>
                             <color key="backgroundColor" name="theme_background"/>
                         </view>
                         <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center" translatesAutoresizingMaskIntoConstraints="NO" id="26x-e7-0XI" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="159" y="0.0" width="57.333333333333343" height="57.333333333333336"/>
+                            <rect key="frame" x="162.66666666666666" y="0.0" width="50" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="26x-e7-0XI" secondAttribute="height" multiplier="1:1" id="BFA-Vm-8TA"/>
                             </constraints>
@@ -64,7 +64,7 @@
                             </userDefinedRuntimeAttributes>
                         </imageView>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0xa-H5-01s">
-                            <rect key="frame" x="0.0" y="57.333333333333385" width="375" height="187.33333333333337"/>
+                            <rect key="frame" x="0.0" y="50.000000000000014" width="375" height="187.33333333333337"/>
                             <color key="backgroundColor" name="theme_secondary"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="187.33333333333337" id="nHk-WK-dC0"/>
@@ -77,12 +77,12 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ydl-Fk-PfO">
-                            <rect key="frame" x="18.666666666666657" y="264.66666666666669" width="337.66666666666674" height="60"/>
+                            <rect key="frame" x="18.666666666666657" y="257.33333333333331" width="337.66666666666674" height="60"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="i27-80-VjO" userLabel="Stack View - Next">
                                     <rect key="frame" x="0.0" y="0.0" width="337.66666666666669" height="60"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uje-OS-aMX" userLabel="BtnCheckService" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uje-OS-aMX" userLabel="BtnCheckService" customClass="FilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="159" height="60"/>
                                             <color key="backgroundColor" name="theme_primary"/>
                                             <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
@@ -94,7 +94,7 @@
                                                 <action selector="btnCheckServiceTapped:" destination="-1" eventType="touchUpInside" id="1Hm-ub-KyY"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPc-yM-mM9" userLabel="BtnBookHere" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPc-yM-mM9" userLabel="BtnBookHere" customClass="RoundedBorderButton" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="179" y="0.0" width="158.66666666666663" height="60"/>
                                             <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                             <inset key="contentEdgeInsets" minX="10" minY="20" maxX="10" maxY="20"/>
@@ -161,14 +161,13 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RkY-uq-l4w" userLabel="vwBar">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="192"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="172"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IND-Az-SGv" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="291" y="64" width="64" height="64"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IND-Az-SGv" customClass="CancelButton" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="311" y="64" width="44" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="IND-Az-SGv" secondAttribute="height" multiplier="1:1" id="1zD-Jl-dP8"/>
                             </constraints>
-                            <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                             <state key="normal" image="asset-cross"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="enableFloating" value="NO"/>
@@ -184,7 +183,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xC-vK-VPV" userLabel="lblAddress" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="55" y="94.333333333333314" width="43" height="77.666666666666686"/>
+                            <rect key="frame" x="55" y="94.333333333333329" width="43" height="57.666666666666671"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" name="theme_hint_text"/>
                             <nil key="highlightedColor"/>
@@ -212,7 +211,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ts-YA-ha4" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="20" y="212" width="89" height="38"/>
+                    <rect key="frame" x="20" y="192" width="89" height="38"/>
                     <color key="backgroundColor" name="theme_secondary"/>
                     <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
                     <state key="normal" title="2.9 Km">
@@ -220,7 +219,7 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bD-XR-1BI">
-                    <rect key="frame" x="295" y="212" width="60" height="60"/>
+                    <rect key="frame" x="295" y="192" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="4bD-XR-1BI" secondAttribute="height" multiplier="1:1" id="EGY-3z-GcC"/>
                         <constraint firstAttribute="height" constant="60" id="dZd-Fn-q11"/>
@@ -261,7 +260,7 @@
         </view>
     </objects>
     <resources>
-        <image name="asset-center" width="57.333332061767578" height="57.333332061767578"/>
+        <image name="asset-center" width="50" height="50"/>
         <image name="asset-cross" width="44" height="44"/>
         <image name="asset-location" width="10" height="16"/>
         <image name="asset-my-location" width="36" height="36"/>

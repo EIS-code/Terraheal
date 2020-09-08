@@ -16,8 +16,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TutorialVC" customModule="Terra_Heal" customModuleProvider="target">
             <connections>
-                <outlet property="btnBack" destination="tqr-Gp-vWE" id="HJK-tk-68p"/>
-                <outlet property="btnDone" destination="btk-IO-WjQ" id="1DB-Dz-aTq"/>
+                <outlet property="btnDone" destination="btk-IO-WjQ" id="6QH-h0-9s4"/>
+                <outlet property="btnLeft" destination="tqr-Gp-vWE" id="rW0-bT-HAG"/>
                 <outlet property="btnNext" destination="MPT-lV-vrF" id="mFr-3x-dT1"/>
                 <outlet property="cvForTutorial" destination="t8a-Aw-3N1" id="07d-BP-dw5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -28,7 +28,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqr-Gp-vWE" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqr-Gp-vWE" customClass="BackButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="20" y="20" width="34" height="34"/>
                     <color key="backgroundColor" name="theme_primary_light"/>
                     <constraints>
@@ -38,7 +38,7 @@
                         <color key="titleColor" name="theme_light_text_color"/>
                     </state>
                     <connections>
-                        <action selector="btnBackTapped:" destination="-1" eventType="touchUpInside" id="hmb-gg-57G"/>
+                        <action selector="btnBackTapped:" destination="-1" eventType="touchUpInside" id="kpl-x2-jC6"/>
                     </connections>
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="t8a-Aw-3N1">
@@ -64,7 +64,7 @@
                                 <action selector="btnNextTapped:" destination="-1" eventType="touchUpInside" id="6Sj-xX-HQH"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btk-IO-WjQ" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btk-IO-WjQ" customClass="FloatingProceedButton" customModule="Terra_Heal" customModuleProvider="target">
                             <rect key="frame" x="79" y="0.0" width="38" height="38"/>
                             <color key="backgroundColor" name="theme_primary_light"/>
                             <constraints>

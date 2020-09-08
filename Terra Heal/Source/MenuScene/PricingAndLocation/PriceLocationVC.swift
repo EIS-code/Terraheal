@@ -7,7 +7,6 @@ import UIKit
 
 class PriceLocationVC: MainVC {
 
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var vwForEmpty: UIView!
     @IBOutlet weak var vwBg: UIView!
@@ -77,13 +76,14 @@ class PriceLocationVC: MainVC {
         self.btnSubmit?.setTitle("BTN_PROCEED".localized(), for: .normal)
         self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnSubmit?.setupFilledButton()
-        self.btnBack.setBackButton()
+        
     }
 
-    @IBAction func btnBackTapped(_ sender: Any) {
-         _ = (self.navigationController as? NC)?.popVC()
+    override func btnLeftTapped(_ btn: UIButton = UIButton()) {
+        super.btnLeftTapped()
+        _ = (self.navigationController as? NC)?.popVC()
     }
-
+    
     @IBAction func btnSubmitTapped(_ sender: Any) {
         self.openLocationServiceDialog()
     }

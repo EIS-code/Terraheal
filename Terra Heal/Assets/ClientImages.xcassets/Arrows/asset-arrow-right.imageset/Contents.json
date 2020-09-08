@@ -14,6 +14,16 @@
       "filename" : "Icon ionic-ios-arrow-right@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
+    },
+    {
+      "filename" : "Icon ionic-ios-arrow-back@2x.png",
+      "idiom" : "ipad",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Icon ionic-ios-arrow-back@3x.png",
+      "idiom" : "ipad",
+      "scale" : "2x"
     }
   ],
   "info" : {

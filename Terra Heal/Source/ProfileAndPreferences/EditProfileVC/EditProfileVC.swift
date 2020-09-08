@@ -9,7 +9,6 @@ import UIKit
 
 
 class EditProfileVC: MainVC {
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var ivProfilePic: UIImageView!
     @IBOutlet weak var vwBg: UIView!
     var kTableHeaderHeight:CGFloat = 150.0
@@ -76,10 +75,10 @@ class EditProfileVC: MainVC {
     private func initialViewSetup() {
         self.view.backgroundColor = UIColor.themeBackground
         self.setTitle(title: "edit profile")
-        self.btnBack.setBackButton()
     }
     
-    @IBAction func btnBackTapped(_ sender: Any) {
+    override func btnLeftTapped(_ btn: UIButton = UIButton()) {
+        super.btnLeftTapped()
         _ = (self.navigationController as? NC)?.popVC()
     }
     

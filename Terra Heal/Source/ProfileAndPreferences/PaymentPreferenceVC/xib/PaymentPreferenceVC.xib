@@ -12,10 +12,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentPreferenceVC" customModule="Terra_Heal" customModuleProvider="target">
             <connections>
                 <outlet property="btnAddPayment" destination="Vf8-sM-gCw" id="qVz-Nf-SZC"/>
-                <outlet property="btnBack" destination="dk0-AN-Hja" id="g3C-po-hKO"/>
                 <outlet property="btnDefault" destination="MPj-SR-icS" id="xtf-Ec-O1f"/>
                 <outlet property="btnExpandCreditCard" destination="jiZ-jh-rQo" id="Ish-qz-Crk"/>
                 <outlet property="btnExpandPaypal" destination="uB7-gC-yKh" id="TVG-o3-g6g"/>
+                <outlet property="btnLeft" destination="dk0-AN-Hja" id="hHD-mt-3HM"/>
                 <outlet property="btnSubmit" destination="9Fi-Zv-LG2" id="BMg-ua-RMd"/>
                 <outlet property="footerGradient" destination="M7C-ED-IDT" id="LjQ-Oy-ZwT"/>
                 <outlet property="hTblVw" destination="63G-nx-CPN" id="VqV-rg-Q7d"/>
@@ -46,7 +46,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eYk-dg-cbQ" userLabel="contetnView">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vf8-sM-gCw" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vf8-sM-gCw" customClass="RoundedBorderButton" customModule="Terra_Heal" customModuleProvider="target">
                                     <rect key="frame" x="57.666666666666657" y="20" width="260" height="38"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                     <state key="normal" title="Add new payment method"/>
@@ -267,7 +267,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="126"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" customClass="BackButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="20" y="64" width="42" height="42"/>
                     <color key="backgroundColor" name="theme_primary_light"/>
                     <constraints>
@@ -275,7 +275,7 @@
                     </constraints>
                     <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                     <connections>
-                        <action selector="btnBackTapped:" destination="-1" eventType="touchUpInside" id="Paq-Ih-WlD"/>
+                        <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="3dm-36-jeN"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXO-ds-8JK" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">

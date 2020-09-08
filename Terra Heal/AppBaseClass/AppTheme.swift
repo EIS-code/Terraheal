@@ -25,7 +25,7 @@ extension UIColor {
     static var themeDarkText:UIColor = UIColor.init(named: "theme_dark_text") ?? UIColor.init(hex: "#6D6E71") //dark text color
     static var themeHintText:UIColor = UIColor.init(named: "theme_hint_text") ?? UIColor.init(hex: "#B2B3B5") // place holder text color
     
-    
+    static var themeInfoButtonBackground: UIColor = UIColor.init(named: "theme_info_button_background") ?? UIColor.init(hex: "#B2B3B5")
 
 
 }

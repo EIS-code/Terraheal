@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GiftServiceDetailVC" customModule="Terra_Heal" customModuleProvider="target">
             <connections>
-                <outlet property="btnBack" destination="gQT-1O-XW1" id="Fhc-ZU-ghz"/>
+                <outlet property="btnLeft" destination="gQT-1O-XW1" id="nHx-Jg-thS"/>
                 <outlet property="collectionVw" destination="Mgx-L8-kbq" id="iAM-sD-VgR"/>
                 <outlet property="hCltVw" destination="V0G-AV-CDb" id="qnb-8i-b69"/>
                 <outlet property="headerView" destination="1vj-Dw-czR" id="cSC-pd-oOA"/>
@@ -28,7 +28,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQT-1O-XW1" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQT-1O-XW1" customClass="BackButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="20" y="64" width="30" height="30"/>
                     <color key="backgroundColor" name="theme_primary_light"/>
                     <constraints>
@@ -38,7 +38,7 @@
                         <color key="titleColor" name="theme_light_text_color"/>
                     </state>
                     <connections>
-                        <action selector="btnBackTapped:" destination="-1" eventType="touchUpInside" id="SM4-Hx-Fe5"/>
+                        <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="9gv-Uj-Tt0"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2g-qm-ekv" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">

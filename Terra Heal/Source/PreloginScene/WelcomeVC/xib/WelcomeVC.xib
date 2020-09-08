@@ -160,7 +160,7 @@
                                 </button>
                             </subviews>
                         </stackView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPc-yM-mM9" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPc-yM-mM9" customClass="RoundedBorderButton" customModule="Terra_Heal" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="80" width="335" height="60"/>
                             <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                             <inset key="contentEdgeInsets" minX="10" minY="20" maxX="10" maxY="20"/>

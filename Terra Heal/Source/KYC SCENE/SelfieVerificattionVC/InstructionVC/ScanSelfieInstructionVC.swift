@@ -11,7 +11,7 @@ class ScanSelfieInstructionVC: MainVC {
 
 
 
-    @IBOutlet weak var btnScanNow: ThemeButton!
+    @IBOutlet weak var btnScanNow: FilledRoundedButton!
     @IBOutlet weak var lblHeader: ThemeLabel!
     @IBOutlet weak var lblMessage: ThemeLabel!
     @IBOutlet var vwBg: UIView!

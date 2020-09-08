@@ -143,25 +143,6 @@ extension AppDelegate {
         }
     }
     
-    func loadContactVerificationVC(navigaionVC:UINavigationController? = nil) {
-        if Singleton.shared.user.isContactVerified() {
-            Common.showAlert(message: "Already Verified")
-        } else  {
-            if let nc = navigaionVC as? NC {
-                if let targetVC: VerifyContactVC =  nc.findVCs(ofType: VerifyContactVC.self).first {
-                    _ = nc.popToVc(targetVC)
-                } else {
-                    let targetVC: VerifyContactVC = VerifyContactVC.fromNib()
-                    nc.pushVC(targetVC)
-                }
-            } else {
-                let targetVC: VerifyContactVC = VerifyContactVC.fromNib()
-                let nC: NC = NC(rootViewController: targetVC)
-                self.windowConfig(withRootVC: nC)
-            }
-        }
-        
-    }
     
     func loadVerifiedContactVC(navigaionVC:UINavigationController? = nil) {
         

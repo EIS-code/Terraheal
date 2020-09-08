@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTr-D4-KiU" userLabel="vwForBackground">
                         <rect key="frame" x="5" y="5" width="436" height="270"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bs2-kz-BoD" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bs2-kz-BoD" customClass="RoundedBorderButton" customModule="Terra_Heal" customModuleProvider="target">
                                 <rect key="frame" x="154.5" y="202.5" width="127" height="47.5"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                 <state key="normal" title="Details">

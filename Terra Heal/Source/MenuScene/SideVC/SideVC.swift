@@ -72,7 +72,7 @@ enum Menu: String {
 class SideVC: MainVC {
 
     @IBOutlet weak var lblMenu: ThemeLabel!
-    @IBOutlet weak var btnClose: FloatingRoundButton!
+    @IBOutlet weak var btnClose: CancelButton!
     @IBOutlet weak var cvForMenu: UICollectionView!
     var idxPathSelected: IndexPath = IndexPath(row: -1, section: -1)
    
@@ -93,7 +93,9 @@ class SideVC: MainVC {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         self.lblMenu.text = "LBL_MENU".localized()
-        self.lblMenu.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblMenu?.font = FontHelper.font(name: FontName.Bold, size: FontSize.label_26)
+        self.lblMenu.printFontSize()
+        //self.lblMenu.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.setupCollectionView()
     }
 

@@ -190,7 +190,7 @@
                         <constraint firstAttribute="trailing" secondItem="v1Y-ht-RFZ" secondAttribute="trailing" constant="10" id="dcI-BN-53S"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KlQ-Q4-3aF" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KlQ-Q4-3aF" customClass="BackButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="20" y="20" width="30" height="30"/>
                     <color key="backgroundColor" name="theme_primary_light"/>
                     <constraints>
@@ -222,7 +222,7 @@
                                 <action selector="btnNextTapped:" destination="-1" eventType="touchUpInside" id="6Sj-xX-HQH"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btk-IO-WjQ" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btk-IO-WjQ" customClass="DialogFloatingProceedButton" customModule="Terra_Heal" customModuleProvider="target">
                             <rect key="frame" x="79" y="0.0" width="38" height="38"/>
                             <color key="backgroundColor" name="theme_primary_light"/>
                             <constraints>

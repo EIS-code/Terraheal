@@ -18,10 +18,11 @@ class MapLocationVC: MainVC {
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var imgForLocation: UIImageView!
     @IBOutlet weak var btnCurrentLocation: FloatingRoundButton!
-    @IBOutlet weak var btnDone: ThemeButton!
+    @IBOutlet weak var btnDone: FilledRoundedButton!
     @IBOutlet weak var searchVw: UIView!
     @IBOutlet weak var txtSearchBar: ThemeTextField!
     @IBOutlet weak var lblAddressValue: ThemeLabel!
+    @IBOutlet weak var btnCancel: CancelButton!
     var isFromAutoComplete:Bool = false
     var onLocationSelected: ((_ data: Address ) -> Void)? = nil
     var selectedAddress: Address = Address.init(fromDictionary: [:])

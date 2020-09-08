@@ -18,12 +18,13 @@ struct HomeItemDetail {
     var buttonTitle: String = ""
     var image: String = ""
     var homeItemtype: HomeItemType = .MassageCenter
+    
 }
 class HomeTblCell: TableCell {
     
     @IBOutlet weak var lblName: ThemeLabel!
     @IBOutlet weak var ivHome: UIImageView!
-    @IBOutlet weak var btnAction: ThemeButton!
+    @IBOutlet weak var btnAction: RoundedBorderButton!
     @IBOutlet weak var vwBg: UIView!
     var data: HomeItemDetail!
     

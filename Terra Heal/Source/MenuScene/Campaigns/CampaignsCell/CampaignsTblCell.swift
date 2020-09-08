@@ -14,7 +14,7 @@ class CampaignsTblCell: TableCell {
 
 
     @IBOutlet weak var vwBg: UIView!
-    @IBOutlet weak var btnDetails: ThemeButton!
+    @IBOutlet weak var btnDetails: RoundedBorderButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()

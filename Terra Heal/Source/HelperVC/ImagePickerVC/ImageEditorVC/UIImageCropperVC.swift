@@ -196,9 +196,12 @@ class UIImageCropperVC: MainVC, UIImagePickerControllerDelegate, UINavigationCon
             self.delegate?.didCropImage(originalImage: self.image, croppedImage: self.cropImage)
         }
     }
-    @IBAction func btnBack(_ sender: Any) {
+    
+    override func btnLeftTapped(_ btn: UIButton = UIButton()) {
+        super.btnLeftTapped()
         self.cropCancel()
     }
+    
     @IBAction func btnCropTapd(_ sender: Any) {
         self.cropDone()
     }

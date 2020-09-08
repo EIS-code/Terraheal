@@ -117,7 +117,7 @@
                         <constraint firstItem="dpH-Rv-AVS" firstAttribute="centerX" secondItem="vy2-cW-M5q" secondAttribute="centerX" id="xHk-9L-fAs"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phD-1A-sjB" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phD-1A-sjB" customClass="RoundedBorderButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="97" y="500" width="126" height="38"/>
                     <color key="backgroundColor" name="theme_primary_light_background"/>
                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>

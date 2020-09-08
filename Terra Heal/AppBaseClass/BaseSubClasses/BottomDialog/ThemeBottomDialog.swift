@@ -28,10 +28,10 @@ class ThemeBottomDialogView: ThemeView {
     @IBOutlet weak var stkHeader: UIView!
     
     //Cancel Button
-    @IBOutlet weak var btnCancel: UnderlineTextButton!
+    @IBOutlet weak var btnCancel: DialogCancelButton!
     //Done Button
-    @IBOutlet weak var btnDone: ThemeButton!
-    @IBOutlet weak var btnDoneFloating: FloatingRoundButton!
+    @IBOutlet weak var btnDone: DialogFilledRoundedButton!
+    @IBOutlet weak var btnDoneFloating: DialogFloatingProceedButton!
     @IBOutlet weak var btnNext: ThemeButton!
     //Footer Gradient
     @IBOutlet weak var stkButtons: UIView!
@@ -86,8 +86,8 @@ class ThemeBottomDialogView: ThemeView {
     
     func initialSetup() {
         self.lblTitle?.textColor = UIColor.themeDarkText
-        self.btnCancel?.setFont(name: FontName.Bold, size: FontSize.button_18)
-        self.btnCancel?.setTitleColor(UIColor.themeSecondary, for: .normal)
+//        self.btnCancel?.setFont(name: FontName.Bold, size: FontSize.button_18)
+//        self.btnCancel?.setTitleColor(UIColor.themeSecondary, for: .normal)
         self.dialogView.backgroundColor = UIColor.themeDialogBackground
         self.backgroundColor = .clear
         self.backgroundView?.backgroundColor = UIColor.black
@@ -95,7 +95,6 @@ class ThemeBottomDialogView: ThemeView {
         self.backgroundView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
         self.addPanGesture(view: self.dialogView)
         self.transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
-        self.btnDoneFloating?.setForwardButton()
         self.btnNext?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnDone?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.dialogView?.roundCorners(corners: [.topLeft,.topRight], radius: 40.0)

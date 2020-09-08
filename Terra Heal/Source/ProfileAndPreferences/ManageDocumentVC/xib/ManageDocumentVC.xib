@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ManageDocumentVC" customModule="Terra_Heal" customModuleProvider="target">
             <connections>
-                <outlet property="btnBack" destination="dk0-AN-Hja" id="g3C-po-hKO"/>
+                <outlet property="btnCancel" destination="dk0-AN-Hja" id="g1I-ge-gsK"/>
                 <outlet property="btnSubmit" destination="qBm-VY-Sku" id="Xrt-bg-id9"/>
                 <outlet property="footerGradient" destination="6Ow-eU-xea" id="t8N-wt-u8b"/>
                 <outlet property="headerGradient" destination="YMZ-6e-MQ4" id="eDe-J2-WNH"/>
@@ -37,7 +37,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                     <subviews>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YMZ-6e-MQ4" userLabel="TopGradient" customClass="ThemeTopGradientView" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="148"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
@@ -130,22 +130,21 @@
                         <constraint firstItem="qBm-VY-Sku" firstAttribute="centerX" secondItem="Ibk-5A-rNu" secondAttribute="centerX" id="SkP-ju-ntR"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="291" y="64" width="64" height="64"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" customClass="CancelButton" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="311" y="64" width="44" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="dk0-AN-Hja" secondAttribute="height" multiplier="1:1" id="UQN-iw-RUR"/>
                     </constraints>
-                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                     <state key="normal" image="asset-cross"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="enableFloating" value="NO"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="btnBackTapped:" destination="-1" eventType="touchUpInside" id="Paq-Ih-WlD"/>
+                        <action selector="btnCancelTapped:" destination="-1" eventType="touchUpInside" id="3mz-M4-PkP"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXO-ds-8JK" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="20" y="86" width="335" height="20.333333333333329"/>
+                    <rect key="frame" x="20" y="76" width="335" height="20.333333333333329"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="theme_primary"/>
                     <nil key="highlightedColor"/>

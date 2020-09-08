@@ -90,8 +90,8 @@ loadTherapistKycInfoVC</string>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="asset-delete" width="18" height="18"/>
-        <image name="asset-edit" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="asset-delete" width="10.5" height="10.5"/>
+        <image name="asset-edit" width="18" height="18"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

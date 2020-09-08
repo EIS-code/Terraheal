@@ -10,10 +10,9 @@ import UIKit
 class TutorialVC: MainVC {
 
 
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var btnSkip: UnderlineTextButton!
     @IBOutlet weak var btnNext: ThemeButton!
-    @IBOutlet weak var btnDone: FloatingRoundButton!
+    @IBOutlet weak var btnDone: FloatingProceedButton!
     @IBOutlet weak var cvForTutorial: UICollectionView!
     var arrForTutorials: [TutorialDetail] = []
     var currentIndex: Int = 0
@@ -45,15 +44,13 @@ class TutorialVC: MainVC {
 
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeBackground)
-        self.btnDone.setForwardButton()
-        self.btnBack.setBackButton()
         self.btnNext?.setTitle("TUTORIAL_BTN_NEXT".localized(), for: .normal)
         self.btnNext?.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         for i in 1...3{
             let tutorial: TutorialDetail = TutorialDetail(title: "TUTORIAL_LBL_TITLE_\(i)".localized(), description: "TUTORIAL_LBL_MESSAGE_\(i)".localized(), image: "asset-tutorial-\(i)")
             arrForTutorials.append(tutorial)
         }
-        self.btnBack.isHidden = true
+        self.btnLeft?.isHidden = true
         self.setupCollectionView()
     }
 
@@ -68,7 +65,7 @@ class TutorialVC: MainVC {
     }
 
     @IBAction func btnNextTapped(_ sender: Any) {
-        self.btnBack.isHidden = false
+        self.btnLeft?.isHidden = false
         currentIndex = currentIndex + 1
         if currentIndex == (arrForTutorials.count) {
             PreferenceHelper.shared.setIsTutorialShow(false)
@@ -99,9 +96,9 @@ extension TutorialVC:  UICollectionViewDelegate, UICollectionViewDataSource, UIC
         let index  =  IndexPath.init(row: indexPath, section: 0)
         self.cvForTutorial.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
         if indexPath == 0 {
-            btnBack.isHidden = true
+            self.btnLeft?.isHidden = true
         } else {
-            btnBack.isHidden = false
+            self.btnLeft?.isHidden = false
         }
     }
     
@@ -143,9 +140,9 @@ extension TutorialVC:  UICollectionViewDelegate, UICollectionViewDataSource, UIC
             self.currentIndex = ip.row
             print("\(#function) \(self.currentIndex)")
             if self.currentIndex == 0 {
-                btnBack.isHidden = true
+                self.btnLeft?.isHidden = true
             } else {
-                btnBack.isHidden = false
+                self.btnLeft?.isHidden = false
             }
             if currentIndex == (arrForTutorials.count - 1) {
                 PreferenceHelper.shared.setIsTutorialShow(false)

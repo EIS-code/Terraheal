@@ -28,10 +28,10 @@
                     <rect key="frame" x="0.0" y="95.5" width="371" height="860.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
-                            <rect key="frame" x="0.0" y="38.5" width="371" height="862"/>
+                            <rect key="frame" x="0.0" y="25" width="371" height="875.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cnz-ZK-u39">
-                                    <rect key="frame" x="20" y="58.5" width="331" height="369"/>
+                                    <rect key="frame" x="20" y="45" width="331" height="369"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="I am a " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3n-RY-vOK" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="132.5" y="0.0" width="66.5" height="26"/>
@@ -130,7 +130,7 @@
                                     </constraints>
                                 </stackView>
                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDB-Fs-X9g">
-                                    <rect key="frame" x="0.0" y="447.5" width="371" height="454.5"/>
+                                    <rect key="frame" x="0.0" y="434" width="371" height="481.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOn-3D-45e" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="20" y="20" width="331" height="284.5"/>
@@ -152,7 +152,7 @@
                                     <viewLayoutGuide key="frameLayoutGuide" id="fdX-Uq-7as"/>
                                 </scrollView>
                                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="119" y="762" width="133" height="40"/>
+                                    <rect key="frame" x="119" y="775.5" width="133" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                     <state key="normal" title="Sign In">
@@ -175,7 +175,7 @@
                             </constraints>
                         </view>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center" translatesAutoresizingMaskIntoConstraints="NO" id="az3-5n-QhJ" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="147" y="0.0" width="77" height="77"/>
+                            <rect key="frame" x="160.5" y="0.0" width="50" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="az3-5n-QhJ" secondAttribute="height" multiplier="1:1" priority="999" id="gTw-dh-Adp"/>
                             </constraints>
@@ -185,8 +185,8 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="581-cI-fuY" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="309" y="17.5" width="42" height="42"/>
+                        <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="581-cI-fuY" customClass="DialogFloatingProceedButton" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="309" y="4" width="42" height="42"/>
                             <color key="backgroundColor" name="theme_background"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="581-cI-fuY" secondAttribute="height" multiplier="1:1" id="JMg-tl-e7y"/>
@@ -250,7 +250,7 @@
     <resources>
         <image name="asset-arrow-down" width="10.5" height="6"/>
         <image name="asset-call" width="48" height="48"/>
-        <image name="asset-center" width="57" height="57"/>
+        <image name="asset-center" width="50" height="50"/>
         <image name="asset-email" width="48" height="48"/>
         <image name="asset-message" width="48" height="48"/>
         <image name="asset-whats-app" width="48" height="48"/>

@@ -7,7 +7,6 @@ import UIKit
 
 class ManagePeopleVC: MainVC {
     
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnAddNewPeople: ThemeButton!
     
@@ -64,7 +63,6 @@ class ManagePeopleVC: MainVC {
         
         self.setupTableView(tableView: self.tableView)
         self.setTitle(title: "MANAGE_PEOPLE_TITLE".localized())
-        self.btnBack.setBackButton()
         self.btnAddNewPeople?.setTitle("MANAGE_PEOPLE_BTN_ADD_NEW".localized(), for: .normal)
         self.btnAddNewPeople?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnAddNewPeople?.setupFilledButton()
@@ -112,11 +110,11 @@ class ManagePeopleVC: MainVC {
             }
         }
     }
-    
-    @IBAction func btnBackTapped(_ sender: Any) {
+ 
+    override func btnLeftTapped(_ btn: UIButton = UIButton()) {
+        super.btnLeftTapped()
         _ = (self.navigationController as? NC)?.popVC()
     }
-    
     @IBAction func btnAddNewPeopleTapped(_ sender: Any) {
         btnAddNewPeople.isEnabled = false
         self.openAddPeopleDialog()

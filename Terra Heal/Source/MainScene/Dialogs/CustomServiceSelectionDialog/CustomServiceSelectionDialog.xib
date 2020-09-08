@@ -114,7 +114,7 @@
                                                 <action selector="btnDoneTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="wh8-Sw-Wux"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6el-fH-tDN" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6el-fH-tDN" customClass="DialogCancelButton" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="40" y="50" width="53" height="32"/>
                                             <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                             <state key="normal" title="Sign In">
@@ -229,7 +229,7 @@
     </objects>
     <resources>
         <image name="asset-arrow-down" width="10.5" height="6"/>
-        <image name="asset-center" width="57" height="57"/>
+        <image name="asset-center" width="50" height="50"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

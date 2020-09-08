@@ -7,7 +7,6 @@ import UIKit
 
 class MyAddressVC: MainVC {
     
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var vwForEmpty: UIView!
     @IBOutlet weak var lblEmptyTitle: ThemeLabel!
@@ -67,11 +66,10 @@ class MyAddressVC: MainVC {
         self.btnSubmit?.setTitle("MANAGE_ADDRESS_BTN_ADD_NEW_ADDRESS".localized(), for: .normal)
         self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnSubmit?.setupFilledButton()
-        self.btnBack.setBackButton()
-        
     }
     
-    @IBAction func btnBackTapped(_ sender: Any) {
+    override func btnLeftTapped(_ btn: UIButton = UIButton()) {
+        super.btnLeftTapped()
         _ = (self.navigationController as? NC)?.popVC()
     }
     

@@ -34,7 +34,6 @@ struct HowItworkMenuDetail {
 
 class HowItWorkVC: MainVC {
     
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var tableView: UITableView!
     
     var arrForMenu: [HowItworkMenuDetail] = [
@@ -84,13 +83,13 @@ class HowItWorkVC: MainVC {
     
     private func initialViewSetup() {
         self.setupTableView(tableView: self.tableView)
-     self.setTitle(title: "HOW_IT_WORK_TITLE".localized())
-        self.btnBack.setBackButton()
+        self.setTitle(title: "HOW_IT_WORK_TITLE".localized())
     }
     
     
-    @IBAction func btnBackTapped(_ sender: Any) {
-        _ = (self.navigationController as? NC)?.popVC()
+    override func btnLeftTapped(_ btn: UIButton = UIButton()) {
+        super.btnLeftTapped()
+         _ = (self.navigationController as? NC)?.popVC()
     }
 
 }

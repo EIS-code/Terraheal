@@ -132,7 +132,7 @@
                                                         <action selector="btnNextTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="KaX-zB-ygp"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hA5-n2-5ld" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hA5-n2-5ld" customClass="DialogFloatingProceedButton" customModule="Terra_Heal" customModuleProvider="target">
                                                     <rect key="frame" x="79" y="2" width="38" height="38"/>
                                                     <color key="backgroundColor" name="theme_primary_light"/>
                                                     <constraints>
@@ -156,7 +156,7 @@
                                         <constraint firstAttribute="trailing" secondItem="Dpk-z4-75R" secondAttribute="trailing" id="h1i-B7-QKK"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4H-Au-tRK" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4H-Au-tRK" customClass="DialogCancelButton" customModule="Terra_Heal" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="110.5" width="373" height="30"/>
                                     <state key="normal" title="Button">
                                         <color key="titleColor" name="theme_primary"/>

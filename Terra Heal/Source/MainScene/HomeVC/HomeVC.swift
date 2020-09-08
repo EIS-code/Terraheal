@@ -45,7 +45,7 @@ class HomeVC: MainVC {
         vwFloatingBottom.allowChangeThumbWidth = false
         vwFloatingBottom.itemTitles = ["HOME_BTN_HOME".localized(),"HOME_BTN_EXPLORE".localized(),"HOME_BTN_MY_FAV".localized()]
         vwFloatingBottom.itemImages =  [UIImage.init(named: "asset-home")!, UIImage.init(named: "asset-explore")!, UIImage.init(named: "asset-fav")!]
-        vwFloatingBottom.itemSelectedImages = [UIImage.init(named: "asset-home-selected")!, UIImage.init(named: "asset-home-selected")!, UIImage.init(named: "asset-home-selected")!]
+        vwFloatingBottom.itemSelectedImages = [UIImage.init(named: "asset-home-selected")!, UIImage.init(named: "asset-explore-selected")!, UIImage.init(named: "asset-fav-selected")!]
         vwFloatingBottom.changeThumbColor(UIColor.themePrimary)
         vwFloatingBottom.changeBackgroundColor(UIColor.themeLightTextColor)
         vwFloatingBottom.didSelectItemWith = { [weak self] (index,title) in

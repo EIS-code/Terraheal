@@ -16,10 +16,10 @@ class WelcomeVC: MainVC {
     @IBOutlet weak var lblMsg2: ThemeLabel!
     @IBOutlet weak var vw2: UIView!
     @IBOutlet weak var vw1: UIView!
-    @IBOutlet weak var btnSignUp: ThemeButton!
-    @IBOutlet weak var btnHome: ThemeButton!
+    @IBOutlet weak var btnSignUp: FilledRoundedButton!
+    @IBOutlet weak var btnHome: RoundedBorderButton!
     @IBOutlet weak var iv1: UIImageView!
-    @IBOutlet weak var btnSignIn: ThemeButton!
+    @IBOutlet weak var btnSignIn: FilledRoundedButton!
     
     @IBOutlet weak var iv2: UIImageView!
     // MARK: Object lifecycle
@@ -45,6 +45,11 @@ class WelcomeVC: MainVC {
 
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let point = CGPoint.init(x: 0, y: self.getTopInset())
+        self.mainScrollView.setContentOffset(point, animated: true)
+    }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
@@ -58,13 +63,13 @@ class WelcomeVC: MainVC {
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeBackground)
         self.lblHeader1?.text = "WELCOME_LBL_HEADER_1".localized()
-        self.lblHeader1?.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblHeader1?.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblMsg1?.text = "WELCOME_LBL_MESSAGE_1".localized()
-        self.lblMsg1?.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblMsg1?.setFont(name: FontName.Regular, size: FontSize.detail)
         self.lblHeader2?.text = "WELCOME_LBL_HEADER_2".localized()
-        self.lblHeader2?.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblHeader2?.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblMsg2?.text = "WELCOME_LBL_MESSAGE_2".localized()
-        self.lblMsg2?.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblMsg2?.setFont(name: FontName.Regular, size: FontSize.detail)
         self.btnSignUp.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnSignUp.setTitle("WELCOME_BTN_SIGN_UP".localized(), for: .normal)
         self.btnSignIn.setFont(name: FontName.SemiBold, size: FontSize.button_14)

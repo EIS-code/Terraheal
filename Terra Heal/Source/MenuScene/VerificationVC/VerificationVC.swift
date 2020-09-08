@@ -7,7 +7,6 @@ import UIKit
 
 class VerificationVC: MainVC {
 
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnVerified: ThemeButton!
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
@@ -66,7 +65,6 @@ class VerificationVC: MainVC {
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeBackground)
         self.setupTableView(tableView: self.tableView)
-        self.btnBack.setBackButton()
         self.setTitle(title: "VERIFICATION_TITLE".localized())
         self.lblIdBackSide.text = "VERIFICATION_LBL_BACK_SIDE".localized()
         self.lblIdFrontSide.text = "VERIFICATION_LBL_FRONT_SIDE".localized()
@@ -76,8 +74,8 @@ class VerificationVC: MainVC {
         self.lblIdPassport.setFont(name: FontName.SemiBold, size: FontSize.label_12)
         self.btnVerified.setTitle("VERIFICATION_BTN_VERIFIED".localized(), for: .normal)
     }
-
-    @IBAction func btnBackTapped(_ sender: Any) {
+    override func btnLeftTapped(_ btn: UIButton = UIButton()) {
+        super.btnLeftTapped()
          _ = (self.navigationController as? NC)?.popVC()
     }
 
