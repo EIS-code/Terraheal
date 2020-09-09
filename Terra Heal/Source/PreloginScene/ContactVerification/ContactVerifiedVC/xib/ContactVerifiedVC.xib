@@ -116,7 +116,7 @@
                         <constraint firstItem="O1g-hQ-muN" firstAttribute="top" secondItem="AuB-EI-Yyj" secondAttribute="top" id="x9r-9P-H7Z"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phD-1A-sjB" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phD-1A-sjB" customClass="FilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="97" y="488" width="126" height="50"/>
                     <color key="backgroundColor" name="theme_secondary"/>
                     <constraints>

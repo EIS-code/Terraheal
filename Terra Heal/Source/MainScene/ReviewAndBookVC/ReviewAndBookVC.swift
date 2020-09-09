@@ -80,10 +80,6 @@ class ReviewAndBookVC: MainVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
-            self.btnPrepayment?.layoutIfNeeded()
-            self.btnWithoutPayment?.layoutIfNeeded()
-            self.btnPrepayment?.setupFilledButton()
-            self.btnWithoutPayment?.setupBorderedButton()
             vwBookingDetailFooter?.createDashedLine(from: CGPoint.zero, to: CGPoint(x: vwBookingDetailFooter.bounds.maxX, y: 0), color: UIColor.themeDarkText, strokeLength: 10, gapLength: 5, width: 1.0)
             vwSessionDetailFooter?.createDashedLine(from: CGPoint.zero, to: CGPoint(x: vwSessionDetailFooter.bounds.maxX, y: 0), color: UIColor.themeDarkText, strokeLength: 10, gapLength: 5, width: 1.0)
             self.reloadTableDataToFitHeight(tableView: self.tblVwForSessions, height:self.hTblSession)
@@ -100,19 +96,19 @@ class ReviewAndBookVC: MainVC {
         self.lblTitleDetail?.text = "REVIEW_AND_BOOK_TITLE_DETAIL".localized()
         self.lblTitleDetail?.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.lblBookingDetail?.text = "REVIEW_AND_BOOK_LBL_BOOKING_DETAIL".localized()
-        self.lblBookingDetail?.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblBookingDetail?.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblServiceCenterName?.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.lblServiceCenterAddress?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
         self.lblBookingDate?.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.lblSessionDetail?.text = "REVIEW_AND_BOOK_LBL_SESSION_DETAIL".localized()
-        self.lblSessionDetail?.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblSessionDetail?.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblSummaryDetail?.text = "REVIEW_AND_BOOK_LBL_SUMMARY".localized()
-        self.lblSummaryDetail?.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblSummaryDetail?.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblHavePromoCode?.text = "REVIEW_AND_BOOK_LBL_HAVE_A_COUPEN".localized()
-        self.lblHavePromoCode?.setFont(name: FontName.Bold, size: FontSize.label_22)
-        self.lblTotal?.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblHavePromoCode?.setFont(name: FontName.Bold, size: FontSize.header)
+        self.lblTotal?.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblTotal?.text = "REVIEW_AND_BOOK_LBL_TOTAL".localized()
-        self.lblTotalValue?.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblTotalValue?.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblTotalValue?.text = "$210".localized()
         self.lblSubTotal?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
         self.lblSubTotal?.text = "REVIEW_AND_BOOK_LBL_SUB_TOTAL".localized()
@@ -171,7 +167,8 @@ class ReviewAndBookVC: MainVC {
         if checkValidation() {
             
             print(appSingleton.myBookingData.toDictionary())
-            Common.appDelegate.loadReservationVC()
+            self.wsBookRequest()
+            
             
         }
     }
@@ -223,11 +220,13 @@ class ReviewAndBookVC: MainVC {
     func setData() {
         self.setServiceCenterDetail()
     }
+    
     func setServiceCenterDetail(serviceCenter: ServiceCenterDetail = appSingleton.myBookingData.serviceCenterDetail){
         self.lblServiceCenterName.text = serviceCenter.name
         self.lblServiceCenterAddress.text = serviceCenter.address
         self.lblBookingDate.text = Date.milliSecToDate(milliseconds: appSingleton.myBookingData.date.toDouble, format: DateFormat.ReviewBookingDateDisplay)
     }
+    
     func checkValidation() -> Bool {
         if !btnCheckBox.isSelected {
             let alert: CustomAlert = CustomAlert.fromNib()
@@ -242,6 +241,7 @@ class ReviewAndBookVC: MainVC {
         }
         return true
     }
+    
     func calculateTotal() {
         var total: Double = 0.0
         for  data in arrForData {
@@ -402,6 +402,20 @@ extension ReviewAndBookVC: UITableViewDelegate, UITableViewDataSource {
             }
             self.calculateTotal()
             self.reloadTableDataToFitHeight(tableView: self.tblVwForSessions, height: self.hTblSession)
+        }
+    }
+}
+//MARK: Web Service Call
+extension ReviewAndBookVC {
+    func wsBookRequest() {
+        Loader.showLoading()
+       
+        AppWebApi.bookRequest(params: appSingleton.myBookingData.toDictionary()) { (response) in
+            Loader.hideLoading()
+            if  ResponseModel.isSuccess(response: response) {
+                appSingleton.myBookingData = MyBookingData.init()
+                Common.appDelegate.loadReservationVC()
+            }
         }
     }
 }

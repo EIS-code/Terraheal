@@ -17,7 +17,7 @@ class SeviceDurationCltCell: CollectionCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblAmount.setFont(name: FontName.Bold, size: FontSize.label_36)
+        self.lblAmount.setFont(name: FontName.Bold, size: FontSize.large)
         self.lblDuration.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.lblCurrencySign.setFont(name: FontName.Bold, size: FontSize.label_10)
     }
@@ -30,8 +30,8 @@ class SeviceDurationCltCell: CollectionCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        vwBg?.setRound(withBorderColor: .themeHintText, andCornerRadious: 5.0, borderWidth: 1.0)
-        vwBg?.setShadow()
+        vwBg?.setRound(withBorderColor: .themeHintText, andCornerRadious: JDDeviceHelper.offseter(offset: 10), borderWidth: 1.0)
+        vwBg?.setDurationCellShadow()
     }
  
 }

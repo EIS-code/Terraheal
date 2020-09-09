@@ -55,7 +55,7 @@ class CustomSendingPreferenceDialog: ThemeBottomDialogView {
                }
         self.txtData?.placeholder = "".localized()
         self.txtData?.delegate = self
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
     }
 
     override func layoutSubviews() {

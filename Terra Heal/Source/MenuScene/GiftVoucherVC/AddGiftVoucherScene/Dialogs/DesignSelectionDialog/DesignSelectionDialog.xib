@@ -44,7 +44,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLP-3J-98a" userLabel="vwContent">
                             <rect key="frame" x="16" y="70" width="288" height="40"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bg-XI-paj" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bg-XI-paj" customClass="DialogFilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
                                     <rect key="frame" x="142.5" y="-1" width="145.5" height="42"/>
                                     <color key="backgroundColor" name="theme_primary"/>
                                     <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
@@ -81,7 +81,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0JT-8m-aYR" userLabel="Stack View - main">
                             <rect key="frame" x="20" y="20" width="280" height="90"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="DialogFilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
                                     <rect key="frame" x="73.5" y="0.0" width="133" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>

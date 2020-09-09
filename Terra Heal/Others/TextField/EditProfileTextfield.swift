@@ -101,14 +101,14 @@ import UIKit
         var textRect = super.leftViewRect(forBounds: bounds)
         textRect.origin.x += 0
         
-        return CGRect(x:textRect.width, y: JDDeviceHelper().offseter(offset: 15), width:bounds.size.width, height:bounds.size.height);
+        return CGRect(x:textRect.width, y: JDDeviceHelper.offseter(offset: 15), width:bounds.size.width, height:bounds.size.height);
     }
 
     override open func editingRect(forBounds bounds: CGRect) -> CGRect {
         var textRect = super.leftViewRect(forBounds: bounds)
         textRect.origin.x += 0
 
-        return CGRect(x:textRect.width, y: JDDeviceHelper().offseter(offset: 15), width:bounds.size.width, height:bounds.size.height);
+        return CGRect(x:textRect.width, y: JDDeviceHelper.offseter(offset: 15), width:bounds.size.width, height:bounds.size.height);
     }
 
     override open func leftViewRect(forBounds bounds: CGRect) -> CGRect {
@@ -229,7 +229,7 @@ extension EditProfileTextfield {
 
         let trailingConstraint = NSLayoutConstraint.init(item: labelPlaceholder!, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
         let topConstraint = NSLayoutConstraint.init(item: labelPlaceholder!, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
-        placeholderLabelHeight = NSLayoutConstraint.init(item: labelPlaceholder!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: JDDeviceHelper().offseter(offset: 15))
+        placeholderLabelHeight = NSLayoutConstraint.init(item: labelPlaceholder!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: JDDeviceHelper.offseter(offset: 15))
         self.addConstraints([placeholderLabelLeading!,trailingConstraint,topConstraint])
         labelPlaceholder?.addConstraint(placeholderLabelHeight!)
     }
@@ -267,11 +267,11 @@ extension EditProfileTextfield {
             return
         }
 
-        if placeholderLabelHeight?.constant == JDDeviceHelper().offseter(offset: 15)
+        if placeholderLabelHeight?.constant == JDDeviceHelper.offseter(offset: 15)
         {
             return
         }
-        placeholderLabelHeight?.constant = JDDeviceHelper().offseter(offset: 15);
+        placeholderLabelHeight?.constant = JDDeviceHelper.offseter(offset: 15);
         labelPlaceholder?.setFont(name: FontName.Regular, size: FontSize.placeHolder_14)
         UIView.animate(withDuration: 0.2, animations: {
             self.layoutIfNeeded()

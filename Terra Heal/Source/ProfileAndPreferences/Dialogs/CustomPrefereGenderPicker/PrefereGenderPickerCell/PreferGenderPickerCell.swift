@@ -16,7 +16,7 @@ class PreferGenderPickerCell: TableCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
+        self.lblName?.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.vwBg.backgroundColor = UIColor.white
 
         //self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
@@ -27,13 +27,12 @@ class PreferGenderPickerCell: TableCell {
         self.lblName.text = data.name
         if data.isSelected {
             self.imgSelection.isHidden = false
-            self.vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)
+            self.vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: JDDeviceHelper.offseter(offset: 15), borderWidth: 1.0)
+            
         } else {
             self.imgSelection.isHidden = true
-            self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+            self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: JDDeviceHelper.offseter(offset: 15), borderWidth: 1.0)
         }
-
-
     }
 
     override func layoutSubviews() {

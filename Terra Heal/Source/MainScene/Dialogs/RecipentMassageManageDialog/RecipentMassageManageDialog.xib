@@ -83,7 +83,7 @@
                                     <color key="textColor" name="theme_primary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GtC-rC-0yZ" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GtC-rC-0yZ" customClass="FilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
                                     <rect key="frame" x="100.5" y="65.5" width="193" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>

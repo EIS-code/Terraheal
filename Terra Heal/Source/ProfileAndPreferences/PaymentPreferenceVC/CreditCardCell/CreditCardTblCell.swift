@@ -18,7 +18,7 @@ class CreditCardTblCell: TableCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblName?.setFont(name: FontName.Bold, size: FontSize.header)
         self.vwImgBg.setRound()
     }
 

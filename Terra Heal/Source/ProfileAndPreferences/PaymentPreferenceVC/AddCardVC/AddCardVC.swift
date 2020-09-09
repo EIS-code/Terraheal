@@ -11,7 +11,7 @@ class AddCardVC: MainVC {
     
     
     @IBOutlet weak var lblTitleMessage: ThemeLabel!
-    @IBOutlet weak var btnAddCard: ThemeButton!
+    @IBOutlet weak var btnAddCard: FilledRoundedButton!
     @IBOutlet weak var txtCardName: ACFloatingTextfield!
     @IBOutlet weak var txtCardNumber: ACFloatingTextfield!
     @IBOutlet weak var txtExpiryDate: ACFloatingTextfield!
@@ -48,8 +48,6 @@ class AddCardVC: MainVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
-            self.btnAddCard?.setupFilledButton()
-           
         }
     }
     
@@ -61,27 +59,17 @@ class AddCardVC: MainVC {
         self.setTitle(title: "ADD_CARD_TITLE".localized())
         self.lblTitleMessage?.text = "ADD_CARD_TITLE_MESSAGE".localized()
         self.lblTitleMessage?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
-        
         self.txtCardName?.placeholder = "ADD_CARD_TXT_NAME".localized()
         self.txtCardName?.delegate = self
-        
         self.txtCardNumber?.placeholder = "ADD_CARD_TXT_CARD_NUMBER".localized()
         self.txtCardNumber?.delegate = self
-        
         self.txtExpiryDate?.placeholder = "ADD_CARD_TXT_EXPIRY".localized()
         self.txtExpiryDate?.delegate = self
-        
         self.txtCvv?.placeholder = "ADD_CARD_TXT_CVV_NUMBER".localized()
         self.txtCvv?.delegate = self
-        
         self.btnAddCard?.setTitle("ADD_CARD_BTN_ADD_CARD".localized(), for: .normal)
-        self.btnAddCard?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        
-       
-        
         self.lblAccept?.text = "ADD_CARD_SAVE_CARD_DETAILS".localized()
         self.lblAccept?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
-        
         self.lblSaveDetailMsg?.text = "ADD_CARD_SAVE_CARD_DETAIL_MESSAGE".localized()
         self.lblSaveDetailMsg?.setFont(name: FontName.Regular, size: FontSize.label_12)
     }

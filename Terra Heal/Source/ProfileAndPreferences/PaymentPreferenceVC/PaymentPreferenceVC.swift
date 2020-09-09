@@ -16,7 +16,7 @@ struct CreditCardDetail {
 class PaymentPreferenceVC: MainVC {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var btnSubmit: ThemeButton!
+    @IBOutlet weak var btnSubmit: FilledRoundedButton!
     @IBOutlet weak var vwPaypalDetail: UIView!
     @IBOutlet weak var ivPaypal: UIImageView!
     @IBOutlet weak var lblPaypal: ThemeLabel!
@@ -74,8 +74,8 @@ class PaymentPreferenceVC: MainVC {
             self.vwCreditCardDetail?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
             self.btnDefault.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
             self.reloadTableDataToFitHeight(tableView: self.tableView, height: self.hTblVw)
-            self.btnSubmit?.setupFilledButton()
-            self.btnAddPayment?.setupBorderedButton()
+            
+            
         }
     }
     
@@ -93,13 +93,7 @@ class PaymentPreferenceVC: MainVC {
         self.lblCreditCardValue.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.btnDefault?.setTitle("PAYMENT_LBL_DEFAULT".localized(), for: .normal)
         self.btnDefault?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        
-        self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnSubmit?.setupFilledButton()
-       
-        self.btnAddPayment?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnAddPayment?.setTitle("PAYMENT_BTN_ADD_NEW".localized(), for: .normal)
-        self.btnAddPayment?.setupBorderedButton()
         self.setupTableView(tableView: self.tableView)
         self.btnAddPayment.addTarget(self, action: #selector(btnAddPaymentTapped(_:)), for: .touchUpInside)
         if isFromMenu {

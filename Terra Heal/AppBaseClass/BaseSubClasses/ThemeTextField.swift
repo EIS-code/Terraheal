@@ -13,7 +13,7 @@ private var __maxLengths = [UITextField: Int]()
 open class ThemeTextField: UITextField {
 
     func setFont(name:String,size:CGFloat){
-        let finalSize = JDDeviceHelper().fontCalculator(size: size)
+        let finalSize = JDDeviceHelper.fontCalculator(size: size)
         self.font = FontHelper.font(name: name, size: finalSize)
     }
 }
@@ -76,7 +76,7 @@ class ThemeTextView: UITextView {
     let padding = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
 
     func setFont(name:String,size:CGFloat){
-        let finalSize = JDDeviceHelper().fontCalculator(size: size)
+        let finalSize = JDDeviceHelper.fontCalculator(size: size)
         self.font = FontHelper.font(name: name, size: finalSize)
     }
 
@@ -105,7 +105,7 @@ extension UITextView: NSTextStorageDelegate {
         } else {
             let label = PlaceholderLabel(frame: .zero)
             label.font = self.font
-            //..setFont(name: FontName.Regular, size: FontSize.label_22)
+            //..setFont(name: FontName.Regular, size: FontSize.header)
             label.textColor = self.textColor
             addSubview(label)
             return label

@@ -49,7 +49,7 @@ class CustomServiceSelectionDialog: ThemeBottomDialogView {
     override func initialSetup() {
         super.initialSetup()
        
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.setupCollectionView(collectionView: self.collectionVw)
         self.vwServiceSelection.allowChangeThumbWidth = false
         self.vwServiceSelection.itemTitles = ["massages".localized(),"therapies".localized()]

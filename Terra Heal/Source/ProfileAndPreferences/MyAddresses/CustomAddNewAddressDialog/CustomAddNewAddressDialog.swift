@@ -81,7 +81,7 @@ class CustomAddNewAddressDialog: ThemeBottomDialogView {
         self.txtLatitude.delegate = self
         self.txtLongitude?.placeholder = "MANAGE_ADDRESS_TXT_ADDRESS_LONGITUDE".localized()
         self.txtLongitude.delegate = self
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.setDataForStepUpAnimation()
        
     }

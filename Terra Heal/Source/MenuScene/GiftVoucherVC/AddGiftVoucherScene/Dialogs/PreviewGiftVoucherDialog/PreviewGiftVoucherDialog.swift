@@ -59,7 +59,7 @@ class PreviewGiftVoucherDialog: ThemeBottomDialogView {
     
     override func initialSetup() {
         super.initialSetup()
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblHeader.setFont(name: FontName.Regular, size: FontSize.label_14)
         self.lblSubHeader.setFont(name: FontName.SemiBold, size: FontSize.label_14)
         self.lblDescription.setFont(name: FontName.Regular, size: FontSize.label_14)

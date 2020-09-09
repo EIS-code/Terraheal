@@ -248,7 +248,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sf3-Jo-ZLg" userLabel="footerView">
                     <rect key="frame" x="0.0" y="718" width="375" height="60"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Fi-Zv-LG2" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Fi-Zv-LG2" customClass="FilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
                             <rect key="frame" x="106" y="9" width="163" height="42"/>
                             <color key="backgroundColor" name="theme_primary_light"/>
                             <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>

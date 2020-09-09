@@ -93,7 +93,7 @@ class CustomCurrencyPicker: ThemeBottomDialogView {
         self.lblDollar.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.lblEuro.text = Currency.Euro.name()
         self.lblEuro.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
     }
     
     override func layoutSubviews() {

@@ -45,7 +45,7 @@ class ServiceSelectionDialog: ThemeBottomDialogView {
         self.dialogView.backgroundColor = .clear
         contentView.clipsToBounds = true
         contentView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.setupCollectionView(collectionView: self.collectionVw)
         self.vwServiceSelection.allowChangeThumbWidth = false
         self.vwServiceSelection.itemTitles = ["massages".localized(),"therapies".localized()]

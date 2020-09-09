@@ -20,7 +20,7 @@ class MassagePreferenceTblCell: TableCell {
         self.selectionStyle = .none
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-        self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
+        self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.header)
         self.btnAction?.setTitle(FontSymbol.next_arrow, for: .normal)
         self.imgSelected?.setRound()
     }

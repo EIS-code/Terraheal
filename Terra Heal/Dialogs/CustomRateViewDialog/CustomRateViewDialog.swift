@@ -42,9 +42,9 @@ class CustomRateViewDialog: ThemeBottomDialogView {
     override func initialSetup() {
         super.initialSetup()
         self.ratingView.delegate = self
-        self.txtDescription.setFont(name: FontName.Regular, size: FontSize.label_22)
+        self.txtDescription.setFont(name: FontName.Regular, size: FontSize.header)
         self.txtDescription.placeholder = "Lorem ipsum dolor sit amet,"
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.txtDescription?.delegate = self
     }
 

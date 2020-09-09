@@ -67,10 +67,10 @@ class CustomGiverDetailDialog: ThemeBottomDialogView {
         self.txtEmail.configureTextField(InputTextFieldDetail.getEmailConfiguration())
         self.txtLastName?.placeholder = "last name".localized()
         self.txtLastName.delegate = self
-        self.txtDescription.setFont(name: FontName.Regular, size: FontSize.textField_20)
+        self.txtDescription.setFont(name: FontName.Regular, size: FontSize.textField_regular)
         self.txtDescription?.placeholder = "message".localized()
         self.txtDescription.delegate = self
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.setDataForStepUpAnimation()
     }
 

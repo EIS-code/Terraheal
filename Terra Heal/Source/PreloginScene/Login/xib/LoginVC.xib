@@ -21,6 +21,7 @@
             <connections>
                 <outlet property="btnFigerPrint" destination="iSh-UG-VZm" id="5CN-3P-m8R"/>
                 <outlet property="btnForgotPassword" destination="QtW-ja-aCe" id="DPb-nR-20B"/>
+                <outlet property="btnLeft" destination="h1P-U5-noU" id="MdY-Ph-J0A"/>
                 <outlet property="btnLogin" destination="KCc-Ig-liE" id="vgx-en-juJ"/>
                 <outlet property="btnSignUp" destination="fzv-54-Rfu" id="AvW-1e-NFN"/>
                 <outlet property="imgChecked" destination="HBI-U1-SLQ" id="0u3-Uq-thS"/>
@@ -45,7 +46,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hp5-yH-riX" userLabel="vwContent">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="854.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="850"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-logo" translatesAutoresizingMaskIntoConstraints="NO" id="LZo-vT-jyU">
                                     <rect key="frame" x="51.5" y="20" width="217" height="146"/>
@@ -64,8 +65,8 @@ to sign back in</string>
                                     <color key="textColor" name="theme_hint_text"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="J5Q-R5-iLe" userLabel="Stack View - TextFields">
-                                    <rect key="frame" x="20" y="312.5" width="280" height="160"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="J5Q-R5-iLe" userLabel="Stack View - TextFields">
+                                    <rect key="frame" x="20" y="312.5" width="280" height="140"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ov9-Oy-oJD" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
@@ -76,7 +77,7 @@ to sign back in</string>
                                             <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n6s-st-fuG" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="65" width="280" height="50"/>
+                                            <rect key="frame" x="0.0" y="55" width="280" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="n6s-st-fuG" secondAttribute="height" multiplier="28:5" id="gj4-v6-yZc"/>
                                             </constraints>
@@ -84,7 +85,7 @@ to sign back in</string>
                                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtW-ja-aCe" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="130" width="280" height="30"/>
+                                            <rect key="frame" x="0.0" y="110" width="280" height="30"/>
                                             <state key="normal" title="Forgot Password ?">
                                                 <color key="titleColor" name="theme_secondary"/>
                                             </state>
@@ -94,8 +95,8 @@ to sign back in</string>
                                         </button>
                                     </subviews>
                                 </stackView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCc-Ig-liE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="90" y="502.5" width="140" height="40"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCc-Ig-liE" customClass="FilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="90" y="482.5" width="140" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                     <state key="normal" title="Sign In">
@@ -106,7 +107,7 @@ to sign back in</string>
                                     </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aP0-Wu-Qbj" userLabel="touchIdView">
-                                    <rect key="frame" x="135" y="562.5" width="50" height="50"/>
+                                    <rect key="frame" x="135" y="542.5" width="50" height="50"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-fingerprint" translatesAutoresizingMaskIntoConstraints="NO" id="ImM-Vg-CDA">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -146,20 +147,20 @@ to sign back in</string>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OFC-v0-9Er" userLabel="vwConnectWith">
-                                    <rect key="frame" x="16" y="632.5" width="288" height="50"/>
+                                    <rect key="frame" x="16" y="612.5" width="288" height="50"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="Gwh-r8-4Ul"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect With" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFN-Sd-K8z" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="107.5" y="647.5" width="105" height="20.5"/>
+                                    <rect key="frame" x="107.5" y="627.5" width="105" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" name="theme_secondary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4c1-JF-wx2" userLabel="Stack View - Social Register">
-                                    <rect key="frame" x="100" y="712.5" width="120" height="50"/>
+                                    <rect key="frame" x="100" y="692.5" width="120" height="50"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usx-by-5l7" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -180,16 +181,16 @@ to sign back in</string>
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="0Z0-gR-a9P" userLabel="Stack View - Already Have Memberi">
-                                    <rect key="frame" x="52" y="792.5" width="216.5" height="32"/>
+                                    <rect key="frame" x="52" y="772.5" width="216.5" height="47.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already a member?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQW-ve-LbE" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="6" width="148.5" height="20.5"/>
+                                            <rect key="frame" x="0.0" y="13.5" width="148.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="theme_secondary"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzv-54-Rfu" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="163.5" y="0.0" width="53" height="32"/>
+                                            <rect key="frame" x="163.5" y="8" width="53" height="32"/>
                                             <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                             <state key="normal" title="Sign In">
                                                 <color key="titleColor" name="theme_primary"/>
@@ -242,12 +243,36 @@ to sign back in</string>
                         <constraint firstItem="hp5-yH-riX" firstAttribute="top" secondItem="Agl-Wb-btm" secondAttribute="top" id="kqv-yZ-rqA"/>
                     </constraints>
                 </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1P-U5-noU" customClass="BackButton" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="10" y="10" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="h1P-U5-noU" secondAttribute="height" multiplier="1:1" id="Sdi-EZ-Cgg"/>
+                    </constraints>
+                    <state key="normal" image="asset-back-button"/>
+                    <connections>
+                        <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="TWy-f1-O9z"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Agl-Wb-btm" secondAttribute="trailing" id="A7l-Sb-LQw"/>
                 <constraint firstItem="Agl-Wb-btm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RLs-Nt-G9K"/>
+                <constraint firstItem="h1P-U5-noU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="VRE-4K-gkm" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
                 <constraint firstItem="Agl-Wb-btm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kN4-Se-iQP"/>
+                <constraint firstItem="h1P-U5-noU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="r9z-Vd-ltn" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
                 <constraint firstItem="Agl-Wb-btm" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="srY-4y-dL8"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -255,6 +280,7 @@ to sign back in</string>
         </view>
     </objects>
     <resources>
+        <image name="asset-back-button" width="32" height="32"/>
         <image name="asset-check" width="32" height="32"/>
         <image name="asset-fingerprint" width="108" height="108"/>
         <image name="asset-logo" width="217" height="146"/>

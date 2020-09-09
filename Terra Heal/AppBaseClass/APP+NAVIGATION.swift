@@ -26,12 +26,25 @@ extension AppDelegate {
         }
     }
     
-    func loadWelcomeVC() {
-        PreferenceHelper.shared.setUserId("")
-        Singleton.shared.user = User.UserData.init(fromDictionary: [:])
-        let welcomeVc: WelcomeVC = WelcomeVC.fromNib()
-        let nC: NC = NC(rootViewController: welcomeVc)
-        self.windowConfig(withRootVC: nC)
+    func loadWelcomeVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: WelcomeVC =  nc.findVCs(ofType: WelcomeVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                PreferenceHelper.shared.setUserId("")
+                Singleton.shared.user = User.UserData.init(fromDictionary: [:])
+                let welcomeVc: WelcomeVC = WelcomeVC.fromNib()
+                let nC: NC = NC(rootViewController: welcomeVc)
+                self.windowConfig(withRootVC: nC)
+            }
+        }else {
+            PreferenceHelper.shared.setUserId("")
+            Singleton.shared.user = User.UserData.init(fromDictionary: [:])
+            let welcomeVc: WelcomeVC = WelcomeVC.fromNib()
+            let nC: NC = NC(rootViewController: welcomeVc)
+            self.windowConfig(withRootVC: nC)
+        }
+        
     }
     
     func loadTutoraiVC(navigaionVC:UINavigationController? = nil) {
@@ -82,19 +95,19 @@ extension AppDelegate {
     
     fileprivate func loadHomeVC(_ navigaionVC: UINavigationController?) {
         /*var finalHomeVC: UIViewController? = nil
-        if let nc = navigaionVC as? NC {
-            if let targetVC: HomeVC =  nc.findVCs(ofType: HomeVC.self).first {
-                _ = nc.popToVc(targetVC)
-            } else {
-                let targetVC: HomeVC = HomeVC.fromNib()
-                nc.pushVC(targetVC)
-                finalHomeVC = nc
-            }
-        } else {
-            let targetVC: HomeVC = HomeVC.fromNib()
-            let nc: NC = NC(rootViewController: targetVC)
-            finalHomeVC = nc
-        }*/
+         if let nc = navigaionVC as? NC {
+         if let targetVC: HomeVC =  nc.findVCs(ofType: HomeVC.self).first {
+         _ = nc.popToVc(targetVC)
+         } else {
+         let targetVC: HomeVC = HomeVC.fromNib()
+         nc.pushVC(targetVC)
+         finalHomeVC = nc
+         }
+         } else {
+         let targetVC: HomeVC = HomeVC.fromNib()
+         let nc: NC = NC(rootViewController: targetVC)
+         finalHomeVC = nc
+         }*/
         let homeVC: NC = NC(rootViewController: HomeVC.fromNib())
         let leftVC: NC = NC(rootViewController: SideVC.fromNib())
         let rightVC: NC = NC(rootViewController: ProfileVC.fromNib())
@@ -102,7 +115,7 @@ extension AppDelegate {
         
         let targetVC = PBRevealViewController.init(leftViewController: leftVC, mainViewController: homeVC, rightViewController: rightVC)
         
-         self.windowConfig(withRootVC: targetVC)
+        self.windowConfig(withRootVC: targetVC)
     }
     
     func loadHomeVC(navigaionVC:UINavigationController? = nil) {
@@ -159,6 +172,25 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
+    
+
+    func loadVerifyContactVC(navigaionVC:UINavigationController? = nil) {
+        
+        if let nc = navigaionVC as? NC {
+            if let targetVC: VerifyContactVC =  nc.findVCs(ofType: VerifyContactVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: VerifyContactVC = VerifyContactVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: VerifyContactVC = VerifyContactVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+    
+    
     
     func loadVerificationVC(navigaionVC:UINavigationController? = nil) {
         
@@ -683,33 +715,33 @@ extension AppDelegate {
     }
     
     func loadScanSelfieVC(navigaionVC:UINavigationController? = nil) {
-           if let nc = navigaionVC as? NC {
-               if let targetVC: ScanSelfieVC =  nc.findVCs(ofType: ScanSelfieVC.self).first {
-                   _ = nc.popToVc(targetVC)
-               } else {
-                   let targetVC: ScanSelfieVC = ScanSelfieVC.fromNib()
-                   nc.pushVC(targetVC)
-               }
-           } else {
-               let targetVC: ScanSelfieVC = ScanSelfieVC.fromNib()
-               let nC: NC = NC(rootViewController: targetVC)
-               self.windowConfig(withRootVC: nC)
-           }
-       }
+        if let nc = navigaionVC as? NC {
+            if let targetVC: ScanSelfieVC =  nc.findVCs(ofType: ScanSelfieVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: ScanSelfieVC = ScanSelfieVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: ScanSelfieVC = ScanSelfieVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
     func loadScanSelfieInstructionVC(navigaionVC:UINavigationController? = nil) {
-           if let nc = navigaionVC as? NC {
-               if let targetVC: ScanSelfieInstructionVC =  nc.findVCs(ofType: ScanSelfieInstructionVC.self).first {
-                   _ = nc.popToVc(targetVC)
-               } else {
-                   let targetVC: ScanSelfieInstructionVC = ScanSelfieInstructionVC.fromNib()
-                   nc.pushVC(targetVC)
-               }
-           } else {
-               let targetVC: ScanSelfieInstructionVC = ScanSelfieInstructionVC.fromNib()
-               let nC: NC = NC(rootViewController: targetVC)
-               self.windowConfig(withRootVC: nC)
-           }
-       }
+        if let nc = navigaionVC as? NC {
+            if let targetVC: ScanSelfieInstructionVC =  nc.findVCs(ofType: ScanSelfieInstructionVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: ScanSelfieInstructionVC = ScanSelfieInstructionVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: ScanSelfieInstructionVC = ScanSelfieInstructionVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
     func loadScanPassportInstructionVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: ScanPassportInstructionVC =  nc.findVCs(ofType: ScanPassportInstructionVC.self).first {

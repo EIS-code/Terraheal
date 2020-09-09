@@ -48,7 +48,7 @@
                                     <rect key="frame" x="18.5" y="65.5" width="337" height="323"/>
                                     <color key="backgroundColor" name="theme_primary_light_background"/>
                                 </tableView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="DialogFilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
                                     <rect key="frame" x="120.5" y="408.5" width="133" height="157.5"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>

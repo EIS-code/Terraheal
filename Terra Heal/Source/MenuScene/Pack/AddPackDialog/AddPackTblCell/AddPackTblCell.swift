@@ -35,7 +35,7 @@ class AddPackTblCell: TableCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblName?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
+        self.lblName?.setFont(name: FontName.SemiBold, size: FontSize.header)
     }
 
     func setData(data: AddPackageDetail ) {

@@ -8,7 +8,7 @@ import UIKit
 class VerificationVC: MainVC {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var btnVerified: ThemeButton!
+    @IBOutlet weak var btnVerified: FilledRoundedButton!
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
     @IBOutlet weak var lblIdPassport: ThemeLabel!
     @IBOutlet weak var lblIdFrontSide: ThemeLabel!
@@ -57,7 +57,6 @@ class VerificationVC: MainVC {
             self.tableView?.reloadData(heightToFit: self.hTblVw, {
 
             })
-            self.btnVerified?.setupFilledButton()
         }
 
 

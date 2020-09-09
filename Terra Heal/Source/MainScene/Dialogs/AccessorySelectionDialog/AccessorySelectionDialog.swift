@@ -71,10 +71,10 @@ class AccessorySelectionDialog: ThemeBottomDialogView {
     override func initialSetup() {
         super.initialSetup()
         self.lblHowMany.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblQuatity.setFont(name: FontName.Bold, size: FontSize.label_22)
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
-        self.btnDecrement.setFont(name: FontName.Bold, size: FontSize.label_22)
-        self.btnIncrement.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblQuatity.setFont(name: FontName.Bold, size: FontSize.header)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
+        self.btnDecrement.setFont(name: FontName.Bold, size: FontSize.header)
+        self.btnIncrement.setFont(name: FontName.Bold, size: FontSize.header)
     }
     
     @IBAction func btnDoneTapped(_ sender: Any) {

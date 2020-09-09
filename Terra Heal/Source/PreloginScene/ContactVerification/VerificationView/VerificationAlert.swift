@@ -12,7 +12,7 @@ class VerificationAlert: ThemeBottomDialogView {
     
     @IBOutlet weak var lblMessage: ThemeLabel!
     @IBOutlet weak var lblMessageDetail: ThemeLabel!
-    @IBOutlet weak var btnVerify: ThemeButton!
+    @IBOutlet weak var btnVerify: DialogFilledRoundedButton!
     
     @IBOutlet var otpTextFieldView: OTPFieldView!
     @IBOutlet weak var btnResend: DialogCancelButton!
@@ -40,10 +40,7 @@ class VerificationAlert: ThemeBottomDialogView {
         self.lblMessageDetail.text = "VERIFICATION_MSG_DETAIL".localized() + " " + data
         self.verificationData = data
         self.btnVerify.setTitle("VERIFICATION_BTN_VERIFY".localized(), for: .normal)
-        self.btnVerify.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnVerify?.setupFilledButton()
         self.btnResend.setTitle("VERIFICATION_BTN_RESEND".localized(), for: .normal)
-        self.btnVerify.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.initialSetup()
     }
     
@@ -59,9 +56,9 @@ class VerificationAlert: ThemeBottomDialogView {
     
     override func initialSetup() {
         super.initialSetup()
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
-        self.lblMessage.setFont(name: FontName.SemiBold, size: FontSize.button_22)
-        self.lblMessageDetail.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.header)
+        self.lblMessage.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
+        self.lblMessageDetail.setFont(name: FontName.Regular, size: FontSize.detail)
         self.setupOtpView()
         self.vwSwitch.allowChangeThumbWidth = false
         self.vwSwitch.itemTitles = ["VERIFICATION_BTN_MOBILE".localized(),"VERIFICATION_BTN_EMAIL".localized()]
@@ -80,12 +77,14 @@ class VerificationAlert: ThemeBottomDialogView {
         self.currentTab = 0
         self.wsVerifyPhone()
         self.lblMessageDetail.text = "VERIFICATION_MSG_DETAIL".localized() + " " + Singleton.shared.user.telNumber
+        self.lblMessage.text = "verify your mobile number".localized()
         
     }
     func emailTapped(){
         self.currentTab = 1
         self.wsVerifyEmail()
         self.lblMessageDetail.text = "VERIFICATION_MSG_DETAIL".localized() + " " + Singleton.shared.user.email
+        self.lblMessage.text = "verify your email address".localized()
         
     }
     

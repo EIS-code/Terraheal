@@ -68,13 +68,13 @@ class KycInfoVC: MainVC {
         self.lblMessage?.setFont(name: FontName.Regular, size: FontSize.label_18)
 
         self.lblScanPassport?.text = "KYC_INFO_LBL_SCAN_PASSPORT".localized()
-        self.lblScanPassport?.setFont(name:  FontName.SemiBold, size: FontSize.label_22)
+        self.lblScanPassport?.setFont(name:  FontName.SemiBold, size: FontSize.header)
 
         self.lblTakeSelfie?.text = "KYC_INFO_LBL_TAKE_SELFIE".localized()
-        self.lblTakeSelfie?.setFont(name:  FontName.SemiBold, size: FontSize.label_22)
+        self.lblTakeSelfie?.setFont(name:  FontName.SemiBold, size: FontSize.header)
 
         self.lblAddCreditCard?.text = "KYC_INFO_LBL_ADD_CREDIT_CARD".localized()
-        self.lblAddCreditCard?.setFont(name:  FontName.SemiBold, size: FontSize.label_22)
+        self.lblAddCreditCard?.setFont(name:  FontName.SemiBold, size: FontSize.header)
 
 
         self.btnNext?.setTitle("BTN_YES_PROCEED".localized(), for: .normal)

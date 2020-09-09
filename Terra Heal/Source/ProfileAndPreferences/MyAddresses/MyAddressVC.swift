@@ -11,7 +11,7 @@ class MyAddressVC: MainVC {
     @IBOutlet weak var vwForEmpty: UIView!
     @IBOutlet weak var lblEmptyTitle: ThemeLabel!
     @IBOutlet weak var lblEmptyMsg: ThemeLabel!
-    @IBOutlet weak var btnSubmit: ThemeButton!
+    @IBOutlet weak var btnSubmit: FilledRoundedButton!
     
     var arrForData: [Address] = []
     // MARK: Object lifecycle
@@ -51,7 +51,6 @@ class MyAddressVC: MainVC {
             self.tableView?.reloadData({
             })
             self.tableView?.contentInset = self.getGradientInset()
-            self.btnSubmit?.setupFilledButton()
         }
     }
     
@@ -64,8 +63,6 @@ class MyAddressVC: MainVC {
         self.lblEmptyTitle.text = "NO_ADDRESS_TITLE".localized()
         self.lblEmptyMsg.text = "NO_ADDRESS_MSG".localized()
         self.btnSubmit?.setTitle("MANAGE_ADDRESS_BTN_ADD_NEW_ADDRESS".localized(), for: .normal)
-        self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnSubmit?.setupFilledButton()
     }
     
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {

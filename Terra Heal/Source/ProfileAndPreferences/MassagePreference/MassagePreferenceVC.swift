@@ -42,7 +42,7 @@ enum MassagePreferenceMenu: String {
 class MassagePreferenceVC: MainVC {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var btnSubmit: ThemeButton!
+    @IBOutlet weak var btnSubmit: FilledRoundedButton!
 
     var arrForMenu: [MassagePreferenceDetail] = []
     // MARK: Object lifecycle
@@ -85,19 +85,14 @@ class MassagePreferenceVC: MainVC {
 
             })
             self.tableView.contentInset = self.getGradientInset()
-            self.btnSubmit?.setupFilledButton()
         }
 
 
     }
     private func initialViewSetup() {
-        
         self.setupTableView(tableView: self.tableView)
         self.setTitle(title: "MASSAGE_PREFERENCE_TITLE".localized())
         self.btnSubmit.setTitle("BTN_SUBMIT".localized(), for: .normal)
-        self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnSubmit?.setupFilledButton()
-        
     }
 
     func openMassagerPressurePicker(index:Int = 0) {

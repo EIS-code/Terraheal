@@ -17,7 +17,7 @@ struct PromocodeDetail {
 class PromoCodeVC: MainVC {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var btnSubmit: ThemeButton!
+    @IBOutlet weak var btnSubmit: FilledRoundedButton!
     
     var arrForData: [PromocodeDetail] = [PromocodeDetail.init(code:"9S75894",expiry: "expire in 6 days", description: "FLAT 30 % OFF"),PromocodeDetail.init(code:"ABCDEF",expiry: "expire in 6 days", description: "FLAT 50 % OFF")
         
@@ -67,8 +67,6 @@ class PromoCodeVC: MainVC {
         self.setupTableView(tableView: self.tableView)
         self.setTitle(title: "PROMOCODE_TITLE".localized())
         self.btnSubmit?.setTitle("PROMOCODE_BTN_ADD_NEW".localized(), for: .normal)
-        self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnSubmit?.setupFilledButton()
     }
     
     

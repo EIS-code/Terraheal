@@ -51,7 +51,7 @@ class CustomServiceCenterSelectionDialog: ThemeBottomDialogView {
         super.initialSetup()
         self.currentMarker = GMSMarker.init()
         self.setupMapView(mapView: self.mapView)
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.setupCollectionView()
         self.setDataForStepUpAnimation(data: [0.95])
         self.getMassageCenter()

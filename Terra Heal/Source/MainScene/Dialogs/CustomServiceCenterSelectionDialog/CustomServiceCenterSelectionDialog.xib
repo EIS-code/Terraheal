@@ -25,7 +25,7 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V39-84-TsB">
-                    <rect key="frame" x="0.0" y="118" width="320" height="450"/>
+                    <rect key="frame" x="0.0" y="158" width="320" height="450"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WOD-5m-xOM" userLabel="ViewService">
                             <rect key="frame" x="0.0" y="150" width="320" height="300"/>
@@ -99,8 +99,8 @@
                             <rect key="frame" x="0.0" y="76" width="320" height="129"/>
                             <color key="backgroundColor" name="theme_primary_border"/>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="93.5" y="390" width="133" height="40"/>
+                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="DialogFilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="93.5" y="350" width="133" height="40"/>
                             <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                             <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                             <state key="normal" title="Sign In">
@@ -139,7 +139,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="V39-84-TsB" secondAttribute="trailing" id="dUH-Mq-8NY"/>
                 <constraint firstItem="V39-84-TsB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kCB-jR-Feo"/>
                 <constraint firstItem="V39-84-TsB" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="pVs-FU-SqG"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="V39-84-TsB" secondAttribute="bottom" id="rX8-mU-2eq"/>
+                <constraint firstItem="V39-84-TsB" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="40" id="rX8-mU-2eq"/>
                 <constraint firstAttribute="bottom" secondItem="6ZW-DU-hOd" secondAttribute="bottom" id="xcn-ZA-5s5"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

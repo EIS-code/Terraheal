@@ -8,7 +8,7 @@ import UIKit
 class ManagePeopleVC: MainVC {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var btnAddNewPeople: ThemeButton!
+    @IBOutlet weak var btnAddNewPeople: FilledRoundedButton!
     
     @IBOutlet weak var vwForEmpty: UIView!
     @IBOutlet weak var lblEmptyTitle: ThemeLabel!
@@ -51,8 +51,6 @@ class ManagePeopleVC: MainVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
-            self.btnAddNewPeople.layoutIfNeeded()
-            self.btnAddNewPeople?.setupFilledButton()
             self.tableView?.reloadData({
                 
             })
@@ -64,8 +62,6 @@ class ManagePeopleVC: MainVC {
         self.setupTableView(tableView: self.tableView)
         self.setTitle(title: "MANAGE_PEOPLE_TITLE".localized())
         self.btnAddNewPeople?.setTitle("MANAGE_PEOPLE_BTN_ADD_NEW".localized(), for: .normal)
-        self.btnAddNewPeople?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnAddNewPeople?.setupFilledButton()
         self.lblEmptyTitle.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.lblEmptyMsg.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.lblEmptyTitle.text = "NO_PEOPLE_TITLE".localized()

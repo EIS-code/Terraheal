@@ -70,8 +70,6 @@ class ThemeBottomDialogView: ThemeView {
         self.hwFooterGradient?.constant = (stkButtons?.bounds.height ?? 0) + 20
         self.vwTopBar?.setRound(withBorderColor: .clear, andCornerRadious: 2.5, borderWidth: 1.0)
         self.dialogView?.roundCorners(corners: [.topLeft,.topRight], radius: 40.0)
-        self.btnDone?.layoutIfNeeded()
-        self.btnDone?.setupFilledButton()
         self.scrDialogVw?.contentInset = self.getGradientInset()
     }
     
@@ -86,8 +84,6 @@ class ThemeBottomDialogView: ThemeView {
     
     func initialSetup() {
         self.lblTitle?.textColor = UIColor.themeDarkText
-//        self.btnCancel?.setFont(name: FontName.Bold, size: FontSize.button_18)
-//        self.btnCancel?.setTitleColor(UIColor.themeSecondary, for: .normal)
         self.dialogView.backgroundColor = UIColor.themeDialogBackground
         self.backgroundColor = .clear
         self.backgroundView?.backgroundColor = UIColor.black

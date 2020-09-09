@@ -52,7 +52,8 @@ class EditProfileVC: MainVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.headerView.layoutIfNeeded()
-        self.kTableHeaderHeight = self.headerView.frame.height
+        self.kTableHeaderHeight = self.headerView.bounds.height
+        print(self.kTableHeaderHeight)
         scrVw.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
     }
     

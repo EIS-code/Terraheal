@@ -30,13 +30,14 @@ class FloatingRoundButton: ThemeButton {
         }
     }
     
+    
     func setUpFloatingButton() {
         self.clipsToBounds = true
         self.layer.masksToBounds = false
-        self.layer.shadowRadius = 5.0
-        self.layer.shadowOpacity = 0.8
-        self.layer.shadowOffset = CGSize(width: 1.0, height: 2.0)
-        self.layer.shadowColor = UIColor.gray.cgColor
+        self.layer.shadowRadius = 2.0
+        self.layer.shadowOpacity = 0.4
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        self.layer.shadowColor =  UIColor.gray.cgColor //UIColor.init(red: 178, green: 179, blue: 181, alpha: 1.0).cgColor
     }
     
     override func layoutSubviews() {
@@ -62,7 +63,7 @@ class BackButton: FloatingRoundButton {
     func backButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themePrimary, borderColor: UIColor = UIColor.themePrimary) {
         
          self.setImage(nil, for: .normal)
-         self.height(constant: JDDeviceHelper().offseter(offset: 30))
+         self.height(constant: JDDeviceHelper.offseter(offset: 32))
          self.backgroundColor = backgroundColor
          self.setFont(name: FontName.System, size: 24)
          self.setTitle(FontSymbol.back_arrow, for: .normal)
@@ -83,11 +84,12 @@ class CancelButton: FloatingRoundButton {
         super.layoutSubviews()
         self.layer.cornerRadius = self.bounds.height/2.0
     }
-    func cancelButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themeSecondary, borderColor: UIColor = UIColor.themePrimary) {
+    func cancelButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themePrimary, borderColor: UIColor = UIColor.themePrimary) {
          self.backgroundColor = backgroundColor
-         self.height(constant: JDDeviceHelper().offseter(offset: 40))
+         self.setImage(nil, for: .normal)
+         self.height(constant: JDDeviceHelper.offseter(offset: 44))
          self.setFont(name: FontName.System, size: 30)
-         self.setTitle(FontSymbol.next_arrow, for: .normal)
+         self.setTitle(FontSymbol.cancel, for: .normal)
     }
 }
 
@@ -104,7 +106,7 @@ class DialogFloatingProceedButton: FloatingRoundButton {
     
     func forwardButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themePrimary, borderColor: UIColor = UIColor.themePrimary) {
          self.backgroundColor = backgroundColor
-         self.height(constant: JDDeviceHelper().offseter(offset: 40))
+         self.height(constant: JDDeviceHelper.offseter(offset: 40))
          self.setFont(name: FontName.System, size: 30)
          self.setTitle(FontSymbol.next_arrow, for: .normal)
     }
@@ -123,7 +125,7 @@ class FloatingProceedButton: FloatingRoundButton {
     
     func forwardButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themePrimary, borderColor: UIColor = UIColor.themePrimary) {
          self.backgroundColor = backgroundColor
-         self.height(constant: JDDeviceHelper().offseter(offset: 40))
+         self.height(constant: JDDeviceHelper.offseter(offset: 40))
          self.setFont(name: FontName.System, size: 30)
          self.setTitle(FontSymbol.next_arrow, for: .normal)
     }

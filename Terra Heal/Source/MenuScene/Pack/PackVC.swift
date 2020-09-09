@@ -17,7 +17,7 @@ struct PackDetail {
 class PackVC: MainVC {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var btnSubmit: ThemeButton!
+    @IBOutlet weak var btnSubmit: FilledRoundedButton!
     
     var arrForData: [PackDetail] = [PackDetail.init(code:"9S75894",name: "terra heal massage center", description: "five 60 min massages"),PackDetail.init(code:"ABCDEF",name: "terra heal therapy center", description: "FLAT 50 % OFF")
         
@@ -65,18 +65,10 @@ class PackVC: MainVC {
         
     }
     private func initialViewSetup() {
-        
         self.setupTableView(tableView: self.tableView)
         self.setTitle(title: "PACK_TITLE".localized())
         self.btnSubmit?.setTitle("PACK_BTN_BUY_NEW".localized(), for: .normal)
-        self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnSubmit?.setupFilledButton()
-        
     }
-    
-    
-    
-    
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
         btnSubmit.isEnabled = false

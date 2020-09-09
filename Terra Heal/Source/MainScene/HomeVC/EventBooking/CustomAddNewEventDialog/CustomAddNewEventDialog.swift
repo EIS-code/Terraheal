@@ -66,7 +66,7 @@ class CustomAddNewEventDialog: ThemeBottomDialogView {
         self.txtEmail.configureTextField(InputTextFieldDetail.getEmailConfiguration())
         self.txtDescription?.placeholder = "message".localized()
         self.txtDescription.delegate = self
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.setDataForStepUpAnimation()
     }
 

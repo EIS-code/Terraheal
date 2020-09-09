@@ -32,9 +32,8 @@ class HomeTblCell: TableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblName?.setFont(name: FontName.Bold, size: FontSize.header)
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-        self.btnAction?.setupBorderedButton()
     }
     
     func setData(data: HomeItemDetail ) {
@@ -48,10 +47,8 @@ class HomeTblCell: TableCell {
         super.layoutSubviews()
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
         self.vwBg?.setShadow()
-        self.btnAction?.setupBorderedButton()
-        
-        
     }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         

@@ -62,7 +62,7 @@ struct AddVouncherMenuDetail {
 class AddGiftVoucherVC: MainVC {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var btnPreview: ThemeButton!
+    @IBOutlet weak var btnPreview: FilledRoundedButton!
     @IBOutlet weak var lblSubTotal: ThemeLabel!
     @IBOutlet weak var lblSubtotalValue: ThemeLabel!
     @IBOutlet weak var stkSubTotal: UIStackView!
@@ -111,8 +111,7 @@ class AddGiftVoucherVC: MainVC {
                 
             })
             print(self.tableView.contentInset)
-            btnPreview.layoutIfNeeded()
-            btnPreview?.setupFilledButton()
+            
         }
     }
     

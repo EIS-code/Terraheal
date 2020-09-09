@@ -71,7 +71,7 @@ class CustomRecipientDetailDialog: ThemeBottomDialogView {
         self.txtEmail?.placeholder = "email".localized()
         self.txtEmail.delegate = self
         self.txtEmail.configureTextField(InputTextFieldDetail.getEmailConfiguration())
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.setDataForStepUpAnimation()
     }
 

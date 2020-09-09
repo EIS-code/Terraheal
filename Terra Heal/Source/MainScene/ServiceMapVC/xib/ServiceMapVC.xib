@@ -212,7 +212,7 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ts-YA-ha4" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="20" y="192" width="89" height="38"/>
-                    <color key="backgroundColor" name="theme_secondary"/>
+                    <color key="backgroundColor" name="theme_primary"/>
                     <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
                     <state key="normal" title="2.9 Km">
                         <color key="titleColor" name="theme_light_text_color"/>

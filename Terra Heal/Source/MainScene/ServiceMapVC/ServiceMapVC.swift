@@ -87,12 +87,11 @@ class ServiceMapVC: MainVC {
                 self.hCltCollapseView.constant = height
                 self.view.layoutIfNeeded()
             }
-            self.btnBook?.setupBorderedButton()
-            self.btnCheckService?.setupFilledButton()
             self.mapView.roundCorners(corners:[.topLeft,.topRight], radius: 40.0)
             self.vwServiceDialog.roundCorners(corners:[.topLeft,.topRight], radius: 40.0)
             self.vwForCollapseView.roundCorners(corners: [.topLeft,.topRight] , radius: 40.0)
             self.btnKm.setRound(withBorderColor: UIColor.clear, andCornerRadious: self.btnKm.frame.height/2.0, borderWidth: 1.0)
+            
             // self.btnKmsetupFilledButton()
             self.ivService.setRound()
         }

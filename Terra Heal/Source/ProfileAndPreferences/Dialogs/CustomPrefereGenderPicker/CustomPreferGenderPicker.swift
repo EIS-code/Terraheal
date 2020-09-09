@@ -91,7 +91,7 @@ class CustomPreferGenderPicker: ThemeBottomDialogView {
     }
     override func initialSetup() {
         super.initialSetup()
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.setDataForStepUpAnimation()
     }
     override func layoutSubviews() {
@@ -125,7 +125,7 @@ extension CustomPreferGenderPicker : UITableViewDelegate,UITableViewDataSource {
 tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = JDDeviceHelper.offseter(offset: 48)
         tableView.register(PreferGenderPickerCell.nib()
             , forCellReuseIdentifier: PreferGenderPickerCell.name)
         tableView.tableFooterView = UIView()

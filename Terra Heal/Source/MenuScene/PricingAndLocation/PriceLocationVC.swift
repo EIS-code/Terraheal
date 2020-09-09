@@ -12,7 +12,7 @@ class PriceLocationVC: MainVC {
     @IBOutlet weak var vwBg: UIView!
     @IBOutlet weak var lblEmptyTitle: ThemeLabel!
     @IBOutlet weak var lblEmptyMsg: ThemeLabel!
-    @IBOutlet weak var btnSubmit: ThemeButton!
+    @IBOutlet weak var btnSubmit: FilledRoundedButton!
     @IBOutlet weak var txtSearchBar: ThemeTextField!
     @IBOutlet weak var searchVw: UIView!
 
@@ -59,7 +59,6 @@ class PriceLocationVC: MainVC {
            self.tableView?.reloadData({
            })
             self.searchVw.setRound(withBorderColor: .clear, andCornerRadious: self.searchVw.bounds.height/2.0, borderWidth: 1.0)
-           self.btnSubmit?.setupFilledButton()
             self.tableView?.contentInset = self.getGradientInset()
         }
     }
@@ -74,9 +73,6 @@ class PriceLocationVC: MainVC {
         self.lblEmptyTitle.text = "NO_LOCATION_TITLE".localized()
         self.lblEmptyMsg.text = "NO_LOCATION_MSG".localized()
         self.btnSubmit?.setTitle("BTN_PROCEED".localized(), for: .normal)
-        self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnSubmit?.setupFilledButton()
-        
     }
 
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
@@ -189,7 +185,7 @@ extension PriceLocationVC : UITextFieldDelegate {
 
     private func setupSearchbar(searchBar: UITextField) {
         txtSearchBar.delegate = self
-        txtSearchBar.setFont(name: FontName.Regular, size: FontSize.textField_20)
+        txtSearchBar.setFont(name: FontName.Regular, size: FontSize.textField_regular)
         txtSearchBar.addTarget(self, action: #selector(searching(_:)), for: .editingChanged)
         txtSearchBar.textColor = UIColor.themeDarkText
         txtSearchBar.changePlaceHolder(color: UIColor.themeDarkText)

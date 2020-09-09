@@ -38,7 +38,6 @@ class LaunchVC: MainVC {
     // MARK: - Other Functions
     fileprivate func loadNextScreen() {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
-            
             if !PreferenceHelper.shared.getUserId().isEmpty() {
                 Common.appDelegate.loadHomeVC()
             }
@@ -47,7 +46,6 @@ class LaunchVC: MainVC {
             } else {
                 Common.appDelegate.loadHomeVC()
             }
-            
         }
     }
 }

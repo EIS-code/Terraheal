@@ -31,7 +31,7 @@ class MyBookingTblCell: TableCell {
         self.lblDate?.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.vwCollapse?.setRound(withBorderColor: .clear, andCornerRadious: 15.0, borderWidth: 1.0)
         self.vwExpanded?.setRound(withBorderColor: .clear, andCornerRadious: 15.0, borderWidth: 1.0)
-        self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
+        self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.header)
         self.vwDate?.setRound(withBorderColor: .clear, andCornerRadious: 15, borderWidth: 1.0)
     }
 

@@ -53,15 +53,14 @@ class BookingCompleteVC: MainVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
-            self.btnHome?.setupBorderedButton()
         }
     }
 
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeBackground)
-        self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.label_36)
-        self.lblMessage?.setFont(name: FontName.Regular, size: FontSize.label_18)
-        self.btnHome?.setFont(name: FontName.Regular, size: FontSize.button_18)
+        self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.large)
+        self.lblMessage?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
+        self.btnHome?.setFont(name: FontName.Regular, size: FontSize.button_17)
         self.setData(completionData: completionData)
     }
     

@@ -68,8 +68,6 @@ class MapLocationVC: MainVC {
     
     func  setLocalization(){
         self.btnDone.setTitle("BTN_PROCEED".localized(), for: .normal)
-        self.btnDone.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        
         self.lblAddressValue.setFont(name: FontName.Regular, size: FontSize.label_12)
         
         
@@ -77,7 +75,6 @@ class MapLocationVC: MainVC {
     
     func  setupLayout(){
         if self.isViewAvailable() {
-            btnDone?.setupFilledButton()
             searchVw.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
             searchVw.setShadow()
         }
@@ -174,7 +171,7 @@ extension MapLocationVC : UITextFieldDelegate {
     }
     private func setupSearchbar(searchBar: UITextField) {
         txtSearchBar.delegate = self
-        txtSearchBar.setFont(name: FontName.Regular, size: FontSize.textField_20)
+        txtSearchBar.setFont(name: FontName.Regular, size: FontSize.textField_regular)
         txtSearchBar.addTarget(self, action: #selector(searching(_:)), for: .editingChanged)
         txtSearchBar.textColor = UIColor.themeDarkText
         txtSearchBar.changePlaceHolder(color: UIColor.themeDarkText)

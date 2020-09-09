@@ -45,8 +45,8 @@ class CustomServiceHourSelectionCell: TableCell {
         self.backgroundColor = .clear
         self.selectionStyle = .none
         self.contentView.backgroundColor = .clear
-        self.lblDay?.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblHours?.setFont(name: FontName.Bold, size: FontSize.label_18)
+        self.lblDay?.setFont(name: FontName.Bold, size: FontSize.subHeader)
+        self.lblHours?.setFont(name: FontName.Bold, size: FontSize.subHeader)
     }
 
     func setData(data: HoursDetails ) {

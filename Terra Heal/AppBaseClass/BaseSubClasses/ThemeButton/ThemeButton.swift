@@ -33,23 +33,23 @@ class ThemeButton: UIButton {
     }
     
     func setFont(name:String,size:CGFloat){
-        let finalSize = JDDeviceHelper().fontCalculator(size: size)
+        let finalSize = JDDeviceHelper.fontCalculator(size: size)
         self.titleLabel?.font = FontHelper.font(name: name, size: finalSize)
     }
     
-    func setupFilledButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themeSecondary, borderColor: UIColor = UIColor.clear) {
-        self.height(constant: JDDeviceHelper().offseter(offset: 40))
+    /*func setupFilledButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themeSecondary, borderColor: UIColor = UIColor.clear) {
+        self.height(constant: JDDeviceHelper.offseter(offset: 40))
         self.backgroundColor = backgroundColor
         self.setTitleColor(textColor, for: .normal)
         self.setRound(withBorderColor: borderColor, andCornerRadious: self.frame.height/2.0, borderWidth: 1.0)
     }
     
     func setupBorderedButton(textColor: UIColor = UIColor.themePrimary, backgroundColor: UIColor = UIColor.clear, borderColor: UIColor = UIColor.themePrimary) {
-        self.height(constant: JDDeviceHelper().offseter(offset: 40))
+        self.height(constant: JDDeviceHelper.offseter(offset: 40))
         self.backgroundColor = backgroundColor
         self.setTitleColor(textColor, for: .normal)
         self.setRound(withBorderColor: borderColor, andCornerRadious: self.frame.height/2.0, borderWidth: 1.0)
-    }
+    }*/
 }
 
 
@@ -57,21 +57,24 @@ class FilledRoundedButton: ThemeButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.fillButton()
+        
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.fillButton()
+        self.setFont(name: FontName.SemiBold, size: FontSize.button_14)
     }
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.setRound(withBorderColor: .clear, andCornerRadious: JDDeviceHelper().offseter(offset: 15), borderWidth: 1.0)
+        self.layer.cornerRadius = self.bounds.height/2.0
+        self.layer.masksToBounds = true
     }
-    func fillButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themePrimary, borderColor: UIColor = UIColor.clear) {
-        self.height(constant: JDDeviceHelper().offseter(offset: 48))
+    func fillButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themeSecondary, borderColor: UIColor = UIColor.clear) {
+        self.setFont(name: FontName.SemiBold, size: FontSize.button_14)
+        self.height(constant: JDDeviceHelper.offseter(offset: 48, direction: .vertical))
         self.backgroundColor = backgroundColor
         self.setTitleColor(textColor, for: .normal)
-        //self.setRound(withBorderColor: borderColor, andCornerRadious: self.frame.height/2.0, borderWidth: 1.0)
     }
 }
 
@@ -89,13 +92,15 @@ class RoundedBorderButton: ThemeButton {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.setRound(withBorderColor: .clear, andCornerRadious: JDDeviceHelper().offseter(offset: 15), borderWidth: 1.0)
+        self.layer.cornerRadius = self.bounds.height/2.0
+        self.layer.masksToBounds = true
     }
-    func borderedButton(textColor: UIColor = UIColor.themePrimary, backgroundColor: UIColor = UIColor.clear, borderColor: UIColor = UIColor.themePrimary) {
-        self.height(constant: JDDeviceHelper().offseter(offset: 40))
+    func borderedButton(textColor: UIColor = UIColor.themeSecondary, backgroundColor: UIColor = UIColor.clear, borderColor: UIColor = UIColor.themeSecondary) {
+        self.setFont(name: FontName.SemiBold, size: FontSize.button_14)
+        self.height(constant: JDDeviceHelper.offseter(offset: 48))
         self.backgroundColor = backgroundColor
         self.setTitleColor(textColor, for: .normal)
-        self.setRound(withBorderColor: borderColor, andCornerRadious: self.frame.height/2.0, borderWidth: 1.0)
+        self.setRound(withBorderColor:borderColor, andCornerRadious: self.bounds.height/2.0, borderWidth: 1.0)
     }
 }
 
@@ -122,16 +127,16 @@ class UnderlineTextButton: ThemeButton {
 class DialogCancelButton: UnderlineTextButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.setFont(name: FontName.Bold, size: FontSize.button_18)
+        self.setFont(name: FontName.Regular, size: FontSize.button_21)
         self.setTitleColor(UIColor.themePrimary, for: .normal)
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.setFont(name: FontName.Bold, size: FontSize.button_18)
+        self.setFont(name: FontName.Regular, size: FontSize.button_21)
         self.setTitleColor(UIColor.themePrimary, for: .normal)
     }
-    
+   
     override func setTitle(_ title: String?, for state: UIControl.State) {
         super.setTitle(title, for: .normal)
     }
@@ -149,8 +154,15 @@ class DialogFilledRoundedButton: ThemeButton {
         self.fillButton()
     }
     
-    func fillButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themePrimary, borderColor: UIColor = UIColor.clear) {
-        self.height(constant: JDDeviceHelper().offseter(offset: 48))
+    override func layoutSubviews() {
+           super.layoutSubviews()
+           self.layer.cornerRadius = self.bounds.height/2.0
+           self.layer.masksToBounds = true
+    }
+    
+    func fillButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themeSecondary, borderColor: UIColor = UIColor.clear) {
+        self.setFont(name: FontName.SemiBold, size: FontSize.button_14)
+        self.height(constant: JDDeviceHelper.offseter(offset: 48))
         self.backgroundColor = backgroundColor
         self.setTitleColor(textColor, for: .normal)
         self.setRound(withBorderColor: borderColor, andCornerRadious: self.frame.height/2.0, borderWidth: 1.0)

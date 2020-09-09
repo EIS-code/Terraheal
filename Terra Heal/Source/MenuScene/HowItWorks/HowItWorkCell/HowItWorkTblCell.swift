@@ -19,7 +19,7 @@ class HowItWorkTblCell: TableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-        self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblName?.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblShortDescription?.setFont(name: FontName.Bold, size: FontSize.label_12)
         self.lblLongDescription?.setFont(name: FontName.Bold, size: FontSize.label_12)
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)

@@ -78,12 +78,9 @@ class MyBookingVC: MainVC {
         }
     }
 
-    @IBAction func btnBackTapped(_ sender: Any) {
-         _ = (self.navigationController as? NC)?.popVC()
-    }
-
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
         super.btnLeftTapped()
+        _ = (self.navigationController as? NC)?.popVC()
     }
     @IBAction func btnSubmitTapped(_ sender: Any) {
         Common.appDelegate.loadHomeVC()

@@ -14,7 +14,7 @@ class DesignSelectionDialog: ThemeBottomDialogView {
     @IBOutlet weak var collectionVw: UICollectionView!
     var onBtnDoneTapped: (( ) -> Void)? = nil
     var arrForData: [String] = ["","","","","","","","","","","",""]
-    @IBOutlet weak var btnThemeType: ThemeButton!
+    @IBOutlet weak var btnThemeType: DialogFilledRoundedButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,7 +40,7 @@ class DesignSelectionDialog: ThemeBottomDialogView {
 
     override func initialSetup() {
         super.initialSetup()
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.setupCollectionView(collectionView: self.collectionVw)
         self.setDataForStepUpAnimation()
         
@@ -48,7 +48,6 @@ class DesignSelectionDialog: ThemeBottomDialogView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.btnThemeType?.setupFilledButton()
     }
 
     @IBAction func btnDoneTapped(_ sender: Any) {

@@ -42,7 +42,7 @@ class ReferAndEarnVC: MainVC {
     @IBOutlet weak var lblFriendRefered: ThemeLabel!
     @IBOutlet weak var cltFriends: UICollectionView!
     
-    @IBOutlet weak var btnFilter: ThemeButton!
+    @IBOutlet weak var btnFilter: FilledRoundedButton!
     @IBOutlet weak var lblHistory: ThemeLabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
@@ -92,8 +92,6 @@ class ReferAndEarnVC: MainVC {
                 self.ivEarningPoints.setRound()
                 self.ivInviteFriend.setRound()
                 self.cltFriends.reloadData()
-                self.btnReferNow?.setupBorderedButton()
-                self.btnFilter?.setupFilledButton()
                 self.scrVw.contentInset = self.getGradientInset()
                 self.vwInviteFriend.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
             }
@@ -106,17 +104,17 @@ class ReferAndEarnVC: MainVC {
         self.lblTotalBalance.text = "REFER_AND_EARN_LBL_TOTAL_BALANCE".localized()
         self.lblTotalBalance.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.lblTotalBalanceValue.text = "--".localized()
-        self.lblTotalBalanceValue.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblTotalBalanceValue.setFont(name: FontName.Bold, size: FontSize.header)
 
         self.lblLifeTimeEarning.text = "REFER_AND_EARN_LBL_LIFETIME_EARNING".localized()
         self.lblLifeTimeEarning.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.lblLifeTimeEarningValue.text = "--".localized()
-        self.lblLifeTimeEarningValue.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblLifeTimeEarningValue.setFont(name: FontName.Bold, size: FontSize.header)
 
         self.lblLifeTimeBurning.text = "REFER_AND_EARN_LBL_LIFETIME_BURNING".localized()
         self.lblLifeTimeBurning.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.lblLifeTimeBurningValue.text = "--".localized()
-        self.lblLifeTimeBurningValue.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblLifeTimeBurningValue.setFont(name: FontName.Bold, size: FontSize.header)
 
 
         self.lblReferAndEarn.text = "REFER_AND_EARN_LBL_INVITE_FRIEND_TITLE".localized()
@@ -128,8 +126,6 @@ class ReferAndEarnVC: MainVC {
 
         self.btnReferNow.setTitle("REFER_AND_EARN_BTN_REFER_NOW".localized(), for: .normal)
         self.btnReferNow.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnReferNow?.setupBorderedButton()
-
         self.lblFriendRefered.text = "REFER_AND_EARN_LBL_FRIEND_REFERRED_TITLE".localized()
         self.lblFriendRefered.setFont(name: FontName.SemiBold, size: FontSize.label_18)
 
@@ -140,8 +136,6 @@ class ReferAndEarnVC: MainVC {
         self.lblNoHistory.setFont(name: FontName.Regular, size: FontSize.label_12)
 
         self.btnFilter.setTitle("last month".localized(), for: .normal)
-        self.btnFilter.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnFilter?.setupFilledButton()
         self.scrVw.contentInset = UIEdgeInsets.init(top: self.vwNavigationBar.bounds.height, left: 0, bottom: self.vwNavigationBar.bounds.height, right: 0)
         self.setupCollectionView(collectionView: self.cltFriends)
         self.setupTableView(tableView: self.tableView)

@@ -11,7 +11,7 @@ class ThemeLabel: UILabel {
     var previousFrame: CGRect?
     
     func setFont(name:String,size:CGFloat){
-        let finalSize = JDDeviceHelper().fontCalculator(size: size)
+        let finalSize = JDDeviceHelper.fontCalculator(size: size)
         self.font = FontHelper.font(name: name, size: finalSize)
     }
 

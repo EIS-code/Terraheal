@@ -22,7 +22,7 @@ class DurationCltCell: CollectionCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblAmount.setFont(name: FontName.Bold, size: FontSize.label_36)
+        self.lblAmount.setFont(name: FontName.Bold, size: FontSize.large)
         self.lblDuration.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.lblCurrencySign.setFont(name: FontName.Bold, size: FontSize.label_10)
     }
@@ -46,12 +46,13 @@ class DurationCltCell: CollectionCell {
         self.ivSelected?.setRound()
         if data.isSelected {
             self.ivSelected?.isHidden = false
-            vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)
+            vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: JDDeviceHelper.offseter(offset: 10), borderWidth: 1.0)
         } else  {
             self.ivSelected?.isHidden = true
-            vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+            vwBg?.setRound(withBorderColor: .clear, andCornerRadious: JDDeviceHelper.offseter(offset: 10), borderWidth: 1.0)
         }
-        vwBg.setShadow()
+        vwBg?.setDurationCellShadow()
+        
     }
     
 }

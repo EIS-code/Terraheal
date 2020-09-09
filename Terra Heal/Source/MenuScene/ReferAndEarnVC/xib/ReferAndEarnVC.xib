@@ -292,7 +292,7 @@
                                             <color key="textColor" name="theme_dark_text"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27Z-Kz-VlO" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27Z-Kz-VlO" customClass="FilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="169" y="10" width="131" height="38"/>
                                             <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
                                             <state key="normal" title="Last Month &gt;">

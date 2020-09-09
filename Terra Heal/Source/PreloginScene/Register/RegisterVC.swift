@@ -25,7 +25,7 @@ class RegisterVC: MainVC {
     @IBOutlet weak var lblAccept: ThemeLabel!
     @IBOutlet weak var btnCheckBox: JDCheckboxButton!
     @IBOutlet weak var lblConnect: ThemeLabel!
-    @IBOutlet weak var btnSignUp: ThemeButton!
+    @IBOutlet weak var btnSignUp: FilledRoundedButton!
     @IBOutlet weak var btnFacebook: ThemeButton!
     @IBOutlet weak var btnGoogle: ThemeButton!
     @IBOutlet weak var btnLogin: UnderlineTextButton!
@@ -55,8 +55,6 @@ class RegisterVC: MainVC {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
             self.ivHeader.adjustHeight()
-            self.btnSignUp?.layoutIfNeeded()
-            self.btnSignUp?.setupFilledButton()
             btnGoogle?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
             btnLogin?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
             self.vwDashed?.createDashedLine(from: CGPoint(x: vwDashed.bounds.minX, y: vwDashed.bounds.midY), to: CGPoint(x: vwDashed.bounds.maxX, y: vwDashed.bounds.midY), color: UIColor.themeSecondary, strokeLength: 10, gapLength: 10, width: 2.0)
@@ -71,7 +69,7 @@ class RegisterVC: MainVC {
         self.setBackground(color: UIColor.themeBackground)
         self.lblConnect.backgroundColor = UIColor.themeBackground
         self.lblMessage?.text = "REGISTER_LBL_MESSAGE".localized()
-        self.lblMessage?.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblMessage?.setFont(name: FontName.Bold, size: FontSize.header)
         self.txtName?.placeholder = "REGISTER_TXT_NAME".localized()
         self.txtName?.delegate = self
         self.txtName?.configureTextField(InputTextFieldDetail.getNameConfiguration())
@@ -96,24 +94,22 @@ class RegisterVC: MainVC {
         self.txtConfirmPassword?.setupPasswordTextFielad()
         self.txtConfirmPassword?.configureTextField(InputTextFieldDetail.getPassowordConfiguration())
         self.lblConnect?.text = "REGISTER_LBL_CONNECT_VIA".localized()
-        self.lblConnect?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
+        self.lblConnect?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.lblAccept?.text = "REGISTR_LBL_ACCEPT".localized()
-        self.lblAccept?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
-        self.btnTermsCondition?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
+        self.lblAccept?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
+        self.btnTermsCondition?.setFont(name: FontName.SemiBold, size: FontSize.button_17)
         self.btnTermsCondition?.setTitle("REGISTR_BTN_TERMS_AND_CONDITION".localized(), for: .normal)
         self.btnLogin?.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         self.btnLogin?.setTitle("REGISTER_BTN_SIGN_IN".localized(), for: .normal)
         self.btnSignUp?.setTitle("REGISTER_BTN_SIGN_UP".localized(), for: .normal)
-        self.btnSignUp?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnSignUp?.setupFilledButton()
         self.lblAlreadyMember?.text = "REGISTER_LBL_ALREADY_A_MEMBER".localized()
-        self.lblAlreadyMember?.setFont(name: FontName.Regular, size: FontSize.label_18)
+        self.lblAlreadyMember?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
     }
     
     // MARK: - Action Methods
     
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
-        _ = (self.navigationController as? NC)?.popVC()
+       Common.appDelegate.loadWelcomeVC(navigaionVC: self.navigationController)
     }
     
     @IBAction func btnCheckBoxTapped(_ sender: JDCheckboxButton) {

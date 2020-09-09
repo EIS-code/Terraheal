@@ -10,7 +10,7 @@ import UIKit
 class VerifyContactVC: MainVC {
 
 
-    @IBOutlet weak var btnHome: ThemeButton!
+    @IBOutlet weak var btnHome: FilledRoundedButton!
     @IBOutlet weak var lblHeader: ThemeLabel!
     @IBOutlet weak var lblMessage: ThemeLabel!
     @IBOutlet var vwBg: UIView!
@@ -40,19 +40,17 @@ class VerifyContactVC: MainVC {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        //self.btnHome?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+        
         
     }
 
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeBackground)
         self.lblHeader?.text = "CONTACT_VERIFICATION_LBL_TITLE".localized()
-        self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.label_36)
+        self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.large)
         self.lblMessage?.text = "CONTACT_VERIFICATION_LBL_MESSAGE".localized()
-        self.lblMessage?.setFont(name: FontName.Regular, size: FontSize.label_18)
+        self.lblMessage?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.btnHome?.setTitle("CONTACT_VERIFICATION_BTN_VERIFY".localized(), for: .normal)
-        self.btnHome?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnHome?.setupFilledButton()
     }
 
     // MARK: - Action Methods

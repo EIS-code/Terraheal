@@ -32,8 +32,8 @@ class SelectPackTblCell: TableCell {
    
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblName?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
-        self.lblPrice?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
+        self.lblName?.setFont(name: FontName.SemiBold, size: FontSize.header)
+        self.lblPrice?.setFont(name: FontName.SemiBold, size: FontSize.header)
         self.lblDiscount?.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.ivSelected?.setRound()
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)

@@ -45,14 +45,12 @@ class CustomCountryPhoneCodePicker: ThemeBottomDialogView {
 
     override func initialSetup() {
         super.initialSetup()
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.setDataForStepUpAnimation()
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.btnDone?.layoutIfNeeded()
-        self.btnDone?.setupFilledButton()
         self.reloadTableDataToFitHeight(tableView: self.tableView)
         self.searchVw.setRound(withBorderColor: .clear, andCornerRadious: self.searchVw.bounds.height/2.0, borderWidth: 1.0)
     }
@@ -130,7 +128,7 @@ extension CustomCountryPhoneCodePicker : UITextFieldDelegate {
 
     private func setupSearchbar(searchBar: UITextField) {
         txtSearchBar.delegate = self
-        txtSearchBar.setFont(name: FontName.Regular, size: FontSize.textField_20)
+        txtSearchBar.setFont(name: FontName.Regular, size: FontSize.textField_regular)
         txtSearchBar.addTarget(self, action: #selector(searching(_:)), for: .editingChanged)
         txtSearchBar.textColor = UIColor.themeDarkText
         txtSearchBar.changePlaceHolder(color: UIColor.themeDarkText)

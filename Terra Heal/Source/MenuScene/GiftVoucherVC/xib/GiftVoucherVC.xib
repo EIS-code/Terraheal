@@ -134,7 +134,7 @@
                         <constraint firstItem="toF-us-PBs" firstAttribute="width" secondItem="6Jr-V8-4vu" secondAttribute="width" multiplier="0.75" id="t7F-5w-sVR"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kl7-Lb-JtZ" userLabel="btnBuyGiftVoucher" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kl7-Lb-JtZ" userLabel="btnBuyGiftVoucher" customClass="FilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="124.66666666666669" y="720" width="126" height="38"/>
                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                     <state key="normal" title="Button"/>
@@ -142,7 +142,7 @@
                         <action selector="btnBuyGiftVoucherTapped:" destination="-1" eventType="touchUpInside" id="MeL-FQ-kdn"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avA-7k-aok" userLabel="btnBuyNow" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avA-7k-aok" userLabel="btnBuyNow" customClass="FilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="124.66666666666669" y="720" width="126" height="38"/>
                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                     <state key="normal" title="Button"/>
@@ -150,7 +150,7 @@
                         <action selector="btnBuyNowTapped:" destination="-1" eventType="touchUpInside" id="MqI-RI-eFG"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDp-RN-c1t" userLabel="btnGetStarted" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDp-RN-c1t" userLabel="btnGetStarted" customClass="FilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="124.66666666666669" y="720" width="126" height="38"/>
                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                     <state key="normal" title="Button"/>

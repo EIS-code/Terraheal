@@ -136,7 +136,7 @@
                                 <constraint firstItem="iDl-ql-GM7" firstAttribute="top" secondItem="WOD-5m-xOM" secondAttribute="top" id="zhn-uf-l8C"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="DialogFilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
                             <rect key="frame" x="93.5" y="390" width="133" height="40"/>
                             <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                             <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
@@ -206,7 +206,7 @@
     </objects>
     <resources>
         <image name="asset-arrow-right" width="7.5" height="13.5"/>
-        <image name="asset-center" width="57" height="57"/>
+        <image name="asset-center" width="50" height="50"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

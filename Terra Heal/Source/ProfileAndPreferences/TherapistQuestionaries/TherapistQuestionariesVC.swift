@@ -9,7 +9,7 @@ import UIKit
 class TherapistQuestionariesVC: MainVC {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var btnSubmit: ThemeButton!
+    @IBOutlet weak var btnSubmit: FilledRoundedButton!
 
     var arrForTherapistQuestion: [QuestionDetail] = []
     // MARK: Object lifecycle
@@ -54,7 +54,6 @@ class TherapistQuestionariesVC: MainVC {
 
             })
           self.tableView?.contentInset = self.getGradientInset()
-            self.btnSubmit?.setupFilledButton()
         }
 
 
@@ -64,8 +63,6 @@ class TherapistQuestionariesVC: MainVC {
         self.setupTableView(tableView: self.tableView)
         self.setTitle(title: "THERAPIST_QUESTIONARY_TITLE".localized())
         self.btnSubmit.setTitle("BTN_SUBMIT".localized(), for: .normal)
-        self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnSubmit?.setupFilledButton()
     }
 
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {

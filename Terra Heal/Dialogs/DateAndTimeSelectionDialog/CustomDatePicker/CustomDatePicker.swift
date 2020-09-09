@@ -62,7 +62,7 @@ class CustomDatePicker: ThemeBottomDialogView {
         self.btnPreviousMonth.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         self.btnNextMonth.setTitle(FontSymbol.next_arrow, for: .normal)
         self.btnNextMonth.setFont(name: FontName.SemiBold, size: FontSize.button_22)
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.setupCalendarView(calendar: vwCalendar)
     }
     override func layoutSubviews() {
@@ -113,7 +113,7 @@ extension CustomDatePicker: FSCalendarDataSource, FSCalendarDelegate {
         calendar.appearance.caseOptions = .weekdayUsesSingleUpperCase
         calendar.appearance.weekdayFont = FontHelper.font(name: FontName.Regular, size: FontSize.button_14)
         calendar.appearance.weekdayTextColor = UIColor.lightGray
-        calendar.appearance.headerTitleFont = FontHelper.font(name: FontName.SemiBold, size: FontSize.button_18)
+        calendar.appearance.headerTitleFont = FontHelper.font(name: FontName.SemiBold, size: FontSize.label_18)
         calendar.appearance.headerTitleColor = UIColor.darkGray
         
 

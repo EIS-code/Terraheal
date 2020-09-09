@@ -69,7 +69,13 @@
                     </subviews>
                     <color key="backgroundColor" name="theme_background"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="1vj-Dw-czR" secondAttribute="height" multiplier="5:2" id="UVc-9U-UhN"/>
+                        <constraint firstAttribute="height" constant="150" id="ayJ-i4-BvL" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                    <real key="value" value="150"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
                         <constraint firstItem="XqS-Co-4qV" firstAttribute="trailing" secondItem="ioG-BP-L40" secondAttribute="trailing" id="bOW-4L-OZJ"/>
                         <constraint firstItem="ioG-BP-L40" firstAttribute="width" secondItem="1vj-Dw-czR" secondAttribute="width" multiplier="0.3" id="dKj-i6-Ohk"/>
                         <constraint firstItem="XqS-Co-4qV" firstAttribute="bottom" secondItem="ioG-BP-L40" secondAttribute="bottom" id="oFH-X2-ugF"/>
@@ -112,6 +118,7 @@
                         <constraint firstItem="Xd4-ev-sCy" firstAttribute="width" secondItem="Msw-Lg-la4" secondAttribute="width" id="12Y-Qc-gZd"/>
                         <constraint firstItem="Xd4-ev-sCy" firstAttribute="centerX" secondItem="Msw-Lg-la4" secondAttribute="centerX" id="6bU-qc-paL"/>
                         <constraint firstItem="Xd4-ev-sCy" firstAttribute="leading" secondItem="Msw-Lg-la4" secondAttribute="leading" id="Dd5-Ae-RqW"/>
+                        <constraint firstItem="Xd4-ev-sCy" firstAttribute="top" secondItem="Msw-Lg-la4" secondAttribute="top" id="JJp-Co-bxQ"/>
                         <constraint firstAttribute="trailing" secondItem="Xd4-ev-sCy" secondAttribute="trailing" id="ZD0-M7-qxt"/>
                         <constraint firstItem="Xd4-ev-sCy" firstAttribute="height" secondItem="Msw-Lg-la4" secondAttribute="height" priority="999" id="ZwT-F3-Kr6"/>
                         <constraint firstItem="Xd4-ev-sCy" firstAttribute="centerY" secondItem="Msw-Lg-la4" secondAttribute="centerY" id="sWW-kR-dAg"/>

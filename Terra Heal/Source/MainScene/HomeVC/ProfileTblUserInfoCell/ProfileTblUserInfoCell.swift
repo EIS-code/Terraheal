@@ -23,9 +23,6 @@ class ProfileTblUserInfoCell: TableCell {
         self.lblName?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
         self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.label_26)
         self.lblDescription?.setFont(name: FontName.Regular, size: FontSize.label_12)
-        self.btnAction?.setupBorderedButton()
-        
-
     }
 
     func setData(data: HomeItemDetail ) {
@@ -41,8 +38,8 @@ class ProfileTblUserInfoCell: TableCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.btnAction?.setupBorderedButton()
     }
+    
     @IBAction func btnHomeTapped(_ sender: Any) {
         //self.openEventDialog()
         (self.parentVC as? HomeVC)?.updateEventData()

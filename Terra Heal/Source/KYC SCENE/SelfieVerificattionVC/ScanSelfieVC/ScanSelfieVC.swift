@@ -49,7 +49,6 @@ class ScanSelfieVC: MainVC, AVCapturePhotoCaptureDelegate {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.btnScanNow?.setupFilledButton()
         self.previewView?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
     }
 
@@ -59,8 +58,6 @@ class ScanSelfieVC: MainVC, AVCapturePhotoCaptureDelegate {
         self.lblHeader?.text = "SCAN_PASSPORT_LBL_TITLE".localized()
         self.lblHeader?.setFont(name: FontName.SemiBold, size: FontSize.label_26)
         self.btnScanNow?.setTitle("SCAN_PASSPORT_BTN_SCAN_NOW".localized(), for: .normal)
-        self.btnScanNow?.setFont(name: FontName.Regular, size: FontSize.button_18)
-
     }
 
     override func viewDidAppear(_ animated: Bool) {

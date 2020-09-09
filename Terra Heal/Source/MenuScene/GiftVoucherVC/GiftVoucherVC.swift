@@ -9,11 +9,11 @@ import UIKit
 class GiftVoucherVC: MainVC {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var btnBuyGiftVoucher: ThemeButton!
+    @IBOutlet weak var btnBuyGiftVoucher: FilledRoundedButton!
     @IBOutlet weak var vwForEmpty: UIView!
     @IBOutlet weak var lblEmptyTitle: ThemeLabel!
     @IBOutlet weak var lblEmptyMessage: ThemeLabel!
-    @IBOutlet weak var btnBuyNow: ThemeButton!
+    @IBOutlet weak var btnBuyNow: FilledRoundedButton!
     @IBOutlet weak var vwForBuyGiftInfo: UIView!
     
     @IBOutlet weak var lblBody: ThemeLabel!
@@ -21,7 +21,7 @@ class GiftVoucherVC: MainVC {
     @IBOutlet weak var lblHeader: ThemeLabel!
     var arrForData: [String] = [ "terra heal massage center","terra heal massage center","terra heal massage center","terra heal massage center","terra heal massage center","terra heal massage center"]
     
-    @IBOutlet weak var btnGetStarted: ThemeButton!
+    @IBOutlet weak var btnGetStarted: FilledRoundedButton!
     
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -62,10 +62,7 @@ class GiftVoucherVC: MainVC {
             self.tableView?.reloadData({
                 self.tableView.contentInset = self.getGradientInset()
             })
-            self.btnBuyGiftVoucher.layoutIfNeeded()
-            self.btnBuyGiftVoucher?.setupFilledButton()
-            self.btnBuyNow.layoutIfNeeded()
-            self.btnBuyNow?.setupFilledButton()
+            
         }
     }
     
@@ -105,14 +102,8 @@ class GiftVoucherVC: MainVC {
         self.lblEmptyTitle.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.lblEmptyMessage.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.btnBuyGiftVoucher?.setTitle("GIFT_VOUCHER_BTN_BUY_GIFT_VOUCHER".localized(), for: .normal)
-        self.btnBuyGiftVoucher?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnBuyGiftVoucher?.setupFilledButton()
         self.btnBuyNow?.setTitle("GIFT_VOUCHER_BTN_BUY_NOW".localized(), for: .normal)
-        self.btnBuyNow?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnBuyNow?.setupFilledButton()
         self.btnGetStarted?.setTitle("GIFT_VOUCHER_BTN_GET_STARTED".localized(), for: .normal)
-        self.btnGetStarted?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnGetStarted?.setupFilledButton()
     }
     // MARK: - Action Methods
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {

@@ -49,8 +49,7 @@ class ScanSelfieInstructionVC: MainVC {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-         self.btnScanNow?.setupFilledButton()
-         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+        self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
         self.btnInfo1?.setRound()
         self.btnInfo2?.setRound()
 
@@ -65,8 +64,7 @@ class ScanSelfieInstructionVC: MainVC {
         self.lblMessage?.setFont(name: FontName.Regular, size: FontSize.label_18)
 
         self.btnScanNow?.setTitle("SELFIE_BTN_OPEN_CAMERA".localized(), for: .normal)
-        self.btnScanNow?.setFont(name: FontName.Regular, size: FontSize.button_18)
-
+        
         self.lblInfo1Title?.text = "SELFIE_LBL_INFO_1_TITLE".localized()
         self.lblInfo1Title?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
 

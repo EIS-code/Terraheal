@@ -42,18 +42,17 @@ class RecipentMassageManageDialog: ThemeBottomDialogView {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.tableView.contentInset = self.getGradientInset()
-        self.btnAddReciepent?.setupFilledButton()
     }
     
     override func initialSetup() {
         super.initialSetup()
         self.lblTitle?.text = "RECIEPENT_DETAIL_TITLE".localized()
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.header)
         self.btnAddReciepent.setTitle("RECIEPENT_BTN_ADD_RECIEPENT".localized(), for: .normal)
         self.btnNext.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.lblTotal?.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblTotal?.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblTotal?.text = "RECIEPENT_LBL_TOTAL".localized()
-        self.lblTotalValue?.setFont(name: FontName.Bold, size: FontSize.label_22)
+        self.lblTotalValue?.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblTotalValue?.text = "210".localized()
         self.setupTableView(tableView: self.tableView)
         self.setDataForStepUpAnimation()

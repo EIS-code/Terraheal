@@ -16,7 +16,7 @@ class LoginVC: MainVC {
     @IBOutlet weak var txtEmail: ACFloatingTextfield!
     @IBOutlet weak var txtPassword: ACFloatingTextfield!
     @IBOutlet weak var btnForgotPassword: ThemeButton!
-    @IBOutlet weak var btnLogin: ThemeButton!
+    @IBOutlet weak var btnLogin: FilledRoundedButton!
     @IBOutlet weak var btnSignUp: UnderlineTextButton!
     @IBOutlet weak var imgChecked: UIImageView!
     @IBOutlet weak var vwDashed: UIView!
@@ -48,8 +48,6 @@ class LoginVC: MainVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
-            self.btnLogin?.layoutIfNeeded()
-            self.btnLogin?.setupFilledButton()
             self.vwDashed?.createDashedLine(from: CGPoint(x: vwDashed.bounds.minX, y: vwDashed.bounds.midY), to: CGPoint(x: vwDashed.bounds.maxX, y: vwDashed.bounds.midY), color: UIColor.themeSecondary, strokeLength: 10, gapLength: 10, width: 2.0)
         }
     }
@@ -63,9 +61,9 @@ class LoginVC: MainVC {
         self.setBackground(color: UIColor.themeBackground)
         self.lblConnect.backgroundColor = UIColor.themeBackground
         self.lblLoginTitle?.text = "LOGIN_LBL_TITLE".localized()
-        self.lblLoginTitle?.setFont(name: FontName.Bold, size: FontSize.label_36)
+        self.lblLoginTitle?.setFont(name: FontName.Bold, size: FontSize.large)
         self.lblMessage?.text = "LOGIN_LBL_MESSAGE".localized()
-        self.lblMessage?.setFont(name: FontName.Regular, size: FontSize.label_18)
+        self.lblMessage?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.txtEmail?.placeholder = "LOGIN_TXT_EMAIL".localized()
         self.txtEmail?.delegate = self
         self.txtEmail?.configureTextField(InputTextFieldDetail.getEmailConfiguration())
@@ -73,23 +71,22 @@ class LoginVC: MainVC {
         self.txtPassword?.delegate = self
         self.txtPassword.setupPasswordTextFielad()
         self.txtPassword.configureTextField(InputTextFieldDetail.getPassowordConfiguration())
-        self.btnForgotPassword?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
+        self.btnForgotPassword?.setFont(name: FontName.Regular, size: FontSize.button_13)
         self.btnForgotPassword?.setTitle("LOGIN_BTN_FORGOT_PASSWORD".localized(), for: .normal)
-        self.btnSignUp?.setFont(name: FontName.SemiBold, size: FontSize.button_22)
+        self.btnSignUp?.setFont(name: FontName.SemiBold, size: FontSize.button_17)
         self.btnSignUp?.setTitle("LOGIN_BTN_SIGN_UP".localized(), for: .normal)
-        self.btnLogin?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnLogin?.setTitle("LOGIN_BTN_SIGN_IN".localized(), for: .normal)
-        self.btnLogin?.setupFilledButton()
         self.imgChecked?.isHidden = true
         self.lblConnect?.text = "LOGIN_LBL_CONNECT_VIA".localized()
-        self.lblConnect?.setFont(name: FontName.SemiBold, size: FontSize.label_22)
+        self.lblConnect?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.lblDontHaveAccount?.text = "LOGIN_LBL_DO_NOT_HAVE_ACCOUNT".localized()
-        self.lblDontHaveAccount?.setFont(name: FontName.Regular, size: FontSize.label_18)
+        self.lblDontHaveAccount?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
     }
 
     // MARK: - Action Methods
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
-         _ = (self.navigationController as? NC)?.popVC()
+        Common.appDelegate.loadWelcomeVC(navigaionVC: self.navigationController)
+        
     }
 
     @IBAction func btnLoginTapped(_ sender: UIButton) {

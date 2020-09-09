@@ -22,7 +22,7 @@ class ManageDocumentVC: MainVC {
     @IBOutlet weak var vwBg: UIView!
     @IBOutlet weak var lblEmptyTitle: ThemeLabel!
     @IBOutlet weak var lblEmptyMsg: ThemeLabel!
-    @IBOutlet weak var btnSubmit: ThemeButton!
+    @IBOutlet weak var btnSubmit: FilledRoundedButton!
     
     var arrForData: [UploadDocumentDetail] = []
     // MARK: Object lifecycle
@@ -63,7 +63,6 @@ class ManageDocumentVC: MainVC {
             self.vwBg?.setRound()
             self.tableView?.reloadData({
             })
-            self.btnSubmit?.setupFilledButton()
            self.tableView?.contentInset = self.getGradientInset()
         }
     }
@@ -77,8 +76,6 @@ class ManageDocumentVC: MainVC {
         self.lblEmptyTitle.text = "DOCUMENT_EMPTY_TITLE".localized()
         self.lblEmptyMsg.text = "DOCUMENT_EMPTY_MSG".localized()
         self.btnSubmit?.setTitle("MANAGE_DOCUMENT_BTN_ADD_NEW".localized(), for: .normal)
-        self.btnSubmit?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.btnSubmit?.setupFilledButton()
     }
     
     @IBAction func btnCancelTapped(_ sender: Any) {

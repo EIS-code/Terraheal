@@ -5,11 +5,12 @@
 
 import UIKit
 
+
 public class JDDeviceHelper {
     public enum Direction {
         case horizontal, vertical
     }
-    public struct DeviceList {
+    /*public struct DeviceList {
         public struct iPhone5 {
             public static let screenWidth: CGFloat = 320
             public static let screenHeight: CGFloat = 568
@@ -99,12 +100,14 @@ public class JDDeviceHelper {
             public static let screenWidth: CGFloat = 414
             public static let screenHeight: CGFloat = 896
         }
-    }
+    }*/
 
     
     public init() {}
     
-    public func offseter(scaleFactor: CGFloat = 1.0, offset: CGFloat, direction: Direction = .horizontal, currentDeviceBound: CGFloat = 375) -> CGFloat {
+    static public func offseter(scaleFactor: CGFloat = 1.0, offset: CGFloat, direction: Direction = .horizontal) -> CGFloat {
+        
+        let currentDeviceBound: CGFloat  = direction == .horizontal ? 375 : 812
         switch direction {
         case .horizontal:
             return (offset * UIScreen.main.bounds.width * scaleFactor) / currentDeviceBound
@@ -113,7 +116,8 @@ public class JDDeviceHelper {
         }
     }
 
-    public func fontCalculator(size:CGFloat,referenceSize:CGFloat = 375,minimumSize:CGFloat = 0.0,maximumSize:CGFloat = 0.0, isAutoCalculate:Bool = true, direction: Direction = Direction.horizontal) -> CGFloat {
+    
+    static public func fontCalculator(size:CGFloat,referenceSize:CGFloat = 375,minimumSize:CGFloat = 0.0,maximumSize:CGFloat = 0.0, isAutoCalculate:Bool = true, direction: Direction = Direction.horizontal) -> CGFloat {
         var finalFontSize = size
         if isAutoCalculate {
             var multiplier: CGFloat  = 1.0

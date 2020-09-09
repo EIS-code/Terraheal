@@ -70,8 +70,8 @@
 "TOUCH_ID_LBL_MESSAGE" = "You need to identify\nto sign back in";
 "TOUCH_ID_BTN_USE_PASSWORD" = "Use Password";
 //MARK: CONTACT VERIFICATION  SCREEN
-"CONTACT_VERIFICATION_LBL_TITLE" = "Contact Verification";
-"CONTACT_VERIFICATION_LBL_MESSAGE" = "We need to verify your contact\ndetails before proceeding";
+"CONTACT_VERIFICATION_LBL_TITLE" = "contact verification";
+"CONTACT_VERIFICATION_LBL_MESSAGE" = "we need to verify your contact\ndetails before proceeding";
 "CONTACT_VERIFICATION_BTN_VERIFY" = "Verify";
 //MARK: CONTACT VERIFIED  SCREEN
 "CONTACT_VERIFICATION_BTN_HOME" = "Home";

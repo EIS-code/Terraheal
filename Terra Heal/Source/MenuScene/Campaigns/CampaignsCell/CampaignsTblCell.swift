@@ -23,13 +23,11 @@ class CampaignsTblCell: TableCell {
 
     func setData(data: CampaignsDetail ) {
         self.btnDetails.setTitle("CAMPAIGNS_BTN_DETAILS".localized(), for: .normal)
-        self.btnDetails.setFont(name: FontName.SemiBold, size: FontSize.button_14)
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
-        self.btnDetails?.setupBorderedButton()
         
 
     }

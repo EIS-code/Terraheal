@@ -56,6 +56,11 @@ class AppWebApi: NSObject {
             
         }
         
+        static var UserBookRequest: String {
+            return Domain + Routes.Client  + "/booking/create"
+            
+        }
+        
         static var ChangePassword: String {
                    return Domain + Routes.Setting + "/update/password"
         }
@@ -147,6 +152,7 @@ class AppWebApi: NSObject {
             return  Domain + Routes.People + "/save"
         }
         
+        
     }
 }
 
@@ -169,6 +175,15 @@ extension AppWebApi {
             completionHandler(response)
         }
     }
+    
+    class func bookRequest(params:[String:Any], completionHandler: @escaping ((ResponseModel) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.UserBookRequest, methodName: AlamofireHelper.POST_METHOD, paramData: params) { (data, dictionary, error) in
+            let response = ResponseModel.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    
+    
     
     class func getUserDetail(completionHandler: @escaping ((User.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetUserDetail, methodName: AlamofireHelper.GET_METHOD, paramData:[:]) { (data, dictionary, error) in

@@ -54,9 +54,6 @@ class WelcomeVC: MainVC {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
             self.view.layoutIfNeeded()
-            self.btnSignUp?.setupFilledButton()
-            self.btnSignIn?.setupFilledButton()
-            self.btnHome?.setupBorderedButton()
         }
     }
     
@@ -70,12 +67,9 @@ class WelcomeVC: MainVC {
         self.lblHeader2?.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblMsg2?.text = "WELCOME_LBL_MESSAGE_2".localized()
         self.lblMsg2?.setFont(name: FontName.Regular, size: FontSize.detail)
-        self.btnSignUp.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnSignUp.setTitle("WELCOME_BTN_SIGN_UP".localized(), for: .normal)
-        self.btnSignIn.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnSignIn.setTitle("WELCOME_BTN_SIGN_IN".localized(), for: .normal)
         self.btnHome.setTitle("WELCOME_BTN_HOME".localized(), for: .normal)
-        self.btnHome.setFont(name: FontName.SemiBold, size: FontSize.button_14)
     }
 
 

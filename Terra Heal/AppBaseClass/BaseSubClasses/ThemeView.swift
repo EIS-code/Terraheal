@@ -112,6 +112,22 @@ extension UIView {
         self.layer.shadowOffset = CGSize(width: 1.0, height: -2.0)
         self.layer.shadowColor = UIColor.gray.cgColor
     }
+    func setDurationCellShadow() {
+        self.layer.masksToBounds = false
+        self.layer.shadowRadius = 10.0
+        self.layer.shadowOpacity = 0.15
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
+        self.layer.shadowColor = UIColor.black.cgColor
+    }
+    
+    func setHomeBottomMenuShadow() {
+           self.layer.masksToBounds = false
+           self.layer.shadowRadius = 2.0
+           self.layer.shadowOpacity = 0.22
+           self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        self.layer.shadowColor = UIColor.themeShadowColor.cgColor
+       }
+    
     private func removeConstraint(attribute: NSLayoutConstraint.Attribute) {
         constraints.forEach {
             if $0.firstAttribute == attribute {
