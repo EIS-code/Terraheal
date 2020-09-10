@@ -61,7 +61,7 @@ class LoginVC: MainVC {
         self.setBackground(color: UIColor.themeBackground)
         self.lblConnect.backgroundColor = UIColor.themeBackground
         self.lblLoginTitle?.text = "LOGIN_LBL_TITLE".localized()
-        self.lblLoginTitle?.setFont(name: FontName.Bold, size: FontSize.large)
+        self.lblLoginTitle?.setFont(name: FontName.Bold, size: FontSize.exLarge)
         self.lblMessage?.text = "LOGIN_LBL_MESSAGE".localized()
         self.lblMessage?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.txtEmail?.placeholder = "LOGIN_TXT_EMAIL".localized()

@@ -61,7 +61,12 @@ class ThemeBottomDialogView: ThemeView {
         self.setupTopBar()
         vwTopBar?.backgroundColor = UIColor.themeDarkText
         self.dialogView.clipsToBounds = true
-        (self.stkButtons as? UIStackView)?.spacing = 10
+        if btnDoneFloating != nil {
+                (self.stkButtons as? UIStackView)?.spacing = 30
+        } else {
+            (self.stkButtons as? UIStackView)?.spacing = 24
+        }
+        
     }
     
     override func layoutSubviews() {
@@ -77,9 +82,9 @@ class ThemeBottomDialogView: ThemeView {
         print("\(self) \(#function)")
     }
     
-    func setupTopBar(isShow:Bool = true, topSpace:CGFloat = 10) {
+    func setupTopBar(isShow:Bool = true, topSpace:CGFloat = 18) {
         self.vwTopBar?.isHidden = !isShow
-        self.topBarSpace?.constant = topSpace
+        self.topBarSpace?.constant = JDDeviceHelper.offseter(offset: topSpace)
     }
     
     func initialSetup() {
@@ -91,13 +96,15 @@ class ThemeBottomDialogView: ThemeView {
         self.backgroundView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
         self.addPanGesture(view: self.dialogView)
         self.transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
-        self.btnNext?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
+        self.btnNext?.setFont(name: FontName.SemiBold, size: FontSize.button_21)
         self.btnDone?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
+        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.large)
         self.dialogView?.roundCorners(corners: [.topLeft,.topRight], radius: 40.0)
     }
     
     func setDialogHeight(height:CGFloat){
-        self.dialogHeight?.constant = height
+        
+        self.dialogHeight?.constant = height * UIScreen.main.bounds.height
     }
     
     @IBAction func btnCancelTapped(_ sender: Any) {

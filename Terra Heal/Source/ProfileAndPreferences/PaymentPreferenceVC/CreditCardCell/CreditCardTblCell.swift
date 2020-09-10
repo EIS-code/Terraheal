@@ -18,8 +18,10 @@ class CreditCardTblCell: TableCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblName?.setFont(name: FontName.Bold, size: FontSize.header)
-        self.vwImgBg.setRound()
+        self.lblName?.setFont(name: FontName.Bold, size: FontSize.subHeader)
+        self.lblCardValue?.setFont(name: FontName.Regular, size: FontSize.subHeader)
+        self.btnDefult?.setFont(name: FontName.Regular, size: FontSize.button_13)
+        
     }
 
     func setData(data: CreditCardDetail ) {
@@ -31,8 +33,7 @@ class CreditCardTblCell: TableCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.layoutIfNeeded()
-        self.vwImgBg?.setRound()
-        self.btnDefult.setRound(withBorderColor: .clear, andCornerRadious: 3.0, borderWidth: 1.0)
+        self.btnDefult.setRound(withBorderColor: .clear, andCornerRadious: JDDeviceHelper.offseter(offset: 5), borderWidth: 1.0)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

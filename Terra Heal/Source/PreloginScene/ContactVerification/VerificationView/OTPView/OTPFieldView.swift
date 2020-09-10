@@ -60,7 +60,7 @@ import UIKit
     public var displayType: DisplayType = .square
     public var fieldsCount: Int = 4
     public var otpInputType: KeyboardType = .numeric
-    public var fieldFont: UIFont = FontHelper.font(name: FontName.SemiBold, size: FontSize.large)
+    public var fieldFont: UIFont = FontHelper.font(name: FontName.SemiBold, size: FontSize.exLarge)
     public var secureEntry: Bool = false
     public var hideEnteredText: Bool = false
     public var requireCursor: Bool = true

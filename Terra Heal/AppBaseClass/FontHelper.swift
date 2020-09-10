@@ -34,11 +34,13 @@ struct FontSize {
     static let label_36: CGFloat = 36
     static let label_10: CGFloat = 10
     
-    //34 27 21 17 13 14
     
-    static let large: CGFloat = 34
+    
+    static let exLarge: CGFloat = 34
+    static let large: CGFloat = 27
     static let header: CGFloat = 21
     static let subHeader: CGFloat = 17
+    static let regular: CGFloat = 14
     static let detail: CGFloat = 13
     
     static let textField_regular: CGFloat = 21

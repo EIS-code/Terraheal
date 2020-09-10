@@ -58,7 +58,7 @@ class BookingCompleteVC: MainVC {
 
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeBackground)
-        self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.large)
+        self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.exLarge)
         self.lblMessage?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.btnHome?.setFont(name: FontName.Regular, size: FontSize.button_17)
         self.setData(completionData: completionData)

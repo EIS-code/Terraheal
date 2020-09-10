@@ -63,6 +63,7 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
         }
         self.select(gender: self.selectedGender)
         self.setDataForStepUpAnimation()
+        self.setDialogHeight(height: self.arrForSteps.last ?? 0.75)
     }
 
     func setData() {
@@ -89,8 +90,6 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
         ivMaleSelected.isHidden = (gender == Gender.Male) ? false : true
         ivFemaleSelected.isHidden = (gender == Gender.Male) ? true : false
         btnFemale.setRound(withBorderColor: (gender == Gender.Male) ? UIColor.clear : UIColor.themePrimary, andCornerRadious: 10.0, borderWidth: 1.5)
-        btnFemale?.setShadow()
-        btnMale?.setShadow()
         ivMaleSelected?.setRound()
         ivFemaleSelected?.setRound()
     }
@@ -111,8 +110,6 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
         super.layoutSubviews()
         self.dialogView?.layoutIfNeeded()
         self.imgProfilePic?.layoutIfNeeded()
-        self.btnFemale?.setShadow()
-        self.btnMale?.setShadow()
         self.btnTherapistGender?.setRound(withBorderColor: UIColor.themeDarkText, andCornerRadious: (self.btnTherapistGender?.frame.height ?? 1.0)/2.0 , borderWidth: 1.0)
         self.imgProfilePic?.setRound()
         self.btnAddPicture?.setRound()

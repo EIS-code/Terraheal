@@ -34,6 +34,7 @@ class MainVC: UIViewController {
         self.lblTitle?.textColor = UIColor.themeNavigationTitle
         self.lblTitle?.textColor = UIColor.themeDarkText
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.header)
+        
     }
     
     override func viewDidLayoutSubviews() {

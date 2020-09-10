@@ -25,7 +25,7 @@ open class JDSegmentedControl: UIView {
     @IBInspectable open var thumbColor: UIColor = UIColor.themeSecondary
     @IBInspectable open var thumbGradientColors: [UIColor]? =  [UIColor.themeSecondary]
     @IBInspectable open var thumbShadowColor: UIColor = JDSegmentedControl.UIColorFromRGB(0x9B9B9B)
-    @IBInspectable open var useShadow:Bool = true
+    @IBInspectable open var useShadow:Bool = false
 
     //left and right space between items
     @IBInspectable open var padding: CGSize = CGSize(width: 30, height: 10)

@@ -14,19 +14,17 @@ class CustomAlertConfirmation: ThemeBottomDialogView {
     
     var onBtnDoneTapped : (() -> Void)? = nil
 
-
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
     }
 
-    
     func initialize(title:String, message:String, buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
         self.lblTitle.text = title
-        self.lblMessage.setFont(name: FontName.Regular, size: FontSize.label_26)
         lblMessage.text = message
         if cancelButtonTitle.isEmpty() {
             self.btnCancel.isHidden = true
@@ -44,7 +42,8 @@ class CustomAlertConfirmation: ThemeBottomDialogView {
 
     override func initialSetup() {
         super.initialSetup()
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.large)
+        self.lblMessage.setFont(name: FontName.SemiBold, size: FontSize.regular)
     }
     
     @IBAction func onClickBtnDone(_ sender: Any) {
@@ -52,8 +51,6 @@ class CustomAlertConfirmation: ThemeBottomDialogView {
             self.onBtnDoneTapped!();
         }
     }
-
-   
 }
 
 

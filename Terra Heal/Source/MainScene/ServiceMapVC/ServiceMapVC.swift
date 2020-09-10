@@ -100,9 +100,9 @@ class ServiceMapVC: MainVC {
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeBackground)
         self.lblAddressTitle?.text = "Home".localized()
-        self.lblAddressTitle?.setFont(name: FontName.Bold, size: FontSize.label_18)
+        self.lblAddressTitle?.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.lblAddress?.text = "Lorem Ipsum, Lisbon, portugal 12451.".localized()
-        self.lblAddress?.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblAddress?.setFont(name: FontName.Regular, size: FontSize.detail)
         self.btnBook?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.btnBook?.setTitle("BTN_BOOK_HERE".localized(), for: .normal)
         self.btnCheckService?.setTitle("BTN_CHECK_SERVICE".localized(), for: .normal)

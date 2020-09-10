@@ -22,6 +22,32 @@ class MessageCode: NSObject {
 
 }
 
+class CommonSize: NSObject {
+    struct Button {
+        static let standard: CGFloat = 48
+        static let back: CGFloat = 32
+        static let cancel: CGFloat = 44
+        static let forwardButton: CGFloat = 40
+    }
+    struct TextField {
+        static let standard: CGFloat = 48
+        static let back: CGFloat = 48
+        static let cancel: CGFloat = 48
+    }
+    
+    struct Padding {
+        static let left: CGFloat = 48
+        static let right: CGFloat = 48
+        static let top: CGFloat = 48
+        static let bottom: CGFloat = 48
+    }
+    static let typeIOS: String = "ios"
+    static let AppName: String = "Terra Heals"
+
+    static let True: String = "1"
+    static let False: String = "0"
+
+}
 
 enum Gender: String {
     case Male  = "m"

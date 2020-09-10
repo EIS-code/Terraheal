@@ -36,7 +36,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4n-2b-Yiw">
-                    <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                    <rect key="frame" x="0.0" y="16" width="320" height="402"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmV-AP-sC2" userLabel="vwBg">
                             <rect key="frame" x="64" y="20" width="192" height="192"/>
@@ -95,7 +95,7 @@
                     <rect key="frame" x="0.0" y="418" width="320" height="150"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="NO"/>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iaV-TK-hil" userLabel="Stack View - main">
@@ -197,15 +197,21 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="d4n-2b-Yiw" secondAttribute="trailing" id="0Gl-w8-uZw"/>
                 <constraint firstItem="WHf-c7-Zcw" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="5Fy-cs-SPO"/>
                 <constraint firstItem="d4n-2b-Yiw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9ub-x9-kHe"/>
-                <constraint firstItem="d4n-2b-Yiw" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="DoX-xQ-cVD"/>
                 <constraint firstItem="zfd-0k-xAC" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="EAI-0l-7e8"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zfd-0k-xAC" secondAttribute="bottom" id="HjO-uv-jv4"/>
                 <constraint firstItem="iaV-TK-hil" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="JBw-bh-NAj"/>
+                <constraint firstItem="iaV-TK-hil" firstAttribute="top" secondItem="d4n-2b-Yiw" secondAttribute="bottom" id="Kxy-Wz-Wew"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="iaV-TK-hil" secondAttribute="bottom" id="TDC-8B-jjZ"/>
                 <constraint firstItem="iaV-TK-hil" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="aDB-jS-KNB"/>
                 <constraint firstItem="zfd-0k-xAC" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ijM-hn-vbc"/>
                 <constraint firstItem="WHf-c7-Zcw" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="l6P-6i-bf1"/>
-                <constraint firstItem="d4n-2b-Yiw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="nhh-Ik-4NS"/>
+                <constraint firstItem="d4n-2b-Yiw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="nhh-Ik-4NS" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
                 <constraint firstItem="zfd-0k-xAC" firstAttribute="top" secondItem="iaV-TK-hil" secondAttribute="top" id="njj-jj-IKG"/>
                 <constraint firstItem="WHf-c7-Zcw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="spr-Kb-CV0"/>
             </constraints>

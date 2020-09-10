@@ -63,7 +63,7 @@ class CustomServiceHourSelectionDialog: ThemeBottomDialogView {
     }
     override func initialSetup() {
         super.initialSetup()
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
+       
     }
 
     override func layoutSubviews() {

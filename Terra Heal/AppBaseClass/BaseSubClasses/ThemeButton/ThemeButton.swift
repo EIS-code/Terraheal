@@ -36,20 +36,7 @@ class ThemeButton: UIButton {
         let finalSize = JDDeviceHelper.fontCalculator(size: size)
         self.titleLabel?.font = FontHelper.font(name: name, size: finalSize)
     }
-    
-    /*func setupFilledButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themeSecondary, borderColor: UIColor = UIColor.clear) {
-        self.height(constant: JDDeviceHelper.offseter(offset: 40))
-        self.backgroundColor = backgroundColor
-        self.setTitleColor(textColor, for: .normal)
-        self.setRound(withBorderColor: borderColor, andCornerRadious: self.frame.height/2.0, borderWidth: 1.0)
-    }
-    
-    func setupBorderedButton(textColor: UIColor = UIColor.themePrimary, backgroundColor: UIColor = UIColor.clear, borderColor: UIColor = UIColor.themePrimary) {
-        self.height(constant: JDDeviceHelper.offseter(offset: 40))
-        self.backgroundColor = backgroundColor
-        self.setTitleColor(textColor, for: .normal)
-        self.setRound(withBorderColor: borderColor, andCornerRadious: self.frame.height/2.0, borderWidth: 1.0)
-    }*/
+
 }
 
 
@@ -72,7 +59,7 @@ class FilledRoundedButton: ThemeButton {
     }
     func fillButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themeSecondary, borderColor: UIColor = UIColor.clear) {
         self.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.height(constant: JDDeviceHelper.offseter(offset: 48, direction: .vertical))
+        self.height(constant: CommonSize.Button.standard)
         self.backgroundColor = backgroundColor
         self.setTitleColor(textColor, for: .normal)
     }
@@ -97,7 +84,7 @@ class RoundedBorderButton: ThemeButton {
     }
     func borderedButton(textColor: UIColor = UIColor.themeSecondary, backgroundColor: UIColor = UIColor.clear, borderColor: UIColor = UIColor.themeSecondary) {
         self.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.height(constant: JDDeviceHelper.offseter(offset: 48))
+        self.height(constant: CommonSize.Button.standard)
         self.backgroundColor = backgroundColor
         self.setTitleColor(textColor, for: .normal)
         self.setRound(withBorderColor:borderColor, andCornerRadious: self.bounds.height/2.0, borderWidth: 1.0)
@@ -162,7 +149,7 @@ class DialogFilledRoundedButton: ThemeButton {
     
     func fillButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themeSecondary, borderColor: UIColor = UIColor.clear) {
         self.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.height(constant: JDDeviceHelper.offseter(offset: 48))
+        self.height(constant: CommonSize.Button.standard)
         self.backgroundColor = backgroundColor
         self.setTitleColor(textColor, for: .normal)
         self.setRound(withBorderColor: borderColor, andCornerRadious: self.frame.height/2.0, borderWidth: 1.0)

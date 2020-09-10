@@ -5,11 +5,12 @@
 
 import UIKit
 
+public enum Direction {
+    case horizontal, vertical
+}
 
 public class JDDeviceHelper {
-    public enum Direction {
-        case horizontal, vertical
-    }
+    
     /*public struct DeviceList {
         public struct iPhone5 {
             public static let screenWidth: CGFloat = 320

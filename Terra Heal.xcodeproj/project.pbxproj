@@ -19,7 +19,6 @@
 		03280D8D24D03F7300EF06E5 /* ServiceCollapseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03280D8B24D03F7300EF06E5 /* ServiceCollapseCell.swift */; };
 		033E822F24EBDBBC00E71506 /* ThemeBottomDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E822E24EBDBBC00E71506 /* ThemeBottomDialog.swift */; };
 		033E823124EBDC1100E71506 /* ThemeBottomDialog + Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E823024EBDC1100E71506 /* ThemeBottomDialog + Animation.swift */; };
-		033E823324EBDC3F00E71506 /* ThemeBottomDialog + Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E823224EBDC3F00E71506 /* ThemeBottomDialog + Gradient.swift */; };
 		033E823524EBEBB100E71506 /* ThemeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E823424EBEBB100E71506 /* ThemeScrollView.swift */; };
 		03406F9A24E2D8F50014AC99 /* GiftVoucherVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03406F7A24E2D8F50014AC99 /* GiftVoucherVC.xib */; };
 		03406F9B24E2D8F50014AC99 /* GiftVoucherTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03406F7C24E2D8F50014AC99 /* GiftVoucherTblCell.xib */; };
@@ -462,7 +461,6 @@
 		03280D8B24D03F7300EF06E5 /* ServiceCollapseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCollapseCell.swift; sourceTree = "<group>"; };
 		033E822E24EBDBBC00E71506 /* ThemeBottomDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeBottomDialog.swift; sourceTree = "<group>"; };
 		033E823024EBDC1100E71506 /* ThemeBottomDialog + Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThemeBottomDialog + Animation.swift"; sourceTree = "<group>"; };
-		033E823224EBDC3F00E71506 /* ThemeBottomDialog + Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThemeBottomDialog + Gradient.swift"; sourceTree = "<group>"; };
 		033E823424EBEBB100E71506 /* ThemeScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeScrollView.swift; sourceTree = "<group>"; };
 		03406F7A24E2D8F50014AC99 /* GiftVoucherVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftVoucherVC.xib; sourceTree = "<group>"; };
 		03406F7C24E2D8F50014AC99 /* GiftVoucherTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftVoucherTblCell.xib; sourceTree = "<group>"; };
@@ -972,7 +970,6 @@
 			children = (
 				033E822E24EBDBBC00E71506 /* ThemeBottomDialog.swift */,
 				033E823024EBDC1100E71506 /* ThemeBottomDialog + Animation.swift */,
-				033E823224EBDC3F00E71506 /* ThemeBottomDialog + Gradient.swift */,
 			);
 			path = BottomDialog;
 			sourceTree = "<group>";
@@ -3989,7 +3986,6 @@
 				0348788D24B2EF64006774AB /* NotificationTblCell.swift in Sources */,
 				0345C66B24C9A7B600873FD1 /* ReservationVC.swift in Sources */,
 				0348789524B2EF64006774AB /* CampaignsTblCell.swift in Sources */,
-				033E823324EBDC3F00E71506 /* ThemeBottomDialog + Gradient.swift in Sources */,
 				0348782124B2EF64006774AB /* MyTherapistTblCell.swift in Sources */,
 				035CB15824E12ADF00C2D5C6 /* CustomServiceCenterSelectionDialog.swift in Sources */,
 				0353EB0C24EA52A400584357 /* ThemeImageView.swift in Sources */,

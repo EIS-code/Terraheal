@@ -32,10 +32,12 @@ class SessionTblCell: TableCell {
         self.ivPicture.image = UIImage.init(named: data.image)
         if data.isSelected {
             self.ivSelected.isHidden = false
-            self.vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)
+             self.vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: JDDeviceHelper.offseter(offset: 8), borderWidth: 1.0)
+            self.vwBg?.setSessionCardShadow()
         } else {
             self.ivSelected.isHidden = true
-            self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+             self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: JDDeviceHelper.offseter(offset: 8), borderWidth: 1.0)
+            self.vwBg?.removeShadow()
         }
     }
 
@@ -45,10 +47,14 @@ class SessionTblCell: TableCell {
         self.ivPicture?.setRound()
         self.ivSelected?.setRound()
         if data.isSelected {
-            self.vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)
+            self.vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: JDDeviceHelper.offseter(offset: 8), borderWidth: 1.0)
+            self.vwBg?.setSessionCardShadow()
+            
         } else {
-            self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+            self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: JDDeviceHelper.offseter(offset: 8), borderWidth: 1.0)
+            self.vwBg?.removeShadow()
         }
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

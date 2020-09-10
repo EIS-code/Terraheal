@@ -170,7 +170,7 @@ extension  ThemeBottomDialogView {
             }
             if  nextHeight != self.dialogHeight.constant {
                 UIView.animate(withDuration: 0.5, animations: {
-                    self.setDialogHeight(height: nextHeight)
+                    self.setDialogHeight(height: nextHeight / UIScreen.main.bounds.height)
                     self.layoutIfNeeded()
                 })
             }
@@ -180,7 +180,7 @@ extension  ThemeBottomDialogView {
     func setDataForStepUpAnimation(data:[CGFloat] = [0.75,0.95]) {
         self.arrForSteps = data
         self.isFixedHeightDialog = false
-        self.setDialogHeight(height: (data.first ?? 0.75) * UIScreen.main.bounds.height)
+        self.setDialogHeight(height: (data.first ?? 0.75))
     }
     func upDialogAnimation() {
         transitionAnimator?.stopAnimation(true)

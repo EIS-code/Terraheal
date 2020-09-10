@@ -22,7 +22,7 @@ class DurationCltCell: CollectionCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblAmount.setFont(name: FontName.Bold, size: FontSize.large)
+        self.lblAmount.setFont(name: FontName.Bold, size: FontSize.exLarge)
         self.lblDuration.setFont(name: FontName.Bold, size: FontSize.label_18)
         self.lblCurrencySign.setFont(name: FontName.Bold, size: FontSize.label_10)
     }

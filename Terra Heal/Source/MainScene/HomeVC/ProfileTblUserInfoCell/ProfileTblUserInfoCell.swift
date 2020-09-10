@@ -20,9 +20,9 @@ class ProfileTblUserInfoCell: TableCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblName?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
-        self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.label_26)
-        self.lblDescription?.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblName?.setFont(name: FontName.SemiBold, size: FontSize.regular)
+        self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.large)
+        self.lblDescription?.setFont(name: FontName.Regular, size: FontSize.detail)
     }
 
     func setData(data: HomeItemDetail ) {
