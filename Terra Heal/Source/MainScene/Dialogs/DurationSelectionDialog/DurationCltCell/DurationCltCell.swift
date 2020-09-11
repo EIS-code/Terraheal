@@ -22,8 +22,8 @@ class DurationCltCell: CollectionCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblAmount.setFont(name: FontName.Bold, size: FontSize.exLarge)
-        self.lblDuration.setFont(name: FontName.Bold, size: FontSize.label_18)
+        self.lblAmount.setFont(name: FontName.Bold, size: 50)
+        self.lblDuration.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.lblCurrencySign.setFont(name: FontName.Bold, size: FontSize.label_10)
     }
     
@@ -31,18 +31,15 @@ class DurationCltCell: CollectionCell {
         self.data = data
         self.lblDuration.text = data.time + " " + "TIME_UNIT_MIN".localized()
         self.lblAmount.text = data.pricing.price
-        if data.isSelected {
-            self.ivSelected?.isHidden = false
-            vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)
-        } else  {
-            self.ivSelected?.isHidden = true
-            vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-        }
+        self.setupLayout()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.layoutIfNeeded()
+        self.setupLayout()
+        
+    }
+    func setupLayout() {
         self.ivSelected?.setRound()
         if data.isSelected {
             self.ivSelected?.isHidden = false
@@ -52,8 +49,6 @@ class DurationCltCell: CollectionCell {
             vwBg?.setRound(withBorderColor: .clear, andCornerRadious: JDDeviceHelper.offseter(offset: 10), borderWidth: 1.0)
         }
         vwBg?.setDurationCellShadow()
-        
     }
-    
 }
 

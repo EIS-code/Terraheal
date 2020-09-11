@@ -59,7 +59,6 @@ class ServiceSelectionVC: MainVC {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
             vwServiceSelection.setRound(withBorderColor: .themePrimary, andCornerRadious: self.vwServiceSelection.bounds.height/2.0, borderWidth: 0.1)
-            vwServiceSelection.setShadow()
             self.collectionVw?.reloadData({
                 
             })

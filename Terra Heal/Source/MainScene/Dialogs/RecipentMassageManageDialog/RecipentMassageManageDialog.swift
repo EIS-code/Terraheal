@@ -47,7 +47,7 @@ class RecipentMassageManageDialog: ThemeBottomDialogView {
     override func initialSetup() {
         super.initialSetup()
         self.lblTitle?.text = "RECIEPENT_DETAIL_TITLE".localized()
-        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.header)
+        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.large)
         self.btnAddReciepent.setTitle("RECIEPENT_BTN_ADD_RECIEPENT".localized(), for: .normal)
         self.btnNext.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.lblTotal?.setFont(name: FontName.Bold, size: FontSize.header)

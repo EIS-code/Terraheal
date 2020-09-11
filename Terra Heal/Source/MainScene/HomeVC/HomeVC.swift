@@ -13,11 +13,11 @@ class HomeVC: MainVC {
     
     @IBOutlet weak var btnProfile: FloatingRoundButton!
     @IBOutlet weak var btnMenu: FloatingRoundButton!
-    @IBOutlet weak var lblMenu: ThemeLabel!
-    @IBOutlet weak var lblUserName: ThemeLabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var vwFloatingBottom: JDSegmentedControl!
     @IBOutlet weak var ivUser: RoundedImageView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    var arrForData: [ServiceDetail] = []
     
     var arrForHomeDetails: [HomeItemDetail] = [
         HomeItemDetail(title:appSingleton.user.name, buttonTitle: "HOME_ITEM_ACTION_1".localized(), image: ImageAsset.HomeItem.header,homeItemtype: .Header )]
@@ -42,6 +42,7 @@ class HomeVC: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
+        self.getServiceCenterDetail()
         vwFloatingBottom.height(constant: JDDeviceHelper.offseter(offset: CommonSize.Button.standard))
         vwFloatingBottom.allowChangeThumbWidth = false
         vwFloatingBottom.itemTitles = ["HOME_BTN_HOME".localized(),"HOME_BTN_EXPLORE".localized(),"HOME_BTN_MY_FAV".localized()]
@@ -49,14 +50,22 @@ class HomeVC: MainVC {
         vwFloatingBottom.itemSelectedImages = [UIImage.init(named: "asset-home-selected")!, UIImage.init(named: "asset-explore-selected")!, UIImage.init(named: "asset-fav-selected")!]
         vwFloatingBottom.changeThumbColor(UIColor.themePrimary)
         vwFloatingBottom.changeBackgroundColor(UIColor.themeLightTextColor)
+        self.collectionView?.isHidden = true
         vwFloatingBottom.didSelectItemWith = { [weak self] (index,title) in
             guard let self = self else { return } ; print(self)
-            Common.appDelegate.loadServiceMapVC(navigaionVC: self.navigationController)
+            switch index {
+            case 0:
+                self.homeButtonSelected()
+            case 1:
+                self.exploreButtonSelected()
+            default:
+                self.favouriteButtonSelected()
+            }
         }
         self.addLocationObserver()
         self.btnMenu.addTarget(self.revealViewController(), action: #selector(PBRevealViewController.revealLeftView), for: .touchUpInside)
-        
-    }
+     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -74,22 +83,43 @@ class HomeVC: MainVC {
         if self.isViewAvailable() {
             self.tableView?.reloadData({
             })
+            self.collectionView?.reloadData({
+            })
             vwFloatingBottom.setRound(withBorderColor: .clear, andCornerRadious: self.vwFloatingBottom.bounds.height/2.0, borderWidth: 0.1)
             vwFloatingBottom.setHomeBottomMenuShadow()
             self.tableView?.contentInset = self.getGradientInset()
+            self.collectionView?.contentInset = self.getGradientInset()
         }
     }
     
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeBackground)
         self.setupTableView(tableView: self.tableView)
+        self.setupCollectionView(collectionView: self.collectionView)
         if appSingleton.user.name.isEmpty() {
             self.ivUser.image = UIImage.init(named: ImageAsset.Placeholder.user)
         } else {
             self.ivUser.downloadedFrom(link: appSingleton.user.profilePhoto)
         }
     }
+    func homeButtonSelected() {
+        if self.tableView.isHidden == false {
+            Common.appDelegate.loadServiceMapVC(navigaionVC: self.navigationController)
+        } else {
+                self.collectionView.gone()
+                self.tableView.visible()
+        }
+}
     
+    func favouriteButtonSelected() {
+        self.tableView.gone()
+        self.collectionView.visible()
+    }
+    
+    func exploreButtonSelected() {
+        self.collectionView.gone()
+        self.tableView.visible()
+    }
     
     //MARK: Action Methods
     

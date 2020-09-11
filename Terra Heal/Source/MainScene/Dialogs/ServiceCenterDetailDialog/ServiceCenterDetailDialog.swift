@@ -50,7 +50,7 @@ class ServiceCenterDetailDialog: ThemeBottomDialogView {
         contentView.setRound(withBorderColor: .clear, andCornerRadious: 40.0, borderWidth: 1.0)
         scrVw.setRound(withBorderColor: .clear, andCornerRadious: 40.0, borderWidth: 1.0)
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblAddress?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
+        self.lblAddress?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.lblServices?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
         self.btnNumberOfServices?.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.btnNumberOfServices?.setRound()

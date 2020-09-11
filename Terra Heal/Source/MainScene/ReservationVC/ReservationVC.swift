@@ -52,16 +52,16 @@ class ReservationVC: MainVC {
     
     private func initialViewSetup() {
         self.lblHeader?.text = "RESERVATION_TITLE".localized()
-        self.lblHeader?.setFont(name: FontName.SemiBold, size: FontSize.label_26)
+        self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblMessage?.text = "RESERVATION_MESSAGE".localized()
-        self.lblMessage?.setFont(name: FontName.Regular, size: FontSize.label_18)
+        self.lblMessage?.setFont(name: FontName.Regular, size: FontSize.detail)
         self.btnProceed?.setTitle("BTN_PROCEED".localized(), for: .normal)
-        self.btnProceed?.setFont(name: FontName.SemiBold, size: FontSize.button_22)
+        self.btnProceed?.setFont(name: FontName.SemiBold, size: FontSize.button_21)
         self.btnProceed2?.setTitle("RESERVATION_BTN_PROCEED2".localized(), for: .normal)
         self.btnProceed2.titleLabel?.numberOfLines = 0
-        self.btnBack.setFont(name: FontName.Bold, size: FontSize.button_22)
+        self.btnBack.setFont(name: FontName.Bold, size: FontSize.button_21)
         self.btnBack.setTitle("BTN_CANCEL".localized(), for: .normal)
-        self.btnProceed2?.setFont(name: FontName.SemiBold, size: FontSize.button_22)
+        self.btnProceed2?.setFont(name: FontName.SemiBold, size: FontSize.button_21)
     }
   
     // MARK: - Action Methods

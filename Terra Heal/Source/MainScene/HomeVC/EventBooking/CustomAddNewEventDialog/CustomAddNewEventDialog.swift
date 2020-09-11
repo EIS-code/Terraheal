@@ -50,21 +50,21 @@ class CustomAddNewEventDialog: ThemeBottomDialogView {
             self.btnDone.setTitle(buttonTitle, for: .normal)
             self.btnDone.isHidden = false
         }
-        
+        self.setDialogHeight(height: self.arrForSteps.last ?? 0.9)
     }
 
     override func initialSetup() {
         super.initialSetup()
-        self.txtName?.placeholder = "name".localized()
+        self.txtName?.placeholder = "EVENT_USER_NAME".localized()
         self.txtName.delegate = self
         self.txtName.configureTextField(InputTextFieldDetail.getNameConfiguration())
-        self.txtMobile?.placeholder = "mobile".localized()
+        self.txtMobile?.placeholder = "EVENT_USER_MOBILE".localized()
         self.txtMobile.delegate = self
         self.txtMobile.configureTextField(InputTextFieldDetail.getMobileConfiguration())
-        self.txtEmail?.placeholder = "email".localized()
+        self.txtEmail?.placeholder = "EVENT_USER_EMAIL".localized()
         self.txtEmail.delegate = self
         self.txtEmail.configureTextField(InputTextFieldDetail.getEmailConfiguration())
-        self.txtDescription?.placeholder = "message".localized()
+        self.txtDescription?.placeholder = "EVENT_USER_MESSAGE".localized()
         self.txtDescription.delegate = self
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.setDataForStepUpAnimation()

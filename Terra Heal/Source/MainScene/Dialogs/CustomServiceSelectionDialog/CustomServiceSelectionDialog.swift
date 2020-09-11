@@ -48,7 +48,9 @@ class CustomServiceSelectionDialog: ThemeBottomDialogView {
 
     override func initialSetup() {
         super.initialSetup()
-       
+        self.dialogView.backgroundColor = .clear
+        self.dialogView.clipsToBounds = false
+        self.contentView.clipsToBounds = true
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.setupCollectionView(collectionView: self.collectionVw)
         self.vwServiceSelection.allowChangeThumbWidth = false
@@ -73,6 +75,8 @@ class CustomServiceSelectionDialog: ThemeBottomDialogView {
         super.layoutSubviews()
         self.ivMassageCenter?.layoutIfNeeded()
         self.ivMassageCenter.setRound()
+        self.contentView?.setRound(withBorderColor: .clear, andCornerRadious: 40.0, borderWidth: 1.0)
+        //self.contentView?.roundCorners(corners: [.topLeft,.topRight], radius: 40.0)
     }
 
     @IBAction func btnDoneTapped(_ sender: Any) {

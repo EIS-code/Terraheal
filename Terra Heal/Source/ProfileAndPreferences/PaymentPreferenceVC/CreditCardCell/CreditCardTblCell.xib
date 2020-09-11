@@ -40,13 +40,13 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udg-85-RGu" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="222.5" height="28.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="theme_primary"/>
+                                        <color key="textColor" name="theme_dark_text"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcz-Gd-NAR" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28.5" width="222.5" height="28.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="theme_primary"/>
+                                        <color key="textColor" name="theme_dark_text"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -141,9 +141,6 @@
         </namedColor>
         <namedColor name="theme_light_text_color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="theme_primary">
-            <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

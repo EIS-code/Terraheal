@@ -25,13 +25,13 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
-                    <rect key="frame" x="0.0" y="469" width="414" height="427"/>
+                    <rect key="frame" x="0.0" y="439.5" width="414" height="456.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe">
-                            <rect key="frame" x="20" y="10" width="374" height="387"/>
+                            <rect key="frame" x="16" y="10" width="382" height="416.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNR-iD-dqO">
-                                    <rect key="frame" x="167" y="0.0" width="40" height="5"/>
+                                    <rect key="frame" x="171" y="0.0" width="40" height="5"/>
                                     <color key="backgroundColor" name="theme_primary"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="5" id="a8a-TZ-7Di"/>
@@ -39,13 +39,13 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-4J-xGz" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="166" y="25" width="42" height="20.5"/>
+                                    <rect key="frame" x="170" y="25" width="42" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" name="theme_primary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qi1-qS-KMx" customClass="ThemeTextView" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="37.5" y="65.5" width="299" height="199.5"/>
+                                    <rect key="frame" x="19" y="65.5" width="344" height="229"/>
                                     <color key="backgroundColor" name="theme_primary_light_background"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="Qi1-qS-KMx" secondAttribute="height" multiplier="300:200" id="j4q-as-CiT"/>
@@ -64,10 +64,10 @@
                                     </userDefinedRuntimeAttributes>
                                 </textView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZWZ-Jz-XeJ" userLabel="vwOkButton">
-                                    <rect key="frame" x="37.5" y="285" width="299" height="50"/>
+                                    <rect key="frame" x="0.0" y="314.5" width="382" height="50"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="VKK-mf-nos" userLabel="Stack View - Next">
-                                            <rect key="frame" x="182" y="5" width="117" height="40"/>
+                                            <rect key="frame" x="265" y="5" width="117" height="40"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ey-Oz-2S3" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="8" width="64" height="32"/>
@@ -104,7 +104,7 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="581-cI-fuY" customClass="DialogCancelButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="160.5" y="355" width="53" height="32"/>
+                                    <rect key="frame" x="164.5" y="384.5" width="53" height="32"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <state key="normal" title="Sign In">
                                         <color key="titleColor" name="theme_secondary"/>
@@ -115,15 +115,29 @@
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="Qi1-qS-KMx" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" multiplier="0.8" id="5Po-cG-8Zw"/>
-                                <constraint firstItem="ZWZ-Jz-XeJ" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" multiplier="0.8" id="d0c-0o-Phi"/>
+                                <constraint firstItem="Qi1-qS-KMx" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" multiplier="0.9" id="5Po-cG-8Zw"/>
+                                <constraint firstItem="ZWZ-Jz-XeJ" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" id="d0c-0o-Phi"/>
                             </constraints>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" name="theme_primary_light_background"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" constant="20" id="1HJ-Xp-DOL"/>
-                        <constraint firstItem="cXW-IL-cWe" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="RrZ-kW-n5i"/>
+                        <constraint firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" constant="16" id="1HJ-Xp-DOL" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                    <real key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
+                        <constraint firstItem="cXW-IL-cWe" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="16" id="RrZ-kW-n5i" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                    <real key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
                         <constraint firstAttribute="bottom" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="30" id="fhi-OD-EBT"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="gm5-2t-GbH"/>
                     </constraints>

@@ -17,9 +17,9 @@ class ReciepentTblCell: TableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         btnDelete.backgroundColor = UIColor.white
-        self.lblName.setFont(name: FontName.Regular, size: FontSize.label_12)
-        self.lblDuration.setFont(name: FontName.Regular, size: FontSize.label_12)
-         self.lblPrice.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblName.setFont(name: FontName.Regular, size: FontSize.detail)
+        self.lblDuration.setFont(name: FontName.Regular, size: FontSize.detail)
+         self.lblPrice.setFont(name: FontName.Regular, size: FontSize.detail)
     }
     
     func setData(data: ServiceDetail ) {

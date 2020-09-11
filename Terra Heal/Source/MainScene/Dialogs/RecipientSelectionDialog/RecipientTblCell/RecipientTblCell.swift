@@ -8,43 +8,45 @@
 
 import UIKit
 
-class RecipientTblCell: TableCell {
+class RecipientTblCell: SelectionBorderTableCell {
 
-     @IBOutlet weak var lblName: ThemeLabel!
-       @IBOutlet weak var vwBg: UIView!
-       @IBOutlet weak var btnAction: ThemeButton!
-       @IBOutlet weak var imgSelected: UIImageView!
-       @IBOutlet weak var lblAge: ThemeLabel!
-       @IBOutlet weak var lblGender: ThemeLabel!
-       @IBOutlet weak var ivPeople: UIImageView!
+    @IBOutlet weak var lblName: ThemeLabel!
+    @IBOutlet weak var btnAction: ThemeButton!
+    @IBOutlet weak var lblAge: ThemeLabel!
+    @IBOutlet weak var lblGender: ThemeLabel!
+    @IBOutlet weak var ivPeople: UIImageView!
 
 
        override func awakeFromNib() {
            super.awakeFromNib()
            selectionStyle = .none
-           self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
-           self.lblAge?.setFont(name: FontName.Bold, size: FontSize.label_18)
-           self.lblGender?.setFont(name: FontName.Bold, size: FontSize.label_18)
+           self.lblName?.setFont(name: FontName.Bold, size: FontSize.subHeader)
+           self.lblAge?.setFont(name: FontName.Bold, size: FontSize.subHeader)
+           self.lblGender?.setFont(name: FontName.Bold, size: FontSize.subHeader)
 
-           self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
            self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.header)
            self.btnAction?.setTitle(FontSymbol.next_arrow, for: .normal)
-           self.imgSelected?.setRound()
            self.ivPeople?.setRound()
+        
+        self.radius = 15
+        self.cellBorderColor = UIColor.themePrimary
+        self.shadowProperty.color = UIColor.init(hex: "#00000026")
+        self.shadowProperty.opacity = 1.0
+        self.shadowProperty.radius = 10
+        self.shadowProperty.offset = CGSize.init(width: 0.0, height: 3.0)
+        
        }
 
        func setData(data: People) {
+            self.setData(title: "", isSelected: data.isSelected)
            self.lblName.text = data.name
            self.lblGender.text = data.getGenderName()
            self.lblAge.text = data.age
            self.ivPeople.downloadedFrom(link: data.photo)
-           self.imgSelected.isHidden = !data.isSelected
        }
 
        override func layoutSubviews() {
            super.layoutSubviews()
-           self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-           self.imgSelected?.setRound()
            self.ivPeople?.setRound()
        }
 

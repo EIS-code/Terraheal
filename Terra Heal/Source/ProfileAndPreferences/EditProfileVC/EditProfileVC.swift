@@ -66,7 +66,7 @@ class EditProfileVC: MainVC {
         
         if self.isViewAvailable() {
             self.vwBg?.setRound(withBorderColor: UIColor.clear, andCornerRadious: 20.0, borderWidth: 1.0)
-            self.vwBg?.setShadow()
+            self.vwBg?.setShadow(radius: 2.0, opacity: 1.0, offset: CGSize.init(width: 1.0, height: 0.0), color: UIColor.init(hex: "#B2B3B5"))
             self.ivProfilePic?.setRound()
             self.btnAddPicture?.setRound()
             //self.collectionVwForProfile?.reloadData()

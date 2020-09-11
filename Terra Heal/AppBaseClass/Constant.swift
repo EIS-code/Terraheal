@@ -25,6 +25,7 @@ class MessageCode: NSObject {
 class CommonSize: NSObject {
     struct Button {
         static let standard: CGFloat = 48
+        static let standardWidth: CGFloat = 160
         static let back: CGFloat = 32
         static let cancel: CGFloat = 44
         static let forwardButton: CGFloat = 40

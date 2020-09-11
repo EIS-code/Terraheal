@@ -19,7 +19,7 @@ class TherapistQuestionariesTblCell: TableCell {
         super.awakeFromNib()
         selectionStyle = .none
         self.txtQuestion.disableFloatingLabel = true
-        self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.label_18)
+        self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
     }
 
     func setData(data: QuestionDetail ) {

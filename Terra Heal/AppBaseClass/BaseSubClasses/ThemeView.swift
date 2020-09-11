@@ -96,12 +96,12 @@ class ThemeBottomGradientView: UIView {
 
 extension UIView {
     
-    func setShadow() {
+    func setShadow(radius: CGFloat = 5.0, opacity: Float = 0.8, offset: CGSize = CGSize(width: 1.0, height: -2.0) , color: UIColor = UIColor.gray) {
         self.layer.masksToBounds = false
-        self.layer.shadowRadius = 5.0
-        self.layer.shadowOpacity = 0.8
-        self.layer.shadowOffset = CGSize(width: 1.0, height: -2.0)
-        self.layer.shadowColor = UIColor.gray.cgColor
+        self.layer.shadowRadius = radius
+        self.layer.shadowOpacity = opacity
+        self.layer.shadowOffset = offset
+        self.layer.shadowColor = color.cgColor
     }
     func setDurationCellShadow() {
         self.layer.masksToBounds = false
@@ -122,9 +122,9 @@ extension UIView {
     func setHomeCardShadow() {
         self.layer.masksToBounds = false
         self.layer.shadowRadius = 4.0
-        self.layer.shadowOpacity = 0.4
+        self.layer.shadowOpacity = 1.0
         self.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-         self.layer.shadowColor = UIColor.init(red: 178/255, green: 179/255, blue: 181/255, alpha: 1.0).cgColor
+         self.layer.shadowColor = UIColor.init(hex: "#B2B3B566").cgColor
     }
     
     func setSessionCardShadow() {

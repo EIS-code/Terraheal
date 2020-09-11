@@ -24,10 +24,10 @@ class PackTblCell: TableCell {
         super.awakeFromNib()
         self.selectionStyle = .none
         self.lblVoucherCode.text = "PACK_CODE".localized()
-        self.lblname?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
+        self.lblname?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.lblShortDescription?.setFont(name: FontName.SemiBold, size: FontSize.header)
         self.lblVoucherCode?.setFont(name: FontName.Regular, size: FontSize.label_12)
-        self.lblCode?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
+        self.lblCode?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.lblPackDetail?.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
         self.ivPack?.setRound()

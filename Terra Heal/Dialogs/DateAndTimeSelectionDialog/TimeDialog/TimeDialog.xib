@@ -28,10 +28,10 @@
                     <rect key="frame" x="0.0" y="248.5" width="375" height="443.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NCB-os-EvZ">
-                            <rect key="frame" x="20" y="10" width="335" height="403.5"/>
+                            <rect key="frame" x="16" y="10" width="343" height="403.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ysj-r2-46W">
-                                    <rect key="frame" x="147.5" y="0.0" width="40" height="5"/>
+                                    <rect key="frame" x="151.5" y="0.0" width="40" height="5"/>
                                     <color key="backgroundColor" name="theme_primary"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="5" id="6LM-Fc-htE"/>
@@ -39,20 +39,20 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVJ-76-FfX" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="146.5" y="25" width="42" height="20.5"/>
+                                    <rect key="frame" x="150.5" y="25" width="42" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" name="theme_primary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="0Ay-fP-AhF">
-                                    <rect key="frame" x="7.5" y="65.5" width="320" height="216"/>
+                                    <rect key="frame" x="11.5" y="65.5" width="320" height="216"/>
                                     <locale key="locale" localeIdentifier="en_150"/>
                                 </datePicker>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZP6-Da-KrV" userLabel="vwOkButton">
-                                    <rect key="frame" x="33.5" y="301.5" width="268" height="50"/>
+                                    <rect key="frame" x="0.0" y="301.5" width="343" height="50"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Rqi-IJ-x8k" userLabel="Stack View - Next">
-                                            <rect key="frame" x="151" y="5" width="117" height="40"/>
+                                            <rect key="frame" x="226" y="5" width="117" height="40"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pf4-I0-zI7" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="8" width="64" height="32"/>
@@ -89,7 +89,7 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpg-NK-hBn" customClass="DialogCancelButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="141" y="371.5" width="53" height="32"/>
+                                    <rect key="frame" x="145" y="371.5" width="53" height="32"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <state key="normal" title="Sign In">
                                         <color key="titleColor" name="theme_primary"/>
@@ -100,7 +100,7 @@
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="ZP6-Da-KrV" firstAttribute="width" secondItem="NCB-os-EvZ" secondAttribute="width" multiplier="0.8" id="EdK-8p-p69"/>
+                                <constraint firstItem="ZP6-Da-KrV" firstAttribute="width" secondItem="NCB-os-EvZ" secondAttribute="width" id="EdK-8p-p69"/>
                             </constraints>
                         </stackView>
                     </subviews>
@@ -108,8 +108,20 @@
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="NCB-os-EvZ" secondAttribute="bottom" constant="30" id="9VT-eB-zvv"/>
                         <constraint firstItem="NCB-os-EvZ" firstAttribute="top" secondItem="jWD-qT-vi6" secondAttribute="top" constant="10" id="GsQ-cd-kdK"/>
-                        <constraint firstItem="NCB-os-EvZ" firstAttribute="leading" secondItem="jWD-qT-vi6" secondAttribute="leading" constant="20" id="TFC-wd-6xS"/>
-                        <constraint firstAttribute="trailing" secondItem="NCB-os-EvZ" secondAttribute="trailing" constant="20" id="nYa-ZC-izW"/>
+                        <constraint firstItem="NCB-os-EvZ" firstAttribute="leading" secondItem="jWD-qT-vi6" secondAttribute="leading" constant="16" id="TFC-wd-6xS" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                    <real key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
+                        <constraint firstAttribute="trailing" secondItem="NCB-os-EvZ" secondAttribute="trailing" constant="16" id="nYa-ZC-izW" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                    <real key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
                     </constraints>
                 </view>
             </subviews>

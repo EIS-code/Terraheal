@@ -57,7 +57,7 @@ class ReviewAndBookVC: MainVC {
     
     @IBOutlet weak var vwPayment: UIView!
     @IBOutlet weak var btnWithoutPayment: RoundedBorderButton!
-    @IBOutlet weak var btnPrepayment: ThemeButton!
+    @IBOutlet weak var btnPrepayment: FilledRoundedButton!
     
     @IBOutlet weak var vwTotalBg: UIView!
     
@@ -92,13 +92,13 @@ class ReviewAndBookVC: MainVC {
     func initialViewSetup() {
         self.setBackground(color: UIColor.themeBackground)
         self.lblTitle?.text = "REVIEW_AND_BOOK_TITLE".localized()
-      
+        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.large)
         self.lblTitleDetail?.text = "REVIEW_AND_BOOK_TITLE_DETAIL".localized()
-        self.lblTitleDetail?.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblTitleDetail?.setFont(name: FontName.Regular, size: FontSize.detail)
         self.lblBookingDetail?.text = "REVIEW_AND_BOOK_LBL_BOOKING_DETAIL".localized()
         self.lblBookingDetail?.setFont(name: FontName.Bold, size: FontSize.header)
-        self.lblServiceCenterName?.setFont(name: FontName.Regular, size: FontSize.label_12)
-        self.lblServiceCenterAddress?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
+        self.lblServiceCenterName?.setFont(name: FontName.Regular, size: FontSize.detail)
+        self.lblServiceCenterAddress?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.lblBookingDate?.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.lblSessionDetail?.text = "REVIEW_AND_BOOK_LBL_SESSION_DETAIL".localized()
         self.lblSessionDetail?.setFont(name: FontName.Bold, size: FontSize.header)
@@ -110,21 +110,21 @@ class ReviewAndBookVC: MainVC {
         self.lblTotal?.text = "REVIEW_AND_BOOK_LBL_TOTAL".localized()
         self.lblTotalValue?.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblTotalValue?.text = "$210".localized()
-        self.lblSubTotal?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
+        self.lblSubTotal?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.lblSubTotal?.text = "REVIEW_AND_BOOK_LBL_SUB_TOTAL".localized()
-        self.lblSubTotalValue?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
+        self.lblSubTotalValue?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.lblSubTotalValue?.text = "$190".localized()
-        self.lblOther?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
+        self.lblOther?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.lblOther?.text = "REVIEW_AND_BOOK_LBL_OTHER".localized()
-        self.lblOtherValue?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
+        self.lblOtherValue?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.lblOtherValue?.text = "$20".localized()
         self.setupTableView(tableView: self.tblVwForSessions)
         self.setupTableView(tableView: self.tblVwForSummary)
         self.registerNibForSessionTable(tableView: self.tblVwForSessions)
         self.registerNibForSummaryTable(tableView:self.tblVwForSummary)
         self.lblAccept?.text = "REGISTR_LBL_ACCEPT".localized()
-        self.lblAccept?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
-        self.btnTermsCondition?.setFont(name: FontName.SemiBold, size: FontSize.button_14)
+        self.lblAccept?.setFont(name: FontName.SemiBold, size: FontSize.detail)
+        self.btnTermsCondition?.setFont(name: FontName.SemiBold, size: FontSize.button_13)
         self.btnTermsCondition?.setTitle("REGISTR_BTN_TERMS_AND_CONDITION".localized(), for: .normal)
         self.txtPromoCode?.placeholder = "REVIEW_AND_BOOK_TXT_PROMO_PLACEHOLDER".localized()
         self.txtPromoCode?.delegate = self
@@ -159,7 +159,9 @@ class ReviewAndBookVC: MainVC {
     }
     
     @IBAction func onBtnApplyPromoTapped(_ sender: Any) {
-        
+        if txtPromoCode.text!.isEmpty() {
+            Common.showAlert(message: "VALIDATION_MSG_ENTER_PROMO_CODE".localized())
+        }
         
     }
     

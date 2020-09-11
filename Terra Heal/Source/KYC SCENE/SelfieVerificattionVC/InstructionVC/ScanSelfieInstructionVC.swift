@@ -58,24 +58,24 @@ class ScanSelfieInstructionVC: MainVC {
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeBackground)
         self.lblHeader?.text = "SELFIE_LBL_TITLE".localized()
-        self.lblHeader?.setFont(name: FontName.SemiBold, size: FontSize.label_26)
+        self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.header)
 
         self.lblMessage?.text = "SELFIE_LBL_MESSAGE".localized()
-        self.lblMessage?.setFont(name: FontName.Regular, size: FontSize.label_18)
+        self.lblMessage?.setFont(name: FontName.SemiBold, size: FontSize.regular)
 
         self.btnScanNow?.setTitle("SELFIE_BTN_OPEN_CAMERA".localized(), for: .normal)
         
         self.lblInfo1Title?.text = "SELFIE_LBL_INFO_1_TITLE".localized()
-        self.lblInfo1Title?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
+        self.lblInfo1Title?.setFont(name: FontName.Bold, size: FontSize.subHeader)
 
         self.lblInfo1Detail?.text = "SELFIE_LBL_INFO_1_MESSAGE".localized()
-        self.lblInfo1Detail?.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblInfo1Detail?.setFont(name: FontName.Regular, size: FontSize.detail)
 
         self.lblInfo2Title?.text = "SELFIE_LBL_INFO_2_TITLE".localized()
-        self.lblInfo2Title?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
+        self.lblInfo2Title?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
 
         self.lblInfo2Detail?.text = "SELFIE_LBL_INFO_2_MESSAGE".localized()
-        self.lblInfo2Detail?.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblInfo2Detail?.setFont(name: FontName.Regular, size: FontSize.detail)
 
     }
 

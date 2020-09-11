@@ -15,8 +15,8 @@ class ReviewReciepentTblCell: TableCell {
     @IBOutlet weak var btnEdit: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblName.setFont(name: FontName.Regular, size: FontSize.label_12)
-        self.lblDuration.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblName.setFont(name: FontName.Regular, size: FontSize.detail)
+        self.lblDuration.setFont(name: FontName.Regular, size: FontSize.detail)
     }
     
     func setData(data: ServiceDetail ) {

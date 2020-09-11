@@ -25,10 +25,10 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
-                    <rect key="frame" x="0.0" y="489.5" width="414" height="406.5"/>
+                    <rect key="frame" x="0.0" y="484" width="414" height="412"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe">
-                            <rect key="frame" x="20" y="10" width="374" height="376.5"/>
+                            <rect key="frame" x="20" y="10" width="374" height="382"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dqg-bd-P3B">
                                     <rect key="frame" x="167" y="0.0" width="40" height="5"/>
@@ -38,30 +38,30 @@
                                         <constraint firstAttribute="height" constant="5" id="BID-ch-mhU"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-4J-xGz" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="166" y="25" width="42" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" name="theme_dark_text"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8k-zA-wSn" userLabel="vwContent" customClass="JDSegmentedControl" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="93.5" y="65.5" width="187" height="50"/>
+                                    <rect key="frame" x="93.5" y="25" width="187" height="50"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="rKg-lp-ToU"/>
                                     </constraints>
                                 </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-4J-xGz" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="56" y="95" width="262" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="theme_dark_text"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ei4-4H-zMW">
-                                    <rect key="frame" x="166" y="135.5" width="42" height="51"/>
+                                    <rect key="frame" x="56" y="135.5" width="262" height="51"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHb-Du-e0w" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="262" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="theme_dark_text"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnv-nW-LIV" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="30.5" width="42" height="20.5"/>
+                                            <rect key="frame" x="0.0" y="30.5" width="262" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="theme_hint_text"/>
                                             <nil key="highlightedColor"/>
@@ -69,15 +69,14 @@
                                     </subviews>
                                 </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Myw-Vh-oC8" customClass="OTPFieldView" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="67" y="206.5" width="240" height="60"/>
+                                    <rect key="frame" x="56" y="206.5" width="262" height="65.5"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="Myw-Vh-oC8" secondAttribute="height" multiplier="4:1" id="JfZ-Q8-aCK"/>
-                                        <constraint firstAttribute="height" constant="60" id="z9L-fD-LcE"/>
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="DialogFilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="120.5" y="286.5" width="133" height="40"/>
+                                    <rect key="frame" x="120.5" y="292" width="133" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                     <state key="normal" title="Sign In">
@@ -88,7 +87,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkQ-Q0-vZT" customClass="DialogCancelButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="164" y="346.5" width="46" height="30"/>
+                                    <rect key="frame" x="164" y="352" width="46" height="30"/>
                                     <state key="normal" title="Button">
                                         <color key="titleColor" name="theme_secondary"/>
                                     </state>
@@ -99,6 +98,9 @@
                             </subviews>
                             <constraints>
                                 <constraint firstItem="X8k-zA-wSn" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" multiplier="0.5" id="SDg-fs-JXr"/>
+                                <constraint firstItem="Myw-Vh-oC8" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" multiplier="0.7" id="dfK-ho-ggo"/>
+                                <constraint firstItem="eho-4J-xGz" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" multiplier="0.7" id="o4y-N6-ewk"/>
+                                <constraint firstItem="Ei4-4H-zMW" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" multiplier="0.7" id="sER-R4-uKh"/>
                             </constraints>
                         </stackView>
                     </subviews>

@@ -69,7 +69,7 @@ class HomeTblCell: TableCell {
     
     func openEventDialog() {
         let alert: CustomAddNewEventDialog = CustomAddNewEventDialog.fromNib()
-        alert.initialize(title:"events and corporate Booking", buttonTitle: "BTN_SEND".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        alert.initialize(title:"EVENT_BOOKING_DIALOG_TITLE".localized(), buttonTitle: "BTN_SEND".localized(), cancelButtonTitle: "BTN_BACK".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
@@ -82,10 +82,6 @@ class HomeTblCell: TableCell {
             alert?.dismiss()
             Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "EVENT_BOOKING_TITLE".localized(), strMessage: "EVENT_BOOKING_MESSAGE".localized(), strImg: ImageAsset.Completion.requestBookingCompletion, strButtonTitle: "EVENT_BOOKING_BTN_HOME".localized()))
         }
-        
-        
-        
-        
     }
     
     func openInfoDialog() {

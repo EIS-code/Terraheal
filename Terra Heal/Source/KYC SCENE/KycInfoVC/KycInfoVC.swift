@@ -62,10 +62,10 @@ class KycInfoVC: MainVC {
         
         self.setBackground(color: UIColor.themeBackground)
         self.lblHeader?.text = "KYC_INFO_LBL_TITLE".localized()
-        self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.header)
 
         self.lblMessage?.text = "KYC_INFO_LBL_MESSAGE".localized()
-        self.lblMessage?.setFont(name: FontName.Regular, size: FontSize.label_18)
+        self.lblMessage?.setFont(name: FontName.SemiBold, size: FontSize.regular)
 
         self.lblScanPassport?.text = "KYC_INFO_LBL_SCAN_PASSPORT".localized()
         self.lblScanPassport?.setFont(name:  FontName.SemiBold, size: FontSize.header)

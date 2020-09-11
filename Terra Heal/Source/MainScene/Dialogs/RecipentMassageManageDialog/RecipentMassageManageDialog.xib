@@ -28,7 +28,7 @@
                     <rect key="frame" x="0.0" y="376" width="414" height="520"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="7BO-PO-vLm">
-                            <rect key="frame" x="20.5" y="0.0" width="373" height="520"/>
+                            <rect key="frame" x="16" y="0.0" width="382" height="520"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </tableView>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IDT-vz-0v6" userLabel="GradientView">
@@ -97,19 +97,19 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Yu4-Gb-UNh">
-                            <rect key="frame" x="20.5" y="325.5" width="373" height="140.5"/>
+                            <rect key="frame" x="16" y="325.5" width="382" height="140.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LHy-3P-0hD">
-                                    <rect key="frame" x="0.0" y="0.0" width="373" height="20.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add reciepent" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hac-fW-5Vn" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="186.5" height="20.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="191" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="theme_dark_text"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add reciepent" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qo9-kf-Xim" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="186.5" y="0.0" width="186.5" height="20.5"/>
+                                            <rect key="frame" x="191" y="0.0" width="191" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="theme_dark_text"/>
                                             <nil key="highlightedColor"/>
@@ -117,10 +117,10 @@
                                     </subviews>
                                 </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I91-bj-CxN" userLabel="vwOkButton">
-                                    <rect key="frame" x="0.0" y="40.5" width="373" height="50"/>
+                                    <rect key="frame" x="0.0" y="40.5" width="382" height="50"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Dpk-z4-75R" userLabel="Stack View - Next">
-                                            <rect key="frame" x="256" y="5" width="117" height="40"/>
+                                            <rect key="frame" x="265" y="5" width="117" height="40"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akT-JD-MIe" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="8" width="64" height="32"/>
@@ -157,7 +157,7 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4H-Au-tRK" customClass="DialogCancelButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="110.5" width="373" height="30"/>
+                                    <rect key="frame" x="0.0" y="110.5" width="382" height="30"/>
                                     <state key="normal" title="Button">
                                         <color key="titleColor" name="theme_primary"/>
                                     </state>
@@ -174,10 +174,11 @@
                         <constraint firstItem="IDT-vz-0v6" firstAttribute="top" secondItem="NKj-5u-Rts" secondAttribute="top" id="2IN-k8-vjj"/>
                         <constraint firstItem="eZ8-bR-g2k" firstAttribute="top" secondItem="NKj-5u-Rts" secondAttribute="top" constant="10" id="CXY-Ba-5ef"/>
                         <constraint firstAttribute="bottom" secondItem="IDT-vz-0v6" secondAttribute="bottom" id="Md2-QO-wIA"/>
+                        <constraint firstItem="7BO-PO-vLm" firstAttribute="trailing" secondItem="Yu4-Gb-UNh" secondAttribute="trailing" id="SbF-MP-xii"/>
                         <constraint firstAttribute="trailing" secondItem="eZ8-bR-g2k" secondAttribute="trailing" constant="10" id="VKz-NQ-AC8"/>
-                        <constraint firstItem="7BO-PO-vLm" firstAttribute="width" secondItem="NKj-5u-Rts" secondAttribute="width" multiplier="0.9" id="ZNX-6e-5Z6"/>
                         <constraint firstItem="IDT-vz-0v6" firstAttribute="leading" secondItem="NKj-5u-Rts" secondAttribute="leading" id="bXx-id-hNj"/>
                         <constraint firstItem="7BO-PO-vLm" firstAttribute="top" secondItem="NKj-5u-Rts" secondAttribute="top" id="g6J-0i-3NP"/>
+                        <constraint firstItem="7BO-PO-vLm" firstAttribute="leading" secondItem="Yu4-Gb-UNh" secondAttribute="leading" id="k5q-Q0-3E0"/>
                         <constraint firstItem="7BO-PO-vLm" firstAttribute="centerX" secondItem="NKj-5u-Rts" secondAttribute="centerX" id="lsi-Ow-wdw"/>
                         <constraint firstAttribute="trailing" secondItem="IDT-vz-0v6" secondAttribute="trailing" id="pAW-Ba-8nS"/>
                         <constraint firstItem="eZ8-bR-g2k" firstAttribute="leading" secondItem="NKj-5u-Rts" secondAttribute="leading" constant="10" id="sOX-Q5-aHD"/>
@@ -187,6 +188,13 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Yu4-Gb-UNh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Bwq-d1-SMd" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
                 <constraint firstAttribute="trailing" secondItem="6ZW-DU-hOd" secondAttribute="trailing" id="C4E-pP-AJq"/>
                 <constraint firstItem="NKj-5u-Rts" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="JgE-Lb-TYH"/>
                 <constraint firstItem="6ZW-DU-hOd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O4e-FZ-uqZ"/>
@@ -195,7 +203,6 @@
                 <constraint firstItem="NKj-5u-Rts" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="iik-dG-agH"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Yu4-Gb-UNh" secondAttribute="bottom" constant="20" id="odf-QI-3Do"/>
                 <constraint firstItem="Yu4-Gb-UNh" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="sfn-Tz-4YS"/>
-                <constraint firstItem="Yu4-Gb-UNh" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.9" id="vVZ-6A-mKE"/>
                 <constraint firstAttribute="bottom" secondItem="6ZW-DU-hOd" secondAttribute="bottom" id="xcn-ZA-5s5"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

@@ -8,37 +8,24 @@
 
 import UIKit
 
-class PreferGenderPickerCell: TableCell {
+class PreferGenderPickerCell: SelectionBorderTableCell {
 
-    @IBOutlet weak var lblName: ThemeLabel!
-    @IBOutlet weak var vwBg: UIView!
-    @IBOutlet weak var imgSelection: UIImageView!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblName?.setFont(name: FontName.Bold, size: FontSize.subHeader)
-        self.vwBg.backgroundColor = UIColor.white
-
-        //self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-      
+        self.radius = 15
+        self.cellBorderColor = UIColor.themePrimary
+        self.shadowProperty.color = UIColor.init(hex: "#3C80D116")
+        self.shadowProperty.opacity = 1.0
+        self.shadowProperty.radius = 19
+        self.shadowProperty.offset = CGSize.init(width: 0.0, height: 12.0)
     }
-
+    
     func setData(data: PreferenceOption ) {
-        self.lblName.text = data.name
-        if data.isSelected {
-            self.imgSelection.isHidden = false
-            self.vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: JDDeviceHelper.offseter(offset: 15), borderWidth: 1.0)
-            
-        } else {
-            self.imgSelection.isHidden = true
-            self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: JDDeviceHelper.offseter(offset: 15), borderWidth: 1.0)
-        }
+        super.setData(title: data.name, isSelected: data.isSelected)
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-       // self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

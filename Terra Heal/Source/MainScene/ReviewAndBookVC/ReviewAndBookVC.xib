@@ -272,13 +272,13 @@ lisbon, portugal -25412</string>
                                                             <rect key="frame" x="0.0" y="61" width="373" height="100"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="add reciepent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acZ-T0-BmQ" userLabel="lbltotal" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                                                    <rect key="frame" x="20" y="10" width="217" height="80"/>
+                                                                    <rect key="frame" x="16" y="16" width="219" height="68"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" name="theme_dark_text"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add reciepent" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afg-nL-fH4" userLabel="lblTotalValue" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                                                    <rect key="frame" x="247" y="39.5" width="106" height="20.5"/>
+                                                                    <rect key="frame" x="251" y="39.5" width="106" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" name="theme_dark_text"/>
                                                                     <nil key="highlightedColor"/>
@@ -286,13 +286,43 @@ lisbon, portugal -25412</string>
                                                             </subviews>
                                                             <color key="backgroundColor" name="theme_primary_light_background"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="afg-nL-fH4" secondAttribute="trailing" constant="20" id="Uke-nw-ZBa"/>
-                                                                <constraint firstItem="acZ-T0-BmQ" firstAttribute="leading" secondItem="UTP-wq-q7w" secondAttribute="leading" constant="20" id="Zjg-C8-64v"/>
-                                                                <constraint firstAttribute="bottom" secondItem="acZ-T0-BmQ" secondAttribute="bottom" constant="10" id="dRk-VI-2Fg"/>
+                                                                <constraint firstAttribute="trailing" secondItem="afg-nL-fH4" secondAttribute="trailing" constant="16" id="Uke-nw-ZBa" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                                                            <real key="value" value="16"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </constraint>
+                                                                <constraint firstItem="acZ-T0-BmQ" firstAttribute="leading" secondItem="UTP-wq-q7w" secondAttribute="leading" constant="16" id="Zjg-C8-64v" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                                                            <real key="value" value="16"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </constraint>
+                                                                <constraint firstAttribute="bottom" secondItem="acZ-T0-BmQ" secondAttribute="bottom" constant="16" id="dRk-VI-2Fg" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                                                            <real key="value" value="16"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </constraint>
                                                                 <constraint firstItem="acZ-T0-BmQ" firstAttribute="centerY" secondItem="UTP-wq-q7w" secondAttribute="centerY" id="hT6-h6-EAQ"/>
-                                                                <constraint firstItem="acZ-T0-BmQ" firstAttribute="top" secondItem="UTP-wq-q7w" secondAttribute="top" constant="10" id="oXG-CI-g4H"/>
+                                                                <constraint firstItem="acZ-T0-BmQ" firstAttribute="top" secondItem="UTP-wq-q7w" secondAttribute="top" constant="16" id="oXG-CI-g4H" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                                                            <real key="value" value="16"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </constraint>
                                                                 <constraint firstItem="afg-nL-fH4" firstAttribute="centerY" secondItem="UTP-wq-q7w" secondAttribute="centerY" id="owF-np-T57"/>
-                                                                <constraint firstItem="afg-nL-fH4" firstAttribute="leading" secondItem="acZ-T0-BmQ" secondAttribute="trailing" constant="10" id="yhC-FN-Qp7"/>
+                                                                <constraint firstItem="afg-nL-fH4" firstAttribute="leading" secondItem="acZ-T0-BmQ" secondAttribute="trailing" constant="16" id="yhC-FN-Qp7" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                                                            <real key="value" value="16"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </constraint>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -414,7 +444,7 @@ lisbon, portugal -25412</string>
                                                                 <action selector="onBtnWithoutPaymentTapped:" destination="-1" eventType="touchUpInside" id="InL-DB-1lP"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgt-jB-S8G" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgt-jB-S8G" customClass="FilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
                                                             <rect key="frame" x="196.5" y="0.0" width="176.5" height="60"/>
                                                             <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                                             <inset key="contentEdgeInsets" minX="10" minY="20" maxX="10" maxY="20"/>

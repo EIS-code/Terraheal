@@ -21,9 +21,7 @@ class AccessoryTblCell: TableCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
-        //self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-      
+        self.lblName?.setFont(name: FontName.Bold, size: FontSize.header)
     }
 
     func setData(data: AccessoryDetail ) {
@@ -33,11 +31,8 @@ class AccessoryTblCell: TableCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-       // self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
 }

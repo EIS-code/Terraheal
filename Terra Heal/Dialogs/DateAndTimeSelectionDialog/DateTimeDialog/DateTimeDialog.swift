@@ -21,7 +21,7 @@ class DateTimeDialog: ThemeBottomDialogView {
     @IBOutlet weak var lblTimeValue: ThemeLabel!
     @IBOutlet weak var btnSelectTime: ThemeButton!
     
-    
+    let radius = JDDeviceHelper.offseter(offset: 10)
     var dateMilli: Double = 0
     var timeMilli: Double = 0
     override func awakeFromNib() {
@@ -52,16 +52,17 @@ class DateTimeDialog: ThemeBottomDialogView {
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblSelectDate.text = "DATE_DIALOG_LBL_SELECT_DATE".localized()
         self.lblSelectTime.text = "DATE_DIALOG_LBL_SELECT_TIME".localized()
-        self.lblSelectDate.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblSelectTime.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblDateValue.setFont(name: FontName.Regular, size: FontSize.label_12)
-        self.lblTimeValue.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblSelectDate.setFont(name: FontName.Bold, size: FontSize.subHeader)
+        self.lblSelectTime.setFont(name: FontName.Bold, size: FontSize.subHeader)
+        self.lblDateValue.setFont(name: FontName.Regular, size: FontSize.regular)
+        self.lblTimeValue.setFont(name: FontName.Regular, size: FontSize.regular)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.vwForDateSelection?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
-        self.vwForTimeSelection?.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
+        
+        self.vwForDateSelection?.setRound(withBorderColor: .clear, andCornerRadious: radius, borderWidth: 1.0)
+        self.vwForTimeSelection?.setRound(withBorderColor: .clear, andCornerRadious: radius, borderWidth: 1.0)
     }
     
     @IBAction func onClickBtnDone(_ sender: Any) {

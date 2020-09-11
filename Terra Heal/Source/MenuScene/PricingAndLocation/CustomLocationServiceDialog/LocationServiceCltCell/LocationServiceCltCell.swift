@@ -14,10 +14,12 @@ class LocationServiceCltCell: CollectionCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.ivUser?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+        
+        self.ivUser?.setRound(withBorderColor: .clear, andCornerRadious: JDDeviceHelper.offseter(offset: 10), borderWidth: 1.0)
+        self.lblName?.setFont(name: FontName.SemiBold, size: FontSize.regular)
     }
     func setData(data:ServiceDetail) {
-        self.lblName?.setFont(name: FontName.Regular, size: FontSize.label_12)
+        
         self.lblName.text = data.name
         self.btnFavourite.isSelected = data.isSelected
         
@@ -25,7 +27,7 @@ class LocationServiceCltCell: CollectionCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.ivUser?.layoutIfNeeded()
-        self.ivUser?.setRound(withBorderColor: .themeHintText, andCornerRadious: 10.0, borderWidth: 1.0)
+        self.ivUser?.setRound(withBorderColor: .themeHintText, andCornerRadious: JDDeviceHelper.offseter(offset: 10), borderWidth: 1.0)
     }
     @IBAction func btnFavouriteTapped(_ sender: Any) {
         self.btnFavourite.isSelected.toggle()

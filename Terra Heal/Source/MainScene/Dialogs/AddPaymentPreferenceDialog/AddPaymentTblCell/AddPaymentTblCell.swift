@@ -8,39 +8,27 @@
 
 import UIKit
 
-class AddPaymentTblCell: TableCell {
-
-    @IBOutlet weak var lblName: ThemeLabel!
-    @IBOutlet weak var vwBg: UIView!
-    @IBOutlet weak var ivSelected: UIImageView!
+class AddPaymentTblCell: SelectionBorderTableCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.vwBg.backgroundColor = UIColor.white
-        self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-      
+        self.radius = 15
+        self.cellBorderColor = UIColor.themePrimary
+        self.shadowProperty.color = UIColor.init(hex: "#3C80D116")
+        self.shadowProperty.opacity = 1.0
+        self.shadowProperty.radius = 19
+        self.shadowProperty.offset = CGSize.init(width: 0.0, height: 12.0)
     }
 
     func setData(data: CustomButtonDetail) {
-        self.lblName.text = data.title
-        if data.isSelected {
-            self.ivSelected.isHidden = false
-            self.vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)
-        } else {
-            self.ivSelected.isHidden = true
-            self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-        }
+        self.setData(title: data.title, isSelected: data.isSelected)
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.ivSelected?.setRound()
-       // self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-
     }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
 }

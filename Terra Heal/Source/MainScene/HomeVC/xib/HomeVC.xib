@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="btnMenu" destination="dk0-AN-Hja" id="WOd-ft-33V"/>
                 <outlet property="btnProfile" destination="ABs-WT-4wl" id="LaB-7n-cf4"/>
+                <outlet property="collectionView" destination="RfN-c5-2bN" id="iLH-zM-uaP"/>
                 <outlet property="footerGradient" destination="vyf-ve-Fyj" id="nTo-5c-VzQ"/>
                 <outlet property="headerGradient" destination="RUX-ks-5fy" id="FD6-LC-hf0"/>
                 <outlet property="ivUser" destination="UYE-Xf-ghe" id="Rqs-Zc-fYy"/>
@@ -30,6 +31,16 @@
                     <rect key="frame" x="16" y="44" width="343" height="734"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="RfN-c5-2bN">
+                    <rect key="frame" x="16" y="60" width="343" height="702"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="syw-lY-bO6">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJ3-ZI-ZKj" userLabel="GradientView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                     <subviews>
@@ -153,6 +164,13 @@
                     </userDefinedRuntimeAttributes>
                 </constraint>
                 <constraint firstItem="ABs-WT-4wl" firstAttribute="width" secondItem="dk0-AN-Hja" secondAttribute="width" id="6ME-2O-aqQ"/>
+                <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="RfN-c5-2bN" secondAttribute="bottom" constant="16" id="8hE-eF-otE" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
                 <constraint firstAttribute="bottom" secondItem="VJ3-ZI-ZKj" secondAttribute="bottom" id="9Qf-EO-I7p"/>
                 <constraint firstItem="RUX-ks-5fy" firstAttribute="bottom" secondItem="ABs-WT-4wl" secondAttribute="bottom" id="9fL-gg-5YU"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="VJ3-ZI-ZKj" secondAttribute="trailing" id="AeY-OO-gfT"/>
@@ -175,6 +193,20 @@
                 </constraint>
                 <constraint firstItem="UYE-Xf-ghe" firstAttribute="trailing" secondItem="ABs-WT-4wl" secondAttribute="trailing" id="Ti0-HG-yDi"/>
                 <constraint firstItem="UYE-Xf-ghe" firstAttribute="top" secondItem="ABs-WT-4wl" secondAttribute="top" id="Uc5-2l-Ky6"/>
+                <constraint firstItem="RfN-c5-2bN" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="16" id="VFn-Y5-BHw" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="RfN-c5-2bN" secondAttribute="trailing" constant="16" id="YnU-PD-ngj" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
                 <constraint firstItem="9ma-qC-KU9" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="Ysm-98-fJc"/>
                 <constraint firstItem="vyf-ve-Fyj" firstAttribute="top" secondItem="9ma-qC-KU9" secondAttribute="top" id="Zqj-hb-zer"/>
                 <constraint firstItem="VJ3-ZI-ZKj" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" id="ga4-UD-Jve"/>
@@ -195,6 +227,13 @@
                 </constraint>
                 <constraint firstItem="UYE-Xf-ghe" firstAttribute="leading" secondItem="ABs-WT-4wl" secondAttribute="leading" id="kjf-bi-tbh"/>
                 <constraint firstItem="ABs-WT-4wl" firstAttribute="top" secondItem="dk0-AN-Hja" secondAttribute="top" id="oat-40-21O"/>
+                <constraint firstItem="RfN-c5-2bN" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="16" id="tJx-Nt-otV" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="aVT-f3-Mwd" secondAttribute="bottom" id="xL1-kH-6pc"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>

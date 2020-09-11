@@ -137,9 +137,36 @@ class ServiceMapVC: MainVC {
 // MARK: Dialogs
 extension ServiceMapVC {
     
-    func openReciepentMassageDetailVCDialog() {
+    func openRecipientSelectionDialog() {
+        
+        let recipientSelectionDialog: RecipientSelectionDialog  = RecipientSelectionDialog.fromNib()
+        recipientSelectionDialog.initialize(title: "RECIEPENT_DIALOG__TITLE".localized(), buttonTitle: "RECIEPENT_DIALOG_BTN_ADD".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        recipientSelectionDialog.show(animated: true)
+        recipientSelectionDialog.onBtnCancelTapped = {
+            [weak recipientSelectionDialog, weak self] in
+            guard let self = self else { return } ; print(self)
+            recipientSelectionDialog?.dismiss()
+            
+        }
+        recipientSelectionDialog.onBtnDoneTapped = {
+            [weak recipientSelectionDialog, weak self] (people) in
+            guard let self = self else { return } ; print(self)
+            recipientSelectionDialog?.dismiss()
+            
+            let bookingData: BookingInfo = BookingInfo.init()
+            bookingData.reciepent = people
+            bookingData.user_people_id = people.id
+            bookingData.services = []
+            let arrForData = [bookingData]
+            self.openReciepentMassageDetailVCDialog(data: arrForData)
+        }
+    }
+    
+    
+    func openReciepentMassageDetailVCDialog(data:[BookingInfo]) {
         recipentMassageManageDialog = RecipentMassageManageDialog.fromNib()
         recipentMassageManageDialog.initialize(title: "RECIEPENT_DETAIL_TITLE".localized(), buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        recipentMassageManageDialog.arrForData = data
         recipentMassageManageDialog.show(animated: true)
         recipentMassageManageDialog.onBtnCancelTapped = {
             [weak recipentMassageManageDialog, weak self] in
@@ -251,7 +278,8 @@ extension ServiceMapVC {
                 self.dismissAllDialog()
                 Common.appDelegate.loadWelcomeVC()
             } else {
-                self.openReciepentMassageDetailVCDialog()
+                //self.openReciepentMassageDetailVCDialog()
+                self.openRecipientSelectionDialog()
             }
             
         }

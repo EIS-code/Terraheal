@@ -156,11 +156,13 @@ class SessionDetail: ResponseModel {
         if self.id == "4" {
             self.image = ImageAsset.Session.single
         }
-        if self.id == "5" {
+        else if self.id == "5" {
             self.image = ImageAsset.Session.couple
         }
-        if self.id == "6" {
+        else if self.id == "6" {
             self.image = ImageAsset.Session.group
+        } else {
+             self.image = ImageAsset.Session.single
         }
     }
     

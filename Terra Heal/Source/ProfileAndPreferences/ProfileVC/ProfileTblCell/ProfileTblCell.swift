@@ -21,7 +21,7 @@ class ProfileTblCell: TableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_12)
+        self.lblName?.setFont(name: FontName.Regular, size: FontSize.detail)
         self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.header)
         //self.btnAction?.setTitle(FontSymbol.next_arrow, for: .normal)
         self.vwImgBg?.setRound()

@@ -118,7 +118,7 @@ class ReferAndEarnVC: MainVC {
 
 
         self.lblReferAndEarn.text = "REFER_AND_EARN_LBL_INVITE_FRIEND_TITLE".localized()
-        self.lblReferAndEarn.setFont(name: FontName.SemiBold, size: FontSize.label_18)
+        self.lblReferAndEarn.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
 
         self.lblInviteFriendMsg.text = "REFER_AND_EARN_LBL_INVITE_FRIEND_MSG".localized()
         self.lblInviteFriendMsg.setFont(name: FontName.Regular, size: FontSize.label_12)
@@ -127,10 +127,10 @@ class ReferAndEarnVC: MainVC {
         self.btnReferNow.setTitle("REFER_AND_EARN_BTN_REFER_NOW".localized(), for: .normal)
         self.btnReferNow.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.lblFriendRefered.text = "REFER_AND_EARN_LBL_FRIEND_REFERRED_TITLE".localized()
-        self.lblFriendRefered.setFont(name: FontName.SemiBold, size: FontSize.label_18)
+        self.lblFriendRefered.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
 
         self.lblHistory.text = "REFER_AND_EARN_LBL_HISTORY".localized()
-        self.lblHistory.setFont(name: FontName.SemiBold, size: FontSize.label_18)
+        self.lblHistory.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
 
         self.lblNoHistory.text = "REFER_AND_EARN_LBL_NO_HISTORY".localized()
         self.lblNoHistory.setFont(name: FontName.Regular, size: FontSize.label_12)

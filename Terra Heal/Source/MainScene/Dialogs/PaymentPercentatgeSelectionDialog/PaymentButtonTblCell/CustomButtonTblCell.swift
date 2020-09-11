@@ -19,9 +19,9 @@ struct CustomButtonDetail {
     var id: Int = 0
     var title: String = ""
     var type: Int = ButtonType.Large
-    
-
 }
+
+
 class CustomButtonTblCell: TableCell {
 
     @IBOutlet weak var btnDetail: ThemeButton!

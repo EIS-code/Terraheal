@@ -46,9 +46,9 @@ class ScanPassportInstructionVC: MainVC {
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeBackground)
         self.lblHeader?.text = "SCAN_PASSPORT_LBL_TITLE".localized()
-        self.lblHeader?.setFont(name: FontName.SemiBold, size: FontSize.label_26)
+        self.lblHeader?.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblMessage?.text = "SCAN_PASSPORT_LBL_MESSAGE".localized()
-        self.lblMessage?.setFont(name: FontName.Regular, size: FontSize.label_18)
+        self.lblMessage?.setFont(name: FontName.SemiBold, size: FontSize.regular)
         self.btnScanNow?.setTitle("SCAN_PASSPORT_BTN_SCAN_NOW".localized(), for: .normal)
     }
     

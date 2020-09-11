@@ -105,14 +105,14 @@
                     <rect key="frame" x="0.0" y="44" width="375" height="768"/>
                     <subviews>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xqw-fa-EAY" userLabel="TopGradient" customClass="ThemeTopGradientView" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="194"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gw2-Lp-dcG" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="574" width="375" height="194"/>
+                            <rect key="frame" x="0.0" y="578" width="375" height="190"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
@@ -131,13 +131,13 @@
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="i27-80-VjO" userLabel="Stack View - Next">
-                    <rect key="frame" x="20" y="618" width="335" height="140"/>
+                    <rect key="frame" x="16" y="622" width="343" height="140"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fz0-q9-FdF">
-                            <rect key="frame" x="0.0" y="0.0" width="335" height="60"/>
+                            <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uje-OS-aMX" customClass="FilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="157.66666666666666" height="60"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="161.66666666666666" height="60"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="10" minY="20" maxX="10" maxY="20"/>
                                     <state key="normal" title="Sign Up">
@@ -148,7 +148,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jj-4I-VWj" customClass="FilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="177.66666666666663" y="0.0" width="157.33333333333337" height="60"/>
+                                    <rect key="frame" x="181.66666666666663" y="0.0" width="161.33333333333337" height="60"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="10" minY="20" maxX="10" maxY="20"/>
                                     <state key="normal" title="Sign In">
@@ -161,7 +161,7 @@
                             </subviews>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPc-yM-mM9" customClass="RoundedBorderButton" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="80" width="335" height="60"/>
+                            <rect key="frame" x="0.0" y="80" width="343" height="60"/>
                             <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                             <inset key="contentEdgeInsets" minX="10" minY="20" maxX="10" maxY="20"/>
                             <state key="normal" title="Home">
@@ -178,9 +178,22 @@
             <constraints>
                 <constraint firstItem="4On-yi-a0J" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" id="1de-Zs-X6w"/>
                 <constraint firstItem="4On-yi-a0J" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" multiplier="0.8" id="1tz-c2-vqz"/>
-                <constraint firstItem="i27-80-VjO" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="2Iy-gP-iVT"/>
+                <constraint firstItem="i27-80-VjO" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="16" id="2Iy-gP-iVT" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
                 <constraint firstItem="Gw2-Lp-dcG" firstAttribute="top" secondItem="i27-80-VjO" secondAttribute="top" id="K38-uw-po2"/>
-                <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="i27-80-VjO" secondAttribute="bottom" constant="20" id="O6t-LE-gMT"/>
+                <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="i27-80-VjO" secondAttribute="bottom" constant="16" id="O6t-LE-gMT" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
                 <constraint firstItem="i27-80-VjO" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="UPn-aZ-Ha2"/>
                 <constraint firstItem="4On-yi-a0J" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="Wo6-mU-E4W"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="4On-yi-a0J" secondAttribute="bottom" id="eID-ZF-1N5"/>

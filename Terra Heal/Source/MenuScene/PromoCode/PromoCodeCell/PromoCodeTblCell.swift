@@ -26,7 +26,7 @@ class PromoCodeTblCell: TableCell {
         self.lblExpiry?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
         self.lblShortDescription?.setFont(name: FontName.SemiBold, size: FontSize.header)
         self.lblVoucherCode?.setFont(name: FontName.Regular, size: FontSize.label_12)
-        self.lblCode?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
+        self.lblCode?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
        
     }

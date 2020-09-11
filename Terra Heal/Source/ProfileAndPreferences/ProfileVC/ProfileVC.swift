@@ -71,7 +71,6 @@ class ProfileVC: MainVC {
     var kTableHeaderHeight:CGFloat = 300.0
     @IBOutlet weak var scrVw: UIScrollView!
     @IBOutlet weak var headerView: UIView!
-    
     @IBOutlet weak var ivUser: RoundedImageView!
     @IBOutlet weak var hVwContent: NSLayoutConstraint!
     
@@ -148,20 +147,22 @@ class ProfileVC: MainVC {
             
             //self.updateHeaderView()
             self.vwBg?.setRound(withBorderColor: UIColor.clear, andCornerRadious: 20.0, borderWidth: 1.0)
-            self.vwBg?.setShadow()
+            self.vwBg?.setShadow(radius: 2.0, opacity: 1.0, offset: CGSize.init(width: 1.0, height: 0.0), color: UIColor.init(hex: "#B2B3B5"))
+            
+            
         }
     }
     
     private func initialViewSetup() {
         self.view.backgroundColor = UIColor.themeBackground
         self.lblEmail?.text = appSingleton.user.email
-        self.lblEmail?.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblEmail?.setFont(name: FontName.Regular, size: FontSize.regular)
         self.lblMobile?.text = appSingleton.user.telNumber
-        self.lblMobile?.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblMobile?.setFont(name: FontName.Regular, size: FontSize.regular)
         self.lblUserName?.text = appSingleton.user.name
-        self.lblUserName?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
+        self.lblUserName?.setFont(name: FontName.SemiBold, size: FontSize.regular)
         self.lblDescription?.text = "description goes here."//appSingleton.user.name
-        self.lblDescription?.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblDescription?.setFont(name: FontName.Regular, size: FontSize.regular)
         self.setupTableView(tableView: self.tableView)
        
     }

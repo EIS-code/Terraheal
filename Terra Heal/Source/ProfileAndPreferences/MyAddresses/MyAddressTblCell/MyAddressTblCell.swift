@@ -22,7 +22,7 @@ class MyAddressTblCell: TableCell {
         super.awakeFromNib()
         selectionStyle = .none
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.header)
-          self.lblAddress?.setFont(name: FontName.SemiBold, size: FontSize.label_18)
+          self.lblAddress?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
 
 

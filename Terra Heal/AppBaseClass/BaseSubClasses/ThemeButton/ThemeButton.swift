@@ -150,6 +150,7 @@ class DialogFilledRoundedButton: ThemeButton {
     func fillButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themeSecondary, borderColor: UIColor = UIColor.clear) {
         self.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.height(constant: CommonSize.Button.standard)
+        self.width(constant: CommonSize.Button.standardWidth)
         self.backgroundColor = backgroundColor
         self.setTitleColor(textColor, for: .normal)
         self.setRound(withBorderColor: borderColor, andCornerRadious: self.frame.height/2.0, borderWidth: 1.0)
