@@ -99,7 +99,7 @@ extension MyPlaceVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
 tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 60
         tableView.register(MyPlaceTblCell.nib()
             , forCellReuseIdentifier: MyPlaceTblCell.name)
         tableView.tableFooterView = UIView()

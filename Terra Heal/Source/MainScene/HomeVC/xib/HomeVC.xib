@@ -105,10 +105,10 @@
                     <rect key="frame" x="315" y="62" width="44" height="44"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ma-qC-KU9" userLabel="footerView">
-                    <rect key="frame" x="0.0" y="706" width="375" height="90"/>
+                    <rect key="frame" x="0.0" y="706" width="375" height="76"/>
                     <subviews>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrd-5b-e6C" userLabel="FloatingView" customClass="JDSegmentedControl" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="23" y="42" width="329" height="48"/>
+                            <rect key="frame" x="23" y="28" width="329" height="48"/>
                             <color key="backgroundColor" name="theme_background"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="K9m-51-7SQ" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
@@ -156,10 +156,10 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstAttribute="bottom" secondItem="9ma-qC-KU9" secondAttribute="bottom" constant="16" id="3gc-dr-oxx" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                <constraint firstAttribute="bottom" secondItem="9ma-qC-KU9" secondAttribute="bottom" constant="30" id="3gc-dr-oxx" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
-                            <real key="value" value="16"/>
+                            <real key="value" value="30"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </constraint>

@@ -30,7 +30,6 @@
                         <constraints>
                             <constraint firstAttribute="width" secondItem="aoO-zy-EfQ" secondAttribute="height" multiplier="1:1" id="ESV-QN-g3W"/>
                         </constraints>
-                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                         <state key="normal" image="asset-delete"/>
                     </button>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTr-D4-KiU" userLabel="vwForBackground">
@@ -76,7 +75,7 @@
     </objects>
     <resources>
         <image name="asset-back-side-id" width="319" height="226"/>
-        <image name="asset-delete" width="10.5" height="10.5"/>
+        <image name="asset-delete" width="24" height="24"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

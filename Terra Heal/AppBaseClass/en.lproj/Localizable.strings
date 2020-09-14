@@ -242,9 +242,9 @@
 "FAQ_TITLE" = "FAQs";
 //MARK: Verification
 "VERIFICATION_LBL_ID_PASSPORT"= "Id / Passport";
-"VERIFICATION_LBL_FRONT_SIDE"  = "Front Side";
-"VERIFICATION_LBL_BACK_SIDE"  = "Back Side";
-"VERIFICATION_TITLE" = "Varification";
+"VERIFICATION_LBL_FRONT_SIDE"  = "front Side";
+"VERIFICATION_LBL_BACK_SIDE"  = "back Side";
+"VERIFICATION_TITLE" = "varification";
 "VERIFICATION_BTN_VERIFIED" = "Verified";
 //MARK: Refer And Earn
 "REFER_AND_EARN_TITLE" = "terra points";
@@ -372,6 +372,9 @@
 "DOCUMENT_EMPTY_TITLE" = "no documents available";
 "DOCUMENT_EMPTY_MSG" = "add document to continue";
 "MANAGE_DOCUMENT_BTN_ADD_NEW" = "Add New";
+"ADD_NEW_DOCUMENT_TITLE" = "add new document";
+//MARK:  Address Screen
+
 "MANAGE_ADDRESS_DIALOG_ADD_NEW_ADDRESS_TITLE" = "Add New Address";
 "MANAGE_ADDRESS_DIALOG_EDIT_ADDRESS_TITLE" = "Edit Address";
 "MANAGE_ADDRESS_TXT_ADDRESS_LINE_1" = "address line 1";

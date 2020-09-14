@@ -32,6 +32,11 @@ struct ImageAsset {
     struct Register {
         static let headerImage = "asset-register-top"
     }
+    struct HowItWorks {
+        static let inMassageCenter = "asset-how-it-work-1"
+        static let atHomeOrHotel = "asset-how-it-work-2"
+        static let eventOrCorporate = "asset-how-it-work-1"
+    }
     struct HomeItem {
         static let header = "asset-home-massage-center"
         static let sub1 = "asset-home-massage-center-1"

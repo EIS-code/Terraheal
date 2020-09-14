@@ -20,6 +20,7 @@ class ServiceCenterDetailDialog: ThemeBottomDialogView {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var scrVw: UIScrollView!
     @IBOutlet weak var lblDetails: ThemeLabel!
+    @IBOutlet weak var lblTime: ThemeLabel!
     
     var onBtnDoneTapped: (( ) -> Void)? = nil
     
@@ -35,9 +36,12 @@ class ServiceCenterDetailDialog: ThemeBottomDialogView {
             self.btnDone.setTitle(buttonTitle, for: .normal)
             self.btnDone.isHidden = false
         }
-        self.lblDetails?.text = data.serviceDetails
+        //self.lblDetails?.text = data.serviceDetails
         self.lblName?.text = data.name
         self.lblAddress?.text = data.address
+        let time = (data.hours.first?.startHour ?? "") + " to " + (data.hours.first?.endHour ?? "")
+        let day = (data.hours.first?.day ?? "") + " to " + (data.hours.last?.day ?? "")
+        self.lblTime?.text =  time + " | " +  day
         self.btnNumberOfServices.setTitle(data.totalServices + "+", for: .normal)
         self.scrVw.contentInset = UIEdgeInsets.init(top: 10, left: 0, bottom: 60, right: 0)
     }
@@ -47,12 +51,12 @@ class ServiceCenterDetailDialog: ThemeBottomDialogView {
         self.contentView.clipsToBounds = true
         self.scrVw.clipsToBounds = true
         self.dialogView.backgroundColor = .clear
-        contentView.setRound(withBorderColor: .clear, andCornerRadious: 40.0, borderWidth: 1.0)
-        scrVw.setRound(withBorderColor: .clear, andCornerRadious: 40.0, borderWidth: 1.0)
-        self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblAddress?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
-        self.lblServices?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
-        self.btnNumberOfServices?.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.contentView.setRound(withBorderColor: .clear, andCornerRadious: 40.0, borderWidth: 1.0)
+        self.scrVw.setRound(withBorderColor: .clear, andCornerRadious: 40.0, borderWidth: 1.0)
+        self.lblName?.setFont(name: FontName.Bold, size: FontSize.subHeader)
+        self.lblAddress?.setFont(name: FontName.SemiBold, size: FontSize.regular)
+        self.lblServices?.setFont(name: FontName.SemiBold, size: FontSize.regular)
+        self.btnNumberOfServices?.setFont(name: FontName.Regular, size: FontSize.button_13)
         self.btnNumberOfServices?.setRound()
         self.setDataForStepUpAnimation(data: [0.75,0.9])
     }

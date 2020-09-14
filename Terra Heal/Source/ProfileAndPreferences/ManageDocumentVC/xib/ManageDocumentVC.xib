@@ -15,6 +15,7 @@
                 <outlet property="btnSubmit" destination="qBm-VY-Sku" id="Xrt-bg-id9"/>
                 <outlet property="footerGradient" destination="6Ow-eU-xea" id="t8N-wt-u8b"/>
                 <outlet property="headerGradient" destination="YMZ-6e-MQ4" id="eDe-J2-WNH"/>
+                <outlet property="lblDocumentId" destination="0XP-Om-ufm" id="1Aa-Wd-7ok"/>
                 <outlet property="lblEmptyMsg" destination="hzu-0C-aOo" id="QgP-yb-BF2"/>
                 <outlet property="lblEmptyTitle" destination="4UM-cy-2S5" id="ovW-cg-DHi"/>
                 <outlet property="lblTitle" destination="qXO-ds-8JK" id="CeN-Oc-tng"/>
@@ -75,7 +76,6 @@
                                             <rect key="frame" x="20.333333333333329" y="76.666666666666686" width="240.33333333333337" height="128"/>
                                         </imageView>
                                     </subviews>
-                                    <color key="backgroundColor" name="theme_primary_light_background"/>
                                     <constraints>
                                         <constraint firstItem="UOM-QU-anv" firstAttribute="centerY" secondItem="54V-Ol-w8R" secondAttribute="centerY" id="BKg-6x-JsU"/>
                                         <constraint firstAttribute="width" secondItem="54V-Ol-w8R" secondAttribute="height" multiplier="1:1" id="LAa-Cj-0hH"/>
@@ -143,10 +143,16 @@
                         <action selector="btnCancelTapped:" destination="-1" eventType="touchUpInside" id="3mz-M4-PkP"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXO-ds-8JK" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXO-ds-8JK" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="20" y="76" width="335" height="20.333333333333329"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="theme_primary"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0XP-Om-ufm" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="20" y="101.33333333333333" width="15.333333333333336" height="20.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -170,10 +176,18 @@
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="aVT-f3-Mwd" secondAttribute="trailing" constant="20" id="jaq-Pv-ANN"/>
                 <constraint firstItem="YMZ-6e-MQ4" firstAttribute="bottom" secondItem="dk0-AN-Hja" secondAttribute="bottom" constant="20" id="jqe-hX-g8f"/>
                 <constraint firstAttribute="bottom" secondItem="qIZ-AR-Pox" secondAttribute="bottom" id="kat-a1-zKb"/>
+                <constraint firstItem="0XP-Om-ufm" firstAttribute="leading" secondItem="qXO-ds-8JK" secondAttribute="leading" id="qF0-ZU-hxG"/>
                 <constraint firstItem="wMS-cm-BCn" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" id="qjm-Gj-F1V"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="Ibk-5A-rNu" secondAttribute="trailing" id="u1a-wv-qlZ"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="wMS-cm-BCn" secondAttribute="bottom" id="vv8-nM-qSo"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="aVT-f3-Mwd" secondAttribute="bottom" id="xL1-kH-6pc"/>
+                <constraint firstItem="0XP-Om-ufm" firstAttribute="top" secondItem="qXO-ds-8JK" secondAttribute="bottom" constant="5" id="xSr-mZ-eJB" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
             <point key="canvasLocation" x="131" y="154"/>
@@ -190,9 +204,6 @@
         </namedColor>
         <namedColor name="theme_primary_light">
             <color red="0.49803921568627452" green="0.7686274509803922" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="theme_primary_light_background">
-            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

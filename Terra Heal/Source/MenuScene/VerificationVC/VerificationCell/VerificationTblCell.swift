@@ -9,7 +9,7 @@ import Foundation
 class VerificationTblCell: TableCell {
 
     @IBOutlet weak var vwEditText: UIView!
-    @IBOutlet weak var tfForContent: EditProfileTextfield!
+    @IBOutlet weak var tfForContent: ACFloatingTextfield!
     @IBOutlet weak var btnVerify: UIButton!
     @IBOutlet weak var imgVerified: UIImageView!
     var data: EditProfileTextFieldDetail!

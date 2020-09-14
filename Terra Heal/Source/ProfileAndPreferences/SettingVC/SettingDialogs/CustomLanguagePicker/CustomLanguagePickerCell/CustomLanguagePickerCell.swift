@@ -8,17 +8,19 @@
 
 import UIKit
 
-class CustomLanguagePickerCell: TableCell {
+class CustomLanguagePickerCell: SelectionBorderTableCell {
 
     @IBOutlet weak var lblName: ThemeLabel!
     @IBOutlet weak var lblFlag: ThemeLabel!
-    @IBOutlet weak var vwBg: UIView!
-    @IBOutlet weak var ivSelected: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.vwBg.backgroundColor = UIColor.white
-
+        self.radius = 15
+               self.cellBorderColor = UIColor.themePrimary
+               self.shadowProperty.color = UIColor.init(hex: "#3C80D116")
+               self.shadowProperty.opacity = 1.0
+               self.shadowProperty.radius = 19
+               self.shadowProperty.offset = CGSize.init(width: 0.0, height: 12.0)
         //self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
       
     }
@@ -26,13 +28,7 @@ class CustomLanguagePickerCell: TableCell {
     func setData(data: LanguageDetail ) {
         self.lblName.text = data.name
         self.lblFlag.text = data.image
-        if data.isSelected {
-            self.ivSelected.isHidden = false
-            self.vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)
-        } else {
-            self.ivSelected.isHidden = true
-            self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-        }
+        super.setData(title: data.name, isSelected: data.isSelected)
 
 
     }

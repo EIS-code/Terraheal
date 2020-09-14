@@ -37,9 +37,9 @@ class HowItWorkVC: MainVC {
     @IBOutlet weak var tableView: UITableView!
     
     var arrForMenu: [HowItworkMenuDetail] = [
-        HowItworkMenuDetail(type: .MassageCenter, shortDescription: "HOW_IT_WORK_SHORT_DESCRIPTION".localized(), description: "HOW_IT_WORK_LONG_DESCRIPTION".localized(), image: "", isSelected: false),
-        HowItworkMenuDetail(type: .Hotel, shortDescription: "HOW_IT_WORK_SHORT_DESCRIPTION".localized(), description: "HOW_IT_WORK_LONG_DESCRIPTION".localized(), image: "", isSelected: false),
-        HowItworkMenuDetail(type: .EventsAndCorporate, shortDescription: "HOW_IT_WORK_SHORT_DESCRIPTION".localized(), description: "HOW_IT_WORK_LONG_DESCRIPTION".localized(), image: "", isSelected: false),
+        HowItworkMenuDetail(type: .MassageCenter, shortDescription: "HOW_IT_WORK_SHORT_DESCRIPTION".localized(), description: "HOW_IT_WORK_LONG_DESCRIPTION".localized(), image: ImageAsset.HowItWorks.inMassageCenter, isSelected: false),
+        HowItworkMenuDetail(type: .Hotel, shortDescription: "HOW_IT_WORK_SHORT_DESCRIPTION".localized(), description: "HOW_IT_WORK_LONG_DESCRIPTION".localized(), image: ImageAsset.HowItWorks.atHomeOrHotel, isSelected: false),
+        HowItworkMenuDetail(type: .EventsAndCorporate, shortDescription: "HOW_IT_WORK_SHORT_DESCRIPTION".localized(), description: "HOW_IT_WORK_LONG_DESCRIPTION".localized(), image: ImageAsset.HowItWorks.eventOrCorporate, isSelected: false),
     ]
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {

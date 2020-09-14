@@ -323,11 +323,10 @@ to sign back in</string>
                     <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Nj-EQ-tfN" customClass="BackButton" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="16" y="60" width="32" height="32"/>
+                    <rect key="frame" x="16" y="60" width="34" height="34"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="1Nj-EQ-tfN" secondAttribute="height" multiplier="1:1" id="xVp-hc-WDx"/>
                     </constraints>
-                    <state key="normal" image="asset-back-button"/>
                     <connections>
                         <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="yfr-FT-B4L"/>
                     </connections>
@@ -367,7 +366,6 @@ to sign back in</string>
         </view>
     </objects>
     <resources>
-        <image name="asset-back-button" width="32" height="32"/>
         <image name="asset-register-top" width="125" height="53"/>
         <image name="asset-social-login-fb" width="16.333333969116211" height="30"/>
         <image name="asset-social-login-google" width="29.666666030883789" height="30"/>

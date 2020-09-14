@@ -36,6 +36,7 @@ struct FontSize {
     
     
     
+    static let doubleExLarge: CGFloat = 38
     static let exLarge: CGFloat = 34
     static let large: CGFloat = 27
     static let header: CGFloat = 21

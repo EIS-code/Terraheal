@@ -71,11 +71,18 @@ class NotificationVC: MainVC {
         self.lblEmptyMsg.setFont(name: FontName.Regular, size: FontSize.label_12)
         self.lblEmptyTitle.text = "NO_NOTIFICATION_TITLE".localized()
         self.lblEmptyMsg.text = ""
+        self.updateUI()
     }
     
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
         super.btnLeftTapped()
-        _ = (self.navigationController as? NC)?.popVC()
+        if arrForNotification.isEmpty {
+                _ = (self.navigationController as? NC)?.popVC()
+        } else {
+            self.arrForNotification.removeAll()
+            self.updateUI()
+        }
+        
     }
     
     func updateUI()  {

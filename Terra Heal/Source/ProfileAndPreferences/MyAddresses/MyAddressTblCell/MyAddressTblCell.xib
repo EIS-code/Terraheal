@@ -22,19 +22,19 @@
                         <rect key="frame" x="5" y="5" width="317" height="151"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-J2-KSJ" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="20" y="20" width="277" height="20.5"/>
+                                <rect key="frame" x="27" y="27" width="263" height="12.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="theme_dark_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTq-Nr-Icc" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="20" y="50.5" width="277" height="20.5"/>
+                                <rect key="frame" x="27" y="49.5" width="263" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="theme_hint_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCH-S6-o0E" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="20" y="81" width="50" height="50"/>
+                                <rect key="frame" x="27" y="80" width="44" height="44"/>
                                 <color key="backgroundColor" name="theme_background"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZCH-S6-o0E" secondAttribute="height" multiplier="1:1" id="RKS-8F-I0e"/>
@@ -43,7 +43,7 @@
                                 <state key="normal" image="asset-edit"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoO-zy-EfQ" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="80" y="81" width="50" height="50"/>
+                                <rect key="frame" x="81" y="80" width="44" height="44"/>
                                 <color key="backgroundColor" name="theme_background"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aoO-zy-EfQ" secondAttribute="height" multiplier="1:1" id="ESV-QN-g3W"/>
@@ -59,14 +59,38 @@
                             <constraint firstItem="qTq-Nr-Icc" firstAttribute="leading" secondItem="zbl-J2-KSJ" secondAttribute="leading" id="5V5-3n-4po"/>
                             <constraint firstItem="qTq-Nr-Icc" firstAttribute="trailing" secondItem="zbl-J2-KSJ" secondAttribute="trailing" id="AwZ-Xa-79r"/>
                             <constraint firstItem="aoO-zy-EfQ" firstAttribute="bottom" secondItem="ZCH-S6-o0E" secondAttribute="bottom" id="EvR-Lh-bkc"/>
-                            <constraint firstItem="zbl-J2-KSJ" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="20" id="Hcl-e2-JmR"/>
-                            <constraint firstItem="zbl-J2-KSJ" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" priority="999" constant="20" id="LHW-I8-sj6"/>
+                            <constraint firstItem="zbl-J2-KSJ" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="27" id="Hcl-e2-JmR" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="27"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="zbl-J2-KSJ" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" priority="999" constant="27" id="LHW-I8-sj6" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="27"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
                             <constraint firstItem="aoO-zy-EfQ" firstAttribute="width" secondItem="ZCH-S6-o0E" secondAttribute="width" id="LzE-9K-kpe"/>
-                            <constraint firstAttribute="bottom" secondItem="ZCH-S6-o0E" secondAttribute="bottom" constant="20" id="QXO-c6-Gu4"/>
+                            <constraint firstAttribute="bottom" secondItem="ZCH-S6-o0E" secondAttribute="bottom" constant="27" id="QXO-c6-Gu4" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="27"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
                             <constraint firstItem="aoO-zy-EfQ" firstAttribute="height" secondItem="ZCH-S6-o0E" secondAttribute="height" id="WdQ-oK-Wxw"/>
                             <constraint firstItem="aoO-zy-EfQ" firstAttribute="top" secondItem="ZCH-S6-o0E" secondAttribute="top" id="bKD-PJ-SRX"/>
                             <constraint firstItem="ZCH-S6-o0E" firstAttribute="top" secondItem="qTq-Nr-Icc" secondAttribute="bottom" constant="10" id="cjW-8W-gDx"/>
-                            <constraint firstAttribute="trailing" secondItem="zbl-J2-KSJ" secondAttribute="trailing" constant="20" id="mfw-Ai-P4C"/>
+                            <constraint firstAttribute="trailing" secondItem="zbl-J2-KSJ" secondAttribute="trailing" constant="27" id="mfw-Ai-P4C" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="27"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
                             <constraint firstItem="qTq-Nr-Icc" firstAttribute="top" secondItem="zbl-J2-KSJ" secondAttribute="bottom" constant="10" id="zVS-1J-XPP"/>
                         </constraints>
                     </view>
@@ -91,7 +115,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="asset-delete" width="10.5" height="10.5"/>
+        <image name="asset-delete" width="24" height="24"/>
         <image name="asset-edit" width="18" height="18"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

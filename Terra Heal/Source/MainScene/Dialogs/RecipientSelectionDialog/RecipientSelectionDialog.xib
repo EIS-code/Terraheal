@@ -86,13 +86,13 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1hI-PS-hbR">
-                            <rect key="frame" x="140.5" y="287" width="133" height="70"/>
+                            <rect key="frame" x="103" y="287" width="208" height="70"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="DialogFilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="133" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="208" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
-                                    <state key="normal" title="Sign In">
+                                    <state key="normal" title="Addd Receipent ">
                                         <color key="titleColor" name="theme_primary"/>
                                     </state>
                                     <connections>
@@ -100,7 +100,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVl-el-UJJ" customClass="DialogCancelButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="40" width="133" height="30"/>
+                                    <rect key="frame" x="0.0" y="40" width="208" height="30"/>
                                     <state key="normal" title="Button"/>
                                     <connections>
                                         <action selector="btnCancelTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="EhO-GW-jUf"/>

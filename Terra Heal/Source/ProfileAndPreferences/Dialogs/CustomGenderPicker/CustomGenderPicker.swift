@@ -59,8 +59,6 @@ class CustomGenderPicker: ThemeBottomDialogView {
         ivMaleSelected.isHidden = (gender == Gender.Male) ? false : true
         ivFemaleSelected.isHidden = (gender == Gender.Male) ? true : false
         btnFemale.setRound(withBorderColor: (gender == Gender.Male) ? UIColor.clear : UIColor.themePrimary, andCornerRadious: 10.0, borderWidth: 1.5)
-       // btnFemale?.setShadow()
-       // btnMale?.setShadow()
         ivMaleSelected?.setRound()
         ivFemaleSelected?.setRound()
     }
@@ -76,8 +74,7 @@ class CustomGenderPicker: ThemeBottomDialogView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        btnFemale?.setShadow()
-        btnMale?.setShadow()
+       
         ivMaleSelected?.setRound()
         ivFemaleSelected?.setRound()
     }

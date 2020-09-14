@@ -8,21 +8,16 @@
 
 import UIKit
 
-class SettingSwitchTblCell: TableCell {
+class SettingSwitchTblCell: SelectionBorderTableCell {
     
-    @IBOutlet weak var lblName: ThemeLabel!
-    @IBOutlet weak var vwBg: UIView!
-    @IBOutlet weak var imgSelected: UIImageView!
+  
     @IBOutlet weak var ivIcon: UIImageView!
     @IBOutlet weak var vwSwitch: JDSegmentedControl!
-    @IBOutlet weak var vwImgBg: UIView!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+        
         self.vwSwitch.allowChangeThumbWidth = false
         self.vwSwitch.itemTitles = ["Enable","Disable"]
         self.vwSwitch.changeBackgroundColor(UIColor.themeLightTextColor)
@@ -36,22 +31,15 @@ class SettingSwitchTblCell: TableCell {
             }
             (self.parentVC as? SettingVC)?.wsUpdateSettingDetail(request: request)
         }
-        self.imgSelected?.setRound()
-        self.vwImgBg?.setRound()
-        
-        
     }
     
     func setData(data: SettingPreferenceDetail ) {
-        self.lblName.text = data.type.name()
-        self.imgSelected.isHidden = !data.isSelected
+        super.setData(title: data.type.name(), isSelected: data.isSelected)
         self.ivIcon.image = UIImage.init(named: data.image)
         if data.strDetail.toBool {
             vwSwitch.selectItemAt(index: 0)
-            self.vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)
-        } else  {
+         } else  {
             vwSwitch.selectItemAt(index: 1)
-            self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
         }
         
     }
@@ -60,8 +48,6 @@ class SettingSwitchTblCell: TableCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.vwImgBg?.setRound()
-        self.imgSelected?.setRound()
         vwSwitch.setRound(withBorderColor: .themePrimary, andCornerRadious: self.vwSwitch.bounds.height/2.0, borderWidth: 0.1)
     }
     override func setSelected(_ selected: Bool, animated: Bool) {

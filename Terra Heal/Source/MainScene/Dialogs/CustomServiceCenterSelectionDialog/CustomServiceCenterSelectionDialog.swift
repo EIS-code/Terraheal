@@ -61,7 +61,8 @@ class CustomServiceCenterSelectionDialog: ThemeBottomDialogView {
         super.layoutSubviews()
         self.collectionView.reloadData {
              self.mapView.roundCorners(corners:[.topLeft,.topRight], radius: 40.0)
-             self.vwServiceDialog.roundCorners(corners:[.topLeft,.topRight], radius: 40.0)
+            
+            self.vwServiceDialog.setRound(withBorderColor: .clear, andCornerRadious: 40.0, borderWidth: 1.0)
             self.ivService.setRound()
         }
     }

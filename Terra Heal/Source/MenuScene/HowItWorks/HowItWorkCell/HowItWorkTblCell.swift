@@ -23,19 +23,18 @@ class HowItWorkTblCell: TableCell {
         self.lblShortDescription?.setFont(name: FontName.Bold, size: FontSize.label_12)
         self.lblLongDescription?.setFont(name: FontName.Bold, size: FontSize.label_12)
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-        self.ivMenu?.setRound()
     }
 
     func setData(data: HowItworkMenuDetail ) {
         self.lblName.text = data.type.name()
         self.lblShortDescription.text = data.shortDescription
         self.lblLongDescription.text = data.description
+        self.ivMenu.image = UIImage.init(named: data.image)
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-        self.ivMenu?.setRound()
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

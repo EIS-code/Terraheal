@@ -109,7 +109,7 @@
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check-secondary" translatesAutoresizingMaskIntoConstraints="NO" id="0Gj-VT-xex">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check" translatesAutoresizingMaskIntoConstraints="NO" id="0Gj-VT-xex">
                                                                     <rect key="frame" x="59" y="10" width="12" height="12.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="0Gj-VT-xex" secondAttribute="height" multiplier="1:1" id="Mo9-WX-Cbi"/>
@@ -151,7 +151,7 @@
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check-secondary" translatesAutoresizingMaskIntoConstraints="NO" id="KDS-9J-oFM">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check" translatesAutoresizingMaskIntoConstraints="NO" id="KDS-9J-oFM">
                                                                     <rect key="frame" x="59" y="10" width="12" height="12.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="KDS-9J-oFM" secondAttribute="height" multiplier="1:1" id="ACv-eC-1t6"/>
@@ -289,7 +289,7 @@
                             </subviews>
                         </stackView>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjt-92-xa2" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="313" y="10" width="42" height="42"/>
+                            <rect key="frame" x="311" y="10" width="44" height="44"/>
                             <color key="backgroundColor" name="theme_background"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="jjt-92-xa2" secondAttribute="height" multiplier="1:1" id="t5v-Ue-HEi"/>
@@ -370,8 +370,8 @@
     </objects>
     <resources>
         <image name="asset-arrow-down" width="10.5" height="6"/>
-        <image name="asset-check-secondary" width="16.5" height="16.5"/>
-        <image name="asset-delete" width="10.5" height="10.5"/>
+        <image name="asset-check" width="32" height="32"/>
+        <image name="asset-delete" width="24" height="24"/>
         <image name="asset-female" width="40" height="40"/>
         <image name="asset-male" width="40" height="40"/>
         <namedColor name="theme_background">

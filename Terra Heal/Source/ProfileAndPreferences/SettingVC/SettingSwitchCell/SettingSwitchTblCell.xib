@@ -19,38 +19,29 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTr-D4-KiU" userLabel="vwForBackground">
-                        <rect key="frame" x="5" y="5" width="316" height="49"/>
+                        <rect key="frame" x="8" y="8" width="310" height="91"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbd-fi-cft" userLabel="vwImageBg">
-                                <rect key="frame" x="20" y="5" width="39" height="39"/>
-                                <color key="backgroundColor" name="theme_primary"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="jbd-fi-cft" secondAttribute="height" multiplier="1:1" id="Yrm-lu-dwg"/>
-                                </constraints>
-                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-menu-setting-notification" translatesAutoresizingMaskIntoConstraints="NO" id="evN-os-n1y">
-                                <rect key="frame" x="30" y="14.5" width="19.5" height="19.5"/>
-                                <color key="backgroundColor" name="theme_primary"/>
+                                <rect key="frame" x="16" y="16" width="67" height="67"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="8m8-2X-43B"/>
                                     <constraint firstAttribute="width" secondItem="evN-os-n1y" secondAttribute="height" multiplier="1:1" id="xED-4H-sBI"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-J2-KSJ" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="69.5" y="10" width="15.5" height="29"/>
+                                <rect key="frame" x="99" y="10" width="15.5" height="71"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="theme_dark_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39g-Hj-VEp" userLabel="vwSwitch" customClass="JDSegmentedControl" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="95" y="9.5" width="201" height="30"/>
+                                <rect key="frame" x="124.5" y="30.5" width="200.8037109375" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="sjA-zX-6dd"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check-secondary" translatesAutoresizingMaskIntoConstraints="NO" id="LzM-Rc-egA">
-                                <rect key="frame" x="296" y="5" width="15" height="15"/>
+                                <rect key="frame" x="290" y="5" width="15" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="6Va-LV-dZv"/>
                                     <constraint firstAttribute="width" secondItem="LzM-Rc-egA" secondAttribute="height" multiplier="1:1" id="eTE-MF-YRA"/>
@@ -59,18 +50,15 @@
                         </subviews>
                         <color key="backgroundColor" name="theme_background"/>
                         <constraints>
+                            <constraint firstItem="evN-os-n1y" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" constant="16" id="GnO-vV-JQP"/>
                             <constraint firstItem="39g-Hj-VEp" firstAttribute="leading" secondItem="zbl-J2-KSJ" secondAttribute="trailing" constant="10" id="Kqq-d9-l7R"/>
                             <constraint firstItem="39g-Hj-VEp" firstAttribute="centerY" secondItem="fTr-D4-KiU" secondAttribute="centerY" id="MZQ-dz-VBf"/>
-                            <constraint firstItem="zbl-J2-KSJ" firstAttribute="leading" secondItem="evN-os-n1y" secondAttribute="trailing" constant="20" id="O5Y-tD-qIO"/>
+                            <constraint firstItem="zbl-J2-KSJ" firstAttribute="leading" secondItem="evN-os-n1y" secondAttribute="trailing" constant="16" id="O5Y-tD-qIO"/>
                             <constraint firstAttribute="trailing" secondItem="LzM-Rc-egA" secondAttribute="trailing" constant="5" id="OQX-HH-mgv"/>
-                            <constraint firstItem="jbd-fi-cft" firstAttribute="height" secondItem="fTr-D4-KiU" secondAttribute="height" multiplier="0.8" id="RKO-FV-y6s"/>
-                            <constraint firstItem="evN-os-n1y" firstAttribute="centerX" secondItem="jbd-fi-cft" secondAttribute="centerX" id="TVl-lr-Cim"/>
-                            <constraint firstItem="jbd-fi-cft" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="20" id="Xfs-oU-9Bz"/>
-                            <constraint firstItem="evN-os-n1y" firstAttribute="centerY" secondItem="jbd-fi-cft" secondAttribute="centerY" id="Xkf-zy-ZvL"/>
-                            <constraint firstItem="evN-os-n1y" firstAttribute="height" secondItem="jbd-fi-cft" secondAttribute="height" multiplier="0.5" id="YVv-b7-3bg"/>
-                            <constraint firstItem="jbd-fi-cft" firstAttribute="centerY" secondItem="fTr-D4-KiU" secondAttribute="centerY" id="q7A-f2-n9e"/>
+                            <constraint firstItem="evN-os-n1y" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="16" id="Omx-ne-bLl"/>
                             <constraint firstItem="LzM-Rc-egA" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" constant="5" id="uca-kM-6fX"/>
-                            <constraint firstAttribute="trailing" secondItem="39g-Hj-VEp" secondAttribute="trailing" constant="20" id="v3v-Yr-tmc"/>
+                            <constraint firstAttribute="trailing" secondItem="39g-Hj-VEp" secondAttribute="trailing" constant="16" id="v3v-Yr-tmc"/>
+                            <constraint firstAttribute="bottom" secondItem="evN-os-n1y" secondAttribute="bottom" constant="8" id="zPg-tk-Sci"/>
                             <constraint firstItem="zbl-J2-KSJ" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" constant="10" id="zaC-hb-cUq"/>
                             <constraint firstItem="zbl-J2-KSJ" firstAttribute="centerY" secondItem="fTr-D4-KiU" secondAttribute="centerY" id="zvc-6d-X95"/>
                         </constraints>
@@ -78,19 +66,42 @@
                 </subviews>
                 <color key="backgroundColor" name="theme_primary_light_background"/>
                 <constraints>
-                    <constraint firstItem="fTr-D4-KiU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="2jg-EE-YxG"/>
-                    <constraint firstAttribute="trailing" secondItem="fTr-D4-KiU" secondAttribute="trailing" constant="5" id="AWN-UN-JV4"/>
-                    <constraint firstItem="fTr-D4-KiU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="p1a-dc-cSm"/>
-                    <constraint firstAttribute="bottom" secondItem="fTr-D4-KiU" secondAttribute="bottom" constant="5" id="uHV-Oa-H3d"/>
+                    <constraint firstItem="fTr-D4-KiU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="2jg-EE-YxG" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </constraint>
+                    <constraint firstAttribute="trailing" secondItem="fTr-D4-KiU" secondAttribute="trailing" constant="8" id="AWN-UN-JV4" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </constraint>
+                    <constraint firstItem="fTr-D4-KiU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="p1a-dc-cSm" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </constraint>
+                    <constraint firstAttribute="bottom" secondItem="fTr-D4-KiU" secondAttribute="bottom" constant="8" id="uHV-Oa-H3d" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </constraint>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="imgSelected" destination="LzM-Rc-egA" id="2ko-Uz-2DU"/>
+                <outlet property="imgCellSelected" destination="LzM-Rc-egA" id="SxV-7L-ExC"/>
                 <outlet property="ivIcon" destination="evN-os-n1y" id="jPb-MN-uw7"/>
-                <outlet property="lblName" destination="zbl-J2-KSJ" id="uPE-In-SOw"/>
-                <outlet property="vwBg" destination="fTr-D4-KiU" id="gMF-14-1KR"/>
-                <outlet property="vwImgBg" destination="jbd-fi-cft" id="dsg-Bf-0sc"/>
+                <outlet property="lblCellTitle" destination="zbl-J2-KSJ" id="Mri-n1-Qcp"/>
+                <outlet property="vwCellBg" destination="fTr-D4-KiU" id="edk-59-f3Y"/>
                 <outlet property="vwSwitch" destination="39g-Hj-VEp" id="wfW-JK-SJy"/>
             </connections>
             <point key="canvasLocation" x="136.23188405797103" y="151.67410714285714"/>
@@ -98,15 +109,12 @@
     </objects>
     <resources>
         <image name="asset-check-secondary" width="16.5" height="16.5"/>
-        <image name="asset-menu-setting-notification" width="16" height="19.5"/>
+        <image name="asset-menu-setting-notification" width="28" height="34"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_dark_text">
             <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="theme_primary">
-            <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light_background">
             <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

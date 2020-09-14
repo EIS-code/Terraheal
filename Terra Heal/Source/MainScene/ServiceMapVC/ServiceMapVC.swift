@@ -46,6 +46,7 @@ class ServiceMapVC: MainVC {
     var dialogForAccessory: AccessorySelectionDialog!
     var dateTimeSelectionDialog: DateTimeDialog!
     var textViewDialog: TextViewDialog!
+    var languagePicker: CustomLanguagePicker!
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
@@ -198,7 +199,7 @@ extension ServiceMapVC {
             
             appSingleton.myBookingData.serviceCenterDetail = self.arrForServices[self.currentIndex]
             appSingleton.myBookingData.shop_id = self.arrForServices[self.currentIndex].id
-            self.openAccessoryDialog()
+            self.openLanguagePicker()
         }
     }
     
@@ -208,6 +209,7 @@ extension ServiceMapVC {
         self.dialogForAccessory?.dismiss()
         self.textViewDialog?.dismiss()
         self.dateTimeSelectionDialog?.dismiss()
+        self.languagePicker?.dismiss()
     }
     
     func openAccessoryDialog() {
@@ -257,6 +259,22 @@ extension ServiceMapVC {
             guard let self = self else { return } ; print(self)
             appSingleton.myBookingData.date = millis.toString()
             self.openTextViewPicker()
+        }
+    }
+    
+    func openLanguagePicker() {
+        languagePicker = CustomLanguagePicker.fromNib()
+        languagePicker.initialize(title: SettingMenu.PreferredLanguage.name(), buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+        languagePicker.show(animated: true)
+        languagePicker.onBtnCancelTapped = {
+            [weak languagePicker, weak self] in
+            languagePicker?.dismiss()
+             guard let self = self else { return } ; print(self)
+        }
+        languagePicker.onBtnDoneTapped = {
+            [weak languagePicker, weak self] (language) in
+            guard let self = self else { return } ; print(self)
+            self.openAccessoryDialog()
         }
     }
     

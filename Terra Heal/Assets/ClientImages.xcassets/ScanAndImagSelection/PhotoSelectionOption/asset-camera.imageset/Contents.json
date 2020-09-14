@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "Icon feather-camera.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Icon feather-camera@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "camera.png",
+      "filename" : "Icon feather-camera@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     },

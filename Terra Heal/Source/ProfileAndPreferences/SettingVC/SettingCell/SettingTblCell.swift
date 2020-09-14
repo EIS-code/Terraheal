@@ -9,44 +9,36 @@
 import UIKit
 
 
-class SettingTblCell: TableCell {
+class SettingTblCell: SelectionBorderTableCell {
 
-    @IBOutlet weak var lblName: ThemeLabel!
-    @IBOutlet weak var vwBg: UIView!
     @IBOutlet weak var btnAction: ThemeButton!
-    @IBOutlet weak var imgSelected: UIImageView!
-    @IBOutlet weak var vwImgBg: UIView!
     @IBOutlet weak var ivIcon: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+        
         self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.header)
         self.btnAction?.setTitle(FontSymbol.next_arrow, for: .normal)
-        self.imgSelected?.setRound()
-        self.vwImgBg?.setRound()
+        self.radius = 15
+        self.cellBorderColor = UIColor.themePrimary
+        self.shadowProperty.color = UIColor.init(hex: "#3C80D116")
+        self.shadowProperty.opacity = 1.0
+        self.shadowProperty.radius = 19
+        self.shadowProperty.offset = CGSize.init(width: 0.0, height: 12.0)
     }
 
     func setData(data: SettingPreferenceDetail ) {
-        self.lblName.text = data.type.name()
-        self.imgSelected.isHidden = !data.isSelected
+        
         self.ivIcon.image = UIImage.init(named: data.image)
-        if data.isSelected {
-            self.vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)
-        } else {
-            self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-        }
+        self.setData(title: data.type.name(), isSelected: data.isSelected)
 
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.vwBg.layoutIfNeeded()
-        self.vwImgBg?.setRound()
-        self.imgSelected?.setRound()
     }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state

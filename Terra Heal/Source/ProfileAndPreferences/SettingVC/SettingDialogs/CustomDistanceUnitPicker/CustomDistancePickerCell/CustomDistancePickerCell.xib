@@ -27,7 +27,7 @@
                                 <color key="textColor" name="theme_dark_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gZ4-Ut-FN6">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check" translatesAutoresizingMaskIntoConstraints="NO" id="gZ4-Ut-FN6">
                                 <rect key="frame" x="286" y="10" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Vdf-wi-j6d"/>
@@ -56,16 +56,17 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="ivSelected" destination="gZ4-Ut-FN6" id="C1n-Mb-J6O"/>
-                <outlet property="lblName" destination="zbl-J2-KSJ" id="uPE-In-SOw"/>
-                <outlet property="vwBg" destination="fTr-D4-KiU" id="gMF-14-1KR"/>
+                <outlet property="imgCellSelected" destination="gZ4-Ut-FN6" id="nhe-ty-XPs"/>
+                <outlet property="lblCellTitle" destination="zbl-J2-KSJ" id="GjX-8D-dml"/>
+                <outlet property="vwCellBg" destination="fTr-D4-KiU" id="9Iu-EI-kIU"/>
             </connections>
             <point key="canvasLocation" x="136.23188405797103" y="151.67410714285714"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="asset-check" width="32" height="32"/>
         <namedColor name="theme_dark_text">
-            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

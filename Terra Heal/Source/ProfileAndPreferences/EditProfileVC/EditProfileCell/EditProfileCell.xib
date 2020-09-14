@@ -47,17 +47,17 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check-secondary" translatesAutoresizingMaskIntoConstraints="NO" id="OOc-tD-A2C">
-                                <rect key="frame" x="260" y="10" width="20" height="20"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check" translatesAutoresizingMaskIntoConstraints="NO" id="OOc-tD-A2C">
+                                <rect key="frame" x="265" y="5" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="hf1-P3-sB6"/>
                                     <constraint firstAttribute="width" secondItem="OOc-tD-A2C" secondAttribute="height" multiplier="1:1" id="ulg-78-xa7"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cr6-m1-qG1">
-                                <rect key="frame" x="240" y="10" width="40" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cr6-m1-qG1">
+                                <rect key="frame" x="245" y="5" width="40" height="30"/>
                                 <state key="normal" title="Verify">
-                                    <color key="titleColor" name="theme_light_text_color"/>
+                                    <color key="titleColor" name="theme_primary"/>
                                 </state>
                                 <connections>
                                     <action selector="btnVerifyTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="9uM-bo-h5F"/>
@@ -69,9 +69,21 @@
                             <constraint firstItem="NEu-dK-q3n" firstAttribute="top" secondItem="582-VR-E0n" secondAttribute="top" id="3AL-KX-E2X"/>
                             <constraint firstItem="Cr6-m1-qG1" firstAttribute="top" secondItem="OOc-tD-A2C" secondAttribute="top" id="7Ox-MI-8ae"/>
                             <constraint firstItem="Cr6-m1-qG1" firstAttribute="trailing" secondItem="OOc-tD-A2C" secondAttribute="trailing" id="8kG-si-sS5"/>
-                            <constraint firstAttribute="trailing" secondItem="OOc-tD-A2C" secondAttribute="trailing" constant="10" id="BCH-wy-LxD"/>
+                            <constraint firstAttribute="trailing" secondItem="OOc-tD-A2C" secondAttribute="trailing" constant="5" id="BCH-wy-LxD" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
                             <constraint firstItem="NEu-dK-q3n" firstAttribute="centerY" secondItem="582-VR-E0n" secondAttribute="centerY" id="JhO-ST-sgh"/>
-                            <constraint firstItem="OOc-tD-A2C" firstAttribute="top" secondItem="582-VR-E0n" secondAttribute="top" constant="10" id="lBt-vT-1Fc"/>
+                            <constraint firstItem="OOc-tD-A2C" firstAttribute="top" secondItem="582-VR-E0n" secondAttribute="top" constant="5" id="lBt-vT-1Fc" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
                             <constraint firstItem="NEu-dK-q3n" firstAttribute="leading" secondItem="582-VR-E0n" secondAttribute="leading" constant="10" id="ync-wN-5Z0"/>
                             <constraint firstItem="NEu-dK-q3n" firstAttribute="centerX" secondItem="582-VR-E0n" secondAttribute="centerX" id="zu8-RQ-aam"/>
                         </constraints>
@@ -97,7 +109,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="asset-check-secondary" width="16.5" height="16.5"/>
+        <image name="asset-check" width="32" height="32"/>
         <namedColor name="theme_dark_text">
             <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

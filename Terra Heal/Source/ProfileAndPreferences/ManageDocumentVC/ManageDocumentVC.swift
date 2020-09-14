@@ -23,6 +23,7 @@ class ManageDocumentVC: MainVC {
     @IBOutlet weak var lblEmptyTitle: ThemeLabel!
     @IBOutlet weak var lblEmptyMsg: ThemeLabel!
     @IBOutlet weak var btnSubmit: FilledRoundedButton!
+    @IBOutlet weak var lblDocumentId: ThemeLabel!
     
     var arrForData: [UploadDocumentDetail] = []
     // MARK: Object lifecycle
@@ -59,8 +60,6 @@ class ManageDocumentVC: MainVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
-            self.vwBg?.layoutIfNeeded()
-            self.vwBg?.setRound()
             self.tableView?.reloadData({
             })
            self.tableView?.contentInset = self.getGradientInset()
@@ -71,11 +70,14 @@ class ManageDocumentVC: MainVC {
         self.setBackground(color: UIColor.themeBackground)
         self.setupTableView(tableView: self.tableView)
         self.setTitle(title: "MANAGE_DOCUMENT_TITLE".localized())
+        self.lblTitle?.textAlignment = .left
+        self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.large)
         self.lblEmptyTitle.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblEmptyMsg.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblEmptyMsg.setFont(name: FontName.Regular, size: FontSize.detail)
         self.lblEmptyTitle.text = "DOCUMENT_EMPTY_TITLE".localized()
         self.lblEmptyMsg.text = "DOCUMENT_EMPTY_MSG".localized()
         self.btnSubmit?.setTitle("MANAGE_DOCUMENT_BTN_ADD_NEW".localized(), for: .normal)
+        self.lblDocumentId.setFont(name: FontName.Regular, size: FontSize.detail)
     }
     
     @IBAction func btnCancelTapped(_ sender: Any) {
@@ -132,7 +134,7 @@ class ManageDocumentVC: MainVC {
     func openPhotoPicker() {
         
         let photoPickerAlert: CustomDocumentPicker = CustomDocumentPicker.fromNib()
-        photoPickerAlert.initialize(title:"PHOTO_DIALOG_FROM_TITLE".localized(), buttonTitle: "".localized(),cancelButtonTitle: "BTN_CANCEL".localized())
+        photoPickerAlert.initialize(title:"ADD_NEW_DOCUMENT_TITLE".localized(), buttonTitle: "".localized(),cancelButtonTitle: "BTN_CANCEL".localized())
         photoPickerAlert.show(animated: true)
         photoPickerAlert.onBtnCancelTapped = { [weak photoPickerAlert, weak self] in
             photoPickerAlert?.dismiss()
@@ -165,7 +167,7 @@ class ManageDocumentVC: MainVC {
         cropper.delegate = self
         cropper.picker = nil
         cropper.image = image
-        cropper.cancelButtonText = "Cancel"
+        cropper.cancelButtonText = "BTN_CANCEL".localized()
         cropper.view.layoutIfNeeded()
         cropper.modalPresentationStyle = .fullScreen
         DispatchQueue.main.async {

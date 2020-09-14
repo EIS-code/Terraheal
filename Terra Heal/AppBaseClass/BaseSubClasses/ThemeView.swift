@@ -96,6 +96,8 @@ class ThemeBottomGradientView: UIView {
 
 extension UIView {
     
+    
+    
     func setShadow(radius: CGFloat = 5.0, opacity: Float = 0.8, offset: CGSize = CGSize(width: 1.0, height: -2.0) , color: UIColor = UIColor.gray) {
         self.layer.masksToBounds = false
         self.layer.shadowRadius = radius
@@ -119,6 +121,18 @@ extension UIView {
         self.layer.shadowColor = UIColor.init(red: 98/255, green: 196/255, blue: 255/255, alpha: 1.0).cgColor
     }
     
+    func setCollectionSelectionShadow() {
+        
+        self.layer.masksToBounds = false
+        self.layer.shadowRadius = 6.0
+        self.layer.shadowOpacity = 1.0
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
+        self.layer.shadowColor = UIColor.init(hex: "#00000029").cgColor
+        
+       
+        
+        
+    }
     func setHomeCardShadow() {
         self.layer.masksToBounds = false
         self.layer.shadowRadius = 4.0

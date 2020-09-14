@@ -42,8 +42,8 @@ class ProfileTblUserInfoCell: TableCell {
     
     @IBAction func btnHomeTapped(_ sender: Any) {
         
-        //(self.parentVC as? HomeVC)?.updateEventData()
-        Common.appDelegate.loadKycInfoVC(navigaionVC: self.parentVC?.navigationController)
+        (self.parentVC as? HomeVC)?.updateEventData()
+        //Common.appDelegate.loadKycInfoVC(navigaionVC: self.parentVC?.navigationController)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

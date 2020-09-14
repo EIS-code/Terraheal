@@ -82,6 +82,8 @@ class AccessorySelectionDialog: ThemeBottomDialogView {
                 if self.onBtnDoneTapped != nil {
                     self.onBtnDoneTapped!(quatity);
                 }
+        } else {
+            Common.showAlert(message: "Please enter valid quantity")
         }
     }
     @IBAction func btnDecrementTapped(_ sender: Any) {

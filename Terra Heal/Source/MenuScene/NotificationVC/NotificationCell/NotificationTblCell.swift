@@ -19,30 +19,20 @@ class NotificationTblCell: TableCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblMessage?.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblDate?.setFont(name: FontName.Bold, size: FontSize.label_12)
+        self.lblMessage?.setFont(name: FontName.Bold, size: FontSize.subHeader)
+        self.lblDate?.setFont(name: FontName.Bold, size: FontSize.detail)
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-        self.imgSelected?.setRound()
-        self.ivIcon?.setRound()
+    
     }
 
     func setData(data: NotificationDetail ) {
         self.lblMessage.text = data.message
         self.lblDate.text = data.date
-        /*self.imgSelected.isHidden = !data.isSelected
-        if data.isSelected {
-            self.vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)
-        } else {
-            self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-        }*/
-
-
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.ivIcon?.setRound()
-        self.imgSelected?.setRound()
+        
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

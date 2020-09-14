@@ -130,7 +130,7 @@ tableView.backgroundColor = .clear
 
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.bounds.width * 0.3
+        return tableView.bounds.width * 0.25
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

@@ -40,16 +40,16 @@
                     <rect key="frame" x="20" y="630.66666666666663" width="335" height="150"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65s-4u-EXB" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="0.0"/>
+                            <rect key="frame" x="10" y="0.0" width="41.666666666666664" height="0.0"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" name="theme_dark_text"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="w8G-Xh-Aow">
-                            <rect key="frame" x="0.0" y="10" width="335" height="140"/>
+                            <rect key="frame" x="10" y="10" width="325" height="140"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9n-yj-C0j">
-                                    <rect key="frame" x="0.0" y="0.0" width="162.66666666666666" height="140"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="157.66666666666666" height="140"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0y-cg-vX3" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="20.333333333333332"/>
@@ -57,8 +57,8 @@
                                             <color key="textColor" name="theme_dark_text"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="asset-back-side-id" translatesAutoresizingMaskIntoConstraints="NO" id="me9-DJ-am7">
-                                            <rect key="frame" x="0.0" y="30.333333333333378" width="162.66666666666666" height="109.66666666666669"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="asset-back-side-id" translatesAutoresizingMaskIntoConstraints="NO" id="me9-DJ-am7">
+                                            <rect key="frame" x="0.0" y="30.333333333333378" width="157.66666666666666" height="109.66666666666669"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -72,7 +72,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6BG-ui-YcL">
-                                    <rect key="frame" x="172.66666666666663" y="0.0" width="162.33333333333337" height="140"/>
+                                    <rect key="frame" x="167.66666666666663" y="0.0" width="157.33333333333337" height="140"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5WT-Dl-h0w" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="20.333333333333332"/>
@@ -80,8 +80,8 @@
                                             <color key="textColor" name="theme_dark_text"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="asset-back-side-id" translatesAutoresizingMaskIntoConstraints="NO" id="2EE-rc-FSc">
-                                            <rect key="frame" x="0.0" y="30.333333333333378" width="162.33333333333334" height="109.66666666666669"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="asset-back-side-id" translatesAutoresizingMaskIntoConstraints="NO" id="2EE-rc-FSc">
+                                            <rect key="frame" x="0.0" y="30.333333333333378" width="157.33333333333334" height="109.66666666666669"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -101,9 +101,9 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="150" id="Gru-gl-GNo"/>
                         <constraint firstItem="w8G-Xh-Aow" firstAttribute="top" secondItem="65s-4u-EXB" secondAttribute="bottom" constant="10" id="HKy-K4-tcl"/>
-                        <constraint firstItem="w8G-Xh-Aow" firstAttribute="leading" secondItem="spA-J4-qUy" secondAttribute="leading" id="J7o-jt-m1A"/>
+                        <constraint firstItem="w8G-Xh-Aow" firstAttribute="leading" secondItem="spA-J4-qUy" secondAttribute="leading" constant="10" id="J7o-jt-m1A"/>
                         <constraint firstItem="65s-4u-EXB" firstAttribute="top" secondItem="spA-J4-qUy" secondAttribute="top" id="JXz-aO-KwA"/>
-                        <constraint firstItem="65s-4u-EXB" firstAttribute="leading" secondItem="spA-J4-qUy" secondAttribute="leading" id="Qsf-v9-cBz"/>
+                        <constraint firstItem="65s-4u-EXB" firstAttribute="leading" secondItem="spA-J4-qUy" secondAttribute="leading" constant="10" id="Qsf-v9-cBz"/>
                         <constraint firstAttribute="bottom" secondItem="w8G-Xh-Aow" secondAttribute="bottom" id="czl-Vo-iQw"/>
                         <constraint firstAttribute="trailing" secondItem="w8G-Xh-Aow" secondAttribute="trailing" id="xrR-7b-ve3"/>
                     </constraints>

@@ -63,7 +63,7 @@ Label </string>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zd5-cD-PSn" userLabel="bottomControlView">
                     <rect key="frame" x="0.0" y="448" width="320" height="120"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aav-cS-Vay" userLabel="toggleFlash">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aav-cS-Vay" userLabel="toggleFlash" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
                             <rect key="frame" x="20" y="38" width="44" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="44" id="pA8-aw-XPy"/>
@@ -76,21 +76,20 @@ Label </string>
                                 <action selector="toggleFlash:" destination="-1" eventType="touchUpInside" id="zlh-QB-vtc"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phD-1A-sjB" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="139" y="39" width="42" height="42"/>
-                            <color key="backgroundColor" name="theme_primary"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phD-1A-sjB" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="134.5" y="34.5" width="51.5" height="51.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="phD-1A-sjB" secondAttribute="height" multiplier="1:1" id="2wi-nn-wKp"/>
                             </constraints>
                             <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                            <state key="normal" image="asset-camera-edit">
+                            <state key="normal" image="asset-camera">
                                 <color key="titleColor" name="theme_primary"/>
                             </state>
                             <connections>
                                 <action selector="captureImage:" destination="-1" eventType="touchUpInside" id="RZw-S5-bIm"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sl4-cb-8vU" userLabel="switchCamera">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sl4-cb-8vU" userLabel="switchCamera" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
                             <rect key="frame" x="256" y="38" width="44" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="d6F-Oc-NFo"/>
@@ -151,7 +150,7 @@ Label </string>
     <resources>
         <image name="Flash Off Icon" width="24" height="24"/>
         <image name="Front Camera Icon" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="asset-camera-edit" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="asset-camera" width="31.5" height="26.5"/>
         <image name="asset-square-cutter" width="170.66667175292969" height="170.66667175292969"/>
         <namedColor name="theme_dark_text">
             <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

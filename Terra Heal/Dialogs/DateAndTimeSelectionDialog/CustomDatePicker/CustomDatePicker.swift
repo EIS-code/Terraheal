@@ -39,7 +39,7 @@ class CustomDatePicker: ThemeBottomDialogView {
     func initialize(title:String, buttonTitle:String, cancelButtonTitle:String) {
 
         self.initialSetup()
-
+        
         self.lblTitle.text = title
         self.btnDone.setTitle(buttonTitle, for: .normal)
         if cancelButtonTitle.isEmpty() {
@@ -58,11 +58,15 @@ class CustomDatePicker: ThemeBottomDialogView {
 
     override func initialSetup() {
         super.initialSetup()
+        
         self.btnPreviousMonth.setTitle(FontSymbol.back_arrow, for: .normal)
         self.btnPreviousMonth.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         self.btnNextMonth.setTitle(FontSymbol.next_arrow, for: .normal)
         self.btnNextMonth.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
+        self.lblSelectedDate.setFont(name: FontName.Bold, size: FontSize.doubleExLarge)
+        self.lblSelectedYear.setFont(name: FontName.Regular, size: FontSize.subHeader)
+        
         self.setupCalendarView(calendar: vwCalendar)
     }
     override func layoutSubviews() {
@@ -109,12 +113,12 @@ extension CustomDatePicker: FSCalendarDataSource, FSCalendarDelegate {
         calendar.delegate = self
         calendar.dataSource = self
         calendar.allowsMultipleSelection = false
-        calendar.appearance.todayColor = UIColor.themeSecondary
+        calendar.appearance.todayColor = UIColor.themePrimary
         calendar.appearance.caseOptions = .weekdayUsesSingleUpperCase
-        calendar.appearance.weekdayFont = FontHelper.font(name: FontName.Regular, size: FontSize.button_14)
-        calendar.appearance.weekdayTextColor = UIColor.lightGray
-        calendar.appearance.headerTitleFont = FontHelper.font(name: FontName.SemiBold, size: FontSize.label_18)
-        calendar.appearance.headerTitleColor = UIColor.darkGray
+        calendar.appearance.weekdayFont = FontHelper.font(name: FontName.Regular, size: FontSize.detail)
+        calendar.appearance.weekdayTextColor = UIColor.themeHintText
+        calendar.appearance.headerTitleFont = FontHelper.font(name: FontName.Regular, size: FontSize.subHeader)
+        calendar.appearance.headerTitleColor = UIColor.themeDarkText
         
 
     }

@@ -81,10 +81,14 @@ class CustomCurrencyPicker: ThemeBottomDialogView {
         ivDollarSelected.isHidden = (currency == Currency.Dollar) ? false : true
         ivEuroSelected.isHidden = (currency == Currency.Dollar) ? true : false
         btnEuro.setRound(withBorderColor: (currency == Currency.Dollar) ? UIColor.clear : UIColor.themePrimary, andCornerRadious: 10.0, borderWidth: 1.5)
-        btnEuro?.setShadow()
-        btnDollar?.setShadow()
         ivDollarSelected?.setRound()
         ivEuroSelected?.setRound()
+        
+        btnDollar.isSelected  =  (currency == Currency.Dollar)
+        btnEuro.isSelected  = (currency == Currency.Euro)
+        btnEuro.isSelected ? btnEuro.setCollectionSelectionShadow() : btnEuro.removeShadow()
+               
+        btnDollar.isSelected ? btnDollar.setCollectionSelectionShadow() : btnDollar.removeShadow()
     }
     
     override func initialSetup() {
@@ -98,8 +102,8 @@ class CustomCurrencyPicker: ThemeBottomDialogView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        btnEuro?.setShadow()
-        btnDollar?.setShadow()
+        btnEuro.isSelected ? btnEuro.setCollectionSelectionShadow() : btnEuro.removeShadow()
+        btnDollar.isSelected ? btnDollar.setCollectionSelectionShadow() : btnDollar.removeShadow()
         ivDollarSelected?.setRound()
         ivEuroSelected?.setRound()
     }

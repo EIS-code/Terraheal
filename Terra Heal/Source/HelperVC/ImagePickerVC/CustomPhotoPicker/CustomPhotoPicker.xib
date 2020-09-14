@@ -48,15 +48,11 @@
                                     <rect key="frame" x="37.5" y="65.5" width="299" height="53.5"/>
                                     <subviews>
                                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uor-HJ-dlO">
-                                            <rect key="frame" x="10" y="10" width="33.5" height="33.5"/>
-                                            <color key="backgroundColor" name="theme_light_text_color"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="Uor-HJ-dlO" secondAttribute="height" multiplier="1:1" id="WcR-Vl-Z5H"/>
-                                            </constraints>
+                                            <rect key="frame" x="10" y="10" width="31.5" height="33.5"/>
                                             <state key="normal" image="asset-camera"/>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ioq-iS-r7L" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="53.5" y="16.5" width="42" height="20.5"/>
+                                            <rect key="frame" x="51.5" y="16.5" width="42" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="theme_dark_text"/>
                                             <nil key="highlightedColor"/>
@@ -86,15 +82,11 @@
                                     <rect key="frame" x="37.5" y="139" width="299" height="53.5"/>
                                     <subviews>
                                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAw-VG-R1B">
-                                            <rect key="frame" x="10" y="10" width="33.5" height="33.5"/>
-                                            <color key="backgroundColor" name="theme_light_text_color"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="GAw-VG-R1B" secondAttribute="height" multiplier="1:1" id="39o-kt-KUA"/>
-                                            </constraints>
+                                            <rect key="frame" x="10" y="10" width="31.5" height="33.5"/>
                                             <state key="normal" image="asset-gallary"/>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgv-6m-XId" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="53.5" y="16.5" width="42" height="20.5"/>
+                                            <rect key="frame" x="51.5" y="16.5" width="42" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="theme_dark_text"/>
                                             <nil key="highlightedColor"/>
@@ -186,13 +178,10 @@
         </view>
     </objects>
     <resources>
-        <image name="asset-camera" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="asset-gallary" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="asset-camera" width="31.5" height="26.5"/>
+        <image name="asset-gallary" width="31.5" height="31.5"/>
         <namedColor name="theme_dark_text">
             <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="theme_light_text_color">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

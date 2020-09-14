@@ -25,7 +25,7 @@ class ServiceCell: CollectionCell {
         super.awakeFromNib()
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.lblAddress?.setFont(name: FontName.SemiBold, size: FontSize.regular)
-        self.lblServices?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
+        self.lblServices?.setFont(name: FontName.SemiBold, size: FontSize.regular)
         self.btnNumberOfServices?.setFont(name: FontName.Regular, size: FontSize.button_13)
         self.btnNumberOfServices?.setRound()
         self.lblServices.text = "BOOKING_SERVICES".localized()
@@ -64,7 +64,6 @@ class ServiceCell: CollectionCell {
             guard let self = self else { return } ; print(self)
             hourSelectionDialog?.dismiss()
         }
-        
     }
 }
 

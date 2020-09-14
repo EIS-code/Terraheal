@@ -101,11 +101,10 @@
                                             </subviews>
                                         </stackView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIF-jh-Ad7" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="1" y="145.5" width="80" height="40"/>
+                                            <rect key="frame" x="1" y="145.5" width="59.5" height="40"/>
                                             <color key="backgroundColor" name="theme_background"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="gGu-Fw-zRa"/>
-                                                <constraint firstAttribute="width" constant="80" id="yET-Db-awm"/>
                                             </constraints>
                                             <state key="normal" title="&lt;">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -115,10 +114,9 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ea-h3-HKj" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="218" y="145.5" width="80" height="40"/>
+                                            <rect key="frame" x="238.5" y="145.5" width="59.5" height="40"/>
                                             <color key="backgroundColor" name="theme_background"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="80" id="9oN-A3-eTO"/>
                                                 <constraint firstAttribute="height" constant="40" id="Twe-r7-Qbp"/>
                                             </constraints>
                                             <state key="normal" title="&gt;">
@@ -135,9 +133,11 @@
                                         <constraint firstItem="vIF-jh-Ad7" firstAttribute="top" secondItem="KPe-ks-amL" secondAttribute="top" id="73F-9n-oyR"/>
                                         <constraint firstItem="8ea-h3-HKj" firstAttribute="top" secondItem="KPe-ks-amL" secondAttribute="top" id="8vT-TV-4Lz"/>
                                         <constraint firstItem="FH3-4N-FNi" firstAttribute="top" secondItem="ybQ-MH-AIg" secondAttribute="top" constant="1" id="CE2-y2-GFA"/>
+                                        <constraint firstItem="vIF-jh-Ad7" firstAttribute="width" secondItem="8ea-h3-HKj" secondAttribute="width" id="ODa-g6-Gal"/>
                                         <constraint firstItem="vIF-jh-Ad7" firstAttribute="leading" secondItem="KPe-ks-amL" secondAttribute="leading" id="ZjE-x0-rvs"/>
                                         <constraint firstItem="8ea-h3-HKj" firstAttribute="trailing" secondItem="KPe-ks-amL" secondAttribute="trailing" id="bDd-cM-IEN"/>
                                         <constraint firstItem="FH3-4N-FNi" firstAttribute="centerX" secondItem="ybQ-MH-AIg" secondAttribute="centerX" id="kOG-Rs-3I8"/>
+                                        <constraint firstItem="vIF-jh-Ad7" firstAttribute="width" secondItem="KPe-ks-amL" secondAttribute="width" multiplier="0.2" id="oaU-oo-h6k"/>
                                         <constraint firstAttribute="bottom" secondItem="FH3-4N-FNi" secondAttribute="bottom" constant="1" id="rBH-VA-17d"/>
                                         <constraint firstAttribute="trailing" secondItem="FH3-4N-FNi" secondAttribute="trailing" constant="1" id="ueB-IZ-8jn"/>
                                     </constraints>

@@ -54,7 +54,7 @@
                     <rect key="frame" x="0.0" y="231" width="414" height="551"/>
                     <subviews>
                         <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-camera" translatesAutoresizingMaskIntoConstraints="NO" id="aLW-J7-A7i">
-                            <rect key="frame" x="0.0" y="0.0" width="21.333333333333332" height="21.333333333333332"/>
+                            <rect key="frame" x="0.0" y="0.0" width="31.666666666666668" height="26.333333333333332"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="22j-nJ-Xhc"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="mD6-oe-NxM"/>
@@ -88,28 +88,28 @@
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nkY-vf-NXg">
                     <rect key="frame" x="20" y="782" width="374" height="60"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yk9-Pj-o3R" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="61.333333333333336" height="60"/>
-                            <color key="backgroundColor" name="theme_primary"/>
-                            <state key="normal" image="asset-camera-edit"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yk9-Pj-o3R" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                            <state key="normal" image="asset-camera"/>
                             <connections>
                                 <action selector="btnCameraTapped:" destination="-1" eventType="touchUpInside" id="qLb-51-Bjk"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggN-t7-0rz" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="156.33333333333334" y="0.0" width="61.333333333333343" height="60"/>
+                            <rect key="frame" x="157" y="0.0" width="60" height="60"/>
                             <color key="backgroundColor" name="theme_primary"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="ggN-t7-0rz" secondAttribute="height" multiplier="1:1" id="j2O-a3-Sb7"/>
+                            </constraints>
                             <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                             <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" image="asset-image-edited"/>
+                            <state key="normal" image="asset-check-icon"/>
                             <connections>
                                 <action selector="btnCropTapd:" destination="-1" eventType="touchUpInside" id="Ykg-aY-THK"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQR-Yg-fcl" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="312.66666666666669" y="0.0" width="61.333333333333314" height="60"/>
-                            <color key="backgroundColor" name="theme_primary"/>
-                            <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQR-Yg-fcl" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="314" y="0.0" width="60" height="60"/>
                             <state key="normal" image="asset-rotate-arrow"/>
                             <connections>
                                 <action selector="btnRoateImage:" destination="-1" eventType="touchUpInside" id="kNY-kE-cdV"/>
@@ -143,10 +143,9 @@
         </view>
     </objects>
     <resources>
-        <image name="asset-camera" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="asset-camera-edit" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="asset-image-edited" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="asset-rotate-arrow" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="asset-camera" width="31.666666030883789" height="26.333333969116211"/>
+        <image name="asset-check-icon" width="33.333332061767578" height="25.333333969116211"/>
+        <image name="asset-rotate-arrow" width="29.666666030883789" height="25.333333969116211"/>
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

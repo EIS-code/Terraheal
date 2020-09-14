@@ -98,10 +98,10 @@ extension MyTherapistVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-tableView.backgroundColor = .clear
+        tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 60
         tableView.register(MyTherapistTblCell.nib()
             , forCellReuseIdentifier: MyTherapistTblCell.name)
         tableView.tableFooterView = UIView()

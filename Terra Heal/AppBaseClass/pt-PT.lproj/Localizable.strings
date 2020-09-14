@@ -4,484 +4,489 @@
 //
 
 //MARK: - Screen Wise Strings
-"APP_NAME" = "PRT_Terra Heal";
+"APP_NAME" = "Terra Heal";
 //MARK: TUTORIAL SCREEN
-"TUTORIAL_LBL_TITLE" = "PRT_This is a title";
-"TUTORIAL_LBL_MESSAGE" = "PRT_This is a description,\nthis is a sample text";
-"TUTORIAL_BTN_NEXT" = "PRT_next";
-"TUTORIAL_BTN_BACK" = "PRT_back";
-"TUTORIAL_LBL_TITLE_1" = "PRT_book quality professional massage or therapy";
-"TUTORIAL_LBL_MESSAGE_1" = "PRT_Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-"TUTORIAL_LBL_TITLE_2" = "PRT_wide variety of options, short or long duration";
-"TUTORIAL_LBL_MESSAGE_2" = "PRT_Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-"TUTORIAL_LBL_TITLE_3" = "PRT_certified therapist and personalized approach to each client";
-"TUTORIAL_LBL_MESSAGE_3" = "PRT_Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+"TUTORIAL_LBL_TITLE" = "This is a title";
+"TUTORIAL_LBL_MESSAGE" = "This is a description,\nthis is a sample text";
+"TUTORIAL_BTN_NEXT" = "next";
+"TUTORIAL_BTN_BACK" = "back";
+"TUTORIAL_LBL_TITLE_1" = "book quality professional massage or therapy";
+"TUTORIAL_LBL_MESSAGE_1" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+"TUTORIAL_LBL_TITLE_2" = "wide variety of options, short or long duration";
+"TUTORIAL_LBL_MESSAGE_2" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+"TUTORIAL_LBL_TITLE_3" = "certified therapist and personalized approach to each client";
+"TUTORIAL_LBL_MESSAGE_3" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+
 //MARK: WELCOME SCREEN
-"WELCOME_LBL_HEADER_1" = "PRT_you come to us";
-"WELCOME_LBL_MESSAGE_1" = "PRT_Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-"WELCOME_LBL_HEADER_2" = "PRT_we come to you";
-"WELCOME_LBL_MESSAGE_2" = "PRT_Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+"WELCOME_LBL_HEADER_1" = "you come to us";
+"WELCOME_LBL_MESSAGE_1" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+"WELCOME_LBL_HEADER_2" = "we come to you";
+"WELCOME_LBL_MESSAGE_2" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 "WELCOME_BTN_SIGN_UP" =  "Sign Up";
 "WELCOME_BTN_HOME" =  "Book Now";
-"WELCOME_BTN_SIGN_IN" = "PRT_Sign In";
+"WELCOME_BTN_SIGN_IN" = "Sign In";
 //MARK: LOGIN SCREEN
-"LOGIN_LBL_TITLE" = "PRT_welcome back";
-"LOGIN_LBL_MESSAGE" = "PRT_you need to identify\nto sign back in";
-"LOGIN_TXT_EMAIL" = "PRT_email";
-"LOGIN_TXT_PASSWORD" = "PRT_password";
-"LOGIN_BTN_SIGN_IN" = "PRT_Sign In";
-"LOGIN_BTN_FORGOT_PASSWORD" = "PRT_forgot password?";
-"LOGIN_BTN_SIGN_UP" = "PRT_sign up";
-"LOGIN_LBL_CONNECT_VIA" = "PRT_ or connect via ";
-"LOGIN_LBL_DO_NOT_HAVE_ACCOUNT" = "PRT_don't have an account?";
+"LOGIN_LBL_TITLE" = "welcome back";
+"LOGIN_LBL_MESSAGE" = "you need to identify\nto sign back in";
+"LOGIN_TXT_EMAIL" = "email";
+"LOGIN_TXT_PASSWORD" = "password";
+"LOGIN_BTN_SIGN_IN" = "Sign In";
+"LOGIN_BTN_FORGOT_PASSWORD" = "forgot password?";
+"LOGIN_BTN_SIGN_UP" = "sign up";
+"LOGIN_LBL_CONNECT_VIA" = " or connect via ";
+"LOGIN_LBL_DO_NOT_HAVE_ACCOUNT" = "don't have an account?";
 //MARK: REGISTER SCREEN
-"REGISTER_LBL_MESSAGE" = "PRT_getting massage or\ntherapies made simple";
-"REGISTER_TXT_NAME" = "PRT_name";
-"REGISTER_TXT_EMAIL" = "PRT_email";
-"REGISTER_TXT_PASSWORD" = "PRT_password";
-"REGISTER_TXT_MOBILE_NUMBER" = "PRT_mobile number";
-"REGISTER_TXT_REFFERAL_CODE" = "PRT_refferal code";
-"REGISTER_TXT_CONFIRM_PASSWORD" = "PRT_confirm password";
-"REGISTER_BTN_SIGN_IN" = "PRT_sign in";
-"REGISTER_LBL_ALREADY_A_MEMBER" = "PRT_already a member?";
-"REGISTR_BTN_TERMS_AND_CONDITION" = "PRT_terms & conditions";
-"REGISTR_LBL_ACCEPT" = "PRT_accept";
-"REGISTER_BTN_SIGN_UP" = "PRT_Sign Up";
-"REGISTER_LBL_CONNECT_VIA" = "PRT_ or connect via ";
-"PROFILE_TXT_SEARCH_COUNTRY" = "PRT_search country";
-"PROFILE_TXT_SEARCH_CITY" = "PRT_search city";
-"TXT_SEARCH_ADDRESS" = "PRT_search address";
-"COUNTRY_PHONE_CODE_TITLE" = "PRT_Country Phone Code";
+"REGISTER_LBL_MESSAGE" = "getting massage or\ntherapies made simple";
+"REGISTER_TXT_NAME" = "name";
+"REGISTER_TXT_EMAIL" = "email";
+"REGISTER_TXT_PASSWORD" = "password";
+"REGISTER_TXT_MOBILE_NUMBER" = "mobile number";
+"REGISTER_TXT_REFFERAL_CODE" = "refferal code";
+"REGISTER_TXT_CONFIRM_PASSWORD" = "confirm password";
+"REGISTER_BTN_SIGN_IN" = "sign in";
+"REGISTER_LBL_ALREADY_A_MEMBER" = "already a member?";
+"REGISTR_BTN_TERMS_AND_CONDITION" = "terms & conditions";
+"REGISTR_LBL_ACCEPT" = "accept";
+"REGISTER_BTN_SIGN_UP" = "Sign Up";
+"REGISTER_LBL_CONNECT_VIA" = " or connect via ";
+"PROFILE_TXT_SEARCH_COUNTRY" = "search country";
+"PROFILE_TXT_SEARCH_CITY" = "search city";
+"TXT_SEARCH_ADDRESS" = "search address";
+"COUNTRY_PHONE_CODE_TITLE" = "Country Phone Code";
 //MARK:  Profile Screen
-"PROFILE_NAME"  = "PRT_Name";
-"PROFILE_SURNAME"  = "PRT_Surname";
-"PROFILE_GENDER"  = "PRT_Gender";
-"PROFILE_DOB"  = "PRT_Date Of Birth";
-"PROFILE_MOBILE"  = "PRT_Mobile";
-"PROFILE_EMERGENCY_CONTACT"  = "PRT_Emergency Contact";
-"PROFILE_EMAIL"  = "PRT_Email";
-"PROFILE_CITY"  = "PRT_City";
-"PROFILE_COUNTRY"  = "PRT_Country";
-"PROFILE_NIF"  = "PRT_Nif";
-"PROFILE_ID_PASSWORD"  = "PRT_Id./ Password";
+"PROFILE_NAME"  = "Name";
+"PROFILE_SURNAME"  = "Surname";
+"PROFILE_GENDER"  = "Gender";
+"PROFILE_DOB"  = "Date Of Birth";
+"PROFILE_MOBILE"  = "Mobile";
+"PROFILE_EMERGENCY_CONTACT"  = "Emergency Contact";
+"PROFILE_EMAIL"  = "Email";
+"PROFILE_CITY"  = "City";
+"PROFILE_COUNTRY"  = "Country";
+"PROFILE_NIF"  = "Nif";
+"PROFILE_ID_PASSWORD"  = "Id./ Password";
 //MARK: TOUCH ID  SCREEN
-"TOUCH_ID_LBL_TITLE" = "PRT_Welcome Back";
-"TOUCH_ID_LBL_MESSAGE" = "PRT_You need to identify\nto sign back in";
-"TOUCH_ID_BTN_USE_PASSWORD" = "PRT_Use Password";
+"TOUCH_ID_LBL_TITLE" = "Welcome Back";
+"TOUCH_ID_LBL_MESSAGE" = "You need to identify\nto sign back in";
+"TOUCH_ID_BTN_USE_PASSWORD" = "Use Password";
 //MARK: CONTACT VERIFICATION  SCREEN
-"CONTACT_VERIFICATION_LBL_TITLE" = "PRT_Contact Verification";
-"CONTACT_VERIFICATION_LBL_MESSAGE" = "PRT_We need to verify your contact\ndetails before proceeding";
-"CONTACT_VERIFICATION_BTN_VERIFY" = "PRT_Verify";
+"CONTACT_VERIFICATION_LBL_TITLE" = "contact verification";
+"CONTACT_VERIFICATION_LBL_MESSAGE" = "we need to verify your contact\ndetails before proceeding";
+"CONTACT_VERIFICATION_BTN_VERIFY" = "Verify";
 //MARK: CONTACT VERIFIED  SCREEN
-"CONTACT_VERIFICATION_BTN_HOME" = "PRT_Home";
-"CONTACT_VERIFIED_LBL_TITLE" = "PRT_verified";
-"CONTACT_VERIFIED_LBL_MESSAGE" = "PRT_Your identity is verified successfully.";
+"CONTACT_VERIFICATION_BTN_HOME" = "Home";
+"CONTACT_VERIFIED_LBL_TITLE" = "verified";
+"CONTACT_VERIFIED_LBL_MESSAGE" = "Your identity is verified successfully.";
 //MARK: Verification Dialog
-"CONTACT_VERIFICATION_BTN_PROCEED" = "PRT_Proceed";
-"CONTACT_VERIFICATION_LBL_COUNTRY_CODE" = "PRT_Country Code";
-"CONTACT_VERIFICATION_TXT_MOBILE_NUMBER" = "PRT_Mobile Number";
-"CONTACT_VERIFICATION_TXT_EMAIL" = "PRT_Email";
-"VERIFICATION_LBL_TITLE" = "PRT_Enter OTP";
-"VERIFICATION_BTN_EMAIL" = "PRT_email";
-"VERIFICATION_BTN_MOBILE" = "PRT_mobile";
-"VERIFICATION_MOBILE_TITLE" = "PRT_Verify Your Mobile Number";
-"VERIFICATION_EMAIL_TITLE" = "PRT_Verify Your Email Id";
-"VERIFICATION_MSG_DETAIL" = "PRT_Please enter the 4 digit code that is\nsent to ";
-"VERIFICATION_BTN_VERIFY" = "PRT_Verify";
-"VERIFICATION_BTN_RESEND" = "PRT_resend";
+"CONTACT_VERIFICATION_BTN_PROCEED" = "Proceed";
+"CONTACT_VERIFICATION_LBL_COUNTRY_CODE" = "Country Code";
+"CONTACT_VERIFICATION_TXT_MOBILE_NUMBER" = "Mobile Number";
+"CONTACT_VERIFICATION_TXT_EMAIL" = "Email";
+"VERIFICATION_LBL_TITLE" = "Enter OTP";
+"VERIFICATION_BTN_EMAIL" = "email";
+"VERIFICATION_BTN_MOBILE" = "mobile";
+"VERIFICATION_MOBILE_TITLE" = "Verify Your Mobile Number";
+"VERIFICATION_EMAIL_TITLE" = "Verify Your Email Id";
+"VERIFICATION_MSG_DETAIL" = "Please enter the 4 digit code that is\nsent to ";
+"VERIFICATION_BTN_VERIFY" = "Verify";
+"VERIFICATION_BTN_RESEND" = "resend";
 //MARK: HOME SHOP SCREEN
-"HOME_LBL_TITLE" = "PRT_Location";
-"HOME_LBL_MENU" = "PRT_menu";
-"HOME_TXT_SEARCH" = "PRT_Search for massage, therapies.....";
-"HOME_BTN_MASSAGE_SHOP" = "PRT_massage shop";
-"HOME_BTN_THERAPIST" = "PRT_therapists";
-"HOME_BTN_FILTER" = "PRT_Filter";
-"HOME_SECTION_TOP_PICKS_FOR_YOU" = "PRT_top picks for you";
-"HOME_SECTION_ALL_MASSAGES_AVAILABLE" = "PRT_All Massages Available";
-"HOME_ITEM_1" = "PRT_in massage center";
-"HOME_ITEM_ACTION_1" = "PRT_Book Now";
-"HOME_ITEM_2" = "PRT_at home or hotel";
-"HOME_ITEM_ACTION_2" = "PRT_Book Now";
-"HOME_ITEM_3" = "PRT_events and corporate";
-"HOME_ITEM_ACTION_3" = "PRT_Book Now";
-"HOME_BTN_HOME" = "PRT_home";
-"HOME_BTN_EXPLORE" = "PRT_explore";
-"HOME_BTN_MY_FAV" = "PRT_my fav";
-"HOME_LBL_HI" = "PRT_Hi, ";
-"HOME_INFO_LBL_1" = "PRT_welcome to\nterra heal\nfamily";
-"HOME_INFO_LBL_2" = "PRT_Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-"HOME_LBL_USER" = "PRT_User";
+"HOME_LBL_TITLE" = "Location";
+"HOME_LBL_MENU" = "menu";
+"HOME_TXT_SEARCH" = "Search for massage, therapies.....";
+"HOME_BTN_MASSAGE_SHOP" = "massage shop";
+"HOME_BTN_THERAPIST" = "therapists";
+"HOME_BTN_FILTER" = "Filter";
+"HOME_SECTION_TOP_PICKS_FOR_YOU" = "top picks for you";
+"HOME_SECTION_ALL_MASSAGES_AVAILABLE" = "All Massages Available";
+"HOME_ITEM_1" = "in massage center";
+"HOME_ITEM_ACTION_1" = "Book Now";
+"HOME_ITEM_2" = "at home or hotel";
+"HOME_ITEM_ACTION_2" = "Book Now";
+"HOME_ITEM_3" = "events and corporate";
+"HOME_ITEM_ACTION_3" = "Book Now";
+"HOME_BTN_HOME" = "home";
+"HOME_BTN_EXPLORE" = "explore";
+"HOME_BTN_MY_FAV" = "my fav";
+"HOME_LBL_HI" = "Hi, ";
+"HOME_INFO_LBL_1" = "welcome to\nTerra Heal\nfamily";
+"HOME_INFO_LBL_2" = "we stop the clock for a moment that is just yours. Let us take care of you, the best personalized way you deserve.";
+"HOME_LBL_USER" = "User";
 //MARK: Menu SCREEN
-"MENU_HOW_IT_WORKS" = "PRT_how it works";
-"MENU_REFER_AND_EARN" = "PRT_refer now\n& earn discount";
-"MENU_PRINCING_AND_LOCATION" = "PRT_pricing and\nlocations";
-"MENU_PROMO_CODE" = "PRT_promo code";
-"MENU_NOTIFICATIONS" = "PRT_notifications";
-"MENU_HELP" = "PRT_help";
-"MENU_PACKS" = "PRT_packs";
-"MENU_CAMPAINGNS" = "PRT_campaigns";
-"MENU_GIFT_VOUCHER" = "PRT_gift voucher";
+"MENU_HOW_IT_WORKS" = "how it works";
+"MENU_REFER_AND_EARN" = "refer now\n& earn discount";
+"MENU_PRINCING_AND_LOCATION" = "pricing and\nlocations";
+"MENU_PROMO_CODE" = "promo code";
+"MENU_NOTIFICATIONS" = "notifications";
+"MENU_HELP" = "help";
+"MENU_PACKS" = "packs";
+"MENU_CAMPAINGNS" = "campaigns";
+"MENU_GIFT_VOUCHER" = "gift voucher";
 //MARK: Profile Menu
 
-"PROFILE_MENU_Profile" = "PRT_my profile";
-"PROFILE_MENU_VARIFICATION" = "PRT_varification";
-"PROFILE_MENU_MY_BOOKING" = "PRT_my bookings";
-"PROFILE_MENU_MY_PLACES" = "PRT_my places";
-"PROFILE_MENU_MY_MASSAGE_PREFERENCE" = "PRT_my massage preferences";
-"PROFILE_MENU_MY_THERAPIST" = "PRT_my therapists";
-"PROFILE_MENU_THERAPIST_QUESTIONARIES" = "PRT_therapies questionnaires";
-"PROFILE_MENU_MANAGE_ADDRESS" = "PRT_manage addresses";
-"PROFILE_MENU_MANAGE_PEOPLE" = "PRT_manage people";
-"PROFILE_MENU_PAYMENT_PREFERENCE" = "PRT_payment preference";
-"PROFILE_MENU_SETTING" = "PRT_settings";
+"PROFILE_MENU_Profile" = "my profile";
+"PROFILE_MENU_VARIFICATION" = "varification";
+"PROFILE_MENU_MY_BOOKING" = "my bookings";
+"PROFILE_MENU_MY_PLACES" = "my places";
+"PROFILE_MENU_MY_MASSAGE_PREFERENCE" = "my massage preferences";
+"PROFILE_MENU_MY_THERAPIST" = "my therapists";
+"PROFILE_MENU_THERAPIST_QUESTIONARIES" = "therapies questionnaires";
+"PROFILE_MENU_MANAGE_ADDRESS" = "manage addresses";
+"PROFILE_MENU_MANAGE_PEOPLE" = "manage people";
+"PROFILE_MENU_PAYMENT_PREFERENCE" = "payment preference";
+"PROFILE_MENU_SETTING" = "settings";
 
 //MARK: Gender Dialog
-"GENDER_DIALOG_TITLE" = "PRT_Gender";
-"GENDER_MALE" = "PRT_male";
-"GENDER_FEMALE" = "PRT_female";
-"GENDER_MALE_ONLY" = "PRT_male only";
-"GENDER_FEMALE_ONLY" = "PRT_female only";
-"GENDER_PREFER_MALE" = "PRT_prefer male";
-"GENDER_PREFER_FEMALE" = "PRT_prefer female";
-"GENDER_NO_PREFERENCE" = "PRT_no preferences";
+"GENDER_DIALOG_TITLE" = "Gender";
+"GENDER_MALE" = "male";
+"GENDER_FEMALE" = "female";
+"GENDER_MALE_ONLY" = "male only";
+"GENDER_FEMALE_ONLY" = "female only";
+"GENDER_PREFER_MALE" = "prefer male";
+"GENDER_PREFER_FEMALE" = "prefer female";
+"GENDER_NO_PREFERENCE" = "no preferences";
 //MARK: Massage Preference Menu
-"MASSAGE_PREFERENCE_TITLE" = "PRT_my massage preferences";
-"MASSAGE_PREFERENCE_MENU_ITEM_1" = "PRT_pressure";
-"MASSAGE_PREFERENCE_MENU_ITEM_2" = "PRT_gender preference";
-"MASSAGE_PREFERENCE_MENU_ITEM_3" = "PRT_which areas needs treatment?";
-"MASSAGE_PREFERENCE_MENU_ITEM_4" = "PRT_Muscles, joints, tendons,\ndiscs, bones, nerve problems?";
-"MASSAGE_PREFERENCE_MENU_ITEM_5" = "PRT_past surgeries, fractures,\naccidents?";
-"MASSAGE_PREFERENCE_MENU_ITEM_6" = "PRT_skin, hair, nail problems\nand allergies?";
-"MASSAGE_PREFERENCE_MENU_ITEM_7" = "PRT_any health conditions\nor diseases?";
+"MASSAGE_PREFERENCE_TITLE" = "my massage preferences";
+"MASSAGE_PREFERENCE_MENU_ITEM_1" = "pressure";
+"MASSAGE_PREFERENCE_MENU_ITEM_2" = "gender preference";
+"MASSAGE_PREFERENCE_MENU_ITEM_3" = "which areas needs treatment?";
+"MASSAGE_PREFERENCE_MENU_ITEM_4" = "Muscles, joints, tendons,\ndiscs, bones, nerve problems?";
+"MASSAGE_PREFERENCE_MENU_ITEM_5" = "past surgeries, fractures,\naccidents?";
+"MASSAGE_PREFERENCE_MENU_ITEM_6" = "skin, hair, nail problems\nand allergies?";
+"MASSAGE_PREFERENCE_MENU_ITEM_7" = "any health conditions\nor diseases?";
 //MARK: Pressure Preference Menu
-"MASSAGE_PRESSURE_TITTLE" = "PRT_pressure";
-"MASSAGE_PRESSURE_TYPE_1" = "PRT_soft pressure";
-"MASSAGE_PRESSURE_TYPE_2" = "PRT_medium pressure";
-"MASSAGE_PRESSURE_TYPE_3" = "PRT_strong pressure";
-"MASSAGE_PRESSURE_TYPE_4" = "PRT_extra strong pressure";
+"MASSAGE_PRESSURE_TITTLE" = "pressure";
+"MASSAGE_PRESSURE_TYPE_1" = "soft pressure";
+"MASSAGE_PRESSURE_TYPE_2" = "medium pressure";
+"MASSAGE_PRESSURE_TYPE_3" = "strong pressure";
+"MASSAGE_PRESSURE_TYPE_4" = "extra strong pressure";
 //MARK: My Therapist
-"MYTHERAPIST_TITLE" = "PRT_my therapists";
+"MYTHERAPIST_TITLE" = "my therapists";
 //MARK: Rateview dialog
 //MARK: Therapist Questionary
-"THERAPIST_QUESTIONARY_TITLE" = "PRT_therapies questionnaire";
+"THERAPIST_QUESTIONARY_TITLE" = "therapies questionnaire";
 //MARK: Prefer Language
-"PREFERE_LANGUAGE_TITTLE" = "PRT_preferred language";
+"PREFERE_LANGUAGE_TITTLE" = "preferred language";
 "LANGUAGE_ENGLISH" =  "English";
 "LANGUAGE_PORTUGUES" =  "Portugues";
 //MARK: Setting Menu
-"SETTING_MENU_TITTLE" = "PRT_settings";
-"SETTING_PREFERRED_LANGUAGE" = "PRT_preferred language";
-"SETTING_CHANGE_PASSWORD" = "PRT_change password";
-"SETTING_CURRENCY" = "PRT_currency";
-"SETTING_DISTANCE_UNIT" = "PRT_units ( km,miles.. )";
-"SETTING_NOTIFICATION" = "PRT_notifications";
-"SETTING_TERMS_AND_CONDITION" = "PRT_terms & conditions";
-"SETTING_PRIVACY" = "PRT_manage privacy settings";
-"SETTING_LOGOUT" = "PRT_logout";
+"SETTING_MENU_TITTLE" = "settings";
+"SETTING_PREFERRED_LANGUAGE" = "preferred language";
+"SETTING_CHANGE_PASSWORD" = "change password";
+"SETTING_CURRENCY" = "currency";
+"SETTING_DISTANCE_UNIT" = "units ( km,miles.. )";
+"SETTING_NOTIFICATION" = "notifications";
+"SETTING_TERMS_AND_CONDITION" = "terms & conditions";
+"SETTING_PRIVACY" = "manage privacy settings";
+"SETTING_LOGOUT" = "logout";
 //MARK: Change Password Dialog
-"CHANGE_PASSWORD_TXT_OLD_PASSWORD" = "PRT_old password";
-"CHANGE_PASSWORD_TXT_NEW_PASSWORD" = "PRT_new password";
-"CHANGE_PASSWORD_TXT_CONFIRM_PASSWORD" = "PRT_confirm password";
+"CHANGE_PASSWORD_TXT_OLD_PASSWORD" = "old password";
+"CHANGE_PASSWORD_TXT_NEW_PASSWORD" = "new password";
+"CHANGE_PASSWORD_TXT_CONFIRM_PASSWORD" = "confirm password";
 //MARK: Notification
-"NOTIFICATION_TITLE" = "PRT_notifications";
-"MY_PLACE_TITLE" = "PRT_my places";
-"NO_NOTIFICATION_TITLE" = "PRT_no more notifications";
+"NOTIFICATION_TITLE" = "notifications";
+"MY_PLACE_TITLE" = "my places";
+"NO_NOTIFICATION_TITLE" = "no more notifications";
 //MARK: My Address
-"MANAGE_ADDRESS_TITLE" = "PRT_manage address";
-"NO_ADDRESS_TITLE" = "PRT_you don't have any saved\naddresses";
-"NO_ADDRESS_MSG" = "PRT_add places that you call home";
-"MANAGE_ADDRESS_BTN_ADD_NEW_ADDRESS" = "PRT_Add New Address";
-"MANAGE_ADDRESS_DIALOG_ADD_NEW_ADDRESS_TITLE" = "PRT_Add New Address";
-"MANAGE_ADDRESS_DIALOG_EDIT_ADDRESS_TITLE" = "PRT_Edit Address";
-"MANAGE_ADDRESS_TXT_ADDRESS_LINE_1" = "PRT_address line 1";
-"MANAGE_ADDRESS_TXT_ADDRESS_LINE_2" = "PRT_address line 2 ( optional )";
-"MANAGE_ADDRESS_TXT_LANDMARK" = "PRT_landmark";
-"MANAGE_ADDRESS_TXT_ADDRESS_PINCODE" = "PRT_pincode";
-"MANAGE_ADDRESS_TXT_ADDRESS_STATE" = "PRT_state";
-"MANAGE_ADDRESS_TXT_ADDRESS_CITY" = "PRT_city";
-"MANAGE_ADDRESS_TXT_ADDRESS_NAME" = "PRT_home / work / office";
-"MANAGE_ADDRESS_TXT_ADDRESS_LATITUDE" = "PRT_latitude";
-"MANAGE_ADDRESS_TXT_ADDRESS_LONGITUDE" = "PRT_longitude";
+"MANAGE_ADDRESS_TITLE" = "manage address";
+"NO_ADDRESS_TITLE" = "you don't have any saved\naddresses";
+"NO_ADDRESS_MSG" = "add places that you call home";
+"MANAGE_ADDRESS_BTN_ADD_NEW_ADDRESS" = "Add New Address";
+"MANAGE_ADDRESS_DIALOG_ADD_NEW_ADDRESS_TITLE" = "Add New Address";
+"MANAGE_ADDRESS_DIALOG_EDIT_ADDRESS_TITLE" = "Edit Address";
+"MANAGE_ADDRESS_TXT_ADDRESS_LINE_1" = "address line 1";
+"MANAGE_ADDRESS_TXT_ADDRESS_LINE_2" = "address line 2 ( optional )";
+"MANAGE_ADDRESS_TXT_LANDMARK" = "landmark";
+"MANAGE_ADDRESS_TXT_ADDRESS_PINCODE" = "pincode";
+"MANAGE_ADDRESS_TXT_ADDRESS_STATE" = "state";
+"MANAGE_ADDRESS_TXT_ADDRESS_CITY" = "city";
+"MANAGE_ADDRESS_TXT_ADDRESS_NAME" = "home / work / office";
+"MANAGE_ADDRESS_TXT_ADDRESS_LATITUDE" = "latitude";
+"MANAGE_ADDRESS_TXT_ADDRESS_LONGITUDE" = "longitude";
 //MARK: Manage People
-"MANAGE_PEOPLE_TITLE" = "PRT_manage people";
-"MANAGE_PEOPLE_BTN_ADD_NEW" = "PRT_add new";
-"MANAGE_PEOPLE_TXT_NAME" = "PRT_Name";
-"MANAGE_PEOPLE_TXT_AGE" = "PRT_Age";
-"NO_PEOPLE_TITLE" = "PRT_";
-"NO_PEOPLE_MSG" = "PRT_";
+"MANAGE_PEOPLE_TITLE" = "manage people";
+"MANAGE_PEOPLE_BTN_ADD_NEW" = "add new";
+"MANAGE_PEOPLE_TXT_NAME" = "Name";
+"MANAGE_PEOPLE_TXT_AGE" = "Age";
+"NO_PEOPLE_TITLE" = "";
+"NO_PEOPLE_MSG" = "";
 
 //MARK: Price  And Location
-"PRICE_AND_LOCATION_TITLE" = "PRT_pricing and locations";
-"PRICE_AND_LOCATION_TXT_SEARCH_LOCATION" = "PRT_search location";
+"PRICE_AND_LOCATION_TITLE" = "pricing and locations";
+"PRICE_AND_LOCATION_TXT_SEARCH_LOCATION" = "search location";
 "NO_LOCATION_TITLE" =  "you don't have any location\naddresses";
 "NO_LOCATION_MSG" =  "--";
 
 //MARK: Promocode
-"PROMOCODE_TITLE" = "PRT_promo code";
-"PROMOCODE_VOUCHER_CODE" = "PRT_voucher code";
-"PROMOCODE_BTN_ADD_NEW" = "PRT_Add New";
+"PROMOCODE_TITLE" = "promo code";
+"PROMOCODE_VOUCHER_CODE" = "voucher code";
+"PROMOCODE_BTN_ADD_NEW" = "Add New";
 //MARK: Pack
-"PACK_TITLE" = "PRT_pack";
-"PACK_CODE" = "PRT_Pack code";
-"PACK_BTN_BUY_NEW" = "PRT_Buy New pack";
-"BUY_PACK_DIALOG_TITLE"= "PRT_buy a pack";
-"ADD_PACK_DIALOG_TITLE"= "PRT_add pack";
-"PACK_BTN_BUY_A_PACK" = "PRT_buy a pack";
-"PACK_BTN_PROCEED_TO_BUY" = "PRT_Proceed to Buy";
-"PACK_BTN_GET_THIS_PACK" = "PRT_Get This Pack";
-"PACK_BTN_BUY_NEW" = "PRT_Buy New pack";
-"PACK_PURCHASE_COMPLETE_TITLE" = "PRT_purchase successful";
-"PACK_PURCHASE_COMPLETE_MESSAGE" = "PRT_thanks for choosing our services! we have received your booking and will confirm it as soon as possible";
+"PACK_TITLE" = "pack";
+"PACK_CODE" = "Pack code";
+"PACK_BTN_BUY_NEW" = "Buy New pack";
+"BUY_PACK_DIALOG_TITLE"= "buy a pack";
+"ADD_PACK_DIALOG_TITLE"= "add pack";
+"PACK_BTN_BUY_A_PACK" = "buy a pack";
+"PACK_BTN_PROCEED_TO_BUY" = "Proceed to Buy";
+"PACK_BTN_GET_THIS_PACK" = "Get This Pack";
+"PACK_BTN_BUY_NEW" = "Buy New pack";
+"PACK_PURCHASE_COMPLETE_TITLE" = "purchase successful";
+"PACK_PURCHASE_COMPLETE_MESSAGE" = "thanks for choosing our services! we have received your booking and will confirm it as soon as possible";
 //MARK: Help
-"HELP_TITLE" = "PRT_help";
-"CHAT_DIALOG_TITLE" = "PRT_chat";
-"CHAT_DIALOG_MSG" = "PRT_there are no pending issues to fix";
-"CHAT_DIALOG_BTN_CHAT_NOW" = "PRT_Have Doubts? Chat Now";
+"HELP_TITLE" = "help";
+"CHAT_DIALOG_TITLE" = "chat";
+"CHAT_DIALOG_MSG" = "there are no pending issues to fix";
+"CHAT_DIALOG_BTN_CHAT_NOW" = "Have Doubts? Chat Now";
 //MARK: Faq
-"FAQ_TITLE" = "PRT_FAQs";
+"FAQ_TITLE" = "FAQs";
 //MARK: Verification
-"VERIFICATION_LBL_ID_PASSPORT"= "PRT_Id / Passport";
-"VERIFICATION_LBL_FRONT_SIDE"  = "PRT_Front Side";
-"VERIFICATION_LBL_BACK_SIDE"  = "PRT_Back Side";
-"VERIFICATION_TITLE" = "PRT_Varification";
-"VERIFICATION_BTN_VERIFIED" = "PRT_Verified";
+"VERIFICATION_LBL_ID_PASSPORT"= "Id / Passport";
+"VERIFICATION_LBL_FRONT_SIDE"  = "Front Side";
+"VERIFICATION_LBL_BACK_SIDE"  = "Back Side";
+"VERIFICATION_TITLE" = "Varification";
+"VERIFICATION_BTN_VERIFIED" = "Verified";
 //MARK: Refer And Earn
-"REFER_AND_EARN_TITLE" = "PRT_terra points";
-"REFER_AND_EARN_LBL_TOTAL_BALANCE" = "PRT_total balance";
-"REFER_AND_EARN_LBL_LIFETIME_EARNING" = "PRT_lifetime earnings";
-"REFER_AND_EARN_LBL_LIFETIME_BURNING" = "PRT_lifetime burns";
-"REFER_AND_EARN_LBL_INVITE_FRIEND_TITLE" = "PRT_refer and earn terra points";
-"REFER_AND_EARN_LBL_INVITE_FRIEND_MSG" = "PRT_invite a friend and given him 50 terra points and earn 50 terra points for yourself.";
-"REFER_AND_EARN_BTN_REFER_NOW" = "PRT_Refer Now";
+"REFER_AND_EARN_TITLE" = "terra points";
+"REFER_AND_EARN_LBL_TOTAL_BALANCE" = "total balance";
+"REFER_AND_EARN_LBL_LIFETIME_EARNING" = "lifetime earnings";
+"REFER_AND_EARN_LBL_LIFETIME_BURNING" = "lifetime burns";
+"REFER_AND_EARN_LBL_INVITE_FRIEND_TITLE" = "refer and earn terra points";
+"REFER_AND_EARN_LBL_INVITE_FRIEND_MSG" = "invite a friend and given him 50 terra points and earn 50 terra points for yourself.";
+"REFER_AND_EARN_BTN_REFER_NOW" = "Refer Now";
 
-"REFER_AND_EARN_LBL_FRIEND_REFERRED_TITLE" = "PRT_friends referred";
-"REFER_AND_EARN_LBL_HISTORY" = "PRT_history";
-"REFER_AND_EARN_LBL_NO_HISTORY" = "PRT_no history found";
+"REFER_AND_EARN_LBL_FRIEND_REFERRED_TITLE" = "friends referred";
+"REFER_AND_EARN_LBL_HISTORY" = "history";
+"REFER_AND_EARN_LBL_NO_HISTORY" = "no history found";
 "HISTORY_FILTER_TITLE" =  "Choose filter range";
-"SHARE_REFERRAL_TITLE" = "PRT_refer and earn terra points";
-"BTN_INVITE_VIA_SOCIAL_MEDIA" = "PRT_Invite Via Whatsapp";
+"SHARE_REFERRAL_TITLE" = "refer and earn terra points";
+"BTN_INVITE_VIA_SOCIAL_MEDIA" = "Invite Via Whatsapp";
 
 //MARK: Campaigns
-"CAMPAIGNS_TITLE" = "PRT_Campaigns";
-"CAMPAIGNS_BTN_DETAILS" = "PRT_Details";
-"CAMPAIGNS_DETAIL_DIALOG_TITLE" = "PRT_campaigns details";
-"CAMPAIGNS_DETAIL_DIALOG_MSG" = "PRT_Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget. Nullam eget felis eget nunc lobortis. Faucibus ornare suspendisse sed nisi. Sagittis eu volutpat odio facilisis mauris sit amet massa. Erat velit scelerisque in dictum non consectetur a erat. Amet nulla facilisi morbi tempus iaculis urna.";
+"CAMPAIGNS_TITLE" = "Campaigns";
+"CAMPAIGNS_BTN_DETAILS" = "Details";
+"CAMPAIGNS_DETAIL_DIALOG_TITLE" = "campaigns details";
+"CAMPAIGNS_DETAIL_DIALOG_MSG" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget. Nullam eget felis eget nunc lobortis. Faucibus ornare suspendisse sed nisi. Sagittis eu volutpat odio facilisis mauris sit amet massa. Erat velit scelerisque in dictum non consectetur a erat. Amet nulla facilisi morbi tempus iaculis urna.";
 
 //MARK: How It Work Screen
 
-"HOW_IT_WORK_TITLE" = "PRT_how it works?";
-"HOW_IT_WORK_TITLE_1" = "PRT_in massage center";
-"HOW_IT_WORK_TITLE_2" = "PRT_at home or hotel";
-"HOW_IT_WORK_TITLE_3" = "PRT_events and corporate";
-"HOW_IT_WORK_SHORT_DESCRIPTION" = "PRT_Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-"HOW_IT_WORK_LONG_DESCRIPTION" = "PRT_Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget.";
+"HOW_IT_WORK_TITLE" = "how it works?";
+"HOW_IT_WORK_TITLE_1" = "in massage center";
+"HOW_IT_WORK_TITLE_2" = "at home or hotel";
+"HOW_IT_WORK_TITLE_3" = "events and corporate";
+"HOW_IT_WORK_SHORT_DESCRIPTION" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+"HOW_IT_WORK_LONG_DESCRIPTION" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget.";
 
 //MARK: Event Booking Success
-
-"EVENT_BOOKING_TITLE" = "PRT_request sent";
-"EVENT_BOOKING_MESSAGE" = "PRT_Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut";
-"EVENT_BOOKING_BTN_HOME" = "PRT_Home";
-"HOME_ITEM_TYPE_INFO" = "PRT_info";
-"MY_BOOKING_TITLE" = "PRT_my bookings";
-"HOME_ITEM_TYPE_HOTEL_OR_ROOM" = "PRT_Our closest centers to you send therapist for home / hotel visits. Check the menu to make your choice as each center offer different massages and therapies. You will pay the same price + mobile service fee extra.";
+"EVENT_BOOKING_DIALOG_TITLE" = "Events and Corporate request";
+"EVENT_BOOKING_TITLE" = "request sent";
+"EVENT_BOOKING_MESSAGE" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut";
+"EVENT_BOOKING_BTN_HOME" = "Home";
+"HOME_ITEM_TYPE_INFO" = "info";
+"MY_BOOKING_TITLE" = "my bookings";
+"HOME_ITEM_TYPE_HOTEL_OR_ROOM" = "Our closest centers to you send therapist for home / hotel visits. Check the menu to make your choice as each center offer different massages and therapies. You will pay the same price + mobile service fee extra.";
+"EVENT_USER_NAME" = "name";
+"EVENT_USER_MOBILE" = "mobile";
+"EVENT_USER_EMAIL" = "email";
+"EVENT_USER_MESSAGE" = "message";
 //MARK:  Reciepent Detail VC
-"RECIEPENT_DETAIL_TITLE" = "PRT_add reciepent";
-"RECIEPENT_BTN_ADD_RECIEPENT" = "PRT_Add Reciepent";
-"RECIEPENT_BTN_ADD_SERVICE" = "PRT_Add Service";
-"RECIEPENT_LBL_TOTAL" = "PRT_total";
+"RECIEPENT_DETAIL_TITLE" = "add reciepent";
+"RECIEPENT_BTN_ADD_RECIEPENT" = "Add Reciepent";
+"RECIEPENT_BTN_ADD_SERVICE" = "Add Service";
+"RECIEPENT_LBL_TOTAL" = "total";
 //MARK:  Service Map VC
-"BOOKING_COMPLETE_TITLE" = "PRT_booking successful";
-"BOOKING_COMPLETE_MESSAGE" = "PRT_thanks for choosing our services! we have received your booking and will confirm it as soon as possible";
-"BOOKING_COMPLETE_BTN_HOME" = "PRT_Home";
-"BOOKING_OPENING_HOURS"  = "PRT_ opening hours";
+"BOOKING_COMPLETE_TITLE" = "booking successful";
+"BOOKING_COMPLETE_MESSAGE" = "thanks for choosing our services! we have received your booking and will confirm it as soon as possible";
+"BOOKING_COMPLETE_BTN_HOME" = "Home";
+"BOOKING_OPENING_HOURS"  = " opening hours";
 //MARK:  Service Map VC
-"BTN_BOOK_HERE" = "PRT_Book Here";
-"BTN_CHECK_SERVICE" = "PRT_Check Service";
-"BOOKING_SERVICES" = "PRT_services";
-"SESSION_TYPE_TITLE" = "PRT_session type";
+"BTN_BOOK_HERE" = "Book Here";
+"BTN_CHECK_SERVICE" = "Check Service";
+"BOOKING_SERVICES" = "services";
+"SESSION_TYPE_TITLE" = "session type";
 //MARK:  Review And Book VC
-"REVIEW_AND_BOOK_TITLE" = "PRT_review and book";
-"REVIEW_AND_BOOK_TITLE_DETAIL" = "PRT_confirm details before payment";
-"REVIEW_AND_BOOK_LBL_BOOKING_DETAIL" = "PRT_booking details";
-"REVIEW_AND_BOOK_LBL_SESSION_DETAIL" = "PRT_session details";
-"REVIEW_AND_BOOK_LBL_SUMMARY" = "PRT_summary";
-"REVIEW_AND_BOOK_LBL_SUB_TOTAL" = "PRT_subtotal";
-"REVIEW_AND_BOOK_LBL_OTHER" = "PRT_other";
-"REVIEW_AND_BOOK_LBL_TOTAL" = "PRT_total";
-"REVIEW_AND_BOOK_LBL_HAVE_A_COUPEN" = "PRT_have a coupon?";
-"REVIEW_AND_BOOK_TXT_PROMO_PLACEHOLDER" = "PRT_enter coupon code";
-"REVIEW_AND_BOOK_BTN_APPLY" = "PRT_apply";
-"REVIEW_AND_BOOK_BTN_PREPAYMENT" = "PRT_prepayment";
-"REVIEW_AND_BOOK_BTN_WITHOUT_PAYMENT" = "PRT_without prepayment";
+"REVIEW_AND_BOOK_TITLE" = "review and book";
+"REVIEW_AND_BOOK_TITLE_DETAIL" = "confirm details before payment";
+"REVIEW_AND_BOOK_LBL_BOOKING_DETAIL" = "booking details";
+"REVIEW_AND_BOOK_LBL_SESSION_DETAIL" = "session details";
+"REVIEW_AND_BOOK_LBL_SUMMARY" = "summary";
+"REVIEW_AND_BOOK_LBL_SUB_TOTAL" = "subtotal";
+"REVIEW_AND_BOOK_LBL_OTHER" = "other";
+"REVIEW_AND_BOOK_LBL_TOTAL" = "total";
+"REVIEW_AND_BOOK_LBL_HAVE_A_COUPEN" = "have a coupon?";
+"REVIEW_AND_BOOK_TXT_PROMO_PLACEHOLDER" = "enter coupon code";
+"REVIEW_AND_BOOK_BTN_APPLY" = "apply";
+"REVIEW_AND_BOOK_BTN_PREPAYMENT" = "prepayment";
+"REVIEW_AND_BOOK_BTN_WITHOUT_PAYMENT" = "without prepayment";
 //MARK: Payment Screen
-"PAYMENT_DIALOG_TITLE" = "PRT_payment";
-"PAYMENT_PREFERENCE_TITLE" = "PRT_payments";
-"PAYMENT_LBL_PAYPAL" = "PRT_Paypal";
-"PAYMENT_PAYPAL_EMAIL_ID" = "PRT_Paypal email id";
-"PAYMENT_LBL_DEFAULT" = "PRT_Default";
-"PAYMENT_LBL_CARDS" = "PRT_credit, debit & ATM cards";
-"PAYMENT_BTN_ADD_NEW" = "PRT_Add New";
+"PAYMENT_DIALOG_TITLE" = "payment";
+"PAYMENT_PREFERENCE_TITLE" = "payments";
+"PAYMENT_LBL_PAYPAL" = "Paypal";
+"PAYMENT_PAYPAL_EMAIL_ID" = "Paypal email id";
+"PAYMENT_LBL_DEFAULT" = "Default";
+"PAYMENT_LBL_CARDS" = "credit, debit & ATM cards";
+"PAYMENT_BTN_ADD_NEW" = "Add New";
 "PAYMENT_BTN_ADD_NEW_PAYMENT" =  "Add New payment method";
 
 //MAKR: Gift Voucher Screen
-"GIFT_VOUCHER_TITLE" = "PRT_my gift voucher";
-"GIFT_VOUCHER_HEADER" = "PRT_offer a special moment of relax to somebody you love";
-"GIFT_VOUCHER_SUB_HEADER" = "PRT_please read this info before you buy a gift voucher:";
-"GIFT_VOUCHER_BODY" = "PRT_1. each voucher can be used from one person only in one time only, so don't buy a voucher to offer for 2 or more people.\n2. choose the amount you want to offer (can be 15, 20, 25, 30, 35, 40, 50, 60, 75, 80, 100€) , the person who received the voucher will choose the type of massage when she/he calls to book\n3. write the name and tel number of the person who will receive the voucher\n4. type the email on which you would like to receive the voucher and the invoice\n5. fill in your fiscal number and country (optional) for the invoice\n6. once you finish the payment you will receive an email with the electronic voucher and the invoice\n7. the voucher can be used in a period max of 12 months";
-"GIFT_VOUCHER_EMPTY_TITLE" = "PRT_you have no gift voucher";
-"GIFT_VOUCHER_EMPTY_MESSAGE" = "PRT_";
-"GIFT_VOUCHER_BTN_BUY_NOW" = "PRT_Buy Now";
-"GIFT_VOUCHER_BTN_GET_STARTED" = "PRT_Get Started";
-"GIFT_VOUCHER_BTN_BUY_GIFT_VOUCHER" = "PRT_Buy Gift Voucher";
-"GIFT_VOUCHER_BTN_PROCEED_TO_BUY" = "PRT_Proceed to Buy";
-"GIFT_VOUCHER_BTN_MAKE_CHAGES" = "PRT_make changes";
-"GIFT_VOUCHER_BTN_PREVIEW" = "PRT_preview";
-"BUY_GIFT_VOUCHER_COMPLETE_TITLE" = "PRT_buy gift voucher Successful";
-"BUY_GIFT_VOUCHER_COMPLETE_MESSAGE" = "PRT_thanks for choosing our services! we have received your booking and will confirm it as soon as possible";
+"GIFT_VOUCHER_TITLE" = "my gift voucher";
+"GIFT_VOUCHER_HEADER" = "offer a special moment of relax to somebody you love";
+"GIFT_VOUCHER_SUB_HEADER" = "please read this info before you buy a gift voucher:";
+"GIFT_VOUCHER_BODY" = "1. each voucher can be used from one person only in one time only, so don't buy a voucher to offer for 2 or more people.\n2. choose the amount you want to offer (can be 15, 20, 25, 30, 35, 40, 50, 60, 75, 80, 100€) , the person who received the voucher will choose the type of massage when she/he calls to book\n3. write the name and tel number of the person who will receive the voucher\n4. type the email on which you would like to receive the voucher and the invoice\n5. fill in your fiscal number and country (optional) for the invoice\n6. once you finish the payment you will receive an email with the electronic voucher and the invoice\n7. the voucher can be used in a period max of 12 months";
+"GIFT_VOUCHER_EMPTY_TITLE" = "you have no gift voucher";
+"GIFT_VOUCHER_EMPTY_MESSAGE" = "";
+"GIFT_VOUCHER_BTN_BUY_NOW" = "Buy Now";
+"GIFT_VOUCHER_BTN_GET_STARTED" = "Get Started";
+"GIFT_VOUCHER_BTN_BUY_GIFT_VOUCHER" = "Buy Gift Voucher";
+"GIFT_VOUCHER_BTN_PROCEED_TO_BUY" = "Proceed to Buy";
+"GIFT_VOUCHER_BTN_MAKE_CHAGES" = "make changes";
+"GIFT_VOUCHER_BTN_PREVIEW" = "preview";
+"BUY_GIFT_VOUCHER_COMPLETE_TITLE" = "buy gift voucher Successful";
+"BUY_GIFT_VOUCHER_COMPLETE_MESSAGE" = "thanks for choosing our services! we have received your booking and will confirm it as soon as possible";
 
 //MARK: Add Gift Voucher Screen
-"ADD_GIFT_VOUCHER_TITLE" = "PRT_add gift voucher";
-"ADD_GIFT_VOUCHER_LOCATION_DETAIL" = "PRT_location";
-"ADD_GIFT_VOUCHER_LOCATION_DETAIL_PLACEHOLDER" = "PRT_no location select";
-"ADD_GIFT_VOUCHER_SERVICE_DETAIL" = "PRT_service";
-"ADD_GIFT_VOUCHER_SERVICE_DETAIL_PLACEHOLDER" = "PRT_no service select";
-"ADD_GIFT_VOUCHER_DESIGN_DETAIL" = "PRT_choose a design";
-"ADD_GIFT_VOUCHER_DESIGN_DETAIL_PLACEHOLDER" = "PRT_no design select";
-"ADD_GIFT_VOUCHER_RECIPIENT_DETAIL" = "PRT_recipients details";
-"ADD_GIFT_VOUCHER_RECIPIENT_DETAIL_PLACEHOLDER" = "PRT_no details fill";
-"ADD_GIFT_VOUCHER_GIVER_DETAIL" = "PRT_giver details";
-"ADD_GIFT_VOUCHER_GIVER_DETAIL_PLACEHOLDER" = "PRT_no details fill";
-"ADD_GIFT_VOUCHER_SENDING_PREFERENCE_DETAIL" = "PRT_sending preference";
-"ADD_GIFT_VOUCHER_SENDING_PREFERENCE_DETAIL_PLACEHOLDER" = "PRT_no send";
-"ADD_GIFT_VOUCHER_SUBTOTAL" = "PRT_subtotal";
+"ADD_GIFT_VOUCHER_TITLE" = "add gift voucher";
+"ADD_GIFT_VOUCHER_LOCATION_DETAIL" = "location";
+"ADD_GIFT_VOUCHER_LOCATION_DETAIL_PLACEHOLDER" = "no location select";
+"ADD_GIFT_VOUCHER_SERVICE_DETAIL" = "service";
+"ADD_GIFT_VOUCHER_SERVICE_DETAIL_PLACEHOLDER" = "no service select";
+"ADD_GIFT_VOUCHER_DESIGN_DETAIL" = "choose a design";
+"ADD_GIFT_VOUCHER_DESIGN_DETAIL_PLACEHOLDER" = "no design select";
+"ADD_GIFT_VOUCHER_RECIPIENT_DETAIL" = "recipients details";
+"ADD_GIFT_VOUCHER_RECIPIENT_DETAIL_PLACEHOLDER" = "no details fill";
+"ADD_GIFT_VOUCHER_GIVER_DETAIL" = "giver details";
+"ADD_GIFT_VOUCHER_GIVER_DETAIL_PLACEHOLDER" = "no details fill";
+"ADD_GIFT_VOUCHER_SENDING_PREFERENCE_DETAIL" = "sending preference";
+"ADD_GIFT_VOUCHER_SENDING_PREFERENCE_DETAIL_PLACEHOLDER" = "no send";
+"ADD_GIFT_VOUCHER_SUBTOTAL" = "subtotal";
 //MARK:  Reservation VC
-"RESERVATION_TITLE" = "PRT_your reservation is pending";
-"RESERVATION_MESSAGE" = "PRT_For the protection of our therapists, we kindly ask you to verify your account in 4 steps before you finalize your booking: Selfie and ID or passport verification Do you want to complete this step?";
-"RESERVATION_BTN_PROCEED2" = "PRT_no, i prefer to come to your location";
+"RESERVATION_TITLE" = "your reservation is pending";
+"RESERVATION_MESSAGE" = "For the protection of our therapists, we kindly ask you to verify your account in 4 steps before you finalize your booking: Selfie and ID or passport verification Do you want to complete this step?";
+"RESERVATION_BTN_PROCEED2" = "no, i prefer to come to your location";
 
-"REQUEST_BOOKING_COMPLETE_TITLE" = "PRT_request sent";
-"REQUEST_BOOKING_COMPLETE_MESSAGE" = "PRT_Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut";
-"REQUEST_BOOKING_COMPLETE_BTN_HOME" = "PRT_Home";
+"REQUEST_BOOKING_COMPLETE_TITLE" = "booking Successful";
+"REQUEST_BOOKING_COMPLETE_MESSAGE" = "thanks for choosing our services! we have received your booking and will confirm it as soon as possible";
+"REQUEST_BOOKING_COMPLETE_BTN_HOME" = "Home";
 //MARK: Manage Document Screen
-"MANAGE_DOCUMENT_TITLE" = "PRT_Id / Passport";
-"DOCUMENT_EMPTY_TITLE" = "PRT_no documents available";
-"DOCUMENT_EMPTY_MSG" = "PRT_add document to continue";
-"MANAGE_DOCUMENT_BTN_ADD_NEW" = "PRT_Add New";
-"MANAGE_ADDRESS_DIALOG_ADD_NEW_ADDRESS_TITLE" = "PRT_Add New Address";
-"MANAGE_ADDRESS_DIALOG_EDIT_ADDRESS_TITLE" = "PRT_Edit Address";
-"MANAGE_ADDRESS_TXT_ADDRESS_LINE_1" = "PRT_address line 1";
-"MANAGE_ADDRESS_TXT_ADDRESS_LINE_2" = "PRT_address line 2 ( optional )";
-"MANAGE_ADDRESS_TXT_LANDMARK" = "PRT_landmark";
-"MANAGE_ADDRESS_TXT_ADDRESS_PINCODE" = "PRT_pincode";
-"MANAGE_ADDRESS_TXT_ADDRESS_STATE" = "PRT_state";
-"MANAGE_ADDRESS_TXT_ADDRESS_CITY" = "PRT_city";
-"MANAGE_ADDRESS_TXT_ADDRESS_NAME" = "PRT_home / work / office";
-"MANAGE_ADDRESS_TXT_ADDRESS_LATITUDE" = "PRT_latitude";
-"MANAGE_ADDRESS_TXT_ADDRESS_LONGITUDE" = "PRT_longitude";
+"MANAGE_DOCUMENT_TITLE" = "Id / Passport";
+"DOCUMENT_EMPTY_TITLE" = "no documents available";
+"DOCUMENT_EMPTY_MSG" = "add document to continue";
+"MANAGE_DOCUMENT_BTN_ADD_NEW" = "Add New";
+"MANAGE_ADDRESS_DIALOG_ADD_NEW_ADDRESS_TITLE" = "Add New Address";
+"MANAGE_ADDRESS_DIALOG_EDIT_ADDRESS_TITLE" = "Edit Address";
+"MANAGE_ADDRESS_TXT_ADDRESS_LINE_1" = "address line 1";
+"MANAGE_ADDRESS_TXT_ADDRESS_LINE_2" = "address line 2 ( optional )";
+"MANAGE_ADDRESS_TXT_LANDMARK" = "landmark";
+"MANAGE_ADDRESS_TXT_ADDRESS_PINCODE" = "pincode";
+"MANAGE_ADDRESS_TXT_ADDRESS_STATE" = "state";
+"MANAGE_ADDRESS_TXT_ADDRESS_CITY" = "city";
+"MANAGE_ADDRESS_TXT_ADDRESS_NAME" = "home / work / office";
+"MANAGE_ADDRESS_TXT_ADDRESS_LATITUDE" = "latitude";
+"MANAGE_ADDRESS_TXT_ADDRESS_LONGITUDE" = "longitude";
 //MARK: Add Card SCREEN
 
 
-"ADD_CARD_TITLE" = "PRT_add credit card";
-"ADD_CARD_TITLE_MESSAGE" = "PRT_verify and secure your card";
-"ADD_CARD_TXT_NAME" = "PRT_card holder name";
-"ADD_CARD_TXT_CVV_NUMBER" = "PRT_cvv";
-"ADD_CARD_TXT_CARD_NUMBER" = "PRT_XXXX-XXXX-XXXX-XXXX";
-"ADD_CARD_TXT_EXPIRY" = "PRT_mm/yy";
-"ADD_CARD_SAVE_CARD_DETAILS" = "PRT_save your card details securely";
-"ADD_CARD_SAVE_CARD_DETAIL_MESSAGE" = "PRT_your card data is saved in a PCI DSS compliant secure vault.";
-"ADD_CARD_BTN_ADD_CARD" = "PRT_Add Card";
+"ADD_CARD_TITLE" = "add credit card";
+"ADD_CARD_TITLE_MESSAGE" = "verify and secure your card";
+"ADD_CARD_TXT_NAME" = "card holder name";
+"ADD_CARD_TXT_CVV_NUMBER" = "cvv";
+"ADD_CARD_TXT_CARD_NUMBER" = "XXXX-XXXX-XXXX-XXXX";
+"ADD_CARD_TXT_EXPIRY" = "mm/yy";
+"ADD_CARD_SAVE_CARD_DETAILS" = "save your card details securely";
+"ADD_CARD_SAVE_CARD_DETAIL_MESSAGE" = "your card data is saved in a PCI DSS compliant secure vault.";
+"ADD_CARD_BTN_ADD_CARD" = "Add Card";
 
 //MARK: Accessory Dialog
-"ACCESSORY_TITLE" = "PRT_do we need to bring a table?";
-"ACCESSORY_BTN_YES" = "PRT_yes";
-"ACCESSORY_BTN_NO" = "PRT_no";
-"ACCESSORY_TXT_NUMBER_OF_TABLES" = "PRT_number of tables";
+"ACCESSORY_TITLE" = "do we need to bring a table?";
+"ACCESSORY_BTN_YES" = "yes";
+"ACCESSORY_BTN_NO" = "no";
+"ACCESSORY_TXT_NUMBER_OF_TABLES" = "number of tables";
 
-"SELFIE_LBL_TITLE" = "PRT_take selfie";
-"SELFIE_LBL_MESSAGE" = "PRT_we use your selfie to compare with your passport photo";
-"SELFIE_BTN_OPEN_CAMERA" = "PRT_Open Camera";
-"SELFIE_LBL_INFO_1_TITLE" = "PRT_good lighting";
-"SELFIE_LBL_INFO_1_MESSAGE" = "PRT_make sure you are in a well lit area and both ears are uncovered";
-"SELFIE_LBL_INFO_2_TITLE" = "PRT_look straight";
-"SELFIE_LBL_INFO_2_MESSAGE" = "PRT_hold your phone at eye level and look straight to the camera";
+"SELFIE_LBL_TITLE" = "take selfie";
+"SELFIE_LBL_MESSAGE" = "we use your selfie to compare with your passport photo";
+"SELFIE_BTN_OPEN_CAMERA" = "Open Camera";
+"SELFIE_LBL_INFO_1_TITLE" = "good lighting";
+"SELFIE_LBL_INFO_1_MESSAGE" = "make sure you are in a well lit area and both ears are uncovered";
+"SELFIE_LBL_INFO_2_TITLE" = "look straight";
+"SELFIE_LBL_INFO_2_MESSAGE" = "hold your phone at eye level and look straight to the camera";
 
 //KYC Form
-"KYC_INFO_LBL_TITLE" = "PRT_let's get started";
-"KYC_INFO_LBL_MESSAGE" = "PRT_to verify your identity, we kindly ask you to follow the 3 steps underneath.";
-"KYC_INFO_LBL_SCAN_PASSPORT" = "PRT_scan passport / id";
-"KYC_INFO_LBL_TAKE_SELFIE" = "PRT_take selfie";
-"KYC_INFO_LBL_ADD_CREDIT_CARD" = "PRT_add credit card";
+"KYC_INFO_LBL_TITLE" = "let's get started";
+"KYC_INFO_LBL_MESSAGE" = "to verify your identity, we kindly ask you to follow the 3 steps underneath.";
+"KYC_INFO_LBL_SCAN_PASSPORT" = "scan passport / id";
+"KYC_INFO_LBL_TAKE_SELFIE" = "take selfie";
+"KYC_INFO_LBL_ADD_CREDIT_CARD" = "add credit card";
 
-"SCAN_PASSPORT_LBL_TITLE" = "PRT_scan passport / id";
-"SCAN_PASSPORT_LBL_MESSAGE" = "PRT_Please scan your ID / Passport as shown below. \"Place your camera in a way that your document fit in the box.\"";
-"SCAN_PASSPORT_BTN_SCAN_NOW" = "PRT_Scan Now";
+"SCAN_PASSPORT_LBL_TITLE" = "scan passport / id";
+"SCAN_PASSPORT_LBL_MESSAGE" = "Please scan your ID / Passport as shown below. \"Place your camera in a way that your document fit in the box.\"";
+"SCAN_PASSPORT_BTN_SCAN_NOW" = "Scan Now";
 
-"SCAN_PASSPORT_LBL_FRONT_SIDE" = "PRT_scan front Side";
-"SCAN_PASSPORT_LBL_BACK_SIDE" = "PRT_scan back Side";
+"SCAN_PASSPORT_LBL_FRONT_SIDE" = "scan front Side";
+"SCAN_PASSPORT_LBL_BACK_SIDE" = "scan back Side";
 "SELFIE_SCAN_LBL_INFO" =  "Hold your phone at eye level so that your selfie is similar to your passport photo";
 //MARK: Photo Dialog
-"PHOTO_DIALOG_FROM_TITLE" = "PRT_upload a photo ";
-"PHOTO_DIALOG_FROM_CAMERA" = "PRT_take a photo ";
-"PHOTO_DIALOG_FROM_GALLARY" = "PRT_load from gallary";
-"FACE_SCAN_MESSAGE" = "PRT_Hold your phone at eye level so that your selfie is similar to your passport photo";
-"DOCUMENT_LB_MESSAGE" = "PRT_Hold your phone to scan your document";
+"PHOTO_DIALOG_FROM_TITLE" = "upload a photo ";
+"PHOTO_DIALOG_FROM_CAMERA" = "take a photo ";
+"PHOTO_DIALOG_FROM_GALLARY" = "load from gallary";
+"FACE_SCAN_MESSAGE" = "Hold your phone at eye level so that your selfie is similar to your passport photo";
+"DOCUMENT_LB_MESSAGE" = "Hold your phone to scan your document";
 
 //MARK: Reciepent Dialog
-"RECIEPENT_DIALOG__TITLE" = "PRT_select recipient";
-"RECIEPENT_DIALOG_BTN_ADD" = "PRT_Add New Reciepent";
+"RECIEPENT_DIALOG__TITLE" = "select recipient";
+"RECIEPENT_DIALOG_BTN_ADD" = "Add New Reciepent";
 "SELECT_SERIVICE_TITLE" =  "Select Service";
 
 //MARK: Date Dialog
-"DATE_DIALOG_TITLE" = "PRT_select date & time";
-"DATE_DIALOG_LBL_SELECT_DATE" = "PRT_select date";
-"DATE_DIALOG_LBL_SELECT_TIME" = "PRT_select time";
+"DATE_DIALOG_TITLE" = "select date & time";
+"DATE_DIALOG_LBL_SELECT_DATE" = "select date";
+"DATE_DIALOG_LBL_SELECT_TIME" = "select time";
 
 //MARK: FingerPrint Dialog
 
-"FINGER_PRINT_DIALOG_REGISTER_TITLE" = "PRT_register your fingerprint";
-"FINGER_PRINT_DIALOG_VALIDATION" = "PRT_please verify your bio-matric authentication";
-"FINGER_PRINT_DIALOG_LOGIN_TITLE" = "PRT_login with fingerprint";
-"FINGER_PRINT_DIALOG_PASSWORD_TITLE" = "PRT_login with password";
-"FINGER_PRINT_DIALOG_BTN_PASSWORD" = "PRT_password";
+"FINGER_PRINT_DIALOG_REGISTER_TITLE" = "register your fingerprint";
+"FINGER_PRINT_DIALOG_VALIDATION" = "please verify your bio-matric authentication";
+"FINGER_PRINT_DIALOG_LOGIN_TITLE" = "login with fingerprint";
+"FINGER_PRINT_DIALOG_PASSWORD_TITLE" = "login with password";
+"FINGER_PRINT_DIALOG_BTN_PASSWORD" = "password";
 //MARK: -
 //MARK: Common Strings
 //MARK: -
-"BTN_CONNECT" = "PRT_connect";
-"LBL_UPLOAD" = "PRT_upload";
-"BTN_SUBMIT" = "PRT_submit";
-"BTN_NEXT" = "PRT_next";
-"BTN_SAVE" = "PRT_save";
-"BTN_PROCEED" = "PRT_Proceed";
-"BTN_YES_PROCEED" = "PRT_yes proceed";
-"BTN_BACK" = "PRT_back";
-"BTN_SEND" = "PRT_Send";
-"BTN_CANCEL" = "PRT_cancel";
-"BTN_SKIP" = "PRT_skip";
+"BTN_CONNECT" = "connect";
+"LBL_UPLOAD" = "upload";
+"BTN_SUBMIT" = "submit";
+"BTN_NEXT" = "next";
+"BTN_SAVE" = "save";
+"BTN_PROCEED" = "Proceed";
+"BTN_YES_PROCEED" = "yes proceed";
+"BTN_BACK" = "back";
+"BTN_SEND" = "Send";
+"BTN_CANCEL" = "cancel";
+"BTN_SKIP" = "skip";
 "BTN_APPLY" =  "apply";
 "LBL_MENU" =  "menu";
-"TIME_UNIT_MIN" = "PRT_min";
+"TIME_UNIT_MIN" = "min";
 
-"PHOTO_DIALOG_SCAN_DOCUMENT" = "PRT_Scan";
-"PHOTO_DIALOG_UPLODED"= "PRT_Upload";
+"PHOTO_DIALOG_SCAN_DOCUMENT" = "Scan";
+"PHOTO_DIALOG_UPLODED"= "Upload";
 
 
-"FAQ_CONTENT" = "PRT_Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget. Nullam eget felis eget nunc lobortis. Faucibus ornare suspendisse sed nisi. Sagittis eu volutpat odio facilisis mauris sit amet massa. Erat velit scelerisque in dictum non consectetur a erat. Amet nulla facilisi morbi tempus iaculis urna.";
+"FAQ_CONTENT" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget. Nullam eget felis eget nunc lobortis. Faucibus ornare suspendisse sed nisi. Sagittis eu volutpat odio facilisis mauris sit amet massa. Erat velit scelerisque in dictum non consectetur a erat. Amet nulla facilisi morbi tempus iaculis urna.";
 //MARK: -
 //MARK: VALIDATION TOAST MESSAGES
 //MARK: -
-"VALIDATION_MSG_INVALID_EMAIL" = "PRT_Please enter valid email address";
-"VALIDATION_MSG_INVALID_PASSWORD" = "PRT_Please enter valid password";
-"VALIDATION_MSG_INVALID_NAME" = "PRT_Please enter valid name";
-"VALIDATION_MSG_MISMATCH_CONFIRM_PASSWORD" = "PRT_Confirm password does not match with your entered password.\nConfirm and password must be same.";
-"VALIDATION_MSG_INVALID_MOBILE" = "PRT_Please enter valid mobile number";
-"VALIDATION_MSG_PLEASE_ENTER_OTP" = "PRT_Please enter valid otp";
-"VALIDATION_MSG_PLEASE_UPLOAD_ALL_DOCUMENTS" = "PRT_Please Upload all documents";
-"VALIDATION_MSG_INVALID_DATA" = "PRT_Please enter valid data";
-"VALIDATION_MSG_SELECT_TERMS_AND_CONDITION" = "PRT_Please select terms and conditions";
-"VALIDATION_MSG_SELECT_COUNTRY_FIRST" = "PRT_Please select country first";
-"VALIDATION_MSG_PLEASE_SELECT_DATA" = "PRT_Please select valid data";
-"VALIDATION_MSG_PLEASE_SELECT_DATE" = "PRT_Please select valid date";
-"VALIDATION_MSG_PLEASE_SELECT_LOCATION" = "PRT_Please select loccation";
+"VALIDATION_MSG_INVALID_EMAIL" = "Please enter valid email address";
+"VALIDATION_MSG_INVALID_PASSWORD" = "Please enter valid password";
+"VALIDATION_MSG_INVALID_NAME" = "Please enter valid name";
+"VALIDATION_MSG_MISMATCH_CONFIRM_PASSWORD" = "Confirm password does not match with your entered password.\nConfirm and password must be same.";
+"VALIDATION_MSG_INVALID_MOBILE" = "Please enter valid mobile number";
+"VALIDATION_MSG_PLEASE_ENTER_OTP" = "Please enter valid otp";
+"VALIDATION_MSG_PLEASE_UPLOAD_ALL_DOCUMENTS" = "Please Upload all documents";
+"VALIDATION_MSG_INVALID_DATA" = "Please enter valid data";
+"VALIDATION_MSG_SELECT_TERMS_AND_CONDITION" = "Please select terms and conditions";
+"VALIDATION_MSG_SELECT_COUNTRY_FIRST" = "Please select country first";
+"VALIDATION_MSG_PLEASE_SELECT_DATA" = "Please select valid data";
+"VALIDATION_MSG_PLEASE_SELECT_DATE" = "Please select valid date";
+"VALIDATION_MSG_PLEASE_SELECT_LOCATION" = "Please select loccation";
 "VALIDATION_MSG_INVALID_NAME"  =  "Please enter valid name";
 "VALIDATION_MSG_INVALID_SURNAME"  =  "Please enter valid surname";
 "VALIDATION_MSG_INVALID_GENDER"  =  "Please select gender";
@@ -493,6 +498,7 @@
 "VALIDATION_MSG_NUMBER_ONLY"  =  "Please enter numbers only";
 "VALIDATION_MSG_DATE_SELECTION"  =  "Please select date";
 "VALIDATION_MSG_TIME_SELECTION"  =  "Please select time";
+"VALIDATION_MSG_ENTER_PROMO_CODE" = "Please enter promocode";
 
 
 
