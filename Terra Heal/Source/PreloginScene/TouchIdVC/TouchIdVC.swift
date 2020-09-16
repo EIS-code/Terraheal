@@ -8,7 +8,7 @@ import LocalAuthentication
 
 
 
-class TouchIdVC: MainVC {
+class TouchIdVC: BaseVC {
 
 
 

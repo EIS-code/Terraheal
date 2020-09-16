@@ -8,7 +8,7 @@ import UIKit
 
 
 
-class GiftServiceDetailVC: MainVC {
+class GiftServiceDetailVC: BaseVC {
    
     @IBOutlet weak var ivPicture: UIImageView!
     @IBOutlet weak var scrVw: UIScrollView!

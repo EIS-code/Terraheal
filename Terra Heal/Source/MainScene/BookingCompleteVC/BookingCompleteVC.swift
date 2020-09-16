@@ -12,7 +12,7 @@ struct CompletionData {
     var strImg: String = ""
     var strButtonTitle: String = "BTN_HOME".localized()
 }
-class BookingCompleteVC: MainVC {
+class BookingCompleteVC: BaseVC {
 
 
     @IBOutlet weak var ivCompletion: UIImageView!
@@ -70,7 +70,7 @@ class BookingCompleteVC: MainVC {
     }
 
     @IBAction func btnHomeTapped(_ sender: Any) {
-        Common.appDelegate.loadHomeVC()
+        Common.appDelegate.loadMainVC()
     }
 }
 

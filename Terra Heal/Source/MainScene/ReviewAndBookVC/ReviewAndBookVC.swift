@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReviewAndBookVC: MainVC {
+class ReviewAndBookVC: BaseVC {
     
     @IBOutlet weak var vwBar: UIView!
     @IBOutlet weak var lblTitleDetail: ThemeLabel!
@@ -215,7 +215,7 @@ class ReviewAndBookVC: MainVC {
             [weak cancelBookingDialog, weak self]  in
             guard let self = self else { return } ; print(self)
             cancelBookingDialog?.dismiss()
-            Common.appDelegate.loadHomeVC()
+            Common.appDelegate.loadMainVC()
         }
     }
     
@@ -383,7 +383,7 @@ extension ReviewAndBookVC: UITableViewDelegate, UITableViewDataSource {
     
     func openServiceDurationSelection(index: IndexPath) {
         let durationSelectionDialog: DurationSelectionDialog = DurationSelectionDialog.fromNib()
-        durationSelectionDialog.initialize(title: "Select duration",message: "note:- 23% VAT is included", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        durationSelectionDialog.initialize(title: "DIALOG_SELECT_DURATION_TITLE".localized(),message: "note:- 23% VAT is included", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
         durationSelectionDialog.setDataSource(data: arrForData[index.section].services[index.row].duration)
         durationSelectionDialog.show(animated: true)
         durationSelectionDialog.onBtnCancelTapped = {

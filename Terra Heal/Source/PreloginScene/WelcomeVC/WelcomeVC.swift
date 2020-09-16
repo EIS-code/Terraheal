@@ -7,7 +7,7 @@ import UIKit
 
 
 
-class WelcomeVC: MainVC {
+class WelcomeVC: BaseVC {
 
 
     @IBOutlet weak var lblHeader1: ThemeLabel!
@@ -78,7 +78,7 @@ class WelcomeVC: MainVC {
         Common.appDelegate.loadRegisterVC()
     }
     @IBAction func btnHomeTapped(_ sender: Any) {
-        Common.appDelegate.loadHomeVC()
+        Common.appDelegate.loadMainVC()
     }
     @IBAction func btnSignInTapped(_ sender: Any) {
            Common.appDelegate.loadLoginVC()

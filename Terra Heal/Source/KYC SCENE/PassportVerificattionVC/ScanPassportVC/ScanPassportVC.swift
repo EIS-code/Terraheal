@@ -8,7 +8,7 @@ import AVFoundation
 
 
 
-class ScanPassportVC: MainVC, AVCapturePhotoCaptureDelegate {
+class ScanPassportVC: BaseVC, AVCapturePhotoCaptureDelegate {
     
     
     

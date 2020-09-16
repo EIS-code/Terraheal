@@ -7,7 +7,7 @@ import UIKit
 
 
 
-class ScanSelfieInstructionVC: MainVC {
+class ScanSelfieInstructionVC: BaseVC {
 
 
 

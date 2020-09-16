@@ -9,7 +9,7 @@ struct AutoCompleteAddress {
     var placeID: String = ""
 }
 
-class MapLocationVC: MainVC {
+class MapLocationVC: BaseVC {
     
     //MARK:
     //MARK: Outlets

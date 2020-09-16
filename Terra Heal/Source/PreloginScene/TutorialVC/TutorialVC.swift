@@ -7,7 +7,7 @@ import UIKit
 
 
 
-class TutorialVC: MainVC {
+class TutorialVC: BaseVC {
 
 
     @IBOutlet weak var btnSkip: UnderlineTextButton!

@@ -5,7 +5,7 @@
 
 import UIKit
 
-class MyTherapistVC: MainVC {
+class MyTherapistVC: BaseVC {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -86,7 +86,7 @@ class MyTherapistVC: MainVC {
         
     }
     @IBAction func btnSubmitTapped(_ sender: Any) {
-        Common.appDelegate.loadHomeVC()
+        Common.appDelegate.loadMainVC()
     }
     
     

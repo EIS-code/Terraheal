@@ -81,7 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func changeLanguage() {
-        self.loadHomeVC()
+        self.loadMainVC()
     }
     
 }

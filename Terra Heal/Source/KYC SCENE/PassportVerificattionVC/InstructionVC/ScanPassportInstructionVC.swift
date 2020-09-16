@@ -7,7 +7,7 @@ import UIKit
 
 
 
-class ScanPassportInstructionVC: MainVC {
+class ScanPassportInstructionVC: BaseVC {
     
     
     

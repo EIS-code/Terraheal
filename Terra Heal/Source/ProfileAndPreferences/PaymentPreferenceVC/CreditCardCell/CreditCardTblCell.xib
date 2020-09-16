@@ -27,7 +27,7 @@
                                     <constraint firstAttribute="width" secondItem="yxB-Gg-czY" secondAttribute="height" multiplier="1:1" id="rQP-yr-0Vn"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-payment-card" translatesAutoresizingMaskIntoConstraints="NO" id="4DP-9l-fOa">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-payment-card" translatesAutoresizingMaskIntoConstraints="NO" id="4DP-9l-fOa">
                                 <rect key="frame" x="16" y="24.5" width="39.5" height="40"/>
                                 <color key="backgroundColor" name="theme_background"/>
                                 <constraints>

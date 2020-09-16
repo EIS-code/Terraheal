@@ -63,13 +63,13 @@
                                                             <rect key="frame" x="10" y="10" width="277" height="124.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uh3-3K-ZQb" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="277" height="21"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="277" height="25"/>
                                                                     <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="18"/>
                                                                     <color key="textColor" name="theme_light_text_color"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="MON, OCT 20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyA-kj-E1P" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="21" width="277" height="53.5"/>
+                                                                    <rect key="frame" x="0.0" y="25" width="277" height="49.5"/>
                                                                     <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="36"/>
                                                                     <color key="textColor" name="theme_light_text_color"/>
                                                                     <nil key="highlightedColor"/>
@@ -199,6 +199,7 @@
                 <outlet property="topBarSpace" destination="Zud-Qp-ll1" id="aT7-7D-M22"/>
                 <outlet property="vwCalendar" destination="KPe-ks-amL" id="1LK-Bw-iKT"/>
                 <outlet property="vwMainCalender" destination="ybQ-MH-AIg" id="c2q-xh-fIG"/>
+                <outlet property="vwSelectionDate" destination="HPt-2p-CpU" id="Mi5-qO-73O"/>
                 <outlet property="vwTopBar" destination="OsI-uf-Fb8" id="VT3-o0-WSd"/>
             </connections>
             <point key="canvasLocation" x="132" y="131"/>
@@ -218,7 +219,7 @@
             <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_secondary">
-            <color red="0.97299998998641968" green="0.60000002384185791" blue="0.11800000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.97254901960784312" green="0.59999999999999998" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

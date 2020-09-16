@@ -84,7 +84,7 @@
                 <outlet property="lblAmount" destination="DN9-jh-Ww8" id="Sgw-wF-JqU"/>
                 <outlet property="lblCurrencySign" destination="4Hs-kl-xdE" id="EKC-wU-GiD"/>
                 <outlet property="lblDuration" destination="xjm-Ie-XOl" id="M8W-ss-bx5"/>
-                <outlet property="vwBg" destination="582-VR-E0n" id="HN0-K5-pey"/>
+                <outlet property="vwCellBg" destination="582-VR-E0n" id="26d-YA-fRD"/>
             </connections>
             <point key="canvasLocation" x="254.0625" y="160.56338028169014"/>
         </collectionViewCell>

@@ -8,7 +8,7 @@ import AVFoundation
 
 
 
-class ScanSelfieVC: MainVC, AVCapturePhotoCaptureDelegate {
+class ScanSelfieVC: BaseVC, AVCapturePhotoCaptureDelegate {
 
 
 
@@ -80,7 +80,7 @@ class ScanSelfieVC: MainVC, AVCapturePhotoCaptureDelegate {
 
         if capturedFrontImage == nil {
             self.capturedFrontImage = UIImage()
-            Common.appDelegate.loadHomeVC()
+            Common.appDelegate.loadMainVC()
         }
     }
 

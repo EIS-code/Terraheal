@@ -27,7 +27,7 @@
                                 <color key="textColor" name="theme_dark_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check-secondary" translatesAutoresizingMaskIntoConstraints="NO" id="AbO-De-7nI">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check" translatesAutoresizingMaskIntoConstraints="NO" id="AbO-De-7nI">
                                 <rect key="frame" x="286" y="10" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="AbO-De-7nI" secondAttribute="height" multiplier="1:1" id="CVp-sG-V6m"/>
@@ -57,20 +57,20 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="ivSelected" destination="AbO-De-7nI" id="9PW-Yi-A6D"/>
-                <outlet property="lblName" destination="zbl-J2-KSJ" id="uPE-In-SOw"/>
-                <outlet property="vwBg" destination="fTr-D4-KiU" id="gMF-14-1KR"/>
+                <outlet property="imgCellSelected" destination="AbO-De-7nI" id="xv4-8g-v62"/>
+                <outlet property="lblCellTitle" destination="zbl-J2-KSJ" id="7kq-cv-WWK"/>
+                <outlet property="vwCellBg" destination="fTr-D4-KiU" id="Qdi-3L-jgt"/>
             </connections>
             <point key="canvasLocation" x="136.23188405797103" y="151.67410714285714"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="asset-check-secondary" width="16.5" height="16.5"/>
+        <image name="asset-check" width="32" height="32"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_dark_text">
-            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

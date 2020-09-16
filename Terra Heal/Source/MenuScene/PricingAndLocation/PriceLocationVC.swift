@@ -5,7 +5,7 @@
 
 import UIKit
 
-class PriceLocationVC: MainVC {
+class PriceLocationVC: BaseVC {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var vwForEmpty: UIView!

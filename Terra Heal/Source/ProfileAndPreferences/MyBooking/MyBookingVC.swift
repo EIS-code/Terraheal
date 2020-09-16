@@ -10,7 +10,7 @@ struct MyBookingTblDetail{
     var isSelected: Bool = false
 }
 
-class MyBookingVC: MainVC {
+class MyBookingVC: BaseVC {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var vwTab: JDSegmentedControl!
@@ -83,7 +83,7 @@ class MyBookingVC: MainVC {
         _ = (self.navigationController as? NC)?.popVC()
     }
     @IBAction func btnSubmitTapped(_ sender: Any) {
-        Common.appDelegate.loadHomeVC()
+        Common.appDelegate.loadMainVC()
     }
 
 

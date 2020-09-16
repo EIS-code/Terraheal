@@ -96,9 +96,6 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLP-3J-98a" userLabel="vwContent" customClass="JDSegmentedControl" customModule="Terra_Heal" customModuleProvider="target">
                                     <rect key="frame" x="96" y="96" width="128" height="40"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="Oe6-gz-a6P"/>
-                                    </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="thumbColor">
                                             <color key="value" name="theme_secondary"/>
@@ -220,7 +217,7 @@
             <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_secondary">
-            <color red="0.97299998998641968" green="0.60000002384185791" blue="0.11800000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.97254901960784312" green="0.59999999999999998" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

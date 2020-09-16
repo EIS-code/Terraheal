@@ -119,7 +119,31 @@ class ThemeBottomDialogView: ThemeView {
     }
     
     func getGradientInset() -> UIEdgeInsets {
-        return UIEdgeInsets(top: (stkHeader?.bounds.height ?? 0) + topBarSpace.constant + 20, left: 0, bottom: (stkButtons?.bounds.height ?? 0) + 20, right: 0)
+       return UIEdgeInsets.init(top: self.getTopInset(), left: 0, bottom: self.getBottomInset(), right: 0)
+    }
+    
+    func getTopInset() -> CGFloat{
+           if headerGradient != nil {
+               if headerGradient!.enableGradient {
+                   return (stkHeader?.bounds.height ?? 0) + topBarSpace.constant + 20
+                
+               } else {
+                   return 0
+               }
+           }
+           return 0
+       }
+       
+       
+    func getBottomInset() -> CGFloat{
+           if footerGradient != nil {
+               if footerGradient!.enableGradient {
+                   return (stkButtons?.bounds.height ?? 0) + 20
+               } else {
+                   return 0
+               }
+           }
+           return 0
     }
 }
 

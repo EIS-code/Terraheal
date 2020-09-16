@@ -7,7 +7,7 @@ import UIKit
 
 
 
-class VerifyContactVC: MainVC {
+class VerifyContactVC: BaseVC {
 
 
     @IBOutlet weak var btnHome: FilledRoundedButton!
@@ -55,7 +55,7 @@ class VerifyContactVC: MainVC {
 
     // MARK: - Action Methods
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
-         Common.appDelegate.loadHomeVC()
+         Common.appDelegate.loadMainVC()
     }
     
 

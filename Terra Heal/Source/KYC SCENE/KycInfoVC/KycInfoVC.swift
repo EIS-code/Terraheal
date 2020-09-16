@@ -7,7 +7,7 @@ import UIKit
 
 
 
-class KycInfoVC: MainVC {
+class KycInfoVC: BaseVC {
 
 
 

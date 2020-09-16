@@ -22,12 +22,6 @@ class MyTherapistTblCell: SelectionBorderTableCell {
         self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.header)
         self.btnAction?.setTitle(FontSymbol.next_arrow, for: .normal)
         self.imgTherapist?.setRound()
-        self.radius = 15
-        self.cellBorderColor = UIColor.themePrimary
-        self.shadowProperty.color = UIColor.init(hex: "#3C80D116")
-        self.shadowProperty.opacity = 1.0
-        self.shadowProperty.radius = 19
-        self.shadowProperty.offset = CGSize.init(width: 0.0, height: 12.0)
     }
 
     func setData(data: MyTherapistDetail ) {

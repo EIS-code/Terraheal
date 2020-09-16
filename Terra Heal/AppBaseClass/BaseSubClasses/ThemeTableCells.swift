@@ -20,11 +20,12 @@ class TableCell: UITableViewCell {
 
 
 struct CellShadowProperty {
-    var radius: CGFloat = 15
-    var color: UIColor = UIColor.gray
-    var offset: CGSize = CGSize.init(width: 0.0, height: 1.0)
-    var opacity: Float = 0.0
+    var radius: CGFloat = 19
+    var color: UIColor =  UIColor.init(hex: "#3C80D116")
+    var offset: CGSize = CGSize.init(width: 0.0, height: 12.0)
+    var opacity: Float = 1.0
 }
+
 
 class SelectionBorderTableCell: TableCell {
     
@@ -33,7 +34,7 @@ class SelectionBorderTableCell: TableCell {
     @IBOutlet weak var imgCellSelected: UIImageView!
     
     var shadowProperty: CellShadowProperty = CellShadowProperty.init()
-    @IBInspectable open var radius : CGFloat = 10 {
+    @IBInspectable open var radius : CGFloat = 15 {
         didSet{self.setupLayout()}
     }
     
@@ -64,7 +65,7 @@ class SelectionBorderTableCell: TableCell {
     }
     
     func setupLayout() {
-        self.imgCellSelected?.setRound()
+        //self.imgCellSelected?.setRound()
         if self.isSelected {
             self.imgCellSelected?.isHidden = false
             self.vwCellBg?.setRound(withBorderColor: self.cellBorderColor, andCornerRadious: JDDeviceHelper.offseter(offset: radius), borderWidth: 1.0)

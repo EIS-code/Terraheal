@@ -12,6 +12,7 @@ import FSCalendar
 class CustomDatePicker: ThemeBottomDialogView {
 
 
+    @IBOutlet weak var vwSelectionDate: UIView!
     @IBOutlet weak var lblSelectedYear: ThemeLabel!
     @IBOutlet weak var lblSelectedDate: ThemeLabel!
     @IBOutlet weak var vwCalendar: FSCalendar!
@@ -23,6 +24,8 @@ class CustomDatePicker: ThemeBottomDialogView {
     var selectedMilli:Double = 0
     var minDate = Date()
     var maxDate = Date()
+    
+    var selectionColor: UIColor = UIColor.themePrimary
     fileprivate let formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
@@ -66,8 +69,9 @@ class CustomDatePicker: ThemeBottomDialogView {
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblSelectedDate.setFont(name: FontName.Bold, size: FontSize.doubleExLarge)
         self.lblSelectedYear.setFont(name: FontName.Regular, size: FontSize.subHeader)
-        
         self.setupCalendarView(calendar: vwCalendar)
+        self.vwSelectionDate.backgroundColor = self.selectionColor
+        self.selectDate(date: Date())
     }
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -113,7 +117,8 @@ extension CustomDatePicker: FSCalendarDataSource, FSCalendarDelegate {
         calendar.delegate = self
         calendar.dataSource = self
         calendar.allowsMultipleSelection = false
-        calendar.appearance.todayColor = UIColor.themePrimary
+        calendar.appearance.todayColor = self.selectionColor
+        calendar.appearance.selectionColor =  self.selectionColor
         calendar.appearance.caseOptions = .weekdayUsesSingleUpperCase
         calendar.appearance.weekdayFont = FontHelper.font(name: FontName.Regular, size: FontSize.detail)
         calendar.appearance.weekdayTextColor = UIColor.themeHintText
@@ -143,7 +148,7 @@ extension CustomDatePicker: FSCalendarDataSource, FSCalendarDelegate {
     }
     
     func selectDate(date:Date) {
-        self.lblSelectedDate.text = date.toString(format: "EEE, MMM dd")
+        self.lblSelectedDate.text = date.toString(format: "E, MMM dd")
         self.lblSelectedYear.text = date.toString(format: "yyyy")
         self.vwCalendar.select(date)
         self.selectedMilli = date.millisecondsSince1970

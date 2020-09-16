@@ -5,7 +5,7 @@
 
 import UIKit
 
-class MyAddressVC: MainVC {
+class MyAddressVC: BaseVC {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var vwForEmpty: UIView!

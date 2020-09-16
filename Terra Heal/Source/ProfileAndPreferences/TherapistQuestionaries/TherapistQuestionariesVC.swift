@@ -6,7 +6,7 @@
 import UIKit
 
 
-class TherapistQuestionariesVC: MainVC {
+class TherapistQuestionariesVC: BaseVC {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnSubmit: FilledRoundedButton!

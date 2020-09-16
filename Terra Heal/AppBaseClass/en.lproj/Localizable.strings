@@ -216,7 +216,7 @@
 "PRICE_AND_LOCATION_TXT_SEARCH_LOCATION" = "search location";
 "NO_LOCATION_TITLE" =  "you don't have any location\naddresses";
 "NO_LOCATION_MSG" =  "--";
-
+"DIALOG_SELECT_DURATION_TITLE" = "select duration";
 //MARK: Promocode
 "PROMOCODE_TITLE" = "promo code";
 "PROMOCODE_VOUCHER_CODE" = "voucher code";
@@ -458,7 +458,7 @@
 "LBL_UPLOAD" = "upload";
 "BTN_SUBMIT" = "submit";
 "BTN_NEXT" = "next";
-"BTN_SAVE" = "save";
+"BTN_SAVE" = "Save";
 "BTN_PROCEED" = "Proceed";
 "BTN_YES_PROCEED" = "yes proceed";
 "BTN_BACK" = "back";
@@ -468,7 +468,8 @@
 "BTN_APPLY" =  "apply";
 "LBL_MENU" =  "menu";
 "TIME_UNIT_MIN" = "min";
-
+"TXT_EMAIL" = "email";
+"DIALOG_TITLE_SEND_PREFERENCE" = "sending preference";
 "PHOTO_DIALOG_SCAN_DOCUMENT" = "Scan";
 "PHOTO_DIALOG_UPLODED"= "Upload";
 

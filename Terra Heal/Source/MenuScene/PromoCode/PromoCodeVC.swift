@@ -14,7 +14,7 @@ struct PromocodeDetail {
     var isSelected: Bool = false
 }
 
-class PromoCodeVC: MainVC {
+class PromoCodeVC: BaseVC {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnSubmit: FilledRoundedButton!

@@ -6,7 +6,7 @@
 import UIKit
 import LocalAuthentication
 
-class LoginVC: MainVC {
+class LoginVC: BaseVC {
 
     @IBOutlet weak var btnFigerPrint: UIButton!
     @IBOutlet weak var scrVw: UIScrollView!
@@ -140,7 +140,7 @@ extension LoginVC {
                 if let person = CoreDataManager.sharedManager.retrive(username: request.email) {
                     print(person.username ?? "")
                     CoreDataManager.sharedManager.update(username: request.email, password: request.password)
-                    Common.appDelegate.loadHomeVC()
+                    Common.appDelegate.loadMainVC()
                 } else {
                     self.openRegisterFingerPrintDialog()
                 }
@@ -226,13 +226,13 @@ extension LoginVC {
             [weak alertFingerPrint, weak self] in
             guard let self = self else {return}; print(self)
             alertFingerPrint?.dismiss();
-            Common.appDelegate.loadHomeVC()
+            Common.appDelegate.loadMainVC()
         }
         alertFingerPrint.onBtnDoneTapped = {[weak alertFingerPrint, weak self] in
             guard let self = self else {return}; print(self)
             alertFingerPrint?.dismiss();
             CoreDataManager.sharedManager.create(username: self.txtEmail.text!, password: self.txtPassword.text!)
-            Common.appDelegate.loadHomeVC()
+            Common.appDelegate.loadMainVC()
         }
     }
     

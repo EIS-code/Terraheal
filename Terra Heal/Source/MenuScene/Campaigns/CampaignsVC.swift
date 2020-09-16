@@ -13,7 +13,7 @@ struct CampaignsDetail {
     var isSelected: Bool = false
 }
 
-class CampaignsVC: MainVC {
+class CampaignsVC: BaseVC {
     @IBOutlet weak var tableView: UITableView!
    
     var arrForData: [CampaignsDetail] = [

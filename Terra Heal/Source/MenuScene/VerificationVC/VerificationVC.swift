@@ -5,7 +5,7 @@
 
 import UIKit
 
-class VerificationVC: MainVC {
+class VerificationVC: BaseVC {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnVerified: FilledRoundedButton!

@@ -42,7 +42,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="eob-8f-sCl">
-                    <rect key="frame" x="10" y="128" width="394" height="724"/>
+                    <rect key="frame" x="8" y="128" width="398" height="724"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <collectionViewLayout key="collectionViewLayout" id="eog-US-gn1" customClass="PinterestLayout" customModule="Terra_Heal" customModuleProvider="target"/>
                 </collectionView>
@@ -54,8 +54,22 @@
                 <constraint firstItem="KXp-In-rQJ" firstAttribute="leading" secondItem="Pha-Yw-JZd" secondAttribute="leading" constant="20" id="MLe-4m-t8u"/>
                 <constraint firstItem="Pha-Yw-JZd" firstAttribute="bottom" secondItem="eob-8f-sCl" secondAttribute="bottom" constant="10" id="SDr-WY-Hls"/>
                 <constraint firstItem="fV3-Pw-zf9" firstAttribute="top" secondItem="Pha-Yw-JZd" secondAttribute="top" constant="20" id="Y9b-2P-jnc"/>
-                <constraint firstItem="Pha-Yw-JZd" firstAttribute="trailing" secondItem="eob-8f-sCl" secondAttribute="trailing" constant="10" id="YjE-hc-9OS"/>
-                <constraint firstItem="eob-8f-sCl" firstAttribute="leading" secondItem="Pha-Yw-JZd" secondAttribute="leading" constant="10" id="hPS-RS-PLo"/>
+                <constraint firstItem="Pha-Yw-JZd" firstAttribute="trailing" secondItem="eob-8f-sCl" secondAttribute="trailing" constant="8" id="YjE-hc-9OS" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="eob-8f-sCl" firstAttribute="leading" secondItem="Pha-Yw-JZd" secondAttribute="leading" constant="8" id="hPS-RS-PLo" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
                 <constraint firstItem="eob-8f-sCl" firstAttribute="top" secondItem="fV3-Pw-zf9" secondAttribute="bottom" constant="20" id="zqf-Bh-43G"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Pha-Yw-JZd"/>

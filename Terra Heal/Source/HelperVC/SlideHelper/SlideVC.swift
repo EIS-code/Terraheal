@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SlideVC: MainVC {
+class SlideVC: BaseVC {
     var isOpen: Bool = false
     var direction: AnimationDirection = .left
     class func addLeftToVC(_ vC: UIViewController, sideVC: SlideVC) {

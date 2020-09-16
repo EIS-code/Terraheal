@@ -7,7 +7,7 @@ import UIKit
 
 
 
-class ReservationVC: MainVC {
+class ReservationVC: BaseVC {
     
     @IBOutlet weak var lblHeader: ThemeLabel!
     @IBOutlet weak var lblMessage: ThemeLabel!
@@ -95,7 +95,7 @@ class ReservationVC: MainVC {
                [weak cancelBookingDialog, weak self]  in
                guard let self = self else { return } ; print(self)
                cancelBookingDialog?.dismiss()
-               Common.appDelegate.loadHomeVC()
+               Common.appDelegate.loadMainVC()
            }
        }
     

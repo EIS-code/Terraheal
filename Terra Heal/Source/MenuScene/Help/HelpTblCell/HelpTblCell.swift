@@ -11,12 +11,15 @@ import UIKit
 class HelpTblCell: TableCell {
 
     @IBOutlet weak var vwBg: UIView!
-    @IBOutlet weak var txtQuestion: EditProfileTextfield!
-
-
+    @IBOutlet weak var lblCellTitle: ThemeLabel!
+    @IBOutlet weak var lblCellValue: ThemeLabel!
+    @IBOutlet weak var ivCell: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
+        self.lblCellTitle.setFont(name: FontName.SemiBold, size: FontSize.regular)
+        self.lblCellValue.setFont(name: FontName.Regular, size: FontSize.detail)
         /*txtQuestion.textColor = .themePrimary
         txtQuestion.selectedPlaceHolderColor = .themePrimary
         txtQuestion.placeHolderColor = .themePrimary
@@ -27,8 +30,9 @@ class HelpTblCell: TableCell {
     }
 
     func setData(data: HelpDetail ) {
-        self.txtQuestion.placeholder = data.question
-        self.txtQuestion.text = data.answer
+        self.ivCell.image = UIImage.init(named: data.image)
+        self.lblCellTitle.text = data.question
+        self.lblCellValue.text = data.answer
 
     }
 

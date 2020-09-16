@@ -32,7 +32,7 @@ struct HowItworkMenuDetail {
     var isSelected: Bool = false
 }
 
-class HowItWorkVC: MainVC {
+class HowItWorkVC: BaseVC {
     
     @IBOutlet weak var tableView: UITableView!
     

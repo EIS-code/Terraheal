@@ -14,7 +14,7 @@ struct UploadDocumentDetail {
 }
 
 
-class ManageDocumentVC: MainVC {
+class ManageDocumentVC: BaseVC {
     
     @IBOutlet weak var btnCancel: CancelButton!
     @IBOutlet weak var tableView: UITableView!

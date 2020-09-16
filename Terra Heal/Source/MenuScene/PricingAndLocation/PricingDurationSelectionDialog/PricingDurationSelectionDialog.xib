@@ -25,12 +25,12 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
-                    <rect key="frame" x="0.0" y="279.5" width="414" height="582.5"/>
+                    <rect key="frame" x="0.0" y="313.5" width="414" height="582.5"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6B9-d9-fu1">
-                            <rect key="frame" x="20.5" y="0.0" width="373" height="582.5"/>
+                            <rect key="frame" x="16" y="201" width="382" height="381.5"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NDJ-CX-CnJ">
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="NDJ-CX-CnJ">
                                 <size key="itemSize" width="128" height="128"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -47,7 +47,7 @@
                                         <constraint firstAttribute="height" constant="53" id="6g8-Jy-mPy"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="NO"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dx4-PU-kDz" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
@@ -73,19 +73,19 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCJ-fh-lMI" userLabel="vwTab">
-                            <rect key="frame" x="163" y="111" width="88" height="44"/>
+                            <rect key="frame" x="122" y="111" width="170" height="85"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bk0-ac-ye3" userLabel="vwHome">
-                            <rect key="frame" x="163" y="111" width="44" height="44"/>
+                            <rect key="frame" x="122" y="111" width="85" height="85"/>
                             <color key="backgroundColor" name="theme_primary"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wnm-sx-MwK" userLabel="vwTherapist">
-                            <rect key="frame" x="207" y="111" width="44" height="44"/>
+                            <rect key="frame" x="207" y="111" width="85" height="85"/>
                             <color key="backgroundColor" name="theme_primary"/>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe" userLabel="Stack View - main">
-                            <rect key="frame" x="20" y="10" width="374" height="140"/>
+                            <rect key="frame" x="20" y="10" width="374" height="181"/>
                             <subviews>
                                 <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="OsI-uf-Fb8">
                                     <rect key="frame" x="167" y="0.0" width="40" height="5"/>
@@ -108,10 +108,10 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ovk-PL-sFX">
-                                    <rect key="frame" x="148" y="106" width="78" height="34"/>
+                                    <rect key="frame" x="107" y="106" width="160" height="75"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4o6-gY-uGQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="4o6-gY-uGQ" secondAttribute="height" multiplier="1:1" id="pa4-pS-RoK"/>
                                             </constraints>
@@ -122,7 +122,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJt-ru-yx8">
-                                            <rect key="frame" x="44" y="0.0" width="34" height="34"/>
+                                            <rect key="frame" x="85" y="0.0" width="75" height="75"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" image="asset-pricing-therapist-tab"/>
                                             <state key="selected" image="asset-pricing-therapist-tab-selected"/>
@@ -135,7 +135,7 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WcN-mz-AOp">
-                            <rect key="frame" x="140.5" y="472.5" width="133" height="90"/>
+                            <rect key="frame" x="140.5" y="438.5" width="133" height="90"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="DialogFilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="133" height="40"/>
@@ -170,9 +170,16 @@
                         <constraint firstAttribute="bottom" secondItem="6B9-d9-fu1" secondAttribute="bottom" id="G2G-h0-Bj4"/>
                         <constraint firstItem="wCJ-fh-lMI" firstAttribute="trailing" secondItem="Ovk-PL-sFX" secondAttribute="trailing" constant="5" id="JxL-ba-Jb5"/>
                         <constraint firstItem="Bk0-ac-ye3" firstAttribute="bottom" secondItem="4o6-gY-uGQ" secondAttribute="bottom" constant="5" id="Oqp-G7-tvw"/>
-                        <constraint firstItem="6B9-d9-fu1" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" id="Q32-ga-zhU"/>
+                        <constraint firstItem="6B9-d9-fu1" firstAttribute="top" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="10" id="Q32-ga-zhU"/>
                         <constraint firstItem="wCJ-fh-lMI" firstAttribute="bottom" secondItem="Ovk-PL-sFX" secondAttribute="bottom" constant="5" id="RPZ-04-Oh8"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="RrZ-kW-n5i"/>
+                        <constraint firstItem="6B9-d9-fu1" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="16" id="WOR-fc-gwx" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                    <real key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
                         <constraint firstItem="HqW-zf-UKY" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" id="Wbg-2q-ydq"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="Zud-Qp-ll1"/>
                         <constraint firstAttribute="height" constant="582.5" id="akO-EM-GHD"/>
@@ -180,7 +187,6 @@
                         <constraint firstAttribute="bottom" secondItem="HqW-zf-UKY" secondAttribute="bottom" id="fCo-DH-e1V"/>
                         <constraint firstItem="HqW-zf-UKY" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" id="fnj-3J-L74"/>
                         <constraint firstItem="Bk0-ac-ye3" firstAttribute="trailing" secondItem="4o6-gY-uGQ" secondAttribute="trailing" constant="5" id="gZv-9w-J2a"/>
-                        <constraint firstItem="6B9-d9-fu1" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.9" id="jQH-17-Xnp"/>
                         <constraint firstItem="Wnm-sx-MwK" firstAttribute="leading" secondItem="rJt-ru-yx8" secondAttribute="leading" constant="-5" id="k77-MV-pXv"/>
                         <constraint firstItem="wCJ-fh-lMI" firstAttribute="leading" secondItem="Ovk-PL-sFX" secondAttribute="leading" constant="-5" id="qCK-L5-fxt"/>
                         <constraint firstItem="Wnm-sx-MwK" firstAttribute="top" secondItem="rJt-ru-yx8" secondAttribute="top" constant="-5" id="uTK-IC-Kj1"/>
@@ -191,7 +197,7 @@
             <constraints>
                 <constraint firstItem="Yaj-p7-IIT" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="8dM-F7-kDK"/>
                 <constraint firstAttribute="trailing" secondItem="6ZW-DU-hOd" secondAttribute="trailing" id="C4E-pP-AJq"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Yaj-p7-IIT" secondAttribute="bottom" id="JTg-za-1ir"/>
+                <constraint firstAttribute="bottom" secondItem="Yaj-p7-IIT" secondAttribute="bottom" id="JTg-za-1ir"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="WcN-mz-AOp" secondAttribute="bottom" constant="20" id="KR1-wL-k82"/>
                 <constraint firstItem="6ZW-DU-hOd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O4e-FZ-uqZ"/>
                 <constraint firstItem="6ZW-DU-hOd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Q6J-jS-lz5"/>
@@ -228,10 +234,10 @@
         </view>
     </objects>
     <resources>
-        <image name="asset-pricing-home-tab" width="31" height="34"/>
-        <image name="asset-pricing-home-tab-selected" width="31" height="34"/>
-        <image name="asset-pricing-therapist-tab" width="26.5" height="30"/>
-        <image name="asset-pricing-therapist-tab-selected" width="26.5" height="30"/>
+        <image name="asset-pricing-home-tab" width="75" height="75"/>
+        <image name="asset-pricing-home-tab-selected" width="50" height="50"/>
+        <image name="asset-pricing-therapist-tab" width="50" height="50"/>
+        <image name="asset-pricing-therapist-tab-selected" width="50" height="50"/>
         <namedColor name="theme_hint_text">
             <color red="0.69800001382827759" green="0.70200002193450928" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

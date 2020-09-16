@@ -67,9 +67,32 @@ enum Menu: String {
                return ImageAsset.SideMenu.giftvoucher
            }
        }
+    
+    func backgroundImage() -> String {
+        switch self {
+        case .HowItWork:
+            return ImageAsset.SideMenu.BG.howItWork
+        case .ReferAndEarn:
+            return ImageAsset.SideMenu.BG.referAndEarn
+        case .PricingAndLocation:
+            return ImageAsset.SideMenu.BG.pricingAndLocation
+        case .PromoCode:
+            return ImageAsset.SideMenu.BG.promocode
+        case .Notifications:
+            return ImageAsset.SideMenu.BG.notifications
+        case .Packs:
+            return ImageAsset.SideMenu.BG.packs
+        case .Help:
+            return ImageAsset.SideMenu.BG.help
+        case .Campaigns:
+            return ImageAsset.SideMenu.BG.campaigns
+        case .GiftVoucher:
+            return ImageAsset.SideMenu.BG.giftvoucher
+        }
+    }
 }
 
-class SideVC: MainVC {
+class SideVC: BaseVC {
 
     @IBOutlet weak var lblMenu: ThemeLabel!
     @IBOutlet weak var btnClose: CancelButton!
@@ -171,26 +194,26 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        if  let mainVC = self.revealViewController()?.leftViewController as? NC{
+        if  let BaseVC = self.revealViewController()?.leftViewController as? NC{
             switch self.arrForMenu[indexPath.row].id {
                    case Menu.Notifications:
-                       Common.appDelegate.loadNotificationVC(navigaionVC: mainVC)
+                       Common.appDelegate.loadNotificationVC(navigaionVC: BaseVC)
                    case Menu.HowItWork:
-                       Common.appDelegate.loadHowItWorkVC(navigaionVC: mainVC)
+                       Common.appDelegate.loadHowItWorkVC(navigaionVC: BaseVC)
                    case Menu.PricingAndLocation:
-                       Common.appDelegate.loadPriceLocationVC(navigaionVC: mainVC)
+                       Common.appDelegate.loadPriceLocationVC(navigaionVC: BaseVC)
                    case Menu.PromoCode:
-                       Common.appDelegate.loadPromocodeVC(navigaionVC: mainVC)
+                       Common.appDelegate.loadPromocodeVC(navigaionVC: BaseVC)
                    case Menu.Packs:
-                       Common.appDelegate.loadPackVC(navigaionVC: mainVC)
+                       Common.appDelegate.loadPackVC(navigaionVC: BaseVC)
                    case Menu.ReferAndEarn:
-                       Common.appDelegate.loadReferAndEarnVC(navigaionVC: mainVC)
+                       Common.appDelegate.loadReferAndEarnVC(navigaionVC: BaseVC)
                    case Menu.Campaigns:
-                       Common.appDelegate.loadCampaignsVC(navigaionVC: mainVC)
+                       Common.appDelegate.loadCampaignsVC(navigaionVC: BaseVC)
                    case Menu.Help:
-                       Common.appDelegate.loadHelpVC(navigaionVC: mainVC)
+                       Common.appDelegate.loadHelpVC(navigaionVC: BaseVC)
                    case Menu.GiftVoucher:
-                       Common.appDelegate.loadGiftVoucherVC(navigaionVC: mainVC)
+                       Common.appDelegate.loadGiftVoucherVC(navigaionVC: BaseVC)
                    }
         }
        

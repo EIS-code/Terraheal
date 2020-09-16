@@ -17,7 +17,7 @@ struct ReferralDetail {
             ReferralDetail(date: "23 Oct", amount: "20", description: "referral bonus", isCredit: true)]
     }
 }
-class ReferAndEarnVC: MainVC {
+class ReferAndEarnVC: BaseVC {
 
 
     @IBOutlet weak var scrVw: UIScrollView!
@@ -93,7 +93,7 @@ class ReferAndEarnVC: MainVC {
                 self.ivInviteFriend.setRound()
                 self.cltFriends.reloadData()
                 self.scrVw.contentInset = self.getGradientInset()
-                self.vwInviteFriend.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+                self.vwInviteFriend.setRound(withBorderColor: .clear, andCornerRadious: 25.0, borderWidth: 1.0)
             }
         }
     }
@@ -135,7 +135,7 @@ class ReferAndEarnVC: MainVC {
         self.lblNoHistory.text = "REFER_AND_EARN_LBL_NO_HISTORY".localized()
         self.lblNoHistory.setFont(name: FontName.Regular, size: FontSize.label_12)
 
-        self.btnFilter.setTitle("last month".localized(), for: .normal)
+        self.btnFilter.setTitle("last month".localized() + " " + FontSymbol.down_arrow, for: .normal)
         self.scrVw.contentInset = UIEdgeInsets.init(top: self.vwNavigationBar.bounds.height, left: 0, bottom: self.vwNavigationBar.bounds.height, right: 0)
         self.setupCollectionView(collectionView: self.cltFriends)
         self.setupTableView(tableView: self.tableView)

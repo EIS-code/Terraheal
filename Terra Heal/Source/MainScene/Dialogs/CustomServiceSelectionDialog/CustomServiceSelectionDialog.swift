@@ -55,7 +55,7 @@ class CustomServiceSelectionDialog: ThemeBottomDialogView {
         self.setupCollectionView(collectionView: self.collectionVw)
         self.vwServiceSelection.allowChangeThumbWidth = false
         self.vwServiceSelection.itemTitles = ["massages".localized(),"therapies".localized()]
-        self.vwServiceSelection.changeBackgroundColor(UIColor.themeLightTextColor)
+       /* self.vwServiceSelection.changeBackgroundColor(UIColor.themeLightTextColor)
         self.vwServiceSelection.didSelectItemWith = { [weak self] (index,title) in
             guard let self = self else {
                 return
@@ -66,7 +66,8 @@ class CustomServiceSelectionDialog: ThemeBottomDialogView {
             } else {
                 self.therapiesTapped()
             }
-        }
+        }*/
+ 
         self.setDataForStepUpAnimation()
         self.getServiceCenterDetail()
     }

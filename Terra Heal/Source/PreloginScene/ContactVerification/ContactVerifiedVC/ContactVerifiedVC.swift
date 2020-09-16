@@ -7,7 +7,7 @@ import UIKit
 
 
 
-class ContactVerifiedVC: MainVC {
+class ContactVerifiedVC: BaseVC {
 
 
     @IBOutlet weak var btnHome: FilledRoundedButton!
@@ -60,7 +60,7 @@ class ContactVerifiedVC: MainVC {
     }
 
     @IBAction func btnHomeTapped(_ sender: Any) {
-        Common.appDelegate.loadHomeVC()
+        Common.appDelegate.loadMainVC()
     }
 }
 

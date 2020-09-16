@@ -8,14 +8,9 @@ import Foundation
 
 
 
-class DurationCltCell: CollectionCell {
-    
+class DurationCltCell: SelectionBorderCollectionCell {
     
     var data: ServiceDurationDetail!
-    
-    @IBOutlet weak var ivSelected: PaddedImageView!
-    
-    @IBOutlet weak var vwBg: UIView!
     @IBOutlet weak var lblDuration: ThemeLabel!
     @IBOutlet weak var lblAmount: ThemeLabel!
     @IBOutlet weak var lblCurrencySign: ThemeLabel!
@@ -28,27 +23,15 @@ class DurationCltCell: CollectionCell {
     }
     
     func setData(data:ServiceDurationDetail) {
+        self.setData(isSelected: data.isSelected)
         self.data = data
         self.lblDuration.text = data.time + " " + "TIME_UNIT_MIN".localized()
         self.lblAmount.text = data.pricing.price
-        self.setupLayout()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.setupLayout()
-        
     }
-    func setupLayout() {
-        self.ivSelected?.setRound()
-        if data.isSelected {
-            self.ivSelected?.isHidden = false
-            vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: JDDeviceHelper.offseter(offset: 10), borderWidth: 1.0)
-        } else  {
-            self.ivSelected?.isHidden = true
-            vwBg?.setRound(withBorderColor: .clear, andCornerRadious: JDDeviceHelper.offseter(offset: 10), borderWidth: 1.0)
-        }
-        vwBg?.setDurationCellShadow()
-    }
+    
 }
 

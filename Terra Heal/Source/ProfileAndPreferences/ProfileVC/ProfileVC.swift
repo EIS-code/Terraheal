@@ -57,7 +57,7 @@ struct ProfileItemDetail {
 }
 
 
-class ProfileVC: MainVC {
+class ProfileVC: BaseVC {
     
     @IBOutlet weak var btnCancel: CancelButton!
     @IBOutlet weak var btnMenu: FloatingRoundButton!

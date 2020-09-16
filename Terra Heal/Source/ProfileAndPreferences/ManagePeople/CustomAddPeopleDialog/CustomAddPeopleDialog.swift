@@ -90,8 +90,6 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
         ivMaleSelected.isHidden = (gender == Gender.Male) ? false : true
         ivFemaleSelected.isHidden = (gender == Gender.Male) ? true : false
         btnFemale.setRound(withBorderColor: (gender == Gender.Male) ? UIColor.clear : UIColor.themePrimary, andCornerRadious: 10.0, borderWidth: 1.5)
-        ivMaleSelected?.setRound()
-        ivFemaleSelected?.setRound()
     }
 
     override func initialSetup() {
@@ -113,8 +111,6 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
         self.btnTherapistGender?.setRound(withBorderColor: UIColor.themeDarkText, andCornerRadious: (self.btnTherapistGender?.frame.height ?? 1.0)/2.0 , borderWidth: 1.0)
         self.imgProfilePic?.setRound()
         self.btnAddPicture?.setRound()
-        self.ivMaleSelected?.setRound()
-        self.ivFemaleSelected?.setRound()
     
     }
 

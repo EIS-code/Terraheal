@@ -29,6 +29,20 @@ struct ImageAsset {
         static let second = "asset-tutorial-1"
         static let third = "asset-tutorial-2"
     }
+    struct Help {
+        static let chat = "asset-help-chat"
+        static let faq = "asset-help-faq"
+        static let more = "asset-help-more"
+    }
+    
+    struct AddGiftVoucher {
+        static let design = "asset-add-gift-design"
+        static let giver = "asset-add-gift-giver"
+        static let location = "asset-add-gift-location"
+        static let recipient = "asset-add-gift-recipient"
+        static let sendingPreference = "asset-add-gift-sending-preference"
+        static let service = "asset-add-gift-service"
+    }
     struct Register {
         static let headerImage = "asset-register-top"
     }
@@ -92,15 +106,28 @@ struct ImageAsset {
     }
     struct SideMenu {
         
-        static let howItWork = "asset-side-menu-how-it-work.imageset"
-        static let referAndEarn = "asset-side-menu-refer-and-earn.imageset"
-        static let pricingAndLocation = "asset-side-menu-pricing-and-location.imageset"
-        static let promocode = "asset-side-menu-promo-code.imageset"
-        static let notifications = "asset-side-menu-notifications.imageset"
-        static let packs = "asset-side-menu-packs.imageset"
-        static let help = "asset-side-menu-help.imageset"
-        static let campaigns = "asset-side-menu-campaigns.imageset"
-        static let giftvoucher = "asset-side-menu-giftvoucher.imageset"
+        static let howItWork = "asset-side-menu-how-it-work"
+        static let referAndEarn = "asset-side-menu-refer-and-earn"
+        static let pricingAndLocation = "asset-side-menu-pricing-and-location"
+        static let promocode = "asset-side-menu-promo-code"
+        static let notifications = "asset-side-menu-notifications"
+        static let packs = "asset-side-menu-packs"
+        static let help = "asset-side-menu-help"
+        static let campaigns = "asset-side-menu-campaigns"
+        static let giftvoucher = "asset-side-menu-giftvoucher"
+        
+        struct BG {
+                static let howItWork = "asset-side-menu-how-it-work-bg"
+                static let referAndEarn = "asset-side-menu-refer-and-earn-bg"
+                static let pricingAndLocation = "asset-side-menu-pricing-and-location-bg"
+                static let promocode = "asset-side-menu-promo-code-bg"
+                static let notifications = "asset-side-menu-notifications-bg"
+                static let packs = "asset-side-menu-packs-bg"
+                static let help = "asset-side-menu-help-bg"
+                static let campaigns = "asset-side-menu-campaigns-bg"
+                static let giftvoucher = "asset-side-menu-giftvoucher-bg"
+        }
+        
         
     }
 }

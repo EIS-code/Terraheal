@@ -24,7 +24,6 @@ class CustomSendingPreferenceDialog: ThemeBottomDialogView {
         self.initialSetup()
         self.lblTitle.text = title
         self.txtData.placeholder = placeholder
-        self.txtData.text = data
         if cancelButtonTitle.isEmpty() {
             self.btnCancel.isHidden = true
         } else {

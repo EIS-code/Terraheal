@@ -39,7 +39,7 @@ enum MassagePreferenceMenu: String {
 
 
 
-class MassagePreferenceVC: MainVC {
+class MassagePreferenceVC: BaseVC {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnSubmit: FilledRoundedButton!
@@ -96,7 +96,7 @@ class MassagePreferenceVC: MainVC {
     }
 
     func openMassagerPressurePicker(index:Int = 0) {
-        let alert: CustomPressurePicker = CustomPressurePicker.fromNib()
+        let alert:  CustomPressurePicker = CustomPressurePicker.fromNib()
 
         alert.initialize(title: arrForMenu[index].name, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
         alert.setDataSource(data: arrForMenu[index])
@@ -171,7 +171,7 @@ class MassagePreferenceVC: MainVC {
     }
    
     @IBAction func btnSubmitTapped(_ sender: Any) {
-        Common.appDelegate.loadHomeVC()
+        Common.appDelegate.loadMainVC()
     }
 
 

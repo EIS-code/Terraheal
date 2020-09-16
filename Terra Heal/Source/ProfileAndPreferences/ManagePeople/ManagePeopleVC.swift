@@ -5,7 +5,7 @@
 
 import UIKit
 
-class ManagePeopleVC: MainVC {
+class ManagePeopleVC: BaseVC {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnAddNewPeople: FilledRoundedButton!
@@ -77,7 +77,6 @@ class ManagePeopleVC: MainVC {
             
         } else {
             alert.initialize(title: self.arrForData[index].name, data: self.arrForData[index], genderPreference: arrForGenderPreference, buttonTitle: "BTN_SAVE".localized(),cancelButtonTitle: "BTN_SKIP".localized())
-            
         }
         alert.show(animated: true)
         alert.onBtnCancelTapped = {

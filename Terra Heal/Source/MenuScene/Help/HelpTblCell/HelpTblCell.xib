@@ -19,66 +19,72 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTr-D4-KiU" userLabel="vwForBackground">
-                        <rect key="frame" x="5" y="5" width="316" height="97"/>
+                        <rect key="frame" x="4" y="4" width="318" height="99"/>
                         <subviews>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NsL-t6-jVw" customClass="EditProfileTextfield" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="306" height="87"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" name="theme_dark_text"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="textForeColor">
-                                        <color key="value" name="theme_dark_text"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="leftViewColor">
-                                        <color key="value" name="theme_dark_text"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                                        <color key="value" name="theme_dark_text"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                        <color key="value" name="theme_dark_text"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedPlaceHolderColor">
-                                        <color key="value" name="theme_dark_text"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="delegate" destination="-1" id="Nvs-BD-Ihr"/>
-                                </connections>
-                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-help-chat" translatesAutoresizingMaskIntoConstraints="NO" id="kIG-oD-stJ">
+                                <rect key="frame" x="16" y="32.5" width="36" height="49.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLR-Vi-Yu8" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <rect key="frame" x="68" y="32.5" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="theme_dark_text"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5am-b3-cck" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <rect key="frame" x="68" y="61" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="theme_hint_text"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2i-cb-Ze5" userLabel="divider">
+                                <rect key="frame" x="0.0" y="98" width="318" height="1"/>
+                                <color key="backgroundColor" name="theme_dark_text"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="1eO-Mj-0em"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="NsL-t6-jVw" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" id="8Lt-xG-cus"/>
-                            <constraint firstAttribute="bottom" secondItem="NsL-t6-jVw" secondAttribute="bottom" constant="10" id="8mE-YY-WHW"/>
-                            <constraint firstItem="NsL-t6-jVw" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" id="Qbi-Gn-hcn"/>
-                            <constraint firstAttribute="trailing" secondItem="NsL-t6-jVw" secondAttribute="trailing" constant="10" id="Yds-vf-hok"/>
+                            <constraint firstItem="5am-b3-cck" firstAttribute="leading" secondItem="CLR-Vi-Yu8" secondAttribute="leading" id="3Sy-hO-nHi"/>
+                            <constraint firstItem="b2i-cb-Ze5" firstAttribute="centerX" secondItem="fTr-D4-KiU" secondAttribute="centerX" id="3kF-gG-OPM"/>
+                            <constraint firstItem="CLR-Vi-Yu8" firstAttribute="top" secondItem="kIG-oD-stJ" secondAttribute="top" id="8JI-Ve-ew6"/>
+                            <constraint firstItem="b2i-cb-Ze5" firstAttribute="width" secondItem="fTr-D4-KiU" secondAttribute="width" id="AOH-jf-ve2"/>
+                            <constraint firstItem="CLR-Vi-Yu8" firstAttribute="leading" secondItem="kIG-oD-stJ" secondAttribute="trailing" constant="16" id="Ohp-A8-yjF"/>
+                            <constraint firstItem="5am-b3-cck" firstAttribute="top" secondItem="CLR-Vi-Yu8" secondAttribute="bottom" constant="8" id="Oof-Bh-tQg"/>
+                            <constraint firstItem="5am-b3-cck" firstAttribute="bottom" secondItem="kIG-oD-stJ" secondAttribute="bottom" id="Rbn-X4-gEg"/>
+                            <constraint firstAttribute="bottom" secondItem="b2i-cb-Ze5" secondAttribute="bottom" id="WZ4-EP-2GO"/>
+                            <constraint firstItem="b2i-cb-Ze5" firstAttribute="top" secondItem="5am-b3-cck" secondAttribute="bottom" constant="16" id="b1w-F3-snb"/>
+                            <constraint firstItem="kIG-oD-stJ" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="16" id="yLh-ad-lbd"/>
                         </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="fTr-D4-KiU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="2jg-EE-YxG"/>
-                    <constraint firstAttribute="trailing" secondItem="fTr-D4-KiU" secondAttribute="trailing" constant="5" id="AWN-UN-JV4"/>
-                    <constraint firstItem="fTr-D4-KiU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="p1a-dc-cSm"/>
-                    <constraint firstAttribute="bottom" secondItem="fTr-D4-KiU" secondAttribute="bottom" constant="5" id="uHV-Oa-H3d"/>
+                    <constraint firstItem="fTr-D4-KiU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="2jg-EE-YxG"/>
+                    <constraint firstAttribute="trailing" secondItem="fTr-D4-KiU" secondAttribute="trailing" constant="4" id="AWN-UN-JV4"/>
+                    <constraint firstItem="fTr-D4-KiU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="p1a-dc-cSm"/>
+                    <constraint firstAttribute="bottom" secondItem="fTr-D4-KiU" secondAttribute="bottom" constant="4" id="uHV-Oa-H3d"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="txtQuestion" destination="NsL-t6-jVw" id="giX-0v-jI6"/>
+                <outlet property="ivCell" destination="kIG-oD-stJ" id="eTX-DF-6JU"/>
+                <outlet property="lblCellTitle" destination="CLR-Vi-Yu8" id="7ah-WN-4iS"/>
+                <outlet property="lblCellValue" destination="5am-b3-cck" id="uqv-O7-Aoo"/>
                 <outlet property="vwBg" destination="fTr-D4-KiU" id="gMF-14-1KR"/>
             </connections>
             <point key="canvasLocation" x="136.23188405797103" y="151.67410714285714"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="asset-help-chat" width="36" height="36"/>
         <namedColor name="theme_dark_text">
             <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_hint_text">
+            <color red="0.69800001382827759" green="0.70200002193450928" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

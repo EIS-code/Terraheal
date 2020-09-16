@@ -14,7 +14,7 @@ struct PackDetail {
     var isSelected: Bool = false
 }
 
-class PackVC: MainVC {
+class PackVC: BaseVC {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnSubmit: FilledRoundedButton!

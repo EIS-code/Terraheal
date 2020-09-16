@@ -23,35 +23,92 @@
                 <rect key="frame" x="0.0" y="0.0" width="178" height="92"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mj4-Vg-zDh">
-                        <rect key="frame" x="10" y="10" width="158" height="72"/>
-                        <color key="backgroundColor" name="theme_primary"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jU7-1x-h4f">
+                        <rect key="frame" x="8" y="8" width="162" height="76"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-side-menu-campaigns-bg" translatesAutoresizingMaskIntoConstraints="NO" id="mj4-Vg-zDh">
+                        <rect key="frame" x="102" y="16" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="mj4-Vg-zDh" secondAttribute="height" multiplier="1:1" id="K2e-T7-M8R"/>
+                        </constraints>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fsl-wV-zjF" userLabel="imgMenu">
-                        <rect key="frame" x="30" y="30" width="31.5" height="32"/>
+                        <rect key="frame" x="18" y="30" width="32" height="32"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="fsl-wV-zjF" secondAttribute="height" multiplier="1:1" id="i3D-co-B0M"/>
+                            <constraint firstAttribute="width" constant="32" id="Eq8-8L-zh1" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="32"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstAttribute="width" secondItem="fsl-wV-zjF" secondAttribute="height" multiplier="1:1" id="go4-0P-Z7I"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wN0-af-H7V" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                        <rect key="frame" x="79" y="36.5" width="79" height="19"/>
+                        <rect key="frame" x="79" y="36.5" width="49.5" height="19"/>
                         <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="16"/>
-                        <color key="textColor" name="theme_light_text_color"/>
+                        <color key="textColor" name="theme_dark_text"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="fsl-wV-zjF" firstAttribute="width" secondItem="mj4-Vg-zDh" secondAttribute="width" multiplier="0.2" id="7IB-Qw-8Lv"/>
-                <constraint firstItem="mj4-Vg-zDh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="DKN-xN-W6O"/>
-                <constraint firstAttribute="trailing" secondItem="mj4-Vg-zDh" secondAttribute="trailing" constant="10" id="T6I-gd-vEd"/>
-                <constraint firstItem="fsl-wV-zjF" firstAttribute="centerY" secondItem="mj4-Vg-zDh" secondAttribute="centerY" id="Tsc-Bi-jmg"/>
-                <constraint firstItem="fsl-wV-zjF" firstAttribute="leading" secondItem="mj4-Vg-zDh" secondAttribute="leading" constant="20" id="dfc-DT-2pI"/>
-                <constraint firstAttribute="bottom" secondItem="mj4-Vg-zDh" secondAttribute="bottom" constant="10" id="e9Y-zd-x8j"/>
-                <constraint firstItem="wN0-af-H7V" firstAttribute="centerY" secondItem="fsl-wV-zjF" secondAttribute="centerY" id="fs0-Ds-nKX"/>
-                <constraint firstItem="mj4-Vg-zDh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="uCc-at-tVy"/>
-                <constraint firstItem="wN0-af-H7V" firstAttribute="trailing" secondItem="mj4-Vg-zDh" secondAttribute="trailing" constant="-10" id="uzK-q4-vgj"/>
-                <constraint firstItem="wN0-af-H7V" firstAttribute="leading" secondItem="mj4-Vg-zDh" secondAttribute="centerX" constant="-10" id="zt3-5C-ik8"/>
+                <constraint firstItem="fsl-wV-zjF" firstAttribute="centerY" secondItem="jU7-1x-h4f" secondAttribute="centerY" id="0vE-SY-ZOu"/>
+                <constraint firstItem="jU7-1x-h4f" firstAttribute="top" secondItem="QjW-IN-B40" secondAttribute="top" constant="8" id="326-9q-kWa" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="fsl-wV-zjF" firstAttribute="leading" secondItem="jU7-1x-h4f" secondAttribute="leading" constant="10" id="BMb-Pe-uop"/>
+                <constraint firstItem="mj4-Vg-zDh" firstAttribute="top" secondItem="jU7-1x-h4f" secondAttribute="top" constant="8" id="EKL-3Z-UXo" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="wN0-af-H7V" firstAttribute="leading" secondItem="jU7-1x-h4f" secondAttribute="centerX" constant="-10" id="F0J-lW-J44"/>
+                <constraint firstItem="jU7-1x-h4f" firstAttribute="leading" secondItem="QjW-IN-B40" secondAttribute="leading" constant="8" id="TKw-a1-Y91" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="wN0-af-H7V" firstAttribute="centerY" secondItem="jU7-1x-h4f" secondAttribute="centerY" id="TON-RV-ruV"/>
+                <constraint firstItem="jU7-1x-h4f" firstAttribute="trailing" secondItem="mj4-Vg-zDh" secondAttribute="trailing" constant="8" id="YC8-zQ-W7t" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="QjW-IN-B40" firstAttribute="bottom" secondItem="jU7-1x-h4f" secondAttribute="bottom" constant="8" id="ZIk-zt-434" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="QjW-IN-B40" firstAttribute="trailing" secondItem="jU7-1x-h4f" secondAttribute="trailing" constant="8" id="fKe-JB-XFu" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="jU7-1x-h4f" firstAttribute="bottom" secondItem="mj4-Vg-zDh" secondAttribute="bottom" constant="8" id="p43-v0-cGC" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
             </constraints>
             <viewLayoutGuide key="safeArea" id="QjW-IN-B40"/>
             <size key="customSize" width="396" height="257"/>
@@ -59,16 +116,15 @@
                 <outlet property="ivBg" destination="mj4-Vg-zDh" id="jAi-XF-r8z"/>
                 <outlet property="ivMenu" destination="fsl-wV-zjF" id="Azx-SC-JN2"/>
                 <outlet property="lblTitle" destination="wN0-af-H7V" id="AFl-a3-grl"/>
+                <outlet property="vwCellBg" destination="jU7-1x-h4f" id="Mb9-62-6aa"/>
             </connections>
             <point key="canvasLocation" x="382.60869565217394" y="113.16964285714285"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <namedColor name="theme_light_text_color">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="theme_primary">
-            <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="asset-side-menu-campaigns-bg" width="66" height="66"/>
+        <namedColor name="theme_dark_text">
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

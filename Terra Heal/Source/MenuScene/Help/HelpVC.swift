@@ -8,17 +8,18 @@ import UIKit
 struct HelpDetail{
     var question: String = ""
     var answer: String = ""
+    var image: String = ""
 }
 
-class HelpVC: MainVC {
+class HelpVC: BaseVC {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblDetails: ThemeLabel!
     
     var arrForData: [HelpDetail] = [
-        HelpDetail(question: "Chat", answer: "no recent conversations"),
-        HelpDetail(question: "FAQs", answer: "frequently asked questions"),
-        HelpDetail(question: "need more help?", answer: "talk to our support team"),
+        HelpDetail(question: "Chat", answer: "no recent conversations", image: ImageAsset.Help.chat),
+        HelpDetail(question: "FAQs", answer: "frequently asked questions", image: ImageAsset.Help.faq),
+        HelpDetail(question: "need more help?", answer: "talk to our support team" , image: ImageAsset.Help.more),
         
     ]
     // MARK: Object lifecycle
@@ -145,7 +146,7 @@ extension HelpVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
         
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

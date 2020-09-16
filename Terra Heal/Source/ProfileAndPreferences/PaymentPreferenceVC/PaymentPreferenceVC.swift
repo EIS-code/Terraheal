@@ -13,7 +13,7 @@ struct CreditCardDetail {
 }
 
 
-class PaymentPreferenceVC: MainVC {
+class PaymentPreferenceVC: BaseVC {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnSubmit: FilledRoundedButton!

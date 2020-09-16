@@ -46,7 +46,7 @@ struct SettingPreferenceDetail {
     var image:String = ""
 }
 
-class SettingVC: MainVC {
+class SettingVC: BaseVC {
 
     @IBOutlet weak var tableView: UITableView!
     var settingDetail:Setting = Setting.init(fromDictionary: [:])
@@ -128,7 +128,7 @@ class SettingVC: MainVC {
     }
 
     @IBAction func btnSubmitTapped(_ sender: Any) {
-        Common.appDelegate.loadHomeVC()
+        Common.appDelegate.loadMainVC()
     }
 
 }

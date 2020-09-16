@@ -6,7 +6,7 @@
 import UIKit
 
 
-class GiftVoucherVC: MainVC {
+class GiftVoucherVC: BaseVC {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnBuyGiftVoucher: FilledRoundedButton!

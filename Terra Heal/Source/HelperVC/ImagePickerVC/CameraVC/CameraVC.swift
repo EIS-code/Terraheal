@@ -7,7 +7,7 @@ import UIKit
 import Photos
 
 
-class CameraVC: MainVC {
+class CameraVC: BaseVC {
     
     @IBOutlet weak var btnCaptureNow: FloatingRoundButton!
     @IBOutlet weak var lblMsg: ThemeLabel!

@@ -20,7 +20,7 @@ import UIKit
     @objc optional func didCancel()
 }
 
-class UIImageCropperVC: MainVC, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class UIImageCropperVC: BaseVC, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var vwBg: UIView!
     /// Aspect ratio of the cropped image

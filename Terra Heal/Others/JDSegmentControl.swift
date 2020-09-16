@@ -28,7 +28,7 @@ open class JDSegmentedControl: UIView {
     @IBInspectable open var useShadow:Bool = false
 
     //left and right space between items
-    @IBInspectable open var padding: CGSize = CGSize(width: 30, height: 10)
+    @IBInspectable open var padding: CGSize = CGSize.zero //CGSize(width: 30, height: 10)
     @IBInspectable open var cornerRadius: CGFloat = -1 // for rounded corner radius use negative value, 0 to disable
 
     public enum DraggingState: Int {
@@ -319,9 +319,7 @@ extension JDSegmentedControl {
         label.titleLabel?.textAlignment = .center
         label.titleLabel?.numberOfLines = 1
         label.titleLabel?.adjustsFontSizeToFitWidth = true
-
-        //label.titleLabel?.attributedText = attributedTitle
-
+        //label.titleLabel?.attributedText = attributedTitleyal
         label.setAttributedTitle(attributedTitle, for: .normal)
         label.tag = tag
         return label
@@ -331,7 +329,6 @@ extension JDSegmentedControl {
     fileprivate func attributedStringForText(_ text: String, isSelected: Bool) -> NSAttributedString {
         let textColor = isSelected ? selectedTextColor : defaultTextColor
         let textFont = isSelected ? selectedTextFont : defaultTextFont
-
         let attributes = [NSAttributedString.Key.foregroundColor : textColor,
                           NSAttributedString.Key.font : textFont]
         let attributedString = NSMutableAttributedString(string: text, attributes: attributes)

@@ -93,32 +93,15 @@ extension AppDelegate {
         }
     }
     
-    fileprivate func loadHomeVC(_ navigaionVC: UINavigationController?) {
-        /*var finalHomeVC: UIViewController? = nil
-         if let nc = navigaionVC as? NC {
-         if let targetVC: HomeVC =  nc.findVCs(ofType: HomeVC.self).first {
-         _ = nc.popToVc(targetVC)
-         } else {
-         let targetVC: HomeVC = HomeVC.fromNib()
-         nc.pushVC(targetVC)
-         finalHomeVC = nc
-         }
-         } else {
-         let targetVC: HomeVC = HomeVC.fromNib()
-         let nc: NC = NC(rootViewController: targetVC)
-         finalHomeVC = nc
-         }*/
-        let homeVC: NC = NC(rootViewController: HomeVC.fromNib())
+    fileprivate func loadMainVC(_ navigaionVC: UINavigationController?) {
+        let mainVC: NC = NC(rootViewController: MainVC.fromNib())
         let leftVC: NC = NC(rootViewController: SideVC.fromNib())
         let rightVC: NC = NC(rootViewController: ProfileVC.fromNib())
-        
-        
-        let targetVC = PBRevealViewController.init(leftViewController: leftVC, mainViewController: homeVC, rightViewController: rightVC)
-        
+        let targetVC = PBRevealViewController.init(leftViewController: leftVC, mainViewController: mainVC, rightViewController: rightVC)
         self.windowConfig(withRootVC: targetVC)
     }
     
-    func loadHomeVC(navigaionVC:UINavigationController? = nil) {
+    func loadMainVC(navigaionVC:UINavigationController? = nil) {
         if !PreferenceHelper.shared.getUserId().isEmpty() {
             AppWebApi.getUserDetail { (response) in
                 Loader.hideLoading()
@@ -128,16 +111,14 @@ extension AppDelegate {
                     PreferenceHelper.shared.setUserId(user.id)
                     appSingleton.user = user
                     Singleton.saveInDb()
-                    self.loadHomeVC(navigaionVC)
+                    self.loadMainVC(navigaionVC)
                     
                 } else {
-                    self.loadHomeVC(navigaionVC)
+                    self.loadMainVC(navigaionVC)
                 }
-                
             }
-            
         } else {
-            loadHomeVC(navigaionVC)
+            loadMainVC(navigaionVC)
         }
     }
     

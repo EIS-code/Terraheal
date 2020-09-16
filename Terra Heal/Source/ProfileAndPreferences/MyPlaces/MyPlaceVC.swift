@@ -10,7 +10,7 @@ struct MyPlaceTblDetail{
     var isSelected: Bool = false
 }
 
-class MyPlaceVC: MainVC {
+class MyPlaceVC: BaseVC {
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -84,7 +84,7 @@ class MyPlaceVC: MainVC {
         
     }
     @IBAction func btnSubmitTapped(_ sender: Any) {
-        Common.appDelegate.loadHomeVC()
+        Common.appDelegate.loadMainVC()
     }
 
 

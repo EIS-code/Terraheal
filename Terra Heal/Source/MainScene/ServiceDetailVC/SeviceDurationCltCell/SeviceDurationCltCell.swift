@@ -8,10 +8,9 @@ import Foundation
 
 
 
-class SeviceDurationCltCell: CollectionCell {
+class SeviceDurationCltCell: SelectionBorderCollectionCell {
     
     var data: ServiceDurationDetail!
-    @IBOutlet weak var vwBg: UIView!
     @IBOutlet weak var lblDuration: ThemeLabel!
     @IBOutlet weak var lblAmount: ThemeLabel!
     @IBOutlet weak var lblCurrencySign: ThemeLabel!
@@ -31,13 +30,11 @@ class SeviceDurationCltCell: CollectionCell {
         self.data = data
         self.lblDuration.text = data.time + " " + "TIME_UNIT_MIN".localized()
         self.lblAmount.text = data.pricing.price
+        super.setData(isSelected: data.isSelected)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        vwBg?.setRound(withBorderColor: .themeHintText, andCornerRadious: JDDeviceHelper.offseter(offset: 10), borderWidth: 1.0)
-        vwBg?.setDurationCellShadow()
     }
  
 }

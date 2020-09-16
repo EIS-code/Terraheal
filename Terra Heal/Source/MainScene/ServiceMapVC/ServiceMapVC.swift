@@ -6,7 +6,7 @@
 import UIKit
 import GoogleMaps
 
-class ServiceMapVC: MainVC {
+class ServiceMapVC: BaseVC {
     
     
     @IBOutlet weak var btnCancel: CancelButton!

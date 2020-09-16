@@ -19,7 +19,7 @@ class SettingSwitchTblCell: SelectionBorderTableCell {
         selectionStyle = .none
         
         self.vwSwitch.allowChangeThumbWidth = false
-        self.vwSwitch.itemTitles = ["Enable","Disable"]
+        self.vwSwitch.itemTitles = ["enable","disable"]
         self.vwSwitch.changeBackgroundColor(UIColor.themeLightTextColor)
         self.vwSwitch.didSelectItemWith = { [weak self] (index,title) in
             guard let self = self else {return} ; print(self)

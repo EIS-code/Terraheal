@@ -7,7 +7,7 @@ import UIKit
 
 
 
-class RegisterVC: MainVC {
+class RegisterVC: BaseVC {
     
     @IBOutlet weak var ivHeader: UIImageView!
     @IBOutlet weak var vwContent: UIView!
@@ -268,14 +268,14 @@ extension RegisterVC {
             [weak alertFingerPrint, weak self] in
             guard let self = self else {return}; print(self)
             alertFingerPrint?.dismiss();
-            Common.appDelegate.loadHomeVC()
+            Common.appDelegate.loadMainVC()
         }
         alertFingerPrint.onBtnDoneTapped = {
             [weak alertFingerPrint, weak self] in
             guard let self = self else {return}; print(self)
             alertFingerPrint?.dismiss();
             CoreDataManager.sharedManager.create(username: self.txtEmail.text!, password: self.txtPassword.text!)
-            Common.appDelegate.loadHomeVC()
+            Common.appDelegate.loadMainVC()
         }
     }
     

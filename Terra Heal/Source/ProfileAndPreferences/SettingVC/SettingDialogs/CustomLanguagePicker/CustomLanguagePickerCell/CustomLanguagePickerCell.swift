@@ -14,15 +14,7 @@ class CustomLanguagePickerCell: SelectionBorderTableCell {
     @IBOutlet weak var lblFlag: ThemeLabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.radius = 15
-               self.cellBorderColor = UIColor.themePrimary
-               self.shadowProperty.color = UIColor.init(hex: "#3C80D116")
-               self.shadowProperty.opacity = 1.0
-               self.shadowProperty.radius = 19
-               self.shadowProperty.offset = CGSize.init(width: 0.0, height: 12.0)
-        //self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-      
+        self.lblName?.setFont(name: FontName.Bold, size: FontSize.subHeader)
     }
 
     func setData(data: LanguageDetail ) {

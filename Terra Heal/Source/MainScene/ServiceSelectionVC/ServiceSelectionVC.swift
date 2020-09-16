@@ -5,7 +5,7 @@
 
 import UIKit
 
-class ServiceSelectionVC: MainVC {
+class ServiceSelectionVC: BaseVC {
     
     @IBOutlet weak var btnCancel: CancelButton!
     @IBOutlet weak var collectionVw: UICollectionView!
@@ -112,7 +112,7 @@ class ServiceSelectionVC: MainVC {
     func openServiceDurationSelection(index: Int) {
         self.selectedService = self.arrForData[index]
         durationSelectionDialog = DurationSelectionDialog.fromNib()
-        durationSelectionDialog.initialize(title: "Select duration",message: "note:- 23% VAT is included", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        durationSelectionDialog.initialize(title: "DIALOG_SELECT_DURATION_TITLE".localized(),message: "note:- 23% VAT is included", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
         durationSelectionDialog.setDataSource(data: arrForData[index].duration)
         durationSelectionDialog.show(animated: true)
         durationSelectionDialog.onBtnCancelTapped = {

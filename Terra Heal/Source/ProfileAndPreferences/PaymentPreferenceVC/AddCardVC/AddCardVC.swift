@@ -7,7 +7,7 @@ import UIKit
 
 
 
-class AddCardVC: MainVC {
+class AddCardVC: BaseVC {
     
     
     @IBOutlet weak var lblTitleMessage: ThemeLabel!
@@ -60,6 +60,7 @@ class AddCardVC: MainVC {
         self.lblTitleMessage?.text = "ADD_CARD_TITLE_MESSAGE".localized()
         self.lblTitleMessage?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
         self.txtCardName?.placeholder = "ADD_CARD_TXT_NAME".localized()
+        self.txtCardName.configureTextField(InputTextFieldDetail.getNameConfiguration())
         self.txtCardName?.delegate = self
         self.txtCardNumber?.placeholder = "ADD_CARD_TXT_CARD_NUMBER".localized()
         self.txtCardNumber?.delegate = self

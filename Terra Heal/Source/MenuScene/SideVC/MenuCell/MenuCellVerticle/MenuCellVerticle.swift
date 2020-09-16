@@ -8,31 +8,34 @@ import Foundation
 
 
 
-class MenuCellVerticle: CollectionCell {
+class MenuCellVerticle: CollectionShadowCell {
 
     @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var ivBg: UIImageView!
     @IBOutlet weak var ivMenu: UIImageView!
-
+    @IBOutlet weak var vwCellBg: UIView!
+    
     override func awakeFromNib()  {
         super.awakeFromNib()
-
+        self.radius = 15.0
+        self.shadowProperty.color = UIColor.init(hex: "#B2B3B566")
+        self.shadowProperty.opacity = 1.0
+        self.shadowProperty.radius = 4.0
+        self.shadowProperty.offset = CGSize.init(width: 1.0, height: 0.0)
     }
 
     func setData(menuDetail:MenuItem) {
-        self.lblTitle?.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblTitle?.setFont(name: FontName.Regular, size: FontSize.detail)
         //self.lblTitle?.font = FontHelper.font(name: FontName.Regular, size: FontSize.label_12)
         self.lblTitle.text = menuDetail.id.name()
         self.lblTitle.printFontSize()
         self.ivMenu.image = UIImage.init(named: menuDetail.id.image())
+        self.ivBg.image = UIImage.init(named: menuDetail.id.backgroundImage())
     }
     override func layoutSubviews() {
         super.layoutSubviews()
-
-      
-        self.ivBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 20.0, borderWidth: 1.0)
-
-
+        self.vwCellBg?.setRound(withBorderColor: .clear, andCornerRadious: self.radius, borderWidth: 1.0)
+        self.addShadow(viewForShadow: self.vwCellBg)
     }
 }
 

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "user.png",
+      "filename" : "Path 3981.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "user@2x.png",
+      "filename" : "Path 3981@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "user@3x.png",
+      "filename" : "Path 3981@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     },

@@ -8,7 +8,7 @@ import UIKit
 
 
 
-class EditProfileVC: MainVC {
+class EditProfileVC: BaseVC {
     @IBOutlet weak var ivProfilePic: UIImageView!
     @IBOutlet weak var vwBg: UIView!
     var kTableHeaderHeight:CGFloat = 150.0

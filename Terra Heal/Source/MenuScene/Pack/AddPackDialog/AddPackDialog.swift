@@ -176,7 +176,7 @@ extension AddPackDialog : UITableViewDelegate,UITableViewDataSource {
     }
     func openSendingPreferenceDialog(index:Int) {
         let alert: CustomSendingPreferenceDialog = CustomSendingPreferenceDialog.fromNib()
-        alert.initialize(title: "sending preference", data: "email", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+        alert.initialize(title: "DIALOG_TITLE_SEND_PREFERENCE".localized(), placeholder: "TXT_EMAIL".localized(), data: "", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in

@@ -5,7 +5,7 @@
 
 import UIKit
 
-class LaunchVC: MainVC {
+class LaunchVC: BaseVC {
     
     // MARK: - Outlets
     @IBOutlet weak var ivLogo: UIImageView!
@@ -39,12 +39,12 @@ class LaunchVC: MainVC {
     fileprivate func loadNextScreen() {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
             if !PreferenceHelper.shared.getUserId().isEmpty() {
-                Common.appDelegate.loadHomeVC()
+                Common.appDelegate.loadMainVC()
             }
             else if PreferenceHelper.shared.getIsTutorialShow()  {
                 Common.appDelegate.loadTutoraiVC()
             } else {
-                Common.appDelegate.loadHomeVC()
+                Common.appDelegate.loadMainVC()
             }
         }
     }

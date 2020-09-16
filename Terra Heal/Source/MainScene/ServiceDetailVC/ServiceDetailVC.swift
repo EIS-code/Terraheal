@@ -8,7 +8,7 @@ import UIKit
 
 
 
-class ServiceDetailVC: MainVC {
+class ServiceDetailVC: BaseVC {
     @IBOutlet weak var ivPicture: UIImageView!
     @IBOutlet weak var scrVw: UIScrollView!
     @IBOutlet weak var headerView: UIView!

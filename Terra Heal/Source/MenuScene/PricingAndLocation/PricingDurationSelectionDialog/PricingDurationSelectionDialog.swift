@@ -158,7 +158,7 @@ extension PricingDurationSelectionDialog:  UICollectionViewDelegate, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = collectionView.bounds.width / 2.0 - 5
+        let size = collectionView.bounds.width / 2.0 
         return CGSize(width: size , height:size)
     }
 }

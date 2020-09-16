@@ -12,7 +12,7 @@ struct NotificationDetail {
     var date: String = "today 3:15 PM"
 }
 
-class NotificationVC: MainVC {
+class NotificationVC: BaseVC {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblEmptyTitle: ThemeLabel!

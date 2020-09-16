@@ -49,7 +49,20 @@ enum AddVoucherMenu: String {
     }
     
     func image() -> String {
-        return ""
+        switch self {
+        case .Location:
+            return ImageAsset.AddGiftVoucher.location
+        case .Service:
+            return  ImageAsset.AddGiftVoucher.service
+        case .Design:
+            return  ImageAsset.AddGiftVoucher.design
+        case .RecipientDetail:
+            return  ImageAsset.AddGiftVoucher.recipient
+        case .GiverDetail:
+            return ImageAsset.AddGiftVoucher.giver
+        case .SendingPreference:
+            return  ImageAsset.AddGiftVoucher.sendingPreference
+        }
     }
 }
 
@@ -59,7 +72,7 @@ struct AddVouncherMenuDetail {
     var isSelected: Bool = false
 }
 
-class AddGiftVoucherVC: MainVC {
+class AddGiftVoucherVC: BaseVC {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnPreview: FilledRoundedButton!
@@ -247,7 +260,7 @@ extension AddGiftVoucherVC {
     
     func openSendingPreferenceDialog(index: Int) {
         let alert: CustomSendingPreferenceDialog = CustomSendingPreferenceDialog.fromNib()
-        alert.initialize(title: "sending preference", data: "email", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+        alert.initialize(title: "DIALOG_TITLE_SEND_PREFERENCE".localized(), placeholder: "TXT_EMAIL".localized(), data: "", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
