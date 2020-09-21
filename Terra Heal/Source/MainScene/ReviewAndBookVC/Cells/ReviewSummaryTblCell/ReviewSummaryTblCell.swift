@@ -25,9 +25,9 @@ class ReviewSummaryTblCell: TableCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblTitle.setFont(name: FontName.Regular, size: FontSize.label_12)
-        self.lblSubTitle.setFont(name: FontName.Regular, size: FontSize.label_12)
-        self.lblValue.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblTitle.setFont(name: FontName.Regular, size: FontSize.detail)
+        self.lblSubTitle.setFont(name: FontName.Regular, size: FontSize.detail)
+        self.lblValue.setFont(name: FontName.Regular, size: FontSize.detail)
     }
 
     func setData(data: SummaryValueDetail ) {

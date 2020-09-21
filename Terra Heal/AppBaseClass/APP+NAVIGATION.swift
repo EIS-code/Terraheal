@@ -619,13 +619,13 @@ extension AppDelegate {
         }
     }
     
-    func loadPaymentReferenceVC(navigaionVC:UINavigationController? = nil, isFromMenu: Bool = true) {
+    func loadPaymentReferenceVC(navigaionVC:UINavigationController? = nil, fromVC: BaseVC?) {
         if let nc = navigaionVC as? NC {
             if let targetVC: PaymentPreferenceVC =  nc.findVCs(ofType: PaymentPreferenceVC.self).first {
                 _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: PaymentPreferenceVC = PaymentPreferenceVC.fromNib()
-                targetVC.isFromMenu = isFromMenu
+                targetVC.comeFromVC = fromVC
                 nc.pushVC(targetVC)
             }
         } else {
@@ -634,6 +634,27 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
+    
+    
+    func loadGiftVoucherDetailVC(navigaionVC:UINavigationController? = nil, data:GiftVoucherDetail) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: GiftVoucherDetailVC =  nc.findVCs(ofType: GiftVoucherDetailVC.self).first {
+                targetVC.giftVoucherDetail = data
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: GiftVoucherDetailVC = GiftVoucherDetailVC.fromNib()
+                targetVC.giftVoucherDetail = data
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: GiftVoucherDetailVC = GiftVoucherDetailVC.fromNib()
+            targetVC.giftVoucherDetail = data
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+    
+    
     
     func loadAddCardVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {

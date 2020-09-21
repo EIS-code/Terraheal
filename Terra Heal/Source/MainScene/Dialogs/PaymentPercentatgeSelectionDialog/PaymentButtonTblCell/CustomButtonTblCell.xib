@@ -19,73 +19,64 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mwl-TA-aZ6" userLabel="vwForBackground">
-                        <rect key="frame" x="5" y="5" width="415" height="93"/>
+                        <rect key="frame" x="8" y="8" width="409" height="87"/>
                         <subviews>
-                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRM-DG-iHR" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="135.5" y="10" width="144" height="73"/>
-                                <color key="backgroundColor" name="theme_background"/>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Pay 50 %">
-                                    <color key="titleColor" name="theme_dark_text"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUF-bo-wdO" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="95.5" y="10" width="224" height="73"/>
-                                <color key="backgroundColor" name="theme_background"/>
-                                <inset key="contentEdgeInsets" minX="80" minY="20" maxX="80" maxY="20"/>
-                                <state key="normal" title="Pay 50 %">
-                                    <color key="titleColor" name="theme_dark_text"/>
-                                </state>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y81-uE-jWO" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <rect key="frame" x="16" y="16" width="377" height="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check" translatesAutoresizingMaskIntoConstraints="NO" id="OfO-kb-EpN">
-                                <rect key="frame" x="245.5" y="19.5" width="20" height="20"/>
+                                <rect key="frame" x="372" y="5" width="32" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="TC4-tc-4Tu"/>
                                     <constraint firstAttribute="width" secondItem="OfO-kb-EpN" secondAttribute="height" multiplier="1:1" id="YES-n3-jiz"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" name="theme_primary_light_background"/>
                         <constraints>
-                            <constraint firstItem="hUF-bo-wdO" firstAttribute="centerY" secondItem="mwl-TA-aZ6" secondAttribute="centerY" id="H1b-eo-N8D"/>
-                            <constraint firstItem="LRM-DG-iHR" firstAttribute="top" secondItem="mwl-TA-aZ6" secondAttribute="top" constant="10" id="JcZ-ch-cGs"/>
-                            <constraint firstItem="hUF-bo-wdO" firstAttribute="centerX" secondItem="mwl-TA-aZ6" secondAttribute="centerX" id="KEa-6V-E1l"/>
-                            <constraint firstItem="hUF-bo-wdO" firstAttribute="bottom" secondItem="LRM-DG-iHR" secondAttribute="bottom" id="LG4-a3-ZtB"/>
-                            <constraint firstItem="hUF-bo-wdO" firstAttribute="top" secondItem="LRM-DG-iHR" secondAttribute="top" id="Ps8-yI-U2Y"/>
-                            <constraint firstItem="LRM-DG-iHR" firstAttribute="centerX" secondItem="mwl-TA-aZ6" secondAttribute="centerX" id="Xlg-Sr-HHe"/>
-                            <constraint firstItem="OfO-kb-EpN" firstAttribute="trailing" secondItem="LRM-DG-iHR" secondAttribute="trailing" multiplier="0.95" id="pfS-Yb-lXi"/>
-                            <constraint firstItem="LRM-DG-iHR" firstAttribute="centerY" secondItem="mwl-TA-aZ6" secondAttribute="centerY" id="saN-WZ-RzL"/>
-                            <constraint firstItem="OfO-kb-EpN" firstAttribute="top" secondItem="LRM-DG-iHR" secondAttribute="top" multiplier="1.95" id="zYU-Q4-gen"/>
+                            <constraint firstItem="y81-uE-jWO" firstAttribute="top" secondItem="mwl-TA-aZ6" secondAttribute="top" constant="16" id="FAL-bx-SGj"/>
+                            <constraint firstItem="y81-uE-jWO" firstAttribute="leading" secondItem="mwl-TA-aZ6" secondAttribute="leading" constant="16" id="WTO-bu-KvJ"/>
+                            <constraint firstItem="y81-uE-jWO" firstAttribute="centerY" secondItem="mwl-TA-aZ6" secondAttribute="centerY" id="XKE-NG-6Tq"/>
+                            <constraint firstAttribute="trailing" secondItem="OfO-kb-EpN" secondAttribute="trailing" constant="5" id="ctd-2H-Wmw" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="y81-uE-jWO" firstAttribute="centerX" secondItem="mwl-TA-aZ6" secondAttribute="centerX" id="fmA-0h-IK8"/>
+                            <constraint firstItem="OfO-kb-EpN" firstAttribute="top" secondItem="mwl-TA-aZ6" secondAttribute="top" constant="5" id="vfd-hs-g6E" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
                         </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" name="theme_primary_light_background"/>
                 <constraints>
-                    <constraint firstItem="mwl-TA-aZ6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="29s-LZ-1Co"/>
-                    <constraint firstItem="mwl-TA-aZ6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="7IA-s7-oJb"/>
-                    <constraint firstAttribute="bottom" secondItem="mwl-TA-aZ6" secondAttribute="bottom" constant="5" id="D1b-mb-swF"/>
-                    <constraint firstAttribute="trailing" secondItem="mwl-TA-aZ6" secondAttribute="trailing" constant="5" id="KBx-0C-IbT"/>
+                    <constraint firstItem="mwl-TA-aZ6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="29s-LZ-1Co" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target"/>
+                    <constraint firstItem="mwl-TA-aZ6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="7IA-s7-oJb" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target"/>
+                    <constraint firstAttribute="bottom" secondItem="mwl-TA-aZ6" secondAttribute="bottom" constant="8" id="D1b-mb-swF" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target"/>
+                    <constraint firstAttribute="trailing" secondItem="mwl-TA-aZ6" secondAttribute="trailing" constant="8" id="KBx-0C-IbT" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" name="theme_primary_light_background"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="btnDetail" destination="LRM-DG-iHR" id="YSe-da-cnM"/>
-                <outlet property="btnDetailLarge" destination="hUF-bo-wdO" id="wx6-gI-8Wh"/>
-                <outlet property="ivSelected" destination="OfO-kb-EpN" id="Ir6-In-ei7"/>
-                <outlet property="vwBg" destination="mwl-TA-aZ6" id="Gx6-g3-5J8"/>
+                <outlet property="imgCellSelected" destination="OfO-kb-EpN" id="NSc-LF-sts"/>
+                <outlet property="lblCellTitle" destination="y81-uE-jWO" id="NYN-hn-p9R"/>
+                <outlet property="vwCellBg" destination="mwl-TA-aZ6" id="fNR-DH-oie"/>
             </connections>
             <point key="canvasLocation" x="207.97101449275365" y="149.66517857142856"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="asset-check" width="32" height="32"/>
-        <namedColor name="theme_background">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="theme_dark_text">
-            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="theme_primary_light_background">
             <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

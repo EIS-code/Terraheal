@@ -72,7 +72,7 @@ class ManageDocumentVC: BaseVC {
         self.setTitle(title: "MANAGE_DOCUMENT_TITLE".localized())
         self.lblTitle?.textAlignment = .left
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.large)
-        self.lblEmptyTitle.setFont(name: FontName.Bold, size: FontSize.label_18)
+        self.lblEmptyTitle.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.lblEmptyMsg.setFont(name: FontName.Regular, size: FontSize.detail)
         self.lblEmptyTitle.text = "DOCUMENT_EMPTY_TITLE".localized()
         self.lblEmptyMsg.text = "DOCUMENT_EMPTY_MSG".localized()

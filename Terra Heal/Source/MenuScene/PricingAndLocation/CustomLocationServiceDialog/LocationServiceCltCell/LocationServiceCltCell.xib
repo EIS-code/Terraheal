@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8D3-hJ-1wa">
-                                <rect key="frame" x="121.5" y="5" width="21.5" height="22"/>
+                                <rect key="frame" x="122.5" y="5" width="20.5" height="22"/>
                                 <state key="normal" image="asset-favourite"/>
                                 <state key="selected" image="asset-favourite-selectd"/>
                                 <connections>
@@ -72,11 +72,11 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="asset-favourite" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="asset-favourite-selectd" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="asset-favourite" width="20.5" height="18"/>
+        <image name="asset-favourite-selectd" width="20.5" height="18"/>
         <image name="demo-massage" width="160" height="144"/>
         <namedColor name="theme_dark_text">
-            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light">
             <color red="0.49803921568627452" green="0.7686274509803922" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

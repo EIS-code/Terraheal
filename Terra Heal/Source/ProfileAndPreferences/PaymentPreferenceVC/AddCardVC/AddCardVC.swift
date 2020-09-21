@@ -58,7 +58,7 @@ class AddCardVC: BaseVC {
         self.btnAddCard?.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         self.setTitle(title: "ADD_CARD_TITLE".localized())
         self.lblTitleMessage?.text = "ADD_CARD_TITLE_MESSAGE".localized()
-        self.lblTitleMessage?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
+        self.lblTitleMessage?.setFont(name: FontName.SemiBold, size: FontSize.detail)
         self.txtCardName?.placeholder = "ADD_CARD_TXT_NAME".localized()
         self.txtCardName.configureTextField(InputTextFieldDetail.getNameConfiguration())
         self.txtCardName?.delegate = self
@@ -70,9 +70,9 @@ class AddCardVC: BaseVC {
         self.txtCvv?.delegate = self
         self.btnAddCard?.setTitle("ADD_CARD_BTN_ADD_CARD".localized(), for: .normal)
         self.lblAccept?.text = "ADD_CARD_SAVE_CARD_DETAILS".localized()
-        self.lblAccept?.setFont(name: FontName.SemiBold, size: FontSize.label_12)
+        self.lblAccept?.setFont(name: FontName.SemiBold, size: FontSize.detail)
         self.lblSaveDetailMsg?.text = "ADD_CARD_SAVE_CARD_DETAIL_MESSAGE".localized()
-        self.lblSaveDetailMsg?.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblSaveDetailMsg?.setFont(name: FontName.Regular, size: FontSize.detail)
     }
     
     // MARK: - Action Methods

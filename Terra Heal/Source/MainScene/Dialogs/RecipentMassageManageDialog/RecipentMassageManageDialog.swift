@@ -189,7 +189,8 @@ extension RecipentMassageManageDialog: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40//UITableView.automaticDimension
+        
+        return JDDeviceHelper.offseter(scaleFactor: 1.0, offset: 40, direction: .vertical)
     }
     
     @objc func addService(sender: UIButton) {

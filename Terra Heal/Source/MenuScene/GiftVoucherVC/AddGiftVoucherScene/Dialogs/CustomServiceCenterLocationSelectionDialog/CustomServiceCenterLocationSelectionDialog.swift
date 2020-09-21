@@ -50,8 +50,8 @@ class CustomServiceCenterLocationSelectionDialog: ThemeBottomDialogView {
 
     override func initialSetup() {
         super.initialSetup()
-        self.lblLocation.setFont(name: FontName.Regular, size: FontSize.label_14)
-        self.lblLocationValue.setFont(name: FontName.SemiBold, size: FontSize.label_14)
+        self.lblLocation.setFont(name: FontName.Regular, size: FontSize.regular)
+        self.lblLocationValue.setFont(name: FontName.SemiBold, size: FontSize.regular)
         self.currentMarker = GMSMarker.init()
         self.setupMapView(mapView: self.mapView)
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)

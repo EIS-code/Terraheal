@@ -19,6 +19,9 @@ class MyBookingData: NSObject {
     var user_id: String = PreferenceHelper.shared.getUserId()
     var shop_id: String = ""
     var currency_id: String = ""
+    var bring_table_futon: String? = nil
+    var table_futon_quantity: String? = nil
+    
     //Data Not In Web Call
     var serviceCenterDetail: ServiceCenterDetail = ServiceCenterDetail.init(fromDictionary: [:])
     override init() {
@@ -38,6 +41,12 @@ class MyBookingData: NSObject {
             dictionaryElements.append(dataElement.toDictionary())
         }
         dictionary["booking_info"] = dictionaryElements
+        if bring_table_futon != nil {
+            dictionary["bring_table_futon"] = bring_table_futon
+        }
+        if table_futon_quantity != nil {
+            dictionary["table_futon_quantity"] = table_futon_quantity!
+        }
         return dictionary
     }
     
@@ -56,6 +65,7 @@ class BookingInfo: NSObject {
     var massage_info: [MyMassageInfo] = []
     var massagePreferenceOptionId : String = ""
     var preference : String = ""
+   
     
     //Data Not In Web Call
     var reciepent:People = People.init(fromDictionary: [:])
@@ -77,6 +87,7 @@ class BookingInfo: NSObject {
             dictionaryElements.append(dataElement.toDictionary())
         }
         dictionary["massage_info"] = dictionaryElements
+        
         return dictionary
     }
 }
@@ -84,19 +95,20 @@ class BookingInfo: NSObject {
 class MyMassageInfo: NSObject {
     
     var massage_prices_id: String = ""
-    var notes: String = ""
-    var preference: String = ""
-    var massage_preference_option_id: String = ""
-    
+    var notes_of_injuries: String = ""
+    var gender_preference: String = ""
+    var pressure_preference: String = ""
+    var focus_area_preference: String = ""
     override init() {
         super.init()
     }
     func toDictionary() ->  [String:Any] {
         var dictionary = [String:Any]()
         dictionary["massage_prices_id"] = massage_prices_id
-        dictionary["preference"] = preference
-        dictionary["massage_preference_option_id"] = massage_preference_option_id
-        dictionary["notes"] = notes
+        dictionary["gender_preference"] = gender_preference
+        dictionary["pressure_preference"] = pressure_preference
+        dictionary["notes_of_injuries"] = notes_of_injuries
+        dictionary["focus_area_preference"] = focus_area_preference
         return dictionary
     }
 }

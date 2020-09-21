@@ -53,9 +53,9 @@ class CustomPhotoPicker: ThemeBottomDialogView {
     override func initialSetup() {
         super.initialSetup()
         self.lblCamera.text = "PHOTO_DIALOG_FROM_CAMERA".localized()
-        self.lblCamera.setFont(name: FontName.Bold, size: FontSize.label_18)
+        self.lblCamera.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.lblGallary.text = "PHOTO_DIALOG_FROM_GALLARY".localized()
-        self.lblGallary.setFont(name: FontName.Bold, size: FontSize.label_18)
+        self.lblGallary.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
     }
     override func layoutSubviews() {

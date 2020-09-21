@@ -99,7 +99,7 @@ class ReviewAndBookVC: BaseVC {
         self.lblBookingDetail?.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblServiceCenterName?.setFont(name: FontName.Regular, size: FontSize.detail)
         self.lblServiceCenterAddress?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
-        self.lblBookingDate?.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblBookingDate?.setFont(name: FontName.Regular, size: FontSize.detail)
         self.lblSessionDetail?.text = "REVIEW_AND_BOOK_LBL_SESSION_DETAIL".localized()
         self.lblSessionDetail?.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblSummaryDetail?.text = "REVIEW_AND_BOOK_LBL_SUMMARY".localized()
@@ -167,11 +167,7 @@ class ReviewAndBookVC: BaseVC {
     
     @IBAction func onBtnWithoutPaymentTapped(_ sender: Any) {
         if checkValidation() {
-            
-            print(appSingleton.myBookingData.toDictionary())
             self.wsBookRequest()
-            
-            
         }
     }
     
@@ -197,7 +193,7 @@ class ReviewAndBookVC: BaseVC {
             [weak paymentPercentageDialog, weak self]  (button) in
             guard let self = self else { return } ; print(self)
             paymentPercentageDialog?.dismiss()
-            Common.appDelegate.loadPaymentReferenceVC(navigaionVC: self.navigationController, isFromMenu: false)
+            Common.appDelegate.loadPaymentReferenceVC(navigaionVC: self.navigationController, fromVC:self)
         }
     }
     

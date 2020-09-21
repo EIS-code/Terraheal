@@ -22,34 +22,38 @@
                         <rect key="frame" x="5" y="5" width="317" height="151"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-J2-KSJ" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="27" y="27" width="263" height="12.5"/>
+                                <rect key="frame" x="27" y="27" width="263" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="theme_dark_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTq-Nr-Icc" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="27" y="49.5" width="263" height="20.5"/>
+                                <rect key="frame" x="27" y="51.5" width="263" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="theme_hint_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCH-S6-o0E" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="27" y="80" width="44" height="44"/>
+                                <rect key="frame" x="27" y="82" width="42" height="42"/>
                                 <color key="backgroundColor" name="theme_background"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZCH-S6-o0E" secondAttribute="height" multiplier="1:1" id="RKS-8F-I0e"/>
                                 </constraints>
-                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" image="asset-edit"/>
+                                <state key="normal" image="asset-address-edit"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableFloating" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoO-zy-EfQ" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="81" y="80" width="44" height="44"/>
+                                <rect key="frame" x="79" y="82" width="42" height="42"/>
                                 <color key="backgroundColor" name="theme_background"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aoO-zy-EfQ" secondAttribute="height" multiplier="1:1" id="ESV-QN-g3W"/>
                                 </constraints>
-                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" image="asset-delete"/>
+                                <state key="normal" image="asset-addres-delete"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableFloating" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="theme_background"/>
@@ -115,8 +119,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="asset-delete" width="24" height="24"/>
-        <image name="asset-edit" width="18" height="18"/>
+        <image name="asset-addres-delete" width="42" height="42"/>
+        <image name="asset-address-edit" width="42" height="42"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

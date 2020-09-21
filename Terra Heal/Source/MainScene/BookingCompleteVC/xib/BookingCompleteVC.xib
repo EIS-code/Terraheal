@@ -32,13 +32,13 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0fF-aW-aoF" userLabel="vwVerifiedVC">
-                                    <rect key="frame" x="32" y="64.5" width="256" height="439"/>
+                                    <rect key="frame" x="32" y="119.5" width="256" height="329.5"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-contact-verification-completion" translatesAutoresizingMaskIntoConstraints="NO" id="EwZ-s9-6hv">
-                                            <rect key="frame" x="0.0" y="20" width="256" height="323"/>
+                                            <rect key="frame" x="0.0" y="20" width="256" height="213.5"/>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="esT-aE-imh">
-                                            <rect key="frame" x="0.0" y="363" width="256" height="56"/>
+                                            <rect key="frame" x="0.0" y="253.5" width="256" height="56"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDc-q7-9co" userLabel="lblTitle" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                                     <rect key="frame" x="107" y="0.0" width="42" height="20.5"/>
@@ -165,7 +165,7 @@
         </view>
     </objects>
     <resources>
-        <image name="asset-contact-verification-completion" width="341.5" height="323"/>
+        <image name="asset-contact-verification-completion" width="257.5" height="213.5"/>
         <namedColor name="theme_dark_text">
             <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

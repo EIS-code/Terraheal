@@ -23,16 +23,22 @@
                     <rect key="frame" x="16" y="16" width="343" height="38"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-time" translatesAutoresizingMaskIntoConstraints="NO" id="uC8-c1-Q7b">
-                            <rect key="frame" x="75.5" y="9" width="20" height="20"/>
+                            <rect key="frame" x="78.5" y="10.5" width="17" height="17"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="20" id="2FG-1v-6aK"/>
                                 <constraint firstAttribute="width" secondItem="uC8-c1-Q7b" secondAttribute="height" multiplier="1:1" id="2Pn-7E-iPa"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bpe-Md-szB" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                             <rect key="frame" x="103.5" y="9" width="60" height="20"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="60" id="gD0-3M-YM0"/>
+                                <constraint firstAttribute="width" constant="60" id="gD0-3M-YM0" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                            <real key="value" value="60"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                                    </userDefinedRuntimeAttributes>
+                                </constraint>
                             </constraints>
                             <fontDescription key="fontDescription" name="QuicksandBook-Regular" family="Quicksand" pointSize="17"/>
                             <color key="textColor" name="theme_dark_text"/>

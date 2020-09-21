@@ -21,8 +21,8 @@ class CustomCountryPhoneCodePickerCell: TableCell {
         self.backgroundColor = .clear
         self.selectionStyle = .none
         self.contentView.backgroundColor = .clear
-        self.lblCountryName?.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblCountryPhoneCode?.setFont(name: FontName.Bold, size: FontSize.label_18)
+        self.lblCountryName?.setFont(name: FontName.Bold, size: FontSize.subHeader)
+        self.lblCountryPhoneCode?.setFont(name: FontName.Bold, size: FontSize.subHeader)
     }
 
     func setData(data: CountryPhone ) {

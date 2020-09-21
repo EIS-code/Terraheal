@@ -28,7 +28,7 @@
                     <rect key="frame" x="0.0" y="179" width="414" height="717"/>
                     <subviews>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muj-Ae-Rvi" customClass="FadeScrollView" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="20.5" y="10" width="373" height="707"/>
+                            <rect key="frame" x="20.5" y="71.5" width="373" height="645.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3M5-yW-8Kq" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="373" height="20.5"/>
@@ -58,7 +58,7 @@
                                         <constraint firstAttribute="height" constant="53" id="LCC-UQ-6AU"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="NO"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="10S-Cx-5X3" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
@@ -135,7 +135,7 @@
                         <constraint firstItem="IkD-Wi-84C" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.9" id="FHm-pc-FEv"/>
                         <constraint firstItem="muj-Ae-Rvi" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.9" id="Llc-6w-cKJ"/>
                         <constraint firstAttribute="trailing" secondItem="ra7-qc-OTt" secondAttribute="trailing" id="Ose-9c-L2Q"/>
-                        <constraint firstItem="muj-Ae-Rvi" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="PXm-Al-meT"/>
+                        <constraint firstItem="muj-Ae-Rvi" firstAttribute="top" secondItem="IkD-Wi-84C" secondAttribute="bottom" constant="16" id="PXm-Al-meT"/>
                         <constraint firstItem="IkD-Wi-84C" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="PxA-gI-nfN"/>
                         <constraint firstItem="IkD-Wi-84C" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="W5Z-JR-9pQ"/>
                         <constraint firstAttribute="height" constant="717" id="XsX-u6-tYd"/>

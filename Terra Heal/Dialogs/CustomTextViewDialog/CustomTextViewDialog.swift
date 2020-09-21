@@ -38,8 +38,8 @@ class CustomTextViewDialog: ThemeBottomDialogView {
 
     override func initialSetup() {
         super.initialSetup()
-        self.txtDescription.setFont(name: FontName.Regular, size: FontSize.label_18)
-        self.txtDescription.setPlaceholderFont(name: FontName.Regular, size: FontSize.label_18)
+        self.txtDescription.setFont(name: FontName.Regular, size: FontSize.subHeader)
+        self.txtDescription.setPlaceholderFont(name: FontName.Regular, size: FontSize.subHeader)
         self.txtDescription.placeholder = "Lorem ipsum dolor"
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.txtDescription?.delegate = self

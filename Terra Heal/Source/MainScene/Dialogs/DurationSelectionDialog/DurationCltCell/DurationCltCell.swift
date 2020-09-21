@@ -19,7 +19,7 @@ class DurationCltCell: SelectionBorderCollectionCell {
         super.awakeFromNib()
         self.lblAmount.setFont(name: FontName.Bold, size: 50)
         self.lblDuration.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
-        self.lblCurrencySign.setFont(name: FontName.Bold, size: FontSize.label_10)
+        self.lblCurrencySign.setFont(name: FontName.Bold, size: FontSize.small)
     }
     
     func setData(data:ServiceDurationDetail) {

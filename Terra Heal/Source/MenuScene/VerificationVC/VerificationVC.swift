@@ -68,9 +68,9 @@ class VerificationVC: BaseVC {
         self.lblIdBackSide.text = "VERIFICATION_LBL_BACK_SIDE".localized()
         self.lblIdFrontSide.text = "VERIFICATION_LBL_FRONT_SIDE".localized()
         self.lblIdPassport.text = "VERIFICATION_LBL_ID_PASSPORT".localized()
-        self.lblIdBackSide.setFont(name: FontName.Bold, size: FontSize.label_10)
-        self.lblIdFrontSide.setFont(name: FontName.Bold, size: FontSize.label_10)
-        self.lblIdPassport.setFont(name: FontName.SemiBold, size: FontSize.label_12)
+        self.lblIdBackSide.setFont(name: FontName.Bold, size: FontSize.small)
+        self.lblIdFrontSide.setFont(name: FontName.Bold, size: FontSize.small)
+        self.lblIdPassport.setFont(name: FontName.SemiBold, size: FontSize.detail)
         self.btnVerified.setTitle("VERIFICATION_BTN_VERIFIED".localized(), for: .normal)
     }
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {

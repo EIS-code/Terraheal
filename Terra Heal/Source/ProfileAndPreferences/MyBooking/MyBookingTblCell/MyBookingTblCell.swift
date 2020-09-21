@@ -27,8 +27,8 @@ class MyBookingTblCell: TableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblDate?.setFont(name: FontName.Bold, size: FontSize.label_18)
+        self.lblName?.setFont(name: FontName.Bold, size: FontSize.subHeader)
+        self.lblDate?.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.vwCollapse?.setRound(withBorderColor: .clear, andCornerRadious: 15.0, borderWidth: 1.0)
         self.vwExpanded?.setRound(withBorderColor: .clear, andCornerRadious: 15.0, borderWidth: 1.0)
         self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.header)

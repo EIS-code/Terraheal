@@ -69,9 +69,9 @@ class ServiceDetailVC: BaseVC {
     private func initialViewSetup() {
         self.lblTitle?.text = ""//appSingleton.user.name
         self.lblServiceName?.text = serviceDetail.name
-        self.lblServiceName?.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblServiceName?.setFont(name: FontName.Bold, size: FontSize.large)
         self.lblServiceDetail?.text = serviceDetail.details
-        self.lblServiceDetail?.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblServiceDetail?.setFont(name: FontName.Regular, size: FontSize.detail)
     }
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
         super.btnLeftTapped()

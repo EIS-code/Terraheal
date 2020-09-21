@@ -8,30 +8,37 @@
 
 import UIKit
 
-class GiftVoucherTblCell: TableCell {
+class GiftVoucherTblCell: ShadowTableCell {
 
-    @IBOutlet weak var lblname: ThemeLabel!
     @IBOutlet weak var vwBg: UIView!
-    @IBOutlet weak var ivPack: UIImageView!
-    @IBOutlet weak var vwForgiftPack: UIView!
-
+    @IBOutlet weak var lblId: ThemeLabel!
+    @IBOutlet weak var lblPrice: ThemeLabel!
+    @IBOutlet weak var lblDate1: ThemeLabel!
+    @IBOutlet weak var lblDate2: ThemeLabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.selectionStyle = .none
-        self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
-        self.ivPack?.setRound()
-        self.vwForgiftPack.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+        self.shadowProperty.radius = 4.0
+        self.shadowProperty.color = UIColor.init(hex: "#B2B3B566")
+        self.shadowProperty.offset = CGSize.init(width: 0.0, height: 0.0)
+        self.vwBg.setRound(withBorderColor: .clear, andCornerRadious: JDDeviceHelper.offseter(offset: 25), borderWidth: 1.0)
+        self.lblId.setFont(name: FontName.Bold, size: FontSize.subHeader)
+        self.lblPrice.setFont(name: FontName.Bold, size: FontSize.header)
+        self.lblDate1.setFont(name: FontName.Bold, size: FontSize.regular)
+        self.lblDate2.setFont(name: FontName.Bold, size: FontSize.regular)
     }
 
-    func setData(data: String ) {
-       self.lblname.text = data
+    func setData(data: GiftVoucherDetail ) {
+        self.lblId.text = data.id
+        self.lblPrice.text = data.price
+        self.lblDate1.text = data.date1
+        self.lblDate2.text = data.date2
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
-        self.ivPack?.setRound()
-        self.vwForgiftPack?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+        self.addShadow()
+        self.vwBg.setRound(withBorderColor: .clear, andCornerRadious: JDDeviceHelper.offseter(offset: 25), borderWidth: 1.0)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

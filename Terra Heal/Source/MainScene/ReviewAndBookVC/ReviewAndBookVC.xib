@@ -25,10 +25,8 @@
                 <outlet property="btnTermsCondition" destination="FWr-Dm-Q0O" id="Rsd-OT-9zc"/>
                 <outlet property="btnWithoutPayment" destination="vnW-H5-jtD" id="ktk-EO-AJ1"/>
                 <outlet property="contentVw" destination="C96-8T-JWm" id="Y5O-jc-3Zr"/>
-                <outlet property="footerGradient" destination="Yww-83-IZf" id="lPx-On-aKM"/>
                 <outlet property="hTblSession" destination="XIW-Ux-aaV" id="7Sy-fu-fp3"/>
                 <outlet property="hTblSummary" destination="Gxs-YH-FXF" id="a8D-Kt-Xk9"/>
-                <outlet property="headerGradient" destination="eVL-yq-MPf" id="cQc-Q8-1d0"/>
                 <outlet property="lblAccept" destination="dBA-nL-bcH" id="7FH-8P-ccU"/>
                 <outlet property="lblBookingDate" destination="guY-X7-pWP" id="ebR-H0-nNM"/>
                 <outlet property="lblBookingDetail" destination="pvr-GX-okE" id="ZB3-Z3-e1K"/>
@@ -489,35 +487,6 @@ lisbon, portugal -25412</string>
                     <viewLayoutGuide key="contentLayoutGuide" id="Agc-m4-Ji9"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="6ja-Xn-gQt"/>
                 </scrollView>
-                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ib7-q4-gTJ" userLabel="GradientView">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <subviews>
-                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVL-yq-MPf" userLabel="TopGradient" customClass="ThemeTopGradientView" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="125.5"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
-                            </userDefinedRuntimeAttributes>
-                        </view>
-                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yww-83-IZf" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="770.5" width="414" height="125.5"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
-                            </userDefinedRuntimeAttributes>
-                        </view>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="eVL-yq-MPf" firstAttribute="width" secondItem="ib7-q4-gTJ" secondAttribute="width" id="C74-wb-tNw"/>
-                        <constraint firstItem="Yww-83-IZf" firstAttribute="height" secondItem="eVL-yq-MPf" secondAttribute="height" priority="250" id="Nxh-em-UX4"/>
-                        <constraint firstAttribute="bottom" secondItem="Yww-83-IZf" secondAttribute="bottom" id="QVL-ab-a6L"/>
-                        <constraint firstItem="Yww-83-IZf" firstAttribute="width" secondItem="ib7-q4-gTJ" secondAttribute="width" id="kv9-aV-0iW"/>
-                        <constraint firstItem="eVL-yq-MPf" firstAttribute="centerX" secondItem="ib7-q4-gTJ" secondAttribute="centerX" id="l8h-K7-z9m"/>
-                        <constraint firstItem="Yww-83-IZf" firstAttribute="centerX" secondItem="ib7-q4-gTJ" secondAttribute="centerX" id="vOY-Du-m5f"/>
-                        <constraint firstItem="eVL-yq-MPf" firstAttribute="top" secondItem="ib7-q4-gTJ" secondAttribute="top" id="wNb-9I-TZd"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56A-4g-TbH" userLabel="vwBar">
                     <rect key="frame" x="0.0" y="44" width="414" height="81.5"/>
                     <subviews>
@@ -565,17 +534,12 @@ lisbon, portugal -25412</string>
             <constraints>
                 <constraint firstItem="Pha-Yw-JZd" firstAttribute="trailing" secondItem="eKR-Sa-aNZ" secondAttribute="trailing" id="4yb-rI-YQb"/>
                 <constraint firstItem="Pha-Yw-JZd" firstAttribute="bottom" secondItem="eKR-Sa-aNZ" secondAttribute="bottom" id="5uI-lr-fu2"/>
-                <constraint firstItem="eVL-yq-MPf" firstAttribute="bottom" secondItem="56A-4g-TbH" secondAttribute="bottom" id="GPW-Zd-TT6"/>
                 <constraint firstItem="eKR-Sa-aNZ" firstAttribute="centerX" secondItem="Pha-Yw-JZd" secondAttribute="centerX" id="Ics-8f-iIb"/>
                 <constraint firstItem="Pha-Yw-JZd" firstAttribute="top" secondItem="56A-4g-TbH" secondAttribute="top" id="N71-Mr-ACY"/>
-                <constraint firstItem="ib7-q4-gTJ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="OE7-bt-xT5"/>
-                <constraint firstItem="ib7-q4-gTJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RxM-Wx-Flt"/>
-                <constraint firstItem="ib7-q4-gTJ" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="Ucx-2s-GiV"/>
                 <constraint firstItem="56A-4g-TbH" firstAttribute="leading" secondItem="Pha-Yw-JZd" secondAttribute="leading" id="aHB-q9-9xW"/>
                 <constraint firstItem="eKR-Sa-aNZ" firstAttribute="leading" secondItem="Pha-Yw-JZd" secondAttribute="leading" id="aqQ-6B-h4b"/>
                 <constraint firstItem="eKR-Sa-aNZ" firstAttribute="top" secondItem="56A-4g-TbH" secondAttribute="bottom" id="cTJ-92-kbS"/>
                 <constraint firstItem="eKR-Sa-aNZ" firstAttribute="width" secondItem="Pha-Yw-JZd" secondAttribute="width" id="kcj-yp-FPJ"/>
-                <constraint firstItem="ib7-q4-gTJ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="klD-9N-XhW"/>
                 <constraint firstItem="Pha-Yw-JZd" firstAttribute="trailing" secondItem="56A-4g-TbH" secondAttribute="trailing" id="kmO-ug-e5o"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Pha-Yw-JZd"/>

@@ -28,7 +28,7 @@
                     <rect key="frame" x="0.0" y="562.5" width="414" height="333.5"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tfg-GV-f0f">
-                            <rect key="frame" x="20.5" y="0.0" width="373" height="333.5"/>
+                            <rect key="frame" x="20.5" y="71.5" width="373" height="262"/>
                             <color key="backgroundColor" name="theme_primary_light_background"/>
                         </tableView>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvk-9c-bRQ" userLabel="GradientView">
@@ -41,7 +41,7 @@
                                         <constraint firstAttribute="height" constant="53" id="QIN-vo-bya"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="NO"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40u-pa-5Vr" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
@@ -118,7 +118,7 @@
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="RrZ-kW-n5i"/>
                         <constraint firstAttribute="trailing" secondItem="fvk-9c-bRQ" secondAttribute="trailing" id="Zbv-I7-3PA"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="Zud-Qp-ll1"/>
-                        <constraint firstItem="tfg-GV-f0f" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" id="f6V-o4-lMI"/>
+                        <constraint firstItem="tfg-GV-f0f" firstAttribute="top" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="16" id="f6V-o4-lMI"/>
                         <constraint firstItem="fvk-9c-bRQ" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" id="snZ-X5-yRz"/>
                         <constraint firstAttribute="height" constant="333.5" id="wX9-c5-B7l"/>
                         <constraint firstItem="fvk-9c-bRQ" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" id="xRz-U1-rQC"/>

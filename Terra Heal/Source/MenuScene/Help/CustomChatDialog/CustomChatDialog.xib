@@ -136,7 +136,6 @@
                 <outlet property="imgChatVw" destination="V6N-1C-8gh" id="kyN-KL-OLo"/>
                 <outlet property="lblDescription" destination="age-r6-f4q" id="LRc-j2-0sI"/>
                 <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
-                <outlet property="scrVw" destination="w4k-c1-F6Z" id="Wkm-F0-hKd"/>
                 <outlet property="topBarSpace" destination="gm5-2t-GbH" id="fP1-Uc-ylB"/>
                 <outlet property="vwTopBar" destination="0MS-OB-pU6" id="iDl-Hc-heQ"/>
             </connections>

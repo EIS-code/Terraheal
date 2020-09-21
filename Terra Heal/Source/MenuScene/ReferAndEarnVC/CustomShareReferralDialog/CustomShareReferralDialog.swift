@@ -50,7 +50,7 @@ class CustomShareReferralDialog: ThemeBottomDialogView {
     override func initialSetup() {
         super.initialSetup()
         self.lblHeader.setFont(name: FontName.SemiBold, size: FontSize.header)
-        self.lblDescription.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblDescription.setFont(name: FontName.Regular, size: FontSize.detail)
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.setDataForStepUpAnimation()
     }

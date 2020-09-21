@@ -6,6 +6,19 @@
 import UIKit
 
 
+
+struct GiftVoucherDetail {
+    var header: String = "to suravshing tomar, from Prince"
+    var subHeader: String = "\"Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit, sed do\""
+    var body: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada."
+    var price:String = "120$"
+    var massage: String = ""
+    var id:String = ""
+    var date1: String = "Mon, Oct 18, 2020"
+    var date2: String = "Wed, Dec 22, 2020"
+    var image: UIImage = UIImage()
+}
+
 class GiftVoucherVC: BaseVC {
     
     @IBOutlet weak var tableView: UITableView!
@@ -19,7 +32,11 @@ class GiftVoucherVC: BaseVC {
     @IBOutlet weak var lblBody: ThemeLabel!
     @IBOutlet weak var lblSubHeader: ThemeLabel!
     @IBOutlet weak var lblHeader: ThemeLabel!
-    var arrForData: [String] = [ "terra heal massage center","terra heal massage center","terra heal massage center","terra heal massage center","terra heal massage center","terra heal massage center"]
+    var arrForData: [GiftVoucherDetail] = [
+        GiftVoucherDetail.init(price: "120$", id: "25487548", date1: "Mon, Oct 18, 2020", date2: "Wed, Dec 22, 2020"),
+        GiftVoucherDetail.init(price: "120$", id: "25487549", date1: "Mon, Oct 18, 2020", date2: "Wed, Dec 22, 2020"),
+        GiftVoucherDetail.init(price: "120$", id: "25487545", date1: "Mon, Oct 18, 2020", date2: "Wed, Dec 22, 2020")
+    ]
     
     @IBOutlet weak var btnGetStarted: FilledRoundedButton!
     
@@ -67,8 +84,11 @@ class GiftVoucherVC: BaseVC {
     }
     
     @IBAction func btnBuyNowTapped(_ sender: Any) {
-        print("Get Started Tapped")
-        self.arrForData = [ "terra heal massage center","terra heal massage center","terra heal massage center","terra heal massage center","terra heal massage center","terra heal massage center"]
+        
+        self.arrForData = [
+            GiftVoucherDetail.init(price: "120$", id: "25487548", date1: "Mon, Oct 18, 2020", date2: "Wed, Dec 22, 2020"),
+            GiftVoucherDetail.init(price: "120$", id: "25487549", date1: "Mon, Oct 18, 2020", date2: "Wed, Dec 22, 2020"),
+            GiftVoucherDetail.init(price: "120$", id: "25487545", date1: "Mon, Oct 18, 2020", date2: "Wed, Dec 22, 2020")]
         self.updateUI()
         self.btnBuyGiftVoucher.isHidden = false
         self.btnBuyNow.isHidden = true
@@ -92,15 +112,15 @@ class GiftVoucherVC: BaseVC {
     private func initialViewSetup() {
         self.setTitle(title: "GIFT_VOUCHER_TITLE".localized())
         self.setupTableView(tableView: self.tableView)
-        self.lblHeader.setFont(name: FontName.Bold, size: FontSize.label_16)
-        self.lblSubHeader.setFont(name: FontName.Regular, size: FontSize.label_14)
-        self.lblBody.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblHeader.setFont(name: FontName.Bold, size: FontSize.subHeader)
+        self.lblSubHeader.setFont(name: FontName.Regular, size: FontSize.regular)
+        self.lblBody.setFont(name: FontName.Regular, size: FontSize.detail)
         self.lblHeader.text = "GIFT_VOUCHER_HEADER".localized()
         self.lblSubHeader.text = "GIFT_VOUCHER_SUB_HEADER".localized()
         self.lblBody.text = "GIFT_VOUCHER_BODY".localized()
         self.lblEmptyTitle.text = "GIFT_VOUCHER_EMPTY_TITLE".localized()
-        self.lblEmptyTitle.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblEmptyMessage.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblEmptyTitle.setFont(name: FontName.Bold, size: FontSize.subHeader)
+        self.lblEmptyMessage.setFont(name: FontName.Regular, size: FontSize.detail)
         self.btnBuyGiftVoucher?.setTitle("GIFT_VOUCHER_BTN_BUY_GIFT_VOUCHER".localized(), for: .normal)
         self.btnBuyNow?.setTitle("GIFT_VOUCHER_BTN_BUY_NOW".localized(), for: .normal)
         self.btnGetStarted?.setTitle("GIFT_VOUCHER_BTN_GET_STARTED".localized(), for: .normal)
@@ -133,7 +153,7 @@ extension GiftVoucherVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
         tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = tableView.bounds.height / 2.0
         tableView.register(GiftVoucherTblCell.nib()
             , forCellReuseIdentifier: GiftVoucherTblCell.name)
         tableView.tableFooterView = UIView()
@@ -151,11 +171,13 @@ extension GiftVoucherVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
         return cell!
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.bounds.width * 0.8
+        return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        completeVoucher()
+        
+        Common.appDelegate.loadGiftVoucherDetailVC(navigaionVC: self.navigationController, data: self.arrForData[indexPath.row])
+        
     }
     
     

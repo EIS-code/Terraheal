@@ -10,6 +10,8 @@ import UIKit
 struct PackDetail {
     var code: String = ""
     var name: String = ""
+    var price: String = ""
+    var date: String = "expiry date: 10 dec, 2020"
     var description: String = ""
     var isSelected: Bool = false
 }
@@ -18,8 +20,11 @@ class PackVC: BaseVC {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnSubmit: FilledRoundedButton!
+    @IBOutlet weak var btnUseThisPack: RoundedBorderButton!
     
-    var arrForData: [PackDetail] = [PackDetail.init(code:"9S75894",name: "terra heal massage center", description: "five 60 min massages"),PackDetail.init(code:"ABCDEF",name: "terra heal therapy center", description: "FLAT 50 % OFF")
+    var arrForData: [PackDetail] = [
+        PackDetail.init(code:"9S75894",name: "\"free from pain\"", price: "€250.00", description: "5 Massages & Therapies of 60 mins"),
+        PackDetail.init(code:"12345640",name: "\"THE MAGIC OF ORIENT\"", price: "€450.00", description: "10 Different Oriental Massages & Therapies")
         
     ]
     // MARK: Object lifecycle
@@ -68,6 +73,7 @@ class PackVC: BaseVC {
         self.setupTableView(tableView: self.tableView)
         self.setTitle(title: "PACK_TITLE".localized())
         self.btnSubmit?.setTitle("PACK_BTN_BUY_NEW".localized(), for: .normal)
+        self.btnUseThisPack?.setTitle("PACK_BTN_USE_THIS_PACK".localized(), for: .normal)
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
@@ -80,6 +86,9 @@ class PackVC: BaseVC {
         _ = (self.navigationController as? NC)?.popVC()
     }
     
+    @IBAction func btnUseThisPackTapped(_ sender: Any) {
+        
+    }
     
 }
 
@@ -113,6 +122,11 @@ extension PackVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        for i in 0..<arrForData.count {
+            self.arrForData[i].isSelected = false
+        }
+        self.arrForData[indexPath.row].isSelected = true
+        self.tableView.reloadData()
     }
     
     

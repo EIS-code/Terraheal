@@ -141,8 +141,10 @@ extension LoginVC {
                     print(person.username ?? "")
                     CoreDataManager.sharedManager.update(username: request.email, password: request.password)
                     Common.appDelegate.loadMainVC()
+                    
                 } else {
-                    self.openRegisterFingerPrintDialog()
+                   
+                   self.openRegisterFingerPrintDialog()
                 }
             }
         }

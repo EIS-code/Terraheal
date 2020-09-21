@@ -282,7 +282,7 @@ tableView.backgroundColor = .clear
         return arrForData.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return JDDeviceHelper.offseter(scaleFactor: 1.0, offset: 70, direction: .vertical)
         
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

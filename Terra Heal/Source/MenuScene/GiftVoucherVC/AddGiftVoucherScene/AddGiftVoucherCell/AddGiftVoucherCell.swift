@@ -18,7 +18,7 @@ class AddGiftVoucherCell: SelectionBorderTableCell {
         super.awakeFromNib()
         self.selectionStyle = .none
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.header)
-        self.lblShortValue?.setFont(name: FontName.Bold, size: FontSize.label_12)
+        self.lblShortValue?.setFont(name: FontName.Bold, size: FontSize.detail)
         
     }
 

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" userLabel="FocusAreaCltCell" customClass="FocusAreaCltCell" customModule="Terra_Heal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="297" height="252"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="297" height="252"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="582-VR-E0n" userLabel="vwBg">
+                        <rect key="frame" x="8" y="8" width="281" height="191.5"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo-focus-area" translatesAutoresizingMaskIntoConstraints="NO" id="IeK-tR-YTP">
+                                <rect key="frame" x="65.5" y="21" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="IeK-tR-YTP" secondAttribute="height" multiplier="1:1" id="TSw-SA-icZ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="theme_background"/>
+                        <constraints>
+                            <constraint firstItem="IeK-tR-YTP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="582-VR-E0n" secondAttribute="leading" constant="10" id="9Ac-8X-5Te"/>
+                            <constraint firstItem="IeK-tR-YTP" firstAttribute="centerX" secondItem="582-VR-E0n" secondAttribute="centerX" id="dEP-6J-LdB"/>
+                            <constraint firstItem="IeK-tR-YTP" firstAttribute="centerY" secondItem="582-VR-E0n" secondAttribute="centerY" id="eTq-5H-tNJ"/>
+                            <constraint firstItem="IeK-tR-YTP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="582-VR-E0n" secondAttribute="top" constant="10" id="fJD-Tb-dFS"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DN9-jh-Ww8" userLabel="lblAmount" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                        <rect key="frame" x="8" y="215.5" width="281" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" name="theme_dark_text"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="DN9-jh-Ww8" firstAttribute="trailing" secondItem="582-VR-E0n" secondAttribute="trailing" id="4LC-UC-dGA"/>
+                <constraint firstItem="582-VR-E0n" firstAttribute="top" secondItem="lmf-Xn-7Ot" secondAttribute="top" constant="8" id="8Lm-1J-Fbs" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="lmf-Xn-7Ot" firstAttribute="bottom" secondItem="DN9-jh-Ww8" secondAttribute="bottom" constant="16" id="fxl-3Q-5YD"/>
+                <constraint firstItem="lmf-Xn-7Ot" firstAttribute="trailing" secondItem="582-VR-E0n" secondAttribute="trailing" constant="8" id="laS-UO-xLc" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="DN9-jh-Ww8" firstAttribute="top" secondItem="582-VR-E0n" secondAttribute="bottom" constant="16" id="uOr-NL-PyP"/>
+                <constraint firstItem="DN9-jh-Ww8" firstAttribute="leading" secondItem="582-VR-E0n" secondAttribute="leading" id="vZw-Aw-dtX"/>
+                <constraint firstItem="582-VR-E0n" firstAttribute="leading" secondItem="lmf-Xn-7Ot" secondAttribute="leading" constant="8" id="xjj-mD-yBI" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="lmf-Xn-7Ot"/>
+            <size key="customSize" width="221" height="288"/>
+            <connections>
+                <outlet property="ivFocusArea" destination="IeK-tR-YTP" id="2oz-kk-0AT"/>
+                <outlet property="lblName" destination="DN9-jh-Ww8" id="9Fr-pz-5eI"/>
+                <outlet property="vwCellBg" destination="582-VR-E0n" id="26d-YA-fRD"/>
+            </connections>
+            <point key="canvasLocation" x="254.0625" y="160.56338028169014"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="demo-focus-area" width="150" height="150"/>
+        <namedColor name="theme_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_dark_text">
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

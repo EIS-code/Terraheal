@@ -237,11 +237,9 @@ extension User {
             self.telNumberCode = (dictionary["tel_number_code"] as? String) ?? ""
             self.updatedAt = (dictionary["updated_at"] as? String) ?? ""
             self.cityId = (dictionary["city_id"] as? String) ?? ""
-            
             if let cityData = dictionary["city"] as? [String:Any]{
                 city = City(fromDictionary: cityData)
             }
-            
             if let countryData = dictionary["country"] as? [String:Any]{
                 country = Country(fromDictionary: countryData)
             }

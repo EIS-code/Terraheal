@@ -72,7 +72,7 @@ class HelpVC: BaseVC {
         self.setupTableView(tableView: self.tableView)
     
         self.setTitle(title: "HELP_TITLE".localized())
-        self.lblDetails.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblDetails.setFont(name: FontName.Regular, size: FontSize.detail)
     }
     
     
@@ -125,7 +125,7 @@ extension HelpVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
         tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 60
         tableView.register(HelpTblCell.nib()
             , forCellReuseIdentifier: HelpTblCell.name)
         tableView.tableFooterView = UIView()

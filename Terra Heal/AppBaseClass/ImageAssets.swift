@@ -86,6 +86,7 @@ struct ImageAsset {
         static let contactVarification = "asset-contact-verification-completion"
         static let bookingCompletion  =  "asset-booking-completion"
         static let requestBookingCompletion = "asset-request-booking-completion"
+        static let giftBookingCompletion = "asset-gift-voucher-completion"
     }
     struct Setting {
         static let language = "asset-menu-setting-language"

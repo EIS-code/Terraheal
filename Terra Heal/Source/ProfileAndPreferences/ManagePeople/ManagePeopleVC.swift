@@ -62,8 +62,8 @@ class ManagePeopleVC: BaseVC {
         self.setupTableView(tableView: self.tableView)
         self.setTitle(title: "MANAGE_PEOPLE_TITLE".localized())
         self.btnAddNewPeople?.setTitle("MANAGE_PEOPLE_BTN_ADD_NEW".localized(), for: .normal)
-        self.lblEmptyTitle.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblEmptyMsg.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblEmptyTitle.setFont(name: FontName.Bold, size: FontSize.subHeader)
+        self.lblEmptyMsg.setFont(name: FontName.Regular, size: FontSize.detail)
         self.lblEmptyTitle.text = "NO_PEOPLE_TITLE".localized()
         self.lblEmptyMsg.text = "NO_PEOPLE_MSG".localized()
         self.view.backgroundColor  = UIColor.themePrimaryLightBackground

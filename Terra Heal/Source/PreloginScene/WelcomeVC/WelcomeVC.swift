@@ -47,8 +47,9 @@ class WelcomeVC: BaseVC {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let point = CGPoint.init(x: 0, y: self.getTopInset())
-        self.mainScrollView.setContentOffset(point, animated: true)
+       /* let point = CGPoint.init(x: 0, y: self.getTopInset())
+        self.mainScrollView.setContentOffset(point, animated: true)*/
+        
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

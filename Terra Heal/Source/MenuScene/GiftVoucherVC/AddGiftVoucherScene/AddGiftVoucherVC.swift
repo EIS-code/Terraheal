@@ -130,8 +130,8 @@ class AddGiftVoucherVC: BaseVC {
     
     private func initialViewSetup() {
         self.setupTableView(tableView: self.tableView)
-        self.lblSubTotal.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblSubtotalValue.setFont(name: FontName.Bold, size: FontSize.label_18)
+        self.lblSubTotal.setFont(name: FontName.Bold, size: FontSize.subHeader)
+        self.lblSubtotalValue.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.lblSubTotal.text  = "ADD_GIFT_VOUCHER_SUBTOTAL".localized()
         self.setTitle(title: "ADD_GIFT_VOUCHER_TITLE".localized())
         self.btnPreview.setTitle("GIFT_VOUCHER_BTN_PREVIEW".localized(), for: .normal)
@@ -204,7 +204,7 @@ extension AddGiftVoucherVC: UITableViewDelegate,UITableViewDataSource, UIScrollV
 extension AddGiftVoucherVC {
     func openPreviewDialog() {
         let alert: PreviewGiftVoucherDialog = PreviewGiftVoucherDialog.fromNib()
-        alert.initialize(title: "Preview your gift voucher", buttonTitle: "GIFT_VOUCHER_BTN_PROCEED_TO_BUY".localized(), cancelButtonTitle: "GIFT_VOUCHER_BTN_MAKE_CHAGES".localized())
+        alert.initialize(title: "25487548", buttonTitle: "GIFT_VOUCHER_BTN_PROCEED_TO_BUY".localized(), cancelButtonTitle: "GIFT_VOUCHER_BTN_MAKE_CHAGES".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
@@ -215,7 +215,7 @@ extension AddGiftVoucherVC {
             [weak alert, weak self] (data) in
             alert?.dismiss()
             guard let self = self else { return } ; print(self)
-            Common.appDelegate.loadPaymentReferenceVC(navigaionVC: self.navigationController, isFromMenu: false)
+            Common.appDelegate.loadPaymentReferenceVC(navigaionVC: self.navigationController, fromVC:self)
         }
     }
     

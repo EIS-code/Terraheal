@@ -54,7 +54,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agl-Wb-btm" userLabel="scrVw">
-                    <rect key="frame" x="37.666666666666657" y="44" width="300" height="734"/>
+                    <rect key="frame" x="37.666666666666657" y="53" width="300" height="725"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hp5-yH-riX" userLabel="vwContent">
                             <rect key="frame" x="0.0" y="0.0" width="300" height="698"/>
@@ -297,7 +297,7 @@ to sign back in</string>
                             <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="NO"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I36-iZ-XgI" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
@@ -359,7 +359,7 @@ to sign back in</string>
                 </constraint>
                 <constraint firstItem="Agl-Wb-btm" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="t1S-Y5-R9B"/>
                 <constraint firstItem="kgA-It-QT8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="tbY-3W-bmO"/>
-                <constraint firstItem="Agl-Wb-btm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="xu9-De-egx"/>
+                <constraint firstItem="Agl-Wb-btm" firstAttribute="top" secondItem="Gf0-PD-r8o" secondAttribute="bottom" id="xu9-De-egx"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="130.40000000000001" y="153.69458128078819"/>
@@ -379,7 +379,7 @@ to sign back in</string>
             <color red="0.49803921568627452" green="0.7686274509803922" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_secondary">
-            <color red="0.97299998998641968" green="0.60000002384185791" blue="0.11800000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.97254901960784312" green="0.59999999999999998" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

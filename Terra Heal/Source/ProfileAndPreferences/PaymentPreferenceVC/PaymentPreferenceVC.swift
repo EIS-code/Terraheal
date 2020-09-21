@@ -31,7 +31,7 @@ class PaymentPreferenceVC: BaseVC {
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
     @IBOutlet weak var btnAddPayment: RoundedBorderButton!
     
-    var isFromMenu: Bool = false
+    var comeFromVC: BaseVC? = nil
     var arrForData: [CreditCardDetail] = [CreditCardDetail.init(id: "1", name: "personal", value: "254xxxxxxxxx324841", isSeleced: false),CreditCardDetail.init(id: "2", name: "business", value: "254xxxxxxxxx324841", isSeleced: true)]
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -96,7 +96,7 @@ class PaymentPreferenceVC: BaseVC {
         self.btnAddPayment?.setTitle("PAYMENT_BTN_ADD_NEW".localized(), for: .normal)
         self.setupTableView(tableView: self.tableView)
         self.btnAddPayment.addTarget(self, action: #selector(btnAddPaymentTapped(_:)), for: .touchUpInside)
-        if isFromMenu {
+        if comeFromVC == nil {
             self.btnSubmit?.setTitle("PAYMENT_BTN_ADD_NEW".localized(), for: .normal)
             self.btnAddPayment.isHidden = true
             self.btnSubmit.addTarget(self, action: #selector(btnAddPaymentTapped(_:)), for: .touchUpInside)
@@ -127,7 +127,12 @@ class PaymentPreferenceVC: BaseVC {
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
-              Common.appDelegate.loadReservationVC()
+        if comeFromVC != nil {
+            if comeFromVC!.isKind(of: AddGiftVoucherVC.self) {
+                Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "buy gift voucher Successful", strMessage: "THANKS FOR CHOOSING OUR SERVICES! We have received your booking and will confirm it as soon as possible", strImg: ImageAsset.Completion.giftBookingCompletion, strButtonTitle: "BTN_HOME".localized()))
+            }
+        }
+        
     }
     
     func openAddPaymentDialog() {

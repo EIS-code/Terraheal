@@ -19,9 +19,9 @@
 
 //MARK: WELCOME SCREEN
 "WELCOME_LBL_HEADER_1" = "you come to us";
-"WELCOME_LBL_MESSAGE_1" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+"WELCOME_LBL_MESSAGE_1" = "visit one of our centers closer to your location.";
 "WELCOME_LBL_HEADER_2" = "we come to you";
-"WELCOME_LBL_MESSAGE_2" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+"WELCOME_LBL_MESSAGE_2" = "On-demand in-home/ hotel / office service.";
 "WELCOME_BTN_SIGN_UP" =  "Sign Up";
 "WELCOME_BTN_HOME" =  "Book Now";
 "WELCOME_BTN_SIGN_IN" = "Sign In";
@@ -75,7 +75,7 @@
 "CONTACT_VERIFICATION_BTN_VERIFY" = "Verify";
 //MARK: CONTACT VERIFIED  SCREEN
 "CONTACT_VERIFICATION_BTN_HOME" = "Home";
-"CONTACT_VERIFIED_LBL_TITLE" = "verified";
+"CONTACT_VERIFIED_LBL_TITLE" = "thank you";
 "CONTACT_VERIFIED_LBL_MESSAGE" = "Your identity is verified successfully.";
 //MARK: Verification Dialog
 "CONTACT_VERIFICATION_BTN_PROCEED" = "Proceed";
@@ -154,6 +154,7 @@
 "MASSAGE_PREFERENCE_MENU_ITEM_5" = "past surgeries, fractures,\naccidents?";
 "MASSAGE_PREFERENCE_MENU_ITEM_6" = "skin, hair, nail problems\nand allergies?";
 "MASSAGE_PREFERENCE_MENU_ITEM_7" = "any health conditions\nor diseases?";
+"MASSAGE_PREFERENCE_MENU_ITEM_8" = "Focus Area";
 //MARK: Pressure Preference Menu
 "MASSAGE_PRESSURE_TITTLE" = "pressure";
 "MASSAGE_PRESSURE_TYPE_1" = "soft pressure";
@@ -233,6 +234,8 @@
 "PACK_BTN_BUY_NEW" = "Buy New pack";
 "PACK_PURCHASE_COMPLETE_TITLE" = "purchase successful";
 "PACK_PURCHASE_COMPLETE_MESSAGE" = "thanks for choosing our services! we have received your booking and will confirm it as soon as possible";
+"PACK_BTN_USE_THIS_PACK" = "Use Pack";
+
 //MARK: Help
 "HELP_TITLE" = "help";
 "CHAT_DIALOG_TITLE" = "chat";
@@ -472,7 +475,7 @@
 "DIALOG_TITLE_SEND_PREFERENCE" = "sending preference";
 "PHOTO_DIALOG_SCAN_DOCUMENT" = "Scan";
 "PHOTO_DIALOG_UPLODED"= "Upload";
-
+"BTN_HOME" = "Home";
 
 "FAQ_CONTENT" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget. Nullam eget felis eget nunc lobortis. Faucibus ornare suspendisse sed nisi. Sagittis eu volutpat odio facilisis mauris sit amet massa. Erat velit scelerisque in dictum non consectetur a erat. Amet nulla facilisi morbi tempus iaculis urna.";
 //MARK: -

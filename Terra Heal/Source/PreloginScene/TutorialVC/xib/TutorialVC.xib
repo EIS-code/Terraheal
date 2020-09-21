@@ -95,6 +95,7 @@
                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                             <real key="value" value="16"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
                     </userDefinedRuntimeAttributes>
                 </constraint>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fjQ-k9-NAp" secondAttribute="trailing" constant="16" id="YL3-4o-zDF" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
@@ -102,6 +103,7 @@
                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                             <real key="value" value="16"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
                     </userDefinedRuntimeAttributes>
                 </constraint>
                 <constraint firstItem="t8a-Aw-3N1" firstAttribute="top" secondItem="tqr-Gp-vWE" secondAttribute="bottom" constant="16" id="eSE-82-IhU" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
@@ -124,6 +126,7 @@
                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                             <real key="value" value="16"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
                     </userDefinedRuntimeAttributes>
                 </constraint>
                 <constraint firstItem="t8a-Aw-3N1" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="yfs-ZN-g6w"/>

@@ -38,15 +38,23 @@
                                         <constraint firstAttribute="height" constant="5" id="BID-ch-mhU"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYV-eX-avf">
-                                    <rect key="frame" x="67" y="25" width="240" height="36"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8k-zA-wSn" userLabel="vwContent" customClass="JDSegmentedControl" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="112" y="25" width="150" height="36"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="36" id="8tw-RJ-Lzf" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                        <constraint firstAttribute="height" constant="36" id="rKg-lp-ToU" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                                                     <real key="value" value="36"/>
                                                 </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </constraint>
+                                        <constraint firstAttribute="width" constant="150" id="vVX-AR-01x" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                                    <real key="value" value="150"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
                                             </userDefinedRuntimeAttributes>
                                         </constraint>
                                     </constraints>
@@ -108,27 +116,12 @@
                                 <constraint firstItem="Ei4-4H-zMW" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" multiplier="0.7" id="sER-R4-uKh"/>
                             </constraints>
                         </stackView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8k-zA-wSn" userLabel="vwContent" customClass="JDSegmentedControl" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="83" y="35" width="248" height="36"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="36" id="rKg-lp-ToU" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
-                                            <real key="value" value="36"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </constraint>
-                            </constraints>
-                        </view>
                     </subviews>
                     <color key="backgroundColor" name="theme_primary_light_background"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" constant="20" id="1HJ-Xp-DOL"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="GMK-Ej-vFh"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="RrZ-kW-n5i"/>
-                        <constraint firstItem="X8k-zA-wSn" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.6" id="UeZ-iC-4Nv"/>
-                        <constraint firstItem="X8k-zA-wSn" firstAttribute="top" secondItem="NYV-eX-avf" secondAttribute="top" id="Zsr-Kd-Eq8"/>
                         <constraint firstAttribute="bottom" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="20" id="fhi-OD-EBT"/>
                     </constraints>
                 </view>
@@ -136,7 +129,6 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Yaj-p7-IIT" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="8dM-F7-kDK"/>
-                <constraint firstItem="X8k-zA-wSn" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="8ka-yQ-9dv"/>
                 <constraint firstAttribute="trailing" secondItem="6ZW-DU-hOd" secondAttribute="trailing" id="C4E-pP-AJq"/>
                 <constraint firstAttribute="bottom" secondItem="Yaj-p7-IIT" secondAttribute="bottom" id="JTg-za-1ir"/>
                 <constraint firstItem="6ZW-DU-hOd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O4e-FZ-uqZ"/>

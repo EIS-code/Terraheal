@@ -52,6 +52,7 @@ class CustomLocationServiceDialog: ThemeBottomDialogView {
         self.setupCollectionView(collectionView: self.collectionVw)
         self.vwServiceSelection.allowChangeThumbWidth = false
         self.vwServiceSelection.itemTitles = ["massages".localized(),"therapies".localized()]
+        self.vwServiceSelection.thumbColor = UIColor.themePrimary
         self.vwServiceSelection.changeBackgroundColor(UIColor.themeLightTextColor)
         self.vwServiceSelection.didSelectItemWith = { [weak self] (index,title) in
             guard let self = self else {

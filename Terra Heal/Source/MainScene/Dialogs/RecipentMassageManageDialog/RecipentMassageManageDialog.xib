@@ -28,7 +28,7 @@
                     <rect key="frame" x="0.0" y="376" width="414" height="520"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="7BO-PO-vLm">
-                            <rect key="frame" x="16" y="0.0" width="382" height="520"/>
+                            <rect key="frame" x="16" y="131.5" width="382" height="388.5"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </tableView>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IDT-vz-0v6" userLabel="GradientView">
@@ -41,7 +41,7 @@
                                         <constraint firstAttribute="height" constant="53" id="H18-zF-RS5"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="NO"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ct-hT-2NA" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
@@ -177,7 +177,7 @@
                         <constraint firstItem="7BO-PO-vLm" firstAttribute="trailing" secondItem="Yu4-Gb-UNh" secondAttribute="trailing" id="SbF-MP-xii"/>
                         <constraint firstAttribute="trailing" secondItem="eZ8-bR-g2k" secondAttribute="trailing" constant="10" id="VKz-NQ-AC8"/>
                         <constraint firstItem="IDT-vz-0v6" firstAttribute="leading" secondItem="NKj-5u-Rts" secondAttribute="leading" id="bXx-id-hNj"/>
-                        <constraint firstItem="7BO-PO-vLm" firstAttribute="top" secondItem="NKj-5u-Rts" secondAttribute="top" id="g6J-0i-3NP"/>
+                        <constraint firstItem="7BO-PO-vLm" firstAttribute="top" secondItem="eZ8-bR-g2k" secondAttribute="bottom" constant="16" id="g6J-0i-3NP"/>
                         <constraint firstItem="7BO-PO-vLm" firstAttribute="leading" secondItem="Yu4-Gb-UNh" secondAttribute="leading" id="k5q-Q0-3E0"/>
                         <constraint firstItem="7BO-PO-vLm" firstAttribute="centerX" secondItem="NKj-5u-Rts" secondAttribute="centerX" id="lsi-Ow-wdw"/>
                         <constraint firstAttribute="trailing" secondItem="IDT-vz-0v6" secondAttribute="trailing" id="pAW-Ba-8nS"/>

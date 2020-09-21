@@ -107,7 +107,7 @@
         </view>
     </objects>
     <resources>
-        <image name="asset-contact-verification" width="310" height="310.5"/>
+        <image name="asset-contact-verification" width="297" height="196.5"/>
         <namedColor name="theme_dark_text">
             <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

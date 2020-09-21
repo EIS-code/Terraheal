@@ -124,7 +124,7 @@ tableView.backgroundColor = .clear
         if arrForMyPlaces[indexPath.row].isSelected == true {
             return UITableView.automaticDimension
         } else  {
-            return 80
+          return JDDeviceHelper.offseter(scaleFactor: 1.0, offset: 80, direction: .vertical)
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

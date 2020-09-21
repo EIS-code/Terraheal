@@ -151,7 +151,7 @@
         </view>
     </objects>
     <resources>
-        <image name="asset-center" width="50" height="50"/>
+        <image name="asset-center" width="62" height="62"/>
         <namedColor name="theme_dark_text">
             <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -101,6 +101,7 @@ class PreferenceOption{
     var name: String = ""
     var selected: String = ""
     var value: String = ""
+    var icon: String = ""
     var isSelected: Bool = false
     /**
      * Instantiate the instance using the passed dictionary values to set the properties values
@@ -111,6 +112,7 @@ class PreferenceOption{
         self.name = (dictionary["name"] as? String) ?? ""
         self.selected = (dictionary["selected"] as? String) ?? ""
         self.value = (dictionary["value"] as? String) ?? ""
+        self.icon = (dictionary["icon"] as? String) ?? ""
         self.isSelected = self.selected.toBool
     }
 
@@ -121,6 +123,7 @@ enum Session {
 
     struct RequestList: Codable {
         var user_id: String = PreferenceHelper.shared.getUserId()
+        var booking_type: String = "0"
        // var token: String = PreferenceHelper.shared.getSessionToken()
     }
     //MARK: Response
@@ -145,26 +148,15 @@ class SessionDetail: ResponseModel {
     var id: String = ""
     var name: String = ""
     var detail: String = ""
-    var image: String = ""
+    var icon: String = ""
     var isSelected: Bool = false
     override init(fromDictionary dictionary: [String : Any]) {
         super.init(fromDictionary: dictionary)
         self.id = (dictionary["id"] as? String) ?? ""
         self.name = (dictionary["type"] as? String) ?? ""
         self.detail = (dictionary["descriptions"] as? String) ?? ""
-        self.image = (dictionary["image"] as? String) ?? ""
-        if self.id == "4" {
-            self.image = ImageAsset.Session.single
-        }
-        else if self.id == "5" {
-            self.image = ImageAsset.Session.couple
-        }
-        else if self.id == "6" {
-            self.image = ImageAsset.Session.group
-        } else {
-             self.image = ImageAsset.Session.single
-        }
+        self.icon = (dictionary["icon"] as? String) ?? ""
+        
     }
-    
-   
 }
+

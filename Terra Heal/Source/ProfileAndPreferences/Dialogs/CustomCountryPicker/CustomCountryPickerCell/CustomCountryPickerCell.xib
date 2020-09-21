@@ -27,7 +27,7 @@
                                 <color key="textColor" name="theme_dark_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check-secondary" translatesAutoresizingMaskIntoConstraints="NO" id="AbO-De-7nI">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check" translatesAutoresizingMaskIntoConstraints="NO" id="AbO-De-7nI">
                                 <rect key="frame" x="285" y="5" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="AbO-De-7nI" secondAttribute="height" multiplier="1:1" id="CVp-sG-V6m"/>
@@ -119,7 +119,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="asset-check-secondary" width="16.5" height="16.5"/>
+        <image name="asset-check" width="32" height="32"/>
         <namedColor name="theme_dark_text">
             <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

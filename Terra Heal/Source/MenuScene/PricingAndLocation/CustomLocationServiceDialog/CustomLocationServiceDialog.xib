@@ -28,7 +28,7 @@
                     <rect key="frame" x="0.0" y="100" width="320" height="468"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ps3-Js-7Iq">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="468"/>
+                            <rect key="frame" x="0.0" y="160" width="320" height="308"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="z33-qW-ZLm">
                                 <size key="itemSize" width="128" height="128"/>
@@ -52,7 +52,7 @@
                                         <constraint firstAttribute="height" constant="53" id="hOf-L4-fJF"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="NO"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJk-E8-g7U" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
@@ -130,10 +130,16 @@
                             </subviews>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLP-3J-98a" userLabel="vwContent" customClass="JDSegmentedControl" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="90" y="96" width="140" height="40"/>
+                            <rect key="frame" x="90" y="96" width="140" height="34"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="40" id="Oe6-gz-a6P"/>
+                                <constraint firstAttribute="height" constant="34" id="Oe6-gz-a6P" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                            <real key="value" value="34"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </constraint>
                             </constraints>
                         </view>
                     </subviews>
@@ -151,7 +157,13 @@
                         <constraint firstAttribute="height" constant="468" id="gXl-Gi-MuO"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="gm5-2t-GbH"/>
                         <constraint firstItem="qLP-3J-98a" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" multiplier="0.5" id="hbL-h6-Kfv"/>
-                        <constraint firstItem="ps3-Js-7Iq" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" id="krB-3m-g1P"/>
+                        <constraint firstItem="ps3-Js-7Iq" firstAttribute="top" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="24" id="krB-3m-g1P" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                    <real key="value" value="24"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
                         <constraint firstItem="ps3-Js-7Iq" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" id="nfd-MW-WJG"/>
                         <constraint firstAttribute="bottom" secondItem="ps3-Js-7Iq" secondAttribute="bottom" id="pvd-Bz-1CL"/>
                     </constraints>

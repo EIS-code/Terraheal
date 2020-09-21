@@ -8,42 +8,41 @@
 
 import UIKit
 
-class PackTblCell: TableCell {
-
-    @IBOutlet weak var lblname: ThemeLabel!
-    @IBOutlet weak var lblShortDescription: ThemeLabel!
-    @IBOutlet weak var lblCode: ThemeLabel!
-    @IBOutlet weak var lblVoucherCode: ThemeLabel!
-    @IBOutlet weak var vwBg: UIView!
-    @IBOutlet weak var ivMenu: UIImageView!
-    @IBOutlet weak var vwPromoCode: DashedLineView!
+class PackTblCell: SelectionBorderTableCell {
+    
     @IBOutlet weak var ivPack: UIImageView!
-    @IBOutlet weak var lblPackDetail: ThemeLabel!
-
+    @IBOutlet weak var lblId: ThemeLabel!
+    @IBOutlet weak var lblDetail: ThemeLabel!
+    @IBOutlet weak var lblName: ThemeLabel!
+    @IBOutlet weak var lblDate: ThemeLabel!
+    @IBOutlet weak var lblPrice: ThemeLabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.selectionStyle = .none
-        self.lblVoucherCode.text = "PACK_CODE".localized()
-        self.lblname?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
-        self.lblShortDescription?.setFont(name: FontName.SemiBold, size: FontSize.header)
-        self.lblVoucherCode?.setFont(name: FontName.Regular, size: FontSize.label_12)
-        self.lblCode?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
-        self.lblPackDetail?.setFont(name: FontName.Regular, size: FontSize.label_12)
-        self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
-        self.ivPack?.setRound()
-       
+        self.radius = 25
+        self.shadowProperty.radius = 4.0
+        self.shadowProperty.color = UIColor.init(hex: "#B2B3B566")
+        self.shadowProperty.offset = CGSize.init(width: 0.0, height: 0.0)
+        
+        self.lblId.setFont(name: FontName.Bold, size: FontSize.regular)
+        self.lblDetail.setFont(name: FontName.Regular, size: FontSize.subHeader)
+        self.lblName.setFont(name: FontName.SemiBold, size: FontSize.header)
+        self.lblDate.setFont(name: FontName.SemiBold, size: FontSize.regular)
+        self.lblPrice.setFont(name: FontName.SemiBold, size: FontSize.header)
     }
-
+    
     func setData(data: PackDetail ) {
-        self.lblCode.text = data.code
-        self.lblShortDescription.text = data.description
-        self.lblname.text = data.name
+        super.setData(title: "", isSelected: data.isSelected)
+        self.lblId.text = data.code
+        self.lblDetail.text = data.description
+        self.lblName.text = data.name
+        self.lblDate.text = data.date
+        self.lblPrice.text = data.price
     }
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
-        self.ivPack?.setRound()
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -19,13 +19,13 @@ class MessageCode: NSObject {
     static let success: String = "200"
     static let validationError: String = "401"
     static let exception: String = "401"
-
 }
 
 class CommonSize: NSObject {
     struct Button {
         static let standard: CGFloat = 48
         static let standardWidth: CGFloat = 160
+        static let standardLargeWidth: CGFloat = 200
         static let back: CGFloat = 32
         static let cancel: CGFloat = 44
         static let forwardButton: CGFloat = 40
@@ -64,16 +64,12 @@ enum Gender: String {
     }
 }
 
-enum BookingType: String {
-    case MassageCenter  = "2"
-    case Therapist  = "1"
-    func name()-> String {
-        switch self {
-        // Use Internationalization, as appropriate.
-        case .MassageCenter: return "GENDER_MALE".localized()
-        case .Therapist: return "GENDER_FEMALE".localized()
-        }
-    }
+
+
+enum AccessoryType: String {
+    case None  = "0"
+    case Table  = "1"
+    case Futon  = "2"
 }
 
 
@@ -104,6 +100,12 @@ struct Google {
 struct LoginBy {
     static let Social  = "1"
     static let Manual  = "0"
+}
+
+
+struct BookingType {
+    static let MassageCenter  = "0"
+    static let AtPlace  = "1"
 }
 
 

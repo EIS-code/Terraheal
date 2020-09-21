@@ -26,7 +26,7 @@ class MenuCellVerticle: CollectionShadowCell {
 
     func setData(menuDetail:MenuItem) {
         self.lblTitle?.setFont(name: FontName.Regular, size: FontSize.detail)
-        //self.lblTitle?.font = FontHelper.font(name: FontName.Regular, size: FontSize.label_12)
+        //self.lblTitle?.font = FontHelper.font(name: FontName.Regular, size: FontSize.detail)
         self.lblTitle.text = menuDetail.id.name()
         self.lblTitle.printFontSize()
         self.ivMenu.image = UIImage.init(named: menuDetail.id.image())

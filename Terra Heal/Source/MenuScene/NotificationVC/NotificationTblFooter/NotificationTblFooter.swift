@@ -17,7 +17,7 @@ class NotificationTblFooter: UIView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
+        self.lblName?.setFont(name: FontName.Bold, size: FontSize.subHeader)
     }
 
     func setData(data: SettingPreferenceDetail ) {

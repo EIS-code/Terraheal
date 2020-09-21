@@ -97,9 +97,9 @@ class CustomAddPeopleDialog: ThemeBottomDialogView {
         self.txtName.placeholder = "MANAGE_PEOPLE_TXT_NAME".localized()
         self.txtAge.placeholder = "MANAGE_PEOPLE_TXT_AGE".localized()
         self.lblMale.text = "GENDER_MALE".localized()
-        self.lblMale.setFont(name: FontName.Bold, size: FontSize.label_18)
+        self.lblMale.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.lblFemale.text = "GENDER_FEMALE".localized()
-        self.lblFemale.setFont(name: FontName.Bold, size: FontSize.label_18)
+        self.lblFemale.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         
     }

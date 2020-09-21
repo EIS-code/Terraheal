@@ -97,7 +97,7 @@ class ScanPassportVC: BaseVC, AVCapturePhotoCaptureDelegate {
     
     func updateuiForFrontImage() {
         self.lblHeader?.text = "SCAN_PASSPORT_LBL_FRONT_SIDE".localized()
-        self.lblHeader?.setFont(name: FontName.SemiBold, size: FontSize.label_26)
+        self.lblHeader?.setFont(name: FontName.SemiBold, size: FontSize.large)
         
     }
     
@@ -132,6 +132,6 @@ class ScanPassportVC: BaseVC, AVCapturePhotoCaptureDelegate {
     
     func updateUiForBackImage() {
         self.lblHeader?.setTextWithAnimation(text: "SCAN_PASSPORT_LBL_BACK_SIDE".localized())
-        self.lblHeader?.setFont(name: FontName.SemiBold, size: FontSize.label_26)
+        self.lblHeader?.setFont(name: FontName.SemiBold, size: FontSize.large)
     }
 }

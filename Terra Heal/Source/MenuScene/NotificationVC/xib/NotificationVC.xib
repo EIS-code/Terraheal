@@ -29,7 +29,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-f3-Mwd">
-                    <rect key="frame" x="20" y="44" width="335" height="734"/>
+                    <rect key="frame" x="20" y="210.66666666666669" width="335" height="567.33333333333326"/>
                     <color key="backgroundColor" name="theme_light_background"/>
                 </tableView>
                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hLh-Uh-8On" userLabel="GradientView">
@@ -39,7 +39,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="210.66666666666666"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="NO"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fO-Yl-jxO" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
@@ -117,7 +117,7 @@
             <color key="backgroundColor" name="theme_primary_light_background"/>
             <constraints>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="top" secondItem="G8W-EW-5fP" secondAttribute="top" constant="5" id="11r-Wg-HDs"/>
-                <constraint firstItem="aVT-f3-Mwd" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" id="12k-3X-GBL"/>
+                <constraint firstItem="aVT-f3-Mwd" firstAttribute="top" secondItem="nxD-Gh-cJz" secondAttribute="bottom" id="12k-3X-GBL"/>
                 <constraint firstItem="dk0-AN-Hja" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="20" id="1iZ-Cw-RkL"/>
                 <constraint firstItem="nxD-Gh-cJz" firstAttribute="bottom" secondItem="dk0-AN-Hja" secondAttribute="bottom" constant="20" id="4dI-jw-qmc"/>
                 <constraint firstItem="qXO-ds-8JK" firstAttribute="leading" secondItem="dk0-AN-Hja" secondAttribute="trailing" constant="20" id="5qF-se-3uE"/>

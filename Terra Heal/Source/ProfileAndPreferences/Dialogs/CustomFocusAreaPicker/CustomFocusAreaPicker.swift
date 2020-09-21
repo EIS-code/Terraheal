@@ -10,9 +10,9 @@ import UIKit
 
 class CustomFocusAreaPicker: ThemeBottomDialogView {
 
-    @IBOutlet weak var hTblVw: NSLayoutConstraint!
-    @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var hCltVw: NSLayoutConstraint!
+    @IBOutlet weak var collectionVw: UICollectionView!
+    
     var onBtnDoneTapped: ((_ pressure:PreferenceOption) -> Void)? = nil
     var selectedData:PreferenceOption = PreferenceOption.init(fromDictionary: [:])
     var arrForData: [PreferenceOption] = []
@@ -38,8 +38,8 @@ class CustomFocusAreaPicker: ThemeBottomDialogView {
             self.btnDone.isHidden = false
         }
         self.select(data: self.selectedData)
-        self.setupTableView(tableView: self.tableView)
-
+        self.setupCollectionView(collectionView: self.collectionVw)
+        self.setDataForStepUpAnimation()
     }
 
     func select(data:PreferenceOption) {
@@ -50,7 +50,7 @@ class CustomFocusAreaPicker: ThemeBottomDialogView {
                 arrForData[i].isSelected = true
             }
         }
-        self.tableView.reloadData()
+        self.collectionVw.reloadData()
     }
 
     func setDataSource(data:  MassagePreferenceDetail) {
@@ -70,7 +70,7 @@ class CustomFocusAreaPicker: ThemeBottomDialogView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.reloadTableDataToFitHeight(tableView: self.tableView)
+        self.collectionVw.reloadData()
     }
 
     @IBAction func btnDoneTapped(_ sender: Any) {
@@ -86,51 +86,45 @@ class CustomFocusAreaPicker: ThemeBottomDialogView {
    
 }
 
-extension CustomFocusAreaPicker : UITableViewDelegate,UITableViewDataSource {
-
-    private func reloadTableDataToFitHeight(tableView: UITableView) {
-        tableView.reloadData(heightToFit: self.hTblVw) {
-
-        }
+// MARK: - CollectionView Methods
+extension CustomFocusAreaPicker:  UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    private func setupCollectionView(collectionView:  UICollectionView) {
+        collectionView.backgroundColor = UIColor.clear
+        collectionView.isUserInteractionEnabled = true
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.isPagingEnabled = false
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(FocusAreaCltCell.nib()
+            , forCellWithReuseIdentifier: FocusAreaCltCell.name)
+        
     }
-    private func setupTableView(tableView: UITableView) {
-        tableView.delegate = self
-        tableView.dataSource = self
-tableView.backgroundColor = .clear
-        tableView.showsVerticalScrollIndicator = false
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = UITableView.automaticDimension
-        tableView.register(PressureSelectionTblCell.nib()
-            , forCellReuseIdentifier: PressureSelectionTblCell.name)
-        tableView.tableFooterView = UIView()
+    
+    // MARK: UICollectionViewDataSource
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrForData.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: PressureSelectionTblCell.name, for: indexPath) as?  PressureSelectionTblCell
-        cell?.layoutIfNeeded()
-        cell?.setData(data: arrForData[indexPath.row])
-        cell?.layoutIfNeeded()
-        return cell!
-
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FocusAreaCltCell.name, for: indexPath) as! FocusAreaCltCell
+        cell.setData(data: self.arrForData[indexPath.row])
+        return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        for i in 0..<arrForData.count {
-            arrForData[i].isSelected = false
-        }
-        self.arrForData[indexPath.row].isSelected = true
-        self.selectedData = self.arrForData[indexPath.row]
-        tableView.reloadData()
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        self.select(data: self.arrForData[indexPath.item])
+        
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = collectionView.bounds.width / 2.0
+        return CGSize(width: size , height: size)
     }
 }
 

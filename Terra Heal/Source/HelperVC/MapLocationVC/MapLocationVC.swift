@@ -68,7 +68,7 @@ class MapLocationVC: BaseVC {
     
     func  setLocalization(){
         self.btnDone.setTitle("BTN_PROCEED".localized(), for: .normal)
-        self.lblAddressValue.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblAddressValue.setFont(name: FontName.Regular, size: FontSize.detail)
         
         
     }
@@ -82,10 +82,10 @@ class MapLocationVC: BaseVC {
     //MARK:
     //MARK: Button action methods
     @IBAction func onClickBtnDone(_ sender: UIButton){
-      self.lc = nil
-      if self.onLocationSelected != nil {
-        self.onLocationSelected!(Address.init(fromDictionary: selectedAddress.toDictionary()));
-      }
+        self.lc = nil
+        if self.onLocationSelected != nil {
+            self.onLocationSelected!(Address.init(fromDictionary: selectedAddress.toDictionary()));
+        }
         
     }
     
@@ -220,7 +220,7 @@ extension MapLocationVC: UITableViewDataSource,UITableViewDelegate {
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-tableView.backgroundColor = .clear
+        tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension

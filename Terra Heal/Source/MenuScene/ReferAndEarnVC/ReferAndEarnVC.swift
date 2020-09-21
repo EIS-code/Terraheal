@@ -102,17 +102,17 @@ class ReferAndEarnVC: BaseVC {
         self.setTitle(title: "REFER_AND_EARN_TITLE".localized())
 
         self.lblTotalBalance.text = "REFER_AND_EARN_LBL_TOTAL_BALANCE".localized()
-        self.lblTotalBalance.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblTotalBalance.setFont(name: FontName.Regular, size: FontSize.detail)
         self.lblTotalBalanceValue.text = "--".localized()
         self.lblTotalBalanceValue.setFont(name: FontName.Bold, size: FontSize.header)
 
         self.lblLifeTimeEarning.text = "REFER_AND_EARN_LBL_LIFETIME_EARNING".localized()
-        self.lblLifeTimeEarning.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblLifeTimeEarning.setFont(name: FontName.Regular, size: FontSize.detail)
         self.lblLifeTimeEarningValue.text = "--".localized()
         self.lblLifeTimeEarningValue.setFont(name: FontName.Bold, size: FontSize.header)
 
         self.lblLifeTimeBurning.text = "REFER_AND_EARN_LBL_LIFETIME_BURNING".localized()
-        self.lblLifeTimeBurning.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblLifeTimeBurning.setFont(name: FontName.Regular, size: FontSize.detail)
         self.lblLifeTimeBurningValue.text = "--".localized()
         self.lblLifeTimeBurningValue.setFont(name: FontName.Bold, size: FontSize.header)
 
@@ -121,7 +121,7 @@ class ReferAndEarnVC: BaseVC {
         self.lblReferAndEarn.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
 
         self.lblInviteFriendMsg.text = "REFER_AND_EARN_LBL_INVITE_FRIEND_MSG".localized()
-        self.lblInviteFriendMsg.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblInviteFriendMsg.setFont(name: FontName.Regular, size: FontSize.detail)
 
 
         self.btnReferNow.setTitle("REFER_AND_EARN_BTN_REFER_NOW".localized(), for: .normal)
@@ -133,7 +133,7 @@ class ReferAndEarnVC: BaseVC {
         self.lblHistory.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
 
         self.lblNoHistory.text = "REFER_AND_EARN_LBL_NO_HISTORY".localized()
-        self.lblNoHistory.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblNoHistory.setFont(name: FontName.Regular, size: FontSize.detail)
 
         self.btnFilter.setTitle("last month".localized() + " " + FontSymbol.down_arrow, for: .normal)
         self.scrVw.contentInset = UIEdgeInsets.init(top: self.vwNavigationBar.bounds.height, left: 0, bottom: self.vwNavigationBar.bounds.height, right: 0)
@@ -299,7 +299,7 @@ tableView.backgroundColor = .clear
         return cell!
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return JDDeviceHelper.offseter(scaleFactor: 1.0, offset: 60, direction: .vertical)
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

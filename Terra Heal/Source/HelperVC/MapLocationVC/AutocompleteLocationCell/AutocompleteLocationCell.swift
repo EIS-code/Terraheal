@@ -37,8 +37,8 @@ class AutocompleteLocationCell: TableCell
         lblTitle.textColor = UIColor.themePrimary
         lblSubTitle.textColor = UIColor.themePrimaryLight
         /*Set Font*/
-        lblTitle.setFont(name: FontName.SemiBold, size: FontSize.label_12)
-        lblSubTitle.setFont(name: FontName.Regular, size: FontSize.label_10)
+        lblTitle.setFont(name: FontName.SemiBold, size: FontSize.detail)
+        lblSubTitle.setFont(name: FontName.Regular, size: FontSize.small)
         
     }
     override func setSelected(_ selected: Bool, animated: Bool)

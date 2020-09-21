@@ -157,7 +157,7 @@ class ScanSelfieVC: BaseVC, AVCapturePhotoCaptureDelegate {
 
     func updateuiForFrontImage() {
         self.lblHeader?.text = "SELFIE_SCAN_LBL_INFO".localized()
-        self.lblHeader?.setFont(name: FontName.Regular, size: FontSize.label_18)
+        self.lblHeader?.setFont(name: FontName.Regular, size: FontSize.subHeader)
         self.startCamera()
     }
 

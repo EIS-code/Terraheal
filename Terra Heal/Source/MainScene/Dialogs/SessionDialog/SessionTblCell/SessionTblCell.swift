@@ -37,7 +37,14 @@ class SessionTblCell: SelectionBorderTableCell {
         self.data = data
         self.lblName.text = data.name
         self.lblDetail.text = data.detail
-        self.ivPicture.image = UIImage.init(named: data.image)
+        if appSingleton.myBookingData.booking_type == BookingType.MassageCenter {
+            self.ivPicture.downloadedFrom(link: data.icon)
+            self.ivPicture.isHidden = false
+        } else {
+            self.ivPicture.isHidden = true
+        }
+        
+        
         
     }
 

@@ -22,9 +22,9 @@ class ManagePeopleTblCell: TableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblAge?.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblGender?.setFont(name: FontName.Bold, size: FontSize.label_18)
+        self.lblName?.setFont(name: FontName.Bold, size: FontSize.subHeader)
+        self.lblAge?.setFont(name: FontName.Bold, size: FontSize.subHeader)
+        self.lblGender?.setFont(name: FontName.Bold, size: FontSize.subHeader)
         
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
         self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.header)

@@ -19,8 +19,8 @@ class PricingDurationCltCell: SelectionBorderCollectionCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.lblAmount.setFont(name: FontName.Bold, size: FontSize.exLarge)
-        self.lblDuration.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblCurrencySign.setFont(name: FontName.Bold, size: FontSize.label_10)
+        self.lblDuration.setFont(name: FontName.Bold, size: FontSize.subHeader)
+        self.lblCurrencySign.setFont(name: FontName.Bold, size: FontSize.small)
     }
     
     func setData(data:ServiceDurationDetail) {

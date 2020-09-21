@@ -67,8 +67,8 @@ class NotificationVC: BaseVC {
         
         self.setupTableView(tableView: self.tableView)
         self.setTitle(title: "NOTIFICATION_TITLE".localized())
-        self.lblEmptyTitle.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblEmptyMsg.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblEmptyTitle.setFont(name: FontName.Bold, size: FontSize.subHeader)
+        self.lblEmptyMsg.setFont(name: FontName.Regular, size: FontSize.detail)
         self.lblEmptyTitle.text = "NO_NOTIFICATION_TITLE".localized()
         self.lblEmptyMsg.text = ""
         self.updateUI()

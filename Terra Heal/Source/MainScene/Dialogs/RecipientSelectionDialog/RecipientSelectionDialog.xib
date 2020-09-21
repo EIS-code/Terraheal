@@ -28,7 +28,7 @@
                     <rect key="frame" x="0.0" y="485" width="414" height="411"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tfg-GV-f0f" customClass="FadeTableView" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="20.5" y="0.0" width="373" height="411"/>
+                            <rect key="frame" x="20.5" y="71.5" width="373" height="339.5"/>
                             <color key="backgroundColor" name="theme_primary_light_background"/>
                         </tableView>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AL3-h4-YXX" userLabel="GradientView">
@@ -41,7 +41,7 @@
                                         <constraint firstAttribute="height" constant="53" id="VS7-Vm-o4i"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="NO"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44m-sN-HwG" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
@@ -121,7 +121,7 @@
                         <constraint firstItem="tfg-GV-f0f" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.9" id="bj3-KY-0tg"/>
                         <constraint firstItem="LVP-rF-vkL" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="fd0-tt-6uM"/>
                         <constraint firstItem="LVP-rF-vkL" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="gLe-gP-DCl"/>
-                        <constraint firstItem="tfg-GV-f0f" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" id="h4X-Nx-e6L"/>
+                        <constraint firstItem="tfg-GV-f0f" firstAttribute="top" secondItem="LVP-rF-vkL" secondAttribute="bottom" constant="16" id="h4X-Nx-e6L"/>
                         <constraint firstAttribute="bottom" secondItem="AL3-h4-YXX" secondAttribute="bottom" id="wgI-SJ-4zB"/>
                     </constraints>
                 </view>

@@ -131,7 +131,12 @@ class ServiceSelectionVC: BaseVC {
                 }
             }
            self.massageInfo.massage_prices_id = self.selectedService.selectedDuration.pricing.id
-           self.openPreferGenderPicker()
+            if appSingleton.myBookingData.booking_type == BookingType.MassageCenter {
+                
+                self.openPressurerPicker()
+            } else {
+                self.openPreferGenderPicker()
+            }
         }
     }
     func openPreferGenderPicker() {
@@ -148,14 +153,13 @@ class ServiceSelectionVC: BaseVC {
                genderSelectionDialog.onBtnDoneTapped = {
                    [weak self] (preferenceData) in
                     guard let self = self else { return } ; print(self)
-                    self.massageInfo.preference = preferenceData.id
+                    self.massageInfo.gender_preference = preferenceData.id
                     self.openPressurerPicker()
                }
            }
     }
     func openPressurerPicker() {
         if let pressureData = appSingleton.getPressureDetail() {
-            
             pressureSelectionDialog = CustomPressurePicker.fromNib()
             pressureSelectionDialog.initialize(title: MassagePreferenceMenu.Pressure.name(), buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
                 pressureSelectionDialog.setDataSource(data: pressureData)
@@ -168,36 +172,36 @@ class ServiceSelectionVC: BaseVC {
                 pressureSelectionDialog.onBtnDoneTapped = {
                     [ weak self] (preferenceData) in
                      guard let self = self else { return } ; print(self)
-                    self.massageInfo.massage_preference_option_id = preferenceData.id
+                    self.massageInfo.pressure_preference = preferenceData.id
                     self.openFocusPressurerPicker()
                 }
-
         }
     }
     
     func openFocusPressurerPicker() {
-        if let pressureData: MassagePreferenceDetail = MassagePreferenceDetail.getFocusPreferences() {
-            
-            pressureFocusSelectionDialog = CustomFocusAreaPicker.fromNib()
-            pressureFocusSelectionDialog.initialize(title: pressureData.name, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
-            pressureFocusSelectionDialog.setDataSource(data: pressureData)
-            pressureFocusSelectionDialog.show(animated: true)
-            pressureFocusSelectionDialog.onBtnCancelTapped = {
-                    [weak pressureFocusSelectionDialog, weak self] in
-                    guard let self = self else {return}; print(self)
-                    pressureFocusSelectionDialog?.dismiss()
+        
+        if let pressureData = appSingleton.getFocusArea() {
+                pressureFocusSelectionDialog = CustomFocusAreaPicker.fromNib()
+                pressureFocusSelectionDialog.initialize(title: pressureData.name, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
+                pressureFocusSelectionDialog.setDataSource(data: pressureData)
+                pressureFocusSelectionDialog.show(animated: true)
+                pressureFocusSelectionDialog.onBtnCancelTapped = {
+                        [weak pressureFocusSelectionDialog, weak self] in
+                        guard let self = self else {return}; print(self)
+                        pressureFocusSelectionDialog?.dismiss()
                 }
-            pressureFocusSelectionDialog.onBtnDoneTapped = {
-                    [ weak self] (preferenceData) in
-                     guard let self = self else { return } ; print(self)
-                    self.massageInfo.massage_preference_option_id = preferenceData.id
-                    self.openTextViewPicker()
-            }
+                pressureFocusSelectionDialog.onBtnDoneTapped = {
+                        [ weak self] (preferenceData) in
+                         guard let self = self else { return } ; print(self)
+                        self.massageInfo.focus_area_preference = preferenceData.id
+                        self.openTextViewPicker()
+                }
         }
     }
+    
     func openTextViewPicker() {
         textViewDialog = TextViewDialog.fromNib()
-        textViewDialog.initialize(title: "booking notes", data: self.bookingDetail?.massage_info.last?.notes ?? "" , buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized(), isMandatory: false)
+        textViewDialog.initialize(title: "booking notes", data: self.bookingDetail?.massage_info.last?.notes_of_injuries ?? "" , buttonTitle: "BTN_NEXT".localized(), cancelButtonTitle: "BTN_BACK".localized(), isMandatory: false)
         textViewDialog.show(animated: true)
         textViewDialog.onBtnCancelTapped = {
             [weak textViewDialog, weak self] in
@@ -207,7 +211,7 @@ class ServiceSelectionVC: BaseVC {
         textViewDialog.onBtnDoneTapped = {
             [weak self] (description) in
             guard let self = self else { return } ; print(self)
-            self.massageInfo.notes = description
+            self.massageInfo.notes_of_injuries = description
             self.bookingDetail?.services.append(self.selectedService)
             self.bookingDetail?.massage_info.append(self.massageInfo)
             self.dissmissAllDialog()

@@ -63,13 +63,13 @@
                                                             <rect key="frame" x="10" y="10" width="277" height="124.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uh3-3K-ZQb" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="277" height="25"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="277" height="21"/>
                                                                     <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="18"/>
                                                                     <color key="textColor" name="theme_light_text_color"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="MON, OCT 20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyA-kj-E1P" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="25" width="277" height="49.5"/>
+                                                                    <rect key="frame" x="0.0" y="21" width="277" height="53.5"/>
                                                                     <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="36"/>
                                                                     <color key="textColor" name="theme_light_text_color"/>
                                                                     <nil key="highlightedColor"/>

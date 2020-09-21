@@ -39,6 +39,15 @@ public class Singleton :NSObject {
         return nil
     }
     
+    func getFocusArea() -> MassagePreferenceDetail? {
+           for data in massagePrefrenceDetail {
+               if data.id == MassagePreferenceMenu.FocusArea.rawValue {
+                   return data
+               }
+           }
+           return nil
+       }
+    
     private override init() {
 
     }

@@ -9,14 +9,8 @@ class MyTherapistVC: BaseVC {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var arrForTherapist: [MyTherapistDetail] = [
-        MyTherapistDetail(title: "lorea josis 1", isSelected: false),
-        MyTherapistDetail(title: "lorea josis 2", isSelected: false),
-        MyTherapistDetail(title: "lorea josis 3", isSelected: false),
-        MyTherapistDetail(title: "lorea josis 4", isSelected: false),
-        MyTherapistDetail(title: "lorea josis 5", isSelected: false),
-        MyTherapistDetail(title: "lorea josis 6", isSelected: false),
-    ]
+    var arrForData: [Therapist] = []
+    var arrForTherapist: [MyTherapistDetail] = []
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -37,6 +31,7 @@ class MyTherapistVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
+        self.getTherapistList()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,9 +57,9 @@ class MyTherapistVC: BaseVC {
         self.setTitle(title: "MYTHERAPIST_TITLE".localized())
     }
     
-    func openRateViewPicker(name: String) {
+    func openRateViewPicker(therapist: Therapist) {
         let alert: CustomRateViewDialog = CustomRateViewDialog.fromNib()
-        alert.initialize(title: name, data: "", buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_SKIP".localized())
+        alert.initialize(title: therapist.name, data: "", buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_SKIP".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
@@ -75,11 +70,15 @@ class MyTherapistVC: BaseVC {
             [weak alert, weak self] (review,rating) in
             guard let self = self else {return}; print(self)
             alert?.dismiss()
-            print(review)
-            print(rating)
+            var request:TherapistWebService.RequestSaveRating  =   TherapistWebService.RequestSaveRating.init()
+            request.therapist_id = therapist.id
+            request.rating = rating.toString()
+            request.message = review
+            self.rateTherapist(request: request)
+            
         }
     }
-   
+    
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
         super.btnLeftTapped()
         _ = (self.navigationController as? NC)?.popVC()
@@ -125,8 +124,38 @@ extension MyTherapistVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.openRateViewPicker(name: self.arrForTherapist[indexPath.row].title)
+        
+        self.openRateViewPicker(therapist: self.arrForData[indexPath.row])
     }
     
 }
 
+//MARK:- My Therapist API
+
+extension MyTherapistVC {
+    
+    func getTherapistList() {
+        AppWebApi.getBookingTherapistList { (response) in
+            self.arrForTherapist.removeAll()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
+                for data in response.therapistList {
+                    self.arrForTherapist.append(data.toViewModel())
+                    self.arrForData.append(data)
+                }
+                self.setData()
+            }
+        }
+    }
+    
+    func rateTherapist(request:TherapistWebService.RequestSaveRating)  {
+        AppWebApi.rateTherapist(params: request) { (response) in
+            if ResponseModel.isSuccess(response: response, withSuccessToast:false, andErrorToast: true) {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+    }
+    func setData() {
+        self.tableView.reloadData()
+    }
+    
+}

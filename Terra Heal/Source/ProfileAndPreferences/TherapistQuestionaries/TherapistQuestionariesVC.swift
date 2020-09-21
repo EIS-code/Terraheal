@@ -109,8 +109,8 @@ tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
-        tableView.register(TherapistQuestionariesTblCell.nib()
-            , forCellReuseIdentifier: TherapistQuestionariesTblCell.name)
+        tableView.register(QuestionTblCell.nib()
+            , forCellReuseIdentifier: QuestionTblCell.name)
         tableView.tableFooterView = UIView()
     }
 
@@ -121,7 +121,7 @@ tableView.backgroundColor = .clear
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: TherapistQuestionariesTblCell.name, for: indexPath) as?  TherapistQuestionariesTblCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: QuestionTblCell.name, for: indexPath) as?  QuestionTblCell
         cell?.layoutIfNeeded()
         cell?.setData(data: arrForTherapistQuestion[indexPath.row])
         cell?.vwBg.isUserInteractionEnabled = false

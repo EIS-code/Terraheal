@@ -73,7 +73,7 @@ class CameraVC: BaseVC {
     }
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeBackground)
-        self.lblMsg?.setFont(name: FontName.SemiBold, size: FontSize.label_26)
+        self.lblMsg?.setFont(name: FontName.SemiBold, size: FontSize.large)
         self.showHint(messae: "DOCUMENT_LB_MESSAGE".localized(), image: ImageAsset.Camera.square)
     }
     

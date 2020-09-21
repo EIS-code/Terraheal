@@ -22,39 +22,30 @@ struct PackageDetail {
         return [packDetail1,packDetail2,packDetail3,packDetail4]
     }
 }
-class SelectPackTblCell: TableCell {
+class SelectPackTblCell: SelectionBorderTableCell {
 
     @IBOutlet weak var lblName: ThemeLabel!
     @IBOutlet weak var lblPrice: ThemeLabel!
     @IBOutlet weak var lblDiscount: ThemeLabel!
-    @IBOutlet weak var vwBg: UIView!
-    @IBOutlet weak var ivSelected: UIImageView!
+    
    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.lblName?.setFont(name: FontName.SemiBold, size: FontSize.header)
         self.lblPrice?.setFont(name: FontName.SemiBold, size: FontSize.header)
-        self.lblDiscount?.setFont(name: FontName.Regular, size: FontSize.label_12)
-        self.ivSelected?.setRound()
-        self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+        self.lblDiscount?.setFont(name: FontName.Regular, size: FontSize.detail)
+     
     }
 
     func setData(data: PackageDetail ) {
         self.lblName.text = data.name
         self.lblPrice.text = data.price
         self.lblDiscount.text = data.price
-        if data.isSelected {
-            self.ivSelected.isHidden = false
-            self.vwBg?.setRound(withBorderColor: .themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)
-        } else {
-            self.ivSelected.isHidden = true
-            self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-        }
+        super.setData(title: "", isSelected: data.isSelected)
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.ivSelected?.setRound()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

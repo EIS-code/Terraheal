@@ -11,76 +11,138 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="380" id="KGk-i7-Jjw" userLabel="PackTblCell" customClass="GiftVoucherTblCell" customModule="Terra_Heal" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="475" height="380"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="343" id="KGk-i7-Jjw" userLabel="PackTblCell" customClass="GiftVoucherTblCell" customModule="Terra_Heal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="481" height="343"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="475" height="380"/>
+                <rect key="frame" x="0.0" y="0.0" width="481" height="343"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTr-D4-KiU" userLabel="vwForBackground">
-                        <rect key="frame" x="5" y="51.5" width="465" height="323.5"/>
+                        <rect key="frame" x="8" y="8" width="465" height="327"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-J2-KSJ" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="40" y="56.5" width="385" height="20.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kWw-1h-rwI">
+                                <rect key="frame" x="34" y="24" width="397" height="159"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo-gift-voucher" translatesAutoresizingMaskIntoConstraints="NO" id="CXX-Jj-jhW">
+                                        <rect key="frame" x="0.0" y="0.0" width="397" height="159"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="CXX-Jj-jhW" secondAttribute="height" multiplier="2.5:1" id="chc-P7-LGI"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="CXX-Jj-jhW" secondAttribute="bottom" id="2MB-HJ-d1M"/>
+                                    <constraint firstItem="CXX-Jj-jhW" firstAttribute="top" secondItem="kWw-1h-rwI" secondAttribute="top" id="F6j-u8-ZMi"/>
+                                    <constraint firstAttribute="trailing" secondItem="CXX-Jj-jhW" secondAttribute="trailing" id="cwY-bP-FDm"/>
+                                    <constraint firstItem="CXX-Jj-jhW" firstAttribute="leading" secondItem="kWw-1h-rwI" secondAttribute="leading" id="ghD-6e-l9X"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXd-4y-hQl" userLabel="lblID" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <rect key="frame" x="34" y="195" width="15.5" height="87"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="theme_dark_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kWw-1h-rwI">
-                                <rect key="frame" x="26" y="97" width="413" height="206.5"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="kWw-1h-rwI" secondAttribute="height" multiplier="200:100" id="UtM-7d-Ckz"/>
-                                </constraints>
-                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVX-2E-Kar" userLabel="lblPrice" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <rect key="frame" x="415.5" y="195" width="15.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="theme_secondary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68D-lx-Q8U" userLabel="lblDate1" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <rect key="frame" x="34" y="286" width="15.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="theme_dark_text"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FY5-mf-689" userLabel="lblDate2" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <rect key="frame" x="415.5" y="286" width="15.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="theme_dark_text"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="theme_background"/>
                         <constraints>
-                            <constraint firstItem="zbl-J2-KSJ" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="40" id="6mP-6o-QSq"/>
-                            <constraint firstItem="kWw-1h-rwI" firstAttribute="top" secondItem="zbl-J2-KSJ" secondAttribute="bottom" constant="20" id="GXe-Zi-GYb"/>
+                            <constraint firstItem="EVX-2E-Kar" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kXd-4y-hQl" secondAttribute="trailing" constant="10" id="20b-TE-usU"/>
+                            <constraint firstItem="kXd-4y-hQl" firstAttribute="leading" secondItem="kWw-1h-rwI" secondAttribute="leading" id="8EM-pY-gYz"/>
+                            <constraint firstItem="EVX-2E-Kar" firstAttribute="trailing" secondItem="kWw-1h-rwI" secondAttribute="trailing" id="Lxg-at-YEI"/>
+                            <constraint firstItem="68D-lx-Q8U" firstAttribute="leading" secondItem="kWw-1h-rwI" secondAttribute="leading" id="NR4-2t-n0C"/>
+                            <constraint firstItem="EVX-2E-Kar" firstAttribute="top" secondItem="kXd-4y-hQl" secondAttribute="top" id="RcN-YB-0Oo"/>
+                            <constraint firstItem="FY5-mf-689" firstAttribute="top" secondItem="68D-lx-Q8U" secondAttribute="top" id="T8y-4T-jRq"/>
+                            <constraint firstItem="FY5-mf-689" firstAttribute="trailing" secondItem="kWw-1h-rwI" secondAttribute="trailing" id="b35-WE-OhE"/>
                             <constraint firstItem="kWw-1h-rwI" firstAttribute="centerX" secondItem="fTr-D4-KiU" secondAttribute="centerX" id="f1T-Fd-B12"/>
-                            <constraint firstAttribute="trailing" secondItem="zbl-J2-KSJ" secondAttribute="trailing" constant="40" id="oY4-e2-ct6"/>
-                            <constraint firstAttribute="bottom" secondItem="kWw-1h-rwI" secondAttribute="bottom" constant="20" id="qFm-0P-r2F"/>
+                            <constraint firstItem="68D-lx-Q8U" firstAttribute="top" secondItem="kXd-4y-hQl" secondAttribute="bottom" constant="4" id="fKz-dc-p4l"/>
+                            <constraint firstItem="kWw-1h-rwI" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" constant="24" id="hv4-NN-v4f"/>
+                            <constraint firstItem="kWw-1h-rwI" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="34" id="nTt-LL-4vF" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="34"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="kXd-4y-hQl" firstAttribute="top" secondItem="kWw-1h-rwI" secondAttribute="bottom" constant="12" id="yWu-dv-C23"/>
+                            <constraint firstAttribute="bottom" secondItem="68D-lx-Q8U" secondAttribute="bottom" constant="20" id="zji-J2-uAc"/>
                         </constraints>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center" translatesAutoresizingMaskIntoConstraints="NO" id="HQO-Oy-Hm5">
-                        <rect key="frame" x="191" y="5" width="93" height="93"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="HQO-Oy-Hm5" secondAttribute="height" multiplier="1:1" id="aVg-Hg-fWX"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="fTr-D4-KiU" secondAttribute="trailing" constant="5" id="AWN-UN-JV4"/>
-                    <constraint firstItem="HQO-Oy-Hm5" firstAttribute="width" secondItem="fTr-D4-KiU" secondAttribute="width" multiplier="0.2" id="dJM-RM-ea6"/>
-                    <constraint firstItem="HQO-Oy-Hm5" firstAttribute="centerY" secondItem="fTr-D4-KiU" secondAttribute="top" id="fn5-iN-P3q"/>
-                    <constraint firstItem="HQO-Oy-Hm5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="naB-BI-j6N"/>
-                    <constraint firstItem="fTr-D4-KiU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="p1a-dc-cSm"/>
-                    <constraint firstItem="zbl-J2-KSJ" firstAttribute="top" secondItem="HQO-Oy-Hm5" secondAttribute="bottom" constant="10" id="p2H-6a-lSK"/>
-                    <constraint firstItem="HQO-Oy-Hm5" firstAttribute="centerX" secondItem="fTr-D4-KiU" secondAttribute="centerX" id="tJ1-TY-9on"/>
-                    <constraint firstAttribute="bottom" secondItem="fTr-D4-KiU" secondAttribute="bottom" constant="5" id="uHV-Oa-H3d"/>
+                    <constraint firstAttribute="trailing" secondItem="fTr-D4-KiU" secondAttribute="trailing" constant="8" id="AWN-UN-JV4" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </constraint>
+                    <constraint firstItem="fTr-D4-KiU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="hmv-Je-q3R" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </constraint>
+                    <constraint firstItem="fTr-D4-KiU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="p1a-dc-cSm" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </constraint>
+                    <constraint firstAttribute="bottom" secondItem="fTr-D4-KiU" secondAttribute="bottom" constant="8" id="uHV-Oa-H3d" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </constraint>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="ivPack" destination="HQO-Oy-Hm5" id="52O-xU-MpQ"/>
-                <outlet property="lblname" destination="zbl-J2-KSJ" id="1vH-XY-fgk"/>
+                <outlet property="lblDate1" destination="68D-lx-Q8U" id="gxb-1S-MXv"/>
+                <outlet property="lblDate2" destination="FY5-mf-689" id="FgT-AY-ogW"/>
+                <outlet property="lblId" destination="kXd-4y-hQl" id="0rP-h0-6Cz"/>
+                <outlet property="lblPrice" destination="EVX-2E-Kar" id="hCC-Zb-bUk"/>
                 <outlet property="vwBg" destination="fTr-D4-KiU" id="gMF-14-1KR"/>
-                <outlet property="vwForgiftPack" destination="kWw-1h-rwI" id="h0q-qi-vpi"/>
             </connections>
-            <point key="canvasLocation" x="242.75362318840581" y="242.41071428571428"/>
+            <point key="canvasLocation" x="247.10144927536234" y="230.02232142857142"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="asset-center" width="71" height="71"/>
+        <image name="demo-gift-voucher" width="207" height="117"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_dark_text">
-            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_secondary">
+            <color red="0.97254901960784312" green="0.59999999999999998" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

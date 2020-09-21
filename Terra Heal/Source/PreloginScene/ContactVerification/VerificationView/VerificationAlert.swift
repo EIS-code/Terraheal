@@ -91,6 +91,7 @@ class VerificationAlert: ThemeBottomDialogView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        self.vwSwitch.center = CGPoint.init(x: self.center.x, y: self.vwSwitch.center.y)
     }
     
     

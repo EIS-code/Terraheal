@@ -16,7 +16,7 @@ class CustomHistoryFilterPickerCell: TableCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblName?.setFont(name: FontName.Bold, size: FontSize.label_18)
+        self.lblName?.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.vwBg.backgroundColor = UIColor.white
 
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)

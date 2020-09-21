@@ -28,7 +28,7 @@
                     <rect key="frame" x="0.0" y="313.5" width="414" height="582.5"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6B9-d9-fu1">
-                            <rect key="frame" x="16" y="0.0" width="382" height="582.5"/>
+                            <rect key="frame" x="16" y="112" width="382" height="470.5"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="NDJ-CX-CnJ">
                                 <size key="itemSize" width="128" height="128"/>
@@ -47,7 +47,7 @@
                                         <constraint firstAttribute="height" constant="53" id="oli-9d-d1p"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="NO"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJX-Zb-rcd" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
@@ -138,7 +138,7 @@
                         <constraint firstItem="6B9-d9-fu1" firstAttribute="centerX" secondItem="Yaj-p7-IIT" secondAttribute="centerX" id="ZMK-xh-1De"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="Zud-Qp-ll1"/>
                         <constraint firstAttribute="height" constant="582.5" id="akO-EM-GHD"/>
-                        <constraint firstItem="6B9-d9-fu1" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" id="cMX-5Q-EDt"/>
+                        <constraint firstItem="6B9-d9-fu1" firstAttribute="top" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="16" id="cMX-5Q-EDt"/>
                         <constraint firstAttribute="trailing" secondItem="sTG-h2-0nN" secondAttribute="trailing" id="kl9-wu-gm1"/>
                         <constraint firstItem="sTG-h2-0nN" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" id="vvZ-By-OSh"/>
                     </constraints>

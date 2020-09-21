@@ -30,7 +30,8 @@ class BaseVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.vwNavigationBar?.backgroundColor = .clear
+        
+        self.vwNavigationBar?.backgroundColor = .themePrimaryLightBackground
         self.setBackground(color: .themePrimaryLightBackground)
         self.lblTitle?.textColor = UIColor.themeNavigationTitle
         self.lblTitle?.textColor = UIColor.themeDarkText

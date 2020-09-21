@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class MyPlaceTblCell: SelectionBorderTableCell {
 
 
@@ -22,13 +23,11 @@ class MyPlaceTblCell: SelectionBorderTableCell {
         
     }
 
-    func setData(data: ServiceCenterDetail ) {
+    func setData(data: Place ) {
         super.setData(title: data.name, isSelected: data.isSelected)
-}
-
+    }
     override func layoutSubviews() {
         super.layoutSubviews()
-
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

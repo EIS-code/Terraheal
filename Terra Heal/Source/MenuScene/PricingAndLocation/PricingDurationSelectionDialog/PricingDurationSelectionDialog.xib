@@ -28,7 +28,7 @@
                     <rect key="frame" x="0.0" y="313.5" width="414" height="582.5"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6B9-d9-fu1">
-                            <rect key="frame" x="16" y="201" width="382" height="381.5"/>
+                            <rect key="frame" x="16" y="215" width="382" height="367.5"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="NDJ-CX-CnJ">
                                 <size key="itemSize" width="128" height="128"/>
@@ -170,7 +170,13 @@
                         <constraint firstAttribute="bottom" secondItem="6B9-d9-fu1" secondAttribute="bottom" id="G2G-h0-Bj4"/>
                         <constraint firstItem="wCJ-fh-lMI" firstAttribute="trailing" secondItem="Ovk-PL-sFX" secondAttribute="trailing" constant="5" id="JxL-ba-Jb5"/>
                         <constraint firstItem="Bk0-ac-ye3" firstAttribute="bottom" secondItem="4o6-gY-uGQ" secondAttribute="bottom" constant="5" id="Oqp-G7-tvw"/>
-                        <constraint firstItem="6B9-d9-fu1" firstAttribute="top" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="10" id="Q32-ga-zhU"/>
+                        <constraint firstItem="6B9-d9-fu1" firstAttribute="top" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="24" id="Q32-ga-zhU" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                    <real key="value" value="24"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
                         <constraint firstItem="wCJ-fh-lMI" firstAttribute="bottom" secondItem="Ovk-PL-sFX" secondAttribute="bottom" constant="5" id="RPZ-04-Oh8"/>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="RrZ-kW-n5i"/>
                         <constraint firstItem="6B9-d9-fu1" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="16" id="WOR-fc-gwx" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">

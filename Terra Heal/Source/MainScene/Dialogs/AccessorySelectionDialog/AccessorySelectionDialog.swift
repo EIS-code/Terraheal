@@ -8,18 +8,21 @@
 
 import UIKit
 
+
+
 class AccessorySelectionDialog: ThemeBottomDialogView {
     
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
-    var onBtnDoneTapped: ((_ data:Int) -> Void)? = nil
-    var arrForData: [AccessoryDetail] = [AccessoryDetail(isSelected: false, id: 0, title: "table".localized()),AccessoryDetail(isSelected: false, id: 1, title: "tatami/futon".localized())]
+    var onBtnDoneTapped: ((_ data:Int ,_ type:AccessoryType) -> Void)? = nil
+    var arrForData: [AccessoryDetail] = [AccessoryDetail(isSelected: false, id: 1, title: "table".localized()),AccessoryDetail(isSelected: false, id: 2, title: "tatami/futon".localized())]
     
     @IBOutlet weak var vwProceed: UIView!
     @IBOutlet weak var btnDecrement: ThemeButton!
     @IBOutlet weak var lblQuatity: ThemeLabel!
     @IBOutlet weak var btnIncrement: ThemeButton!
     @IBOutlet weak var lblHowMany: ThemeLabel!
+    var selectedType:AccessoryType = AccessoryType.None
     var quatity:Int = 0
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -70,7 +73,7 @@ class AccessorySelectionDialog: ThemeBottomDialogView {
     }
     override func initialSetup() {
         super.initialSetup()
-        self.lblHowMany.setFont(name: FontName.Bold, size: FontSize.label_18)
+        self.lblHowMany.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.lblQuatity.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.btnDecrement.setFont(name: FontName.Bold, size: FontSize.header)
@@ -80,7 +83,7 @@ class AccessorySelectionDialog: ThemeBottomDialogView {
     @IBAction func btnDoneTapped(_ sender: Any) {
         if quatity != 0 {
                 if self.onBtnDoneTapped != nil {
-                    self.onBtnDoneTapped!(quatity);
+                    self.onBtnDoneTapped!(quatity,selectedType);
                 }
         } else {
             Common.showAlert(message: "Please enter valid quantity")
@@ -111,7 +114,7 @@ extension AccessorySelectionDialog : UITableViewDelegate,UITableViewDataSource {
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-tableView.backgroundColor = .clear
+        tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 60
@@ -138,6 +141,11 @@ tableView.backgroundColor = .clear
             arrForData[i].isSelected = false
         }
         self.arrForData[indexPath.row].isSelected = true
+        if indexPath.row == 0 {
+            selectedType = AccessoryType.Table
+        } else {
+            selectedType = AccessoryType.Futon
+        }
         tableView.reloadData()
     }
     

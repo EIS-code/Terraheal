@@ -51,9 +51,9 @@ class TouchIdVC: BaseVC {
     private func initialViewSetup() {
         
         self.lblTouchIDTitle?.text = "TOUCH_ID_LBL_TITLE".localized()
-        self.lblTouchIDTitle?.setFont(name: FontName.SemiBold, size: FontSize.label_26)
+        self.lblTouchIDTitle?.setFont(name: FontName.SemiBold, size: FontSize.large)
         self.lblMessage?.text = "TOUCH_ID_LBL_MESSAGE".localized()
-        self.lblMessage?.setFont(name: FontName.Regular, size: FontSize.label_18)
+        self.lblMessage?.setFont(name: FontName.Regular, size: FontSize.subHeader)
         self.imgChecked?.isHidden = true
         self.btnUsePassword?.setFont(name: FontName.SemiBold, size: FontSize.button_20)
         self.btnUsePassword?.setTitle("TOUCH_ID_BTN_USE_PASSWORD".localized(), for: .normal)

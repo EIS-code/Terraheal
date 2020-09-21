@@ -15,6 +15,8 @@ enum MassagePreferenceMenu: String {
     case PastSurgery = "5"
     case Allergies = "6"
     case HealthCondition = "7"
+    case FocusArea = "8"
+       
     func name() -> String {
         switch self {
         case .Pressure:
@@ -31,6 +33,8 @@ enum MassagePreferenceMenu: String {
             return  "MASSAGE_PREFERENCE_MENU_ITEM_6".localized()
         case .HealthCondition:
             return  "MASSAGE_PREFERENCE_MENU_ITEM_7".localized()
+        case .FocusArea:
+            return  "MASSAGE_PREFERENCE_MENU_ITEM_8".localized()
         }
     }
 
@@ -223,6 +227,8 @@ tableView.backgroundColor = .clear
             self.openTextViewPicker(index: indexPath.row)
         case .HealthCondition:
             self.openTextViewPicker(index: indexPath.row)
+        default:
+            print("")
         }
     }
     
@@ -231,7 +237,6 @@ tableView.backgroundColor = .clear
 //MARK: Web Service Call
 extension MassagePreferenceVC {
     func wsGetMassagePreferenceList() {
-        
         Loader.showLoading()
         AppWebApi.massagePreferencceList { (response) in
                 self.arrForMenu.removeAll()

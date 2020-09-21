@@ -252,7 +252,7 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
         case .MangagePeople:
             Common.appDelegate.loadManagePeopleVC(navigaionVC: self.navigationController)
         case .PaymentPreference:
-            Common.appDelegate.loadPaymentReferenceVC(navigaionVC: self.navigationController)
+            Common.appDelegate.loadPaymentReferenceVC(navigaionVC: self.navigationController, fromVC: nil)
         case .Settings:
             Common.appDelegate.loadSettingVC(navigaionVC: self.navigationController)
         case .KycVerification:

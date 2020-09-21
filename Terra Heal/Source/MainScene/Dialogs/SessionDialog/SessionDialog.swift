@@ -140,7 +140,10 @@ extension SessionDialog : UITableViewDelegate,UITableViewDataSource {
 extension SessionDialog {
     
     func fetchSessionList() {
-        AppWebApi.fetchSessionList(params: [:]) { (response) in
+        
+        var request = Session.RequestList()
+        request.booking_type = appSingleton.myBookingData.booking_type
+        AppWebApi.fetchSessionList(params:request) { (response) in
             if ResponseModel.isSuccess(response: response) {
                 self.setDataSource(data: response.sessionList)
             }

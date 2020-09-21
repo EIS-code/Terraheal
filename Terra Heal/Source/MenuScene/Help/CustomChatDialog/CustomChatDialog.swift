@@ -45,7 +45,7 @@ class CustomChatDialog: ThemeBottomDialogView {
     
     override func initialSetup() {
         super.initialSetup()
-        self.lblDescription.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblDescription.setFont(name: FontName.Regular, size: FontSize.detail)
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
     }
     

@@ -22,9 +22,9 @@ class ReferAndEarnTblCell: TableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        self.lblDay.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblMonth.setFont(name: FontName.Regular, size: FontSize.label_12)
-        self.lblDescription.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblDay.setFont(name: FontName.Bold, size: FontSize.subHeader)
+        self.lblMonth.setFont(name: FontName.Regular, size: FontSize.detail)
+        self.lblDescription.setFont(name: FontName.Regular, size: FontSize.detail)
         self.lblAmount.setFont(name: FontName.Bold, size: FontSize.header)
 
     }

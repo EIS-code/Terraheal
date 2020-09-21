@@ -101,14 +101,14 @@ class SideVC: BaseVC {
    
     var arrForMenu: [MenuItem] = [
         MenuItem.init(id: Menu.HowItWork, image: "", isVerticle: true),
-        MenuItem.init(id: Menu.ReferAndEarn, image: "", isVerticle: true),
+        //MenuItem.init(id: Menu.ReferAndEarn, image: "", isVerticle: true),
         MenuItem.init(id: Menu.PricingAndLocation, image: "", isVerticle: true),
-        MenuItem.init(id: Menu.PromoCode, image: "", isVerticle: true),
-        MenuItem.init(id: Menu.Notifications, image: "", isVerticle: false),
-        MenuItem.init(id: Menu.Packs, image: "", isVerticle: false),
-        MenuItem.init(id: Menu.Campaigns, image: "", isVerticle: false),
+       // MenuItem.init(id: Menu.PromoCode, image: "", isVerticle: true),
         MenuItem.init(id: Menu.GiftVoucher, image: "", isVerticle: true),
-        MenuItem.init(id: Menu.Help, image: "", isVerticle: false),
+        MenuItem.init(id: Menu.Packs, image: "", isVerticle: true),
+      //  MenuItem.init(id: Menu.Campaigns, image: "", isVerticle: false),
+        MenuItem.init(id: Menu.Notifications, image: "", isVerticle: true),
+        MenuItem.init(id: Menu.Help, image: "", isVerticle: true),
     ]
 
     // MARK: LifeCycle
@@ -116,9 +116,9 @@ class SideVC: BaseVC {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         self.lblMenu.text = "LBL_MENU".localized()
-        self.lblMenu?.font = FontHelper.font(name: FontName.Bold, size: FontSize.label_26)
+        self.lblMenu?.font = FontHelper.font(name: FontName.Bold, size: FontSize.large)
         self.lblMenu.printFontSize()
-        //self.lblMenu.setFont(name: FontName.Bold, size: FontSize.label_26)
+        //self.lblMenu.setFont(name: FontName.Bold, size: FontSize.large)
         self.setupCollectionView()
     }
 

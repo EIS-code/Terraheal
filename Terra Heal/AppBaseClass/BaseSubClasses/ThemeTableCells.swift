@@ -26,15 +26,18 @@ struct CellShadowProperty {
     var opacity: Float = 1.0
 }
 
-
-class SelectionBorderTableCell: TableCell {
-    
-    @IBOutlet weak var lblCellTitle: ThemeLabel!
+class ShadowTableCell: TableCell {
+    var shadowProperty: CellShadowProperty = CellShadowProperty.init()
     @IBOutlet weak var vwCellBg: UIView!
+       
+}
+
+class SelectionBorderTableCell: ShadowTableCell {
+   
+    @IBOutlet weak var lblCellTitle: ThemeLabel!
     @IBOutlet weak var imgCellSelected: UIImageView!
     
-    var shadowProperty: CellShadowProperty = CellShadowProperty.init()
-    @IBInspectable open var radius : CGFloat = 15 {
+   @IBInspectable open var radius : CGFloat = 15 {
         didSet{self.setupLayout()}
     }
     
@@ -81,7 +84,7 @@ class SelectionBorderTableCell: TableCell {
 }
 
 //MARK: Shadow Property
-extension SelectionBorderTableCell {
+extension ShadowTableCell {
     
     func addShadow() {
         if shadowProperty.opacity != 0.0 {

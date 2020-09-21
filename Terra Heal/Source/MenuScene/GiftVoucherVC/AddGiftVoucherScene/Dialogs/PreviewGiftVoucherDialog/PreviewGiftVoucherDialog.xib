@@ -28,58 +28,58 @@
                     <rect key="frame" x="0.0" y="113.5" width="320" height="454.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe">
-                            <rect key="frame" x="20" y="10" width="280" height="414.5"/>
+                            <rect key="frame" x="16" y="10" width="288" height="414.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0MS-OB-pU6">
-                                    <rect key="frame" x="120" y="0.0" width="40" height="5"/>
+                                    <rect key="frame" x="124" y="0.0" width="40" height="5"/>
                                     <color key="backgroundColor" name="theme_primary"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="2V3-Qo-eDC"/>
                                         <constraint firstAttribute="height" constant="5" id="kSv-J6-vlk"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="preview your gift voucher" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-4J-xGz" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="43" y="25" width="194" height="20.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25487548" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-4J-xGz" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="103.5" y="25" width="81.5" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" name="theme_primary"/>
+                                    <color key="textColor" name="theme_dark_text"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4k-c1-F6Z">
-                                    <rect key="frame" x="0.0" y="65.5" width="280" height="237"/>
+                                    <rect key="frame" x="0.0" y="65.5" width="288" height="237"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5jI-PJ-JgT">
-                                            <rect key="frame" x="20" y="20" width="240" height="470"/>
+                                            <rect key="frame" x="0.0" y="20" width="288" height="441"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-logo" translatesAutoresizingMaskIntoConstraints="NO" id="V6N-1C-8gh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="146"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo-gift-voucher" translatesAutoresizingMaskIntoConstraints="NO" id="V6N-1C-8gh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="117"/>
                                                     <color key="backgroundColor" name="theme_primary"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label fdsfldsaf kdsl;a fl;dskfl;kdsl;fklds;kfl;dskl;fkdsl;afk;lasd" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zs5-tM-t9t" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="166" width="240" height="61"/>
+                                                    <rect key="frame" x="0.0" y="137" width="288" height="61"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="theme_dark_text"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label fdsfldsaf kdsl;a fl;dskfl;kdsl;fklds;kfl;dskl;fkdsl;afk;lasd" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6g-gV-jgm" userLabel="lblSubHeader" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="247" width="240" height="61"/>
+                                                    <rect key="frame" x="0.0" y="218" width="288" height="61"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="theme_dark_text"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label fdsfldsaf kdsl;a fl;dskfl;kdsl;fklds;kfl;dskl;fkdsl;afk;lasd" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="age-r6-f4q" userLabel="lblBody" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="328" width="240" height="61"/>
+                                                    <rect key="frame" x="0.0" y="299" width="288" height="61"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="theme_dark_text"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2y-fx-UrY" userLabel="lblPrice" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="409" width="240" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="380" width="288" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" name="theme_dark_text"/>
+                                                    <color key="textColor" name="theme_secondary"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwT-JI-rPY" userLabel="lblMassage" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="449.5" width="240" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwT-JI-rPY" userLabel="lblMassage" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="420.5" width="288" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="theme_dark_text"/>
                                                     <nil key="highlightedColor"/>
@@ -88,17 +88,29 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="5jI-PJ-JgT" firstAttribute="leading" secondItem="w4k-c1-F6Z" secondAttribute="leading" constant="20" id="06V-gI-p1n"/>
-                                        <constraint firstAttribute="bottom" secondItem="5jI-PJ-JgT" secondAttribute="bottom" constant="20" id="45I-iF-hk1"/>
+                                        <constraint firstItem="5jI-PJ-JgT" firstAttribute="leading" secondItem="w4k-c1-F6Z" secondAttribute="leading" id="06V-gI-p1n"/>
+                                        <constraint firstAttribute="bottom" secondItem="5jI-PJ-JgT" secondAttribute="bottom" constant="20" id="45I-iF-hk1" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </constraint>
                                         <constraint firstItem="5jI-PJ-JgT" firstAttribute="centerX" secondItem="w4k-c1-F6Z" secondAttribute="centerX" id="WC4-W0-TfL"/>
-                                        <constraint firstAttribute="trailing" secondItem="5jI-PJ-JgT" secondAttribute="trailing" constant="20" id="XHw-r1-JTm"/>
-                                        <constraint firstItem="5jI-PJ-JgT" firstAttribute="top" secondItem="w4k-c1-F6Z" secondAttribute="top" constant="20" id="xAB-Kb-zPC"/>
+                                        <constraint firstAttribute="trailing" secondItem="5jI-PJ-JgT" secondAttribute="trailing" id="XHw-r1-JTm"/>
+                                        <constraint firstItem="5jI-PJ-JgT" firstAttribute="top" secondItem="w4k-c1-F6Z" secondAttribute="top" constant="20" id="xAB-Kb-zPC" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </constraint>
                                     </constraints>
                                     <viewLayoutGuide key="contentLayoutGuide" id="kmE-Kj-TCz"/>
                                     <viewLayoutGuide key="frameLayoutGuide" id="qQE-ZM-GWo"/>
                                 </scrollView>
                                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="DialogFilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="73.5" y="322.5" width="133" height="40"/>
+                                    <rect key="frame" x="77.5" y="322.5" width="133" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                     <state key="normal" title="Sign In">
@@ -109,7 +121,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="581-cI-fuY" customClass="DialogCancelButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="113.5" y="382.5" width="53" height="32"/>
+                                    <rect key="frame" x="117.5" y="382.5" width="53" height="32"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <state key="normal" title="Sign In">
                                         <color key="titleColor" name="theme_primary"/>
@@ -126,10 +138,30 @@
                     </subviews>
                     <color key="backgroundColor" name="theme_primary_light_background"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" constant="20" id="1HJ-Xp-DOL"/>
+                        <constraint firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" constant="16" id="1HJ-Xp-DOL" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                    <real key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
                         <constraint firstAttribute="height" constant="454.5" id="DsK-Ku-nEP"/>
-                        <constraint firstItem="cXW-IL-cWe" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="RrZ-kW-n5i"/>
-                        <constraint firstAttribute="bottom" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="30" id="fhi-OD-EBT"/>
+                        <constraint firstItem="cXW-IL-cWe" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="16" id="RrZ-kW-n5i" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                    <real key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
+                        <constraint firstAttribute="bottom" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="30" id="fhi-OD-EBT" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                    <real key="value" value="30"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
                         <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="gm5-2t-GbH"/>
                     </constraints>
                 </view>
@@ -165,7 +197,7 @@
         </view>
     </objects>
     <resources>
-        <image name="asset-logo" width="217" height="146"/>
+        <image name="demo-gift-voucher" width="207" height="117"/>
         <namedColor name="theme_dark_text">
             <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -174,6 +206,9 @@
         </namedColor>
         <namedColor name="theme_primary_light_background">
             <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_secondary">
+            <color red="0.97254901960784312" green="0.59999999999999998" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -6,7 +6,7 @@
 import UIKit
 
 class PriceLocationVC: BaseVC {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var vwForEmpty: UIView!
     @IBOutlet weak var vwBg: UIView!
@@ -15,66 +15,66 @@ class PriceLocationVC: BaseVC {
     @IBOutlet weak var btnSubmit: FilledRoundedButton!
     @IBOutlet weak var txtSearchBar: ThemeTextField!
     @IBOutlet weak var searchVw: UIView!
-
+    
     var arrForFilteredData: [PricingLocation] = []
     var arrForForOriginalData: [PricingLocation] = []
-     var selectedData: PricingLocation? = nil
+    var selectedData: PricingLocation? = nil
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
     private func setup() {
-
-
+        
+        
     }
-
+    
     // MARK: View lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
         self.tableView?.contentInset = self.getGradientInset()
         self.wsGetLocationList()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
-           self.vwBg?.layoutIfNeeded()
-           self.vwBg?.setRound()
-           self.tableView?.reloadData({
-           })
+            self.vwBg?.layoutIfNeeded()
+            self.vwBg?.setRound()
+            self.tableView?.reloadData({
+            })
             self.searchVw.setRound(withBorderColor: .clear, andCornerRadious: self.searchVw.bounds.height/2.0, borderWidth: 1.0)
             self.tableView?.contentInset = self.getGradientInset()
         }
     }
-
+    
     private func initialViewSetup() {
         
         self.setupTableView(tableView: self.tableView)
         self.setupSearchbar(searchBar: self.txtSearchBar)
         self.setTitle(title: "PRICE_AND_LOCATION_TITLE".localized())
-        self.lblEmptyTitle.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblEmptyMsg.setFont(name: FontName.Regular, size: FontSize.label_12)
+        self.lblEmptyTitle.setFont(name: FontName.Bold, size: FontSize.subHeader)
+        self.lblEmptyMsg.setFont(name: FontName.Regular, size: FontSize.detail)
         self.lblEmptyTitle.text = "NO_LOCATION_TITLE".localized()
         self.lblEmptyMsg.text = "NO_LOCATION_MSG".localized()
         self.btnSubmit?.setTitle("BTN_PROCEED".localized(), for: .normal)
     }
-
+    
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
         super.btnLeftTapped()
         _ = (self.navigationController as? NC)?.popVC()
@@ -83,7 +83,7 @@ class PriceLocationVC: BaseVC {
     @IBAction func btnSubmitTapped(_ sender: Any) {
         self.openLocationServiceDialog()
     }
-
+    
     func updateUI()  {
         if arrForForOriginalData.isEmpty {
             self.vwForEmpty.isHidden = false
@@ -117,32 +117,32 @@ class PriceLocationVC: BaseVC {
             locationServiceDialog?.dismiss()
         }
         
-       
+        
     }
-
-
+    
+    
 }
 
 
 extension PriceLocationVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegate {
-
+    
     private func reloadTableDataToFitHeight(tableView: UITableView) {
         DispatchQueue.main.async {
-
+            
             tableView.reloadData {
-
+                
             }
             self.updateUI()
             /*tableView.reloadData(heightToFit: self.hTblVw) {
-
+             
              }*/
         }
-
+        
     }
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-tableView.backgroundColor = .clear
+        tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
@@ -150,20 +150,20 @@ tableView.backgroundColor = .clear
             , forCellReuseIdentifier: PriceLocationTblCell.name)
         tableView.tableFooterView = UIView()
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrForFilteredData.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: PriceLocationTblCell.name, for: indexPath) as?  PriceLocationTblCell
         cell?.layoutIfNeeded()
         cell?.setData(data: arrForFilteredData[indexPath.row])
         cell?.layoutIfNeeded()
         return cell!
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         for i in 0..<arrForFilteredData.count {
@@ -173,7 +173,7 @@ tableView.backgroundColor = .clear
         self.selectedData = self.arrForFilteredData[indexPath.row]
         tableView.reloadData()
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -182,20 +182,20 @@ tableView.backgroundColor = .clear
 
 
 extension PriceLocationVC : UITextFieldDelegate {
-
+    
     private func setupSearchbar(searchBar: UITextField) {
         txtSearchBar.delegate = self
-        txtSearchBar.setFont(name: FontName.Regular, size: FontSize.textField_regular)
+        txtSearchBar.setFont(name: FontName.SemiBold, size: FontSize.regular)
         txtSearchBar.addTarget(self, action: #selector(searching(_:)), for: .editingChanged)
         txtSearchBar.textColor = UIColor.themeDarkText
         txtSearchBar.changePlaceHolder(color: UIColor.themeDarkText)
         txtSearchBar.placeholder = "PRICE_AND_LOCATION_TXT_SEARCH_LOCATION".localized()
-
+        
     }
     @IBAction func searching(_ sender: UITextField) {
         searchData(for: sender.text ?? "")
     }
-
+    
     func searchData(for text: String) {
         if text.isEmpty {
             self.arrForFilteredData.removeAll()
@@ -212,13 +212,13 @@ extension PriceLocationVC : UITextFieldDelegate {
         }
         self.reloadTableDataToFitHeight(tableView: tableView)
     }
-
-
+    
+    
 }
 
 //MARK:- Web Service Calls
 extension PriceLocationVC {
-
+    
     func wsGetLocationList() {
         Loader.showLoading()
         AppWebApi.locationList() { (response) in

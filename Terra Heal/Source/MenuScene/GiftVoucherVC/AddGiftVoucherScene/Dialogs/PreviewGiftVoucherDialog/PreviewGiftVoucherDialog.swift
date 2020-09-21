@@ -9,14 +9,6 @@
 import UIKit
 
 
-struct GiftVoucherDetail {
-    var header: String = "to suravshing tomar, from Prince"
-    var subHeader: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
-    var body: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada."
-    var price:String = "100$"
-    var massage: String = "Thai Massage"
-    var image: UIImage = UIImage()
-}
 
 class PreviewGiftVoucherDialog: ThemeBottomDialogView {
     
@@ -37,12 +29,8 @@ class PreviewGiftVoucherDialog: ThemeBottomDialogView {
     
     func initialize(title:String, data:GiftVoucherDetail = GiftVoucherDetail(), buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
-        self.lblTitle.text = title
-        self.lblHeader.text = data.header
-        self.lblSubHeader.text = data.subHeader
-        self.lblDescription.text = data.body
-        self.lblPrice.text = data.price
-        self.lblMassage.text = data.massage
+        self.lblTitle.text = data.id
+        self.setData(data: data)
         if cancelButtonTitle.isEmpty() {
             self.btnCancel.isHidden = true
         } else {
@@ -57,21 +45,27 @@ class PreviewGiftVoucherDialog: ThemeBottomDialogView {
         }
     }
     
+    func setData(data: GiftVoucherDetail){
+        self.lblHeader.text = data.header
+        self.lblSubHeader.text = data.subHeader
+        self.lblDescription.text = data.body
+        self.lblPrice.text = data.price
+        self.lblMassage.text = data.massage
+    }
     override func initialSetup() {
         super.initialSetup()
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
-        self.lblHeader.setFont(name: FontName.Regular, size: FontSize.label_14)
-        self.lblSubHeader.setFont(name: FontName.SemiBold, size: FontSize.label_14)
-        self.lblDescription.setFont(name: FontName.Regular, size: FontSize.label_14)
-        self.lblPrice.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.lblMassage.setFont(name: FontName.Bold, size: FontSize.label_18)
-        self.btnCancel.setTitleColor(UIColor.themeDarkText, for: .normal)
+        self.lblHeader.setFont(name: FontName.Regular, size: FontSize.detail)
+        self.lblSubHeader.setFont(name: FontName.SemiBold, size: FontSize.detail)
+        self.lblDescription.setFont(name: FontName.Regular, size: FontSize.detail)
+        self.lblPrice.setFont(name: FontName.Bold, size: FontSize.subHeader)
+        self.lblMassage.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.setDataForStepUpAnimation()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.scrVw.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
+        //self.scrVw.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
     }
     
     @IBAction func btnDoneTapped(_ sender: Any) {

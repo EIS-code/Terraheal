@@ -31,7 +31,7 @@
                             <rect key="frame" x="0.0" y="28" width="320" height="312"/>
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="252" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ps3-Js-7Iq">
-                                    <rect key="frame" x="16" y="0.0" width="288" height="272"/>
+                                    <rect key="frame" x="16" y="165" width="288" height="107"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="z33-qW-ZLm">
                                         <size key="itemSize" width="128" height="128"/>
@@ -50,7 +50,7 @@
                                                 <constraint firstAttribute="height" constant="53" id="fZw-Ax-20B"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="NO"/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cbw-LZ-sNC" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
@@ -85,9 +85,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sSc-3G-Gif">
-                                            <rect key="frame" x="24" y="61" width="240" height="50"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <rect key="frame" x="44" y="61" width="200" height="50"/>
                                             <constraints>
+                                                <constraint firstAttribute="width" constant="200" id="PiY-t4-OkA"/>
                                                 <constraint firstAttribute="height" constant="50" id="ZEA-2f-YW3"/>
                                             </constraints>
                                         </view>
@@ -126,7 +126,7 @@
                                 <constraint firstItem="yAp-fy-7YT" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" id="8Fv-01-Wub"/>
                                 <constraint firstItem="ps3-Js-7Iq" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.9" id="8fa-E8-LxJ"/>
                                 <constraint firstAttribute="bottom" secondItem="ps3-Js-7Iq" secondAttribute="bottom" constant="40" id="9qp-mF-XIw"/>
-                                <constraint firstItem="ps3-Js-7Iq" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" id="NOi-ym-AoA"/>
+                                <constraint firstItem="ps3-Js-7Iq" firstAttribute="top" secondItem="1x2-DH-fYI" secondAttribute="bottom" constant="16" id="NOi-ym-AoA"/>
                                 <constraint firstItem="1x2-DH-fYI" firstAttribute="width" secondItem="Yaj-p7-IIT" secondAttribute="width" multiplier="0.9" id="U8y-1G-YYJ"/>
                                 <constraint firstItem="yAp-fy-7YT" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" id="WyN-G5-vRM"/>
                                 <constraint firstAttribute="bottom" secondItem="yAp-fy-7YT" secondAttribute="bottom" id="ajB-BS-TGf"/>
@@ -158,10 +158,11 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </imageView>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qLP-3J-98a" userLabel="vwServiceSwitch" customClass="JDSegmentedControl" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="96" y="125" width="128" height="50"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLP-3J-98a" userLabel="vwServiceSwitch" customClass="JDSegmentedControl" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="85" y="127" width="150" height="50"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstAttribute="width" constant="150" id="WC7-XT-YIb"/>
                                 <constraint firstAttribute="height" constant="50" id="wqZ-Ff-0f5"/>
                             </constraints>
                         </view>
@@ -183,7 +184,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="qLP-3J-98a" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="1Mi-xi-Iqb"/>
+                <constraint firstItem="qLP-3J-98a" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="1Mi-xi-Iqb"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Cqm-Aj-Pqf" secondAttribute="bottom" constant="20" id="8Zl-4P-4k9"/>
                 <constraint firstItem="Cqm-Aj-Pqf" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Ag8-bM-Nvc"/>
                 <constraint firstAttribute="trailing" secondItem="6ZW-DU-hOd" secondAttribute="trailing" id="C4E-pP-AJq"/>
@@ -220,7 +221,7 @@
         </view>
     </objects>
     <resources>
-        <image name="asset-center" width="50" height="50"/>
+        <image name="asset-center" width="62" height="62"/>
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

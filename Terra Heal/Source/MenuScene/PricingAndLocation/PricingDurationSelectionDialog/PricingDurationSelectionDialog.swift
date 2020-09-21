@@ -79,7 +79,7 @@ class PricingDurationSelectionDialog: ThemeBottomDialogView {
         super.initialSetup()
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblMessage.setFont(name: FontName.SemiBold, size:
-            FontSize.label_10)
+            FontSize.small)
         self.setDataForStepUpAnimation()
         self.btnHomeTapped(btnHome)
     }

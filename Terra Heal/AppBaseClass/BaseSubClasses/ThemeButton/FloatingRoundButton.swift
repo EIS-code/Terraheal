@@ -62,9 +62,8 @@ class BackButton: FloatingRoundButton {
     }
     
     func backButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themePrimary, borderColor: UIColor = UIColor.themePrimary) {
-        
         self.setImage(nil, for: .normal)
-        self.height(constant: CommonSize.Button.back)
+        self.height(constant: CommonSize.Button.back, direction: .horizontal)
         self.backgroundColor = backgroundColor
         self.setFont(name: FontName.System, size: 24)
         self.setTitle(FontSymbol.back_arrow, for: .normal)
@@ -88,7 +87,7 @@ class CancelButton: FloatingRoundButton {
     func cancelButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themePrimary, borderColor: UIColor = UIColor.themePrimary) {
          self.backgroundColor = backgroundColor
          self.setImage(nil, for: .normal)
-         self.height(constant: CommonSize.Button.cancel)
+         self.height(constant: CommonSize.Button.cancel, direction: .horizontal)
          self.setFont(name: FontName.System, size: 30)
          self.setTitle(FontSymbol.cancel, for: .normal)
     }
@@ -107,7 +106,7 @@ class DialogFloatingProceedButton: FloatingRoundButton {
     
     func forwardButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themePrimary, borderColor: UIColor = UIColor.themePrimary) {
          self.backgroundColor = backgroundColor
-         self.height(constant: CommonSize.Button.forwardButton)
+         self.height(constant: CommonSize.Button.forwardButton, direction: .horizontal)
          self.setFont(name: FontName.System, size: 30)
          self.setTitle(FontSymbol.next_arrow, for: .normal)
     }
@@ -126,7 +125,7 @@ class FloatingProceedButton: FloatingRoundButton {
     
     func forwardButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themePrimary, borderColor: UIColor = UIColor.themePrimary) {
          self.backgroundColor = backgroundColor
-         self.height(constant: CommonSize.Button.forwardButton)
+         self.height(constant: CommonSize.Button.forwardButton, direction: .horizontal)
          self.setFont(name: FontName.System, size: 30)
          self.setTitle(FontSymbol.next_arrow, for: .normal)
     }

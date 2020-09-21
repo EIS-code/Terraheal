@@ -28,7 +28,7 @@ class ServiceCenterDetailDialog: ThemeBottomDialogView {
         super.awakeFromNib()
     }
     
-    func initialize(data:ServiceCenterDetail,buttonTitle: String) {
+    func initialize(data:Place,buttonTitle: String) {
         self.initialSetup()
         if buttonTitle.isEmpty() {
             self.btnDone.isHidden = true
@@ -39,10 +39,11 @@ class ServiceCenterDetailDialog: ThemeBottomDialogView {
         //self.lblDetails?.text = data.serviceDetails
         self.lblName?.text = data.name
         self.lblAddress?.text = data.address
-        let time = (data.hours.first?.startHour ?? "") + " to " + (data.hours.first?.endHour ?? "")
+       /* let time = (data.hours.first?.startHour ?? "") + " to " + (data.hours.first?.endHour ?? "")
         let day = (data.hours.first?.day ?? "") + " to " + (data.hours.last?.day ?? "")
         self.lblTime?.text =  time + " | " +  day
-        self.btnNumberOfServices.setTitle(data.totalServices + "+", for: .normal)
+        self.btnNumberOfServices.setTitle(data.totalServices + "+", for: .normal)*/
+        
         self.scrVw.contentInset = UIEdgeInsets.init(top: 10, left: 0, bottom: 60, right: 0)
     }
     

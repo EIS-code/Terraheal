@@ -16,23 +16,11 @@ struct FontName {
 struct FontSize {
     static let nav_title_18: CGFloat = 18
     static let textField_14: CGFloat = 14
-    
     static let placeHolder_14: CGFloat = 12
-    
     
     static let button_22: CGFloat = 22
     static let button_20: CGFloat = 20
     
-    
-    static let label_12: CGFloat = 12
-    static let label_14: CGFloat = 14
-    static let label_16: CGFloat = 16
-    static let label_20: CGFloat = 20
-    static let label_22: CGFloat = 22
-    static let label_18: CGFloat = 18
-    static let label_26: CGFloat = 26
-    static let label_36: CGFloat = 36
-    static let label_10: CGFloat = 10
     
     
     
@@ -43,6 +31,7 @@ struct FontSize {
     static let subHeader: CGFloat = 17
     static let regular: CGFloat = 14
     static let detail: CGFloat = 13
+    static let small: CGFloat = 10
     
     static let textField_regular: CGFloat = 21
     static let proceedButton: CGFloat = 14

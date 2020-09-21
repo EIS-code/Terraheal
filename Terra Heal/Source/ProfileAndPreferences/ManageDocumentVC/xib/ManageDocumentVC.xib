@@ -195,7 +195,7 @@
     </objects>
     <resources>
         <image name="asset-cross" width="44" height="44"/>
-        <image name="asset-no-document" width="214" height="179"/>
+        <image name="asset-no-document" width="214" height="146"/>
         <namedColor name="theme_dark_text">
             <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

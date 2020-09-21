@@ -180,6 +180,8 @@ extension ServiceMapVC {
             appSingleton.myBookingData.serviceCenterDetail = self.arrForServices[self.currentIndex]
             appSingleton.myBookingData.booking_info = data
             self.openDateTimeSelectionDialog()
+            
+            
         }
     }
     
@@ -199,7 +201,13 @@ extension ServiceMapVC {
             
             appSingleton.myBookingData.serviceCenterDetail = self.arrForServices[self.currentIndex]
             appSingleton.myBookingData.shop_id = self.arrForServices[self.currentIndex].id
-            self.openLanguagePicker()
+            
+            if appSingleton.myBookingData.booking_type == BookingType.MassageCenter {
+                Common.appDelegate.loadReviewAndBookVC()
+            } else {
+                self.openLanguagePicker()
+            }
+            
         }
     }
     
@@ -219,13 +227,19 @@ extension ServiceMapVC {
         dialogForAccessory.onBtnCancelTapped = { [weak self, weak dialogForAccessory]  in
             guard let self = self else { return } ; print(self)
             dialogForAccessory?.dismiss()
-        }
-        dialogForAccessory.onBtnDoneTapped = {[weak self] (data) in
-            guard let self = self else { return } ; print(self)
-            self.dismissAllDialog()
+            appSingleton.myBookingData.bring_table_futon = AccessoryType.None.rawValue
+            appSingleton.myBookingData.table_futon_quantity = "0"
             Common.appDelegate.loadReviewAndBookVC()
         }
-        
+        dialogForAccessory.onBtnDoneTapped = { [weak self] (quatity,accessoryType) in
+            guard let self = self else { return } ; print(self)
+            self.dismissAllDialog()
+            if quatity != 0 {
+                appSingleton.myBookingData.bring_table_futon = accessoryType.rawValue
+                appSingleton.myBookingData.table_futon_quantity = quatity.toString()
+            }
+            Common.appDelegate.loadReviewAndBookVC()
+        }
     }
     
     func openServiceSelectionDialog() {
@@ -258,6 +272,7 @@ extension ServiceMapVC {
             [weak self]  (millis)in
             guard let self = self else { return } ; print(self)
             appSingleton.myBookingData.date = millis.toString()
+            
             self.openTextViewPicker()
         }
     }

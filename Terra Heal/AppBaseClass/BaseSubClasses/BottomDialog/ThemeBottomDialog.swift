@@ -61,6 +61,7 @@ class ThemeBottomDialogView: ThemeView {
         self.setupTopBar()
         vwTopBar?.backgroundColor = UIColor.themeDarkText
         self.dialogView.clipsToBounds = true
+        self.headerGradient?.enableGradient = false
         if btnDoneFloating != nil {
                 (self.stkButtons as? UIStackView)?.spacing = 30
         } else {
@@ -123,6 +124,7 @@ class ThemeBottomDialogView: ThemeView {
     }
     
     func getTopInset() -> CGFloat{
+        /*
            if headerGradient != nil {
                if headerGradient!.enableGradient {
                    return (stkHeader?.bounds.height ?? 0) + topBarSpace.constant + 20
@@ -130,7 +132,8 @@ class ThemeBottomDialogView: ThemeView {
                } else {
                    return 0
                }
-           }
+           }*/
+        
            return 0
        }
        
