@@ -21,7 +21,7 @@ class PackVC: BaseVC {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnSubmit: FilledRoundedButton!
     @IBOutlet weak var btnUseThisPack: RoundedBorderButton!
-    
+    var selectedData: PackDetail? = nil
     var arrForData: [PackDetail] = [
         PackDetail.init(code:"9S75894",name: "\"free from pain\"", price: "€250.00", description: "5 Massages & Therapies of 60 mins"),
         PackDetail.init(code:"12345640",name: "\"THE MAGIC OF ORIENT\"", price: "€450.00", description: "10 Different Oriental Massages & Therapies")
@@ -87,6 +87,11 @@ class PackVC: BaseVC {
     }
     
     @IBAction func btnUseThisPackTapped(_ sender: Any) {
+        if let selectedPackage = selectedData {
+                Common.appDelegate.loadPackageDetailVC(navigaionVC: self.navigationController, data: selectedPackage)
+        } else {
+            Common.showAlert(message: "Please select package first")
+        }
         
     }
     
@@ -104,6 +109,8 @@ extension PackVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
         tableView.estimatedRowHeight = 250
         tableView.register(PackTblCell.nib()
             , forCellReuseIdentifier: PackTblCell.name)
+        
+        tableView.register(BookPackageCell.nib(), forCellReuseIdentifier: BookPackageCell.name)
         tableView.tableFooterView = UIView()
     }
     
@@ -126,6 +133,7 @@ extension PackVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
             self.arrForData[i].isSelected = false
         }
         self.arrForData[indexPath.row].isSelected = true
+        self.selectedData = self.arrForData[indexPath.row]
         self.tableView.reloadData()
     }
     

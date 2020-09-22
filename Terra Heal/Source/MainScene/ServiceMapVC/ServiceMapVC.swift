@@ -65,7 +65,6 @@ class ServiceMapVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.wsGetMassagePreferenceList()
         self.initialViewSetup()
         self.currentMarker = GMSMarker.init()
         self.setupMapView(mapView: self.mapView)
@@ -339,20 +338,7 @@ extension ServiceMapVC {
             }
         }
     }
-    func wsGetMassagePreferenceList() {
-        
-        Loader.showLoading()
-        AppWebApi.massagePreferencceList { (response) in
-            appSingleton.massagePrefrenceDetail.removeAll()
-            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
-                for data in response.massagePreferenceList {
-                    appSingleton.massagePrefrenceDetail.append(data)
-                }
-                
-            }
-            Loader.hideLoading()
-        }
-    }
+    
     
     func setData() {
         self.collectionView.reloadData()

@@ -11,11 +11,17 @@ import UIKit
 
 class CustomFaqDialog: ThemeBottomDialogView {
 
-    @IBOutlet weak var collectionVw: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
 
     var onBtnDoneTapped: (( ) -> Void)? = nil
     var selectedCampaignDetail: String = ""
-    var arrForData: [String] = ["Faq - 1", "Faq - 2", "Faq - 3","Faq - 4","Faq - 5", "Faq - 6", "Faq - 7", "Faq - 8","Faq - 9", "Faq - 10", "Faq - 11", "Faq - 12", "Faq - 13", "Faq - 14", "Faq - 15", "Faq - 16"]
+    var arrForData: [QuestionDetail] = [
+    QuestionDetail.init(fromDictionary: ["placeholder": "Test1","title": "How to book Massage?" , "value": "lorem ipsum dolor sit amet.."]),
+    QuestionDetail.init(fromDictionary: ["placeholder": "Test1","title": "How To Book gift voucher?" , "value": "lorem ipsum dolor sit amet.."]),
+    QuestionDetail.init(fromDictionary: ["placeholder": "Test1","title": "How To Book Packs?" , "value": "lorem ipsum dolor sit amet.."]),
+    QuestionDetail.init(fromDictionary: ["placeholder": "Test1","title": "How To Book Theripies?" , "value": "lorem ipsum dolor sit amet.."]),
+    QuestionDetail.init(fromDictionary: ["placeholder": "Test1","title": "How To Book my therapists?" , "value": "lorem ipsum dolor sit amet.."])
+    ]
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,7 +51,7 @@ class CustomFaqDialog: ThemeBottomDialogView {
     override func initialSetup() {
         super.initialSetup()
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
-        self.setupCollectionView(collectionView: self.collectionVw)
+        self.setupTableView(tableView: self.tableView)
         self.setDataForStepUpAnimation()
     }
 
@@ -61,7 +67,7 @@ class CustomFaqDialog: ThemeBottomDialogView {
 
     func openFAQdetailsDialog(index: Int) {
         let alert: CustomInformationDialog = CustomInformationDialog.fromNib()
-        alert.initialize(title: arrForData[index], data: "FAQ_CONTENT".localized(), buttonTitle: "".localized(), cancelButtonTitle: "".localized())
+        alert.initialize(title: arrForData[index].title, data: "FAQ_CONTENT".localized(), buttonTitle: "".localized(), cancelButtonTitle: "BTN_BACK".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
@@ -79,44 +85,40 @@ class CustomFaqDialog: ThemeBottomDialogView {
 
 
 // MARK: - CollectionView Methods
-extension CustomFaqDialog:  UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    private func setupCollectionView(collectionView:  UICollectionView) {
-        collectionView.backgroundColor = UIColor.clear
-        collectionView.isUserInteractionEnabled = true
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.isPagingEnabled = false
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(FaqCltCell.nib()
-            , forCellWithReuseIdentifier: FaqCltCell.name)
+extension CustomFaqDialog:  UITableViewDelegate, UITableViewDataSource {
+    private func setupTableView(tableView: UITableView) {
+           tableView.delegate = self
+           tableView.dataSource = self
+           tableView.backgroundColor = .clear
+           tableView.showsVerticalScrollIndicator = false
+           tableView.rowHeight = UITableView.automaticDimension
+           tableView.estimatedRowHeight = UITableView.automaticDimension
+           tableView.register(FaqQuestionCell.nib()
+               , forCellReuseIdentifier: FaqQuestionCell.name)
+           tableView.tableFooterView = UIView()
+       }
 
-    }
+       func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-    // MARK: UICollectionViewDataSource
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
+           return arrForData.count
+       }
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrForData.count
-    }
+       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FaqCltCell.name, for: indexPath) as! FaqCltCell
-        cell.setData(data: self.arrForData[indexPath.row])
-        return cell
-    }
+           let cell = tableView.dequeueReusableCell(withIdentifier: FaqQuestionCell.name, for: indexPath) as?  FaqQuestionCell
+           cell?.layoutIfNeeded()
+           cell?.setData(data: arrForData[indexPath.row])
+           cell?.vwBg.isUserInteractionEnabled = false
+           cell?.layoutIfNeeded()
+           return cell!
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
+       }
+       func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+           return tableView.bounds.width * 0.25
+       }
+       func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           tableView.deselectRow(at: indexPath, animated: true)
         self.openFAQdetailsDialog(index: indexPath.row)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = collectionView.bounds.width / 5.0
-        return CGSize(width: size , height: size)
-    }
-
+       }
 
 }

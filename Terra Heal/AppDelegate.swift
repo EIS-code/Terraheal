@@ -84,5 +84,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.loadMainVC()
     }
     
+    func wsGetMassagePreferenceList() {
+        if PreferenceHelper.shared.getUserId().isNotEmpty() {
+                Loader.showLoading()
+                AppWebApi.massagePreferencceList { (response) in
+                    appSingleton.massagePrefrenceDetail.removeAll()
+                    if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
+                        for data in response.massagePreferenceList {
+                            appSingleton.massagePrefrenceDetail.append(data)
+                        }
+                        
+                    }
+                    Loader.hideLoading()
+                }
+        }
+    }
+    
 }
 

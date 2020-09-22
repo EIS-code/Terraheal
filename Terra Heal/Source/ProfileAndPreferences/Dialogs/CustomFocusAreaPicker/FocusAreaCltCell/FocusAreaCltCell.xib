@@ -19,10 +19,10 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="582-VR-E0n" userLabel="vwBg">
-                        <rect key="frame" x="8" y="8" width="281" height="191.5"/>
+                        <rect key="frame" x="8" y="8" width="281" height="151"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo-focus-area" translatesAutoresizingMaskIntoConstraints="NO" id="IeK-tR-YTP">
-                                <rect key="frame" x="65.5" y="21" width="150" height="150"/>
+                                <rect key="frame" x="75" y="10" width="131" height="131"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="IeK-tR-YTP" secondAttribute="height" multiplier="1:1" id="TSw-SA-icZ"/>
                                 </constraints>
@@ -36,12 +36,15 @@
                             <constraint firstItem="IeK-tR-YTP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="582-VR-E0n" secondAttribute="top" constant="10" id="fJD-Tb-dFS"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DN9-jh-Ww8" userLabel="lblAmount" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                        <rect key="frame" x="8" y="215.5" width="281" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DN9-jh-Ww8" userLabel="lblAmount" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                        <rect key="frame" x="8" y="175" width="281" height="61"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" name="theme_dark_text"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check" translatesAutoresizingMaskIntoConstraints="NO" id="Nd1-G6-0FS">
+                        <rect key="frame" x="260" y="5" width="32" height="32"/>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
@@ -50,6 +53,21 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                             <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="582-VR-E0n" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.6" id="G7P-05-RdH"/>
+                <constraint firstItem="lmf-Xn-7Ot" firstAttribute="trailing" secondItem="Nd1-G6-0FS" secondAttribute="trailing" constant="5" id="RFA-l3-THX" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="Nd1-G6-0FS" firstAttribute="top" secondItem="lmf-Xn-7Ot" secondAttribute="top" constant="5" id="eU5-NQ-fq3" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="5"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </constraint>
@@ -74,6 +92,7 @@
             <viewLayoutGuide key="safeArea" id="lmf-Xn-7Ot"/>
             <size key="customSize" width="221" height="288"/>
             <connections>
+                <outlet property="imgCellSelected" destination="Nd1-G6-0FS" id="SYt-eF-APC"/>
                 <outlet property="ivFocusArea" destination="IeK-tR-YTP" id="2oz-kk-0AT"/>
                 <outlet property="lblName" destination="DN9-jh-Ww8" id="9Fr-pz-5eI"/>
                 <outlet property="vwCellBg" destination="582-VR-E0n" id="26d-YA-fRD"/>
@@ -82,6 +101,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="asset-check" width="32" height="32"/>
         <image name="demo-focus-area" width="150" height="150"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

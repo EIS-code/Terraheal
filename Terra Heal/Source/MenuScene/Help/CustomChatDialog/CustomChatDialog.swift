@@ -23,7 +23,6 @@ class CustomChatDialog: ThemeBottomDialogView {
     
     
     func initialize(title:String, data:String = "", buttonTitle:String,cancelButtonTitle:String) {
-        
         self.initialSetup()
         self.lblTitle.text = title
         self.lblDescription.text = data
@@ -40,7 +39,7 @@ class CustomChatDialog: ThemeBottomDialogView {
             self.btnDone.setTitle(buttonTitle, for: .normal)
             self.btnDone.isHidden = false
         }
-         self.setDataForStepUpAnimation()
+        self.setDialogHeight(height: 0.95)
     }
     
     override func initialSetup() {
@@ -51,9 +50,6 @@ class CustomChatDialog: ThemeBottomDialogView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        //self.scrVw.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
-        self.imgChatVw.layoutIfNeeded()
-        self.imgChatVw?.setRound()
     }
     
     @IBAction func btnDoneTapped(_ sender: Any) {

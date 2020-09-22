@@ -197,9 +197,7 @@ class DashedLineView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-        
         borderLayer.path = UIBezierPath(roundedRect: rect, cornerRadius: radius).cgPath
-        print("\(self)-\(rect)")
     }
 }
 

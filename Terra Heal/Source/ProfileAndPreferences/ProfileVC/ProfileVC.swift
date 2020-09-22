@@ -129,10 +129,10 @@ class ProfileVC: BaseVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if appSingleton.user.profilePhoto.isEmpty() {
-                   self.ivUser.image = UIImage.init(named: ImageAsset.Placeholder.user)
-               } else {
-                   self.ivUser.downloadedFrom(link: appSingleton.user.profilePhoto)
-               }
+            self.ivUser.image = UIImage.init(named: ImageAsset.Placeholder.user)
+        } else {
+            self.ivUser.downloadedFrom(link: appSingleton.user.profilePhoto)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -164,7 +164,7 @@ class ProfileVC: BaseVC {
         self.lblDescription?.text = "description goes here."//appSingleton.user.name
         self.lblDescription?.setFont(name: FontName.Regular, size: FontSize.regular)
         self.setupTableView(tableView: self.tableView)
-       
+        
     }
     
     // MARK: - Action Methods

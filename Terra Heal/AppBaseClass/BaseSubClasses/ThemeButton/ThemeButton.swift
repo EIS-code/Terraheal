@@ -41,28 +41,28 @@ class ThemeButton: UIButton {
 
 
 class FilledRoundedButton: ThemeButton {
+     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.fillButton()
-        
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.fillButton()
-        self.setFont(name: FontName.SemiBold, size: FontSize.button_14)
     }
     override func layoutSubviews() {
         super.layoutSubviews()
         self.layer.cornerRadius = self.bounds.height/2.0
         self.layer.masksToBounds = true
     }
-    func fillButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themeSecondary, borderColor: UIColor = UIColor.clear) {
+    func fillButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themeSecondary, borderColor: UIColor = UIColor.clear, buttonHeight:CGFloat = CommonSize.Button.standard) {
         self.setFont(name: FontName.SemiBold, size: FontSize.button_14)
-        self.height(constant: CommonSize.Button.standard, direction: .horizontal)
+        self.height(constant: buttonHeight, direction: .horizontal)
         self.backgroundColor = backgroundColor
         self.setTitleColor(textColor, for: .normal)
     }
+    
 }
 
 class RoundedBorderButton: ThemeButton {
@@ -151,6 +151,7 @@ class DialogFilledRoundedButton: ThemeButton {
         self.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.height(constant: CommonSize.Button.standard, direction: .horizontal)
         self.width(constant: CommonSize.Button.standardLargeWidth, direction: .horizontal)
+        self.contentEdgeInsets = UIEdgeInsets.init(top: 10, left: 0, bottom: 10, right: 0)
         self.backgroundColor = backgroundColor
         self.setTitleColor(textColor, for: .normal)
         self.setRound(withBorderColor: borderColor, andCornerRadious: self.frame.height/2.0, borderWidth: 1.0)

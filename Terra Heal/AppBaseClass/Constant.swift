@@ -23,6 +23,7 @@ class MessageCode: NSObject {
 
 class CommonSize: NSObject {
     struct Button {
+        static let cellButton: CGFloat = 35
         static let standard: CGFloat = 48
         static let standardWidth: CGFloat = 160
         static let standardLargeWidth: CGFloat = 200

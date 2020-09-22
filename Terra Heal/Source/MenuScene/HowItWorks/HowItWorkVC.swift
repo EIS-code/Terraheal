@@ -6,41 +6,12 @@
 import UIKit
 
 
-//MARK: Massage Preference Menu
-enum HowItworkMenu: String {
-    case MassageCenter = "1"
-    case Hotel = "2"
-    case EventsAndCorporate = "3"
-    func name() -> String {
-        switch self {
-        case .MassageCenter:
-            return "HOW_IT_WORK_TITLE_1".localized()
-        case .Hotel:
-            return  "HOW_IT_WORK_TITLE_2".localized()
-        case .EventsAndCorporate:
-            return  "HOW_IT_WORK_TITLE_3".localized()
-            
-        }
-    }
-}
-
-struct HowItworkMenuDetail {
-    var type: HowItworkMenu = HowItworkMenu.MassageCenter
-    var shortDescription: String = ""
-    var description: String = ""
-    var image: String = ""
-    var isSelected: Bool = false
-}
 
 class HowItWorkVC: BaseVC {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var arrForMenu: [HowItworkMenuDetail] = [
-        HowItworkMenuDetail(type: .MassageCenter, shortDescription: "HOW_IT_WORK_SHORT_DESCRIPTION".localized(), description: "HOW_IT_WORK_LONG_DESCRIPTION".localized(), image: ImageAsset.HowItWorks.inMassageCenter, isSelected: false),
-        HowItworkMenuDetail(type: .Hotel, shortDescription: "HOW_IT_WORK_SHORT_DESCRIPTION".localized(), description: "HOW_IT_WORK_LONG_DESCRIPTION".localized(), image: ImageAsset.HowItWorks.atHomeOrHotel, isSelected: false),
-        HowItworkMenuDetail(type: .EventsAndCorporate, shortDescription: "HOW_IT_WORK_SHORT_DESCRIPTION".localized(), description: "HOW_IT_WORK_LONG_DESCRIPTION".localized(), image: ImageAsset.HowItWorks.eventOrCorporate, isSelected: false),
-    ]
+    var arrForData: [MenuItemDetail] = []
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -61,7 +32,7 @@ class HowItWorkVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
-        
+        self.wsGetMenuDetail()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -110,13 +81,13 @@ extension HowItWorkVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrForMenu.count
+        return arrForData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HowItWorkTblCell.name, for: indexPath) as?  HowItWorkTblCell
         cell?.layoutIfNeeded()
-        cell?.setData(data: arrForMenu[indexPath.row])
+        cell?.setData(data: arrForData[indexPath.row])
         cell?.layoutIfNeeded()
         return cell!
     }
@@ -126,3 +97,19 @@ extension HowItWorkVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDe
     }
 }
 
+//MARK: Web Service Call
+extension HowItWorkVC {
+    func wsGetMenuDetail() {
+        Loader.showLoading()
+        AppWebApi.getMenuDetail(completionHandler: { (response) in
+            self.arrForData.removeAll()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
+                for data in response.dataList {
+                    self.arrForData.append(data)
+                }
+                self.tableView.reloadData()
+            }
+            Loader.hideLoading()
+        })
+    }
+}

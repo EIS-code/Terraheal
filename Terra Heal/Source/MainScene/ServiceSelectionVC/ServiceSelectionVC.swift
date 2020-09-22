@@ -132,10 +132,11 @@ class ServiceSelectionVC: BaseVC {
             }
            self.massageInfo.massage_prices_id = self.selectedService.selectedDuration.pricing.id
             if appSingleton.myBookingData.booking_type == BookingType.MassageCenter {
-                
                 self.openPressurerPicker()
-            } else {
+            } else if appSingleton.myBookingData.booking_type == BookingType.AtPlace  {
                 self.openPreferGenderPicker()
+            } else {
+                self.openPressurerPicker()
             }
         }
     }

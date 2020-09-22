@@ -44,7 +44,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mic-LR-0HZ" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="724" width="375" height="88"/>
+                            <rect key="frame" x="0.0" y="687.66666666666663" width="375" height="124.33333333333337"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
@@ -172,7 +172,6 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstItem="Mic-LR-0HZ" firstAttribute="top" secondItem="rj6-kt-9tA" secondAttribute="top" id="i6J-i8-x14"/>
                 <constraint firstItem="G4b-A3-K2v" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="iKB-3G-HQr"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="aVT-f3-Mwd" secondAttribute="trailing" constant="16" id="jaq-Pv-ANN" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
@@ -184,6 +183,7 @@
                 <constraint firstItem="Pmo-GI-ulW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rik-x2-gKZ"/>
                 <constraint firstItem="rj6-kt-9tA" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="sSs-fo-LFX"/>
                 <constraint firstItem="aVT-f3-Mwd" firstAttribute="bottom" secondItem="VLJ-uh-dxO" secondAttribute="bottom" id="tMq-ok-g6e"/>
+                <constraint firstItem="Mic-LR-0HZ" firstAttribute="top" secondItem="G4b-A3-K2v" secondAttribute="top" id="ur1-Sc-bGz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
             <point key="canvasLocation" x="131" y="154"/>

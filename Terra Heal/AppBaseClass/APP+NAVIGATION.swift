@@ -655,6 +655,23 @@ extension AppDelegate {
     }
     
     
+    func loadPackageDetailVC(navigaionVC:UINavigationController? = nil, data:PackDetail) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: PackageDetailVC =  nc.findVCs(ofType: PackageDetailVC.self).first {
+                targetVC.packageDetail = data
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: PackageDetailVC = PackageDetailVC.fromNib()
+                targetVC.packageDetail = data
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: PackageDetailVC = PackageDetailVC.fromNib()
+            targetVC.packageDetail = data
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
     
     func loadAddCardVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {

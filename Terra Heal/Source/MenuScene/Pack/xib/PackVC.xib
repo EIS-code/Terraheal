@@ -89,12 +89,12 @@
                     <rect key="frame" x="0.0" y="702" width="375" height="60"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0nN-AV-2s7">
-                            <rect key="frame" x="14.666666666666657" y="0.0" width="346" height="60"/>
+                            <rect key="frame" x="16" y="0.0" width="343" height="60"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soq-FQ-jLw" customClass="FilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="163" height="60"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="161.66666666666666" height="60"/>
                                     <color key="backgroundColor" name="theme_primary_light"/>
-                                    <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
+                                    <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                     <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                     <state key="normal" title="Book Now"/>
                                     <connections>
@@ -102,7 +102,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhn-mr-myQ" customClass="RoundedBorderButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="183" y="0.0" width="163" height="60"/>
+                                    <rect key="frame" x="181.66666666666663" y="0.0" width="161.33333333333337" height="60"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="10" minY="20" maxX="10" maxY="20"/>
                                     <state key="normal" title="Sign In">
@@ -119,6 +119,14 @@
                     <constraints>
                         <constraint firstItem="0nN-AV-2s7" firstAttribute="centerY" secondItem="9ma-qC-KU9" secondAttribute="centerY" id="W91-zl-IN2"/>
                         <constraint firstItem="0nN-AV-2s7" firstAttribute="centerX" secondItem="9ma-qC-KU9" secondAttribute="centerX" id="c5D-Ob-Csi"/>
+                        <constraint firstItem="0nN-AV-2s7" firstAttribute="leading" secondItem="9ma-qC-KU9" secondAttribute="leading" constant="16" id="jTg-DM-2Of" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                    <real key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
                         <constraint firstAttribute="width" secondItem="9ma-qC-KU9" secondAttribute="height" multiplier="375:60" id="kFN-bS-I1J"/>
                     </constraints>
                 </view>

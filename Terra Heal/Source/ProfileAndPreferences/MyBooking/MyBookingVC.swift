@@ -16,14 +16,7 @@ class MyBookingVC: BaseVC {
     @IBOutlet weak var vwTab: JDSegmentedControl!
     @IBOutlet weak var vwBg: UIView!
     
-    var arrForMyPlaces: [MyBookingTblDetail] = [
-        MyBookingTblDetail(title: "29 oct 2020 4:20pm", isSelected: false),
-        MyBookingTblDetail(title: "30 oct 2020 6:20pm", isSelected: false),
-        MyBookingTblDetail(title: "31 oct 2020 7:30pm", isSelected: false),
-        MyBookingTblDetail(title: "01 nov 2020 3:20pm", isSelected: false),
-        MyBookingTblDetail(title: "02 nov 2020 12:20pm", isSelected: false),
-        MyBookingTblDetail(title: "03 nov 2020 04:20pm", isSelected: false),
-    ]
+    var arrForBooking: [MyPastBookingData] = []
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -44,6 +37,7 @@ class MyBookingVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
+        self.getPastBookingList()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -106,7 +100,7 @@ tableView.backgroundColor = .clear
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return arrForMyPlaces.count
+        return arrForBooking.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -114,14 +108,14 @@ tableView.backgroundColor = .clear
 
             let cell = tableView.dequeueReusableCell(withIdentifier: MyBookingTblCell.name, for: indexPath) as?  MyBookingTblCell
             cell?.layoutIfNeeded()
-            cell?.setData(data: arrForMyPlaces[indexPath.row])
+            cell?.setData(data: arrForBooking[indexPath.row])
             cell?.layoutIfNeeded()
             return cell!
 
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if arrForMyPlaces[indexPath.row].isSelected == true {
+        if arrForBooking[indexPath.row].isSelected == true {
             return UITableView.automaticDimension
         } else  {
           return JDDeviceHelper.offseter(scaleFactor: 1.0, offset: 80, direction: .vertical)
@@ -129,9 +123,22 @@ tableView.backgroundColor = .clear
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.arrForMyPlaces[indexPath.row].isSelected.toggle()
+        self.arrForBooking[indexPath.row].isSelected.toggle()
         self.tableView.reloadRows(at: [indexPath], with: .fade)
     }
     
 }
 
+extension MyBookingVC {
+    
+    func getPastBookingList() {
+        Loader.showLoading()
+        AppWebApi.getPastBookingList { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response) {
+                
+            }
+        }
+    }
+    
+}

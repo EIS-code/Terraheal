@@ -7,12 +7,12 @@
 
 import UIKit
 
-struct MenuItem {
-    var id: Menu = Menu.Campaigns
+struct SideMenuItem {
+    var id: SideMenu = SideMenu.Campaigns
     var image: String = ""
     var isVerticle: Bool = true
 }
-enum Menu: String {
+enum SideMenu: String {
     case HowItWork = "0"
     case ReferAndEarn = "1"
     case PricingAndLocation = "2"
@@ -99,16 +99,16 @@ class SideVC: BaseVC {
     @IBOutlet weak var cvForMenu: UICollectionView!
     var idxPathSelected: IndexPath = IndexPath(row: -1, section: -1)
    
-    var arrForMenu: [MenuItem] = [
-        MenuItem.init(id: Menu.HowItWork, image: "", isVerticle: true),
-        //MenuItem.init(id: Menu.ReferAndEarn, image: "", isVerticle: true),
-        MenuItem.init(id: Menu.PricingAndLocation, image: "", isVerticle: true),
-       // MenuItem.init(id: Menu.PromoCode, image: "", isVerticle: true),
-        MenuItem.init(id: Menu.GiftVoucher, image: "", isVerticle: true),
-        MenuItem.init(id: Menu.Packs, image: "", isVerticle: true),
-      //  MenuItem.init(id: Menu.Campaigns, image: "", isVerticle: false),
-        MenuItem.init(id: Menu.Notifications, image: "", isVerticle: true),
-        MenuItem.init(id: Menu.Help, image: "", isVerticle: true),
+    var arrForMenu: [SideMenuItem] = [
+        SideMenuItem.init(id: SideMenu.HowItWork, image: "", isVerticle: true),
+        //SideMenuItem.init(id: SideMenu.ReferAndEarn, image: "", isVerticle: true),
+        SideMenuItem.init(id: SideMenu.PricingAndLocation, image: "", isVerticle: true),
+       // SideMenuItem.init(id: SideMenu.PromoCode, image: "", isVerticle: true),
+        SideMenuItem.init(id: SideMenu.GiftVoucher, image: "", isVerticle: true),
+        SideMenuItem.init(id: SideMenu.Packs, image: "", isVerticle: true),
+      //  SideMenuItem.init(id: SideMenu.Campaigns, image: "", isVerticle: false),
+        SideMenuItem.init(id: SideMenu.Notifications, image: "", isVerticle: true),
+        SideMenuItem.init(id: SideMenu.Help, image: "", isVerticle: true),
     ]
 
     // MARK: LifeCycle
@@ -117,7 +117,6 @@ class SideVC: BaseVC {
         self.view.backgroundColor = UIColor.white
         self.lblMenu.text = "LBL_MENU".localized()
         self.lblMenu?.font = FontHelper.font(name: FontName.Bold, size: FontSize.large)
-        self.lblMenu.printFontSize()
         //self.lblMenu.setFont(name: FontName.Bold, size: FontSize.large)
         self.setupCollectionView()
     }
@@ -178,7 +177,6 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
         let data = arrForMenu[indexPath.row]
         if data.isVerticle {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCellVerticle.name, for: indexPath) as! MenuCellVerticle
-
             cell.layoutIfNeeded()
             cell.setData(menuDetail: data)
             cell.layoutIfNeeded()
@@ -196,23 +194,23 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
         collectionView.deselectItem(at: indexPath, animated: true)
         if  let BaseVC = self.revealViewController()?.leftViewController as? NC{
             switch self.arrForMenu[indexPath.row].id {
-                   case Menu.Notifications:
+                   case SideMenu.Notifications:
                        Common.appDelegate.loadNotificationVC(navigaionVC: BaseVC)
-                   case Menu.HowItWork:
+                   case SideMenu.HowItWork:
                        Common.appDelegate.loadHowItWorkVC(navigaionVC: BaseVC)
-                   case Menu.PricingAndLocation:
+                   case SideMenu.PricingAndLocation:
                        Common.appDelegate.loadPriceLocationVC(navigaionVC: BaseVC)
-                   case Menu.PromoCode:
+                   case SideMenu.PromoCode:
                        Common.appDelegate.loadPromocodeVC(navigaionVC: BaseVC)
-                   case Menu.Packs:
+                   case SideMenu.Packs:
                        Common.appDelegate.loadPackVC(navigaionVC: BaseVC)
-                   case Menu.ReferAndEarn:
+                   case SideMenu.ReferAndEarn:
                        Common.appDelegate.loadReferAndEarnVC(navigaionVC: BaseVC)
-                   case Menu.Campaigns:
+                   case SideMenu.Campaigns:
                        Common.appDelegate.loadCampaignsVC(navigaionVC: BaseVC)
-                   case Menu.Help:
+                   case SideMenu.Help:
                        Common.appDelegate.loadHelpVC(navigaionVC: BaseVC)
-                   case Menu.GiftVoucher:
+                   case SideMenu.GiftVoucher:
                        Common.appDelegate.loadGiftVoucherVC(navigaionVC: BaseVC)
                    }
         }

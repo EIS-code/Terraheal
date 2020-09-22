@@ -45,34 +45,38 @@ class CustomAlert: ThemeDialogView {
     }
 
     func show(animated:Bool){
+        if self.lblMessage.text!.isNotEmpty() {
+                self.isAnimated = animated
+                self.backgroundView.alpha = 0
+                self.frame = UIScreen.main.bounds
+                if let topController = Common.appDelegate.getTopViewController() {
+                    topController.view.endEditing(true)
+                    Common.appDelegate.window?.addSubview(self)
+                    //topController.view.addSubview(self)
+                }
 
-        self.isAnimated = animated
-        self.backgroundView.alpha = 0
-        self.frame = UIScreen.main.bounds
-        if let topController = Common.appDelegate.getTopViewController() {
-            topController.view.endEditing(true)
-            Common.appDelegate.window?.addSubview(self)
-            //topController.view.addSubview(self)
+                if animated {
+                    self.isUserInteractionEnabled = false
+                    self.animationVw.alpha = 0.1
+                    let translation = CGAffineTransform(translationX: self.frame.midX, y: 0)
+                    self.animationVw.transform = translation.rotated(by:-6.0)
+                    UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseInOut], animations: {
+                        self.animationVw.transform = CGAffineTransform.identity
+                        self.animationVw.transform = CGAffineTransform(rotationAngle: CGFloat(0.0))
+                        self.backgroundView.alpha = 0.66
+                        self.animationVw.alpha = 1.0
+                    }) { (completion) in
+                        //self.animationVw.shake()
+                        self.isUserInteractionEnabled = true
+                    }
+                }
+                else {
+                    self.backgroundView.alpha = 0.66
+                }
+        } else {
+            self.removeFromSuperview()
         }
-
-        if animated {
-            self.isUserInteractionEnabled = false
-            self.animationVw.alpha = 0.1
-            let translation = CGAffineTransform(translationX: self.frame.midX, y: 0)
-            self.animationVw.transform = translation.rotated(by:-6.0)
-            UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseInOut], animations: {
-                self.animationVw.transform = CGAffineTransform.identity
-                self.animationVw.transform = CGAffineTransform(rotationAngle: CGFloat(0.0))
-                self.backgroundView.alpha = 0.66
-                self.animationVw.alpha = 1.0
-            }) { (completion) in
-                //self.animationVw.shake()
-                self.isUserInteractionEnabled = true
-            }
-        }
-        else {
-            self.backgroundView.alpha = 0.66
-        }
+        
     }
 
     func dismiss(){

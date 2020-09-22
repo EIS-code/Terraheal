@@ -35,8 +35,8 @@ class MyBookingTblCell: TableCell {
         self.vwDate?.setRound(withBorderColor: .clear, andCornerRadious: 15, borderWidth: 1.0)
     }
 
-    func setData(data: MyBookingTblDetail ) {
-        self.lblName.text = data.title
+    func setData(data: MyPastBookingData ) {
+        self.lblName.text = data.id
         self.vwBar.backgroundColor =  data.isSelected ? UIColor.green : UIColor.red
         self.expandCell(isExpand: data.isSelected)
     }

@@ -235,7 +235,7 @@
 "PACK_PURCHASE_COMPLETE_TITLE" = "purchase successful";
 "PACK_PURCHASE_COMPLETE_MESSAGE" = "thanks for choosing our services! we have received your booking and will confirm it as soon as possible";
 "PACK_BTN_USE_THIS_PACK" = "Use Pack";
-
+"PACK_NO" = "packs No";
 //MARK: Help
 "HELP_TITLE" = "help";
 "CHAT_DIALOG_TITLE" = "chat";
@@ -346,6 +346,7 @@
 "GIFT_VOUCHER_BTN_PREVIEW" = "preview";
 "BUY_GIFT_VOUCHER_COMPLETE_TITLE" = "buy gift voucher Successful";
 "BUY_GIFT_VOUCHER_COMPLETE_MESSAGE" = "thanks for choosing our services! we have received your booking and will confirm it as soon as possible";
+"GIFT_VOUCHER_NO" = "voucher No";
 
 //MARK: Add Gift Voucher Screen
 "ADD_GIFT_VOUCHER_TITLE" = "add gift voucher";
@@ -377,7 +378,6 @@
 "MANAGE_DOCUMENT_BTN_ADD_NEW" = "Add New";
 "ADD_NEW_DOCUMENT_TITLE" = "add new document";
 //MARK:  Address Screen
-
 "MANAGE_ADDRESS_DIALOG_ADD_NEW_ADDRESS_TITLE" = "Add New Address";
 "MANAGE_ADDRESS_DIALOG_EDIT_ADDRESS_TITLE" = "Edit Address";
 "MANAGE_ADDRESS_TXT_ADDRESS_LINE_1" = "address line 1";
@@ -390,8 +390,6 @@
 "MANAGE_ADDRESS_TXT_ADDRESS_LATITUDE" = "latitude";
 "MANAGE_ADDRESS_TXT_ADDRESS_LONGITUDE" = "longitude";
 //MARK: Add Card SCREEN
-
-
 "ADD_CARD_TITLE" = "add credit card";
 "ADD_CARD_TITLE_MESSAGE" = "verify and secure your card";
 "ADD_CARD_TXT_NAME" = "card holder name";
@@ -401,7 +399,6 @@
 "ADD_CARD_SAVE_CARD_DETAILS" = "save your card details securely";
 "ADD_CARD_SAVE_CARD_DETAIL_MESSAGE" = "your card data is saved in a PCI DSS compliant secure vault.";
 "ADD_CARD_BTN_ADD_CARD" = "Add Card";
-
 //MARK: Accessory Dialog
 "ACCESSORY_TITLE" = "do we need to bring a table?";
 "ACCESSORY_BTN_YES" = "yes";
@@ -469,6 +466,8 @@
 "BTN_CANCEL" = "cancel";
 "BTN_SKIP" = "skip";
 "BTN_APPLY" =  "apply";
+"BTN_BOOK" = "Book";
+"BTN_USE" = "Used";
 "LBL_MENU" =  "menu";
 "TIME_UNIT_MIN" = "min";
 "TXT_EMAIL" = "email";

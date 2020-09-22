@@ -20,21 +20,21 @@ class HowItWorkTblCell: TableCell {
         super.awakeFromNib()
         self.selectionStyle = .none
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.header)
-        self.lblShortDescription?.setFont(name: FontName.Bold, size: FontSize.detail)
-        self.lblLongDescription?.setFont(name: FontName.Bold, size: FontSize.detail)
-        self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+        self.lblShortDescription?.setFont(name: FontName.Regular, size: FontSize.detail)
+        self.lblLongDescription?.setFont(name: FontName.Regular, size: FontSize.detail)
+    
     }
 
-    func setData(data: HowItworkMenuDetail ) {
-        self.lblName.text = data.type.name()
+    func setData(data: MenuItemDetail ) {
+        self.lblName.text = data.title
         self.lblShortDescription.text = data.shortDescription
-        self.lblLongDescription.text = data.description
-        self.ivMenu.image = UIImage.init(named: data.image)
+        self.lblLongDescription.text = data.detail
+        self.ivMenu.downloadedFrom(link: data.icon)
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+        
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

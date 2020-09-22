@@ -52,17 +52,17 @@ class AppWebApi: NSObject {
         }
         
         static var ChangePassword: String {
-                   return Domain + Routes.Setting + "/update/password"
+            return Domain + Routes.Setting + "/update/password"
         }
-       
+        
         static var SettingDetail: String {
-                   return Domain + Routes.Setting + "/get"
+            return Domain + Routes.Setting + "/get"
         }
         
         static var UpdateSettingDetail: String {
-                   return Domain + Routes.Setting + "/save"
+            return Domain + Routes.Setting + "/save"
         }
-      
+        
         static var UploadDocument: String {
             return Domain + Routes.Client + "/documents/" + PreferenceHelper.shared.getUserId()
         }
@@ -113,7 +113,7 @@ class AppWebApi: NSObject {
             return  Domain + Routes.Therapy + "/questionnaire/save"
         }
         static var FetchSessionlist: String {
-                   return  Domain + Routes.Massage + "/session/get"
+            return  Domain + Routes.Massage + "/session/get"
         }
         //Address APIs
         static var GetAddressList: String {
@@ -141,17 +141,25 @@ class AppWebApi: NSObject {
         static var AddPeople: String {
             return  Domain + Routes.People + "/save"
         }
-        //Therapist APIs
         static var GetBookingTherapistList: String {
             return  Domain + Routes.Client + "/booking/therapists"
         }
         static var RateTherapist: String {
             return  Domain + Routes.Client + "/therapist/review/save"
         }
-        //My Places API
-        
         static var GetBookingPlacesList: String {
             return  Domain + Routes.Client + "/booking/places"
+        }
+        
+        static var GetMenuDetail: String {
+            return  Domain + Routes.Client + "/menu/item/get"
+        }
+        static var GetMenuList: String {
+                   return  Domain + Routes.Client + "/menu/get"
+        }
+        
+        static var GetBookingList: String {
+            return  Domain + Routes.Client + "/booking/list/past"
         }
     }
 }
@@ -370,10 +378,10 @@ extension AppWebApi {
                 completionHandler(response)
             }
         } else {
-                AlamofireHelper().getDataFrom(urlString: API_URL.AddPeople, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-                    let response = ManagePeople.Response.init(fromDictionary: dictionary)
-                    completionHandler(response)
-                }
+            AlamofireHelper().getDataFrom(urlString: API_URL.AddPeople, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+                let response = ManagePeople.Response.init(fromDictionary: dictionary)
+                completionHandler(response)
+            }
         }
         
         
@@ -446,18 +454,43 @@ extension AppWebApi {
     }
     
     class func getBookingTherapistList(params:TherapistWebService.RequestBookingTherapist = TherapistWebService.RequestBookingTherapist() , completionHandler: @escaping ((TherapistWebService.Response) -> Void)) {
-           AlamofireHelper().getDataFrom(urlString: API_URL.GetBookingTherapistList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-               let response = TherapistWebService.Response.init(fromDictionary: dictionary)
-               completionHandler(response)
-           }
+        AlamofireHelper().getDataFrom(urlString: API_URL.GetBookingTherapistList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = TherapistWebService.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
     }
     
     class func getBookingPlacesList(params:PlacesWebService.RequestBookingPlaces = PlacesWebService.RequestBookingPlaces(), completionHandler: @escaping ((PlacesWebService.Response) -> Void)) {
-           AlamofireHelper().getDataFrom(urlString: API_URL.GetBookingPlacesList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-               let response = PlacesWebService.Response.init(fromDictionary: dictionary)
+        AlamofireHelper().getDataFrom(urlString: API_URL.GetBookingPlacesList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = PlacesWebService.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    
+    class func getMenuDetail(params:MenuItemWebService.RequestMenuDetail = MenuItemWebService.RequestMenuDetail(), completionHandler: @escaping ((MenuItemWebService.ResponseMenuDetail) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: API_URL.GetMenuDetail, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = MenuItemWebService.ResponseMenuDetail.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    
+    class func getMenuList(completionHandler: @escaping ((MenuItemWebService.ResponseMenuList) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: API_URL.GetMenuList, methodName: AlamofireHelper.GET_METHOD, paramData:[:]) { (data, dictionary, error) in
+            let response = MenuItemWebService.ResponseMenuList.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    
+     class func getPastBookingList(params:MyBookingWebService.RequestPastBookingList = MyBookingWebService.RequestPastBookingList(), completionHandler: @escaping ((MyBookingWebService.Response) -> Void)) {
+           AlamofireHelper().getDataFrom(urlString: API_URL.GetBookingList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+               let response = MyBookingWebService.Response.init(fromDictionary: dictionary)
                completionHandler(response)
            }
        }
+    
 }
+
+
+
 
 

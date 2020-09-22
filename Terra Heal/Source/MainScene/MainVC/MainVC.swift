@@ -77,6 +77,11 @@ class MainVC: BaseVC {
         super.viewWillAppear(animated)
         let lc = LocationCenter.init()
         lc.requestLocationOnce()
+        if appSingleton.user.name.isEmpty() {
+                   self.ivUser.image = UIImage.init(named: ImageAsset.Placeholder.user)
+        } else {
+                   self.ivUser.downloadedFrom(link: appSingleton.user.profilePhoto)
+               }
         
     }
     
@@ -94,12 +99,9 @@ class MainVC: BaseVC {
     
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeBackground)
-        if appSingleton.user.name.isEmpty() {
-            self.ivUser.image = UIImage.init(named: ImageAsset.Placeholder.user)
-        } else {
-            self.ivUser.downloadedFrom(link: appSingleton.user.profilePhoto)
-        }
+        Common.appDelegate.wsGetMassagePreferenceList()
     }
+    
     func homeButtonSelected() {
         self.myFavView.gone()
         self.exploreView.gone()

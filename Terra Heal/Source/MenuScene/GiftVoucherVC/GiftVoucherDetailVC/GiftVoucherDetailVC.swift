@@ -73,7 +73,7 @@ class GiftVoucherDetailVC: BaseVC {
     }
 
     func setData(data: GiftVoucherDetail) {
-        self.setTitle(title: "voucher No: \(data.id)")
+        self.setTitle(title: "GIFT_VOUCHER_NO".localized() + " : " + data.id)
         self.lblHeader.text = data.header
         self.lblSubHeader.text = data.subHeader
         self.lblDescription.text = data.body
