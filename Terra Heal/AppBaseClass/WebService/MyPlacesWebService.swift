@@ -54,8 +54,6 @@ class Place: ResponseModel {
     var totalServices : String = ""
     var userName : String = ""
 
-    
-    
     var isSelected: Bool = false
 
     override init(fromDictionary dictionary: [String:Any]) {

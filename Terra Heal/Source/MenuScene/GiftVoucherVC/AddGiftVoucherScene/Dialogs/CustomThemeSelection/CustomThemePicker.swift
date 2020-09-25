@@ -8,28 +8,18 @@
 
 import UIKit
 struct Theme {
+    var id:String = ""
     var name: String = ""
     var isSelected: Bool = false
-    static func getDemoArray() -> [Theme] {
-        return [
-        Theme(name:"friendship", isSelected: false),
-        Theme(name:"love and care", isSelected: false),
-        Theme(name:"birthday", isSelected: false),
-        Theme(name:"mother's day", isSelected: false),
-        Theme(name:"father's day", isSelected: false),
-        Theme(name:"valentine's day", isSelected: false),
-        Theme(name:"christmas", isSelected: false),
-        Theme(name:"engagement", isSelected: false)
-        ]
-    }
 }
+
 class CustomThemePicker: ThemeBottomDialogView {
 
     @IBOutlet weak var tableView: UITableView!
  
     var onBtnDoneTapped: ((_ data: Theme) -> Void)? = nil
     var selectedData: Theme? = nil
-    var arrForData: [Theme] = Theme.getDemoArray()
+    var arrForData: [Theme] = []
  
     
     override func awakeFromNib() {
@@ -58,7 +48,12 @@ class CustomThemePicker: ThemeBottomDialogView {
     func select(data:Theme?) {
         self.selectedData = data
     }
-
+    func setDataSource(themeDesign:[Theme]){
+        self.arrForData.removeAll()
+        self.arrForData = themeDesign
+        self.tableView.reloadData()
+    }
+    
     override func initialSetup() {
         super.initialSetup()
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)

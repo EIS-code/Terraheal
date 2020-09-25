@@ -8,7 +8,8 @@
 
 import UIKit
 struct MyTherapistDetail{
-    var title: String = ""
+    var name: String = ""
+    var image: String = ""
     var isSelected: Bool = false
 }
 class MyTherapistTblCell: SelectionBorderTableCell {
@@ -25,7 +26,8 @@ class MyTherapistTblCell: SelectionBorderTableCell {
     }
 
     func setData(data: MyTherapistDetail ) {
-        super.setData(title: data.title, isSelected: data.isSelected)
+        super.setData(title: data.name, isSelected: data.isSelected)
+        self.imgTherapist.downloadedFrom(link: data.image)
     }
 
     override func layoutSubviews() {

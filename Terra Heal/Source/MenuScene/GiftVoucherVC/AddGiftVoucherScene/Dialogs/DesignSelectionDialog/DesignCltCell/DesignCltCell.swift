@@ -6,7 +6,7 @@
 import UIKit
 import Foundation
 
-class DesignCltCell: CollectionCell {
+class DesignCltCell: SelectionBorderCollectionCell {
 
     @IBOutlet weak var ivUser: UIImageView!
     
@@ -14,7 +14,9 @@ class DesignCltCell: CollectionCell {
         super.awakeFromNib()
         self.ivUser?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
     }
-    func setData(data:String) {
+    func setData(data:Design) {
+        super.setData(isSelected: data.isSelected)
+        self.ivUser.downloadedFrom(link: data.image)
         
     }
     override func layoutSubviews() {

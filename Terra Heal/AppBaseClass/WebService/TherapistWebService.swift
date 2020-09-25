@@ -88,6 +88,6 @@ class Therapist: ResponseModel{
     }
 
     func toViewModel() -> MyTherapistDetail {
-        return MyTherapistDetail.init(title: self.name, isSelected: false)
+        return MyTherapistDetail.init(name: self.name, image: self.profilePhoto, isSelected: false)
     }
 }

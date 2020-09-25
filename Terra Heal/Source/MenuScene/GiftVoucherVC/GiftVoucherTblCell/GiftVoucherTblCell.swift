@@ -28,11 +28,11 @@ class GiftVoucherTblCell: ShadowTableCell {
         self.lblDate2.setFont(name: FontName.Bold, size: FontSize.regular)
     }
 
-    func setData(data: GiftVoucherDetail ) {
+    func setData(data: Voucher ) {
         self.lblId.text = data.id
-        self.lblPrice.text = data.price
-        self.lblDate1.text = data.date1
-        self.lblDate2.text = data.date2
+        self.lblPrice.text = data.amount.toCurrency()
+        self.lblDate1.text = data.startFrom
+        self.lblDate2.text = data.lastDate
     }
 
     override func layoutSubviews() {

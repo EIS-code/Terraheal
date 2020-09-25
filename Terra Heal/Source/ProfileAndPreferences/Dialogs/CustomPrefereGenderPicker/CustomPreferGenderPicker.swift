@@ -39,10 +39,14 @@ class CustomPreferGenderPicker: ThemeBottomDialogView {
 
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var lblRepeatRequest: ThemeLabel!
+    @IBOutlet weak var cltVw: UICollectionView!
+    @IBOutlet weak var vwForRepeatRequest: UIView!
+    
     var onBtnDoneTapped: ((_ gender:PreferenceOption) -> Void)? = nil
     var selectedData: PreferenceOption = PreferenceOption.init(fromDictionary: [:])
     var arrForData: [PreferenceOption] = []
+    var arrForTherapist: [MyTherapistDetail] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -89,10 +93,15 @@ class CustomPreferGenderPicker: ThemeBottomDialogView {
         }
         self.select(data:self.selectedData)
     }
+    
     override func initialSetup() {
         super.initialSetup()
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
+        self.lblRepeatRequest.setFont(name: FontName.SemiBold, size: FontSize.header)
+        self.setupCollectionView(collectionView: self.cltVw)
         self.setDataForStepUpAnimation()
+        self.getTherapistList()
+        self.lblRepeatRequest.text = "THERAPIST_REPEAT_REQUEST".localized()
     }
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -107,7 +116,6 @@ class CustomPreferGenderPicker: ThemeBottomDialogView {
                 self.onBtnDoneTapped!(selectedData);
             }
         }
-
     }
    
 }
@@ -161,3 +169,73 @@ extension CustomPreferGenderPicker : UITableViewDelegate,UITableViewDataSource {
 
 
 
+// MARK: - CollectionView Methods
+extension CustomPreferGenderPicker:  UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    private func setupCollectionView(collectionView:  UICollectionView) {
+        collectionView.backgroundColor = UIColor.clear
+        collectionView.isUserInteractionEnabled = true
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.isPagingEnabled = false
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(TherapistCltCell.nib()
+            , forCellWithReuseIdentifier: TherapistCltCell.name)
+
+    }
+
+    // MARK: UICollectionViewDataSource
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return arrForTherapist.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TherapistCltCell.name, for: indexPath) as! TherapistCltCell
+        cell.setData(data: self.arrForTherapist[indexPath.row])
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        for i in 0..<arrForTherapist.count {
+            self.arrForTherapist[i].isSelected = false
+        }
+        self.arrForTherapist[indexPath.row].isSelected = true
+        self.cltVw.reloadData()
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = collectionView.bounds.height
+        return CGSize(width: size , height: size)
+    }
+    
+    func setTherapistData() {
+        if self.arrForTherapist.isEmpty {
+            self.vwForRepeatRequest.isHidden = true
+            self.setDialogHeight(height: 0.75)
+        } else {
+            self.cltVw.reloadData()
+            self.vwForRepeatRequest.isHidden = false
+            self.setDialogHeight(height: 0.95)
+        }
+    }
+
+}
+
+extension CustomPreferGenderPicker {
+    func getTherapistList() {
+        AppWebApi.getBookingTherapistList { (response) in
+            self.arrForTherapist.removeAll()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
+                for data in response.therapistList {
+                    self.arrForTherapist.append(data.toViewModel())
+                }
+                self.setTherapistData()
+            }
+        }
+    }
+}

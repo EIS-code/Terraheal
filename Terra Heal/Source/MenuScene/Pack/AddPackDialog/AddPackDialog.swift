@@ -13,10 +13,12 @@ class AddPackDialog: ThemeBottomDialogView {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var onBtnDoneTapped: ((_ data:AddPackageDetail) -> Void)? = nil
+    var onBtnDoneTapped: ((_ data:PackageWebService.RequestBuyPackage) -> Void)? = nil
     var selectedData:AddPackageDetail = AddPackageDetail.init()
     var arrForData: [AddPackageDetail] = []
     
+    var selectedCenter: ServiceCenterDetail? = nil
+    var requestPackage: PackageWebService.RequestBuyPackage = PackageWebService.RequestBuyPackage.init()
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -43,6 +45,7 @@ class AddPackDialog: ThemeBottomDialogView {
     func setDataSource(data:[AddPackageDetail]) {
         self.arrForData = data
         self.reloadTableDataToFitHeight(tableView: self.tableView)
+        
     }
     func select(data:AddPackageDetail) {
         self.selectedData = data
@@ -78,7 +81,7 @@ class AddPackDialog: ThemeBottomDialogView {
             Common.showAlert(message: "VALIDATION_MSG_PLEASE_SELECT_DATA".localized())
         } else {
             if self.onBtnDoneTapped != nil {
-                self.onBtnDoneTapped!(selectedData);
+                self.onBtnDoneTapped!(requestPackage);
             }
         }
     }
@@ -138,20 +141,26 @@ extension AddPackDialog : UITableViewDelegate,UITableViewDataSource {
     }
     
     func openPackSelectionDialog(index:Int) {
-        let alert: SelectPackDialog = SelectPackDialog.fromNib()
-        alert.initialize(title: "select a pack", buttonTitle: "Get This Pack", cancelButtonTitle: "BTN_CANCEL".localized())
-        alert.show(animated: true)
-        alert.onBtnCancelTapped = {
-            [weak alert, weak self] in
-            alert?.dismiss()
-            guard let self = self else { return } ; print(self)
+        if let center = selectedCenter {
+                let alert: SelectPackDialog = SelectPackDialog.fromNib()
+                alert.initialize(title: "select a pack", buttonTitle: "Get This Pack", cancelButtonTitle: "BTN_CANCEL".localized())
+                alert.wsGetPackageList(shopId: center.id)
+                alert.onBtnCancelTapped = {
+                    [weak alert, weak self] in
+                    alert?.dismiss()
+                    guard let self = self else { return } ; print(self)
+                }
+                alert.onBtnDoneTapped = {
+                    [weak alert, weak self] (data) in
+                    alert?.dismiss()
+                    guard let self = self else { return } ; print(self)
+                    self.arrForData[index].isSelected = true
+                    self.requestPackage.user_pack_id = data.id
+                    self.tableView.reloadData()
+                }
         }
-        alert.onBtnDoneTapped = {
-            [weak alert, weak self] (data) in
-            alert?.dismiss()
-            guard let self = self else { return } ; print(self)
-            self.arrForData[index].isSelected = true
-            self.tableView.reloadData()
+        else {
+            
         }
     }
     
@@ -170,10 +179,17 @@ extension AddPackDialog : UITableViewDelegate,UITableViewDataSource {
             [weak alert, weak self] (data) in
             alert?.dismiss()
             guard let self = self else { return } ; print(self)
+            
+            self.requestPackage.giver_email = data.email
+            self.requestPackage.giver_first_name = data.name
+            self.requestPackage.giver_mobile = data.mobileNumber
+            self.requestPackage.giver_message_to_recipient = data.message
+            self.requestPackage.giver_last_name = data.name
             self.arrForData[index].isSelected = true
             self.tableView.reloadData()
         }
     }
+    
     func openSendingPreferenceDialog(index:Int) {
         let alert: CustomSendingPreferenceDialog = CustomSendingPreferenceDialog.fromNib()
         alert.initialize(title: "DIALOG_TITLE_SEND_PREFERENCE".localized(), placeholder: "TXT_EMAIL".localized(), data: "", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
@@ -188,6 +204,8 @@ extension AddPackDialog : UITableViewDelegate,UITableViewDataSource {
             alert?.dismiss()
             guard let self = self else { return } ; print(self)
             self.arrForData[index].isSelected = true
+            self.requestPackage.preference_email = data.email
+            self.requestPackage.preference_email_date = data.dateToSend
             self.tableView.reloadData()
         }
     }
@@ -207,32 +225,34 @@ extension AddPackDialog : UITableViewDelegate,UITableViewDataSource {
             guard let self = self else { return } ; print(self)
             self.arrForData[index].isSelected = true
             self.tableView.reloadData()
+            self.requestPackage.recipient_email = data.email
+            self.requestPackage.recipient_last_name = data.lastname
+            self.requestPackage.recipient_mobile = data.mobileNumber
+            self.requestPackage.recipient_name = data.name
+            self.requestPackage.recipient_second_name = data.secondName
         }
     }
     
     func openCenterSelectionDialog(index:Int) {
-          
-          let alert: CustomServiceCenterSelectionDialog = CustomServiceCenterSelectionDialog.fromNib()
-          alert.initialize(title: "select center", buttonTitle: "select")
-          alert.show(animated: true)
-          alert.onBtnCancelTapped = {
-              [weak alert, weak self] in
-              alert?.dismiss()
-              guard let self = self else { return } ; print(self)
-              
-              
-          }
-          alert.onBtnDoneTapped = {
-              [weak alert, weak self] (data) in
-              alert?.dismiss()
-              guard let self = self else { return } ; print(self)
-               self.arrForData[index].isSelected = true
-                self.tableView.reloadData()
-          }
-          
-          
-      }
+        
+        let alert: CustomServiceCenterSelectionDialog = CustomServiceCenterSelectionDialog.fromNib()
+        alert.initialize(title: "select center", buttonTitle: "select")
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+            //appSingleton.myBookingPackageData.packId = 
+            
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (data) in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+            self.arrForData[index].isSelected = true
+            self.selectedCenter = data
+            self.tableView.reloadData()
+        }
+    }
 }
-
-
 

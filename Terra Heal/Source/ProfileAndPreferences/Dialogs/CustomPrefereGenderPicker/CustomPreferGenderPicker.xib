@@ -45,11 +45,45 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tfg-GV-f0f">
-                                    <rect key="frame" x="18.5" y="65.5" width="337" height="128"/>
+                                    <rect key="frame" x="18.5" y="65.5" width="337" height="26.5"/>
                                     <color key="backgroundColor" name="theme_primary_light_background"/>
                                 </tableView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fge-R1-Cxh" userLabel="vwRepeatRequest">
+                                    <rect key="frame" x="0.0" y="112" width="374" height="111.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="refer and earn terra points" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dru-fN-M9P" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="theme_dark_text"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="LCC-jQ-Mlx">
+                                            <rect key="frame" x="0.0" y="36.5" width="374" height="75"/>
+                                            <color key="backgroundColor" name="theme_background"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="LCC-jQ-Mlx" secondAttribute="height" multiplier="5:1" id="NWK-Ur-ZgZ"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="8Bq-Af-8eT">
+                                                <size key="itemSize" width="128" height="128"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                        </collectionView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="Dru-fN-M9P" firstAttribute="top" secondItem="Fge-R1-Cxh" secondAttribute="top" id="8db-1P-bkc"/>
+                                        <constraint firstItem="LCC-jQ-Mlx" firstAttribute="width" secondItem="Fge-R1-Cxh" secondAttribute="width" id="GDY-jK-UdW"/>
+                                        <constraint firstAttribute="trailing" secondItem="Dru-fN-M9P" secondAttribute="trailing" id="Jhg-IH-C4p"/>
+                                        <constraint firstItem="LCC-jQ-Mlx" firstAttribute="top" secondItem="Dru-fN-M9P" secondAttribute="bottom" constant="16" id="L8e-sP-Btg"/>
+                                        <constraint firstItem="LCC-jQ-Mlx" firstAttribute="centerX" secondItem="Fge-R1-Cxh" secondAttribute="centerX" id="WyB-Vm-Oj0"/>
+                                        <constraint firstAttribute="bottom" secondItem="LCC-jQ-Mlx" secondAttribute="bottom" id="YJ2-Wx-tLv"/>
+                                        <constraint firstItem="Dru-fN-M9P" firstAttribute="leading" secondItem="Fge-R1-Cxh" secondAttribute="leading" id="euF-9K-nkQ"/>
+                                    </constraints>
+                                </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="DialogFilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="120.5" y="213.5" width="133" height="40"/>
+                                    <rect key="frame" x="120.5" y="243.5" width="133" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                     <state key="normal" title="Sign In">
@@ -59,8 +93,8 @@
                                         <action selector="btnDoneTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="c2U-cc-MxJ"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVl-el-UJJ" customClass="DialogCancelButton" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="164" y="273.5" width="46" height="30"/>
+                                <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVl-el-UJJ" customClass="DialogCancelButton" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="164" y="303.5" width="46" height="0.0"/>
                                     <state key="normal" title="Button"/>
                                     <connections>
                                         <action selector="btnCancelTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="EhO-GW-jUf"/>
@@ -69,6 +103,7 @@
                             </subviews>
                             <constraints>
                                 <constraint firstItem="tfg-GV-f0f" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" multiplier="0.9" id="6Op-Ym-9rR"/>
+                                <constraint firstItem="Fge-R1-Cxh" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" id="OLD-nq-fJi"/>
                             </constraints>
                         </stackView>
                     </subviews>
@@ -97,17 +132,26 @@
                 <outlet property="backgroundView" destination="6ZW-DU-hOd" id="BnY-1h-4oF"/>
                 <outlet property="btnCancel" destination="BVl-el-UJJ" id="mZE-lE-kWH"/>
                 <outlet property="btnDone" destination="W3s-UH-gbE" id="Cp0-qH-ylB"/>
+                <outlet property="cltVw" destination="LCC-jQ-Mlx" id="onF-au-50O"/>
                 <outlet property="dialogHeight" destination="UZz-G9-lwW" id="aje-vE-7NP"/>
                 <outlet property="dialogView" destination="Yaj-p7-IIT" id="I5L-DG-Qv7"/>
+                <outlet property="lblRepeatRequest" destination="Dru-fN-M9P" id="aZK-Vw-EVt"/>
                 <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
                 <outlet property="tableView" destination="tfg-GV-f0f" id="Ira-PT-Aex"/>
                 <outlet property="topBarSpace" destination="Zud-Qp-ll1" id="kPe-co-Uqr"/>
+                <outlet property="vwForRepeatRequest" destination="Fge-R1-Cxh" id="0K5-FX-U83"/>
                 <outlet property="vwTopBar" destination="OsI-uf-Fb8" id="VT3-o0-WSd"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="130.58035714285714"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="theme_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_dark_text">
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -15,13 +15,7 @@ class CustomFaqDialog: ThemeBottomDialogView {
 
     var onBtnDoneTapped: (( ) -> Void)? = nil
     var selectedCampaignDetail: String = ""
-    var arrForData: [QuestionDetail] = [
-    QuestionDetail.init(fromDictionary: ["placeholder": "Test1","title": "How to book Massage?" , "value": "lorem ipsum dolor sit amet.."]),
-    QuestionDetail.init(fromDictionary: ["placeholder": "Test1","title": "How To Book gift voucher?" , "value": "lorem ipsum dolor sit amet.."]),
-    QuestionDetail.init(fromDictionary: ["placeholder": "Test1","title": "How To Book Packs?" , "value": "lorem ipsum dolor sit amet.."]),
-    QuestionDetail.init(fromDictionary: ["placeholder": "Test1","title": "How To Book Theripies?" , "value": "lorem ipsum dolor sit amet.."]),
-    QuestionDetail.init(fromDictionary: ["placeholder": "Test1","title": "How To Book my therapists?" , "value": "lorem ipsum dolor sit amet.."])
-    ]
+    var arrForData: [FAQItem] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,6 +39,7 @@ class CustomFaqDialog: ThemeBottomDialogView {
             self.btnDone.setTitle(buttonTitle, for: .normal)
             self.btnDone.isHidden = false
         }
+        self.wsgetFAqList()
         
     }
 
@@ -67,7 +62,7 @@ class CustomFaqDialog: ThemeBottomDialogView {
 
     func openFAQdetailsDialog(index: Int) {
         let alert: CustomInformationDialog = CustomInformationDialog.fromNib()
-        alert.initialize(title: arrForData[index].title, data: "FAQ_CONTENT".localized(), buttonTitle: "".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        alert.initialize(title: arrForData[index].question, data:arrForData[index].answer, buttonTitle: "".localized(), cancelButtonTitle: "BTN_BACK".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
@@ -121,4 +116,15 @@ extension CustomFaqDialog:  UITableViewDelegate, UITableViewDataSource {
         self.openFAQdetailsDialog(index: indexPath.row)
        }
 
+}
+
+extension CustomFaqDialog {
+    func wsgetFAqList() {
+        AppWebApi.getFaqList { (response) in
+            if ResponseModel.isSuccess(response: response) {
+                self.arrForData = response.dataList
+                self.tableView.reloadData()
+            }
+        }
+    }
 }

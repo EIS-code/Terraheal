@@ -25,7 +25,7 @@ class ReciepentTblCell: TableCell {
     func setData(data: ServiceDetail ) {
         self.lblName.text = data.name
         self.lblDuration.text = data.selectedDuration.time + " " + "min"
-        self.lblPrice.text = data.selectedDuration.pricing.price
+        self.lblPrice.text = data.selectedDuration.pricing.price.toCurrency()
     }
     
     override func layoutSubviews() {

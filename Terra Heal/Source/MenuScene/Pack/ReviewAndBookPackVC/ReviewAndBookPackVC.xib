@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GRANDDUKE.ttf">
+            <string>GRANDDUKERegular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReviewAndBookPackVC" customModule="Terra_Heal" customModuleProvider="target">
+            <connections>
+                <outlet property="btnBtnSubmit" destination="pgt-jB-S8G" id="qmv-bO-xsd"/>
+                <outlet property="btnCancel" destination="E7G-Iw-5HM" id="iI7-tO-vSJ"/>
+                <outlet property="btnCheckBox" destination="eOx-OC-pna" id="fze-lE-L8t"/>
+                <outlet property="btnTermsCondition" destination="FWr-Dm-Q0O" id="Rsd-OT-9zc"/>
+                <outlet property="contentVw" destination="V1y-Hd-RzF" id="YcD-6h-G0F"/>
+                <outlet property="hTblSummary" destination="Gxs-YH-FXF" id="a8D-Kt-Xk9"/>
+                <outlet property="lblAccept" destination="dBA-nL-bcH" id="7FH-8P-ccU"/>
+                <outlet property="lblSummaryDetail" destination="abc-tL-6KL" id="4wh-nl-fGd"/>
+                <outlet property="lblTitle" destination="U3i-Kh-zPt" id="MGi-cb-WX0"/>
+                <outlet property="lblTitleDetail" destination="xni-lo-a4p" id="2eb-bO-rEK"/>
+                <outlet property="lblTotal" destination="acZ-T0-BmQ" id="eai-3F-hmQ"/>
+                <outlet property="lblTotalValue" destination="afg-nL-fH4" id="ct5-7j-TKx"/>
+                <outlet property="scrVw" destination="202-UN-nPR" id="phg-1q-XPl"/>
+                <outlet property="tblVwForSummary" destination="gHm-PQ-rT5" id="RI6-0A-quC"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="vwBar" destination="56A-4g-TbH" id="VL8-Eo-COL"/>
+                <outlet property="vwPayment" destination="qFc-pC-iel" id="137-MU-4gt"/>
+                <outlet property="vwSummaryDetailFooter" destination="PHN-ec-f6L" id="6IK-qS-r70"/>
+                <outlet property="vwSummaryDetailHeader" destination="yGo-FM-auI" id="EST-2a-KCZ"/>
+                <outlet property="vwTermsAndCondition" destination="a4E-aE-Kjz" id="F3Q-Q6-Cy1"/>
+                <outlet property="vwTotalBg" destination="UTP-wq-q7w" id="MsC-qJ-9ui"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="202-UN-nPR">
+                    <rect key="frame" x="0.0" y="125.5" width="414" height="736.5"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1y-Hd-RzF">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="736.5"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5sV-mz-pUv" userLabel="Stack View - main">
+                                    <rect key="frame" x="16" y="16" width="382" height="704.5"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yGo-FM-auI" userLabel="vwSummaryDetailHeader">
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="60.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abc-tL-6KL" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="20" width="362" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="theme_dark_text"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="abc-tL-6KL" firstAttribute="leading" secondItem="yGo-FM-auI" secondAttribute="leading" id="px8-Id-06F"/>
+                                                <constraint firstAttribute="trailing" secondItem="abc-tL-6KL" secondAttribute="trailing" constant="20" id="vEb-Gq-jiW"/>
+                                                <constraint firstItem="abc-tL-6KL" firstAttribute="top" secondItem="yGo-FM-auI" secondAttribute="top" constant="20" id="x7z-14-QKD"/>
+                                                <constraint firstItem="abc-tL-6KL" firstAttribute="centerY" secondItem="yGo-FM-auI" secondAttribute="centerY" id="xTi-Lq-ELQ"/>
+                                            </constraints>
+                                        </view>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="gHm-PQ-rT5">
+                                            <rect key="frame" x="0.0" y="60.5" width="382" height="20"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="Gxs-YH-FXF"/>
+                                            </constraints>
+                                        </tableView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PHN-ec-f6L" userLabel="vwSummaryDetailFooter">
+                                            <rect key="frame" x="0.0" y="80.5" width="382" height="79.5"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="A2x-b6-ngG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="79.5"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="UTP-wq-q7w" userLabel="vwTotal">
+                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="79.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="add reciepent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acZ-T0-BmQ" userLabel="lbltotal" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                                                    <rect key="frame" x="16" y="16" width="228" height="47.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" name="theme_dark_text"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add reciepent" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afg-nL-fH4" userLabel="lblTotalValue" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                                                    <rect key="frame" x="260" y="29.5" width="106" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" name="theme_dark_text"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" name="theme_primary_light_background"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="afg-nL-fH4" secondAttribute="trailing" constant="16" id="Uke-nw-ZBa" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                                                            <real key="value" value="16"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </constraint>
+                                                                <constraint firstItem="acZ-T0-BmQ" firstAttribute="leading" secondItem="UTP-wq-q7w" secondAttribute="leading" constant="16" id="Zjg-C8-64v" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                                                            <real key="value" value="16"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </constraint>
+                                                                <constraint firstAttribute="bottom" secondItem="acZ-T0-BmQ" secondAttribute="bottom" constant="16" id="dRk-VI-2Fg" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                                                            <real key="value" value="16"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </constraint>
+                                                                <constraint firstItem="acZ-T0-BmQ" firstAttribute="centerY" secondItem="UTP-wq-q7w" secondAttribute="centerY" id="hT6-h6-EAQ"/>
+                                                                <constraint firstItem="acZ-T0-BmQ" firstAttribute="top" secondItem="UTP-wq-q7w" secondAttribute="top" constant="16" id="oXG-CI-g4H" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                                                            <real key="value" value="16"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </constraint>
+                                                                <constraint firstItem="afg-nL-fH4" firstAttribute="centerY" secondItem="UTP-wq-q7w" secondAttribute="centerY" id="owF-np-T57"/>
+                                                                <constraint firstItem="afg-nL-fH4" firstAttribute="leading" secondItem="acZ-T0-BmQ" secondAttribute="trailing" constant="16" id="yhC-FN-Qp7" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                                                            <real key="value" value="16"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </constraint>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="A2x-b6-ngG" firstAttribute="leading" secondItem="PHN-ec-f6L" secondAttribute="leading" id="99m-au-DBS"/>
+                                                <constraint firstAttribute="bottom" secondItem="A2x-b6-ngG" secondAttribute="bottom" id="Yhi-CP-5lm"/>
+                                                <constraint firstItem="A2x-b6-ngG" firstAttribute="top" secondItem="PHN-ec-f6L" secondAttribute="top" id="ciu-ej-1Cm"/>
+                                                <constraint firstAttribute="trailing" secondItem="A2x-b6-ngG" secondAttribute="trailing" id="yPg-7y-qiN"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a4E-aE-Kjz" userLabel="vwTerms&amp;Condition">
+                                            <rect key="frame" x="0.0" y="160" width="382" height="50"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dv4-1I-ohg">
+                                                    <rect key="frame" x="0.0" y="8" width="136.5" height="34"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOx-OC-pna" customClass="JDCheckboxButton" customModule="Terra_Heal" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="eOx-OC-pna" secondAttribute="height" multiplier="15:15" id="2LJ-z8-yNw"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <action selector="btnCheckBoxTapped:" destination="-1" eventType="touchUpInside" id="bVu-Q2-qiE"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="accept" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBA-nL-bcH" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                                            <rect key="frame" x="44" y="0.0" width="52.5" height="34"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" name="theme_dark_text"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWr-Dm-Q0O" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
+                                                            <rect key="frame" x="106.5" y="0.0" width="30" height="34"/>
+                                                            <state key="normal">
+                                                                <color key="titleColor" name="theme_dark_text"/>
+                                                            </state>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="Dv4-1I-ohg" firstAttribute="centerY" secondItem="a4E-aE-Kjz" secondAttribute="centerY" id="ABN-dM-oP9"/>
+                                                <constraint firstItem="Dv4-1I-ohg" firstAttribute="top" secondItem="a4E-aE-Kjz" secondAttribute="top" constant="8" id="b7y-GD-Uap"/>
+                                                <constraint firstItem="Dv4-1I-ohg" firstAttribute="leading" secondItem="a4E-aE-Kjz" secondAttribute="leading" id="lPe-Y3-Qhd"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qFc-pC-iel" userLabel="vwPayment">
+                                            <rect key="frame" x="0.0" y="210" width="382" height="494.5"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgt-jB-S8G" customClass="FilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
+                                                    <rect key="frame" x="102.5" y="16" width="177" height="60"/>
+                                                    <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
+                                                    <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                                    <state key="normal" title="Pre payment">
+                                                        <color key="titleColor" name="theme_primary"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onBtnSubmitTapped:" destination="-1" eventType="touchUpInside" id="5Us-yz-zLA"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="pgt-jB-S8G" firstAttribute="top" secondItem="qFc-pC-iel" secondAttribute="top" constant="16" id="aLI-7r-JxU"/>
+                                                <constraint firstItem="pgt-jB-S8G" firstAttribute="centerX" secondItem="qFc-pC-iel" secondAttribute="centerX" id="nEZ-8V-HqE"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="5sV-mz-pUv" secondAttribute="trailing" constant="16" id="KWH-Eh-kJ4" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                            <real key="value" value="16"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </constraint>
+                                <constraint firstAttribute="bottom" secondItem="5sV-mz-pUv" secondAttribute="bottom" constant="16" id="Kaw-Ib-i2q" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                            <real key="value" value="16"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </constraint>
+                                <constraint firstItem="5sV-mz-pUv" firstAttribute="leading" secondItem="V1y-Hd-RzF" secondAttribute="leading" constant="16" id="kPD-wt-dV3" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                            <real key="value" value="16"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </constraint>
+                                <constraint firstItem="5sV-mz-pUv" firstAttribute="top" secondItem="V1y-Hd-RzF" secondAttribute="top" constant="16" id="kzU-lo-GmD" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                            <real key="value" value="16"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </constraint>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="V1y-Hd-RzF" firstAttribute="top" secondItem="202-UN-nPR" secondAttribute="top" id="ESA-9v-yrQ"/>
+                        <constraint firstAttribute="bottom" secondItem="V1y-Hd-RzF" secondAttribute="bottom" id="TaA-wf-kBZ"/>
+                        <constraint firstItem="V1y-Hd-RzF" firstAttribute="height" secondItem="202-UN-nPR" secondAttribute="height" priority="999" id="VtY-sg-TL9"/>
+                        <constraint firstItem="V1y-Hd-RzF" firstAttribute="width" secondItem="202-UN-nPR" secondAttribute="width" id="jiC-Oo-F4P"/>
+                        <constraint firstItem="V1y-Hd-RzF" firstAttribute="leading" secondItem="202-UN-nPR" secondAttribute="leading" id="k87-bI-caz"/>
+                        <constraint firstAttribute="trailing" secondItem="V1y-Hd-RzF" secondAttribute="trailing" id="m05-dS-vdi"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="xZ7-nL-eMT"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="0ZU-19-ame"/>
+                </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56A-4g-TbH" userLabel="vwBar">
+                    <rect key="frame" x="0.0" y="44" width="414" height="81.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3i-Kh-zPt" userLabel="lblTitle" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="20" y="20" width="322.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" name="theme_dark_text"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xni-lo-a4p" userLabel="lblDetail" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="20" y="45.5" width="43" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" name="theme_hint_text"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7G-Iw-5HM" customClass="CancelButton" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="352.5" y="20" width="41.5" height="41.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="E7G-Iw-5HM" secondAttribute="height" multiplier="1:1" id="hDm-8n-dSb"/>
+                            </constraints>
+                            <state key="normal" image="asset-cross"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableFloating" value="NO"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="btnCloseTapped:" destination="-1" eventType="touchUpInside" id="cyt-D8-lOc"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="U3i-Kh-zPt" firstAttribute="leading" secondItem="56A-4g-TbH" secondAttribute="leading" constant="20" id="DT3-Vz-XT7"/>
+                        <constraint firstItem="xni-lo-a4p" firstAttribute="top" secondItem="U3i-Kh-zPt" secondAttribute="bottom" constant="5" id="Ox3-hv-GyO"/>
+                        <constraint firstItem="E7G-Iw-5HM" firstAttribute="leading" secondItem="U3i-Kh-zPt" secondAttribute="trailing" constant="10" id="Ual-bf-mQa"/>
+                        <constraint firstItem="E7G-Iw-5HM" firstAttribute="width" secondItem="56A-4g-TbH" secondAttribute="width" multiplier="0.1" id="V2x-yS-z1I"/>
+                        <constraint firstAttribute="trailing" secondItem="E7G-Iw-5HM" secondAttribute="trailing" constant="20" id="VJn-Gg-zsh"/>
+                        <constraint firstItem="U3i-Kh-zPt" firstAttribute="top" secondItem="56A-4g-TbH" secondAttribute="top" constant="20" id="WpV-61-39f"/>
+                        <constraint firstItem="E7G-Iw-5HM" firstAttribute="top" secondItem="56A-4g-TbH" secondAttribute="top" constant="20" id="bsq-7n-0c5"/>
+                        <constraint firstItem="xni-lo-a4p" firstAttribute="leading" secondItem="U3i-Kh-zPt" secondAttribute="leading" id="cQF-TY-dPg"/>
+                        <constraint firstItem="E7G-Iw-5HM" firstAttribute="centerY" secondItem="56A-4g-TbH" secondAttribute="centerY" id="hvW-hT-Uc1"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Pha-Yw-JZd" firstAttribute="top" secondItem="56A-4g-TbH" secondAttribute="top" id="N71-Mr-ACY"/>
+                <constraint firstItem="56A-4g-TbH" firstAttribute="leading" secondItem="Pha-Yw-JZd" secondAttribute="leading" id="aHB-q9-9xW"/>
+                <constraint firstItem="202-UN-nPR" firstAttribute="bottom" secondItem="Pha-Yw-JZd" secondAttribute="bottom" id="eQV-Km-hTl"/>
+                <constraint firstItem="202-UN-nPR" firstAttribute="width" secondItem="Pha-Yw-JZd" secondAttribute="width" id="hCH-oh-XCc"/>
+                <constraint firstItem="202-UN-nPR" firstAttribute="top" secondItem="56A-4g-TbH" secondAttribute="bottom" id="hPz-iE-CSl"/>
+                <constraint firstItem="Pha-Yw-JZd" firstAttribute="trailing" secondItem="56A-4g-TbH" secondAttribute="trailing" id="kmO-ug-e5o"/>
+                <constraint firstItem="202-UN-nPR" firstAttribute="centerX" secondItem="Pha-Yw-JZd" secondAttribute="centerX" id="svF-KJ-rUs"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Pha-Yw-JZd"/>
+            <point key="canvasLocation" x="129" y="125"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="asset-cross" width="44" height="44"/>
+        <namedColor name="theme_dark_text">
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_hint_text">
+            <color red="0.69800001382827759" green="0.70200002193450928" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary">
+            <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary_light_background">
+            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

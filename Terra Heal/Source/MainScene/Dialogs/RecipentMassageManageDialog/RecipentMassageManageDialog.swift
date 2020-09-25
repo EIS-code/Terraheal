@@ -77,7 +77,7 @@ class RecipentMassageManageDialog: ThemeBottomDialogView {
                 total = total + (service.selectedDuration.pricing.price).toDouble
             }
         }
-        self.lblTotalValue.text = total.toString()
+        self.lblTotalValue.text = total.toString().toCurrency()
     }
     
     func openRecipientSelectionDialog() {

@@ -63,7 +63,7 @@ class ReviewAndBookVC: BaseVC {
     
     var arrForData: [BookingInfo] = appSingleton.myBookingData.booking_info
     var arrForSummaryData: [SummaryValueDetail] = SummaryValueDetail.getDemoArray()
-    
+    var total: Double = 0.0
     // MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -193,7 +193,7 @@ class ReviewAndBookVC: BaseVC {
             [weak paymentPercentageDialog, weak self]  (button) in
             guard let self = self else { return } ; print(self)
             paymentPercentageDialog?.dismiss()
-            Common.appDelegate.loadPaymentReferenceVC(navigaionVC: self.navigationController, fromVC:self)
+            Common.appDelegate.loadPaymentReferenceVC(amount:self.total, navigaionVC: self.navigationController, fromVC:self)
         }
     }
     
@@ -241,7 +241,7 @@ class ReviewAndBookVC: BaseVC {
     }
     
     func calculateTotal() {
-        var total: Double = 0.0
+        total = 0.0
         for  data in arrForData {
             for service in data.services {
                 total = total + (service.selectedDuration.pricing.price).toDouble

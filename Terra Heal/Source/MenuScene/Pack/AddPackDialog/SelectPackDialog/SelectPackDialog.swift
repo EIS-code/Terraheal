@@ -15,7 +15,8 @@ class SelectPackDialog: ThemeBottomDialogView {
     
     var onBtnDoneTapped: ((_ data:PackageDetail) -> Void)? = nil
     var selectedData:PackageDetail = PackageDetail.init()
-    var arrForData: [PackageDetail] = PackageDetail.getDemoArray()
+    var arrForData: [PackageDetail] = []
+    var arrForOriginalData: [Package] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,7 +51,14 @@ class SelectPackDialog: ThemeBottomDialogView {
             }
         }
         self.reloadTableDataToFitHeight(tableView: self.tableView)
-        
+    }
+    
+    func setDataSource(dataList:[PackageDetail]) {
+        self.arrForData.removeAll()
+        for data in dataList {
+            self.arrForData.append(data)
+        }
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
     }
     
     override func initialSetup() {
@@ -86,7 +94,7 @@ extension SelectPackDialog : UITableViewDelegate,UITableViewDataSource {
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-tableView.backgroundColor = .clear
+        tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 60
@@ -114,8 +122,10 @@ tableView.backgroundColor = .clear
         }
         self.arrForData[indexPath.row].isSelected = true
         self.selectedData = self.arrForData[indexPath.row]
+        
         tableView.reloadData()
         if self.onBtnDoneTapped != nil {
+            appSingleton.purchasePackage = self.arrForOriginalData[indexPath.row]
             self.onBtnDoneTapped!(selectedData);
         }
     }
@@ -126,3 +136,22 @@ tableView.backgroundColor = .clear
 
 
 
+extension SelectPackDialog {
+    func wsGetPackageList(shopId:String) {
+        let reuest: PackageWebService.RequestPackageList =
+            PackageWebService.RequestPackageList.init(shop_id:"5")
+        AppWebApi.getPackageList(params: reuest) { (response) in
+            self.arrForData.removeAll()
+            if ResponseModel.isSuccess(response: response) {
+                self.arrForOriginalData = response.dataList
+                for data in self.arrForOriginalData {
+                    self.arrForData.append(data.toViewModel())
+                }
+                self.show(animated: true)
+            } else {
+                Common.showAlert(message: "No Any Package Available for this center")
+            }
+            
+        }
+    }
+}

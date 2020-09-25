@@ -81,13 +81,15 @@ class AddGiftVoucherVC: BaseVC {
     @IBOutlet weak var stkSubTotal: UIStackView!
     
     var arrForData: [AddVouncherMenuDetail] = [
-        AddVouncherMenuDetail(type: .Location, value: "".localized(),  isSelected: true),
+        AddVouncherMenuDetail(type: .Location, value: "".localized(),  isSelected: false),
         AddVouncherMenuDetail(type: .Service, value: "".localized(),  isSelected: false),
         AddVouncherMenuDetail(type: .Design, value: "".localized(),  isSelected: false),
         AddVouncherMenuDetail(type: .RecipientDetail, value: "".localized(),  isSelected: false),
         AddVouncherMenuDetail(type: .GiverDetail, value: "".localized(),  isSelected: false),
         AddVouncherMenuDetail(type: .SendingPreference, value: "".localized(),  isSelected: false),
     ]
+    
+    var requestToPurchageGiftVoucher: VoucherWebService.RequestPurchageVoucher = VoucherWebService.RequestPurchageVoucher.init()
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -144,9 +146,20 @@ class AddGiftVoucherVC: BaseVC {
         _ = (self.navigationController as? NC)?.popVC()
     }
     @IBAction func btnPreviewTapped(_ sender: Any) {
-        self.openPreviewDialog()
+        if self.checkValidation() {
+            self.openPreviewDialog()
+        }
     }
 
+    func checkValidation() -> Bool {
+        let validatationMessage = self.requestToPurchageGiftVoucher.validate()
+        if validatationMessage.isEmpty() {
+            return true
+        } else {
+            Common.showAlert(message: validatationMessage)
+            return false
+        }
+    }
 }
 
 
@@ -215,7 +228,8 @@ extension AddGiftVoucherVC {
             [weak alert, weak self] (data) in
             alert?.dismiss()
             guard let self = self else { return } ; print(self)
-            Common.appDelegate.loadPaymentReferenceVC(navigaionVC: self.navigationController, fromVC:self)
+            appSingleton.myBuyGiftVoucherData = self.requestToPurchageGiftVoucher
+            Common.appDelegate.loadPaymentReferenceVC(amount:appSingleton.myBuyGiftVoucherData.amount.toDouble, navigaionVC: self.navigationController, fromVC:self)
         }
     }
     
@@ -234,6 +248,14 @@ extension AddGiftVoucherVC {
             guard let self = self else { return } ; print(self)
             self.arrForData[index].isSelected = true
             self.arrForData[index].value = "details filled"
+            
+            
+            self.requestToPurchageGiftVoucher.giver_email = data.email
+            self.requestToPurchageGiftVoucher.giver_first_name = data.name
+            self.requestToPurchageGiftVoucher.giver_mobile = data.mobileNumber
+            self.requestToPurchageGiftVoucher.giver_message_to_recipient = data.message
+            self.requestToPurchageGiftVoucher.giver_last_name = data.name
+            
             self.tableView.reloadData()
         }
     }
@@ -248,12 +270,12 @@ extension AddGiftVoucherVC {
             guard let self = self else { return } ; print(self)
         }
         alert.onBtnDoneTapped = {
-            [weak alert, weak self]  in
+            [weak alert, weak self] (data,id) in
             alert?.dismiss()
             guard let self = self else { return } ; print(self)
-            
             self.arrForData[index].isSelected = true
-            self.arrForData[index].value = "details filled"
+            self.arrForData[index].value = data.name
+            self.requestToPurchageGiftVoucher.design_id = id
             self.tableView.reloadData()
         }
     }
@@ -271,7 +293,8 @@ extension AddGiftVoucherVC {
             [weak alert, weak self] (data) in
             alert?.dismiss()
             guard let self = self else { return } ; print(self)
-            
+            self.requestToPurchageGiftVoucher.preference_email = data.email
+            self.requestToPurchageGiftVoucher.preference_email_date = data.dateToSend
             self.arrForData[index].isSelected = true
             self.arrForData[index].value = "details filled"
             self.tableView.reloadData()
@@ -294,6 +317,12 @@ extension AddGiftVoucherVC {
             
             self.arrForData[index].isSelected = true
             self.arrForData[index].value = "details filled"
+            self.requestToPurchageGiftVoucher.recipient_email = data.email
+            self.requestToPurchageGiftVoucher.recipient_last_name = data.lastname
+            self.requestToPurchageGiftVoucher.recipient_mobile = data.mobileNumber
+            self.requestToPurchageGiftVoucher.recipient_name = data.name
+            self.requestToPurchageGiftVoucher.recipient_second_name = data.secondName
+            
             self.tableView.reloadData()
         }
     }
@@ -316,8 +345,7 @@ extension AddGiftVoucherVC {
             self.arrForData[index].isSelected = true
             self.arrForData[index].value = data.name
             self.tableView.reloadData()
-            
-            
+            self.requestToPurchageGiftVoucher.shop_id = data.id
         }
     }
     
@@ -334,14 +362,20 @@ extension AddGiftVoucherVC {
             [weak serviceSelectionDialog, weak self] (data) in
             guard let self = self else { return } ; print(self)
             serviceSelectionDialog?.dismiss()
-            self.updateSubTotalView()
+            
             self.arrForData[index].isSelected = true
             self.arrForData[index].value = data.name
+            self.requestToPurchageGiftVoucher.massage_id = data.id
+            self.requestToPurchageGiftVoucher.amount = data.selectedDuration.pricing.price
+            self.updateSubTotalView()
             self.tableView.reloadData()
         }
     }
     
     func updateSubTotalView() {
+        self.lblSubtotalValue.setTextWithAnimation(text: self.requestToPurchageGiftVoucher.amount.toCurrency())
         self.stkSubTotal.visible()
+        
     }
 }
+

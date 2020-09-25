@@ -21,30 +21,29 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mwl-TA-aZ6" userLabel="vwForBackground">
                         <rect key="frame" x="8" y="8" width="475" height="120"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEL-Tl-04Y" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="20" y="29" width="326.5" height="62"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEL-Tl-04Y" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <rect key="frame" x="20" y="39.5" width="85" height="41"/>
                                 <string key="text">five 60 min
 massages</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="theme_primary"/>
+                                <color key="textColor" name="theme_dark_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="180$" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQd-k8-ev6" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="412" y="29" width="39" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="180$" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQd-k8-ev6" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <rect key="frame" x="412" y="39.5" width="39" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="theme_primary"/>
+                                <color key="textColor" name="theme_dark_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="save 220$" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCH-Ym-3qP" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="370.5" y="59.5" width="80.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="save 220$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCH-Ym-3qP" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <rect key="frame" x="370.5" y="70" width="80.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="theme_green"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check" translatesAutoresizingMaskIntoConstraints="NO" id="OfO-kb-EpN">
-                                <rect key="frame" x="450" y="5" width="20" height="20"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="asset-check" translatesAutoresizingMaskIntoConstraints="NO" id="OfO-kb-EpN">
+                                <rect key="frame" x="439.5" y="5" width="30.5" height="30.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="TC4-tc-4Tu"/>
                                     <constraint firstAttribute="width" secondItem="OfO-kb-EpN" secondAttribute="height" multiplier="1:1" id="YES-n3-jiz"/>
                                 </constraints>
                             </imageView>
@@ -53,7 +52,7 @@ massages</string>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="OfO-kb-EpN" secondAttribute="trailing" constant="5" id="1aZ-Y9-PcA"/>
                             <constraint firstItem="pEL-Tl-04Y" firstAttribute="centerY" secondItem="mwl-TA-aZ6" secondAttribute="centerY" id="84f-jV-KYr"/>
-                            <constraint firstItem="TCH-Ym-3qP" firstAttribute="leading" secondItem="pEL-Tl-04Y" secondAttribute="trailing" constant="24" id="9fD-if-X3c" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                            <constraint firstItem="TCH-Ym-3qP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pEL-Tl-04Y" secondAttribute="trailing" priority="998" constant="24" id="9fD-if-X3c" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                                         <real key="value" value="24"/>
@@ -79,6 +78,7 @@ massages</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </constraint>
+                            <constraint firstItem="VQd-k8-ev6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pEL-Tl-04Y" secondAttribute="trailing" priority="998" constant="24" id="riz-HX-mzb"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -131,11 +131,11 @@ massages</string>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="theme_dark_text">
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="theme_green">
             <color red="0.0" green="1" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="theme_primary">
-            <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

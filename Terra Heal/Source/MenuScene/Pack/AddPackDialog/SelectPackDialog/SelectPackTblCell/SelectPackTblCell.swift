@@ -39,8 +39,8 @@ class SelectPackTblCell: SelectionBorderTableCell {
 
     func setData(data: PackageDetail ) {
         self.lblName.text = data.name
-        self.lblPrice.text = data.price
-        self.lblDiscount.text = data.price
+        self.lblPrice.text = data.price.toCurrency(places: 0)
+        self.lblDiscount.text = data.price.toCurrency(places: 0)
         super.setData(title: "", isSelected: data.isSelected)
     }
 

@@ -25,7 +25,7 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V39-84-TsB">
-                    <rect key="frame" x="0.0" y="118" width="320" height="450"/>
+                    <rect key="frame" x="0.0" y="68" width="320" height="500"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uua-D8-Rcy">
                             <rect key="frame" x="140" y="10" width="40" height="5"/>
@@ -79,21 +79,21 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dJ-7Q-f2w" userLabel="vwMap" customClass="GMSMapView">
-                            <rect key="frame" x="0.0" y="115.5" width="320" height="113.5"/>
+                            <rect key="frame" x="0.0" y="115.5" width="320" height="143.5"/>
                             <color key="backgroundColor" name="theme_primary_border"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WOD-5m-xOM" userLabel="ViewService">
-                            <rect key="frame" x="0.0" y="150" width="320" height="300"/>
+                            <rect key="frame" x="0.0" y="200" width="320" height="300"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7EO-xA-RgX" userLabel="vwServiceDialog">
-                                    <rect key="frame" x="0.0" y="39" width="320" height="261"/>
+                                    <rect key="frame" x="0.0" y="19" width="320" height="281"/>
                                     <color key="backgroundColor" name="theme_dialog_background"/>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iDl-ql-GM7" userLabel="stk-shop-detail">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="270"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center" translatesAutoresizingMaskIntoConstraints="NO" id="qE7-YW-YVL" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="121" y="0.0" width="78" height="78"/>
+                                            <rect key="frame" x="141" y="0.0" width="38" height="38"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="qE7-YW-YVL" secondAttribute="height" multiplier="1:1" id="lgQ-CR-ppo"/>
                                             </constraints>
@@ -104,7 +104,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="m6e-n7-8qE">
-                                            <rect key="frame" x="0.0" y="78" width="320" height="192"/>
+                                            <rect key="frame" x="0.0" y="38" width="320" height="192"/>
                                             <color key="backgroundColor" name="theme_dialog_background"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="m6e-n7-8qE" secondAttribute="height" multiplier="5:3" id="qVw-Su-sVV"/>
@@ -127,7 +127,6 @@
                                 <constraint firstAttribute="trailing" secondItem="7EO-xA-RgX" secondAttribute="trailing" id="1Sb-59-0QL"/>
                                 <constraint firstItem="iDl-ql-GM7" firstAttribute="width" secondItem="WOD-5m-xOM" secondAttribute="width" id="4kg-dY-70v"/>
                                 <constraint firstAttribute="bottom" secondItem="7EO-xA-RgX" secondAttribute="bottom" id="9Ix-kw-oAA"/>
-                                <constraint firstAttribute="bottom" secondItem="iDl-ql-GM7" secondAttribute="bottom" constant="30" id="NqC-Pw-JIp"/>
                                 <constraint firstItem="7EO-xA-RgX" firstAttribute="bottom" secondItem="WOD-5m-xOM" secondAttribute="bottom" id="RBa-tf-9BR"/>
                                 <constraint firstItem="iDl-ql-GM7" firstAttribute="centerX" secondItem="WOD-5m-xOM" secondAttribute="centerX" id="UK8-6k-KQV"/>
                                 <constraint firstItem="7EO-xA-RgX" firstAttribute="leading" secondItem="WOD-5m-xOM" secondAttribute="leading" id="mFD-lx-76V"/>
@@ -137,7 +136,7 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="DialogFilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="93.5" y="390" width="133" height="40"/>
+                            <rect key="frame" x="93.5" y="440" width="133" height="40"/>
                             <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                             <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                             <state key="normal" title="Sign In">
@@ -153,7 +152,7 @@
                         <constraint firstItem="W3s-UH-gbE" firstAttribute="centerX" secondItem="V39-84-TsB" secondAttribute="centerX" id="1Rv-om-N7e"/>
                         <constraint firstItem="A83-Vr-gnC" firstAttribute="width" secondItem="V39-84-TsB" secondAttribute="width" multiplier="0.8" id="1lY-qx-1Ej"/>
                         <constraint firstItem="eho-4J-xGz" firstAttribute="top" secondItem="Uua-D8-Rcy" secondAttribute="bottom" constant="10" id="6GO-dK-cGj"/>
-                        <constraint firstAttribute="height" constant="450" id="BAW-Ip-K82"/>
+                        <constraint firstAttribute="height" constant="500" id="BAW-Ip-K82"/>
                         <constraint firstItem="9dJ-7Q-f2w" firstAttribute="top" secondItem="A83-Vr-gnC" secondAttribute="bottom" constant="10" id="LZJ-Xx-djQ"/>
                         <constraint firstAttribute="bottom" secondItem="WOD-5m-xOM" secondAttribute="bottom" id="SKi-Ff-Jbf"/>
                         <constraint firstItem="WOD-5m-xOM" firstAttribute="centerX" secondItem="V39-84-TsB" secondAttribute="centerX" id="TLP-ST-qZD"/>
@@ -165,6 +164,7 @@
                         <constraint firstItem="7EO-xA-RgX" firstAttribute="top" secondItem="9dJ-7Q-f2w" secondAttribute="bottom" constant="-40" id="rsY-Ej-eG4"/>
                         <constraint firstItem="9dJ-7Q-f2w" firstAttribute="width" secondItem="V39-84-TsB" secondAttribute="width" id="tVt-cL-Or2"/>
                         <constraint firstItem="Uua-D8-Rcy" firstAttribute="centerX" secondItem="V39-84-TsB" secondAttribute="centerX" id="v21-0Y-WYC"/>
+                        <constraint firstItem="W3s-UH-gbE" firstAttribute="top" secondItem="iDl-ql-GM7" secondAttribute="bottom" constant="10" id="whE-GT-QbX"/>
                         <constraint firstItem="eho-4J-xGz" firstAttribute="width" secondItem="V39-84-TsB" secondAttribute="width" multiplier="0.8" id="x6r-FV-hEc"/>
                         <constraint firstItem="A83-Vr-gnC" firstAttribute="top" secondItem="eho-4J-xGz" secondAttribute="bottom" constant="10" id="zc8-Vh-iuv"/>
                     </constraints>
@@ -179,7 +179,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="V39-84-TsB" secondAttribute="trailing" id="dUH-Mq-8NY"/>
                 <constraint firstItem="V39-84-TsB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kCB-jR-Feo"/>
                 <constraint firstItem="V39-84-TsB" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="pVs-FU-SqG"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="V39-84-TsB" secondAttribute="bottom" id="rX8-mU-2eq"/>
+                <constraint firstAttribute="bottom" secondItem="V39-84-TsB" secondAttribute="bottom" id="rX8-mU-2eq"/>
                 <constraint firstAttribute="bottom" secondItem="6ZW-DU-hOd" secondAttribute="bottom" id="xcn-ZA-5s5"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -206,7 +206,7 @@
     </objects>
     <resources>
         <image name="asset-arrow-right" width="7.5" height="13.5"/>
-        <image name="asset-center" width="50" height="50"/>
+        <image name="asset-center" width="62" height="62"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

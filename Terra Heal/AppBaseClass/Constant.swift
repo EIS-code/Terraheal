@@ -115,6 +115,8 @@ struct DateFormat {
     static let BookingDateSelection = "dd MMM yyyy"
     static let BookingTimeSelection = "HH:mm"
     static let ReviewBookingDateDisplay = "HH:mm | EEE, dd MMM yyyy"
+    static let WEB = "yyyy-MM-ddThh:mm:HH.0000Z"
+    static let GiftVoucher = "EEE, MMM dd, yyyy"
     static let DD_MM_YYYY = "dd/MM/YYYY"
     static let DOB = "dd MMM yyyy"
     static let check = "✓"

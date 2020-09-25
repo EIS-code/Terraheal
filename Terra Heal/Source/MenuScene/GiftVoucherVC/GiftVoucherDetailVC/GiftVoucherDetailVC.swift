@@ -16,7 +16,7 @@ class GiftVoucherDetailVC: BaseVC {
     @IBOutlet weak var lblSubHeader: ThemeLabel!
     @IBOutlet weak var lblPrice: ThemeLabel!
     @IBOutlet weak var lblMassage: ThemeLabel!
-    var giftVoucherDetail: GiftVoucherDetail? = nil
+    var giftVoucherDetail: Voucher? = nil
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -72,13 +72,13 @@ class GiftVoucherDetailVC: BaseVC {
         self.lblMassage.setFont(name: FontName.Bold, size: FontSize.subHeader)
     }
 
-    func setData(data: GiftVoucherDetail) {
+    func setData(data: Voucher) {
         self.setTitle(title: "GIFT_VOUCHER_NO".localized() + " : " + data.id)
-        self.lblHeader.text = data.header
-        self.lblSubHeader.text = data.subHeader
-        self.lblDescription.text = data.body
-        self.lblPrice.text = data.price
-        self.lblMassage.text = data.massage
+        self.lblHeader.text =  data.getHeader()
+        self.lblSubHeader.text = ""
+        self.lblDescription.text = ""
+        self.lblPrice.text = data.amount.toCurrency()
+        self.lblMassage.text = data.giverMessageToRecipient
     }
 
 }

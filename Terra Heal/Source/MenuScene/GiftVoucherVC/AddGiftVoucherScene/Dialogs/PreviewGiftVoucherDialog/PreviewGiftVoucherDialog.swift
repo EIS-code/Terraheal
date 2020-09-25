@@ -19,15 +19,15 @@ class PreviewGiftVoucherDialog: ThemeBottomDialogView {
     @IBOutlet weak var lblPrice: ThemeLabel!
     @IBOutlet weak var lblMassage: ThemeLabel!
     
-    var onBtnDoneTapped: ((_ data: GiftVoucherDetail ) -> Void)? = nil
-    var data: GiftVoucherDetail = GiftVoucherDetail()
+    var onBtnDoneTapped: ((_ data: Voucher ) -> Void)? = nil
+    var data: Voucher = Voucher()
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     
-    func initialize(title:String, data:GiftVoucherDetail = GiftVoucherDetail(), buttonTitle:String,cancelButtonTitle:String) {
+    func initialize(title:String, data:Voucher = Voucher(), buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
         self.lblTitle.text = data.id
         self.setData(data: data)
@@ -45,12 +45,13 @@ class PreviewGiftVoucherDialog: ThemeBottomDialogView {
         }
     }
     
-    func setData(data: GiftVoucherDetail){
-        self.lblHeader.text = data.header
-        self.lblSubHeader.text = data.subHeader
-        self.lblDescription.text = data.body
-        self.lblPrice.text = data.price
-        self.lblMassage.text = data.massage
+    func setData(data: Voucher){
+        self.lblHeader.text = data.getHeader()
+        //self.lblSubHeader.text = data.subHeader
+        //self.lblDescription.text = data.body
+        self.lblPrice.text = data.amount.toCurrency()
+        self.lblMassage.text = data.giverMessageToRecipient
+        
     }
     override func initialSetup() {
         super.initialSetup()

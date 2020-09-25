@@ -21,10 +21,10 @@ class FaqQuestionCell: TableCell {
           self.txtQuestion.setFont(name: FontName.Regular, size: FontSize.detail)
       }
 
-      func setData(data: QuestionDetail ) {
-          self.lblTitle.text = data.title
-          self.txtQuestion.placeholder = data.placeholder
-          self.txtQuestion.text = data.value
+      func setData(data: FAQItem ) {
+          self.lblTitle.text = data.question
+          self.txtQuestion.placeholder = data.question
+          self.txtQuestion.text = data.answer
       }
 
       override func layoutSubviews() {

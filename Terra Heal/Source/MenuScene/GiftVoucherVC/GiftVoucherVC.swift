@@ -7,18 +7,6 @@ import UIKit
 
 
 
-struct GiftVoucherDetail {
-    var header: String = "to suravshing tomar, from Prince"
-    var subHeader: String = "\"Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit, sed do\""
-    var body: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada."
-    var price:String = "120$"
-    var massage: String = ""
-    var id:String = ""
-    var date1: String = "Mon, Oct 18, 2020"
-    var date2: String = "Wed, Dec 22, 2020"
-    var image: UIImage = UIImage()
-}
-
 class GiftVoucherVC: BaseVC {
     
     @IBOutlet weak var tableView: UITableView!
@@ -32,11 +20,7 @@ class GiftVoucherVC: BaseVC {
     @IBOutlet weak var lblBody: ThemeLabel!
     @IBOutlet weak var lblSubHeader: ThemeLabel!
     @IBOutlet weak var lblHeader: ThemeLabel!
-    var arrForData: [GiftVoucherDetail] = [
-        GiftVoucherDetail.init(price: "120$", id: "25487548", date1: "Mon, Oct 18, 2020", date2: "Wed, Dec 22, 2020"),
-        GiftVoucherDetail.init(price: "120$", id: "25487549", date1: "Mon, Oct 18, 2020", date2: "Wed, Dec 22, 2020"),
-        GiftVoucherDetail.init(price: "120$", id: "25487545", date1: "Mon, Oct 18, 2020", date2: "Wed, Dec 22, 2020")
-    ]
+    var arrForData: [Voucher] = []
     
     @IBOutlet weak var btnGetStarted: FilledRoundedButton!
     
@@ -59,6 +43,8 @@ class GiftVoucherVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
+        self.wsGetVoucherInfo()
+        self.wsGetVoucherList()
         self.arrForData.removeAll()
         self.updateUI()
         self.btnGetStarted.isHidden = true
@@ -85,39 +71,35 @@ class GiftVoucherVC: BaseVC {
     
     @IBAction func btnBuyNowTapped(_ sender: Any) {
         
-        self.arrForData = [
-            GiftVoucherDetail.init(price: "120$", id: "25487548", date1: "Mon, Oct 18, 2020", date2: "Wed, Dec 22, 2020"),
-            GiftVoucherDetail.init(price: "120$", id: "25487549", date1: "Mon, Oct 18, 2020", date2: "Wed, Dec 22, 2020"),
-            GiftVoucherDetail.init(price: "120$", id: "25487545", date1: "Mon, Oct 18, 2020", date2: "Wed, Dec 22, 2020")]
+        /*self.arrForData = []
         self.updateUI()
         self.btnBuyGiftVoucher.isHidden = false
-        self.btnBuyNow.isHidden = true
+        self.btnBuyNow.isHidden = true*/
+        
+        updateUIForInformation()
     }
     
     @IBAction func btnBuyGiftVoucherTapped(_ sender: Any) {
-         updateUIForInformation()
-        
+        updateUIForInformation()
     }
     
     @IBAction func btnGetStartedTapped(_ sender: Any) {
         Common.appDelegate.loadAddGiftVoucherVC(navigaionVC: self.navigationController)
     }
+    
     func updateUIForInformation() {
         vwForEmpty.gone()
         tableView.gone()
         vwForBuyGiftInfo.visible()
         btnGetStarted.visible()
-        
     }
+    
     private func initialViewSetup() {
         self.setTitle(title: "GIFT_VOUCHER_TITLE".localized())
         self.setupTableView(tableView: self.tableView)
         self.lblHeader.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.lblSubHeader.setFont(name: FontName.Regular, size: FontSize.regular)
         self.lblBody.setFont(name: FontName.Regular, size: FontSize.detail)
-        self.lblHeader.text = "GIFT_VOUCHER_HEADER".localized()
-        self.lblSubHeader.text = "GIFT_VOUCHER_SUB_HEADER".localized()
-        self.lblBody.text = "GIFT_VOUCHER_BODY".localized()
         self.lblEmptyTitle.text = "GIFT_VOUCHER_EMPTY_TITLE".localized()
         self.lblEmptyTitle.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.lblEmptyMessage.setFont(name: FontName.Regular, size: FontSize.detail)
@@ -125,22 +107,25 @@ class GiftVoucherVC: BaseVC {
         self.btnBuyNow?.setTitle("GIFT_VOUCHER_BTN_BUY_NOW".localized(), for: .normal)
         self.btnGetStarted?.setTitle("GIFT_VOUCHER_BTN_GET_STARTED".localized(), for: .normal)
     }
+    
+    
     // MARK: - Action Methods
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
         super.btnLeftTapped()
         _ = (self.navigationController as? NC)?.popVC()
     }
+    
     func updateUI()  {
-           if arrForData.isEmpty {
-               self.vwForEmpty.isHidden = false
-               self.tableView.isHidden = true
-           } else {
-               self.vwForEmpty.isHidden = true
-               self.tableView.isHidden = false
-           }
-       
+        if arrForData.isEmpty {
+            self.vwForEmpty.isHidden = false
+            self.tableView.isHidden = true
+        } else {
+            self.vwForEmpty.isHidden = true
+            self.tableView.isHidden = false
+        }
+        
         self.tableView.reloadData()
-       }
+    }
 }
 
 
@@ -175,16 +160,36 @@ extension GiftVoucherVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
         Common.appDelegate.loadGiftVoucherDetailVC(navigaionVC: self.navigationController, data: self.arrForData[indexPath.row])
-        
     }
-    
-    
-    
     
     func completeVoucher() {
         Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "BUY_GIFT_VOUCHER_COMPLETE_TITLE".localized(), strMessage: "BUY_GIFT_VOUCHER_COMPLETE_MESSAGE".localized(), strImg: ImageAsset.Completion.requestBookingCompletion, strButtonTitle: "HOME_BTN_HOME".localized()))
     }
 }
 
+extension GiftVoucherVC {
+    func wsGetVoucherInfo() {
+        Loader.showLoading()
+        AppWebApi.getGiftVoucherInfo { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response) {
+                self.lblHeader.text = response.voucherInfo.title //"GIFT_VOUCHER_HEADER".localized()
+                self.lblSubHeader.text = response.voucherInfo.shortDescription//"GIFT_VOUCHER_SUB_HEADER".localized()
+                self.lblBody.text = response.voucherInfo.detail//"GIFT_VOUCHER_BODY".localized()
+            }
+        }
+    }
+    
+    func wsGetVoucherList() {
+        Loader.showLoading()
+        AppWebApi.getGiftVoucherList { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response) {
+                self.arrForData = response.voucherList
+                self.tableView.reloadData()
+                self.updateUI()
+            }
+        }
+    }
+}

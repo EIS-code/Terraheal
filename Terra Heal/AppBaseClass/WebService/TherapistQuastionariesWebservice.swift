@@ -48,8 +48,6 @@ enum TherapistQuastionaries {
 }
 
 class QuestionDetail: ResponseModel {
-
-    
     var id: String =  ""
     var max: String = ""
     var min: String =  ""
@@ -57,6 +55,7 @@ class QuestionDetail: ResponseModel {
     var title: String = ""
     var type: String =  ""
     var value: String  = ""
+    
     override init(fromDictionary dictionary: [String:Any]) {
         super.init(fromDictionary: dictionary)
         self.id = (dictionary["id"] as? String) ?? ""

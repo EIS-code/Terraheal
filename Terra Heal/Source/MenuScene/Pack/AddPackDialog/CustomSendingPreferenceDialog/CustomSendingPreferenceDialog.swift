@@ -8,13 +8,17 @@
 
 import UIKit
 
+struct SendingPreferenceDetail {
+    var email:String = ""
+    var dateToSend: String = ""
+}
 class CustomSendingPreferenceDialog: ThemeBottomDialogView {
 
     @IBOutlet weak var txtData: ACFloatingTextfield!
     @IBOutlet weak var vwSwitch: JDSegmentedControl!
-    var onBtnDoneTapped: ((_ data: String) -> Void)? = nil
+    var onBtnDoneTapped: ((_ data: SendingPreferenceDetail) -> Void)? = nil
     var date: Double = 0.0
-    
+    var selectedData: SendingPreferenceDetail = SendingPreferenceDetail.init()
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -47,7 +51,8 @@ class CustomSendingPreferenceDialog: ThemeBottomDialogView {
                self.vwSwitch.didSelectItemWith = { [weak self] (index,title) in
                    guard let self = self else {return}; print(self)
                    if index == 0 {
-                       
+                    self.date = Date().millisecondsSince1970
+                    self.selectedData.dateToSend = ""
                    } else {
                     self.openDatePicker()
                    }
@@ -71,18 +76,24 @@ class CustomSendingPreferenceDialog: ThemeBottomDialogView {
             alert.onBtnCancelTapped = {
                 [weak alert, weak self] in
                 alert?.dismiss()
+                
                 _ = self?.txtData.becomeFirstResponder()
             }
             return false
         }
-
+        if self.selectedData.dateToSend.isEmpty() {
+            self.date = Date().millisecondsSince1970
+            self.selectedData.dateToSend = String(self.date)
+        }
+        self.selectedData.email = txtData.text!
+        
         return true
     }
 
     @IBAction func btnDoneTapped(_ sender: Any) {
         if self.checkValidation() {
             if self.onBtnDoneTapped != nil {
-                self.onBtnDoneTapped!(txtData!.text!);
+                self.onBtnDoneTapped!(selectedData);
             }
         }
     }
@@ -109,6 +120,8 @@ class CustomSendingPreferenceDialog: ThemeBottomDialogView {
             guard let self = self else { return } ; print(self)
             datePickerAlert?.dismiss()
             self.date = date
+            self.selectedData.dateToSend = String(self.date)
+            
             print(date)
             
         }

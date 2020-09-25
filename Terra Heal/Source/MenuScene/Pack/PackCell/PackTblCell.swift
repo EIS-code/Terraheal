@@ -37,7 +37,7 @@ class PackTblCell: SelectionBorderTableCell {
         self.lblDetail.text = data.description
         self.lblName.text = data.name
         self.lblDate.text = data.date
-        self.lblPrice.text = data.price
+        self.lblPrice.text = data.price.toCurrency()
     }
     
     override func layoutSubviews() {

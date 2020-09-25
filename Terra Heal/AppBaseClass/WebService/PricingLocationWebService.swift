@@ -53,20 +53,8 @@ class PricingLocation: ResponseModel {
         self.country_id = (dictionary["country_id"] as? String) ?? ""
         self.updatedAt = (dictionary["updated_at"] as? String) ?? ""
     }
-
-    static func getDemoArray() -> [PricingLocation] {
-        var arrForCountries: [PricingLocation] = []
-        arrForCountries.removeAll()
-        for i in 0...15 {
-
-            let country: PricingLocation = PricingLocation.init(fromDictionary: [:])
-            country.name = "Location - \(i)"
-            if i % 2 == 0 {
-                country.name = "Abcd - \(i)"
-            }
-            arrForCountries.append(country)
-        }
-        return arrForCountries
+    
+    func toViewModel() -> CustomDataForTable {
+        return CustomDataForTable.init(id: self.id, name: self.name, isSelected: false)
     }
-
 }

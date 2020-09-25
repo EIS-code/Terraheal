@@ -43,12 +43,10 @@ class AppWebApi: NSObject {
         
         static var UserLogout: String {
             return Domain + Routes.Setting  + "/logout"
-            
         }
         
         static var UserBookRequest: String {
             return Domain + Routes.Client  + "/booking/create"
-            
         }
         
         static var ChangePassword: String {
@@ -160,6 +158,37 @@ class AppWebApi: NSObject {
         
         static var GetBookingList: String {
             return  Domain + Routes.Client + "/booking/list/past"
+        }
+        
+        static var GetVoucherList: String {
+            return  Domain + Routes.Client + "/gift/voucher/get"
+        }
+        
+        static var GetVoucherInfo: String {
+            return  Domain + Routes.Client + "/gift/voucher/info"
+        }
+        
+        static var BookVoucher: String {
+            return  Domain + Routes.Client + "/gift/voucher/save"
+        }
+        
+        static var GiftVoucherDesign: String {
+            return  Domain + Routes.Client + "/gift/voucher/design/get"
+        }
+        
+        static var FaqList: String {
+            return  Domain + Routes.Client + "/faq/get"
+        }
+        //Package APIs
+        static var PackList: String {
+            return  Domain + Routes.Client + "/pack/get"
+        }
+        static var BuyPack: String {
+            return  Domain + Routes.Client + "/pack/order/save"
+        }
+        
+        static var BuyGiftPack: String {
+            return  Domain + Routes.Client + "/pack/gift/save"
         }
     }
 }
@@ -487,7 +516,65 @@ extension AppWebApi {
                completionHandler(response)
            }
        }
+    //GIFT VOUCHER API
     
+    
+    class func getGiftVoucherList(params:VoucherWebService.RequestVoucherList = VoucherWebService.RequestVoucherList(), completionHandler: @escaping ((VoucherWebService.Response) -> Void)) {
+             AlamofireHelper().getDataFrom(urlString: API_URL.GetVoucherList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+                 let response = VoucherWebService.Response.init(fromDictionary: dictionary)
+                 completionHandler(response)
+             }
+    }
+  
+    class func getGiftVoucherInfo(params:VoucherWebService.RequestVoucherInfo = VoucherWebService.RequestVoucherInfo(), completionHandler: @escaping ((VoucherWebService.ResponseVoucherInfo) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: API_URL.GetVoucherInfo, methodName: AlamofireHelper.GET_METHOD, paramData: [:]) { (data, dictionary, error) in
+            let response = VoucherWebService.ResponseVoucherInfo.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    
+    
+    class func getGiftDesignList(params:GiftDesignWebService.RequestDesignList = GiftDesignWebService.RequestDesignList(), completionHandler: @escaping ((GiftDesignWebService.Response) -> Void)) {
+           AlamofireHelper().getDataFrom(urlString: API_URL.GiftVoucherDesign, methodName: AlamofireHelper.GET_METHOD, paramData: [:]) { (data, dictionary, error) in
+               let response = GiftDesignWebService.Response.init(fromDictionary: dictionary)
+               completionHandler(response)
+           }
+       }
+    
+    class func getFaqList(params:FAQWebService.RequestFAQlist = FAQWebService.RequestFAQlist(), completionHandler: @escaping ((FAQWebService.ResponseFAQList) -> Void)) {
+              AlamofireHelper().getDataFrom(urlString: API_URL.FaqList, methodName: AlamofireHelper.GET_METHOD, paramData: [:]) { (data, dictionary, error) in
+                  let response = FAQWebService.ResponseFAQList.init(fromDictionary: dictionary)
+                  completionHandler(response)
+              }
+          }
+    
+    class func buyGiftVoucher(params:VoucherWebService.RequestPurchageVoucher, completionHandler: @escaping ((VoucherWebService.ResponseVoucherPurchageInfo) -> Void)) {
+        
+        AlamofireHelper().getDataFrom(urlString: API_URL.BookVoucher, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = VoucherWebService.ResponseVoucherPurchageInfo.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    
+    
+    class func getPackageList(params:PackageWebService.RequestPackageList, completionHandler: @escaping ((PackageWebService.ResponsePackageList) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: API_URL.PackList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = PackageWebService.ResponsePackageList.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    class func buyPackage(params:PackageWebService.RequestBuyPackage, completionHandler: @escaping ((PackageWebService.ResponsePackageList) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: API_URL.BuyPack, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = PackageWebService.ResponsePackageList.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    class func buyPackageForGift(params:PackageWebService.RequestBuyPackage, completionHandler: @escaping ((PackageWebService.ResponsePackageList) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: API_URL.BuyGiftPack, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = PackageWebService.ResponsePackageList.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
 }
 
 

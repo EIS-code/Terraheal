@@ -153,7 +153,8 @@ extension PackVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
             [weak alert, weak self] (data) in
             alert?.dismiss()
             guard let self = self else { return } ; print(self)
-            Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "PACK_PURCHASE_COMPLETE_TITLE".localized(), strMessage: "PACK_PURCHASE_COMPLETE_MESSAGE".localized(), strImg: ImageAsset.Completion.bookingCompletion, strButtonTitle: "EVENT_BOOKING_BTN_HOME".localized()))
+            appSingleton.myBuyPackageData = data
+            Common.appDelegate.loadReviewAndBookPackVC()
         }
     }
     
@@ -172,7 +173,8 @@ extension PackVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
             [weak alert, weak self] (data) in
             alert?.dismiss()
             guard let self = self else { return } ; print(self)
-            Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "PACK_PURCHASE_COMPLETE_TITLE".localized(), strMessage: "PACK_PURCHASE_COMPLETE_MESSAGE".localized(), strImg: ImageAsset.Completion.bookingCompletion, strButtonTitle: "EVENT_BOOKING_BTN_HOME".localized()))
+            appSingleton.myBuyPackageData = data
+            Common.appDelegate.loadReviewAndBookPackVC()
         }
     }
     
@@ -200,4 +202,5 @@ extension PackVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
         }
     }
 }
+
 

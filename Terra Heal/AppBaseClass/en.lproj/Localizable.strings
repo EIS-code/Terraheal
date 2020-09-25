@@ -333,9 +333,7 @@
 
 //MAKR: Gift Voucher Screen
 "GIFT_VOUCHER_TITLE" = "my gift voucher";
-"GIFT_VOUCHER_HEADER" = "offer a special moment of relax to somebody you love";
-"GIFT_VOUCHER_SUB_HEADER" = "please read this info before you buy a gift voucher:";
-"GIFT_VOUCHER_BODY" = "1. each voucher can be used from one person only in one time only, so don't buy a voucher to offer for 2 or more people.\n2. choose the amount you want to offer (can be 15, 20, 25, 30, 35, 40, 50, 60, 75, 80, 100€) , the person who received the voucher will choose the type of massage when she/he calls to book\n3. write the name and tel number of the person who will receive the voucher\n4. type the email on which you would like to receive the voucher and the invoice\n5. fill in your fiscal number and country (optional) for the invoice\n6. once you finish the payment you will receive an email with the electronic voucher and the invoice\n7. the voucher can be used in a period max of 12 months";
+"GIFT_VOUCHER_HEADER" = "to %@, from %@";
 "GIFT_VOUCHER_EMPTY_TITLE" = "you have no gift voucher";
 "GIFT_VOUCHER_EMPTY_MESSAGE" = "";
 "GIFT_VOUCHER_BTN_BUY_NOW" = "Buy Now";
@@ -347,6 +345,14 @@
 "BUY_GIFT_VOUCHER_COMPLETE_TITLE" = "buy gift voucher Successful";
 "BUY_GIFT_VOUCHER_COMPLETE_MESSAGE" = "thanks for choosing our services! we have received your booking and will confirm it as soon as possible";
 "GIFT_VOUCHER_NO" = "voucher No";
+//Validation
+
+"GIFT_VOUCHER_VALIDATION_SELECT_CENTER" = "Please select center";
+"GIFT_VOUCHER_VALIDATION_SELECT_THEME" = "Please select theme";
+"GIFT_VOUCHER_VALIDATION_SELECT_SERVICE" = "Please select service";
+"GIFT_VOUCHER_VALIDATION_FILL_GIVER_DETAIL" = "Please fill giverdetail";
+"GIFT_VOUCHER_VALIDATION_FILL_RECIPIENT_DETAIL" = "Please fill recipent detail";
+"GIFT_VOUCHER_VALIDATION_SELECT_SENDING_PREFERENCE" = "Please select sending preference";
 
 //MARK: Add Gift Voucher Screen
 "ADD_GIFT_VOUCHER_TITLE" = "add gift voucher";
@@ -475,7 +481,8 @@
 "PHOTO_DIALOG_SCAN_DOCUMENT" = "Scan";
 "PHOTO_DIALOG_UPLODED"= "Upload";
 "BTN_HOME" = "Home";
-
+"BTN_PAY" = "Pay %@ %@";
+"THERAPIST_REPEAT_REQUEST" = "repeat request";
 "FAQ_CONTENT" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget. Nullam eget felis eget nunc lobortis. Faucibus ornare suspendisse sed nisi. Sagittis eu volutpat odio facilisis mauris sit amet massa. Erat velit scelerisque in dictum non consectetur a erat. Amet nulla facilisi morbi tempus iaculis urna.";
 //MARK: -
 //MARK: VALIDATION TOAST MESSAGES

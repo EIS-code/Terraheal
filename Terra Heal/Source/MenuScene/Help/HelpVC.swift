@@ -100,7 +100,7 @@ class HelpVC: BaseVC {
     
     func openFaqDialog() {
         let alert: CustomFaqDialog = CustomFaqDialog.fromNib()
-        alert.initialize(title: "FAQ_TITLE".localized(), data:"", buttonTitle: "".localized(), cancelButtonTitle: "".localized())
+        alert.initialize(title: "FAQ_TITLE".localized(), data:"", buttonTitle: "".localized(), cancelButtonTitle: "BTN_BACK".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in

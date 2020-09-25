@@ -16,13 +16,11 @@ class CustomServiceCenterSelectionDialog: ThemeBottomDialogView {
       @IBOutlet weak var mapView: GMSMapView!
       @IBOutlet weak var vwServiceDialog: UIView!
       @IBOutlet weak var ivService: PaddedImageView!
-      @IBOutlet weak var btnKm: ThemeButton!
       @IBOutlet weak var collectionView: UICollectionView!
       @IBOutlet weak var btnMyLocation: UIButton!
       @IBOutlet weak var vwService: UIView!
-      @IBOutlet weak var hCltVw: NSLayoutConstraint!
      
-    var onBtnDoneTapped: ((_ data:ServiceCenterDetail) -> Void)? = nil
+        var onBtnDoneTapped: ((_ data:ServiceCenterDetail) -> Void)? = nil
        var arrForServices: [ServiceCenterDetail] = []
        var arrForServicesMarker: [GMSMarker] = []
        var currentMarker: GMSMarker? = nil

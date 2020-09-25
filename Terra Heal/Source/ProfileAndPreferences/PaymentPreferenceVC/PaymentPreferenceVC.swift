@@ -31,6 +31,7 @@ class PaymentPreferenceVC: BaseVC {
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
     @IBOutlet weak var btnAddPayment: RoundedBorderButton!
     
+    var amount:Double = 0.0
     var comeFromVC: BaseVC? = nil
     var arrForData: [CreditCardDetail] = [CreditCardDetail.init(id: "1", name: "personal", value: "254xxxxxxxxx324841", isSeleced: false),CreditCardDetail.init(id: "2", name: "business", value: "254xxxxxxxxx324841", isSeleced: true)]
     // MARK: Object lifecycle
@@ -101,7 +102,7 @@ class PaymentPreferenceVC: BaseVC {
             self.btnAddPayment.isHidden = true
             self.btnSubmit.addTarget(self, action: #selector(btnAddPaymentTapped(_:)), for: .touchUpInside)
         } else {
-            self.btnSubmit?.setTitle("BTN_SUBMIT".localized(), for: .normal)
+            self.btnSubmit.setTitle("BTN_PAY".localized(with: [appSingleton.currencySymbol,amount.toString()]), for: .normal)
             self.btnAddPayment.isHidden = false
             self.btnSubmit.addTarget(self, action: #selector(btnSubmitTapped(_:)), for: .touchUpInside)
         }
@@ -127,12 +128,18 @@ class PaymentPreferenceVC: BaseVC {
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
+        btnSubmit.isEnabled = false
         if comeFromVC != nil {
             if comeFromVC!.isKind(of: AddGiftVoucherVC.self) {
-                Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "buy gift voucher Successful", strMessage: "THANKS FOR CHOOSING OUR SERVICES! We have received your booking and will confirm it as soon as possible", strImg: ImageAsset.Completion.giftBookingCompletion, strButtonTitle: "BTN_HOME".localized()))
+                self.wsPurchageVoucher(request: appSingleton.myBuyGiftVoucherData)
             }
+            if comeFromVC!.isKind(of: ReviewAndBookPackVC.self) {
+                Loader.showLoading()
+                self.wsBuyPack(request: appSingleton.myBuyPackageData)
+            }
+        } else {
+            self.btnSubmit.isEnabled = true
         }
-        
     }
     
     func openAddPaymentDialog() {
@@ -193,7 +200,7 @@ extension PaymentPreferenceVC: UITableViewDelegate,UITableViewDataSource, UIScro
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-tableView.backgroundColor = .clear
+        tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 200
@@ -226,3 +233,34 @@ tableView.backgroundColor = .clear
 }
 
 
+extension PaymentPreferenceVC {
+    
+    func wsBuyPack(request: PackageWebService.RequestBuyPackage) {
+        if request.preference_email?.isEmpty() ?? true {
+            AppWebApi.buyPackage(params: request) { (response) in
+                if ResponseModel.isSuccess(response: response) {
+                    Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "PACK_PURCHASE_COMPLETE_TITLE".localized(), strMessage: "PACK_PURCHASE_COMPLETE_MESSAGE".localized(), strImg: ImageAsset.Completion.bookingCompletion, strButtonTitle: "EVENT_BOOKING_BTN_HOME".localized()))
+                }
+            }
+        } else {
+            AppWebApi.buyPackageForGift(params: request) { (response) in
+                if ResponseModel.isSuccess(response: response) {
+                    Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "PACK_PURCHASE_COMPLETE_TITLE".localized(), strMessage: "PACK_PURCHASE_COMPLETE_MESSAGE".localized(), strImg: ImageAsset.Completion.bookingCompletion, strButtonTitle: "EVENT_BOOKING_BTN_HOME".localized()))
+                }
+            }
+            
+        }
+        
+    }
+    
+    func wsPurchageVoucher(request:VoucherWebService.RequestPurchageVoucher)
+    {
+        Loader.showLoading()
+        AppWebApi.buyGiftVoucher(params: request) { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response) {
+                 Common.appDelegate.loadCompleteVC(data: CompletionData.init(strHeader: "buy gift voucher Successful", strMessage: "THANKS FOR CHOOSING OUR SERVICES! We have received your booking and will confirm it as soon as possible", strImg: ImageAsset.Completion.giftBookingCompletion, strButtonTitle: "BTN_HOME".localized()))
+            }
+        }
+    }
+}

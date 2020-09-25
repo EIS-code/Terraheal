@@ -619,24 +619,42 @@ extension AppDelegate {
         }
     }
     
-    func loadPaymentReferenceVC(navigaionVC:UINavigationController? = nil, fromVC: BaseVC?) {
+    func loadReviewAndBookPackVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: ReviewAndBookPackVC =  nc.findVCs(ofType: ReviewAndBookPackVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: ReviewAndBookPackVC = ReviewAndBookPackVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: ReviewAndBookPackVC = ReviewAndBookPackVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+    
+    func loadPaymentReferenceVC(amount: Double, navigaionVC:UINavigationController? = nil, fromVC: BaseVC?) {
         if let nc = navigaionVC as? NC {
             if let targetVC: PaymentPreferenceVC =  nc.findVCs(ofType: PaymentPreferenceVC.self).first {
+                targetVC.amount = amount
                 _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: PaymentPreferenceVC = PaymentPreferenceVC.fromNib()
                 targetVC.comeFromVC = fromVC
+                targetVC.amount = amount
                 nc.pushVC(targetVC)
             }
         } else {
             let targetVC: PaymentPreferenceVC = PaymentPreferenceVC.fromNib()
+            targetVC.amount = amount
             let nC: NC = NC(rootViewController: targetVC)
             self.windowConfig(withRootVC: nC)
         }
     }
     
     
-    func loadGiftVoucherDetailVC(navigaionVC:UINavigationController? = nil, data:GiftVoucherDetail) {
+    func loadGiftVoucherDetailVC(navigaionVC:UINavigationController? = nil, data:Voucher) {
         if let nc = navigaionVC as? NC {
             if let targetVC: GiftVoucherDetailVC =  nc.findVCs(ofType: GiftVoucherDetailVC.self).first {
                 targetVC.giftVoucherDetail = data

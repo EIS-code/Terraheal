@@ -77,14 +77,12 @@ class ServiceSelectionVC: BaseVC {
             guard let self = self else {
                 return
             }
-            
             if index == 0 {
                 self.massagesTapped()
             } else {
                 self.therapiesTapped()
             }
         }
-        
         self.getServiceCenterDetail()
     }
     

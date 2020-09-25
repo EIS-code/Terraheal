@@ -26,19 +26,17 @@ class CustomButtonTblCell: SelectionBorderTableCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.lblCellTitle.textColor = UIColor.themeDarkText
     }
 
     func setData(data: CustomButtonDetail ) {
         super.setData(title: data.title, isSelected: data.isSelected)
     }
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-        
     }
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
 }

@@ -26,12 +26,10 @@ class ResponseModel: NSObject{
             else if let  strError = arrForErrors as? [String] {
                 errorMessage = strError
             }
-
         }
         else {
             errorMessage = []
         }
-
         if message.isEmpty {
             if errorMessage.isEmpty {
                 message = code

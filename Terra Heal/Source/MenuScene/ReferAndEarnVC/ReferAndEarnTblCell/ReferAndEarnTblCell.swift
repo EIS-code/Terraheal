@@ -31,7 +31,7 @@ class ReferAndEarnTblCell: TableCell {
 
     func setData(data: ReferralDetail ) {
         self.lblDescription.text = data.description
-        self.lblAmount.text = data.amount
+        self.lblAmount.text = data.amount.toCurrency()
     }
 
     override func layoutSubviews() {

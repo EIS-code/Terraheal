@@ -17,8 +17,14 @@ public class Singleton :NSObject {
     var myLatitude: String = ""
     var myLongitude: String = ""
     var myAddress: String = ""
+    var currencySymbol: String = "$"
     var massagePrefrenceDetail:[MassagePreferenceDetail] = []
     var myBookingData: MyBookingData = MyBookingData.init()
+    var myBuyPackageData: PackageWebService.RequestBuyPackage =  PackageWebService.RequestBuyPackage.init()
+    var myBuyGiftVoucherData: VoucherWebService.RequestPurchageVoucher =   VoucherWebService.RequestPurchageVoucher.init()
+   
+    
+     var purchasePackage: Package? = nil
     
     
     func getPressureDetail() -> MassagePreferenceDetail? {
