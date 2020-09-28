@@ -3,7 +3,7 @@
 //  ModalView
 //
 //  Created by Jaydeep Vyas on 3/20/17.
-//  Copyright © 2017 Aatish. All rights reserved.
+//  Copyright © 2017 Jaydeep. All rights reserved.
 //
 
 import UIKit
@@ -168,7 +168,7 @@ extension ServiceSelectionDialog:  UICollectionViewDelegate, UICollectionViewDat
 
 extension ServiceSelectionDialog {
         func getServiceCenterDetail() {
-            AppWebApi.massageCenterDetail { (response) in
+            AppWebApi.massageCenterDetail(params: ServiceCenter.RequestServiceCenterDetail.init(shop_id: "5")) { (response) in
                 if ResponseModel.isSuccess(response: response) {
                     for data in response.serviceList {
                         self.arrForData.append(data)

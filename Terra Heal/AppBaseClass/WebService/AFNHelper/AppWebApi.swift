@@ -156,8 +156,11 @@ class AppWebApi: NSObject {
                    return  Domain + Routes.Client + "/menu/get"
         }
         
-        static var GetBookingList: String {
+        static var GetBookingPast: String {
             return  Domain + Routes.Client + "/booking/list/past"
+        }
+        static var GetBookingFuture: String {
+            return  Domain + Routes.Client + "/booking/list/future"
         }
         
         static var GetVoucherList: String {
@@ -189,6 +192,10 @@ class AppWebApi: NSObject {
         
         static var BuyGiftPack: String {
             return  Domain + Routes.Client + "/pack/gift/save"
+        }
+        
+        static var PackServiceList: String {
+            return  Domain + Routes.Client + "/pack/services/get"
         }
     }
 }
@@ -316,7 +323,7 @@ extension AppWebApi {
         }
     }
     
-    class func massageCenterDetail(params:ServiceCenter.RequestServiceCenterDetail = ServiceCenter.RequestServiceCenterDetail(), completionHandler: @escaping ((ServiceCenter.ServiceCenterDetailResponse) -> Void)) {
+    class func massageCenterDetail(params:ServiceCenter.RequestServiceCenterDetail, completionHandler: @escaping ((ServiceCenter.ServiceCenterDetailResponse) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: API_URL.MassageCenerDetail, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
             let response = ServiceCenter.ServiceCenterDetailResponse.init(fromDictionary: dictionary)
             completionHandler(response)
@@ -510,12 +517,7 @@ extension AppWebApi {
         }
     }
     
-     class func getPastBookingList(params:MyBookingWebService.RequestPastBookingList = MyBookingWebService.RequestPastBookingList(), completionHandler: @escaping ((MyBookingWebService.Response) -> Void)) {
-           AlamofireHelper().getDataFrom(urlString: API_URL.GetBookingList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-               let response = MyBookingWebService.Response.init(fromDictionary: dictionary)
-               completionHandler(response)
-           }
-       }
+
     //GIFT VOUCHER API
     
     
@@ -563,6 +565,18 @@ extension AppWebApi {
             completionHandler(response)
         }
     }
+    class func getPackageServiceList(params:PackageWebService.RequestPackageServiceList, completionHandler: @escaping ((PackageWebService.ResponsePackageServiceList) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: API_URL.PackServiceList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = PackageWebService.ResponsePackageServiceList.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    class func getPurchasedPackageList(params:PackageWebService.RequestPurchasedPackageList = PackageWebService.RequestPurchasedPackageList(), completionHandler: @escaping ((PackageWebService.ResponsePurchasedPackageList) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: API_URL.PackList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = PackageWebService.ResponsePurchasedPackageList.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
     class func buyPackage(params:PackageWebService.RequestBuyPackage, completionHandler: @escaping ((PackageWebService.ResponsePackageList) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: API_URL.BuyPack, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
             let response = PackageWebService.ResponsePackageList.init(fromDictionary: dictionary)
@@ -574,6 +588,20 @@ extension AppWebApi {
             let response = PackageWebService.ResponsePackageList.init(fromDictionary: dictionary)
             completionHandler(response)
         }
+    }
+    
+     class func getPastBookingList(params:MyBookingWebService.RequestPastBookingList = MyBookingWebService.RequestPastBookingList(), completionHandler: @escaping ((MyBookingWebService.Response) -> Void)) {
+           AlamofireHelper().getDataFrom(urlString: API_URL.GetBookingPast, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+               let response = MyBookingWebService.Response.init(fromDictionary: dictionary)
+               completionHandler(response)
+           }
+    }
+    
+    class func getFutureBookingList(params:MyBookingWebService.RequestFutureBookingList = MyBookingWebService.RequestFutureBookingList(), completionHandler: @escaping ((MyBookingWebService.Response) -> Void)) {
+           AlamofireHelper().getDataFrom(urlString: API_URL.GetBookingFuture, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+               let response = MyBookingWebService.Response.init(fromDictionary: dictionary)
+               completionHandler(response)
+           }
     }
 }
 

@@ -8,37 +8,32 @@ import UIKit
 
 
 
-struct SubPackageDetail {
-    var code: String = ""
-    var name: String = ""
-    var price: String = ""
-    var date: String = "expiry date: 10 dec, 2020"
-    var description: String = ""
+struct PackageServiceDetail {
+    var id: String = ""
+    var name: String = "head, neck and shoulders"
+    var image: String = "demo-massage"
+    var duration: String = "60"
+    var isSelected: Bool = false
     var isUsed: Bool = false
 }
 
 class PackageDetailVC: BaseVC {
     
-
-    
-    
-    
-    @IBOutlet weak var tableView: UITableView!
-    var packageDetail: PackDetail? = nil
-    var arrForData: [SubPackageDetail] = [
-        SubPackageDetail.init(code:"9S75894",name: "\"free from pain\"", price: "€250.00", description: "5 Massages & Therapies of 60 mins",isUsed: false),
-        SubPackageDetail.init(code:"12345640",name: "\"THE MAGIC OF ORIENT\"", price: "€450.00", description: "10 Different Oriental Massages & Therapies",isUsed: false),
-        SubPackageDetail.init(code:"12345640",name: "\"THE MAGIC OF ORIENT\"", price: "€450.00", description: "10 Different Oriental Massages & Therapies",isUsed: true),
-        SubPackageDetail.init(code:"12345640",name: "\"THE MAGIC OF ORIENT\"", price: "€450.00", description: "10 Different Oriental Massages & Therapies",isUsed: true),
-        SubPackageDetail.init(code:"12345640",name: "\"THE MAGIC OF ORIENT\"", price: "€450.00", description: "10 Different Oriental Massages & Therapies",isUsed: true)
-    ]
+    @IBOutlet weak var btnSubmit: FilledRoundedButton!
+    @IBOutlet weak var cltView: UICollectionView!
     
     var sessionSelectionDialog: SessionDialog!
-    var recipentMassageManageDialog: RecipentMassageManageDialog!
+    var recipentMassageManageDialog: PackageDetailDialog!
     var dialogForAccessory: AccessorySelectionDialog!
     var dateTimeSelectionDialog: DateTimeDialog!
     var textViewDialog: TextViewDialog!
     var languagePicker: CustomLanguagePicker!
+    var pressureFocusSelectionDialog: CustomFocusAreaPicker!
+    var pressureSelectionDialog: CustomPressurePicker!
+    
+    var packageDetail: PurchasedPackage? = nil
+    var arrForData: [PackageServiceDetail] = []
+    var arrForOriginalData: [PackService] = []
     
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -80,62 +75,100 @@ class PackageDetailVC: BaseVC {
     }
     
     private func initialViewSetup() {
-        self.setupTableView(tableView: self.tableView)
         self.setTitle(title: "PACK_NO".localized() + " : " + packageDetail!.code)
+        self.setupCollectionView(collectionView: self.cltView)
+        self.btnSubmit.setTitle("BTN_PROCEED".localized(), for: .normal)
+        self.wsGetPackServiceList()
     }
-    
-}
-
-//MARK: - PackageDetailVC
-
-extension PackageDetailVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegate {
-    
-    
-    private func setupTableView(tableView: UITableView) {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.backgroundColor = .clear
-        tableView.showsVerticalScrollIndicator = false
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = tableView.bounds.height / 2.0
-        tableView.register(BookPackageCell.nib()
-            , forCellReuseIdentifier: BookPackageCell.name)
-        tableView.register(UsedPackageCell.nib()
-            , forCellReuseIdentifier: UsedPackageCell.name)
-        tableView.tableFooterView = UIView()
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrForData.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let packageData = arrForData[indexPath.row]
-        if packageData.isUsed {
-            let cell = tableView.dequeueReusableCell(withIdentifier: UsedPackageCell.name, for: indexPath) as?  UsedPackageCell
-            cell?.layoutIfNeeded()
-            cell?.setData(data: packageData)
-            cell?.layoutIfNeeded()
-            return cell!
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: BookPackageCell.name, for: indexPath) as?  BookPackageCell
-            cell?.layoutIfNeeded()
-            cell?.setData(data: packageData)
-            cell?.btnBook.addTarget(self, action: #selector(openBookingProcess(sender:)), for: .touchUpInside)
-            cell?.layoutIfNeeded()
-            return cell!
+    @IBAction func btnSubmitTapped(_ sender: Any) {
+        var selectedService: [PackService] = []
+        selectedService.removeAll()
+        for i in 0..<arrForOriginalData.count {
+            let data = arrForData[i]
+            if data.isSelected {
+                selectedService.append(arrForOriginalData[i])
+            }
         }
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
+        if selectedService.count > 0 {
+            appSingleton.requestUsePurchasePackage = MyBookingPackageData.init()
+            appSingleton.requestUsePurchasePackage?.selectedServices = selectedService
+            self.openBookingTypeSelectionDialog()
+        } else {
+            Common.showAlert(message: "Please select service first")
+        }
     }
     
     @objc func openBookingProcess(sender: UIButton) {
-        self.openSessionSelectionDialog()
+        self.openBookingTypeSelectionDialog()
+    }
+}
+
+
+//MARK: - PackageDetailVC
+
+extension PackageDetailVC: UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    
+    private func setupCollectionView(collectionView:  UICollectionView) {
+        collectionView.backgroundColor = UIColor.clear
+        collectionView.isUserInteractionEnabled = true
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.isPagingEnabled = false
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(PackageServiceCltCell.nib()
+            , forCellWithReuseIdentifier: PackageServiceCltCell.name)
     }
     
+    // MARK: UICollectionViewDataSource
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return arrForData.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PackageServiceCltCell.name, for: indexPath) as! PackageServiceCltCell
+        cell.setData(data: self.arrForData[indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        if !arrForData[indexPath.row].isUsed{
+            arrForData[indexPath.row].isSelected.toggle()
+        }
+        collectionView.reloadData()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = collectionView.bounds.width / 2.0
+        return CGSize(width: size , height: size)
+    }
+    
+    
+    
+    
+}
+
+
+extension PackageDetailVC {
+    func wsGetPackServiceList() {
+        if let purchasePackId:String = packageDetail?.id {
+            AppWebApi.getPackageServiceList(params: PackageWebService.RequestPackageServiceList.init(user_pack_id:purchasePackId)) { (response) in
+                self.arrForData.removeAll()
+                if ResponseModel.isSuccess(response: response) {
+                    self.arrForOriginalData = response.dataList
+                    for data in self.arrForOriginalData {
+                        self.arrForData.append(data.toViewModel())
+                    }
+                    self.cltView.reloadData()
+                }
+            }
+        }
+        
+    }
 }

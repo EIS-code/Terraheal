@@ -3,7 +3,7 @@
 //  ModalView
 //
 //  Created by Jaydeep Vyas on 3/20/17.
-//  Copyright © 2017 Aatish. All rights reserved.
+//  Copyright © 2017 Jaydeep. All rights reserved.
 //
 
 import UIKit
@@ -16,7 +16,7 @@ class SessionDialog: ThemeBottomDialogView {
     var onBtnDoneTapped: ((_ data:SessionDetail) -> Void)? = nil
     var selectedData:SessionDetail = SessionDetail.init(fromDictionary: [:])
     var arrForData: [SessionDetail] = []
-    
+    var bookindType: BookingType = BookingType.MassageCenter
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -142,7 +142,7 @@ extension SessionDialog {
     func fetchSessionList() {
         
         var request = Session.RequestList()
-        request.booking_type = appSingleton.myBookingData.booking_type
+        request.booking_type = self.bookindType.getParameterId()
         AppWebApi.fetchSessionList(params:request) { (response) in
             if ResponseModel.isSuccess(response: response) {
                 self.setDataSource(data: response.sessionList)

@@ -21,12 +21,9 @@ class PackVC: BaseVC {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnSubmit: FilledRoundedButton!
     @IBOutlet weak var btnUseThisPack: RoundedBorderButton!
-    var selectedData: PackDetail? = nil
-    var arrForData: [PackDetail] = [
-        PackDetail.init(code:"9S75894",name: "\"free from pain\"", price: "€250.00", description: "5 Massages & Therapies of 60 mins"),
-        PackDetail.init(code:"12345640",name: "\"THE MAGIC OF ORIENT\"", price: "€450.00", description: "10 Different Oriental Massages & Therapies")
-        
-    ]
+    var selectedData: PurchasedPackage? = nil
+    var arrForOriginalData: [PurchasedPackage] = []
+    var arrForData: [PackDetail] = []
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -74,6 +71,7 @@ class PackVC: BaseVC {
         self.setTitle(title: "PACK_TITLE".localized())
         self.btnSubmit?.setTitle("PACK_BTN_BUY_NEW".localized(), for: .normal)
         self.btnUseThisPack?.setTitle("PACK_BTN_USE_THIS_PACK".localized(), for: .normal)
+        self.wsGetPurchasePackList()
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
@@ -109,8 +107,6 @@ extension PackVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
         tableView.estimatedRowHeight = 250
         tableView.register(PackTblCell.nib()
             , forCellReuseIdentifier: PackTblCell.name)
-        
-        tableView.register(BookPackageCell.nib(), forCellReuseIdentifier: BookPackageCell.name)
         tableView.tableFooterView = UIView()
     }
     
@@ -133,7 +129,7 @@ extension PackVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
             self.arrForData[i].isSelected = false
         }
         self.arrForData[indexPath.row].isSelected = true
-        self.selectedData = self.arrForData[indexPath.row]
+        self.selectedData = self.arrForOriginalData[indexPath.row]
         self.tableView.reloadData()
     }
     
@@ -204,3 +200,24 @@ extension PackVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
 }
 
 
+extension PackVC {
+    func wsGetPurchasePackList() {
+     
+        AppWebApi.getPurchasedPackageList { (response) in
+            self.arrForData.removeAll()
+            if ResponseModel.isSuccess(response: response) {
+                self.arrForOriginalData = response.dataList
+                for data in self.arrForOriginalData {
+                    self.arrForData.append(data.toViewModel())
+                }
+                self.tableView.reloadData()
+            } else {
+               
+            }
+        }
+    }
+}
+
+func wsGetPackageList(shopId:String) {
+    
+}

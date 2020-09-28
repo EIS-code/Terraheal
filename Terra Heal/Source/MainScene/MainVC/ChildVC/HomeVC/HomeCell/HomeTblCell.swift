@@ -98,7 +98,7 @@ class HomeTblCell: TableCell {
             [weak alert, weak self]  in
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
-            appSingleton.myBookingData.booking_type = BookingType.AtPlace
+            appSingleton.myBookingData.booking_type = BookingType.AtHotelOrRoom
             Common.appDelegate.loadServiceMapVC(navigaionVC: self.parentVC?.navigationController)
         }
     }

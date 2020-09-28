@@ -3,7 +3,7 @@
 //  ModalView
 //
 //  Created by Jaydeep Vyas on 3/20/17.
-//  Copyright © 2017 Aatish. All rights reserved.
+//  Copyright © 2017 Jaydeep. All rights reserved.
 //
 
 import UIKit

@@ -9,14 +9,15 @@
 import UIKit
 
 
-class RecipentMassageManageDialog: ThemeBottomDialogView {
+class PackageDetailDialog: ThemeBottomDialogView {
     @IBOutlet weak var btnAddReciepent: ThemeButton!
     @IBOutlet weak var lblTotal: ThemeLabel!
     @IBOutlet weak var lblTotalValue: ThemeLabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var totalView: UIView!
-    var arrForData: [BookingInfo] = appSingleton.myBookingData.booking_info
-    var onBtnNextSelectedTapped: ((_ data: [BookingInfo]) -> Void)? = nil
+    var arrForData: [PackageBookingInfo] = appSingleton.requestUsePurchasePackage?.booking_info ?? []
+    
+    var onBtnNextSelectedTapped: ((_ data: [PackageBookingInfo]) -> Void)? = nil
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -73,7 +74,7 @@ class RecipentMassageManageDialog: ThemeBottomDialogView {
         var total: Double = 0.0
         for  data in arrForData {
             for service in data.services {
-                total = total + (service.selectedDuration.pricing.price).toDouble
+                total = total + (service.amount).toDouble
             }
         }
         self.lblTotalValue.text = total.toString().toCurrency()
@@ -95,10 +96,10 @@ class RecipentMassageManageDialog: ThemeBottomDialogView {
             guard let self = self else { return } ; print(self)
             recipientSelectionDialog?.dismiss()
             self.btnAddReciepent.isEnabled = true
-            let bookingData: BookingInfo = BookingInfo.init()
+            let bookingData: PackageBookingInfo = PackageBookingInfo.init()
             bookingData.reciepent = people
             bookingData.user_people_id = people.id
-            bookingData.services = []
+            bookingData.services = appSingleton.requestUsePurchasePackage!.selectedServices
             self.arrForData.append(bookingData)
             self.tableView.reloadData()
         }
@@ -108,7 +109,7 @@ class RecipentMassageManageDialog: ThemeBottomDialogView {
 
 // MARK: - Table View Delegate & Data source
 
-extension RecipentMassageManageDialog: UITableViewDelegate, UITableViewDataSource {
+extension PackageDetailDialog: UITableViewDelegate, UITableViewDataSource {
     private func reloadTableDataToFitHeight(tableView: UITableView) {
         DispatchQueue.main.async {
             tableView.reloadData {
@@ -155,15 +156,7 @@ extension RecipentMassageManageDialog: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        guard let view = tableView.dequeueReusableHeaderFooterView(
-            withIdentifier: ReciepentTblFooter.name)
-            as? ReciepentTblFooter
-            else {
-                return nil
-        }
-        view.btnAddService.tag = section
-        view.btnAddService.addTarget(self, action: #selector(addService(sender:)), for: .touchUpInside)
-        return view
+            return nil
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -176,7 +169,7 @@ extension RecipentMassageManageDialog: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ReciepentTblCell.name, for: indexPath) as?  ReciepentTblCell
         cell?.layoutIfNeeded()
-        cell?.setData(data: arrForData[indexPath.section].services[indexPath.row])
+        cell?.setPackServiceData(data: arrForData[indexPath.section].services[indexPath.row])
         cell?.btnDelete.addTarget(self
             , action: #selector(removeService(sender:)), for: .touchUpInside)
         cell?.layoutIfNeeded()
@@ -192,24 +185,6 @@ extension RecipentMassageManageDialog: UITableViewDelegate, UITableViewDataSourc
         return JDDeviceHelper.offseter(scaleFactor: 1.0, offset: 40, direction: .vertical)
     }
     
-    @objc func addService(sender: UIButton) {
-        let serviceDetailVC:  ServiceSelectionVC =  ServiceSelectionVC.fromNib()
-        serviceDetailVC.modalPresentationStyle = .fullScreen
-        serviceDetailVC.bookingDetail = self.arrForData[sender.tag]
-        DispatchQueue.main.async {
-            Common.appDelegate.getTopViewController()?.present(serviceDetailVC, animated: true, completion: nil)
-        }
-        serviceDetailVC.onBtnServiceSelectedTapped = { [weak self] (service) in
-            guard let self = self else { return } ; print(self)
-            
-            serviceDetailVC.dismiss(animated: true) {
-                
-                self.arrForData[sender.tag] = service
-                self.calculateTotal()
-                self.tableView.reloadData()
-            }
-        }
-    }
     @objc func removeService(sender: UIButton) {
         let buttonPostion = sender.convert(sender.bounds.origin, to: tableView)
         

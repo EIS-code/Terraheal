@@ -179,8 +179,6 @@ extension ServiceMapVC {
             appSingleton.myBookingData.serviceCenterDetail = self.arrForServices[self.currentIndex]
             appSingleton.myBookingData.booking_info = data
             self.openDateTimeSelectionDialog()
-            
-            
         }
     }
     
@@ -294,6 +292,7 @@ extension ServiceMapVC {
     
     func openSessionSelectionDialog() {
         sessionSelectionDialog  = SessionDialog.fromNib()
+        sessionSelectionDialog.bookindType = appSingleton.myBookingData.booking_type
         sessionSelectionDialog.initialize(title: "SESSION_TYPE_TITLE".localized(), buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
         sessionSelectionDialog.show(animated: true)
         sessionSelectionDialog.onBtnCancelTapped = {

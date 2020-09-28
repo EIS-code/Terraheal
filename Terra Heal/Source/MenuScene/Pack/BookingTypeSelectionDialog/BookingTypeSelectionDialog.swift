@@ -3,7 +3,7 @@
 //  ModalView
 //
 //  Created by Jaydeep Vyas on 3/20/17.
-//  Copyright © 2017 Aatish. All rights reserved.
+//  Copyright © 2017 Jaydeep. All rights reserved.
 //
 
 import UIKit
@@ -12,9 +12,14 @@ class BookingTypeSelectionDialog: ThemeBottomDialogView {
     
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
-    var onBtnDoneTapped: ((_ data:CustomButtonDetail) -> Void)? = nil
-    var selectedData:CustomButtonDetail = CustomButtonDetail.init()
-    var arrForData: [CustomButtonDetail] = [CustomButtonDetail(isSelected: true, id: 0, title: "pay total", type: 0),CustomButtonDetail(isSelected: false, id: 1, title: "pay 50 %", type: 1)]
+    var onBtnDoneTapped: ((_ data:BookingType) -> Void)? = nil
+    var selectedData:BookingType? = nil
+    var arrForData: [SelectionCellDetailWithImage] = [
+        SelectionCellDetailWithImage(image: BookingType.AtHotelOrRoom.getImage(), name:BookingType.AtHotelOrRoom.name(), id: BookingType.AtHotelOrRoom.getParameterId(), isSelected: false),
+        SelectionCellDetailWithImage(image: BookingType.MassageCenter.getImage(), name: BookingType.MassageCenter.name(), id: BookingType.MassageCenter.getParameterId(), isSelected: false)
+    ]
+    
+    
     
     
     override func awakeFromNib() {
@@ -36,32 +41,32 @@ class BookingTypeSelectionDialog: ThemeBottomDialogView {
             self.btnCancel.isHidden = false
         }
         if buttonTitle.isEmpty() {
-            self.btnNext.isHidden = true
+            self.btnDone?.isHidden = true
         } else {
-            self.btnNext.setTitle(buttonTitle, for: .normal)
-            self.btnNext.isHidden = false
+            self.btnDone?.setTitle(buttonTitle, for: .normal)
+            self.btnDone?.isHidden = false
         }
         self.setupTableView(tableView: self.tableView)
         
     }
     
-    func select(data:CustomButtonDetail) {
+    func select(data:BookingType) {
         self.selectedData = data
         for i in 0..<arrForData.count {
             arrForData[i].isSelected = false
-            if arrForData[i].id == data.id {
+            if arrForData[i].id == data.getParameterId() {
                 arrForData[i].isSelected = true
             }
         }
         self.tableView.reloadData()
     }
     
-    func setDataSource(data: [CustomButtonDetail]) {
+    func setDataSource(data: [SelectionCellDetailWithImage]) {
         self.arrForData.removeAll()
         for value in data {
             self.arrForData.append(value)
             if value.isSelected {
-                self.selectedData = value
+                self.selectedData = BookingType.init(rawValue: value.id)
             }
         }
         self.reloadTableDataToFitHeight(tableView: self.tableView)
@@ -75,9 +80,12 @@ class BookingTypeSelectionDialog: ThemeBottomDialogView {
     
     
     @IBAction func btnDoneTapped(_ sender: Any) {
-        if self.onBtnDoneTapped != nil {
-            self.onBtnDoneTapped!(selectedData);
+        if selectedData != nil {
+            if self.onBtnDoneTapped != nil {
+                self.onBtnDoneTapped!(selectedData!);
+            }
         }
+        
     }
     
 }
@@ -92,12 +100,12 @@ extension BookingTypeSelectionDialog : UITableViewDelegate,UITableViewDataSource
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-tableView.backgroundColor = .clear
+        tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 60
-        tableView.register(CustomButtonTblCell.nib()
-            , forCellReuseIdentifier: CustomButtonTblCell.name)
+        tableView.register(BookingTypeSelectionCell.nib()
+            , forCellReuseIdentifier: BookingTypeSelectionCell.name)
         tableView.tableFooterView = UIView()
     }
     
@@ -106,7 +114,7 @@ tableView.backgroundColor = .clear
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CustomButtonTblCell.name, for: indexPath) as?  CustomButtonTblCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: BookingTypeSelectionCell.name, for: indexPath) as?  BookingTypeSelectionCell
         cell?.layoutIfNeeded()
         cell?.setData(data: arrForData[indexPath.row])
         cell?.layoutIfNeeded()
@@ -119,7 +127,7 @@ tableView.backgroundColor = .clear
             arrForData[i].isSelected = false
         }
         self.arrForData[indexPath.row].isSelected = true
-        self.selectedData = self.arrForData[indexPath.row]
+        self.selectedData = BookingType.init(rawValue: self.arrForData[indexPath.row].id)
         tableView.reloadData()
     }
     

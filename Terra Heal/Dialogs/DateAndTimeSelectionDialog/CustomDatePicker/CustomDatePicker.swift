@@ -3,7 +3,7 @@
 //  ModalView
 //
 //  Created by Jaydeep Vyas on 3/20/17.
-//  Copyright © 2017 Aatish. All rights reserved.
+//  Copyright © 2017 Jaydeep. All rights reserved.
 //
 
 import UIKit
@@ -51,17 +51,10 @@ class CustomDatePicker: ThemeBottomDialogView {
             self.btnCancel.setTitle(cancelButtonTitle, for: .normal)
             self.btnCancel.isHidden = false
         }
-
-
-
-
-
-
     }
 
     override func initialSetup() {
         super.initialSetup()
-        
         self.btnPreviousMonth.setTitle(FontSymbol.back_arrow, for: .normal)
         self.btnPreviousMonth.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         self.btnNextMonth.setTitle(FontSymbol.next_arrow, for: .normal)
@@ -117,7 +110,8 @@ extension CustomDatePicker: FSCalendarDataSource, FSCalendarDelegate {
         calendar.delegate = self
         calendar.dataSource = self
         calendar.allowsMultipleSelection = false
-        calendar.appearance.todayColor = self.selectionColor
+        calendar.appearance.todaySelectionColor = self.selectionColor
+        calendar.appearance.todayColor = UIColor.themeSecondary
         calendar.appearance.selectionColor =  self.selectionColor
         calendar.appearance.caseOptions = .weekdayUsesSingleUpperCase
         calendar.appearance.weekdayFont = FontHelper.font(name: FontName.Regular, size: FontSize.detail)

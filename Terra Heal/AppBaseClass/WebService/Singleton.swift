@@ -19,14 +19,18 @@ public class Singleton :NSObject {
     var myAddress: String = ""
     var currencySymbol: String = "$"
     var massagePrefrenceDetail:[MassagePreferenceDetail] = []
+    
+    
     var myBookingData: MyBookingData = MyBookingData.init()
     var myBuyPackageData: PackageWebService.RequestBuyPackage =  PackageWebService.RequestBuyPackage.init()
     var myBuyGiftVoucherData: VoucherWebService.RequestPurchageVoucher =   VoucherWebService.RequestPurchageVoucher.init()
-   
+    var purchasePackage: Package? = nil
+    var requestUsePurchasePackage: MyBookingPackageData? = nil
     
-     var purchasePackage: Package? = nil
-    
-    
+    private override init() {
+
+    }
+
     func getPressureDetail() -> MassagePreferenceDetail? {
         for data in massagePrefrenceDetail {
             if data.id == MassagePreferenceMenu.Pressure.rawValue {
@@ -52,11 +56,8 @@ public class Singleton :NSObject {
                }
            }
            return nil
-       }
-    
-    private override init() {
-
     }
+    
     func clear() {
 
     }
@@ -80,7 +81,6 @@ class MyMassagePreference: NSObject {
     override init() {
         super.init()
     }
-
     var pressure:  PreferenceOption = PreferenceOption.init(fromDictionary: [:])
     var prefereGender: PreferGender = .NoPreference
     var treatmentDescription: String = ""

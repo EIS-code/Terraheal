@@ -131,7 +131,7 @@ class ServiceSelectionVC: BaseVC {
            self.massageInfo.massage_prices_id = self.selectedService.selectedDuration.pricing.id
             if appSingleton.myBookingData.booking_type == BookingType.MassageCenter {
                 self.openPressurerPicker()
-            } else if appSingleton.myBookingData.booking_type == BookingType.AtPlace  {
+            } else if appSingleton.myBookingData.booking_type == BookingType.AtHotelOrRoom  {
                 self.openPreferGenderPicker()
             } else {
                 self.openPressurerPicker()
@@ -274,7 +274,7 @@ extension ServiceSelectionVC:  UICollectionViewDelegate, UICollectionViewDataSou
 
 extension ServiceSelectionVC {
     func getServiceCenterDetail() {
-        AppWebApi.massageCenterDetail { (response) in
+        AppWebApi.massageCenterDetail(params: ServiceCenter.RequestServiceCenterDetail.init(shop_id: "5")) { (response) in
             if ResponseModel.isSuccess(response: response) {
                 for data in response.serviceList {
                     self.arrForData.append(data)

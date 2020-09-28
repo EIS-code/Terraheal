@@ -20,7 +20,7 @@ enum ServiceCenter {
     }
     struct RequestServiceCenterDetail: Codable {
         var user_id: String = PreferenceHelper.shared.getUserId()
-        var shop_id: String = "5"
+        var shop_id: String = ""
     }
     
     class Response: ResponseModel {

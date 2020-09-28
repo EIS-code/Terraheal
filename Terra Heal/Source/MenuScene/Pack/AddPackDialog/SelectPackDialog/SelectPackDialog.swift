@@ -3,7 +3,7 @@
 //  ModalView
 //
 //  Created by Jaydeep Vyas on 3/20/17.
-//  Copyright © 2017 Aatish. All rights reserved.
+//  Copyright © 2017 Jaydeep. All rights reserved.
 //
 
 import UIKit
@@ -139,7 +139,7 @@ extension SelectPackDialog : UITableViewDelegate,UITableViewDataSource {
 extension SelectPackDialog {
     func wsGetPackageList(shopId:String) {
         let reuest: PackageWebService.RequestPackageList =
-            PackageWebService.RequestPackageList.init(shop_id:"5")
+            PackageWebService.RequestPackageList.init(shop_id:"5")//shopId)
         AppWebApi.getPackageList(params: reuest) { (response) in
             self.arrForData.removeAll()
             if ResponseModel.isSuccess(response: response) {

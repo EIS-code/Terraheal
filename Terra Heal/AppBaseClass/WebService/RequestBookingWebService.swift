@@ -11,7 +11,7 @@ import Foundation
 
 
 class MyBookingData: NSObject {
-    var booking_type: String = "2"
+    var booking_type: BookingType = BookingType.MassageCenter
     var session_id: String = ""
     var special_notes:  String = ""
     var date: String = ""
@@ -31,10 +31,10 @@ class MyBookingData: NSObject {
         var dictionary = [String:Any]()
         dictionary["session_id"] = session_id
         dictionary["booking_date_time"] = date
-        dictionary["booking_type"] = booking_type
+        dictionary["booking_type"] = booking_type.getParameterId()
         dictionary["special_notes"] = special_notes
         dictionary["user_id"] = user_id
-        dictionary["shop_id"] = "5"//shop_id
+        dictionary["shop_id"] = shop_id
         dictionary["currency_id"] = currency_id
         var dictionaryElements = [[String:Any]]()
         for dataElement in booking_info {

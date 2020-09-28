@@ -457,6 +457,10 @@
 "FINGER_PRINT_DIALOG_LOGIN_TITLE" = "login with fingerprint";
 "FINGER_PRINT_DIALOG_PASSWORD_TITLE" = "login with password";
 "FINGER_PRINT_DIALOG_BTN_PASSWORD" = "password";
+
+//MARK: Package Dialog
+"MY_BOOKING_TYPE_AT_HOME_OR_HOTEL" = "home / hotel booking";
+"MY_BOOKING_TYPE_AT_MASSAGE_CENTER" = "center Booking";
 //MARK: -
 //MARK: Common Strings
 //MARK: -

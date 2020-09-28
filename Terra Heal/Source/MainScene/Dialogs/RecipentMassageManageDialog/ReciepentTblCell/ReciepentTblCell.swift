@@ -7,6 +7,8 @@
 //
 
 import UIKit
+
+
 class ReciepentTblCell: TableCell {
     
     @IBOutlet weak var lblName: ThemeLabel!
@@ -26,6 +28,12 @@ class ReciepentTblCell: TableCell {
         self.lblName.text = data.name
         self.lblDuration.text = data.selectedDuration.time + " " + "min"
         self.lblPrice.text = data.selectedDuration.pricing.price.toCurrency()
+    }
+    
+    func setPackServiceData(data: PackService ) {
+        self.lblName.text = data.name
+        self.lblDuration.text = data.time + " " + "min"
+        self.lblPrice.text = data.amount.toCurrency()
     }
     
     override func layoutSubviews() {

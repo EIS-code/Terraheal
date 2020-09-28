@@ -103,8 +103,13 @@ struct ImageAsset {
         static let single = "asset-session-single"
         static let couple = "asset-session-couple"
         static let group = "asset-session-group"
-       
     }
+    
+    struct BookingType {
+        static let hotel = "asset-pricing-home-tab"
+        static let center = "asset-pricing-therapist-tab"
+    }
+    
     struct SideMenu {
         
         static let howItWork = "asset-side-menu-how-it-work"

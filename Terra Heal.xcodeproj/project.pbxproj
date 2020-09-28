@@ -133,6 +133,10 @@
 		0345C69724C9B21800873FD1 /* ScanSelfieInstructionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0345C68924C9B21800873FD1 /* ScanSelfieInstructionVC.xib */; };
 		0345C69824C9B21800873FD1 /* ScanSelfieInstructionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0345C68A24C9B21800873FD1 /* ScanSelfieInstructionVC.swift */; };
 		0345C69A24C9D11F00873FD1 /* ServiceMap + Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0345C69924C9D11F00873FD1 /* ServiceMap + Animation.swift */; };
+		03469E302521B5E0001EFF39 /* PackageServiceCltCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03469E2E2521B5DF001EFF39 /* PackageServiceCltCell.xib */; };
+		03469E312521B5E0001EFF39 /* PackageServiceCltCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03469E2F2521B5DF001EFF39 /* PackageServiceCltCell.swift */; };
+		03469E3525221FF8001EFF39 /* PackageDetailDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03469E3325221FF8001EFF39 /* PackageDetailDialog.xib */; };
+		03469E3625221FF8001EFF39 /* PackageDetailDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03469E3425221FF8001EFF39 /* PackageDetailDialog.swift */; };
 		0347816D250B358100D89463 /* ThemeTableCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0347816C250B358100D89463 /* ThemeTableCells.swift */; };
 		0347835124BDB1AA00E3D4EC /* AddCardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0347834F24BDB1A900E3D4EC /* AddCardVC.xib */; };
 		0347835224BDB1AA00E3D4EC /* AddCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0347835024BDB1A900E3D4EC /* AddCardVC.swift */; };
@@ -388,10 +392,6 @@
 		03AB5947251E14F8002FE7C9 /* BookingTypeSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03AB591C251E14F6002FE7C9 /* BookingTypeSelectionCell.xib */; };
 		03AB5948251E14F8002FE7C9 /* BookingTypeSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AB591D251E14F6002FE7C9 /* BookingTypeSelectionCell.swift */; };
 		03AB5949251E14F8002FE7C9 /* PackTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03AB591F251E14F6002FE7C9 /* PackTblCell.xib */; };
-		03AB594A251E14F8002FE7C9 /* BookPackageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AB5921251E14F6002FE7C9 /* BookPackageCell.swift */; };
-		03AB594B251E14F8002FE7C9 /* BookPackageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03AB5922251E14F6002FE7C9 /* BookPackageCell.xib */; };
-		03AB594C251E14F8002FE7C9 /* UsedPackageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03AB5924251E14F7002FE7C9 /* UsedPackageCell.xib */; };
-		03AB594D251E14F8002FE7C9 /* UsedPackageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AB5925251E14F7002FE7C9 /* UsedPackageCell.swift */; };
 		03AB594E251E14F8002FE7C9 /* PackTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AB5926251E14F7002FE7C9 /* PackTblCell.swift */; };
 		03AB594F251E14F8002FE7C9 /* CustomGiverDetailDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03AB5929251E14F7002FE7C9 /* CustomGiverDetailDialog.xib */; };
 		03AB5950251E14F8002FE7C9 /* CustomGiverDetailDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AB592A251E14F7002FE7C9 /* CustomGiverDetailDialog.swift */; };
@@ -617,6 +617,10 @@
 		0345C68924C9B21800873FD1 /* ScanSelfieInstructionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanSelfieInstructionVC.xib; sourceTree = "<group>"; };
 		0345C68A24C9B21800873FD1 /* ScanSelfieInstructionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanSelfieInstructionVC.swift; sourceTree = "<group>"; };
 		0345C69924C9D11F00873FD1 /* ServiceMap + Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServiceMap + Animation.swift"; sourceTree = "<group>"; };
+		03469E2E2521B5DF001EFF39 /* PackageServiceCltCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PackageServiceCltCell.xib; sourceTree = "<group>"; };
+		03469E2F2521B5DF001EFF39 /* PackageServiceCltCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageServiceCltCell.swift; sourceTree = "<group>"; };
+		03469E3325221FF8001EFF39 /* PackageDetailDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PackageDetailDialog.xib; sourceTree = "<group>"; };
+		03469E3425221FF8001EFF39 /* PackageDetailDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageDetailDialog.swift; sourceTree = "<group>"; };
 		0347816C250B358100D89463 /* ThemeTableCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTableCells.swift; sourceTree = "<group>"; };
 		0347834F24BDB1A900E3D4EC /* AddCardVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCardVC.xib; sourceTree = "<group>"; };
 		0347835024BDB1A900E3D4EC /* AddCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardVC.swift; sourceTree = "<group>"; };
@@ -872,10 +876,6 @@
 		03AB591C251E14F6002FE7C9 /* BookingTypeSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookingTypeSelectionCell.xib; sourceTree = "<group>"; };
 		03AB591D251E14F6002FE7C9 /* BookingTypeSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingTypeSelectionCell.swift; sourceTree = "<group>"; };
 		03AB591F251E14F6002FE7C9 /* PackTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PackTblCell.xib; sourceTree = "<group>"; };
-		03AB5921251E14F6002FE7C9 /* BookPackageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookPackageCell.swift; sourceTree = "<group>"; };
-		03AB5922251E14F6002FE7C9 /* BookPackageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookPackageCell.xib; sourceTree = "<group>"; };
-		03AB5924251E14F7002FE7C9 /* UsedPackageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UsedPackageCell.xib; sourceTree = "<group>"; };
-		03AB5925251E14F7002FE7C9 /* UsedPackageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsedPackageCell.swift; sourceTree = "<group>"; };
 		03AB5926251E14F7002FE7C9 /* PackTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackTblCell.swift; sourceTree = "<group>"; };
 		03AB5929251E14F7002FE7C9 /* CustomGiverDetailDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomGiverDetailDialog.xib; sourceTree = "<group>"; };
 		03AB592A251E14F7002FE7C9 /* CustomGiverDetailDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomGiverDetailDialog.swift; sourceTree = "<group>"; };
@@ -1279,6 +1279,7 @@
 		0344492F24B6045E00C8B763 /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
+				03469E3225221FF8001EFF39 /* PackageDetailDialog */,
 				03607160251C855A00505565 /* CustomTableDataSelectionDialog */,
 				036CEF4A24E25FC300E349FF /* CustomAmountTextFieldDialog */,
 				0347835324BDD52300E3D4EC /* MonthYearDialog */,
@@ -1709,6 +1710,25 @@
 			);
 			path = xib;
 			sourceTree = "<group>";
+		};
+		03469E2D2521B5DF001EFF39 /* PackageServiceCltCell */ = {
+			isa = PBXGroup;
+			children = (
+				03469E2E2521B5DF001EFF39 /* PackageServiceCltCell.xib */,
+				03469E2F2521B5DF001EFF39 /* PackageServiceCltCell.swift */,
+			);
+			path = PackageServiceCltCell;
+			sourceTree = "<group>";
+		};
+		03469E3225221FF8001EFF39 /* PackageDetailDialog */ = {
+			isa = PBXGroup;
+			children = (
+				03469E3325221FF8001EFF39 /* PackageDetailDialog.xib */,
+				03469E3425221FF8001EFF39 /* PackageDetailDialog.swift */,
+			);
+			name = PackageDetailDialog;
+			path = "Terra Heal/Source/MainScene/Dialogs/PackageDetailDialog";
+			sourceTree = SOURCE_ROOT;
 		};
 		0347834D24BDB1A900E3D4EC /* AddCardVC */ = {
 			isa = PBXGroup;
@@ -3267,29 +3287,9 @@
 			isa = PBXGroup;
 			children = (
 				03AB591F251E14F6002FE7C9 /* PackTblCell.xib */,
-				03AB5920251E14F6002FE7C9 /* BookPackageCell */,
-				03AB5923251E14F6002FE7C9 /* UsedPackageCell */,
 				03AB5926251E14F7002FE7C9 /* PackTblCell.swift */,
 			);
 			path = PackCell;
-			sourceTree = "<group>";
-		};
-		03AB5920251E14F6002FE7C9 /* BookPackageCell */ = {
-			isa = PBXGroup;
-			children = (
-				03AB5921251E14F6002FE7C9 /* BookPackageCell.swift */,
-				03AB5922251E14F6002FE7C9 /* BookPackageCell.xib */,
-			);
-			path = BookPackageCell;
-			sourceTree = "<group>";
-		};
-		03AB5923251E14F6002FE7C9 /* UsedPackageCell */ = {
-			isa = PBXGroup;
-			children = (
-				03AB5924251E14F7002FE7C9 /* UsedPackageCell.xib */,
-				03AB5925251E14F7002FE7C9 /* UsedPackageCell.swift */,
-			);
-			path = UsedPackageCell;
 			sourceTree = "<group>";
 		};
 		03AB5927251E14F7002FE7C9 /* AddPackDialog */ = {
@@ -3364,6 +3364,7 @@
 		03AB593C251E14F7002FE7C9 /* PackageDetailVC */ = {
 			isa = PBXGroup;
 			children = (
+				03469E2D2521B5DF001EFF39 /* PackageServiceCltCell */,
 				03AB593D251E14F7002FE7C9 /* xib */,
 				03AB593F251E14F7002FE7C9 /* PackageDetailVC + Booking.swift */,
 				03AB5940251E14F7002FE7C9 /* PackageDetailVC.swift */,
@@ -3973,6 +3974,7 @@
 				0345C66A24C9A7B600873FD1 /* ReservationVC.xib in Resources */,
 				0348781E24B2EF64006774AB /* MyTherapistVC.xib in Resources */,
 				034449B124B604C000C8B763 /* CustomLanguagePicker.xib in Resources */,
+				03469E3525221FF8001EFF39 /* PackageDetailDialog.xib in Resources */,
 				0347835124BDB1AA00E3D4EC /* AddCardVC.xib in Resources */,
 				034449AF24B604C000C8B763 /* CustomLanguagePickerCell.xib in Resources */,
 				0383B29124B87073003622F6 /* ReviewReciepentTblSection.xib in Resources */,
@@ -4009,14 +4011,13 @@
 				03406FA424E2D8F50014AC99 /* CustomThemePickerCell.xib in Resources */,
 				0344496B24B6045F00C8B763 /* CustomRateViewDialog.xib in Resources */,
 				0348786A24B2EF64006774AB /* CustomHistoryFilterPicker.xib in Resources */,
+				03469E302521B5E0001EFF39 /* PackageServiceCltCell.xib in Resources */,
 				034878B024B2F2FF006774AB /* DocumentTblCell.xib in Resources */,
 				0344495C24B6045F00C8B763 /* CustomMobileNumberDialog.xib in Resources */,
-				03AB594B251E14F8002FE7C9 /* BookPackageCell.xib in Resources */,
 				0344495924B6045F00C8B763 /* country_list.json in Resources */,
 				038738FC251DB7BC0013D677 /* TherapistCltCell.xib in Resources */,
 				034877FC24B2EF64006774AB /* ManagePeopleVC.xib in Resources */,
 				0344495824B6045F00C8B763 /* CustomCountryPhoneCodePickerCell.xib in Resources */,
-				03AB594C251E14F8002FE7C9 /* UsedPackageCell.xib in Resources */,
 				634398B4245BEAB2009BCA1F /* Assets.xcassets in Resources */,
 				0348785A24B2EF64006774AB /* CustomServiceHourSelectionDialog.xib in Resources */,
 				03AB5954251E14F8002FE7C9 /* AddPackTblCell.xib in Resources */,
@@ -4245,6 +4246,7 @@
 				034CD80D24BC48F200BFD6E1 /* PaymentPreferenceVC.swift in Sources */,
 				03AB595E251E14F8002FE7C9 /* PackageDetailVC + Booking.swift in Sources */,
 				034878B524B32789006774AB /* SettingPreferenceWebservice.swift in Sources */,
+				03469E3625221FF8001EFF39 /* PackageDetailDialog.swift in Sources */,
 				0344499824B604A000C8B763 /* CustomCountryPickerCell.swift in Sources */,
 				0344490A24B5FC9400C8B763 /* BookingCompleteVC.swift in Sources */,
 				0348780724B2EF64006774AB /* SettingSwitchTblCell.swift in Sources */,
@@ -4298,7 +4300,6 @@
 				0345C69224C9B21800873FD1 /* ScanPassportInstructionVC.swift in Sources */,
 				0392194524EF9A1E00302BC7 /* CustomDocumentPicker.swift in Sources */,
 				0345C69024C9B21800873FD1 /* KycInfoVC.swift in Sources */,
-				03AB594D251E14F8002FE7C9 /* UsedPackageCell.swift in Sources */,
 				0348789A24B2EF64006774AB /* CustomFaqDialog.swift in Sources */,
 				0383B29024B87073003622F6 /* ReviewReciepentTblSection.swift in Sources */,
 				0344490F24B5FFE600C8B763 /* TextViewDialog.swift in Sources */,
@@ -4328,7 +4329,6 @@
 				03744314251367D800358755 /* HomeSegmentControl.swift in Sources */,
 				03A1B54324B5A804008BAC3A /* RecipientTblCell.swift in Sources */,
 				0348780124B2EF64006774AB /* ManagePeopleVC.swift in Sources */,
-				03AB594A251E14F8002FE7C9 /* BookPackageCell.swift in Sources */,
 				632DB09E248FA5CC00B65B46 /* UIView + Extension.swift in Sources */,
 				03B2B74A24E693B700EC18D5 /* PreviewGiftVoucherDialog.swift in Sources */,
 				0344384424C1BC5D0066DDCA /* ReciepentTblSection.swift in Sources */,
@@ -4336,6 +4336,7 @@
 				0348785D24B2EF64006774AB /* ServiceCell.swift in Sources */,
 				0373250024CAD4780020FC03 /* ServiceCenterWebService.swift in Sources */,
 				633B7128245FDA5800CF490D /* ThemeLabel.swift in Sources */,
+				03469E312521B5E0001EFF39 /* PackageServiceCltCell.swift in Sources */,
 				0383B27D24B80F2C003622F6 /* ReviewAndBookVC.swift in Sources */,
 				0348781D24B2EF64006774AB /* EditProfileVC.swift in Sources */,
 				0348780A24B2EF64006774AB /* MyPlaceTblCell.swift in Sources */,

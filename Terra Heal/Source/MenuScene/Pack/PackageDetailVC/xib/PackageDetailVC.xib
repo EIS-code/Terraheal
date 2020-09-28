@@ -12,8 +12,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PackageDetailVC" customModule="Terra_Heal" customModuleProvider="target">
             <connections>
                 <outlet property="btnLeft" destination="gQT-1O-XW1" id="nHx-Jg-thS"/>
+                <outlet property="btnSubmit" destination="uOY-wg-nRc" id="tMI-0l-G4k"/>
+                <outlet property="cltView" destination="iri-7l-D56" id="Shv-w3-Mef"/>
                 <outlet property="lblTitle" destination="x2g-qm-ekv" id="v7m-TP-rZ8"/>
-                <outlet property="tableView" destination="lhV-r6-KO1" id="6kF-kz-zSC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="vwNavigationBar" destination="JYS-O4-wbd" id="GrQ-aF-IJj"/>
             </connections>
@@ -23,10 +24,16 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lhV-r6-KO1">
-                    <rect key="frame" x="16" y="106" width="343" height="672"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="iri-7l-D56">
+                    <rect key="frame" x="16" y="122" width="343" height="640"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                </tableView>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="iYs-UP-1CR">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYS-O4-wbd" userLabel="navigationBAr" customClass="ThemeView" customModule="Terra_Heal" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="44" width="375" height="62"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -50,20 +57,21 @@
                     <color key="textColor" name="theme_primary"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOY-wg-nRc" customClass="FilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="124.66666666666669" y="724" width="126" height="38"/>
+                    <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="btnSubmitTapped:" destination="-1" eventType="touchUpInside" id="Ry3-e9-U7E"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="lhV-r6-KO1" secondAttribute="bottom" id="5Hg-Iz-5Jl"/>
+                <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="uOY-wg-nRc" secondAttribute="bottom" constant="16" id="4kl-vj-ILg"/>
                 <constraint firstItem="JYS-O4-wbd" firstAttribute="bottom" secondItem="gQT-1O-XW1" secondAttribute="bottom" constant="16" id="7eN-G1-VIu"/>
                 <constraint firstItem="x2g-qm-ekv" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="8a5-29-Gxw"/>
-                <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="lhV-r6-KO1" secondAttribute="trailing" constant="16" id="BIZ-Wb-tY6" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
-                            <real key="value" value="16"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
-                    </userDefinedRuntimeAttributes>
-                </constraint>
+                <constraint firstItem="uOY-wg-nRc" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="8ah-al-hCZ"/>
                 <constraint firstItem="JYS-O4-wbd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Eak-p0-Vgq"/>
                 <constraint firstItem="JYS-O4-wbd" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" id="Qn1-DO-KWg"/>
                 <constraint firstItem="gQT-1O-XW1" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="16" id="RUK-mO-nc3" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
@@ -74,16 +82,15 @@
                     </userDefinedRuntimeAttributes>
                 </constraint>
                 <constraint firstItem="x2g-qm-ekv" firstAttribute="centerY" secondItem="gQT-1O-XW1" secondAttribute="centerY" id="TKq-OP-Kfl"/>
-                <constraint firstItem="lhV-r6-KO1" firstAttribute="top" secondItem="JYS-O4-wbd" secondAttribute="bottom" id="hep-Kp-wCi"/>
-                <constraint firstItem="lhV-r6-KO1" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="16" id="sZd-f4-7VZ" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="iri-7l-D56" secondAttribute="bottom" constant="16" id="aUo-AC-hmE"/>
+                <constraint firstAttribute="trailing" secondItem="JYS-O4-wbd" secondAttribute="trailing" id="tOi-q4-OKr"/>
+                <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="iri-7l-D56" secondAttribute="trailing" constant="16" id="uRA-Kg-urC" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                             <real key="value" value="16"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstAttribute="trailing" secondItem="JYS-O4-wbd" secondAttribute="trailing" id="tOi-q4-OKr"/>
                 <constraint firstItem="gQT-1O-XW1" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="16" id="vXz-OR-pSy" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
@@ -91,6 +98,14 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </constraint>
+                <constraint firstItem="iri-7l-D56" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="16" id="yf9-qs-Jf1" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="iri-7l-D56" firstAttribute="top" secondItem="JYS-O4-wbd" secondAttribute="bottom" constant="16" id="yjN-YT-k6G"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
             <point key="canvasLocation" x="131" y="154"/>

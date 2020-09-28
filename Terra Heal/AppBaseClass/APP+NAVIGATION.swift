@@ -673,7 +673,7 @@ extension AppDelegate {
     }
     
     
-    func loadPackageDetailVC(navigaionVC:UINavigationController? = nil, data:PackDetail) {
+    func loadPackageDetailVC(navigaionVC:UINavigationController? = nil, data:PurchasedPackage) {
         if let nc = navigaionVC as? NC {
             if let targetVC: PackageDetailVC =  nc.findVCs(ofType: PackageDetailVC.self).first {
                 targetVC.packageDetail = data

@@ -3,7 +3,7 @@
 //  ModalView
 //
 //  Created by Jaydeep Vyas on 3/20/17.
-//  Copyright © 2017 Aatish. All rights reserved.
+//  Copyright © 2017 Jaydeep. All rights reserved.
 //
 
 import UIKit
@@ -13,7 +13,7 @@ import UIKit
 class RecipientSelectionDialog: ThemeBottomDialogView {
     
     @IBOutlet weak var tableView: UITableView!
-   var onBtnDoneTapped: ((_ data:People) -> Void)? = nil
+    var onBtnDoneTapped: ((_ data:People) -> Void)? = nil
     var selectedData:People = People.init(fromDictionary: [:])
     var arrForData: [People] = []
     var arrForGenderPreference: [PreferenceOption] = []

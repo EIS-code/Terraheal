@@ -54,7 +54,8 @@ extension MyFavVC:  UICollectionViewDelegate, UICollectionViewDataSource, UIColl
 
 extension MyFavVC {
     func getServiceCenterDetail() {
-        AppWebApi.massageCenterDetail { (response) in
+        AppWebApi.massageCenterDetail(params: ServiceCenter.RequestServiceCenterDetail.init(
+            shop_id:"5")) { (response) in
             if ResponseModel.isSuccess(response: response) {
                 for data in response.serviceList {
                     self.arrForData.append(data)

@@ -116,7 +116,6 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstItem="L7d-cr-2FZ" firstAttribute="width" secondItem="L7d-cr-2FZ" secondAttribute="height" multiplier="1:1" id="LvS-DC-FwR"/>
                 <constraint firstItem="AvE-MA-PhL" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="NdL-qr-rNa"/>
                 <constraint firstItem="avG-hh-b4K" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" id="OLz-Rr-J3T"/>
                 <constraint firstItem="L7d-cr-2FZ" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="16" id="SXw-Bn-FzI" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
