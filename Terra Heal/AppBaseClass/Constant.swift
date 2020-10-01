@@ -110,7 +110,7 @@ enum BookingType: String {
         switch self {
         case .MassageCenter: return "MY_BOOKING_TYPE_AT_MASSAGE_CENTER".localized()
         case .AtHotelOrRoom: return "MY_BOOKING_TYPE_AT_HOME_OR_HOTEL".localized()
-        default: return "Unknown"
+        //default: return "Unknown"
         }
     }
     
@@ -120,14 +120,14 @@ enum BookingType: String {
         switch self {
         case .MassageCenter: return ImageAsset.BookingType.center
         case .AtHotelOrRoom: return ImageAsset.BookingType.hotel
-        default: return "Unknown"
+        //default: return "Unknown"
         }
     }
     func getParameterId() -> String {
         switch self {
         case .MassageCenter: return "0"
         case .AtHotelOrRoom: return "1"
-        default: return "Unknown"
+        //default: return "Unknown"
         }
     }
 }
@@ -142,7 +142,7 @@ struct DateFormat {
     static let GiftVoucher = "EEE, MMM dd, yyyy"
     static let DD_MM_YYYY = "dd/MM/YYYY"
     static let DOB = "dd MMM yyyy"
-    static let check = "✓"
+    static let MyBookingCollapseDate = "dd MMM yyyy hh:mm"
 }
 
 

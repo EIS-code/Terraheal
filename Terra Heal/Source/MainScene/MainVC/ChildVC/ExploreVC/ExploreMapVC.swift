@@ -11,12 +11,9 @@ class ExploreMapVC: BaseVC {
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var btnCurrentLocation: FloatingRoundButton!
     var lc: LocationCenter? = nil
-    var arrForMarkers: [CLLocationCoordinate2D] = [
-        CLLocationCoordinate2D.init(latitude: 22.30, longitude: 70.75),
-        CLLocationCoordinate2D.init(latitude: 22.32, longitude: 70.83),
-        CLLocationCoordinate2D.init(latitude: 22.35, longitude: 70.81),
-        CLLocationCoordinate2D.init(latitude: 22.38, longitude: 70.82)
-    ]
+    var arrForServices: [ServiceCenterDetail] = []
+    var arrForServicesMarker: [GMSMarker] = []
+    var isEnableToCallApi:Bool = true
     //MARK:
     //MARK: View life cycle
     override func viewDidLoad(){
@@ -24,7 +21,8 @@ class ExploreMapVC: BaseVC {
         self.setBackground(color: .themeBackground)
         self.lc = LocationCenter()
         self.setupMapView(mapView: self.mapView)
-        self.setMarkers()
+        self.addLocationObserver()
+
     }
     
     override func viewWillAppear(_ animated: Bool){
@@ -62,7 +60,8 @@ class ExploreMapVC: BaseVC {
     
     
     @IBAction func onClickBtnCurrentLocation(_ sender: Any) {
-        gettingCurrentLocation()
+        //gettingCurrentLocation()
+        self.focusAllMarkers()
     }
     
     func gettingCurrentLocation() {
@@ -85,7 +84,9 @@ class ExploreMapVC: BaseVC {
         if let locationDict: [String: Any]  = ntf.userInfo?["ncd"] as? [String:Any] {
             if let location = locationDict["location"]  {
                 if let coordinate =  (location as?  CLLocation)?.coordinate {
-                    self.animateToLocation(coordinate: coordinate)
+                    print(coordinate)
+                    //  self.animateToLocation(coordinate: coordinate)
+                    self.getMassageCenter()
                 }
             }
         }
@@ -93,14 +94,57 @@ class ExploreMapVC: BaseVC {
     
     override func locationFail(_ ntf: Notification = Common.defaultNtf) {
     }
-    
-    func setMarkers() {
-        for location in arrForMarkers {
-            let marker: GMSMarker = GMSMarker.init(position: location)
-            marker.icon = UIImage.init(named: "asset-how-it-work-1")?.imageWithImage(scaledToSize: CGSize.init(width: 25, height: 40))
-            marker.map = self.mapView
+
+    func getMassageCenter() {
+        if self.isEnableToCallApi {
+            self.isEnableToCallApi = false
+            AppWebApi.massageCenterList(params: ServiceCenter.RequestServiceCenterlist()) { (response) in
+                self.isEnableToCallApi = true
+                self.arrForServices.removeAll()
+                self.removeAllCenterMarker()
+                if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
+                    for i  in 0..<response.serviceCenterList.count {
+                        let data = response.serviceCenterList[i]
+                        self.arrForServices.append(data)
+                    }
+                    self.createNewCenterMarkers()
+                }
+            }
         }
-        self.mapView.focusMap(locations: self.arrForMarkers)
+
+    }
+
+    func removeAllCenterMarker() {
+        for marker in self.arrForServicesMarker {
+            marker.map = nil
+        }
+        self.arrForServicesMarker.removeAll()
+    }
+
+    func createNewCenterMarkers() {
+        self.removeAllCenterMarker()
+
+        for i  in 0..<arrForServices.count {
+            let center: ServiceCenterDetail = self.arrForServices[i]
+            let marker:GMSMarker = GMSMarker.init(position: center.getCoordinatte())
+            marker.title  = center.name
+            marker.map = self.mapView
+            marker.userData = i
+
+            print("Position \(marker.position)")
+            self.arrForServicesMarker.append(GMSMarker.init(position: center.getCoordinatte()))
+            self.mapView.setMassageCenterMarker(marker: marker, image: UIImage.init(named: "asset-center-maker")!, location: center.getCoordinatte())
+        }
+        self.focusAllMarkers()
+
+    }
+    func focusAllMarkers() {
+        let bounds: GMSCoordinateBounds = GMSCoordinateBounds.init()
+        for marker in arrForServicesMarker {
+            bounds.includingCoordinate(marker.position)
+        }
+        self.mapView.animate(toZoom: 15.0)
+        self.mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 0.0))
     }
 }
 
@@ -117,6 +161,14 @@ extension ExploreMapVC :GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition){
         
     }
-    
-    
+
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        mapView.selectedMarker = marker
+        return true
+    }
+
+    func loadMyServiceVC(){
+        appSingleton.myBookingData.booking_type = BookingType.AtHotelOrRoom
+        Common.appDelegate.loadServiceMapVC(navigaionVC: self.navigationController)
+    }
 }

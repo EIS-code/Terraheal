@@ -87,7 +87,7 @@ extension CustomFaqDialog:  UITableViewDelegate, UITableViewDataSource {
            tableView.backgroundColor = .clear
            tableView.showsVerticalScrollIndicator = false
            tableView.rowHeight = UITableView.automaticDimension
-           tableView.estimatedRowHeight = UITableView.automaticDimension
+           tableView.estimatedRowHeight = 60
            tableView.register(FaqQuestionCell.nib()
                , forCellReuseIdentifier: FaqQuestionCell.name)
            tableView.tableFooterView = UIView()
@@ -109,7 +109,7 @@ extension CustomFaqDialog:  UITableViewDelegate, UITableViewDataSource {
 
        }
        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-           return tableView.bounds.width * 0.25
+        return UITableView.automaticDimension
        }
        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
            tableView.deselectRow(at: indexPath, animated: true)

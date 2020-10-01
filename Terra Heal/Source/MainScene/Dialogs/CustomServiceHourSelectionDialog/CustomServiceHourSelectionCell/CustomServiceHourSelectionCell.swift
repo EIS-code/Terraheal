@@ -43,7 +43,6 @@ class CustomServiceHourSelectionCell: TableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = .clear
-        self.selectionStyle = .none
         self.contentView.backgroundColor = .clear
         self.lblDay?.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.lblHours?.setFont(name: FontName.Bold, size: FontSize.subHeader)

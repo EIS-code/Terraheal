@@ -19,8 +19,6 @@ class PreferenceHelper: NSObject {
     static let shared = PreferenceHelper()
     private override init(){
     }
-    
-
 
     // MARK: Preference User Getter Setters
     func setDeviceToken(_ token:String) {

@@ -117,13 +117,7 @@ class BaseVC: UIViewController {
 //MARK: Location Observer
 extension BaseVC {
     func addLocationObserver() {
-        Common.nCd.removeObserver(self,
-                               name: Common.locationUpdateNtfNm,
-                               object: LC.default)
-        Common.nCd.removeObserver(self,
-                               name: Common.locationFailNtfNm,
-                               object: LC.default)
-
+        self.removeLocationObserver()
         unowned let _self = self
         Common.nCd.addObserver(_self,
                             selector: #selector(_self.locationUpdate(_:)),
@@ -133,6 +127,15 @@ extension BaseVC {
                             selector: #selector(_self.locationFail(_:)),
                             name: Common.locationFailNtfNm,
                             object: LC.default)
+    }
+    func removeLocationObserver() {
+        Common.nCd.removeObserver(self,
+                                      name: Common.locationUpdateNtfNm,
+                                      object: LC.default)
+        Common.nCd.removeObserver(self,
+                                      name: Common.locationFailNtfNm,
+                                      object: LC.default)
+
     }
     @objc func locationUpdate(_ ntf: Notification = Common.defaultNtf) {
         

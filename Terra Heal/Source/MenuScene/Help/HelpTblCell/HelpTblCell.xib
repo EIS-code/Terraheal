@@ -14,33 +14,39 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="91" id="KGk-i7-Jjw" userLabel="HelpTblCell" customClass="HelpTblCell" customModule="Terra_Heal" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="352" height="91"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="352" height="91"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTr-D4-KiU" userLabel="vwForBackground">
-                        <rect key="frame" x="4" y="4" width="344" height="80"/>
+                        <rect key="frame" x="4" y="4" width="344" height="83"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-help-chat" translatesAutoresizingMaskIntoConstraints="NO" id="kIG-oD-stJ">
-                                <rect key="frame" x="16" y="16" width="36" height="47"/>
+                                <rect key="frame" x="16" y="16" width="36" height="50"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLR-Vi-Yu8" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="68" y="16" width="42" height="18"/>
+                                <rect key="frame" x="68" y="16" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="theme_dark_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5am-b3-cck" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="68" y="42" width="42" height="21"/>
+                                <rect key="frame" x="68" y="45" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="theme_hint_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2i-cb-Ze5" userLabel="divider">
-                                <rect key="frame" x="0.0" y="79" width="344" height="1"/>
+                                <rect key="frame" x="0.0" y="82" width="344" height="1"/>
                                 <color key="backgroundColor" name="theme_dark_text"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="1eO-Mj-0em"/>
+                                    <constraint firstAttribute="height" constant="1" id="1eO-Mj-0em" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
                                 </constraints>
                             </view>
                         </subviews>
@@ -50,14 +56,31 @@
                             <constraint firstItem="b2i-cb-Ze5" firstAttribute="centerX" secondItem="fTr-D4-KiU" secondAttribute="centerX" id="3kF-gG-OPM"/>
                             <constraint firstItem="CLR-Vi-Yu8" firstAttribute="top" secondItem="kIG-oD-stJ" secondAttribute="top" id="8JI-Ve-ew6"/>
                             <constraint firstItem="b2i-cb-Ze5" firstAttribute="width" secondItem="fTr-D4-KiU" secondAttribute="width" id="AOH-jf-ve2"/>
-                            <constraint firstAttribute="height" constant="80" id="N3T-OB-J0s"/>
-                            <constraint firstItem="CLR-Vi-Yu8" firstAttribute="leading" secondItem="kIG-oD-stJ" secondAttribute="trailing" constant="16" id="Ohp-A8-yjF"/>
+                            <constraint firstItem="CLR-Vi-Yu8" firstAttribute="leading" secondItem="kIG-oD-stJ" secondAttribute="trailing" constant="16" id="Ohp-A8-yjF" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
                             <constraint firstItem="5am-b3-cck" firstAttribute="top" secondItem="CLR-Vi-Yu8" secondAttribute="bottom" constant="8" id="Oof-Bh-tQg"/>
                             <constraint firstItem="5am-b3-cck" firstAttribute="bottom" secondItem="kIG-oD-stJ" secondAttribute="bottom" id="Rbn-X4-gEg"/>
                             <constraint firstAttribute="bottom" secondItem="b2i-cb-Ze5" secondAttribute="bottom" id="WZ4-EP-2GO"/>
                             <constraint firstItem="b2i-cb-Ze5" firstAttribute="top" secondItem="5am-b3-cck" secondAttribute="bottom" constant="16" id="b1w-F3-snb"/>
-                            <constraint firstItem="kIG-oD-stJ" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" constant="16" id="rbm-lc-s1V"/>
-                            <constraint firstItem="kIG-oD-stJ" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="16" id="yLh-ad-lbd"/>
+                            <constraint firstItem="kIG-oD-stJ" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" constant="16" id="rbm-lc-s1V" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="kIG-oD-stJ" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="16" id="yLh-ad-lbd" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
                         </constraints>
                     </view>
                 </subviews>

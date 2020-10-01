@@ -5,18 +5,15 @@
 
 import UIKit
 
-struct MyBookingTblDetail{
-    var title: String = ""
-    var isSelected: Bool = false
-}
-
 class MyBookingVC: BaseVC {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var vwTab: JDSegmentedControl!
     @IBOutlet weak var vwBg: UIView!
     
-    var arrForBooking: [MyPastBookingData] = []
+    var arrForPastBooking: [MyPastBookingData] = []
+    var arrForFutureBooking: [MyPastBookingData] = []
+    var arrForData: [MyBookingTblCellDetail] = []
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -49,12 +46,9 @@ class MyBookingVC: BaseVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
-            
             self.vwTab?.setRound(withBorderColor: .themePrimary, andCornerRadious: self.vwTab.bounds.height/2.0, borderWidth: 0.1)
             self.vwBg?.setRound(withBorderColor: UIColor.clear, andCornerRadious: 20.0, borderWidth: 1.0)
             self.vwBg?.setShadow()
-            self.tableView?.reloadData({
-            })
         }
     }
     
@@ -96,37 +90,37 @@ extension MyBookingVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDe
         tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 170
         tableView.register(MyBookingTblCell.nib()
             , forCellReuseIdentifier: MyBookingTblCell.name)
+        tableView.register(MyBookingExpandTblCell.nib()
+        , forCellReuseIdentifier: MyBookingExpandTblCell.name)
         tableView.tableFooterView = UIView()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return arrForBooking.count
+        return arrForData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: MyBookingTblCell.name, for: indexPath) as?  MyBookingTblCell
-        cell?.layoutIfNeeded()
-        cell?.setData(data: arrForBooking[indexPath.row])
-        cell?.layoutIfNeeded()
-        return cell!
-        
+        if indexPath.row == 0 || indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: MyBookingExpandTblCell.name, for: indexPath) as?  MyBookingExpandTblCell
+            cell?.setData(data: arrForPastBooking[indexPath.section])
+            return cell!
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: MyBookingTblCell.name, for: indexPath) as?  MyBookingTblCell
+            cell?.setData(data: arrForData[indexPath.row])
+            return cell!
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if arrForBooking[indexPath.row].isSelected == true {
-            return UITableView.automaticDimension
-        } else  {
-            return JDDeviceHelper.offseter(scaleFactor: 1.0, offset: 80, direction: .vertical)
-        }
+        return UITableView.automaticDimension
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.arrForBooking[indexPath.row].isSelected.toggle()
+        self.arrForData[indexPath.row].isSelected.toggle()
         self.tableView.reloadRows(at: [indexPath], with: .fade)
     }
     
@@ -136,25 +130,33 @@ extension MyBookingVC {
     
     func getPastBookingList() {
         Loader.showLoading()
-        arrForBooking.removeAll()
+        arrForPastBooking.removeAll()
         AppWebApi.getPastBookingList { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
-                self.arrForBooking =  response.bookingList
+                self.arrForPastBooking =  response.bookingList
+                self.setDataSourceForPastBooking(dataSource: self.arrForPastBooking)
                 self.tableView.reloadData()
             }
         }
     }
     func getFutureBookingList() {
         Loader.showLoading()
-        arrForBooking.removeAll()
+        arrForFutureBooking.removeAll()
         AppWebApi.getPastBookingList { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
-                self.arrForBooking =  response.bookingList
+                self.arrForFutureBooking =  response.bookingList
+                self.setDataSourceForPastBooking(dataSource: self.arrForFutureBooking)
                 self.tableView.reloadData()
             }
         }
     }
-    
+
+    func setDataSourceForPastBooking(dataSource:[MyPastBookingData]) {
+        self.arrForData.removeAll()
+        for data in dataSource {
+            self.arrForData.append(MyBookingTblCellDetail.init(data: data))
+        }
+    }
 }

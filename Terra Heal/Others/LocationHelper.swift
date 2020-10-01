@@ -113,8 +113,8 @@ class LocationCenter: NSObject, CLLocationManagerDelegate {
                          didUpdateLocations locations: [CLLocation]) {
         debugPrint("\(self) \(#function)")
         guard let mostRecentLocation = locations.last else { return }
-        Singleton.shared.myLatitude = mostRecentLocation.coordinate.latitude.toString(places: 8)
-        Singleton.shared.myLongitude = mostRecentLocation.coordinate.longitude.toString(places: 8)
+        appSingleton.myLatitude = mostRecentLocation.coordinate.latitude.toString(places: 8)
+        appSingleton.myLongitude = mostRecentLocation.coordinate.longitude.toString(places: 8)
         Common.nCd.post(name: Common.locationUpdateNtfNm,
                         object: self,
                         userInfo: ["ncd": ["location": mostRecentLocation]])

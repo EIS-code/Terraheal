@@ -281,8 +281,8 @@ extension ReviewAndBookVC: UITableViewDelegate, UITableViewDataSource {
         tableView.estimatedSectionFooterHeight = 70
         tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.estimatedSectionHeaderHeight = 50
-        tableView.register(ReviewReciepentTblCell.nib()
-            , forCellReuseIdentifier: ReviewReciepentTblCell.name)
+        tableView.register(MassageDetailTblCell.nib()
+            , forCellReuseIdentifier: MassageDetailTblCell.name)
         tableView.register(ReciepentTblFooter.nib(), forHeaderFooterViewReuseIdentifier: ReciepentTblFooter.name)
         tableView.register(ReviewReciepentTblSection.nib(), forHeaderFooterViewReuseIdentifier: ReviewReciepentTblSection.name)
     }
@@ -314,7 +314,8 @@ extension ReviewAndBookVC: UITableViewDelegate, UITableViewDataSource {
                 else {
                     return nil
             }
-            view.setData(data: arrForData[section].reciepent)
+
+            view.setData(data: ReciepentSectionDetail.init(data: arrForData[section].reciepent))
             return view
         } else {
             return nil
@@ -332,9 +333,10 @@ extension ReviewAndBookVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if tableView == tblVwForSessions {
-            let cell = tableView.dequeueReusableCell(withIdentifier: ReviewReciepentTblCell.name, for: indexPath) as?  ReviewReciepentTblCell
+            let data = arrForData[indexPath.section].services[indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: MassageDetailTblCell.name, for: indexPath) as?  MassageDetailTblCell
             cell?.layoutIfNeeded()
-            cell?.setData(data: arrForData[indexPath.section].services[indexPath.row])
+            cell?.setData(data: MassageCellDetail.init(data: data))
             cell?.btnDelete.addTarget(self
                 , action: #selector(removeService(sender:)), for: .touchUpInside)
             cell?.btnEdit.addTarget(self, action: #selector(editService(sender:)), for: .touchUpInside)

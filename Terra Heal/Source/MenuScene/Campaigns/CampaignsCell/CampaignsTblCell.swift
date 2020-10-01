@@ -18,7 +18,6 @@ class CampaignsTblCell: TableCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.selectionStyle = .none
     }
 
     func setData(data: CampaignsDetail ) {

@@ -1,7 +1,6 @@
 {
   "images" : [
     {
-      "filename" : "Group 2108.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -16,12 +15,12 @@
       "scale" : "3x"
     },
     {
-      "filename" : "Group 3308@2x.png",
+      "filename" : "Path 4142@2x.png",
       "idiom" : "ipad",
       "scale" : "1x"
     },
     {
-      "filename" : "Group 3308@3x.png",
+      "filename" : "Path 4142@3x.png",
       "idiom" : "ipad",
       "scale" : "2x"
     }

@@ -12,6 +12,7 @@ import Alamofire
 
 
 public typealias APIManagerCompletion = ((Data?, [String:Any], String?) -> Void)
+
 struct Connectivity {
     static let sharedInstance = NetworkReachabilityManager()!
     static var isConnectedToInternet:Bool {

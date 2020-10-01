@@ -16,8 +16,6 @@ class SettingSwitchTblCell: SelectionBorderTableCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectionStyle = .none
-        
         self.vwSwitch.allowChangeThumbWidth = false
         self.vwSwitch.itemTitles = ["enable","disable"]
         self.vwSwitch.changeBackgroundColor(UIColor.themeLightTextColor)

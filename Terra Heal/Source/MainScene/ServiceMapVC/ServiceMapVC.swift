@@ -33,7 +33,7 @@ class ServiceMapVC: BaseVC {
     var currentMarker: GMSMarker? = nil
     var path: GMSPolyline =   GMSPolyline.init()
     var currentIndex: Int = 0
-    
+    var selectedServiceCenter: ServiceCenterDetail? = nil
     //Animation Properties
     var animationDirection: AnimationDirection = .undefined
     var transitionAnimator: UIViewPropertyAnimator? = nil
@@ -284,7 +284,7 @@ extension ServiceMapVC {
              guard let self = self else { return } ; print(self)
         }
         languagePicker.onBtnDoneTapped = {
-            [weak languagePicker, weak self] (language) in
+            [weak self] (language) in
             guard let self = self else { return } ; print(self)
             self.openAccessoryDialog()
         }

@@ -189,7 +189,7 @@ extension PackageDetailVC  {
                  guard let self = self else { return } ; print(self)
             }
             languagePicker.onBtnDoneTapped = {
-                [weak languagePicker, weak self] (language) in
+                [weak self] (language) in
                 guard let self = self else { return } ; print(self)
                 self.openAccessoryDialog()
             }

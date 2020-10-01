@@ -16,7 +16,6 @@ class AddGiftVoucherCell: SelectionBorderTableCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.selectionStyle = .none
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblShortValue?.setFont(name: FontName.Bold, size: FontSize.detail)
         

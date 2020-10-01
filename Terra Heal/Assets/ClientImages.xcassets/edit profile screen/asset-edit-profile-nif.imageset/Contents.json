@@ -1,7 +1,6 @@
 {
   "images" : [
     {
-      "filename" : "Group 3318.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -16,12 +15,12 @@
       "scale" : "3x"
     },
     {
-      "filename" : "license@2x-1.png",
+      "filename" : "Group 3318@2x-1.png",
       "idiom" : "ipad",
       "scale" : "1x"
     },
     {
-      "filename" : "license@3x-1.png",
+      "filename" : "Group 3318@3x-1.png",
       "idiom" : "ipad",
       "scale" : "2x"
     }

@@ -203,16 +203,15 @@ extension RecipentMassageManageDialog: UITableViewDelegate, UITableViewDataSourc
             guard let self = self else { return } ; print(self)
             
             serviceDetailVC.dismiss(animated: true) {
-                
                 self.arrForData[sender.tag] = service
                 self.calculateTotal()
                 self.tableView.reloadData()
             }
         }
     }
+
     @objc func removeService(sender: UIButton) {
         let buttonPostion = sender.convert(sender.bounds.origin, to: tableView)
-        
         if let indexPath = tableView.indexPathForRow(at: buttonPostion) {
             self.arrForData[indexPath.section].services.remove(at: indexPath.row)
             self.calculateTotal()

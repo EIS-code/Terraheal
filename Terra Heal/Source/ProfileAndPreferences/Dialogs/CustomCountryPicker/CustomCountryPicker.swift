@@ -44,7 +44,6 @@ class CustomCountryPicker: ThemeBottomDialogView {
                 self.btnDone.setTitle(buttonTitle, for: .normal)
                 self.btnDone.isHidden = false
             }
-        
         self.select(data: self.selectedData)
         self.setupTableView(tableView: self.tableView)
         self.setupSearchbar(searchBar: self.txtSearchBar)
@@ -97,7 +96,7 @@ extension CustomCountryPicker : UITableViewDelegate,UITableViewDataSource {
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-tableView.backgroundColor = .clear
+        tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension

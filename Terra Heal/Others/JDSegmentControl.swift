@@ -14,8 +14,8 @@ import UIKit
     @IBDesignable
     open class JDSegmentedControl: UIView {
         
-         @IBInspectable open var defaultTextFont: UIFont = FontHelper.font(name: FontName.SemiBold, size: FontSize.button_14)
-           @IBInspectable open var selectedTextFont: UIFont = FontHelper.font(name: FontName.SemiBold, size: FontSize.button_14)
+         @IBInspectable open var defaultTextFont: UIFont = FontHelper.font(name: FontName.SemiBold, size:  JDDeviceHelper.fontCalculator(size: FontSize.button_14))
+            @IBInspectable open var selectedTextFont: UIFont = FontHelper.font(name: FontName.SemiBold, size:  JDDeviceHelper.fontCalculator(size: FontSize.button_14))
            @IBInspectable open var defaultTextColor: UIColor = UIColor.themeDarkText
            @IBInspectable open var selectedTextColor: UIColor = UIColor.themeLightTextColor
            @IBInspectable open var useGradient: Bool = true

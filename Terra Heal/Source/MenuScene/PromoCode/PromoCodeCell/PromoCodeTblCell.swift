@@ -21,7 +21,6 @@ class PromoCodeTblCell: TableCell {
     var data: PromocodeDetail = PromocodeDetail.init()
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.selectionStyle = .none
         self.lblVoucherCode.text = "PROMOCODE_VOUCHER_CODE".localized()
         self.lblExpiry?.setFont(name: FontName.SemiBold, size: FontSize.detail)
         self.lblShortDescription?.setFont(name: FontName.SemiBold, size: FontSize.header)

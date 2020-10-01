@@ -47,7 +47,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M80-qa-vnw" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="660" width="375" height="74"/>
+                            <rect key="frame" x="0.0" y="664" width="375" height="70"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
@@ -109,10 +109,10 @@
                     <rect key="frame" x="311" y="64" width="48" height="48"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ma-qC-KU9" userLabel="footerView">
-                    <rect key="frame" x="0.0" y="704" width="375" height="78"/>
+                    <rect key="frame" x="0.0" y="708" width="375" height="74"/>
                     <subviews>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrd-5b-e6C" userLabel="FloatingView" customClass="HomeSegmentedControl" customModule="Terra_Heal" customModuleProvider="target">
-                            <rect key="frame" x="23" y="30" width="329" height="48"/>
+                            <rect key="frame" x="23" y="26" width="329" height="48"/>
                             <color key="backgroundColor" name="theme_background"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="K9m-51-7SQ" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
@@ -131,13 +131,6 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="yrd-5b-e6C" firstAttribute="top" secondItem="9ma-qC-KU9" secondAttribute="top" constant="30" id="3ie-iZ-tKe" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
-                                    <real key="value" value="30"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </constraint>
                         <constraint firstAttribute="trailing" secondItem="yrd-5b-e6C" secondAttribute="trailing" constant="23" id="WZ3-Jr-CMH" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">

@@ -13,50 +13,10 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="385" id="KGk-i7-Jjw" userLabel="MyBookingTblCell" customClass="MyBookingTblCell" customModule="Terra_Heal" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="380" height="385"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="380" height="385"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhE-ot-Y3d" userLabel="vwExpanded">
-                        <rect key="frame" x="10" y="10" width="360" height="250"/>
-                        <subviews>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FQU-DD-2WP">
-                                <rect key="frame" x="36" y="-40" width="288" height="270"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="270" id="syz-BH-0QW"/>
-                                </constraints>
-                            </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xm7-6v-Cmx" userLabel="vwDate">
-                                <rect key="frame" x="111" y="-15" width="138" height="51"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28 Oct 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lff-xv-HA0" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="15" width="98" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="theme_dark_text"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" name="theme_dialog_background"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Lff-xv-HA0" secondAttribute="trailing" constant="20" id="MW2-u9-qsl"/>
-                                    <constraint firstItem="Lff-xv-HA0" firstAttribute="centerX" secondItem="xm7-6v-Cmx" secondAttribute="centerX" id="eN0-WH-Rp7"/>
-                                    <constraint firstAttribute="bottom" secondItem="Lff-xv-HA0" secondAttribute="bottom" constant="15" id="eq0-eS-EJo"/>
-                                    <constraint firstItem="Lff-xv-HA0" firstAttribute="top" secondItem="xm7-6v-Cmx" secondAttribute="top" constant="15" id="kHg-y3-fMb"/>
-                                    <constraint firstItem="Lff-xv-HA0" firstAttribute="leading" secondItem="xm7-6v-Cmx" secondAttribute="leading" constant="20" id="utk-Wu-saB"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" name="theme_background"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="250" id="3GH-oJ-ObL"/>
-                            <constraint firstAttribute="bottom" secondItem="FQU-DD-2WP" secondAttribute="bottom" constant="20" id="3rX-xa-GRQ"/>
-                            <constraint firstItem="xm7-6v-Cmx" firstAttribute="top" secondItem="dhE-ot-Y3d" secondAttribute="top" constant="-15" id="5Js-DQ-svC"/>
-                            <constraint firstItem="FQU-DD-2WP" firstAttribute="width" secondItem="dhE-ot-Y3d" secondAttribute="width" multiplier="0.8" id="9vv-Zs-OjX"/>
-                            <constraint firstItem="xm7-6v-Cmx" firstAttribute="centerX" secondItem="dhE-ot-Y3d" secondAttribute="centerX" id="DG3-dZ-5kW"/>
-                            <constraint firstItem="FQU-DD-2WP" firstAttribute="centerX" secondItem="dhE-ot-Y3d" secondAttribute="centerX" id="Zpt-PD-nwP"/>
-                        </constraints>
-                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTr-D4-KiU" userLabel="vwCollapsed">
                         <rect key="frame" x="10" y="10" width="360" height="60"/>
                         <subviews>
@@ -83,7 +43,7 @@
                                     <color key="titleColor" name="theme_primary"/>
                                 </state>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo-qr" translatesAutoresizingMaskIntoConstraints="NO" id="LzM-Rc-egA">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LzM-Rc-egA">
                                 <rect key="frame" x="20" y="10" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="6Va-LV-dZv"/>
@@ -112,40 +72,27 @@
                 <constraints>
                     <constraint firstItem="fTr-D4-KiU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="2jg-EE-YxG"/>
                     <constraint firstAttribute="trailing" secondItem="fTr-D4-KiU" secondAttribute="trailing" constant="10" id="AWN-UN-JV4"/>
-                    <constraint firstItem="dhE-ot-Y3d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="N9q-ad-SMg"/>
-                    <constraint firstAttribute="trailing" secondItem="dhE-ot-Y3d" secondAttribute="trailing" constant="10" id="RFm-f6-6nT"/>
-                    <constraint firstAttribute="bottom" secondItem="dhE-ot-Y3d" secondAttribute="bottom" constant="10" id="SXb-6w-Ngr"/>
                     <constraint firstItem="fTr-D4-KiU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="p1a-dc-cSm"/>
-                    <constraint firstItem="dhE-ot-Y3d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="q5t-hw-eCL"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fTr-D4-KiU" secondAttribute="bottom" priority="999" constant="10" id="uHV-Oa-H3d"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="btnAction" destination="YiN-jg-Jzo" id="dsR-Yw-7Ie"/>
-                <outlet property="htblVw" destination="syz-BH-0QW" id="ASf-oa-kVS"/>
-                <outlet property="ivForplace" destination="LzM-Rc-egA" id="oQp-qW-ctL"/>
-                <outlet property="lblDate" destination="Lff-xv-HA0" id="XTi-yZ-QtW"/>
+                <outlet property="ivForCell" destination="LzM-Rc-egA" id="rro-Jc-Yxt"/>
                 <outlet property="lblName" destination="zbl-J2-KSJ" id="uPE-In-SOw"/>
-                <outlet property="tableView" destination="FQU-DD-2WP" id="gOU-P4-6ia"/>
                 <outlet property="vwBar" destination="WUd-xo-GGg" id="DsK-Kx-4FR"/>
                 <outlet property="vwCollapse" destination="fTr-D4-KiU" id="w2a-ZR-7zp"/>
-                <outlet property="vwDate" destination="xm7-6v-Cmx" id="Elv-xO-4x6"/>
-                <outlet property="vwExpanded" destination="dhE-ot-Y3d" id="ctN-LN-fpi"/>
             </connections>
             <point key="canvasLocation" x="175.36231884057972" y="243.41517857142856"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="asset-arrow-down" width="10.5" height="6"/>
-        <image name="demo-qr" width="111" height="111"/>
         <namedColor name="theme_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_dark_text">
             <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="theme_dialog_background">
-            <color red="0.9649999737739563" green="0.9649999737739563" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_light_background">
             <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

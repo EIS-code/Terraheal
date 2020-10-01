@@ -79,21 +79,21 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dJ-7Q-f2w" userLabel="vwMap" customClass="GMSMapView">
-                            <rect key="frame" x="0.0" y="115.5" width="320" height="143.5"/>
+                            <rect key="frame" x="0.0" y="115.5" width="320" height="116.5"/>
                             <color key="backgroundColor" name="theme_primary_border"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WOD-5m-xOM" userLabel="ViewService">
-                            <rect key="frame" x="0.0" y="200" width="320" height="300"/>
+                            <rect key="frame" x="0.0" y="146" width="320" height="354"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7EO-xA-RgX" userLabel="vwServiceDialog">
-                                    <rect key="frame" x="0.0" y="19" width="320" height="281"/>
+                                    <rect key="frame" x="0.0" y="46" width="320" height="308"/>
                                     <color key="backgroundColor" name="theme_dialog_background"/>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iDl-ql-GM7" userLabel="stk-shop-detail">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="284"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center" translatesAutoresizingMaskIntoConstraints="NO" id="qE7-YW-YVL" customClass="PaddedImageView" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="141" y="0.0" width="38" height="38"/>
+                                            <rect key="frame" x="114" y="0.0" width="92" height="92"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="qE7-YW-YVL" secondAttribute="height" multiplier="1:1" id="lgQ-CR-ppo"/>
                                             </constraints>
@@ -104,7 +104,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="m6e-n7-8qE">
-                                            <rect key="frame" x="0.0" y="38" width="320" height="192"/>
+                                            <rect key="frame" x="0.0" y="92" width="320" height="192"/>
                                             <color key="backgroundColor" name="theme_dialog_background"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="m6e-n7-8qE" secondAttribute="height" multiplier="5:3" id="qVw-Su-sVV"/>
@@ -130,7 +130,6 @@
                                 <constraint firstItem="7EO-xA-RgX" firstAttribute="bottom" secondItem="WOD-5m-xOM" secondAttribute="bottom" id="RBa-tf-9BR"/>
                                 <constraint firstItem="iDl-ql-GM7" firstAttribute="centerX" secondItem="WOD-5m-xOM" secondAttribute="centerX" id="UK8-6k-KQV"/>
                                 <constraint firstItem="7EO-xA-RgX" firstAttribute="leading" secondItem="WOD-5m-xOM" secondAttribute="leading" id="mFD-lx-76V"/>
-                                <constraint firstAttribute="height" constant="300" id="xmw-sb-v1a"/>
                                 <constraint firstItem="7EO-xA-RgX" firstAttribute="top" secondItem="qE7-YW-YVL" secondAttribute="centerY" id="zUu-8y-Vcj"/>
                                 <constraint firstItem="iDl-ql-GM7" firstAttribute="top" secondItem="WOD-5m-xOM" secondAttribute="top" id="zhn-uf-l8C"/>
                             </constraints>

@@ -17,7 +17,6 @@ class MyPlaceTblCell: SelectionBorderTableCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectionStyle = .none
         self.btnAction?.setFont(name: FontName.SemiBold, size: FontSize.header)
         self.btnAction?.setTitle(FontSymbol.next_arrow, for: .normal)
         

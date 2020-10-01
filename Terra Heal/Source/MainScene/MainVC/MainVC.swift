@@ -20,7 +20,9 @@ class MainVC: BaseVC {
     @IBOutlet weak var exploreView: UIView!
     @IBOutlet weak var myFavView: UIView!
     
-    
+    var homeVC: HomeVC? = nil
+    var exploreVC: ExploreMapVC? = nil
+    var myFavVC: MyFavVC? = nil
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -45,11 +47,11 @@ class MainVC: BaseVC {
         self.homeView.isHidden = false
         self.exploreView.isHidden = true
         self.myFavView.isHidden = true
-        self.add(HomeVC.fromNib(), view:self.homeView)
-        self.add(ExploreMapVC.fromNib(), view:self.exploreView)
-        self.add(MyFavVC.fromNib(), view: self.myFavView)
-        
-        vwFloatingBottom.height(constant: JDDeviceHelper.offseter(offset: CommonSize.Button.standard))
+        if homeVC == nil {
+                   homeVC = HomeVC.fromNib()
+               }
+               self.add(homeVC!, view:self.homeView)
+        //vwFloatingBottom.height(constant: JDDeviceHelper.offseter(offset: CommonSize.Button.standard))
         vwFloatingBottom.allowChangeThumbWidth = false
         vwFloatingBottom.itemTitles = ["HOME_BTN_HOME".localized(),"HOME_BTN_EXPLORE".localized(),"HOME_BTN_MY_FAV".localized()]
         vwFloatingBottom.itemImages =  [UIImage.init(named: "asset-home")!, UIImage.init(named: "asset-explore")!, UIImage.init(named: "asset-fav")!]
@@ -103,6 +105,15 @@ class MainVC: BaseVC {
     }
     
     func homeButtonSelected() {
+
+        myFavVC?.remove()
+        myFavVC = nil
+        exploreVC?.remove()
+        exploreVC = nil
+        if homeVC == nil {
+            homeVC = HomeVC.fromNib()
+        }
+        self.add(homeVC!, view:self.homeView)
         self.myFavView.gone()
         self.exploreView.gone()
         self.homeView.visible()
@@ -110,6 +121,14 @@ class MainVC: BaseVC {
     }
     
     func favouriteButtonSelected() {
+        homeVC?.remove()
+        homeVC = nil
+        exploreVC?.remove()
+        exploreVC = nil
+        if myFavVC == nil {
+            myFavVC = MyFavVC.fromNib()
+        }
+        self.add(myFavVC!, view:self.myFavView)
         self.myFavView.visible()
         self.exploreView.gone()
         self.homeView.gone()
@@ -117,12 +136,20 @@ class MainVC: BaseVC {
     }
     
     func exploreButtonSelected() {
+        homeVC?.remove()
+        homeVC = nil
+        myFavVC?.remove()
+        myFavVC = nil
+        if exploreVC == nil {
+            exploreVC = ExploreMapVC.fromNib()
+        }
+        self.add(exploreVC!, view:self.exploreView)
         self.myFavView.gone()
         self.exploreView.visible()
         self.homeView.gone()
         self.gradientView.isHidden = true
     }
-    
+
     //MARK: Action Methods
     
     @IBAction func btnProfileTapped(_ sender: Any) {

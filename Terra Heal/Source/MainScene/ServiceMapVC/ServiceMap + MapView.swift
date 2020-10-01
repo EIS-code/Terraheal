@@ -42,6 +42,7 @@ extension ServiceMapVC :GMSMapViewDelegate {
             self.arrForServicesMarker.append(GMSMarker.init(position: center.getCoordinatte()))
             self.mapView.setMassageCenterMarker(marker: marker, image: UIImage.init(named: "asset-center-maker")!, location: center.getCoordinatte())
         }
+        
     }
     
     func removeAllCenterMarker() {

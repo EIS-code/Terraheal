@@ -36,7 +36,6 @@ extension UIColor {
 
 //MARK: Color Extension
 extension UIColor {
-
     public convenience init(hex: String) {
         let r, g, b, a: CGFloat
 
@@ -75,5 +74,4 @@ extension UIColor {
         self.init(red: 0, green: 0, blue: 0, alpha: 1.0)
         return
     }
-
 }

@@ -443,17 +443,19 @@ extension AppDelegate {
         }
     }
     func loadPackVC(navigaionVC:UINavigationController? = nil) {
-        if let nc = navigaionVC as? NC {
-            if let targetVC: PackVC =  nc.findVCs(ofType: PackVC.self).first {
-                _ = nc.popToVc(targetVC)
+        if checkUserLogin() {
+            if let nc = navigaionVC as? NC {
+                if let targetVC: PackVC =  nc.findVCs(ofType: PackVC.self).first {
+                    _ = nc.popToVc(targetVC)
+                } else {
+                    let targetVC: PackVC = PackVC.fromNib()
+                    nc.pushVC(targetVC)
+                }
             } else {
                 let targetVC: PackVC = PackVC.fromNib()
-                nc.pushVC(targetVC)
+                let nC: NC = NC(rootViewController: targetVC)
+                self.windowConfig(withRootVC: nC)
             }
-        } else {
-            let targetVC: PackVC = PackVC.fromNib()
-            let nC: NC = NC(rootViewController: targetVC)
-            self.windowConfig(withRootVC: nC)
         }
     }
     func loadReferAndEarnVC(navigaionVC:UINavigationController? = nil) {
@@ -502,18 +504,22 @@ extension AppDelegate {
     }
     
     func loadGiftVoucherVC(navigaionVC:UINavigationController? = nil) {
-        if let nc = navigaionVC as? NC {
-            if let targetVC: GiftVoucherVC =  nc.findVCs(ofType: GiftVoucherVC.self).first {
-                _ = nc.popToVc(targetVC)
+
+        if checkUserLogin() {
+            if let nc = navigaionVC as? NC {
+                if let targetVC: GiftVoucherVC =  nc.findVCs(ofType: GiftVoucherVC.self).first {
+                    _ = nc.popToVc(targetVC)
+                } else {
+                    let targetVC: GiftVoucherVC = GiftVoucherVC.fromNib()
+                    nc.pushVC(targetVC)
+                }
             } else {
                 let targetVC: GiftVoucherVC = GiftVoucherVC.fromNib()
-                nc.pushVC(targetVC)
+                let nC: NC = NC(rootViewController: targetVC)
+                self.windowConfig(withRootVC: nC)
             }
-        } else {
-            let targetVC: GiftVoucherVC = GiftVoucherVC.fromNib()
-            let nC: NC = NC(rootViewController: targetVC)
-            self.windowConfig(withRootVC: nC)
         }
+
     }
     
     func loadCompleteVC(navigaionVC:UINavigationController? = nil, data:CompletionData) {
@@ -808,7 +814,15 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-    
+
+    func checkUserLogin() -> Bool {
+        if PreferenceHelper.shared.getUserId().isNotEmpty() {
+            return true
+        } else {
+            Common.appDelegate.loadWelcomeVC()
+            return false
+        }
+    }
     
     
 }

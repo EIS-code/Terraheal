@@ -18,7 +18,6 @@ class HowItWorkTblCell: TableCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.selectionStyle = .none
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblShortDescription?.setFont(name: FontName.Regular, size: FontSize.detail)
         self.lblLongDescription?.setFont(name: FontName.Regular, size: FontSize.detail)

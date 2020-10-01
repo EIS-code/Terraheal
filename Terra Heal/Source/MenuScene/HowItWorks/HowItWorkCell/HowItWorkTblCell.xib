@@ -27,7 +27,7 @@
                                 <color key="textColor" name="theme_dark_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LzM-Rc-egA">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-place-demo" translatesAutoresizingMaskIntoConstraints="NO" id="LzM-Rc-egA">
                                 <rect key="frame" x="0.0" y="52.5" width="74.5" height="95.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LzM-Rc-egA" secondAttribute="height" multiplier="18:23" id="LSu-4J-cQn"/>
@@ -139,6 +139,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="asset-place-demo" width="32" height="32"/>
         <namedColor name="theme_dark_text">
             <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

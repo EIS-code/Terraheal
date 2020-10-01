@@ -116,8 +116,8 @@ class SideVC: BaseVC {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         self.lblMenu.text = "LBL_MENU".localized()
-        self.lblMenu?.font = FontHelper.font(name: FontName.Bold, size: FontSize.large)
-        //self.lblMenu.setFont(name: FontName.Bold, size: FontSize.large)
+        //self.lblMenu?.font = FontHelper.font(name: FontName.Bold, size: FontSize.large)
+        self.lblMenu.setFont(name: FontName.Bold, size: FontSize.large)
         self.setupCollectionView()
     }
 
@@ -155,6 +155,7 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
         cvForMenu?.dataSource = self
         cvForMenu?.showsVerticalScrollIndicator = false
         cvForMenu?.showsHorizontalScrollIndicator = false
+        
         if let layout = cvForMenu?.collectionViewLayout as? PinterestLayout {
             layout.delegate = self
         }
@@ -223,8 +224,10 @@ extension SideVC: PinterestLayoutDelegate {
     func collectionView(
         _ collectionView: UICollectionView,
         heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
-        let heightSizes = [(collectionView.bounds.height/3.5),(collectionView.bounds.height/7)]
-        return CGFloat(heightSizes[arrForMenu[indexPath.row].isVerticle ? 0 : 1])
+        return collectionView.bounds.width/2.0
+        /*let heightSizes =  [(collectionView.bounds.height/3.5),(collectionView.bounds.height/7)]
+        return CGFloat(heightSizes[arrForMenu[indexPath.row].isVerticle ? 0 : 1])*/
+        
 
     }
 }

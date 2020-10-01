@@ -7,112 +7,96 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "269B5379-9AA5-4377-AE0C-44F10E708361"
+            uuid = "874C6873-5C89-4BD2-BFA2-92E6BBA91FCE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Terra Heal/Source/MenuScene/ReferAndEarnVC/ReferAndEarnVC.swift"
+            filePath = "Terra Heal/Source/ProfileAndPreferences/MyBooking/MyBookingExpandTblCell/MyBookingExpandTblCell + TableViewl.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
-            landmarkName = "btnLeftTapped(_:)"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "tableView(_:heightForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "85EEEB63-1E3E-4170-8CBE-F1D663EF54E5"
+            uuid = "27E6F9D3-C048-4526-859E-90D5B3B2F90A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Terra Heal/Source/ProfileAndPreferences/MyPlaces/MyPlaceVC.swift"
+            filePath = "Terra Heal/Source/ProfileAndPreferences/MyBooking/MyBookingExpandTblCell/MyBookingExpandTblCell + TableViewl.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "getPlacesList()"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "tableView(_:heightForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7FBF2C41-EED3-4F4F-89E4-97E3560BFFFC"
+            uuid = "43C25ECD-4C6E-4EC5-ABB6-980D36E251D0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Terra Heal/Source/MainScene/ServiceSelectionVC/ServiceSelectionVC.swift"
+            filePath = "Terra Heal/Others/LocationHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
-            landmarkName = "openPressurerPicker()"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "357886AE-1A1D-4B49-827E-21D2BB867DC9"
+            uuid = "3A3B828F-4310-4A80-B54F-63F291CCF7BE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Terra Heal/Source/MenuScene/GiftVoucherVC/AddGiftVoucherScene/Dialogs/CustomServiceCenterLocationSelectionDialog/CustomServiceCenterLocationSelectionDialog.swift"
+            filePath = "Terra Heal/Source/MainScene/MainVC/MainVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "openLocationSelectionDialog()"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "locationUpdate(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "357886AE-1A1D-4B49-827E-21D2BB867DC9 - 5d26a5605634d2b2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Terra_Heal.CustomDataForTable) -&gt; () in Terra_Heal.CustomServiceCenterLocationSelectionDialog.openLocationSelectionDialog() -&gt; ()"
-                  moduleName = "Terra Heal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Evolution/Desktop/EvolutionWork/TerraHeal(Evolution)/Apps/TerraHeal/Terra%20Heal/Source/MenuScene/GiftVoucherVC/AddGiftVoucherScene/Dialogs/CustomServiceCenterLocationSelectionDialog/CustomServiceCenterLocationSelectionDialog.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "109"
-                  endingLineNumber = "109"
-                  offsetFromSymbolStart = "1044">
-               </Location>
-               <Location
-                  uuid = "357886AE-1A1D-4B49-827E-21D2BB867DC9 - 50b2decc3fea0bd7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Terra_Heal.PricingLocation) -&gt; Swift.Bool in closure #2 (Terra_Heal.CustomDataForTable) -&gt; () in Terra_Heal.CustomServiceCenterLocationSelectionDialog.openLocationSelectionDialog() -&gt; ()"
-                  moduleName = "Terra Heal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Evolution/Desktop/EvolutionWork/TerraHeal(Evolution)/Apps/TerraHeal/Terra%20Heal/Source/MenuScene/GiftVoucherVC/AddGiftVoucherScene/Dialogs/CustomServiceCenterLocationSelectionDialog/CustomServiceCenterLocationSelectionDialog.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "110"
-                  endingLineNumber = "110"
-                  offsetFromSymbolStart = "34">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "91D50666-F823-4630-B4E2-2FFEE40C4557"
+            uuid = "912F8E80-5BCD-40EA-AAC2-3B29F3F3C07A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Terra Heal/Source/MenuScene/GiftVoucherVC/AddGiftVoucherScene/AddGiftVoucherVC.swift"
+            filePath = "Terra Heal/AppBaseClass/BaseSubClasses/BaseVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "296"
-            endingLineNumber = "296"
-            landmarkName = "openSendingPreferenceDialog(index:)"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "locationUpdate(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CC6F3A13-800A-4447-BD3B-C83EEA562055"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Terra Heal/AppBaseClass/BaseSubClasses/BaseVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "locationFail(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

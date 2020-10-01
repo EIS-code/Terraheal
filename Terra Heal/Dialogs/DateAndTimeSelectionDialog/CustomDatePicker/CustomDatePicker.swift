@@ -114,13 +114,14 @@ extension CustomDatePicker: FSCalendarDataSource, FSCalendarDelegate {
         calendar.appearance.todayColor = UIColor.themeSecondary
         calendar.appearance.selectionColor =  self.selectionColor
         calendar.appearance.caseOptions = .weekdayUsesSingleUpperCase
-        calendar.appearance.weekdayFont = FontHelper.font(name: FontName.Regular, size: FontSize.detail)
-        calendar.appearance.weekdayTextColor = UIColor.themeHintText
-        calendar.appearance.headerTitleFont = FontHelper.font(name: FontName.Regular, size: FontSize.subHeader)
-        calendar.appearance.headerTitleColor = UIColor.themeDarkText
-        
 
+        calendar.appearance.weekdayFont = FontHelper.font(name: FontName.Regular, size: JDDeviceHelper.offseter(offset: FontSize.detail))
+        calendar.appearance.weekdayTextColor = UIColor.themeHintText
+        calendar.appearance.headerTitleFont = FontHelper.font(name: FontName.Regular, size: JDDeviceHelper.offseter(offset: FontSize.subHeader))
+        calendar.appearance.headerTitleColor = UIColor.themeDarkText
+        calendar.appearance.subtitleFont = FontHelper.font(name: FontName.Regular, size: JDDeviceHelper.offseter(offset: FontSize.subHeader))
     }
+    
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         print("change page to \(self.formatter.string(from: calendar.currentPage))")
     }

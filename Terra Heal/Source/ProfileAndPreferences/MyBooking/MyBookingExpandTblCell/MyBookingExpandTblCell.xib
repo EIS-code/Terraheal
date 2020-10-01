@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="365" id="KGk-i7-Jjw" userLabel="MyBookingExpandTblCell" customClass="MyBookingExpandTblCell" customModule="Terra_Heal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="623" height="365"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="623" height="365"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhE-ot-Y3d" userLabel="vwExpanded">
+                        <rect key="frame" x="10" y="10" width="603" height="345"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xm7-6v-Cmx" userLabel="vwDate">
+                                <rect key="frame" x="232.5" y="-15" width="138" height="51"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28 Oct 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lff-xv-HA0" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="15" width="98" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="theme_dark_text"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="theme_dialog_background"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Lff-xv-HA0" secondAttribute="trailing" constant="20" id="MW2-u9-qsl"/>
+                                    <constraint firstItem="Lff-xv-HA0" firstAttribute="centerX" secondItem="xm7-6v-Cmx" secondAttribute="centerX" id="eN0-WH-Rp7"/>
+                                    <constraint firstAttribute="bottom" secondItem="Lff-xv-HA0" secondAttribute="bottom" constant="15" id="eq0-eS-EJo"/>
+                                    <constraint firstItem="Lff-xv-HA0" firstAttribute="top" secondItem="xm7-6v-Cmx" secondAttribute="top" constant="15" id="kHg-y3-fMb"/>
+                                    <constraint firstItem="Lff-xv-HA0" firstAttribute="leading" secondItem="xm7-6v-Cmx" secondAttribute="leading" constant="20" id="utk-Wu-saB"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="booked: 3:30am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpA-RL-sI8" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <rect key="frame" x="16" y="52" width="125.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="theme_hint_text"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="delay: 3:45am" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="At3-Dp-GuM" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <rect key="frame" x="478" y="52" width="109" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="theme_hint_text"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRQ-cc-AoI" userLabel="centerDetail">
+                                <rect key="frame" x="16" y="89" width="571" height="171.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="booking details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNu-F3-EIa" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="16" width="116.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="theme_dark_text"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in massage center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rz-vL-IaN" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="37" width="140" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="theme_hint_text"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="terra heal massage center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vy3-kb-BEN" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="63" width="199.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="theme_hint_text"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsF-T2-ydp" userLabel="address" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="89" width="179" height="41"/>
+                                        <string key="text">Lorem ipsum dolor sit,
+lisbon, portugal -25412</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="theme_hint_text"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:30 pm | thu, 28 oct 2020" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVb-JG-VLj" userLabel="dateAndTime" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="135" width="207" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="theme_hint_text"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo-qr" translatesAutoresizingMaskIntoConstraints="NO" id="u9I-lm-oGh">
+                                        <rect key="frame" x="460" y="16" width="111" height="111"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="Vy3-kb-BEN" firstAttribute="top" secondItem="0rz-vL-IaN" secondAttribute="bottom" constant="5" id="Dah-NQ-mlx"/>
+                                    <constraint firstItem="rsF-T2-ydp" firstAttribute="top" secondItem="Vy3-kb-BEN" secondAttribute="bottom" constant="5" id="IEE-ue-JBi"/>
+                                    <constraint firstItem="0rz-vL-IaN" firstAttribute="leading" secondItem="WNu-F3-EIa" secondAttribute="leading" id="JaW-5u-MD9"/>
+                                    <constraint firstItem="0rz-vL-IaN" firstAttribute="top" secondItem="WNu-F3-EIa" secondAttribute="bottom" id="KmZ-Qj-Zxr"/>
+                                    <constraint firstItem="WNu-F3-EIa" firstAttribute="leading" secondItem="NRQ-cc-AoI" secondAttribute="leading" id="KxT-U2-H0r"/>
+                                    <constraint firstItem="hVb-JG-VLj" firstAttribute="leading" secondItem="WNu-F3-EIa" secondAttribute="leading" id="KyT-ym-1fO"/>
+                                    <constraint firstItem="hVb-JG-VLj" firstAttribute="top" secondItem="rsF-T2-ydp" secondAttribute="bottom" constant="5" id="LEa-RH-p7q"/>
+                                    <constraint firstItem="u9I-lm-oGh" firstAttribute="top" secondItem="WNu-F3-EIa" secondAttribute="top" id="S69-tM-KAT"/>
+                                    <constraint firstAttribute="bottom" secondItem="hVb-JG-VLj" secondAttribute="bottom" constant="16" id="XCu-bq-KEC"/>
+                                    <constraint firstItem="rsF-T2-ydp" firstAttribute="leading" secondItem="WNu-F3-EIa" secondAttribute="leading" id="Zn1-3o-G0t"/>
+                                    <constraint firstAttribute="trailing" secondItem="u9I-lm-oGh" secondAttribute="trailing" id="hN6-OV-GCK"/>
+                                    <constraint firstItem="WNu-F3-EIa" firstAttribute="top" secondItem="NRQ-cc-AoI" secondAttribute="top" constant="16" id="j0L-6S-aen"/>
+                                    <constraint firstItem="Vy3-kb-BEN" firstAttribute="leading" secondItem="0rz-vL-IaN" secondAttribute="leading" id="kFL-9t-Lus"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="session details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3al-wd-eKW" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <rect key="frame" x="16" y="260.5" width="113" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="theme_dark_text"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Single" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygG-Hu-5Fj" userLabel="single" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <rect key="frame" x="16" y="281" width="47" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="theme_hint_text"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Kt-PE-xf0" userLabel="vwForTemp">
+                                <rect key="frame" x="0.0" y="301.5" width="603" height="43.5"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pGq-cQ-fic">
+                                        <rect key="frame" x="8" y="8" width="587" height="27.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="6QS-ZW-Nfp"/>
+                                        </constraints>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="pGq-cQ-fic" secondAttribute="trailing" constant="8" id="8Mg-O2-qzU"/>
+                                    <constraint firstItem="pGq-cQ-fic" firstAttribute="top" secondItem="5Kt-PE-xf0" secondAttribute="top" constant="8" id="XhC-ZP-ARl"/>
+                                    <constraint firstItem="pGq-cQ-fic" firstAttribute="leading" secondItem="5Kt-PE-xf0" secondAttribute="leading" constant="8" id="f32-zx-Q86"/>
+                                    <constraint firstAttribute="bottom" secondItem="pGq-cQ-fic" secondAttribute="bottom" constant="8" id="oCK-2y-H7L"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="theme_background"/>
+                        <constraints>
+                            <constraint firstItem="NRQ-cc-AoI" firstAttribute="top" secondItem="xpA-RL-sI8" secondAttribute="bottom" constant="16" id="2mv-Qm-6Jh"/>
+                            <constraint firstItem="xpA-RL-sI8" firstAttribute="top" secondItem="xm7-6v-Cmx" secondAttribute="bottom" constant="16" id="35H-2g-tPn"/>
+                            <constraint firstAttribute="trailing" secondItem="At3-Dp-GuM" secondAttribute="trailing" constant="16" id="3xx-OP-FbX"/>
+                            <constraint firstItem="xm7-6v-Cmx" firstAttribute="top" secondItem="dhE-ot-Y3d" secondAttribute="top" constant="-15" id="5Js-DQ-svC"/>
+                            <constraint firstItem="ygG-Hu-5Fj" firstAttribute="top" secondItem="3al-wd-eKW" secondAttribute="bottom" id="9Qf-mq-IbP"/>
+                            <constraint firstItem="5Kt-PE-xf0" firstAttribute="top" secondItem="ygG-Hu-5Fj" secondAttribute="bottom" id="BnH-WJ-wOd"/>
+                            <constraint firstItem="xm7-6v-Cmx" firstAttribute="centerX" secondItem="dhE-ot-Y3d" secondAttribute="centerX" id="DG3-dZ-5kW"/>
+                            <constraint firstItem="3al-wd-eKW" firstAttribute="top" secondItem="NRQ-cc-AoI" secondAttribute="bottom" id="KBK-Ad-8PD"/>
+                            <constraint firstItem="ygG-Hu-5Fj" firstAttribute="leading" secondItem="xpA-RL-sI8" secondAttribute="leading" id="M3H-Vt-UPl"/>
+                            <constraint firstAttribute="trailing" secondItem="NRQ-cc-AoI" secondAttribute="trailing" constant="16" id="Owc-Cn-pV0"/>
+                            <constraint firstItem="NRQ-cc-AoI" firstAttribute="leading" secondItem="xpA-RL-sI8" secondAttribute="leading" id="Sgo-C1-k9D"/>
+                            <constraint firstItem="5Kt-PE-xf0" firstAttribute="leading" secondItem="dhE-ot-Y3d" secondAttribute="leading" id="f8f-P7-5Y3"/>
+                            <constraint firstItem="xpA-RL-sI8" firstAttribute="leading" secondItem="dhE-ot-Y3d" secondAttribute="leading" constant="16" id="fHz-48-8Y1"/>
+                            <constraint firstItem="At3-Dp-GuM" firstAttribute="top" secondItem="xpA-RL-sI8" secondAttribute="top" id="nGc-Om-u9h"/>
+                            <constraint firstAttribute="trailing" secondItem="5Kt-PE-xf0" secondAttribute="trailing" id="nw3-q8-OhN"/>
+                            <constraint firstItem="3al-wd-eKW" firstAttribute="leading" secondItem="NRQ-cc-AoI" secondAttribute="leading" id="om4-l2-cey"/>
+                            <constraint firstAttribute="bottom" secondItem="5Kt-PE-xf0" secondAttribute="bottom" id="rmz-On-N6C"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" name="theme_light_background"/>
+                <constraints>
+                    <constraint firstItem="dhE-ot-Y3d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="N9q-ad-SMg"/>
+                    <constraint firstAttribute="trailing" secondItem="dhE-ot-Y3d" secondAttribute="trailing" constant="10" id="RFm-f6-6nT"/>
+                    <constraint firstAttribute="bottom" secondItem="dhE-ot-Y3d" secondAttribute="bottom" constant="10" id="SXb-6w-Ngr"/>
+                    <constraint firstItem="dhE-ot-Y3d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="q5t-hw-eCL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="ivForQr" destination="u9I-lm-oGh" id="Fd0-xN-Ce0"/>
+                <outlet property="lblBookDateAndTime" destination="hVb-JG-VLj" id="KnC-1Q-P1S"/>
+                <outlet property="lblBookingDetail" destination="WNu-F3-EIa" id="l2y-r8-8lN"/>
+                <outlet property="lblBookingTime" destination="xpA-RL-sI8" id="vSj-SN-8Z6"/>
+                <outlet property="lblBookingTypeValue" destination="0rz-vL-IaN" id="foV-yJ-Pxz"/>
+                <outlet property="lblCenterAddress" destination="rsF-T2-ydp" id="WJn-8j-nJV"/>
+                <outlet property="lblCenterName" destination="Vy3-kb-BEN" id="d0y-gX-BjW"/>
+                <outlet property="lblDate" destination="Lff-xv-HA0" id="XTi-yZ-QtW"/>
+                <outlet property="lblDelayTime" destination="At3-Dp-GuM" id="19X-D2-Vb4"/>
+                <outlet property="lblSessionValue" destination="ygG-Hu-5Fj" id="X6j-aK-YxJ"/>
+                <outlet property="lblbSessionDetail" destination="3al-wd-eKW" id="1AT-DD-19C"/>
+                <outlet property="vwDate" destination="xm7-6v-Cmx" id="Elv-xO-4x6"/>
+                <outlet property="vwExpanded" destination="dhE-ot-Y3d" id="ctN-LN-fpi"/>
+            </connections>
+            <point key="canvasLocation" x="347" y="225"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="demo-qr" width="111" height="111"/>
+        <namedColor name="theme_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_dark_text">
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_dialog_background">
+            <color red="0.9649999737739563" green="0.9649999737739563" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_hint_text">
+            <color red="0.69800001382827759" green="0.70200002193450928" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_light_background">
+            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

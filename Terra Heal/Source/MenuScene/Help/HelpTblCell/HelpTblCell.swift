@@ -17,7 +17,6 @@ class HelpTblCell: TableCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectionStyle = .none
         self.lblCellTitle.setFont(name: FontName.SemiBold, size: FontSize.regular)
         self.lblCellValue.setFont(name: FontName.Regular, size: FontSize.detail)
         /*txtQuestion.textColor = .themePrimary

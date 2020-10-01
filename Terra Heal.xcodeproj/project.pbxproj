@@ -297,6 +297,11 @@
 		034878B124B2F2FF006774AB /* ManageDocumentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034878AD24B2F2FF006774AB /* ManageDocumentVC.swift */; };
 		034878B324B30DC4006774AB /* GoogleMapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034878B224B30DC4006774AB /* GoogleMapHelper.swift */; };
 		034878B524B32789006774AB /* SettingPreferenceWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034878B424B32789006774AB /* SettingPreferenceWebservice.swift */; };
+		034B92202522F41F003C99A3 /* AppWebApi + WebCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034B921F2522F41F003C99A3 /* AppWebApi + WebCalls.swift */; };
+		034B92242522FF51003C99A3 /* MyBookingExpandTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034B92222522FF51003C99A3 /* MyBookingExpandTblCell.xib */; };
+		034B92252522FF51003C99A3 /* MyBookingExpandTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034B92232522FF51003C99A3 /* MyBookingExpandTblCell.swift */; };
+		034B92272523029B003C99A3 /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034B92262523029B003C99A3 /* Date + Extension.swift */; };
+		034B922925235087003C99A3 /* MyBookingExpandTblCell + TableViewl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034B922825235087003C99A3 /* MyBookingExpandTblCell + TableViewl.swift */; };
 		034CD80A24BC48F200BFD6E1 /* PaymentPreferenceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034CD80524BC48F200BFD6E1 /* PaymentPreferenceVC.xib */; };
 		034CD80D24BC48F200BFD6E1 /* PaymentPreferenceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CD80924BC48F200BFD6E1 /* PaymentPreferenceVC.swift */; };
 		034CD81024BC594700BFD6E1 /* CreditCardTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034CD80E24BC594700BFD6E1 /* CreditCardTblCell.xib */; };
@@ -324,10 +329,12 @@
 		0365CDB024C995AA00E1361B /* AccessorySelectionDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0365CDAE24C995AA00E1361B /* AccessorySelectionDialog.swift */; };
 		0368AB822519DEDB009EE362 /* FaqQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0368AB812519DEDA009EE362 /* FaqQuestionCell.xib */; };
 		0368AB852519E1DD009EE362 /* GiftServiceDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0368AB842519E1DD009EE362 /* GiftServiceDetailVC.xib */; };
-		0368AB9D251A2489009EE362 /* MyBookingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368AB99251A2488009EE362 /* MyBookingResponse.swift */; };
+		0368AB9D251A2489009EE362 /* MyBookingWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368AB99251A2488009EE362 /* MyBookingWebService.swift */; };
 		0368AB9E251A2489009EE362 /* MyBookingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368AB9A251A2488009EE362 /* MyBookingData.swift */; };
 		0368ABA0251A2489009EE362 /* MyBookingBookingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368AB9C251A2488009EE362 /* MyBookingBookingInfo.swift */; };
 		0368ABA2251A2892009EE362 /* MyBookingMassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368ABA1251A2892009EE362 /* MyBookingMassage.swift */; };
+		036A81652524E679006F1CE6 /* ReviewReciepentTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A81632524E679006F1CE6 /* ReviewReciepentTblCell.swift */; };
+		036A81662524E679006F1CE6 /* MassageDetailTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 036A81642524E679006F1CE6 /* MassageDetailTblCell.xib */; };
 		036CEF4D24E25FC300E349FF /* CustomAmountTextFieldDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036CEF4B24E25FC300E349FF /* CustomAmountTextFieldDialog.swift */; };
 		036CEF4E24E25FC300E349FF /* CustomAmountTextFieldDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 036CEF4C24E25FC300E349FF /* CustomAmountTextFieldDialog.xib */; };
 		0373250024CAD4780020FC03 /* ServiceCenterWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037324FF24CAD4780020FC03 /* ServiceCenterWebService.swift */; };
@@ -346,8 +353,6 @@
 		0382B5BC24D3F63F002B6BF5 /* PersonData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0382B5B724D3F63F002B6BF5 /* PersonData.xcdatamodeld */; };
 		0382C04E24ACB91E0041A4B6 /* TherapistQuastionariesWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0382C04D24ACB91E0041A4B6 /* TherapistQuastionariesWebservice.swift */; };
 		0383B27A24B80F2C003622F6 /* ReviewAndBookVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0383B27424B80F2C003622F6 /* ReviewAndBookVC.xib */; };
-		0383B27B24B80F2C003622F6 /* ReviewReciepentTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0383B27724B80F2C003622F6 /* ReviewReciepentTblCell.xib */; };
-		0383B27C24B80F2C003622F6 /* ReviewReciepentTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383B27824B80F2C003622F6 /* ReviewReciepentTblCell.swift */; };
 		0383B27D24B80F2C003622F6 /* ReviewAndBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383B27924B80F2C003622F6 /* ReviewAndBookVC.swift */; };
 		0383B28124B83584003622F6 /* ReviewSummaryTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383B27F24B83584003622F6 /* ReviewSummaryTblCell.swift */; };
 		0383B28224B83584003622F6 /* ReviewSummaryTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0383B28024B83584003622F6 /* ReviewSummaryTblCell.xib */; };
@@ -462,9 +467,9 @@
 		633C1AC424923FCA009EB6AE /* CityWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C1AC324923FCA009EB6AE /* CityWebService.swift */; };
 		633D1A422488B7910085AC56 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633D1A412488B7910085AC56 /* PinterestLayout.swift */; };
 		63435B4E24769C4900AF7100 /* AlamofireHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63435B4824769C4900AF7100 /* AlamofireHelper.swift */; };
-		63435B4F24769C4900AF7100 /* AppWebApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63435B4924769C4900AF7100 /* AppWebApi.swift */; };
+		63435B4F24769C4900AF7100 /* AppWebApi  + WebUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63435B4924769C4900AF7100 /* AppWebApi  + WebUrls.swift */; };
 		63435B5024769C4900AF7100 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63435B4A24769C4900AF7100 /* Reachability.swift */; };
-		63435B5124769C4900AF7100 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63435B4B24769C4900AF7100 /* ResponseModel.swift */; };
+		63435B5124769C4900AF7100 /* ParsingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63435B4B24769C4900AF7100 /* ParsingModel.swift */; };
 		63435B5224769C4900AF7100 /* UserWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63435B4C24769C4900AF7100 /* UserWebService.swift */; };
 		63435B5324769C4900AF7100 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63435B4D24769C4900AF7100 /* Singleton.swift */; };
 		63439848245BE6DF009BCA1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634397A7245BE6DF009BCA1F /* AppDelegate.swift */; };
@@ -781,6 +786,11 @@
 		034878AD24B2F2FF006774AB /* ManageDocumentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageDocumentVC.swift; sourceTree = "<group>"; };
 		034878B224B30DC4006774AB /* GoogleMapHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapHelper.swift; sourceTree = "<group>"; };
 		034878B424B32789006774AB /* SettingPreferenceWebservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingPreferenceWebservice.swift; sourceTree = "<group>"; };
+		034B921F2522F41F003C99A3 /* AppWebApi + WebCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppWebApi + WebCalls.swift"; sourceTree = "<group>"; };
+		034B92222522FF51003C99A3 /* MyBookingExpandTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBookingExpandTblCell.xib; sourceTree = "<group>"; };
+		034B92232522FF51003C99A3 /* MyBookingExpandTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingExpandTblCell.swift; sourceTree = "<group>"; };
+		034B92262523029B003C99A3 /* Date + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
+		034B922825235087003C99A3 /* MyBookingExpandTblCell + TableViewl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyBookingExpandTblCell + TableViewl.swift"; sourceTree = "<group>"; };
 		034CD80524BC48F200BFD6E1 /* PaymentPreferenceVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentPreferenceVC.xib; sourceTree = "<group>"; };
 		034CD80924BC48F200BFD6E1 /* PaymentPreferenceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentPreferenceVC.swift; sourceTree = "<group>"; };
 		034CD80E24BC594700BFD6E1 /* CreditCardTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditCardTblCell.xib; sourceTree = "<group>"; };
@@ -808,10 +818,12 @@
 		0365CDAE24C995AA00E1361B /* AccessorySelectionDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessorySelectionDialog.swift; sourceTree = "<group>"; };
 		0368AB812519DEDA009EE362 /* FaqQuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FaqQuestionCell.xib; sourceTree = "<group>"; };
 		0368AB842519E1DD009EE362 /* GiftServiceDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftServiceDetailVC.xib; sourceTree = "<group>"; };
-		0368AB99251A2488009EE362 /* MyBookingResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingResponse.swift; sourceTree = "<group>"; };
+		0368AB99251A2488009EE362 /* MyBookingWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingWebService.swift; sourceTree = "<group>"; };
 		0368AB9A251A2488009EE362 /* MyBookingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingData.swift; sourceTree = "<group>"; };
 		0368AB9C251A2488009EE362 /* MyBookingBookingInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingBookingInfo.swift; sourceTree = "<group>"; };
 		0368ABA1251A2892009EE362 /* MyBookingMassage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingMassage.swift; sourceTree = "<group>"; };
+		036A81632524E679006F1CE6 /* ReviewReciepentTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewReciepentTblCell.swift; sourceTree = "<group>"; };
+		036A81642524E679006F1CE6 /* MassageDetailTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MassageDetailTblCell.xib; sourceTree = "<group>"; };
 		036CEF4B24E25FC300E349FF /* CustomAmountTextFieldDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAmountTextFieldDialog.swift; sourceTree = "<group>"; };
 		036CEF4C24E25FC300E349FF /* CustomAmountTextFieldDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomAmountTextFieldDialog.xib; sourceTree = "<group>"; };
 		037324FF24CAD4780020FC03 /* ServiceCenterWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCenterWebService.swift; sourceTree = "<group>"; };
@@ -830,8 +842,6 @@
 		0382B5B824D3F63F002B6BF5 /* Person.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Person.xcdatamodel; sourceTree = "<group>"; };
 		0382C04D24ACB91E0041A4B6 /* TherapistQuastionariesWebservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TherapistQuastionariesWebservice.swift; sourceTree = "<group>"; };
 		0383B27424B80F2C003622F6 /* ReviewAndBookVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewAndBookVC.xib; sourceTree = "<group>"; };
-		0383B27724B80F2C003622F6 /* ReviewReciepentTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewReciepentTblCell.xib; sourceTree = "<group>"; };
-		0383B27824B80F2C003622F6 /* ReviewReciepentTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewReciepentTblCell.swift; sourceTree = "<group>"; };
 		0383B27924B80F2C003622F6 /* ReviewAndBookVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewAndBookVC.swift; sourceTree = "<group>"; };
 		0383B27F24B83584003622F6 /* ReviewSummaryTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewSummaryTblCell.swift; sourceTree = "<group>"; };
 		0383B28024B83584003622F6 /* ReviewSummaryTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewSummaryTblCell.xib; sourceTree = "<group>"; };
@@ -948,9 +958,9 @@
 		633C1AC324923FCA009EB6AE /* CityWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityWebService.swift; sourceTree = "<group>"; };
 		633D1A412488B7910085AC56 /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		63435B4824769C4900AF7100 /* AlamofireHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireHelper.swift; sourceTree = "<group>"; };
-		63435B4924769C4900AF7100 /* AppWebApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppWebApi.swift; sourceTree = "<group>"; };
+		63435B4924769C4900AF7100 /* AppWebApi  + WebUrls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppWebApi  + WebUrls.swift"; sourceTree = "<group>"; };
 		63435B4A24769C4900AF7100 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		63435B4B24769C4900AF7100 /* ResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		63435B4B24769C4900AF7100 /* ParsingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsingModel.swift; sourceTree = "<group>"; };
 		63435B4C24769C4900AF7100 /* UserWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserWebService.swift; sourceTree = "<group>"; };
 		63435B4D24769C4900AF7100 /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		6343975D245BE460009BCA1F /* Terra Heal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Terra Heal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1930,6 +1940,7 @@
 			children = (
 				034876F324B2EF61006774AB /* xib */,
 				034876F524B2EF61006774AB /* MyBookingVC.swift */,
+				034B92212522FF51003C99A3 /* MyBookingExpandTblCell */,
 				034876F624B2EF61006774AB /* MyBookingTblCell */,
 			);
 			path = MyBooking;
@@ -2835,6 +2846,16 @@
 			path = DocumentTblCell;
 			sourceTree = "<group>";
 		};
+		034B92212522FF51003C99A3 /* MyBookingExpandTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				034B92222522FF51003C99A3 /* MyBookingExpandTblCell.xib */,
+				034B92232522FF51003C99A3 /* MyBookingExpandTblCell.swift */,
+				034B922825235087003C99A3 /* MyBookingExpandTblCell + TableViewl.swift */,
+			);
+			path = MyBookingExpandTblCell;
+			sourceTree = "<group>";
+		};
 		034CD80324BC48F200BFD6E1 /* PaymentPreferenceVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -2947,15 +2968,32 @@
 			path = xib;
 			sourceTree = "<group>";
 		};
-		0368AB98251A2488009EE362 /* Booking */ = {
+		0368AB98251A2488009EE362 /* PastAndFutureBooking */ = {
 			isa = PBXGroup;
 			children = (
-				0368AB99251A2488009EE362 /* MyBookingResponse.swift */,
+				0368AB99251A2488009EE362 /* MyBookingWebService.swift */,
 				0368AB9A251A2488009EE362 /* MyBookingData.swift */,
 				0368AB9C251A2488009EE362 /* MyBookingBookingInfo.swift */,
 				0368ABA1251A2892009EE362 /* MyBookingMassage.swift */,
 			);
-			path = Booking;
+			path = PastAndFutureBooking;
+			sourceTree = "<group>";
+		};
+		036A81612524E679006F1CE6 /* CommenCells */ = {
+			isa = PBXGroup;
+			children = (
+				036A81622524E679006F1CE6 /* MassageDetailTblCell */,
+			);
+			path = CommenCells;
+			sourceTree = "<group>";
+		};
+		036A81622524E679006F1CE6 /* MassageDetailTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				036A81632524E679006F1CE6 /* ReviewReciepentTblCell.swift */,
+				036A81642524E679006F1CE6 /* MassageDetailTblCell.xib */,
+			);
+			path = MassageDetailTblCell;
 			sourceTree = "<group>";
 		};
 		036CEF4A24E25FC300E349FF /* CustomAmountTextFieldDialog */ = {
@@ -3023,18 +3061,8 @@
 			children = (
 				0383B28D24B87073003622F6 /* ReviewReciepentSection */,
 				0383B27E24B83584003622F6 /* ReviewSummaryTblCell */,
-				0383B27624B80F2C003622F6 /* ReviewReciepentTblCell */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		0383B27624B80F2C003622F6 /* ReviewReciepentTblCell */ = {
-			isa = PBXGroup;
-			children = (
-				0383B27724B80F2C003622F6 /* ReviewReciepentTblCell.xib */,
-				0383B27824B80F2C003622F6 /* ReviewReciepentTblCell.swift */,
-			);
-			path = ReviewReciepentTblCell;
 			sourceTree = "<group>";
 		};
 		0383B27E24B83584003622F6 /* ReviewSummaryTblCell */ = {
@@ -3561,6 +3589,7 @@
 			isa = PBXGroup;
 			children = (
 				632DB085248FA5CC00B65B46 /* DataType + Extesnion.swift */,
+				034B92262523029B003C99A3 /* Date + Extension.swift */,
 				632DB086248FA5CC00B65B46 /* NSObject + Extension.swift */,
 			);
 			path = "Othert + Extension";
@@ -3597,9 +3626,8 @@
 		63435B4624769C4900AF7100 /* WebService */ = {
 			isa = PBXGroup;
 			children = (
-				0368AB98251A2488009EE362 /* Booking */,
+				0368AB98251A2488009EE362 /* PastAndFutureBooking */,
 				63435B4724769C4900AF7100 /* AFNHelper */,
-				63435B4B24769C4900AF7100 /* ResponseModel.swift */,
 				0304CC13251B92960030FD06 /* FaqWebService.swift */,
 				037324FF24CAD4780020FC03 /* ServiceCenterWebService.swift */,
 				03444BD125147A680064BFF6 /* MyPlacesWebService.swift */,
@@ -3626,8 +3654,10 @@
 		63435B4724769C4900AF7100 /* AFNHelper */ = {
 			isa = PBXGroup;
 			children = (
+				63435B4B24769C4900AF7100 /* ParsingModel.swift */,
 				63435B4824769C4900AF7100 /* AlamofireHelper.swift */,
-				63435B4924769C4900AF7100 /* AppWebApi.swift */,
+				63435B4924769C4900AF7100 /* AppWebApi  + WebUrls.swift */,
+				034B921F2522F41F003C99A3 /* AppWebApi + WebCalls.swift */,
 				63435B4A24769C4900AF7100 /* Reachability.swift */,
 			);
 			path = AFNHelper;
@@ -3716,6 +3746,7 @@
 		634397D1245BE6DF009BCA1F /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				036A81612524E679006F1CE6 /* CommenCells */,
 				0345C66C24C9B21800873FD1 /* KYC SCENE */,
 				0348771F24B2EF62006774AB /* HelperVC */,
 				0348776624B2EF63006774AB /* LaunchVC */,
@@ -3926,6 +3957,7 @@
 				031F894A24DD5A1E0001FD58 /* AccessoryTblCell.xib in Resources */,
 				0382B5AB24D3F465002B6BF5 /* PersonPickerDialog.xib in Resources */,
 				0348786724B2EF64006774AB /* ReferAndEarnVC.xib in Resources */,
+				034B92242522FF51003C99A3 /* MyBookingExpandTblCell.xib in Resources */,
 				0344496C24B6045F00C8B763 /* CustomInformationDialog.xib in Resources */,
 				03B2B74924E693B700EC18D5 /* PreviewGiftVoucherDialog.xib in Resources */,
 				0379E11B24EF85A900C08067 /* GoogleService-Info.plist in Resources */,
@@ -3954,13 +3986,13 @@
 				0348788824B2EF64006774AB /* HowItWorkVC.xib in Resources */,
 				0395FBE5251891E0001D6824 /* GiftVoucherDetailVC.xib in Resources */,
 				03AB5947251E14F8002FE7C9 /* BookingTypeSelectionCell.xib in Resources */,
-				0383B27B24B80F2C003622F6 /* ReviewReciepentTblCell.xib in Resources */,
 				0348780824B2EF64006774AB /* MyPlaceVC.xib in Resources */,
 				03406F9B24E2D8F50014AC99 /* GiftVoucherTblCell.xib in Resources */,
 				03406F9E24E2D8F50014AC99 /* AddGiftVoucherVC.xib in Resources */,
 				0348789924B2EF64006774AB /* CustomFaqDialog.xib in Resources */,
 				0348780224B2EF64006774AB /* SettingVC.xib in Resources */,
 				0392194424EF9A1E00302BC7 /* CustomDocumentPicker.xib in Resources */,
+				036A81662524E679006F1CE6 /* MassageDetailTblCell.xib in Resources */,
 				03AB5951251E14F8002FE7C9 /* CustomSendingPreferenceDialog.xib in Resources */,
 				03AB5965251E15C1002FE7C9 /* ReviewAndBookPackVC.xib in Resources */,
 				0348784624B2EF64006774AB /* RegisterVC.xib in Resources */,
@@ -4158,13 +4190,13 @@
 				03AB5957251E14F8002FE7C9 /* SelectPackTblCell.swift in Sources */,
 				034877FA24B2EF64006774AB /* MassagePreferenceTblCell.swift in Sources */,
 				034876CE24B2EA13006774AB /* TextField + InputConfiguration.swift in Sources */,
-				63435B4F24769C4900AF7100 /* AppWebApi.swift in Sources */,
+				63435B4F24769C4900AF7100 /* AppWebApi  + WebUrls.swift in Sources */,
 				0348783824B2EF64006774AB /* ContactVerifiedVC.swift in Sources */,
 				0348787024B2EF64006774AB /* ReferAndEarnTblCell.swift in Sources */,
 				034876CC24B2E9EF006774AB /* ACFloatingTextfield.swift in Sources */,
 				03F8E638251083CD0092D7FF /* HomeVC.swift in Sources */,
 				0348787624B2EF64006774AB /* SideVC.swift in Sources */,
-				0368AB9D251A2489009EE362 /* MyBookingResponse.swift in Sources */,
+				0368AB9D251A2489009EE362 /* MyBookingWebService.swift in Sources */,
 				03A1B55624B5D7BE008BAC3A /* DurationSelectionDialog.swift in Sources */,
 				034877FB24B2EF64006774AB /* MassagePreferenceVC.swift in Sources */,
 				0382B5AC24D3F465002B6BF5 /* PersonPickerCell.swift in Sources */,
@@ -4197,7 +4229,6 @@
 				0304CC12251B81BF0030FD06 /* GiftDesignWebService.swift in Sources */,
 				635675F4249A1D69006F5511 /* PricingLocationWebService.swift in Sources */,
 				0344496F24B6045F00C8B763 /* CustomAlert.swift in Sources */,
-				0383B27C24B80F2C003622F6 /* ReviewReciepentTblCell.swift in Sources */,
 				03F8E636251083CD0092D7FF /* HomeTblCell.swift in Sources */,
 				033E823124EBDC1100E71506 /* ThemeBottomDialog + Animation.swift in Sources */,
 				03F8E64525109E420092D7FF /* MyFavVC + CollectionView.swift in Sources */,
@@ -4239,10 +4270,12 @@
 				0348788924B2EF64006774AB /* HowItWorkVC.swift in Sources */,
 				034878AF24B2F2FF006774AB /* DocumentTblCell.swift in Sources */,
 				0348785924B2EF64006774AB /* CustomServiceHourSelectionCell.swift in Sources */,
+				034B92252522FF51003C99A3 /* MyBookingExpandTblCell.swift in Sources */,
 				0348780524B2EF64006774AB /* SettingVC.swift in Sources */,
 				03444BD225147A680064BFF6 /* MyPlacesWebService.swift in Sources */,
 				0348784324B2EF64006774AB /* TutorialCell.swift in Sources */,
 				632DB09B248FA5CC00B65B46 /* String+Localization.swift in Sources */,
+				036A81652524E679006F1CE6 /* ReviewReciepentTblCell.swift in Sources */,
 				034CD80D24BC48F200BFD6E1 /* PaymentPreferenceVC.swift in Sources */,
 				03AB595E251E14F8002FE7C9 /* PackageDetailVC + Booking.swift in Sources */,
 				034878B524B32789006774AB /* SettingPreferenceWebservice.swift in Sources */,
@@ -4260,7 +4293,7 @@
 				0353EB1324EAA71D00584357 /* SlideVC.swift in Sources */,
 				03AB5946251E14F8002FE7C9 /* BookingTypeSelectionDialog.swift in Sources */,
 				0348782424B2EF64006774AB /* MyAddressTblCell.swift in Sources */,
-				63435B5124769C4900AF7100 /* ResponseModel.swift in Sources */,
+				63435B5124769C4900AF7100 /* ParsingModel.swift in Sources */,
 				0348783F24B2EF64006774AB /* VerificationAlert.swift in Sources */,
 				039B509A24B7178D00B06312 /* RequestBookingWebService.swift in Sources */,
 				0344496124B6045F00C8B763 /* DateTimeDialog.swift in Sources */,
@@ -4325,6 +4358,7 @@
 				039395A0250662D000AB9404 /* NSLayoutHelper.swift in Sources */,
 				03B2B74424E6514A00EC18D5 /* PricingDurationCltCell.swift in Sources */,
 				0344496924B6045F00C8B763 /* CustomTextFieldDialog.swift in Sources */,
+				034B92202522F41F003C99A3 /* AppWebApi + WebCalls.swift in Sources */,
 				0348783124B2EF64006774AB /* CustomPhotoPicker.swift in Sources */,
 				03744314251367D800358755 /* HomeSegmentControl.swift in Sources */,
 				03A1B54324B5A804008BAC3A /* RecipientTblCell.swift in Sources */,
@@ -4335,6 +4369,7 @@
 				63439860245BE6DF009BCA1F /* FontHelper.swift in Sources */,
 				0348785D24B2EF64006774AB /* ServiceCell.swift in Sources */,
 				0373250024CAD4780020FC03 /* ServiceCenterWebService.swift in Sources */,
+				034B92272523029B003C99A3 /* Date + Extension.swift in Sources */,
 				633B7128245FDA5800CF490D /* ThemeLabel.swift in Sources */,
 				03469E312521B5E0001EFF39 /* PackageServiceCltCell.swift in Sources */,
 				0383B27D24B80F2C003622F6 /* ReviewAndBookVC.swift in Sources */,
@@ -4371,6 +4406,7 @@
 				0348786624B2EF64006774AB /* ReferAndEarnVC.swift in Sources */,
 				034449B624B604C000C8B763 /* CustomChangePasswordDialog.swift in Sources */,
 				63435B5224769C4900AF7100 /* UserWebService.swift in Sources */,
+				034B922925235087003C99A3 /* MyBookingExpandTblCell + TableViewl.swift in Sources */,
 				0348787B24B2EF64006774AB /* MenuCellVerticle.swift in Sources */,
 				03406FA124E2D8F50014AC99 /* CustomServiceCenterLocationSelectionDialog.swift in Sources */,
 				0344495D24B6045F00C8B763 /* CustomMobileNumberDialog.swift in Sources */,

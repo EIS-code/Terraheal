@@ -19,7 +19,6 @@ class RecipientTblCell: SelectionBorderTableCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectionStyle = .none
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.lblAge?.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.lblGender?.setFont(name: FontName.Bold, size: FontSize.subHeader)

@@ -9,22 +9,21 @@ import Foundation
 class FaqQuestionCell: TableCell {
 
       @IBOutlet weak var vwBg: UIView!
-      @IBOutlet weak var txtQuestion: ACFloatingTextfield!
       @IBOutlet weak var lblTitle: ThemeLabel!
-      
+      @IBOutlet weak var lblAnswer: ThemeLabel!
+
 
       override func awakeFromNib() {
           super.awakeFromNib()
-          selectionStyle = .none
-          self.txtQuestion.disableFloatingLabel = true
+      
           self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.regular)
-          self.txtQuestion.setFont(name: FontName.Regular, size: FontSize.detail)
+          self.lblAnswer.setFont(name: FontName.Regular, size: FontSize.detail)
       }
 
       func setData(data: FAQItem ) {
           self.lblTitle.text = data.question
-          self.txtQuestion.placeholder = data.question
-          self.txtQuestion.text = data.answer
+          self.lblAnswer.text = data.answer
+
       }
 
       override func layoutSubviews() {

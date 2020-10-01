@@ -4,39 +4,29 @@
 //
 
 import UIKit
-import CoreLocation
-import Alamofire
-
-
 
 class HomeVC: BaseVC {
-    
-   
+
     @IBOutlet weak var scrHomeData: UIScrollView!
     @IBOutlet weak var lblName: ThemeLabel!
     @IBOutlet weak var lblHeader: ThemeLabel!
     @IBOutlet weak var lblDescription: ThemeLabel!
     @IBOutlet weak var btnBookNow: RoundedBorderButton!
-    
     @IBOutlet weak var tableView: UITableView!
+
     var arrForData: [ServiceDetail] = []
     var headerData: HomeItemDetail =  HomeItemDetail(title:appSingleton.user.name, buttonTitle: "HOME_ITEM_ACTION_1".localized(), image: ImageAsset.HomeItem.header,homeItemtype: .Header )
-    
     var arrForHomeDetails: [HomeItemDetail] = []
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
     }
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
-    
     private func setup() {
-        
-        
     }
     
     // MARK: View lifecycle
@@ -50,9 +40,6 @@ class HomeVC: BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let lc = LocationCenter.init()
-        lc.requestLocationOnce()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {

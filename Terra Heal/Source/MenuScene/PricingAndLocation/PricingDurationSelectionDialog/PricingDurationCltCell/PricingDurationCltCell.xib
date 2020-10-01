@@ -96,10 +96,38 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="582-VR-E0n" secondAttribute="bottom" constant="4" id="5e7-Y5-4TN"/>
-                <constraint firstAttribute="trailing" secondItem="582-VR-E0n" secondAttribute="trailing" constant="4" id="8r8-s9-ghB"/>
-                <constraint firstItem="582-VR-E0n" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="Rsv-Xd-3ua"/>
-                <constraint firstItem="582-VR-E0n" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="rpl-CI-rSC"/>
+                <constraint firstAttribute="bottom" secondItem="582-VR-E0n" secondAttribute="bottom" constant="4" id="5e7-Y5-4TN" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstAttribute="trailing" secondItem="582-VR-E0n" secondAttribute="trailing" constant="4" id="8r8-s9-ghB" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="582-VR-E0n" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="Rsv-Xd-3ua" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="582-VR-E0n" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="rpl-CI-rSC" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
             </constraints>
             <viewLayoutGuide key="safeArea" id="lmf-Xn-7Ot"/>
             <size key="customSize" width="221" height="288"/>

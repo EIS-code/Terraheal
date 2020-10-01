@@ -220,18 +220,13 @@ extension ManageDocumentVC: UITableViewDelegate,UITableViewDataSource, UIScrollV
 
 extension ManageDocumentVC: UIImageCropperProtocol {
     func didCropImage(originalImage: UIImage?, croppedImage: UIImage?) {
-       print("croper\(croppedImage)")
-        
+
         if arrForData.isEmpty {
                 self.arrForData.append(UploadDocumentDetail.init(id: "599905", name:"Front Side", image: croppedImage, data: nil, isCompleted: true))
         } else {
             self.arrForData.append(UploadDocumentDetail.init(id: "599905", name:"Back Side", image: croppedImage, data: nil, isCompleted: true))
         }
         self.updateUI()
-        
-        /*self.arrForData = [,UploadDocumentDetail.init(id: "599905", name:"Back Side", image: nil, data: nil, isCompleted: false)]
-        self.updateUI()*/
-        
     }
     
     //optional

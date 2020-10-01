@@ -14,19 +14,16 @@ class ReferAndEarnTblCell: TableCell {
     @IBOutlet weak var lblMonth: ThemeLabel!
     @IBOutlet weak var lblDescription: ThemeLabel!
     @IBOutlet weak var lblAmount: ThemeLabel!
-
     @IBOutlet weak var vwBg: UIView!
 
 
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectionStyle = .none
         self.lblDay.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.lblMonth.setFont(name: FontName.Regular, size: FontSize.detail)
         self.lblDescription.setFont(name: FontName.Regular, size: FontSize.detail)
         self.lblAmount.setFont(name: FontName.Bold, size: FontSize.header)
-
     }
 
     func setData(data: ReferralDetail ) {
@@ -36,11 +33,10 @@ class ReferAndEarnTblCell: TableCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-
     }
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 }
