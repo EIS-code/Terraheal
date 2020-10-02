@@ -12,7 +12,6 @@ extension AppDelegate {
     
     func windowConfig(withRootVC rootVC: UIViewController?) {
         DispatchQueue.main.async {
-            SlideVC.remove()
             self.window?.clean()
             self.window?.rootViewController?.clean()
             self.window?.rootViewController = rootVC

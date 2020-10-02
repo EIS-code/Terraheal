@@ -413,7 +413,7 @@ extension ReviewAndBookVC {
         AppWebApi.bookRequest(params: appSingleton.myBookingData.toDictionary()) { (response) in
             Loader.hideLoading()
             if  ResponseModel.isSuccess(response: response) {
-                appSingleton.myBookingData = MyBookingData.init()
+                appSingleton.myBookingData = CurrentBookingData.init()
                 Common.appDelegate.loadReservationVC()
             }
         }

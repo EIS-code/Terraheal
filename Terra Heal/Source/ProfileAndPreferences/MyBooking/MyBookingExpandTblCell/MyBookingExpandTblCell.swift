@@ -28,7 +28,7 @@ class MyBookingExpandTblCell: TableCell {
 
     @IBOutlet weak var lblbSessionDetail: ThemeLabel!
     @IBOutlet weak var lblSessionValue: ThemeLabel!
-    var arrForData: [MyBookingInfo] = []
+    var arrForData: [MyBookingUserPeople] = []
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,11 +44,14 @@ class MyBookingExpandTblCell: TableCell {
         self.lblBookDateAndTime.setFont(name: FontName.Regular, size: FontSize.detail)
         self.lblbSessionDetail.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.lblSessionValue.setFont(name: FontName.Regular, size: FontSize.detail)
-       // self.setupTableView(tableView: self.tableView)
+        self.setupTableView(tableView: self.tableView)
     }
 
-    func setData(data: MyPastBookingData ) {
-        self.arrForData = data.bookingInfo
+    func setData(data: [MyBookingUserPeople] ) {
+        self.arrForData = data
+        self.tableView.reloadData(heightToFit: self.htblVw) {
+            
+        }
     }
 
     override func layoutSubviews() {

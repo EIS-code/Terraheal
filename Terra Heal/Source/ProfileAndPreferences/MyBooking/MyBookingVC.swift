@@ -11,8 +11,8 @@ class MyBookingVC: BaseVC {
     @IBOutlet weak var vwTab: JDSegmentedControl!
     @IBOutlet weak var vwBg: UIView!
     
-    var arrForPastBooking: [MyPastBookingData] = []
-    var arrForFutureBooking: [MyPastBookingData] = []
+    var arrForPastBooking: [MyBookingData] = []
+    var arrForFutureBooking: [MyBookingData] = []
     var arrForData: [MyBookingTblCellDetail] = []
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -105,7 +105,7 @@ extension MyBookingVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 || indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: MyBookingExpandTblCell.name, for: indexPath) as?  MyBookingExpandTblCell
-            cell?.setData(data: arrForPastBooking[indexPath.section])
+            cell?.setData(data: arrForPastBooking[indexPath.section].userPeople)
             return cell!
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: MyBookingTblCell.name, for: indexPath) as?  MyBookingTblCell
@@ -153,7 +153,7 @@ extension MyBookingVC {
         }
     }
 
-    func setDataSourceForPastBooking(dataSource:[MyPastBookingData]) {
+    func setDataSourceForPastBooking(dataSource:[MyBookingData]) {
         self.arrForData.removeAll()
         for data in dataSource {
             self.arrForData.append(MyBookingTblCellDetail.init(data: data))

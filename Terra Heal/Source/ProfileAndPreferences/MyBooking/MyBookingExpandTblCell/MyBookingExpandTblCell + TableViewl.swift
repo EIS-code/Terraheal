@@ -30,16 +30,17 @@ extension MyBookingExpandTblCell :  UITableViewDelegate,UITableViewDataSource {
         return 50
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1//arrForData.count
+        return arrForData.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2//arrForData[section].bookingMassages.count
+        return arrForData[section].bookingMassages.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       //let data = arrForData[indexPath.section].bookingMassages[indexPath.row]
+       let data = arrForData[indexPath.section].bookingMassages[indexPath.row]
        let cell = tableView.dequeueReusableCell(withIdentifier: MassageDetailTblCell.name, for: indexPath) as?  MassageDetailTblCell
         cell?.imageView?.backgroundColor = UIColor.red
-        cell?.setData(data: MassageCellDetail.init(title: "Title", subTitle: "Subtitle"))
+
+        cell?.setData(data: MassageCellDetail.init(data: data))
         self.tableView.reloadData()
         return cell!
     }

@@ -331,7 +331,6 @@
 		0368AB852519E1DD009EE362 /* GiftServiceDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0368AB842519E1DD009EE362 /* GiftServiceDetailVC.xib */; };
 		0368AB9D251A2489009EE362 /* MyBookingWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368AB99251A2488009EE362 /* MyBookingWebService.swift */; };
 		0368AB9E251A2489009EE362 /* MyBookingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368AB9A251A2488009EE362 /* MyBookingData.swift */; };
-		0368ABA0251A2489009EE362 /* MyBookingBookingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368AB9C251A2488009EE362 /* MyBookingBookingInfo.swift */; };
 		0368ABA2251A2892009EE362 /* MyBookingMassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368ABA1251A2892009EE362 /* MyBookingMassage.swift */; };
 		036A81652524E679006F1CE6 /* ReviewReciepentTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A81632524E679006F1CE6 /* ReviewReciepentTblCell.swift */; };
 		036A81662524E679006F1CE6 /* MassageDetailTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 036A81642524E679006F1CE6 /* MassageDetailTblCell.xib */; };
@@ -820,7 +819,6 @@
 		0368AB842519E1DD009EE362 /* GiftServiceDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftServiceDetailVC.xib; sourceTree = "<group>"; };
 		0368AB99251A2488009EE362 /* MyBookingWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingWebService.swift; sourceTree = "<group>"; };
 		0368AB9A251A2488009EE362 /* MyBookingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingData.swift; sourceTree = "<group>"; };
-		0368AB9C251A2488009EE362 /* MyBookingBookingInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingBookingInfo.swift; sourceTree = "<group>"; };
 		0368ABA1251A2892009EE362 /* MyBookingMassage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingMassage.swift; sourceTree = "<group>"; };
 		036A81632524E679006F1CE6 /* ReviewReciepentTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewReciepentTblCell.swift; sourceTree = "<group>"; };
 		036A81642524E679006F1CE6 /* MassageDetailTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MassageDetailTblCell.xib; sourceTree = "<group>"; };
@@ -2973,7 +2971,6 @@
 			children = (
 				0368AB99251A2488009EE362 /* MyBookingWebService.swift */,
 				0368AB9A251A2488009EE362 /* MyBookingData.swift */,
-				0368AB9C251A2488009EE362 /* MyBookingBookingInfo.swift */,
 				0368ABA1251A2892009EE362 /* MyBookingMassage.swift */,
 			);
 			path = PastAndFutureBooking;
@@ -4246,7 +4243,6 @@
 				0348783B24B2EF64006774AB /* VerifyContactVC.swift in Sources */,
 				0348780E24B2EF64006774AB /* MyBookingTblCell.swift in Sources */,
 				0348787824B2EF64006774AB /* MenuCellHorizontal.swift in Sources */,
-				0368ABA0251A2489009EE362 /* MyBookingBookingInfo.swift in Sources */,
 				0348788224B2EF64006774AB /* CustomLocationServiceDialog.swift in Sources */,
 				63435B5024769C4900AF7100 /* Reachability.swift in Sources */,
 				0345C69A24C9D11F00873FD1 /* ServiceMap + Animation.swift in Sources */,

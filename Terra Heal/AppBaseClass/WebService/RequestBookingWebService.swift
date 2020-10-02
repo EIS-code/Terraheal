@@ -10,7 +10,7 @@ import Foundation
 
 
 
-class MyBookingData: NSObject {
+class CurrentBookingData: NSObject {
     var booking_type: BookingType = BookingType.MassageCenter
     var session_id: String = ""
     var special_notes:  String = ""

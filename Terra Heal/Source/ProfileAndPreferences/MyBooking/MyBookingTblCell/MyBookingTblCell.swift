@@ -13,8 +13,8 @@ struct MyBookingTblCellDetail {
     var image: String = ""
     var isSelected:Bool = false
 
-    init(data:MyPastBookingData) {
-        self.title = Date.milliSecToDate(milliseconds: data.bookingDateTime.toDouble, format: DateFormat.MyBookingCollapseDate)
+    init(data:MyBookingData) {
+        self.title = Date.milliSecToDate(milliseconds: data.massageDate.toDouble, format: DateFormat.MyBookingCollapseDate)
     }
 }
 

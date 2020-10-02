@@ -15,8 +15,8 @@ struct MassageCellDetail {
         self.subTitle = data.selectedDuration.time + " " + "min"
     }
     init(data:MyBookingMassage) {
-        self.title = data.pressurePreference
-        self.subTitle = data.id
+        self.title = data.name
+        self.subTitle = data.time + " " + "min"
     }
 
     init(title:String?, subTitle:String?) {

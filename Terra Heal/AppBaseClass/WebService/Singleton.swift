@@ -21,7 +21,7 @@ public class Singleton :NSObject {
     var massagePrefrenceDetail:[MassagePreferenceDetail] = []
     
     
-    var myBookingData: MyBookingData = MyBookingData.init()
+    var myBookingData: CurrentBookingData = CurrentBookingData.init()
     var myBuyPackageData: PackageWebService.RequestBuyPackage =  PackageWebService.RequestBuyPackage.init()
     var myBuyGiftVoucherData: VoucherWebService.RequestPurchageVoucher =   VoucherWebService.RequestPurchageVoucher.init()
     var purchasePackage: Package? = nil

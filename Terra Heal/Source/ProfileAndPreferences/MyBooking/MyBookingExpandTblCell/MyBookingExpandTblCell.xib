@@ -170,6 +170,7 @@ lisbon, portugal -25412</string>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="htblVw" destination="6QS-ZW-Nfp" id="8FT-ta-c90"/>
                 <outlet property="ivForQr" destination="u9I-lm-oGh" id="Fd0-xN-Ce0"/>
                 <outlet property="lblBookDateAndTime" destination="hVb-JG-VLj" id="KnC-1Q-P1S"/>
                 <outlet property="lblBookingDetail" destination="WNu-F3-EIa" id="l2y-r8-8lN"/>
@@ -181,6 +182,7 @@ lisbon, portugal -25412</string>
                 <outlet property="lblDelayTime" destination="At3-Dp-GuM" id="19X-D2-Vb4"/>
                 <outlet property="lblSessionValue" destination="ygG-Hu-5Fj" id="X6j-aK-YxJ"/>
                 <outlet property="lblbSessionDetail" destination="3al-wd-eKW" id="1AT-DD-19C"/>
+                <outlet property="tableView" destination="pGq-cQ-fic" id="YZO-UW-ixH"/>
                 <outlet property="vwDate" destination="xm7-6v-Cmx" id="Elv-xO-4x6"/>
                 <outlet property="vwExpanded" destination="dhE-ot-Y3d" id="ctN-LN-fpi"/>
             </connections>
