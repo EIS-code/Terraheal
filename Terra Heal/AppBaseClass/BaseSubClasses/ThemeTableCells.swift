@@ -36,7 +36,7 @@ class SelectionBorderTableCell: ShadowTableCell {
    
     @IBOutlet weak var lblCellTitle: ThemeLabel!
     @IBOutlet weak var imgCellSelected: UIImageView!
-    
+    var isStateSelected:Bool = false
    @IBInspectable open var radius : CGFloat = 15 {
         didSet{self.setupLayout()}
     }
@@ -54,7 +54,8 @@ class SelectionBorderTableCell: ShadowTableCell {
     
     func setData(title: String, isSelected: Bool) {
         self.lblCellTitle?.text = title
-        self.isSelected = isSelected
+        self.isStateSelected = isSelected
+        print(self.isSelected)
         self.setupLayout()
     }
 
@@ -69,7 +70,7 @@ class SelectionBorderTableCell: ShadowTableCell {
     
     func setupLayout() {
         //self.imgCellSelected?.setRound()
-        if self.isSelected {
+        if self.isStateSelected {
             self.imgCellSelected?.isHidden = false
             self.vwCellBg?.setRound(withBorderColor: self.cellBorderColor, andCornerRadious: JDDeviceHelper.offseter(offset: radius), borderWidth: 1.0)
             self.addShadow()

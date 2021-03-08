@@ -115,7 +115,7 @@ extension AppWebApi {
         }
     }
     class func locationList(params:PriceAndLocation.RequestLocationlist = PriceAndLocation.RequestLocationlist(), completionHandler: @escaping ((PriceAndLocation.Response) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: API_URL.GetLocationList, methodName: AlamofireHelper.GET_METHOD, paramData: [:]) { (data, dictionary, error) in
+        AlamofireHelper().getDataFrom(urlString: API_URL.GetLocationList, methodName: AlamofireHelper.POST_METHOD, paramData: [:]) { (data, dictionary, error) in
             let response = PriceAndLocation.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }

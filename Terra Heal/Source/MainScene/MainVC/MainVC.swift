@@ -47,10 +47,11 @@ class MainVC: BaseVC {
         self.homeView.isHidden = false
         self.exploreView.isHidden = true
         self.myFavView.isHidden = true
+        self.revealViewController()?.delegate = self
         if homeVC == nil {
-                   homeVC = HomeVC.fromNib()
-               }
-               self.add(homeVC!, view:self.homeView)
+            homeVC = HomeVC.fromNib()
+        }
+        self.add(homeVC!, view:self.homeView)
         //vwFloatingBottom.height(constant: JDDeviceHelper.offseter(offset: CommonSize.Button.standard))
         vwFloatingBottom.allowChangeThumbWidth = false
         vwFloatingBottom.itemTitles = ["HOME_BTN_HOME".localized(),"HOME_BTN_EXPLORE".localized(),"HOME_BTN_MY_FAV".localized()]
@@ -174,6 +175,12 @@ class MainVC: BaseVC {
     }
     
     
+}
+extension MainVC: PBRevealViewControllerDelegate {
+    func revealControllerPanGestureShouldBegin(_ revealController: PBRevealViewController, direction: PBRevealControllerPanDirection) -> Bool {
+        return true
+    }
+
 }
 
 

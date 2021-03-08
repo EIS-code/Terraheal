@@ -338,6 +338,7 @@
 		036CEF4E24E25FC300E349FF /* CustomAmountTextFieldDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 036CEF4C24E25FC300E349FF /* CustomAmountTextFieldDialog.xib */; };
 		0373250024CAD4780020FC03 /* ServiceCenterWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037324FF24CAD4780020FC03 /* ServiceCenterWebService.swift */; };
 		03744314251367D800358755 /* HomeSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03744313251367D800358755 /* HomeSegmentControl.swift */; };
+		0374D69325BEFAC5003CAB04 /* UIControl + SetText + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0374D69225BEFAC5003CAB04 /* UIControl + SetText + Extension.swift */; };
 		0379E11B24EF85A900C08067 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0379E11A24EF85A800C08067 /* GoogleService-Info.plist */; };
 		0382B5AB24D3F465002B6BF5 /* PersonPickerDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0382B5A424D3F465002B6BF5 /* PersonPickerDialog.xib */; };
 		0382B5AC24D3F465002B6BF5 /* PersonPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0382B5A624D3F465002B6BF5 /* PersonPickerCell.swift */; };
@@ -826,6 +827,7 @@
 		036CEF4C24E25FC300E349FF /* CustomAmountTextFieldDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomAmountTextFieldDialog.xib; sourceTree = "<group>"; };
 		037324FF24CAD4780020FC03 /* ServiceCenterWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCenterWebService.swift; sourceTree = "<group>"; };
 		03744313251367D800358755 /* HomeSegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSegmentControl.swift; sourceTree = "<group>"; };
+		0374D69225BEFAC5003CAB04 /* UIControl + SetText + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl + SetText + Extension.swift"; sourceTree = "<group>"; };
 		0379E11A24EF85A800C08067 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0382B5A424D3F465002B6BF5 /* PersonPickerDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonPickerDialog.xib; sourceTree = "<group>"; };
 		0382B5A624D3F465002B6BF5 /* PersonPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonPickerCell.swift; sourceTree = "<group>"; };
@@ -3585,6 +3587,7 @@
 		632DB084248FA5CC00B65B46 /* Othert + Extension */ = {
 			isa = PBXGroup;
 			children = (
+				0374D69225BEFAC5003CAB04 /* UIControl + SetText + Extension.swift */,
 				632DB085248FA5CC00B65B46 /* DataType + Extesnion.swift */,
 				034B92262523029B003C99A3 /* Date + Extension.swift */,
 				632DB086248FA5CC00B65B46 /* NSObject + Extension.swift */,
@@ -4313,6 +4316,7 @@
 				03AB5960251E14F8002FE7C9 /* PackVC.swift in Sources */,
 				0348782124B2EF64006774AB /* MyTherapistTblCell.swift in Sources */,
 				03F8E641251090510092D7FF /* ExploreMapVC.swift in Sources */,
+				0374D69325BEFAC5003CAB04 /* UIControl + SetText + Extension.swift in Sources */,
 				035CB15824E12ADF00C2D5C6 /* CustomServiceCenterSelectionDialog.swift in Sources */,
 				0353EB0C24EA52A400584357 /* ThemeImageView.swift in Sources */,
 				036CEF4D24E25FC300E349FF /* CustomAmountTextFieldDialog.swift in Sources */,

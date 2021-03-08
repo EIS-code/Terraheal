@@ -33,17 +33,17 @@ import UIKit.UIGestureRecognizerSubclass
     case spring
     /**
      A transition provided by the delegate methods.
-     
+
      See also:
-     
+
         revealController(_ :willAdd:for:animated:)
-     
+
         revealController(_ :animationBlockFor:from:to:)
-     
+
         revealController(_ :completionBlockFor:from:to:)
-     
+
         revealController(_ :blockFor:from:to:finalBlock:)
-     
+
      - Important:
         If revealController(_ :blockFor:from:to:finalBlock:) is implemented, the others methods are ignored.
      */
@@ -126,15 +126,15 @@ Use a reveal view controller delegate (a custom object that implements this prot
 @objc public protocol PBRevealViewControllerDelegate: NSObjectProtocol {
     /**
      Ask the delegate if the left view should be shown. Not called while a pan gesture.
-     
+
      See also:
-     
+
         revealControllerPanGestureShouldBegin(_ :direction:)
 
      - Parameters:
         - revealController: The reveal view controller object.
         - viewController:   The left view controller object.
-     
+
      - Returns:
         true if the left view controller should be shown, false otherwise.
      */
@@ -151,7 +151,7 @@ Use a reveal view controller delegate (a custom object that implements this prot
 
     /**
      Called just after the left view controller is presented.
-     
+
      - Parameters:
         - revealController: The reveal view controller object.
         - viewController:   The left view controller object.
@@ -160,7 +160,7 @@ Use a reveal view controller delegate (a custom object that implements this prot
 
     /**
      Called just before the left view controller is hidden.
-     
+
      - Parameters:
         - revealController: The reveal view controller object.
         - viewController:   The left view controller object.
@@ -169,24 +169,24 @@ Use a reveal view controller delegate (a custom object that implements this prot
 
     /**
      Called just after the left view controller is hidden.
-     
+
      - Parameters:
         - revealController: The reveal view controller object.
         - viewController:   The left view controller object.
      */
     @objc optional func revealController(_ revealController: PBRevealViewController, didHideLeft viewController: UIViewController)
-    
+
     /**
      Ask the delegate if the right view should be shown. Not called while a pan gesture.
-     
+
      See also:
-     
+
      revealControllerPanGestureShouldBegin(_ :direction:)
-     
+
      - Parameters:
         - revealController: The reveal view controller object.
         - viewController:   The right view controller object.
-     
+
      - Returns:
 
         true if the right view controller should be shown, false otherwise.
@@ -195,7 +195,7 @@ Use a reveal view controller delegate (a custom object that implements this prot
 
     /**
      Called just before the right view controller is presented.
-     
+
      - Parameters:
         - revealController: The reveal view controller object.
         - viewController:   The right view controller object.
@@ -204,7 +204,7 @@ Use a reveal view controller delegate (a custom object that implements this prot
 
     /**
      Called just after the right view controller is presented.
-     
+
      - Parameters:
         - revealController: The reveal view controller object.
         - viewController:   The right view controller object.
@@ -213,7 +213,7 @@ Use a reveal view controller delegate (a custom object that implements this prot
 
     /**
      Called just before the right view controller is hidden.
-     
+
      - Parameters:
         - revealController: The reveal view controller object.
         - viewController:   The right view controller object.
@@ -222,7 +222,7 @@ Use a reveal view controller delegate (a custom object that implements this prot
 
     /**
      Called just after the right view controller is hidden.
-     
+
      - Parameters:
         - revealController: The reveal view controller object.
         - viewController:   The right view controller object.
@@ -231,11 +231,11 @@ Use a reveal view controller delegate (a custom object that implements this prot
 
     /**
      Implement this to return NO when you want the pan gesture recognizer to be ignored.
-     
+
      See also:
-     
+
         panGestureRecognizer
-     
+
      - Parameters:
         - revealController: The reveal view controller object.
         - direction:        The panning direction.
@@ -247,11 +247,11 @@ Use a reveal view controller delegate (a custom object that implements this prot
 
     /**
      Implement this to return NO when you want the tap gesture recognizer to be ignored.
-     
+
      See also:
-     
+
         tapGestureRecognizer
-     
+
      - Parameters:
         - revealController: The reveal view controller object.
 
@@ -262,16 +262,16 @@ Use a reveal view controller delegate (a custom object that implements this prot
 
     /**
      Implement this to return true if you want other gesture recognizer to share touch events with the pan gesture.
-     
+
      See also:
-     
+
         panGestureRecognizer
-     
+
      - Parameters:
         - revealController:       The reveal view controller object.
         - otherGestureRecognizer: The other gesture recognizer.
         - direction:              The panning direction.
-     
+
      - Returns:
         true if you want other gesture recognizer to share touch events with the pan gesture.
      */
@@ -279,11 +279,11 @@ Use a reveal view controller delegate (a custom object that implements this prot
 
     /**
      Implement this to return true if you want other gesture recognizer to share touch events with the tap gesture.
-     
+
      See also:
-     
+
         tapGestureRecognizer
-     
+
      - Parameters:
         - revealController:       The reveal view controller object.
         - otherGestureRecognizer: The other gesture recognizer.
@@ -295,9 +295,9 @@ Use a reveal view controller delegate (a custom object that implements this prot
 
     /**
      Called when the gestureRecognizer began.
-     
+
      See also:
-     
+
      panGestureRecognizer
 
      - Parameters:
@@ -308,11 +308,11 @@ Use a reveal view controller delegate (a custom object that implements this prot
 
     /**
      Called when the gestureRecognizer moved.
-     
+
      See also:
-     
+
      panGestureRecognizer
-     
+
      - Parameters:
         - revealController: The reveal view controller object.
         - direction:        The panning direction.
@@ -321,11 +321,11 @@ Use a reveal view controller delegate (a custom object that implements this prot
 
     /**
      Called when the gestureRecognizer ended.
-     
+
      See also:
-     
+
      panGestureRecognizer
-     
+
      - Parameters:
         - revealController: The reveal view controller object.
         - direction:        The panning direction.
@@ -334,11 +334,11 @@ Use a reveal view controller delegate (a custom object that implements this prot
 
     /**
      Called just before child controller replacement (left, main or right).
-     
+
      See also:
-     
+
      revealController(_ :didAdd:for:animated:)
-     
+
      - Parameters:
         - revealController: The reveal view controller object.
         - viewController:   The child view controller.
@@ -349,11 +349,11 @@ Use a reveal view controller delegate (a custom object that implements this prot
 
     /**
      Called just after child controller replacement (left, main or right).
-     
+
      See also:
-     
+
      revealController(_ :willAdd:for:animated:)
-     
+
      - Parameters:
         - revealController: The reveal view controller object.
         - viewController:   The child view controller.
@@ -364,11 +364,11 @@ Use a reveal view controller delegate (a custom object that implements this prot
 
     /**
      Ask for animation block while pushing main view controller.
-     
+
      See also:
-     
+
      revealController(_ :blockFor:from:to:finalBlock:)
-     
+
      - Parameters:
         - revealController:   The reveal view controller object.
         - operation:          The current operation (push from left or push from right).
@@ -382,11 +382,11 @@ Use a reveal view controller delegate (a custom object that implements this prot
 
     /**
      Ask for completion block while pushing main view controller.
-     
+
      See also:
-     
+
      revealController(_ :blockFor:from:to:finalBlock:)
-     
+
      - Parameters:
         - revealController:   The reveal view controller object.
         - operation:          The current operation (push from left or push from right).
@@ -400,15 +400,15 @@ Use a reveal view controller delegate (a custom object that implements this prot
 
     /**
      Ask for a block with animation and completion while replacing/pushing child view controllers, please add the final block to your completion.
-     
+
      See also:
-     
+
      revealController(_ :animationBlockFor:from:to:)
-     
+
      revealController(_ :completionBlockFor:from:to:)
-     
+
      revealController(_ :animationControllerForTransitionFrom:to:for:)
-     
+
      - Parameters:
         - revealController:   The reveal view controller object.
         - operation:          The current operation (push from left or push from right).
@@ -423,7 +423,7 @@ Use a reveal view controller delegate (a custom object that implements this prot
 
     /**
      Ask for custom transition animations controller while replacing/pushing child view controllers. If implemented, it will be fired in response to calls setXXXViewController or pushXXXViewController child view controller (since iOS 7).
-     
+
      - Parameters:
         - revealController:   The reveal view controller object.
         - fromViewController: The child view controller to replace.
@@ -472,7 +472,7 @@ open class PBRevealViewControllerSegueSetController: UIStoryboardSegue {
             dvc?.didMove(toParent: rvc)
             rvc?.rightViewController = dvc
         }
-        
+
         #if os(iOS)
             if (floor(NSFoundationVersionNumber) < 7.0) {
                 var frame: CGRect? = dvc?.view?.frame
@@ -516,7 +516,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             _reloadMainShadow()
         }
     }
-    
+
     /**
      Defines the main view's shadow offset, default is {0.0f,2.5f}.
      */
@@ -525,7 +525,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             _reloadMainShadow()
         }
     }
-    
+
     /**
      Defines the main view's shadow opacity, default is 1.0f.
      */
@@ -534,7 +534,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             _reloadMainShadow()
         }
     }
-    
+
     /**
      Defines the main view's shadow color, default is blackColor
      */
@@ -543,7 +543,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             _reloadMainShadow()
         }
     }
-    
+
     /**
      If true (default is false) the left view controller will be ofsseted vertically by the height of a navigation bar plus the height of status bar.
      */
@@ -561,17 +561,17 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             }
         }
     }
-    
+
     /**
      If false (default is true) the left view controller will be presented below the main view controller.
      */
     open var isLeftPresentViewOnTop: Bool = true
-    
+
     /**
      Defines how much displacement is applied to the left view when animating or dragging the main view, default is 40.0f.
      */
     open var leftViewRevealDisplacement: CGFloat = 40.0
-    
+
     /**
      Defines the width of the left view when it is shown, default is 260.0f.
      */
@@ -593,22 +593,22 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             }
         }
     }
-    
+
     /**
      Duration for the left reveal/push animation, default is 0.5.
      */
     open var leftToggleAnimationDuration: TimeInterval = 0.5
-    
+
     /**
      The damping ratio for the spring animation, default is 0.8.
      */
     open var leftToggleSpringDampingRatio: CGFloat = 0.8
-    
+
     /**
      The initial spring velocity, default is 0.5.
     */
     open var leftToggleSpringVelocity: CGFloat = 0.5
-    
+
     /**
      Defines the radius of the left view's shadow, default is 2.5.
      */
@@ -617,7 +617,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             _reloadLeftShadow()
         }
     }
-    
+
     /**
      Defines the left view's shadow offset, default is {0.0f, 2.5f}.
      */
@@ -626,7 +626,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             _reloadLeftShadow()
         }
     }
-    
+
     /**
      Defines the left view's shadow opacity, default is 1.0f.
      */
@@ -635,7 +635,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             _reloadLeftShadow()
         }
     }
-    
+
     /**
      Defines the left view's shadow color, default is blackColor
      */
@@ -644,7 +644,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             _reloadLeftShadow()
         }
     }
-    
+
     /**
      Defines the left view's blur effect style, default is PBRevealBlurEffectStyleNone.
      */
@@ -655,7 +655,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             }
         }
     }
-    
+
     /**
      If true (default is false) the left view controller will be ofsseted vertically by the height of a navigation bar plus the height of status bar.
      */
@@ -673,17 +673,17 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             }
         }
     }
-    
+
     /**
      If false (default is true) the right view controller will be presented below the main view controller.
      */
     open var isRightPresentViewOnTop: Bool = true
-    
+
     /**
      Defines how much displacement is applied to the right view when animating or dragging the main view, default is 40.0f.
      */
     open var rightViewRevealDisplacement: CGFloat = 40.0
-    
+
     /**
      Defines the width of the right view when it is shown, default is 160.0f.
      */
@@ -705,22 +705,22 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             }
         }
     }
-    
+
     /**
      Duration for the right reveal/push animation, default is 0.5.
      */
     open var rightToggleAnimationDuration: TimeInterval = 0.5
-    
+
     /**
      The damping ratio for the spring animation, default is 0.8f.
      */
     open var rightToggleSpringDampingRatio: CGFloat = 0.8
-    
+
     /**
      The initial spring velocity, default is 0.5f.
      */
     open var rightToggleSpringVelocity: CGFloat = 0.5
-    
+
     /**
      Defines the radius of the lrighteft view's shadow, default is 2.5f.
      */
@@ -729,7 +729,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             _reloadRightShadow()
         }
     }
-    
+
     /**
      Defines the right view's shadow offset, default is {0.0f, 2.5f}.
      */
@@ -738,7 +738,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             _reloadRightShadow()
         }
     }
-    
+
     /**
      Defines the right view's shadow opacity, default is 1.0f.
      */
@@ -747,7 +747,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             _reloadRightShadow()
         }
     }
-    
+
     /**
      Defines the right view's shadow color, default is blackColor
      */
@@ -756,7 +756,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             _reloadRightShadow()
         }
     }
-    
+
     /**
      Defines the right view's blur effect style, default is PBRevealBlurEffectStyleNone.
      */
@@ -767,119 +767,119 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             }
         }
     }
-    
+
     /**
      Animation type, default is PBRevealToggleAnimationTypeNone.
      */
     open var toggleAnimationType = PBRevealToggleAnimationType.none
-    
+
     /**
      Defines how much of an overdraw can occur when pushing further than leftViewRevealWidth, default is 60.0f.
      */
     open var leftViewRevealOverdraw: CGFloat = 60.0
-    
+
     /**
      Defines how much of an overdraw can occur when pushing further than rightViewRevealWidth, default is 60.0f.
      */
     open var rightViewRevealOverdraw: CGFloat = 60.0
-    
+
     /**
      Duration for animated replacement of view controllers, default is 0.25.
      */
     open var replaceViewAnimationDuration: TimeInterval = 0.25
-    
+
     /**
      Velocity required for the controller to toggle its state based on a swipe movement, default is 250.0f.
      */
     open var swipeVelocity: CGFloat = 250.0
-    
+
     /**
      true if left view is completely open (read only).
      */
     open private(set) var isLeftViewOpen: Bool = false
-    
+
     /**
      true if right view is completely open (read only).
      */
     open private(set) var isRightViewOpen: Bool = false
-    
+
     /**
      true if left view is panning (read only).
      */
     open private(set) var isLeftViewDragging: Bool = false
-    
+
     /**
      true if right view is panning (read only).
      */
     open private(set) var isRightViewDragging: Bool = false
-    
+
 #if os(tvOS)
     /**
      An optional invisible focusable button for revealing left view, default is nil, call [self tvOSLeftRevealButton] once to add it to the reveal view controller's view.
      */
     open var tvOSLeftRevealButton: UIButton?
-    
+
     /**
      An optional invisible focusable button for revealing right view, default is nil, call [self tvOSRightRevealButton] once to add it to the reveal view controller's view.
      */
     open var tvOSRightRevealButton: UIButton?
-    
+
     /**
      An optional swipe gesture recognizer for hidding left view, default is nil, call [self tvOSRightSwipeGestureRecognizer] once to add it to the reveal view controller's view.
      */
     open var tvOSRightSwipeGestureRecognizer: UISwipeGestureRecognizer?
-    
+
     /**
      An optional swipe gesture recognizer for hidding right view, default is nil, call [self tvOSLeftSwipeGestureRecognizer] once to add it to the reveal view controller's view.
      */
     open var tvOSLeftSwipeGestureRecognizer: UISwipeGestureRecognizer?
-    
+
     /**
      The preferred focused view on the main view.
      */
     open var tvOSMainPreferredFocusedView: UIView?
-    
+
     /**
      The preferred focused view on the left view.
      */
     open var tvOSLeftPreferredFocusedView: UIView?
-    
+
     /**
      The preferred focused view on the right view.
      */
     open var tvOSRightPreferredFocusedView: UIView?
-    
+
     /**
      If isPressTypeMenuAllowed is set to true (default is false), show left view when Apple TV Menu button is pressed, back to Apple TV home screen if left menu is open.
      */
     open var isPressTypeMenuAllowed: Bool = false
-    
+
     /**
      If isPressTypePlayPauseAllowed is set to true (default is false), hide left view if opened, show/hide right view when Apple TV PlayPause button is pressed.
      */
     open var isPressTypePlayPauseAllowed: Bool = false
 #endif
-    
+
     /**
      The default tap gesture recognizer added to the main view. Default behavior will hide the left or right view.
      */
     open var tapGestureRecognizer: UITapGestureRecognizer?
-    
+
     /**
      The default pan gesture recognizer added to the reveal view. Default behavior will drag the left or right view.
      */
     open var panGestureRecognizer: UIPanGestureRecognizer?
-    
+
     /**
      The default border width allowing pan gesture from left. If > 0.0, this is the acceptable starting width for the gesture.
      */
     open var panFromLeftBorderWidth: CGFloat = 0.0
-    
+
     /**
      The default border width allowing pan gesture from right. If > 0.0, this is the acceptable starting width for the gesture.
      */
     open var panFromRightBorderWidth: CGFloat = 0.0
-    
+
     /**
      Optional left view controller, can be nil if not used.
      */
@@ -890,7 +890,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             }
         }
     }
-    
+
     /**
      Main view controller, cannot be nil.
      */
@@ -901,7 +901,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             }
         }
     }
-    
+
     /**
      Optional right view controller, can be nil if not used.
      */
@@ -912,14 +912,14 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             }
         }
     }
-    
+
     /**
      The delegate of the PBRevealViewController object.
      */
     weak open var delegate: PBRevealViewControllerDelegate?
 
     // MARK: - PBRevealViewController class - Private
-    
+
     private var contentView: UIView?
     private var isUserInteractionStore: Bool = false
     private var panBaseLocation: CGFloat = 0.0
@@ -936,10 +936,10 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+
     /**
      Instantiate a PBRevealViewController class programmatically
-     
+
      - Parameters:
         - leftViewController:  A subclass of UIViewController (optional).
         - mainViewController:  A subclass of UIViewController (required).
@@ -950,7 +950,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
      */
     @objc public init(leftViewController: UIViewController?, mainViewController: UIViewController, rightViewController: UIViewController?) {
         super.init(nibName: nil, bundle: nil)
-        
+
         addChild(mainViewController)
         mainViewController.didMove(toParent: self)
         self.mainViewController = mainViewController
@@ -964,7 +964,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             rightViewController!.didMove(toParent: self)
         }
         self.rightViewController = rightViewController
-        
+
         #if os(iOS)
             if (floor(NSFoundationVersionNumber) < NSFoundationVersionNumber_iOS_7_0) {
                 let statusBarIsHidden: Bool = (UIApplication.shared.statusBarFrame.size.height == 0.0)
@@ -998,14 +998,14 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
                 }
             }
         #endif
-        
+
         _reloadLeftShadow()
         _reloadRightShadow()
         _reloadMainShadow()
     }
 
     // MARK: - View lifecycle
-    
+
     override open func loadView() {
         super.loadView()
         var frame: CGRect = UIScreen.main.bounds
@@ -1027,12 +1027,12 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             _ = _panGestureRecognizer()
         #endif
     }
-    
+
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.isUserInteractionStore = (self.contentView?.isUserInteractionEnabled)!
     }
-    
+
     /*
     private func initDefaultProperties() {
         navigationBar = UINavigationBar()
@@ -1086,19 +1086,19 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
         #endif
     }
     */
-    
+
     // Load any defined Main/Left/Right controllers from the storyboard
     private func loadStoryboardControllers() {
-        
+
         if (self.storyboard != nil) && leftViewController == nil {
-            
+
             //Try each segue separately so it doesn't break prematurely if either Rear or Right views are not used.
             self.performSegue(id: PBSegueLeftIdentifier, sender: nil)
             self.performSegue(id: PBSegueMainIdentifier, sender: nil)
             self.performSegue(id: PBSegueRightIdentifier, sender: nil)
         }
     }
-    
+
     // MARK: - Public methods
 
     /**
@@ -1230,7 +1230,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
         else {
             return
         }
-        
+
         let fromViewController: UIViewController? = self.mainViewController
         self.mainViewController = mainViewController
         _pushFromViewController(fromViewController!, toViewController: mainViewController, operation: operation, animated: animated)
@@ -1532,16 +1532,16 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
                 self.leftShadowView = UIView(frame: (self.leftViewController?.view.bounds)!)
             }
             self.leftShadowView?.translatesAutoresizingMaskIntoConstraints = false
-            
+
             self.leftShadowView?.backgroundColor = UIColor.black
             self.leftShadowView?.layer.masksToBounds = false
             self.leftShadowView?.layer.shadowColor = self.leftViewShadowColor.cgColor
             self.leftShadowView?.layer.shadowOffset = self.leftViewShadowOffset
             self.leftShadowView?.layer.shadowOpacity = Float(self.leftViewShadowOpacity)
             self.leftShadowView?.layer.shadowRadius = self.leftViewShadowRadius
-            
+
             self.leftViewController?.view.insertSubview(self.leftShadowView!, at: 0)
-            
+
             // Set constraints programmatically, as this view is animatable
             NSLayoutConstraint(item: self.leftShadowView!, attribute: .trailing, relatedBy: .equal, toItem: self.leftViewController?.view, attribute: .trailingMargin, multiplier: 1.0, constant: 0.0).isActive = true
             NSLayoutConstraint(item: self.leftShadowView!, attribute: .top, relatedBy: .equal, toItem: self.leftViewController?.view, attribute: .topMargin, multiplier: 1.0, constant: 0.0).isActive = true
@@ -1564,16 +1564,16 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
                 self.rightShadowView = UIView(frame: (self.rightViewController?.view.bounds)!)
             }
             self.rightShadowView?.translatesAutoresizingMaskIntoConstraints = false
-            
+
             self.rightShadowView?.backgroundColor = UIColor.white
             self.rightShadowView?.layer.masksToBounds = false
             self.rightShadowView?.layer.shadowColor = self.rightViewShadowColor.cgColor
             self.rightShadowView?.layer.shadowOffset = self.rightViewShadowOffset
             self.rightShadowView?.layer.shadowOpacity = Float(self.rightViewShadowOpacity)
             self.rightShadowView?.layer.shadowRadius = self.rightViewShadowRadius
-            
+
             self.rightViewController?.view.insertSubview(self.rightShadowView!, at: 0)
-            
+
             // Set constraints programmatically, as this view is animatable
             NSLayoutConstraint(item: self.rightShadowView!, attribute: .leading, relatedBy: .equal, toItem: self.rightViewController?.view, attribute: .leadingMargin, multiplier: 1.0, constant: 0.0).isActive = true
             NSLayoutConstraint(item: self.rightShadowView!, attribute: .top, relatedBy: .equal, toItem: self.rightViewController?.view, attribute: .topMargin, multiplier: 1.0, constant: 0.0).isActive = true
@@ -1621,7 +1621,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
                             }
                         }
                     }
-                    
+
                 case .replaceRightController:
                     self.rightEffectView?.removeFromSuperview()
                     self.rightEffectView = sideEffectView
@@ -1633,11 +1633,11 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
                             }
                         }
                     }
-                    
+
                 default:
                     break
                 }
-                
+
                 if tableView != nil {
                     switch operation {
                     case .replaceLeftController:
@@ -1649,7 +1649,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
                     default:
                         break
                     }
-                    
+
                     tableView?.backgroundColor = UIColor.clear
                     #if os(iOS)
                         tableView?.separatorEffect = vibrancyEffect
@@ -1740,11 +1740,11 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
                     self.contentView?.addGestureRecognizer(self.tapGestureRecognizer!)
                     self.contentView?.addGestureRecognizer(self.panGestureRecognizer!)
                 #endif
-                
+
             default:
                 break
             }
-            
+
             addChild(toViewController)
             fromViewController.willMove(toParent: nil)
             let completion: (() -> Void) = {() -> Void in
@@ -1794,7 +1794,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
         frame.origin.x = fromViewController.view.frame.origin.x
         toViewController.view.frame = frame
         delegate?.revealController?(self, willAdd: toViewController, for: operation, animated: animated)
-        
+
         let completion: (() -> Void) = {() -> Void in
             fromViewController.view.removeFromSuperview()
             fromViewController.removeFromParent()
@@ -1908,11 +1908,11 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
                 })
             }
         }
-        
+
     }
 
 // MARK: - Gesture Recognizer
-    
+
 #if os(tvOS)
     @objc open func _tvOSLeftRevealButton() -> UIButton {
         if self.tvOSLeftRevealButton == nil {
@@ -1979,7 +1979,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
     }
 
     // MARK: - Gesture Delegate
-    
+
     public func gestureRecognizerShouldBegin(_ recognizer: UIGestureRecognizer) -> Bool {
         if recognizer == self.tapGestureRecognizer {
             if delegate?.revealControllerTapGestureShouldBegin?(self) == false {
@@ -1988,16 +1988,16 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
         }
         if recognizer == self.panGestureRecognizer {
             let velocity: CGFloat = (self.panGestureRecognizer?.velocity(in: self.contentView).x)!
-            if (delegate?.revealControllerPanGestureShouldBegin?(self, direction: velocity > 0.0 ? .right : .left)) == false {
-                return false
+            if (delegate?.revealControllerPanGestureShouldBegin?(self, direction: velocity > 0.0 ? .right : .left)) == true {
+                return true
             }
 
              if (isLeftViewOpen || isRightViewOpen) {
                 return true
              }
-            
+
             let point: CGPoint = recognizer.location(in: recognizer.view)
-            
+
             if self.panFromLeftBorderWidth > 0.0 && !isLeftViewOpen && velocity > 0.0 && point.x > self.panFromLeftBorderWidth {
                 return false
             }
@@ -2005,7 +2005,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
                 return false
             }
         }
-        return true
+        return false
     }
 
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -2181,18 +2181,18 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
     }
 
     // MARK: - UserInteractionEnabling
-    
+
     private func disableUserInteraction() {
         self.contentView?.isUserInteractionEnabled = false
     }
-    
+
     private func restoreUserInteraction() {
         // we use the stored userInteraction state just in case a developer decided to have our view interaction disabled before handle
         self.contentView?.isUserInteractionEnabled = isUserInteractionStore
     }
 
 // MARK: - Presse button Handle (tvOS)
-    
+
 #if os(tvOS)
     override open func pressesBegan(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
         for item: UIPress in presses {
@@ -2250,11 +2250,11 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
     }
 
 #endif
-    
+
 // MARK: - Focus environment protocol (tvOS)
-    
+
 #if os(tvOS)
-    
+
     override open var preferredFocusEnvironments: [UIFocusEnvironment] {
         if self.isLeftViewOpen {
             if tvOSLeftPreferredFocusedView != nil {
@@ -2291,9 +2291,9 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
     }
 
 #endif
-    
+
 // MARK: - Gesture Handle
-    
+
 #if os(tvOS)
     @objc private func _handleLeftSwipeGesture(_ recognizer: UISwipeGestureRecognizer) {
         if isRightViewOpen {
@@ -2308,7 +2308,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
     }
 
 #endif
-    
+
     @objc private func _handleTapGesture(_ recognizer: UITapGestureRecognizer) {
         if isLeftViewOpen {
             hideLeftView(animated: true)
@@ -2348,7 +2348,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
                     self.isRightViewDragging = true
                 }
             }
-            
+
             if self.isLeftViewDragging {
                 self.panBaseLocation = 0.0
                 if self.isLeftViewOpen {
@@ -2375,7 +2375,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
                 }
             }
             break
-            
+
         case .changed:
             notifyPanGestureMoved(position)
             if self.isLeftViewOpen || self.isRightViewOpen {
@@ -2391,7 +2391,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
                 _moveRightView(toPosition: xLocation)
             }
             break
-            
+
         case .ended:
             if self.isLeftViewOpen || self.isRightViewOpen {
                 notifyPanGestureEnded(position)
@@ -2416,19 +2416,19 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             }
             notifyPanGestureEnded(position)
             break
-            
+
         case .cancelled:
             notifyPanGestureEnded(position)
             break
-            
+
         default:
             break
         }
-        
+
     }
 
     // MARK: - Gesture Handle Delegate call methods
-    
+
     private func notifyPanGestureBegan(_ position: CGFloat) {
         let velocity: CGFloat = (self.panGestureRecognizer?.velocity(in: self.contentView).x)!
         delegate?.revealControllerPanGestureBegan?(self, direction: velocity > 0.0 ? .right : .left)
@@ -2448,7 +2448,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
     }
 
     // MARK: - Adjusts frames
-    
+
     private func adjustsFrameForController(_ sideViewController: UIViewController) -> CGRect {
         let barHeight = navigationBar.sizeThatFits(CGSize(width: CGFloat(100), height: CGFloat(100))).height
         var frame: CGRect = sideViewController.view.frame
@@ -2473,11 +2473,11 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
     }
 
     // MARK: - Override rotation
-    
+
     private func viewWillTransitionToSize(_ size: CGSize) {
-        
+
         var frame: CGRect
-        
+
         if self.leftViewController != nil {
             if self.isLeftPresentViewHierarchically {
                 frame = adjustsFrameForController(self.leftViewController!)
@@ -2489,7 +2489,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
             frame.size.width = leftViewRevealWidth
             self.leftViewController?.view.frame = frame
         }
-        
+
         if self.rightViewController != nil {
             if self.isRightPresentViewHierarchically {
                 frame = adjustsFrameForController(self.rightViewController!)
@@ -2534,7 +2534,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
     //
 
     // MARK: - Helpers
-    
+
     private func tableViewInView(_ view: UIView) -> UITableView? {
         if (view is UITableView) {
             return (view as? UITableView)!
@@ -2563,7 +2563,7 @@ private class PBRevealViewControllerPanGestureRecognizer: UIPanGestureRecognizer
         self.beginPoint = (touch?.location(in: view))!
         self.dragging = false
     }
-    
+
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent) {
     super.touchesMoved(touches, with: event)
         if self.dragging || state == .failed {
@@ -2598,15 +2598,15 @@ private class PBContextTransitionObject: NSObject, UIViewControllerContextTransi
     internal var completion: (() -> Void)? = nil
 
     init(revealController: PBRevealViewController, containerView: UIView, fromViewController: UIViewController, toViewController: UIViewController, completion: @escaping () -> Void) {
-        
+
         self.revealController = revealController
         self.containerView = containerView
         self.fromViewController = fromViewController
         self.toViewController = toViewController
         self.completion = completion
-    
+
     }
-    
+
     func updateInteractiveTransition(_ percentComplete: CGFloat) {
         // not supported
     }
@@ -2638,7 +2638,7 @@ private class PBContextTransitionObject: NSObject, UIViewControllerContextTransi
             return nil
         }
     }
-    
+
     func view(forKey key: UITransitionContextViewKey) -> UIView? {
         return nil;
     }
@@ -2659,10 +2659,10 @@ private class PBRevealView: UIView {
 
     init(frame: CGRect, controller revealController: PBRevealViewController) {
         super.init(frame: frame)
-        
+
         self.revealController = revealController
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -2686,7 +2686,7 @@ private class PBRevealView: UIView {
 // MARK: - UIViewController extension
 
 private extension UIViewController {
-    
+
     // An extension of UIViewController to check if a segue exist (TODO: Apple rejected?).
     func canPerformSegue(id: String) -> Bool {
         let segues = self.value(forKey: "storyboardSegueTemplates") as? [NSObject]
@@ -2696,7 +2696,7 @@ private extension UIViewController {
         }
         return (filtered.count > 0)
     }
-    
+
     // An extension of UIViewController to perform a segue if exist (TODO: Apple rejected?).
     func performSegue(id: String, sender: AnyObject?) {
         if canPerformSegue(id: id) {
@@ -2706,11 +2706,11 @@ private extension UIViewController {
 }
 
 public extension UIViewController {
-    
+
     // An extension of UIViewController to let childViewControllers easily access their parent PBRevealViewController.
     func revealViewController() -> PBRevealViewController? {
         var viewController: UIViewController? = self
-        
+
         if viewController != nil && viewController is PBRevealViewController {
             return viewController! as? PBRevealViewController
         }
@@ -2722,5 +2722,5 @@ public extension UIViewController {
         }
         return nil
     }
-    
+
 }

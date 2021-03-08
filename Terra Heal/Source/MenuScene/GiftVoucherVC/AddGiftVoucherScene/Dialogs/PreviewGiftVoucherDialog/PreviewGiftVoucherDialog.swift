@@ -47,8 +47,8 @@ class PreviewGiftVoucherDialog: ThemeBottomDialogView {
     
     func setData(data: Voucher){
         self.lblHeader.text = data.getHeader()
-        //self.lblSubHeader.text = data.subHeader
-        //self.lblDescription.text = data.body
+       // self.lblSubHeader.text = data.subHeader
+     //self.lblDescription.text = data.body
         self.lblPrice.text = data.amount.toCurrency()
         self.lblMassage.text = data.giverMessageToRecipient
         

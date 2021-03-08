@@ -210,8 +210,6 @@ public class CountryPhone:NSObject
         phoneNumberMinLength = (dictionary["minimum_phone_number_length"] as? Int) ?? 8
         phoneNumberLength = (dictionary["maximum_phone_number_length"] as? Int) ?? 10
         countryFlag = (dictionary["country_flag"] as? String) ?? "INR"
-
-
     }
 
 

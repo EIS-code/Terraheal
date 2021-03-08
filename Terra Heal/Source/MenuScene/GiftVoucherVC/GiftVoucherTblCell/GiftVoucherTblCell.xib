@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -31,7 +32,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="CXX-Jj-jhW" secondAttribute="bottom" id="2MB-HJ-d1M"/>
                                     <constraint firstItem="CXX-Jj-jhW" firstAttribute="top" secondItem="kWw-1h-rwI" secondAttribute="top" id="F6j-u8-ZMi"/>
@@ -51,13 +52,13 @@
                                 <color key="textColor" name="theme_secondary"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68D-lx-Q8U" userLabel="lblDate1" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                <rect key="frame" x="34" y="286" width="15.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68D-lx-Q8U" userLabel="lblDate1" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <rect key="frame" x="34" y="286" width="365.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="theme_dark_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FY5-mf-689" userLabel="lblDate2" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FY5-mf-689" userLabel="lblDate2" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
                                 <rect key="frame" x="415.5" y="286" width="15.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="theme_dark_text"/>
@@ -68,6 +69,7 @@
                         <constraints>
                             <constraint firstItem="EVX-2E-Kar" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kXd-4y-hQl" secondAttribute="trailing" constant="10" id="20b-TE-usU"/>
                             <constraint firstItem="kXd-4y-hQl" firstAttribute="leading" secondItem="kWw-1h-rwI" secondAttribute="leading" id="8EM-pY-gYz"/>
+                            <constraint firstItem="FY5-mf-689" firstAttribute="leading" secondItem="68D-lx-Q8U" secondAttribute="trailing" constant="16" id="F3z-P1-XfD"/>
                             <constraint firstItem="EVX-2E-Kar" firstAttribute="trailing" secondItem="kWw-1h-rwI" secondAttribute="trailing" id="Lxg-at-YEI"/>
                             <constraint firstItem="68D-lx-Q8U" firstAttribute="leading" secondItem="kWw-1h-rwI" secondAttribute="leading" id="NR4-2t-n0C"/>
                             <constraint firstItem="EVX-2E-Kar" firstAttribute="top" secondItem="kXd-4y-hQl" secondAttribute="top" id="RcN-YB-0Oo"/>
@@ -121,8 +123,8 @@
                     </constraint>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="lblDate1" destination="68D-lx-Q8U" id="gxb-1S-MXv"/>
                 <outlet property="lblDate2" destination="FY5-mf-689" id="FgT-AY-ogW"/>
@@ -144,5 +146,8 @@
         <namedColor name="theme_secondary">
             <color red="0.97254901960784312" green="0.59999999999999998" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

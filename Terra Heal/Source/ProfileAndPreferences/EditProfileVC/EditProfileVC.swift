@@ -291,7 +291,7 @@ class EditProfileVC: BaseVC {
         self.ivProfilePic.downloadedFrom(link: appSingleton.user.profilePhoto)
         self.arrForProfile = [
             EditProfileTextFieldDetail(placeholder: "PROFILE_NAME".localized(), value: appSingleton.user.name,  contentType:TextFieldContentType.Name, inputConfiguration: InputTextFieldDetail.getNameConfiguration(), image: ImageAsset.EditProfile.name),
-            EditProfileTextFieldDetail(placeholder: "PROFILE_SURNAME".localized(), value: ""/*appSingleton.user.surname*/, contentType:TextFieldContentType.Surname, inputConfiguration: InputTextFieldDetail.getNameConfiguration(), image: ImageAsset.EditProfile.name),
+            EditProfileTextFieldDetail(placeholder: "PROFILE_SURNAME".localized(), value: appSingleton.user.surname, contentType:TextFieldContentType.Surname, inputConfiguration: InputTextFieldDetail.getNameConfiguration(), image: ImageAsset.EditProfile.name),
             EditProfileTextFieldDetail(placeholder: "PROFILE_GENDER".localized(), value: appSingleton.user.getGenderName(), contentType: TextFieldContentType.Gender, image: ImageAsset.EditProfile.gender),
             EditProfileTextFieldDetail(placeholder: "PROFILE_DOB".localized(), value: appSingleton.user.getDob(), contentType: TextFieldContentType.DOB, image: ImageAsset.EditProfile.dob),
             EditProfileTextFieldDetail(placeholder: "PROFILE_MOBILE".localized(), value: appSingleton.user.telNumberCode + " " + appSingleton.user.telNumber, contentType: TextFieldContentType.Phone, inputConfiguration: InputTextFieldDetail.getMobileConfiguration(), image: ImageAsset.EditProfile.mobile),

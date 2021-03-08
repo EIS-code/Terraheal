@@ -240,20 +240,25 @@ extension ServiceMapVC {
     }
     
     func openServiceSelectionDialog() {
-        let serviceSelectionDialog: CustomServiceSelectionDialog  = CustomServiceSelectionDialog.fromNib()
-        serviceSelectionDialog.initialize(title: arrForServices[currentIndex].name, buttonTitle: "BTN_BOOK_HERE".localized())
-        serviceSelectionDialog.show(animated: true)
-        serviceSelectionDialog.onBtnCancelTapped = {
-            [weak serviceSelectionDialog, weak self] in
-            guard let self = self else { return } ; print(self)
-            serviceSelectionDialog?.dismiss()
+        if arrForServices.count > currentIndex {
+            let serviceSelectionDialog: CustomServiceSelectionDialog  = CustomServiceSelectionDialog.fromNib()
+            serviceSelectionDialog.initialize(title: arrForServices[currentIndex].name, buttonTitle: "BTN_BOOK_HERE".localized())
+            serviceSelectionDialog.show(animated: true)
+            serviceSelectionDialog.onBtnCancelTapped = {
+                [weak serviceSelectionDialog, weak self] in
+                guard let self = self else { return } ; print(self)
+                serviceSelectionDialog?.dismiss()
+            }
+            serviceSelectionDialog.onBtnDoneTapped = {
+                [weak serviceSelectionDialog, weak self]  in
+                guard let self = self else { return } ; print(self)
+                serviceSelectionDialog?.dismiss()
+                self.openSessionSelectionDialog()
+            }
+        } else {
+            Common.showAlert(message: "Please select center first")
         }
-        serviceSelectionDialog.onBtnDoneTapped = {
-            [weak serviceSelectionDialog, weak self]  in
-            guard let self = self else { return } ; print(self)
-            serviceSelectionDialog?.dismiss()
-            self.openSessionSelectionDialog()
-        }
+
     }
     
     func openDateTimeSelectionDialog() {

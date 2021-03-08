@@ -31,8 +31,8 @@ class GiftVoucherTblCell: ShadowTableCell {
     func setData(data: Voucher ) {
         self.lblId.text = data.id
         self.lblPrice.text = data.amount.toCurrency()
-        self.lblDate1.text = data.startFrom
-        self.lblDate2.text = data.lastDate
+        self.lblDate1.text = data.startFrom.toDate(format: DateFormat.WEB).toString(format: DateFormat.GiftVoucher)
+        self.lblDate2.text = data.lastDate.toDate(format: DateFormat.WEB).toString(format: DateFormat.GiftVoucher)
     }
 
     override func layoutSubviews() {

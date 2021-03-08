@@ -140,7 +140,6 @@ extension SessionDialog : UITableViewDelegate,UITableViewDataSource {
 extension SessionDialog {
     
     func fetchSessionList() {
-        
         var request = Session.RequestList()
         request.booking_type = self.bookindType.getParameterId()
         AppWebApi.fetchSessionList(params:request) { (response) in
